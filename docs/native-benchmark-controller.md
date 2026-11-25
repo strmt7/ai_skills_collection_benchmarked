@@ -31,6 +31,10 @@ Repository capacity defaults to 16 MiB with execution disabled; larger capacity
 and executable build outputs require explicit settings. Combined temporary
 mount capacities may use at most three quarters of the memory limit, including
 all four optional task mounts. These are quotas, not preallocated host memory.
+Choose the lease's PID ceiling from 32 to 256. Linux also counts threads
+against that ceiling. Check cgroup process and memory events when a browser
+or build worker exits before evaluation. Confirm that the required services
+and the complete original test inventory ran before accepting a score.
 The lease watchdog renews through a dedicated root-owned 64 KiB mount.
 The grader can fill its task filesystem while the watchdog keeps renewing.
 The [storage exhaustion control](../artifacts/research/2026-11-24/development-qualification/observations.json)

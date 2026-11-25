@@ -1,0 +1,253 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-25",
+  "scope": "Original publisher browser verifier and native resource control calibration",
+  "publisher": {
+    "repository": "https://github.com/benchflow-ai/skillsbench",
+    "release": "v1.1",
+    "task": "react-performance-debugging",
+    "commit": "b63b7b2850226b6aa4fb5929a8c1ac7bc4d9a6af",
+    "task_tree": "84726849438a00e2bb98dd8eea8058a4036da486",
+    "tagged_environment_and_verifier_files": 80,
+    "dockerfile_sha256": "3f402dfe032923ea8a1d2bedba2bb9838d0af339526f5de298b3eebb65fee3d2",
+    "oracle_sha256": "877a939b540750c494a0b3bc0887409ae281b5baf2816f1f2db5499394963626"
+  },
+  "native_setup": {
+    "source_image_id": "sha256:61c32f5dab434d4841c4442b491a48735ab2ab4d66003063e0e5ac304459f45c",
+    "reference_image_id": "sha256:11f527481d1d30c2ed12c6c5930148d07e980a7a0d8eaea902b1f020cea199aa",
+    "node": "v20.18.1",
+    "npm": "10.8.2",
+    "python_dependencies": {
+      "pytest": "8.3.4",
+      "pytest-playwright": "0.6.2",
+      "pytest-asyncio": "0.24.0",
+      "playwright": "1.49.1",
+      "httpx": "0.28.1"
+    },
+    "graded_workspace_and_dependencies_verified": true,
+    "exact_reference_source_file_count": 7,
+    "allocator": {
+      "memory_bytes": 4294967296,
+      "cpu_count": 2,
+      "pid_ceiling": 256
+    },
+    "network": "No runtime external network. Both publisher services and Chromium ran inside the same isolated container.",
+    "original_dockerfile_built": true,
+    "grading_oracle_separation_verified": true
+  },
+  "setup_diagnostics": {
+    "publisher_node_workers": [
+      {
+        "case": "default",
+        "visible_cpus": 20,
+        "configured_workers": 19,
+        "build_succeeded": false,
+        "failure_class": "spawn-eagain",
+        "pids_denied_delta": 26,
+        "oom_delta": 0,
+        "oom_kill_delta": 0,
+        "case_environment": {},
+        "remaining_owned_containers": 0
+      },
+      {
+        "case": "two",
+        "visible_cpus": 20,
+        "configured_workers": 2,
+        "build_succeeded": true,
+        "failure_class": null,
+        "pids_denied_delta": 0,
+        "oom_delta": 0,
+        "oom_kill_delta": 0,
+        "case_environment": {
+          "CIRCLE_NODE_TOTAL": "3"
+        },
+        "remaining_owned_containers": 0
+      }
+    ],
+    "chromium_at_128": {
+      "pid_denials": 3,
+      "oom_delta": 0,
+      "original_zero_with_incomplete_cases_is_unscored": true
+    },
+    "plugin_autoload": "The initial controller set an environment variable whose nonempty zero value disabled pytest plugin autoload. The qualified controls use normal autoload."
+  },
+  "official_launcher_preflight": {
+    "compose": {
+      "wheel_sha256": "fe3fb87f0bac897e8730a7e9d85f3807d426c0de77ff0a7e55a844199794b018",
+      "wheel_version": "0.10.1",
+      "upstream_helper_sha256": "efb3507f43870f71f8fa64b86a77be1ea603f35b9895763cc1f4636c0e5999d6",
+      "task_compose_sha256": "5dc439ccaa0e32ca13eea93a35815d98910ed39e72672a9b028c3a208c87d11a",
+      "original_compose_filename": "docker-compose.yml",
+      "official_canonical_filename": "docker-compose.yaml",
+      "official_original_task_warning": "environment/docker-compose.yml is not read: on Docker BenchFlow reads only environment/docker-compose.yaml, so this task runs as main alone, without the services that file declares",
+      "compose_version": "5.7.1",
+      "compose_binary_sha256": "4de51491f60073b2be563dc1576864e5b13cced1fa25cca09e2afeccf2e3cd35",
+      "standalone_compose_port_plan": {
+        "api-simulator": [
+          {
+            "target": 3001,
+            "published": 3001,
+            "host_ip": null
+          }
+        ],
+        "website": [
+          {
+            "target": 3000,
+            "published": 3000,
+            "host_ip": null
+          }
+        ]
+      },
+      "compose_native_plan_sha256": "7b098602dc18f26a0cee301d573d2106e6594abfe36e0eeb6c231efcd1bc2ac0",
+      "docker_resources_created": 0,
+      "official_job_executed": false,
+      "models_invoked": 0
+    },
+    "windows": {
+      "platform": "Windows x64",
+      "python": "3.14.10",
+      "version": "0.10.1",
+      "resolved_projects_installed": 142,
+      "resolved_graph_sha256": "551cff3dc4b1e7e7c2e2cf0dac26b42b21b9bffd4d82920f90fd851b079311aa",
+      "hash_required_install_exit": 0,
+      "native_version_exit": 0,
+      "original_schema_exit": 1,
+      "exception_type": "ModuleNotFoundError",
+      "missing_unix_module": "fcntl",
+      "unconditional_import_path": "benchflow/_utils/benchmark_repos.py",
+      "unconditional_import_line": 22,
+      "unconditional_import_source_sha256": "6eb152598c0257ffd32d86fb6dbc169ee8cad1f0ec27f3f45ea1d89e8dcde0d0",
+      "native_error_sha256": "584cd575f7c654fd12927e89bfeea5586fa9bf68d753987dc2bb30f10d71eff3",
+      "temporary_environment_removed": true,
+      "remaining_owned_processes": 0,
+      "official_job_executed": false,
+      "models_invoked": 0
+    }
+  },
+  "case_inventory_sha256": "c26fcddf546f0d7eec5e858dab4569ba5af3fba46f1fa365c57f0cafce3d5f95",
+  "outcomes": [
+    {
+      "case": "no-operation-256",
+      "image_id": "sha256:61c32f5dab434d4841c4442b491a48735ab2ab4d66003063e0e5ac304459f45c",
+      "publisher_verifier_sha256": {
+        "conftest.py": "e8607f792eef0f6eae98707e32bf96b0502f547890db6b0ec33f1a85182b4a3c",
+        "test.sh": "b49163271d4cc53136febc9ad20e445189d0649c9d165b8632722703d26c8df1",
+        "test_outputs.py": "d1853fb5ea107170643dd201128ab44f485c1f793e29dc1ba2105da266239ad3"
+      },
+      "result_files": {
+        "pytest-output.txt": "03068bb2837463c1d586ebab716778a7b052db1a0a9c52ec62243a41a6d43fac",
+        "reward.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+      },
+      "ready_code_marker": true,
+      "api_ready_marker": true,
+      "status": "scored",
+      "process_limit": 256,
+      "pids_denied_delta": 0,
+      "oom_delta": 0,
+      "captured_pytest_cases": 11,
+      "expected_cases": 11,
+      "outcomes": {
+        "PASSED": 8,
+        "FAILED": 3
+      },
+      "original_pytest_exit": 1,
+      "reward": 0,
+      "remaining_owned_containers": 0
+    },
+    {
+      "case": "publisher-reference-256",
+      "image_id": "sha256:11f527481d1d30c2ed12c6c5930148d07e980a7a0d8eaea902b1f020cea199aa",
+      "publisher_verifier_sha256": {
+        "conftest.py": "e8607f792eef0f6eae98707e32bf96b0502f547890db6b0ec33f1a85182b4a3c",
+        "test.sh": "b49163271d4cc53136febc9ad20e445189d0649c9d165b8632722703d26c8df1",
+        "test_outputs.py": "d1853fb5ea107170643dd201128ab44f485c1f793e29dc1ba2105da266239ad3"
+      },
+      "result_files": {
+        "pytest-output.txt": "8401cb8ec7815a5164bb74981f5bc2f42ad1df9244d1f44a81e7fe33be62c58d",
+        "reward.txt": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+      },
+      "ready_code_marker": true,
+      "api_ready_marker": true,
+      "status": "scored",
+      "process_limit": 256,
+      "pids_denied_delta": 0,
+      "oom_delta": 0,
+      "captured_pytest_cases": 11,
+      "expected_cases": 11,
+      "outcomes": {
+        "PASSED": 11
+      },
+      "original_pytest_exit": 0,
+      "reward": 1,
+      "remaining_owned_containers": 0
+    },
+    {
+      "case": "replicated-reference-256",
+      "image_id": "sha256:11f527481d1d30c2ed12c6c5930148d07e980a7a0d8eaea902b1f020cea199aa",
+      "publisher_verifier_sha256": {
+        "conftest.py": "e8607f792eef0f6eae98707e32bf96b0502f547890db6b0ec33f1a85182b4a3c",
+        "test.sh": "b49163271d4cc53136febc9ad20e445189d0649c9d165b8632722703d26c8df1",
+        "test_outputs.py": "d1853fb5ea107170643dd201128ab44f485c1f793e29dc1ba2105da266239ad3"
+      },
+      "result_files": {
+        "pytest-output.txt": "7ab779826b11bf2a555212d2e372da3f82d2d59b0765237c6e80ef46af98a92b",
+        "reward.txt": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+      },
+      "ready_code_marker": true,
+      "api_ready_marker": true,
+      "status": "scored",
+      "process_limit": 256,
+      "pids_denied_delta": 0,
+      "oom_delta": 0,
+      "captured_pytest_cases": 11,
+      "expected_cases": 11,
+      "outcomes": {
+        "PASSED": 11
+      },
+      "original_pytest_exit": 0,
+      "reward": 1,
+      "remaining_owned_containers": 0
+    },
+    {
+      "case": "replicated-no-operation-256",
+      "image_id": "sha256:61c32f5dab434d4841c4442b491a48735ab2ab4d66003063e0e5ac304459f45c",
+      "publisher_verifier_sha256": {
+        "conftest.py": "e8607f792eef0f6eae98707e32bf96b0502f547890db6b0ec33f1a85182b4a3c",
+        "test.sh": "b49163271d4cc53136febc9ad20e445189d0649c9d165b8632722703d26c8df1",
+        "test_outputs.py": "d1853fb5ea107170643dd201128ab44f485c1f793e29dc1ba2105da266239ad3"
+      },
+      "result_files": {
+        "pytest-output.txt": "d3eb23153ef5b9da0946dbf4b277580fb7a053fb4e06901922e957e5c0460c28",
+        "reward.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+      },
+      "ready_code_marker": true,
+      "api_ready_marker": true,
+      "status": "scored",
+      "process_limit": 256,
+      "pids_denied_delta": 0,
+      "oom_delta": 0,
+      "captured_pytest_cases": 11,
+      "expected_cases": 11,
+      "outcomes": {
+        "PASSED": 8,
+        "FAILED": 3
+      },
+      "original_pytest_exit": 1,
+      "reward": 0,
+      "remaining_owned_containers": 0
+    }
+  ],
+  "existing_profiles_requalified": {
+    "go": {
+      "native_controls": 11,
+      "qualification_sha256": "1e89ca67e54f46c0836a10c3e15fbd8747ccaa42d7705433d705272b51cacb09"
+    },
+    "packaging": {
+      "native_controls": 11,
+      "qualification_sha256": "74c4f659e7f7d23782f0ed05b548125d060be9333effd1a46839b0ed99b0a455"
+    }
+  },
+  "comparative_model_attempts": 0,
+  "model_efficacy_established": false,
+  "scope_limit": "These controlled reference and unchanged-submission observations ran the publisher's verifier directly. An official BenchFlow model job and comparative holdout claims remain pending."
+}

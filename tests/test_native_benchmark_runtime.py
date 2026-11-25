@@ -111,6 +111,12 @@ def test_full_project_profile_declares_cpu_storage_and_execution_separately() ->
     assert runtime.LeaseResources(**asdict(resources)) == resources
 
 
+def test_browser_process_budget_roundtrips_through_a_lease_profile() -> None:
+    browser = runtime.LeaseResources(memory_bytes=4 * 1024**3, cpu_count=2, pids_limit=256)
+    assert runtime.LeaseResources(**asdict(browser)) == browser
+    assert runtime.LeaseResources().pids_limit == 32
+
+
 @pytest.mark.parametrize(
     "options",
     [
@@ -118,6 +124,8 @@ def test_full_project_profile_declares_cpu_storage_and_execution_separately() ->
         {"cpu_count": 1.0},
         {"cpu_count": 0},
         {"cpu_count": 5},
+        {"pids_limit": 31},
+        {"pids_limit": 257},
         {"memory_bytes": 8 * 1024**3 + 1},
         {"repository_bytes": True},
         {"repository_workspace": True, "repository_bytes": 6 * 1024**3 + 1},

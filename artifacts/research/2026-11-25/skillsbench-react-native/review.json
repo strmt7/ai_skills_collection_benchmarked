@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-25",
+  "scope": "Qualified browser PID budget and tagged original reference, empty submission and reverse replay",
+  "source_sha256": {
+    "docs/native-benchmark-controller.md": "956c16675b38b7942906c38c6786fab1b1cfc29a757fd4ab2999b2deb1c3a4e6",
+    "tests/test_native_benchmark_runtime.py": "355889d2b3dd778d7ce3cac8e9195010b045459151c0c8650aecc460906d127b",
+    "tools/_native_benchmark_runtime.py": "8f4fce38823fa1d925b9648c13616e09ec49782b784b7f422d33a3cdcc36665e"
+  },
+  "artifacts": {
+    "observations.json": "91d5f81572d811dc23f14ecf6cde564bd7caf1fb890beb24288c5cda3d67f215"
+  },
+  "comparative_model_attempts": 0,
+  "model_efficacy_established": false
+}

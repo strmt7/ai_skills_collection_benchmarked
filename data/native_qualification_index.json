@@ -8,7 +8,6 @@
         "sha256": "0e43dd1b61f03561c079786ab0e6e859bb84142040cc5e4ea4120668b1fefe28"
       },
       "sources": [
-        "tools/_native_benchmark_runtime.py",
         "tools/_native_grader_go.py",
         "tools/grade_swe_skills_submission.py",
         "tests/test_grade_swe_skills_submission.py"
@@ -79,7 +78,6 @@
       },
       "sources": [
         ".gitattributes",
-        "tests/test_native_benchmark_runtime.py",
         "tests/test_native_project_resource_artifacts.py"
       ]
     },
@@ -303,7 +301,6 @@
         "sha256": "f8421961875909bd86738f36d735e4147586e2231daf17b30fa0bfc34e8323cb"
       },
       "sources": [
-        "docs/native-benchmark-controller.md",
         "tests/test_qualify_trial_context.py",
         "tests/test_trial_account_readiness.py",
         "toolchains/bootstrap/README.md",
@@ -322,6 +319,18 @@
         "docs/research-skillsbench-native.md",
         "tests/test_verify_skillsbench_pytest_reports.py",
         "tools/verify_skillsbench_pytest_reports.py"
+      ]
+    },
+    {
+      "id": "skillsbench-browser-pid-calibration",
+      "review": {
+        "path": "artifacts/research/2026-11-25/skillsbench-react-native/review.json",
+        "sha256": "cb02327aae970a7794554dfbd1a57e1707e4c77ccb5782c36d998d9990b094c7"
+      },
+      "sources": [
+        "docs/native-benchmark-controller.md",
+        "tests/test_native_benchmark_runtime.py",
+        "tools/_native_benchmark_runtime.py"
       ]
     }
   ],
@@ -633,10 +642,12 @@
       "superseded_sources": [
         "docs/native-benchmark-controller.md",
         "tests/test_grade_swe_skills_submission.py",
+        "tests/test_native_benchmark_runtime.py",
+        "tests/test_native_trial_runner.py",
         "tests/test_subject_toolchains.py",
+        "tools/_native_benchmark_runtime.py",
         "tools/_subject_toolchains.py",
         "tools/grade_swe_skills_submission.py",
-        "tests/test_native_trial_runner.py",
         "tools/run_swe_skills_trial.py"
       ]
     },
@@ -655,10 +666,11 @@
         "sha256": "0e43dd1b61f03561c079786ab0e6e859bb84142040cc5e4ea4120668b1fefe28"
       },
       "superseded_sources": [
-        "docs/native-benchmark-controller.md",
         "docs/benchmark-execution-plan.md",
+        "docs/native-benchmark-controller.md",
         "tests/test_native_trial_runner.py",
         "tests/test_subject_toolchains.py",
+        "tools/_native_benchmark_runtime.py",
         "tools/_subject_toolchains.py",
         "tools/run_swe_skills_trial.py"
       ]
@@ -687,6 +699,15 @@
       "review": {
         "path": "artifacts/research/2026-11-25/native-tool-launcher/review.json",
         "sha256": "21d771a6055016c7a14d7fc0451226b4a2b0cf044895da74623ca6444a597f7e"
+      },
+      "superseded_sources": [
+        "docs/native-benchmark-controller.md"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-25/codex-0172-runtime/review.json",
+        "sha256": "f8421961875909bd86738f36d735e4147586e2231daf17b30fa0bfc34e8323cb"
       },
       "superseded_sources": [
         "docs/native-benchmark-controller.md"

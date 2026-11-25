@@ -387,7 +387,7 @@ class LeaseResources:
             raise ValueError("Memory request exceeds the declared experiment range")
         if not 16 * 1024**2 <= self.tmpfs_bytes <= 6 * 1024**3:
             raise ValueError("Workspace request leaves insufficient process memory")
-        if not 32 <= self.pids_limit <= 128 or not isinstance(self.executable_workspace, bool):
+        if not 32 <= self.pids_limit <= 256 or not isinstance(self.executable_workspace, bool):
             raise ValueError("Invalid process or workspace execution request")
         if not isinstance(self.task_workspace, bool):
             raise ValueError("Task workspace flag must be boolean")
