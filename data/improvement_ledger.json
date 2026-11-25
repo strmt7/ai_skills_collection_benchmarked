@@ -372,12 +372,17 @@
           {
             "path": "artifacts/research/2026-11-25/swt-bench-calibration/review.json",
             "sha256": "c935b137990030308319bd4d16480c8206cc84ad8d48a5605ccd643672b44ff6"
+          },
+          {
+            "path": "artifacts/research/2026-11-25/testeval-grader-calibration/manifest.json",
+            "scope": "Independent TestEval and pytest calibration checks actual test outcomes separately from publisher coverage. Zero model attempts.",
+            "sha256": "454a45e7006df4a5351dda80de50cafd34c21cf41e74d1a1877be52d30bacfc6"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
         "resources": {
           "SKILL.md": {
-            "review_scope": "Reviewed evaluator independence, attempt accounting and repeated-attempt guidance against primary methodology and exact estimator controls.",
+            "review_scope": "Reviewed evaluator independence, attempt accounting and repeated-attempt guidance against primary methodology and exact estimator controls. The generated-test grader controls independently tested separate assertion and coverage outcomes.",
             "sha256": "49a5a10975860bb2d7e3c4e260ff19b6580e43f5fbc7770b32dece02dde48e49",
             "status": "reviewed"
           },
@@ -398,6 +403,16 @@
           {
             "path": "artifacts/research/2026-11-25/swt-bench-calibration/review.json",
             "sha256": "c935b137990030308319bd4d16480c8206cc84ad8d48a5605ccd643672b44ff6"
+          },
+          {
+            "path": "artifacts/research/2026-11-25/testeval-grader-calibration/manifest.json",
+            "scope": "Independent TestEval and pytest calibration checks actual test outcomes separately from publisher coverage. Zero model attempts.",
+            "sha256": "454a45e7006df4a5351dda80de50cafd34c21cf41e74d1a1877be52d30bacfc6"
+          },
+          {
+            "path": "included/improved/skills/eval-harness-integrity/SKILL.md",
+            "scope": "Active experimental overlay incorporates transferable findings from native grader calibration. No agent comparative measurement.",
+            "sha256": "1ca16b131a0e99e029a799e3f19f7ed56e7d7f31a11e0f7bab56a74c361f5127"
           }
         ],
         "status": "in_progress"
@@ -19373,7 +19388,7 @@
           {
             "path": "docs/research-slides-keyboard.md",
             "scope": "Source-bound slide template keyboard control; no agent efficacy or complete accessibility claim.",
-            "sha256": "ab76c01e546c8327603c4d7ad94b8fa4a3cb9d788fd4a375fe02c4c91b4f8230"
+            "sha256": "232841a7a9c8189e5839f9edd8efafee4cdd357c8c0360c17118cdfcc8feb89e"
           },
           {
             "path": "artifacts/research/2026-11-01/slides-keyboard-control/reproduce.cjs",
@@ -19403,6 +19418,11 @@
           {
             "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
             "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/slides-navigation-v1/qualification.json",
+            "scope": "Seventy-two independent browser controls across Windows and Linux using the supported single-document dependency graph. No model trial.",
+            "sha256": "22c798aa06650c85c07c5ce1921b849c5b845ee0e157152907fe3ffc551609f8"
           }
         ],
         "status": "in_progress"
@@ -19412,7 +19432,12 @@
           {
             "path": "included/repaired/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-slides/repair.json",
             "scope": "Maintained slide template with source-bound browser controls; full skill and agent effectiveness remain unqualified.",
-            "sha256": "31d78295882a16c205bca97833377072eaa48e9a94758646292913e50ca64816"
+            "sha256": "88d2dd192586762c54acca3d162153837d5e42d34195db10697e10b2507eaaef"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/slides-navigation-v1/qualification.json",
+            "scope": "Seventy-two independent browser controls across Windows and Linux using the supported single-document dependency graph. No model trial.",
+            "sha256": "22c798aa06650c85c07c5ce1921b849c5b845ee0e157152907fe3ffc551609f8"
           }
         ],
         "status": "in_progress"
@@ -23126,7 +23151,7 @@
         "evidence": [
           {
             "path": "artifacts/research/2026-11-10/image-dependency-refresh/review.json",
-            "sha256": "ded36b838d119d57050c6ef6657162fc994e153367a6ddf97caa6d5e35deeb2f"
+            "sha256": "fa80901efdb820e47bd16d0218e21e3e2a59a95fb559af7ec082231a6142c31a"
           }
         ],
         "status": "pending"
@@ -23200,7 +23225,7 @@
           },
           {
             "path": "artifacts/research/2026-11-10/image-dependency-refresh/review.json",
-            "sha256": "ded36b838d119d57050c6ef6657162fc994e153367a6ddf97caa6d5e35deeb2f"
+            "sha256": "fa80901efdb820e47bd16d0218e21e3e2a59a95fb559af7ec082231a6142c31a"
           },
           {
             "path": "artifacts/research/2026-11-25/dependency-consumer-controls/review.json",
@@ -23377,7 +23402,7 @@
           },
           {
             "path": "artifacts/research/2026-11-10/image-dependency-refresh/review.json",
-            "sha256": "ded36b838d119d57050c6ef6657162fc994e153367a6ddf97caa6d5e35deeb2f"
+            "sha256": "fa80901efdb820e47bd16d0218e21e3e2a59a95fb559af7ec082231a6142c31a"
           },
           {
             "path": "artifacts/research/2026-11-25/dependency-consumer-controls/review.json",

@@ -1,0 +1,58 @@
+{
+  "source_sha256": "fd5b051a37365fc6059c75bb388ec6f64daf1bd9ae938b287b6d762dc83c0c35",
+  "candidate_sha256": "090d3bb90fb22b97fdf6352e463bf7d61802fb1352592e40453c65312643384d",
+  "node_version": "v24.22.3",
+  "playwright_version": "1.65.1",
+  "platform": "linux",
+  "architecture": "x64",
+  "browser_engine": "firefox",
+  "browser_version": "159.0",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "original": {
+    "initial": {
+      "height": 844,
+      "scroll_height": 844,
+      "top": 0,
+      "tabindex": null,
+      "first_top": -287,
+      "slide_top": 0
+    },
+    "focused": false,
+    "wheel_scrolled": false,
+    "keyboard_scrolled": false,
+    "end": {
+      "top": 0,
+      "last_top": 1139,
+      "last_bottom": 1169,
+      "nav_top": 774,
+      "slide_top": 0,
+      "slide_bottom": 844
+    }
+  },
+  "repaired": {
+    "initial": {
+      "height": 844,
+      "scroll_height": 1598,
+      "top": 0,
+      "tabindex": "0",
+      "first_top": 62,
+      "slide_top": 0
+    },
+    "focused": true,
+    "wheel_scrolled": true,
+    "keyboard_scrolled": true,
+    "end": {
+      "top": 753.1666870117188,
+      "last_top": 734.8333129882812,
+      "last_bottom": 764.8333129882812,
+      "nav_top": 774,
+      "slide_top": 0,
+      "slide_bottom": 844
+    }
+  },
+  "full_accessibility_audit": false,
+  "agent_performance_tested": false
+}

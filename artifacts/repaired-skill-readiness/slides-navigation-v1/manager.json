@@ -1,0 +1,18 @@
+{
+  "version": "12.23.0",
+  "release": "https://github.com/pnpm/pnpm/releases/tag/v12.23.0",
+  "assets": {
+    "windows": {
+      "name": "pnpm-win32-x64.zip",
+      "url": "https://github.com/pnpm/pnpm/releases/download/v12.23.0/pnpm-win32-x64.zip",
+      "bytes": 24448120,
+      "sha256": "1a954bdc1b15ff036294279391d01a09407b7d46ff972a59d81f23becce96c1c"
+    },
+    "linux": {
+      "name": "pnpm-linux-x64.tar.gz",
+      "url": "https://github.com/pnpm/pnpm/releases/download/v12.23.0/pnpm-linux-x64.tar.gz",
+      "bytes": 28006349,
+      "sha256": "b515e29f2ac1adc0fbe63173414a6682827baff24f17e7ad3476821bdef236ac"
+    }
+  }
+}

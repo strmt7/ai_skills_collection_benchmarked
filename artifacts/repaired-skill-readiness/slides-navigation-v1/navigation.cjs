@@ -15,8 +15,8 @@ const source = fs.readFileSync(process.argv[3], 'utf8').replace(/\r\n/g, '\n');
 const candidate = fs.readFileSync(process.argv[4], 'utf8').replace(/\r\n/g, '\n');
 const sha = (data) => crypto.createHash('sha256').update(data).digest('hex');
 assert.equal(sha(source), 'fd5b051a37365fc6059c75bb388ec6f64daf1bd9ae938b287b6d762dc83c0c35');
-assert.equal(sha(candidate), '0ed28b587e769cd036f1f1e46f31dee7f9149c263ea8be8c95d4e51f3e1d908d');
-assert.equal(playwrightVersion, '1.64.1');
+assert.equal(sha(candidate), '090d3bb90fb22b97fdf6352e463bf7d61802fb1352592e40453c65312643384d');
+assert.equal(playwrightVersion, '1.65.1');
 const placeholder = '<!-- More slides... (always wrap content in .slide-content) -->';
 const second = `<div class="slide"><div class="slide-content"><h2>Second slide</h2>
   <input id="input" value="abcd"><textarea id="textarea">abcd</textarea>
@@ -59,7 +59,7 @@ function fixture(text) {
     });
     await page.setContent(fixture(text), { waitUntil: 'load', timeout: 15000 });
     const requests = blocked.slice(start);
-    const chartVersion = text === source ? '4.4.1' : '4.6.1';
+    const chartVersion = text === source ? '4.4.1' : '4.6.2';
     const expectedUrl = `https://cdn.jsdelivr.net/npm/chart.js@${chartVersion}/dist/chart.umd.min.js`;
     assert(requests.length >= 1 && requests.every((url) => url === expectedUrl));
     return page;

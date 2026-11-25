@@ -15,7 +15,7 @@ repository-root `docs/agent-tools.md` and the three linked skills, and retain
 the required execution evidence.
 
 This maintained overlay adapts the pinned upstream skill. Its HTML template
-updates Chart.js to 4.6.1, preserves tested interactive controls and makes
+updates Chart.js to 4.6.2, preserves tested interactive controls and makes
 oversized slides scrollable. The template also respects reduced-motion settings for its tested transitions and animation classes. A slide advances on its background or via the
 navigation controls; page shortcuts apply when an interactive element is not
 focused. When a slide region is focused, use the vertical arrows to scroll and

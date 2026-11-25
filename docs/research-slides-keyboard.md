@@ -1,4 +1,12 @@
-# Slide-template keyboard control
+# Keyboard and chart behavior in HTML slides
+
+Use the [maintained slides template](../included/repaired/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-slides/SKILL.md)
+for keyboard navigation, reduced-motion support and scrollable long slides.
+Localize the default labels and check the complete deck on the devices used
+for presenting. For a deck that must open without internet access, use a local
+copy of its pinned Chart.js bundle.
+
+## Original keyboard behavior
 
 The pinned `ckm:slides` skill includes an HTML slide template whose global
 Space-key handler also runs when a navigation button has focus. In a three-slide
@@ -35,13 +43,6 @@ unchanged. The control normalizes CRLF to LF and requires template SHA-256
 `fd5b051a37365fc6059c75bb388ec6f64daf1bd9ae938b287b6d762dc83c0c35`;
 a changed input was rejected. The original mirror is unchanged.
 
-To reproduce, install the exact Playwright version in an isolated project using
-the existing [Playwright repair lock](../included/repaired/skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-skill/package-lock.json).
-Run `node` on the reproducer with three arguments: the absolute path to the
-installed `playwright` module, the mirrored `references/html-template.md` path,
-and the absolute path to a Chromium-compatible browser executable. The recorded
-versions are a tested configuration, not a guarantee for other environments.
-
 The W3C page was read using the isolated Crawl4AI provider
 `0.9.5+catalog.portable4`; its retained native result SHA-256 is
 `6811910810a57f9efffdbba9f4b2972bf1297ad1a950bfd21e92be25f6e46b7c`.
@@ -68,20 +69,33 @@ describes reduced-motion preferences as one technique. Its reviewed Crawl4AI
 result has SHA-256
 `552c15d201223507e977fbbeffa4251fa3cb6c93b5f259d734095bc64e6febb1`.
 
-The template uses Chart.js 4.6.1. The exact package bundle rendered the line
-example's four expected values in the tested browser configurations; the CDN
-still requires network access unless a local copy is supplied. The component
-[controls and native results](../artifacts/repaired-skill-readiness/slides-navigation-v1/qualification.json)
-cover Chromium and WebKit on Windows and Chromium and Firefox on Linux, with
-Node 24.22.2 and 26.13.0. They exercise keyboard, pointer, touch, long-content
-scrolling, reduced motion, labels, and chart rendering in specified fixtures.
-Linux WebKit was not tested because its system libraries were unavailable;
-WebKit was exercised on Windows. These controls are not a full accessibility
-or assistive-technology audit, interactive chart test, model benchmark, or proof
-that the skill improves agent performance.
+The template uses Chart.js 4.6.2. Its exact package bundle rendered the four
+expected values in the line example. The 72 browser controls exercised keyboard,
+pointer, touch, overflow, reduced motion, labels and chart rendering with
+Playwright 1.65.1 and Node 24.22.3 and 26.13.1. The matrix covers Chromium and
+WebKit on Windows and Chromium and Firefox on Linux. The scope is the named
+fixtures and interactions. [Current evidence](../artifacts/repaired-skill-readiness/slides-navigation-v1/qualification.json)
 
-The [workflow](../.github/workflows/slides-navigation.yml) installs pinned npm,
-Playwright and Chart.js dependencies in temporary directories, runs the same
-controls on the four hosted configurations, and uploads the individual JSON
-results. Its browser installations are isolated to the job. The scripts also
-accept explicit paths to installed dependencies and the two template files.
+## Reproduce the current controls
+
+On Windows, use the managed development frontend and pass the path to one of
+the qualified Node executables. The runner fetches and verifies the pinned pnpm release asset,
+installs the exact frozen graph and provisions the two required browser engines.
+It writes a receipt for each check and uses a disposable cache by default.
+
+```powershell
+./dev.ps1 python artifacts/repaired-skill-readiness/slides-navigation-v1/reproduce.py --node $node --output .venv/slides-results
+```
+
+Use `--cache-root` with `--prepare-only` to provision a caller-owned cache,
+then `--offline` with the same cache to exercise the already provisioned
+dependencies. The hosted workflow runs that sequence on both platforms and
+uploads the preparation and control receipts. [Workflow](../.github/workflows/slides-navigation.yml) [pnpm frozen install](https://pnpm.io/cli/install) [Playwright browser installation](https://playwright.dev/docs/browsers)
+
+The runner pins pnpm 12.23.0 by version and verifies the publisher's native
+archive. The application lock uses pnpm's single-document format so GitHub can
+read the dependency graph. Both supported platforms resolved the same graph.
+[GitHub dependency graph support](https://docs.github.com/en/code-security/reference/supply-chain-security/dependency-graph-supported-package-ecosystems)
+
+The prior Node, Playwright and Chart.js controls remain available under their
+original Git revision. [Prior qualification](https://github.com/strmt7/ai_skills_collection_benchmarked/blob/a9552b3ef07ed2490134f255b8ad1ca87b54525a/artifacts/repaired-skill-readiness/slides-navigation-v1/qualification.json)

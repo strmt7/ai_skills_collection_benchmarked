@@ -11,7 +11,7 @@ Complete HTML structure with navigation, tokens, and Chart.js integration.
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presentation Title</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.6.1/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.6.2/dist/chart.umd.min.js"></script>
     <style>
         /* Paste embed-tokens.cjs output here */
         :root {

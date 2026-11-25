@@ -1,0 +1,146 @@
+{
+  "artifacts": {
+    ".gitattributes": "201834ac85a8b2ddc9f45d7ce5c5bdf850a46f2f37778838d12ac4b2786ef4fc",
+    "evidence/testeval-cleanup.native.txt": "0fd8ee77d0cabe3bfdd44ed62a42aa704ac8f25168de19f01c530827009f3d00",
+    "evidence/testeval-correct_assertion-evaluator.stdout.native": "6e0d817bfa8430a2862bb0f584d15a49fd470d03004121cf473fc854a0cc3f89",
+    "evidence/testeval-correct_assertion-pytest.exit.native.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "evidence/testeval-correct_assertion-pytest.published.xml": "87a165c0b78ca5da2df5eea3ece7a1f8be26a079a93b2c501a6b9f7cc12108fe",
+    "evidence/testeval-incorrect_assertion-evaluator.stdout.native": "6e0d817bfa8430a2862bb0f584d15a49fd470d03004121cf473fc854a0cc3f89",
+    "evidence/testeval-incorrect_assertion-pytest.exit.native.txt": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "evidence/testeval-incorrect_assertion-pytest.published.xml": "90e07c24d0e449c7b64744b8950475e144ee2c8af19c027de06f16ecaaad7a0f",
+    "evidence/testeval-no_call-evaluator.stdout.native": "8292e3dc0ecbc78cdf64af192756620d58f07fc403a182f1b37ad5eb745f2af9",
+    "evidence/testeval-no_call-pytest.exit.native.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "evidence/testeval-no_call-pytest.published.xml": "5d322243b3069441765a71b08e024959ece9c6b05ed8b9f9f9741be281a1029c",
+    "result.json": "887bac4262afb5d482c2987117ff5c91441fb179e5f83e7c10050eac60c2acac"
+  },
+  "cases": {
+    "correct_assertion": {
+      "expected_independent_tests": [
+        "test_control::test_findMedianSortedArrays"
+      ],
+      "independent_exit": {
+        "file": "testeval-correct_assertion-pytest.exit.native.txt",
+        "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+      },
+      "independent_junit": {
+        "file": "testeval-correct_assertion-pytest.published.xml",
+        "sha256": "87a165c0b78ca5da2df5eea3ece7a1f8be26a079a93b2c501a6b9f7cc12108fe"
+      },
+      "publisher_stdout": {
+        "file": "testeval-correct_assertion-evaluator.stdout.native",
+        "sha256": "6e0d817bfa8430a2862bb0f584d15a49fd470d03004121cf473fc854a0cc3f89"
+      }
+    },
+    "incorrect_assertion": {
+      "expected_independent_tests": [
+        "test_control::test_findMedianSortedArrays"
+      ],
+      "independent_exit": {
+        "file": "testeval-incorrect_assertion-pytest.exit.native.txt",
+        "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+      },
+      "independent_junit": {
+        "file": "testeval-incorrect_assertion-pytest.published.xml",
+        "sha256": "90e07c24d0e449c7b64744b8950475e144ee2c8af19c027de06f16ecaaad7a0f"
+      },
+      "publisher_stdout": {
+        "file": "testeval-incorrect_assertion-evaluator.stdout.native",
+        "sha256": "6e0d817bfa8430a2862bb0f584d15a49fd470d03004121cf473fc854a0cc3f89"
+      }
+    },
+    "no_call": {
+      "expected_independent_tests": [
+        "test_control::test_findMedianSortedArrays"
+      ],
+      "independent_exit": {
+        "file": "testeval-no_call-pytest.exit.native.txt",
+        "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+      },
+      "independent_junit": {
+        "file": "testeval-no_call-pytest.published.xml",
+        "sha256": "5d322243b3069441765a71b08e024959ece9c6b05ed8b9f9f9741be281a1029c"
+      },
+      "publisher_stdout": {
+        "file": "testeval-no_call-evaluator.stdout.native",
+        "sha256": "8292e3dc0ecbc78cdf64af192756620d58f07fc403a182f1b37ad5eb745f2af9"
+      }
+    }
+  },
+  "paper_capture": {
+    "native_result_sha256": "6311d0d81deef8796be97ee51bad2508ce8c36952e95f151d4ca9625ed4b1b98",
+    "native_url": "https://arxiv.org/abs/2406.04531",
+    "provider_version": "0.9.6+catalog.portable1",
+    "status_code": 200
+  },
+  "preserved_raw_evidence": {
+    "testeval-correct_assertion-pytest.native.xml": {
+      "original_sha256": "4159e319fc7f8584f88d3ed33e2a202864a3a7d1a22c7b866393365d0f894968",
+      "published_file": "testeval-correct_assertion-pytest.published.xml",
+      "transformation": "Remove host name attribute and serialize as LF UTF-8. Named cases, outcomes, counts and failure details are preserved."
+    },
+    "testeval-incorrect_assertion-pytest.native.xml": {
+      "original_sha256": "bb2dcf008b5cbc32f3ec09bbdc18380076bd2ce04416eea0524705ac1be0e3f3",
+      "published_file": "testeval-incorrect_assertion-pytest.published.xml",
+      "transformation": "Remove host name attribute and serialize as LF UTF-8. Named cases, outcomes, counts and failure details are preserved."
+    },
+    "testeval-no_call-pytest.native.xml": {
+      "original_sha256": "d687c324e11cff6d7f45bc8341eb529c86ad5dcf9ae01612db60f3e4f1e3383a",
+      "published_file": "testeval-no_call-pytest.published.xml",
+      "transformation": "Remove host name attribute and serialize as LF UTF-8. Named cases, outcomes, counts and failure details are preserved."
+    }
+  },
+  "previous_skill_revision": {
+    "files": {
+      "included/improved/skills/eval-harness-integrity/SKILL.md": "cedb0e80d9736e2d7e9cbded2b6b9b2589620f2bcea4f3ecc6ac4231ce4454e9",
+      "included/improved/skills/eval-harness-integrity/references/grader-admission.md": "409257ede7bc6482b26e6a60e21cecf4cf4440ca35d05b6e536866a8299b39a7"
+    },
+    "git_commit": "a9552b3ef07ed2490134f255b8ad1ca87b54525a"
+  },
+  "publisher": {
+    "commit": "6f67dee71de6ccda1767b8c219a93f4ae0a7ce90",
+    "dataset_sha256": "a37bcaae5fd88c978254aff5633355c7c76a324ad90b8d965f6213e522e022bf",
+    "evaluator_sha256": "0bed65d444033cd33218e3a4c75bc0b65d12b1c6fe24d8939cfe96dca255f7e3",
+    "license": "MIT",
+    "license_sha256": "4ac6fffaca8dd7edfa5fd06a594d47dbaa08679493b1cc840004a8d5494d2bbd",
+    "paper": "https://arxiv.org/abs/2406.04531",
+    "repository": "https://github.com/LLM4SoftwareTesting/TestEval",
+    "tree": "89482d866f27fdc6151dbf7305a02762f2121ac4"
+  },
+  "schema_version": 1,
+  "scope": {
+    "comparison": {
+      "correct_assertion": {
+        "body": "assert solution.findMedianSortedArrays([1, 3], [2]) == 2",
+        "expected_native_exec": 1,
+        "independent_expected": "pass"
+      },
+      "incorrect_assertion": {
+        "body": "assert solution.findMedianSortedArrays([1, 3], [2]) == 3",
+        "expected_native_exec": 1,
+        "independent_expected": "fail"
+      },
+      "no_call": {
+        "body": "assert True",
+        "expected_native_exec": 0,
+        "independent_expected": "pass"
+      }
+    },
+    "model_attempts": 0,
+    "native_aggregate_preserved": true,
+    "partition": "public_development",
+    "reservation": "Development-exposed qualification of one task with hand-authored case controls",
+    "selection": "First case in publisher's weighted difficulty dataset order.",
+    "semantic_oracle": "The median of the merged sequence 1, 2, 3 is 2.",
+    "task_num": 4
+  },
+  "source_sha256": {
+    "included/improved/skills/eval-harness-integrity/SKILL.md": "1ca16b131a0e99e029a799e3f19f7ed56e7d7f31a11e0f7bab56a74c361f5127",
+    "included/improved/skills/eval-harness-integrity/references/grader-admission.md": "486860c572ce1b19abc79cf1457dc4c520c729e6365abe56b267bb87fe540395",
+    "tests/test_validate_testeval_calibration.py": "4f7f745486df3021e2141c9ae92c43a3ce2d8a966ad00a4a6a8a6a79be468fdc",
+    "tools/validate_testeval_calibration.py": "78ebb429156a9c8636bee3dc5a398f8362bbc71e30294f3626e9d7f9466b4129"
+  },
+  "terminal": {
+    "file": "testeval-cleanup.native.txt",
+    "sha256": "0fd8ee77d0cabe3bfdd44ed62a42aa704ac8f25168de19f01c530827009f3d00"
+  }
+}

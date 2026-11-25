@@ -36,6 +36,14 @@ outcome for each admitted case. Preserve the official metric and record any
 diagnostic count with its own definition and unit. Treat a report regenerated
 from the same results as evidence for the existing attempt.
 
+For test-generation tasks, evaluate a test with an independently known outcome
+using both the prescribed scorer and the project's regular test runner. Keep
+the target program fixed when changing a correct assertion to a wrong one.
+Verify which measurements change and whether both tests reach the same behavior.
+Use a trivially passing test to check that relevant reach is actually measured.
+Record assertion outcomes, coverage and verified bug detection in their own
+units. Carry forward the registered acceptance rule for every comparison arm.
+
 Publisher result tables, oracle controls and synthetic transport tests each
 support their recorded scope. A claim that a skill improves an agent requires
 independent task outcomes under the declared intervention.

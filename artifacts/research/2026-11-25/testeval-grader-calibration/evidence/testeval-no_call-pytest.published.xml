@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="1" time="0.018" timestamp="2026-11-25T14:31:21.086139+01:00"><testcase classname="test_control" name="test_findMedianSortedArrays" time="0.000" /></testsuite></testsuites>

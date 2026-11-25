@@ -7,8 +7,8 @@ const hash = (value) => crypto.createHash('sha256').update(value).digest('hex');
 const source = fs.readFileSync(process.argv[3], 'utf8').replace(/\r\n/g, '\n');
 const candidate = fs.readFileSync(process.argv[4], 'utf8').replace(/\r\n/g, '\n');
 assert.equal(hash(source), 'fd5b051a37365fc6059c75bb388ec6f64daf1bd9ae938b287b6d762dc83c0c35');
-assert.equal(hash(candidate), '0ed28b587e769cd036f1f1e46f31dee7f9149c263ea8be8c95d4e51f3e1d908d');
-assert.equal(require(`${process.argv[2]}/package.json`).version, '1.64.1');
+assert.equal(hash(candidate), '090d3bb90fb22b97fdf6352e463bf7d61802fb1352592e40453c65312643384d');
+assert.equal(require(`${process.argv[2]}/package.json`).version, '1.65.1');
 assert(['chromium', 'firefox', 'webkit'].includes(engine));
 function fixture(text) {
   const html = text.match(/```html\n([\s\S]*?)\n```/);
@@ -62,6 +62,6 @@ function fixture(text) {
       assert.equal(reduced[key].animation, 'none');
       assert.equal(reduced[key].opacity, '1');
     }
-    console.log(JSON.stringify({ source_sha256: hash(source), candidate_sha256: hash(candidate), source_fixture_sha256: hash(fixture(source)), candidate_fixture_sha256: hash(fixture(candidate)), node: process.version, platform: process.platform, arch: process.arch, browser_engine: engine, browser_version: browser.version(), playwright_version: '1.64.1', full_accessibility_audit: false, agent_performance_tested: false, results }, null, 2));
+    console.log(JSON.stringify({ source_sha256: hash(source), candidate_sha256: hash(candidate), source_fixture_sha256: hash(fixture(source)), candidate_fixture_sha256: hash(fixture(candidate)), node: process.version, platform: process.platform, arch: process.arch, browser_engine: engine, browser_version: browser.version(), playwright_version: '1.65.1', full_accessibility_audit: false, agent_performance_tested: false, results }, null, 2));
   } finally { await browser.close(); }
 })().catch((error) => { console.error(error); process.exitCode = 1; });

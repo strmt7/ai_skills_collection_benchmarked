@@ -1,0 +1,8 @@
+control.jsonl
+[1]
+1
+Syntax Correctness: 1.0
+Executable Correctness: 1.0
+line coverage@1 0.9090909090909091
+branch coverage@1 0.7
+Average Line Coverage: 0.9090909090909091, Average Branch Coverage: 0.7

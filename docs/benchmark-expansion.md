@@ -38,6 +38,21 @@ Both fresh attempts left the cached-completion counter at zero. The native
 per-case reports and test logs establish what ran. Both logs also record a
 post-test empty-patch reset error. The calibration used no model.
 
+The [TestEval calibration](../artifacts/research/2026-11-25/testeval-grader-calibration/manifest.json)
+ran one public development task through the publisher's evaluator and an
+independent pytest check. Correct and incorrect assertions reached the same
+lines and branches. Both received identical native scores, while pytest passed
+the correct assertion and failed the incorrect one. A passing test that made
+no call had zero measured reach. The [results](../artifacts/research/2026-11-25/testeval-grader-calibration/result.json)
+preserve each metric and outcome without a composite score. [TestEval paper](https://arxiv.org/abs/2406.04531)
+
+Recompute the results with `python tools/validate_testeval_calibration.py --check`.
+The manifest identifies the exact publisher revision, hand-authored controls
+and published evidence. The calibration used zero model attempts. TestGenEval
+provides a separate basis for future real-repository test authoring and completion
+studies. Its mutation evaluator and task split need their own qualification.
+[TestGenEval paper](https://arxiv.org/abs/2410.00752)
+
 ## What changes in our experiments
 
 The current SWE-Skills-Bench paper reports little aggregate benefit, while the

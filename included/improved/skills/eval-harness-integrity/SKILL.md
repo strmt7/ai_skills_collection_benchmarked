@@ -27,6 +27,9 @@ inputs and acceptance checks independent of the instructions under evaluation.
    keep unrelated valid behavior passing. Keep expected answers outside the
    subject workspace. Score observable behavior. Use blinded judgment only
    for criteria that executable checks cannot settle.
+   When evaluating generated tests, verify ordinary assertion execution and
+   coverage separately. Use a wrong expectation with the same code reach and
+   a passing test with no relevant reach to check what each metric can detect.
 3. **Admit each result.** Keep the declared task and scorer revisions, actual
    submission, native reports, exit or completion signal, scope checks, and
    resource observations together. Check that the scorer graded the submitted

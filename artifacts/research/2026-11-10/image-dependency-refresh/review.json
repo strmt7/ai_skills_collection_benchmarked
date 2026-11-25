@@ -49,5 +49,14 @@
     "The baseline count describes affected package records, not independent vulnerabilities.",
     "Native mocked-provider/resource checks do not establish real provider availability, visual quality, process-wide absence of network egress or model improvement.",
     "Linux qualification awaits the corresponding hosted workflow."
-  ]
+  ],
+  "historical_inputs": {
+    "git_commit": "a9552b3ef07ed2490134f255b8ad1ca87b54525a",
+    "files": {
+      "artifacts/research/2026-11-10/image-dependency-refresh/previous/assets/package-lock.json": "f52c586fde6c3bcc55b2ff4a59c848115e5ff583ca0605626546b9d51b7fe765",
+      "artifacts/research/2026-11-10/image-dependency-refresh/previous/assets/package.json": "a9785c35344878f6264a05a7e891275a5f620bb3aa3aeefbb41f135b3322898a",
+      "artifacts/research/2026-11-10/image-dependency-refresh/previous/references/source-files.json": "8163d95000a80975057fef2cf905fa2387613a817ce55131c4b2ba6563c2bbd6"
+    },
+    "scope": "The older image dependency inputs remain recoverable from the immutable revision. That graph is no longer in the active checkout."
+  }
 }

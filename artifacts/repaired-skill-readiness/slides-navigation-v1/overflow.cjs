@@ -9,8 +9,8 @@ const digest = (data) => crypto.createHash('sha256').update(data).digest('hex');
 const source = fs.readFileSync(process.argv[3], 'utf8').replace(/\r\n/g, '\n');
 const candidate = fs.readFileSync(process.argv[4], 'utf8').replace(/\r\n/g, '\n');
 assert.equal(digest(source), 'fd5b051a37365fc6059c75bb388ec6f64daf1bd9ae938b287b6d762dc83c0c35');
-assert.equal(digest(candidate), '0ed28b587e769cd036f1f1e46f31dee7f9149c263ea8be8c95d4e51f3e1d908d');
-assert.equal(require(`${process.argv[2]}/package.json`).version, '1.64.1');
+assert.equal(digest(candidate), '090d3bb90fb22b97fdf6352e463bf7d61802fb1352592e40453c65312643384d');
+assert.equal(require(`${process.argv[2]}/package.json`).version, '1.65.1');
 const placeholder = '<!-- More slides... (always wrap content in .slide-content) -->';
 const paragraphs = Array.from(
   { length: 32 },

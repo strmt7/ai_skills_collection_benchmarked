@@ -427,6 +427,39 @@
         "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/vaex-delayed-statistics/SKILL.md",
         "tools/prepare_image_cli_controls.py"
       ]
+    },
+    {
+      "id": "testeval-grader-calibration",
+      "review": {
+        "path": "artifacts/research/2026-11-25/testeval-grader-calibration/manifest.json",
+        "sha256": "454a45e7006df4a5351dda80de50cafd34c21cf41e74d1a1877be52d30bacfc6"
+      },
+      "sources": [
+        "included/improved/skills/eval-harness-integrity/SKILL.md",
+        "included/improved/skills/eval-harness-integrity/references/grader-admission.md",
+        "tools/validate_testeval_calibration.py",
+        "tests/test_validate_testeval_calibration.py"
+      ]
+    },
+    {
+      "id": "slides-browser-controls",
+      "review": {
+        "path": "artifacts/repaired-skill-readiness/slides-navigation-v1/qualification.json",
+        "sha256": "22c798aa06650c85c07c5ce1921b849c5b845ee0e157152907fe3ffc551609f8"
+      },
+      "sources": [
+        "artifacts/repaired-skill-readiness/slides-navigation-v1/reproduce.py",
+        "artifacts/repaired-skill-readiness/slides-navigation-v1/manager.json",
+        "artifacts/repaired-skill-readiness/slides-navigation-v1/dependencies/package.json",
+        "artifacts/repaired-skill-readiness/slides-navigation-v1/dependencies/pnpm-lock.yaml",
+        "artifacts/repaired-skill-readiness/slides-navigation-v1/labels.cjs",
+        "artifacts/repaired-skill-readiness/slides-navigation-v1/motion.cjs",
+        "artifacts/repaired-skill-readiness/slides-navigation-v1/navigation.cjs",
+        "artifacts/repaired-skill-readiness/slides-navigation-v1/chart.cjs",
+        "artifacts/repaired-skill-readiness/slides-navigation-v1/overflow.cjs",
+        "included/repaired/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-slides/SKILL.md",
+        "included/repaired/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-slides/references/html-template.md"
+      ]
     }
   ],
   "historical_reviews": [

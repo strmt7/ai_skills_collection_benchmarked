@@ -17,17 +17,17 @@ const bundle = fs.readFileSync(process.argv[5]);
 const digest = (data) => crypto.createHash('sha256').update(data).digest('hex');
 const expected = {
   '4.4.1': 'd2af8974e95271638772e9e9524db5b9a6f58d6ec2d5d781400447b4a31c681e',
-  '4.6.1': '87364cc2b2a76a6684929e7d6b80b18a897794db38400caff1fcf1791c6925d2',
+  '4.6.2': '3f288f4f26882c26b58931fb586a9b4f30370b5de38d69dc005b0bd05b08e113',
 };
 assert(
   [
     'fd5b051a37365fc6059c75bb388ec6f64daf1bd9ae938b287b6d762dc83c0c35',
-    '0ed28b587e769cd036f1f1e46f31dee7f9149c263ea8be8c95d4e51f3e1d908d',
+    '090d3bb90fb22b97fdf6352e463bf7d61802fb1352592e40453c65312643384d',
   ].includes(digest(reference)),
 );
 assert(expected[version]);
 assert.equal(digest(bundle), expected[version]);
-assert.equal(require(`${process.argv[2]}/package.json`).version, '1.64.1');
+assert.equal(require(`${process.argv[2]}/package.json`).version, '1.65.1');
 const blocks = [...reference.matchAll(/```html\n([\s\S]*?)\n```/g)].map((match) => match[1]);
 assert(blocks.length >= 2);
 const url = `https://cdn.jsdelivr.net/npm/chart.js@${version}/dist/chart.umd.min.js`;
@@ -36,8 +36,8 @@ if (html.includes('chart.js@4.4.1/')) {
   assert.equal(html.split('chart.js@4.4.1/').length, 2);
   html = html.replace('chart.js@4.4.1/', `chart.js@${version}/`);
 } else {
-  assert.equal(version, '4.6.1');
-  assert.equal(html.split('chart.js@4.6.1/').length, 2);
+  assert.equal(version, '4.6.2');
+  assert.equal(html.split('chart.js@4.6.2/').length, 2);
 }
 const anchor = '<p>Subtitle or tagline</p>';
 assert.equal(html.split(anchor).length, 2);
@@ -166,7 +166,7 @@ html = html.replace(anchor, `${anchor}\n${blocks[1]}`);
           fixture_sha256: digest(html),
           bundle_sha256: digest(bundle),
           node_version: process.version,
-          playwright_version: '1.64.1',
+          playwright_version: '1.65.1',
           platform: process.platform,
           architecture: process.arch,
           browser_engine: engine,

@@ -7,8 +7,8 @@ const source = fs.readFileSync(process.argv[3], 'utf8').replace(/\r\n/g, '\n');
 const candidate = fs.readFileSync(process.argv[4], 'utf8').replace(/\r\n/g, '\n');
 const sha = (data) => crypto.createHash('sha256').update(data).digest('hex');
 assert.equal(sha(source), 'fd5b051a37365fc6059c75bb388ec6f64daf1bd9ae938b287b6d762dc83c0c35');
-assert.equal(sha(candidate), '0ed28b587e769cd036f1f1e46f31dee7f9149c263ea8be8c95d4e51f3e1d908d');
-assert.equal(require(`${process.argv[2]}/package.json`).version, '1.64.1');
+assert.equal(sha(candidate), '090d3bb90fb22b97fdf6352e463bf7d61802fb1352592e40453c65312643384d');
+assert.equal(require(`${process.argv[2]}/package.json`).version, '1.65.1');
 assert(['chromium', 'firefox', 'webkit'].includes(engine));
 const placeholder = '<!-- More slides... (always wrap content in .slide-content) -->';
 const slides = `<div class="slide" id="no-heading"><div class="slide-content"><p>Text</p></div></div>
@@ -31,7 +31,7 @@ function fixture(text) {
     });
     try {
       await page.setContent(fixture(text), { waitUntil: 'load', timeout: 15000 });
-      const version = text === source ? '4.4.1' : '4.6.1';
+      const version = text === source ? '4.4.1' : '4.6.2';
       assert(
         blocked.length >= 1 &&
           blocked.every((url) => url === `https://cdn.jsdelivr.net/npm/chart.js@${version}/dist/chart.umd.min.js`),
@@ -94,7 +94,7 @@ function fixture(text) {
           source_fixture_sha256: sha(fixture(source)),
           candidate_fixture_sha256: sha(fixture(candidate)),
           node_version: process.version,
-          playwright_version: '1.64.1',
+          playwright_version: '1.65.1',
           platform: process.platform,
           architecture: process.arch,
           browser_engine: engine,

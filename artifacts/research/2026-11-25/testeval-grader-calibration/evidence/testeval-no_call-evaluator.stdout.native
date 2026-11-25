@@ -1,0 +1,9 @@
+control.jsonl
+[1]
+1
+func under test not called
+Syntax Correctness: 1.0
+Executable Correctness: 0.0
+line coverage@1 0.0
+branch coverage@1 0.0
+Average Line Coverage: 0.0, Average Branch Coverage: 0.0

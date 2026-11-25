@@ -1,0 +1,3 @@
+# Keep generated summaries portable and preserve native bytes.
+* text eol=lf
+evidence/*.native.* -text !eol

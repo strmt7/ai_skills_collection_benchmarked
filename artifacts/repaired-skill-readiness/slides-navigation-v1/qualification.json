@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "source_template_sha256": "fd5b051a37365fc6059c75bb388ec6f64daf1bd9ae938b287b6d762dc83c0c35",
-  "repaired_template_sha256": "0ed28b587e769cd036f1f1e46f31dee7f9149c263ea8be8c95d4e51f3e1d908d",
+  "repaired_template_sha256": "090d3bb90fb22b97fdf6352e463bf7d61802fb1352592e40453c65312643384d",
   "node_versions": [
-    "24.22.2",
-    "26.13.0"
+    "24.22.3",
+    "26.13.1"
   ],
   "platform_engines": {
     "windows": [
@@ -17,13 +17,545 @@
     ]
   },
   "receipt_count": 72,
-  "playwright_version": "1.64.1",
-  "chart_js_version": "4.6.1",
+  "playwright_version": "1.65.1",
+  "chart_js_version": "4.6.2",
+  "pnpm_version": "12.23.0",
+  "pnpm_lock_sha256": "755d2ace38bd47e1f63f175c4b49d416c9efe442ea6459e3f1ed8e14f2a240ab",
+  "reproduction_sha256": "59c0603b9d54a3a273d3f14d8bcfee1b7d92855322353e65d7b5cb89f1dea629",
+  "runs": [
+    {
+      "platform": "windows",
+      "node": "24.22.3",
+      "engines": [
+        "chromium",
+        "webkit"
+      ],
+      "offline_install": true,
+      "node_executable_sha256": "86fc4785327db5f5c7558dc6156c543b433c313e813a222e088086222ab4afa6",
+      "native_result_sha256": "e764732b4e7c5a0ddd85986b6ed75f614f96a93d1e8ce06e69929970011a59e1",
+      "cases": {
+        "chart-chromium-desktop": {
+          "file": "windows-node-24.22.3-chart-chromium-desktop.json",
+          "sha256": "545c7119e5e12367add02b52a087621548343ce2aa8b404381dfefd245635e81",
+          "native_sha256": "545c7119e5e12367add02b52a087621548343ce2aa8b404381dfefd245635e81"
+        },
+        "chart-chromium-landscape": {
+          "file": "windows-node-24.22.3-chart-chromium-landscape.json",
+          "sha256": "291c393519e7d5ab9c90198545cbd3e7fb41cc8a7a5029dc76ca99fc132dc315",
+          "native_sha256": "291c393519e7d5ab9c90198545cbd3e7fb41cc8a7a5029dc76ca99fc132dc315"
+        },
+        "chart-chromium-narrow": {
+          "file": "windows-node-24.22.3-chart-chromium-narrow.json",
+          "sha256": "c3d124a720cca406c613f803afe4511aca29cbd9eb97488bc1a31629acb8db45",
+          "native_sha256": "c3d124a720cca406c613f803afe4511aca29cbd9eb97488bc1a31629acb8db45"
+        },
+        "chart-webkit-desktop": {
+          "file": "windows-node-24.22.3-chart-webkit-desktop.json",
+          "sha256": "fa8e71571416541e3ecb6a624b7a737d85f9a9df95f1a273b28542b2fc848eb3",
+          "native_sha256": "fa8e71571416541e3ecb6a624b7a737d85f9a9df95f1a273b28542b2fc848eb3"
+        },
+        "chart-webkit-landscape": {
+          "file": "windows-node-24.22.3-chart-webkit-landscape.json",
+          "sha256": "ffd2d79fb2cdde826e5f70057b50c09b4e75ff97d9af0c0b21ed3a36ebc41d5d",
+          "native_sha256": "ffd2d79fb2cdde826e5f70057b50c09b4e75ff97d9af0c0b21ed3a36ebc41d5d"
+        },
+        "chart-webkit-narrow": {
+          "file": "windows-node-24.22.3-chart-webkit-narrow.json",
+          "sha256": "2ebd7af123dcf077140ee0b25178fbc0f85e4849d1a2472e30cb89ae4e227e6d",
+          "native_sha256": "2ebd7af123dcf077140ee0b25178fbc0f85e4849d1a2472e30cb89ae4e227e6d"
+        },
+        "labels-chromium": {
+          "file": "windows-node-24.22.3-labels-chromium.json",
+          "sha256": "048fec6885d9fed607257e74a3d6e06116fae2772c05113d51a2ac9196b7c5b7",
+          "native_sha256": "048fec6885d9fed607257e74a3d6e06116fae2772c05113d51a2ac9196b7c5b7"
+        },
+        "labels-webkit": {
+          "file": "windows-node-24.22.3-labels-webkit.json",
+          "sha256": "24904c9c07981fddb5e28f81f49f369aaece9253f2eaeb614b5e56d20ef79a71",
+          "native_sha256": "24904c9c07981fddb5e28f81f49f369aaece9253f2eaeb614b5e56d20ef79a71"
+        },
+        "motion-chromium": {
+          "file": "windows-node-24.22.3-motion-chromium.json",
+          "sha256": "0632b23dd9c39c608bd307db8752591ef15007c9b338e5954765381328cb44d6",
+          "native_sha256": "0632b23dd9c39c608bd307db8752591ef15007c9b338e5954765381328cb44d6"
+        },
+        "motion-webkit": {
+          "file": "windows-node-24.22.3-motion-webkit.json",
+          "sha256": "0bce30e57a8f534006c859b5ff57bf3cd70315c418607a6b8733b589de4bbf68",
+          "native_sha256": "0bce30e57a8f534006c859b5ff57bf3cd70315c418607a6b8733b589de4bbf68"
+        },
+        "navigation-chromium-desktop": {
+          "file": "windows-node-24.22.3-navigation-chromium-desktop.json",
+          "sha256": "db4a17567f23e86d591f96bfd856167a0bcde5f17266db6f2233045e733cea23",
+          "native_sha256": "db4a17567f23e86d591f96bfd856167a0bcde5f17266db6f2233045e733cea23"
+        },
+        "navigation-chromium-narrow": {
+          "file": "windows-node-24.22.3-navigation-chromium-narrow.json",
+          "sha256": "e74b0e9d604bca7101a3b829a9864463876c13776d78120bf5462408935f83be",
+          "native_sha256": "e74b0e9d604bca7101a3b829a9864463876c13776d78120bf5462408935f83be"
+        },
+        "navigation-webkit-desktop": {
+          "file": "windows-node-24.22.3-navigation-webkit-desktop.json",
+          "sha256": "ff36684edebe9f9fd3c4a2ccc3c08e7e43be7780a24b675d2ddf2ba326b717a6",
+          "native_sha256": "ff36684edebe9f9fd3c4a2ccc3c08e7e43be7780a24b675d2ddf2ba326b717a6"
+        },
+        "navigation-webkit-narrow": {
+          "file": "windows-node-24.22.3-navigation-webkit-narrow.json",
+          "sha256": "46e871224ad9fe713d56db27352a15edfe760c85c017fefbdfcef56fdecd5a8f",
+          "native_sha256": "46e871224ad9fe713d56db27352a15edfe760c85c017fefbdfcef56fdecd5a8f"
+        },
+        "overflow-chromium-landscape": {
+          "file": "windows-node-24.22.3-overflow-chromium-landscape.json",
+          "sha256": "374218f7bcb20238b1092c15031dc7714d6cf286d25d8607afd9540638bcae7e",
+          "native_sha256": "374218f7bcb20238b1092c15031dc7714d6cf286d25d8607afd9540638bcae7e"
+        },
+        "overflow-chromium-narrow": {
+          "file": "windows-node-24.22.3-overflow-chromium-narrow.json",
+          "sha256": "fa8b46868845fdb6ba17d8e9a21d06900d25f1bfdcb0c721fb8dcccc76b3dc01",
+          "native_sha256": "fa8b46868845fdb6ba17d8e9a21d06900d25f1bfdcb0c721fb8dcccc76b3dc01"
+        },
+        "overflow-webkit-landscape": {
+          "file": "windows-node-24.22.3-overflow-webkit-landscape.json",
+          "sha256": "81fd07ca014ae065b55b75ce753172112507fe78142aa5d03731ec7f96560307",
+          "native_sha256": "81fd07ca014ae065b55b75ce753172112507fe78142aa5d03731ec7f96560307"
+        },
+        "overflow-webkit-narrow": {
+          "file": "windows-node-24.22.3-overflow-webkit-narrow.json",
+          "sha256": "8f4ae256b9e9724f56ac517dc0cef2ec307a61406847dd52618ff1ca46d47950",
+          "native_sha256": "8f4ae256b9e9724f56ac517dc0cef2ec307a61406847dd52618ff1ca46d47950"
+        }
+      }
+    },
+    {
+      "platform": "windows",
+      "node": "26.13.1",
+      "engines": [
+        "chromium",
+        "webkit"
+      ],
+      "offline_install": true,
+      "node_executable_sha256": "f5109dc868ec38703ad8f305e0aceece717cb60d4889873f434017af4e96cccb",
+      "native_result_sha256": "27b0ba645537b9c676578dd504f5000d7c9c8d691d8e8737ddb45e0f9e8c0811",
+      "cases": {
+        "chart-chromium-desktop": {
+          "file": "windows-node-26.13.1-chart-chromium-desktop.json",
+          "sha256": "a459a218729ca8547880f04ebc5237d9239d440faef402854a2f6e1665469765",
+          "native_sha256": "a459a218729ca8547880f04ebc5237d9239d440faef402854a2f6e1665469765"
+        },
+        "chart-chromium-landscape": {
+          "file": "windows-node-26.13.1-chart-chromium-landscape.json",
+          "sha256": "e844818d58a7accc3b943447810c339bd4e630c05eecde6260909bb14174dde6",
+          "native_sha256": "e844818d58a7accc3b943447810c339bd4e630c05eecde6260909bb14174dde6"
+        },
+        "chart-chromium-narrow": {
+          "file": "windows-node-26.13.1-chart-chromium-narrow.json",
+          "sha256": "ef93bdac59a9cead984a37f7023c64e85a924fbdf96d187a2a4a55c65939582a",
+          "native_sha256": "ef93bdac59a9cead984a37f7023c64e85a924fbdf96d187a2a4a55c65939582a"
+        },
+        "chart-webkit-desktop": {
+          "file": "windows-node-26.13.1-chart-webkit-desktop.json",
+          "sha256": "58a82407236619c205da2c03d992e67d18d567860df9ecf28faa683a40f992ef",
+          "native_sha256": "58a82407236619c205da2c03d992e67d18d567860df9ecf28faa683a40f992ef"
+        },
+        "chart-webkit-landscape": {
+          "file": "windows-node-26.13.1-chart-webkit-landscape.json",
+          "sha256": "9d213c83858237fb87b668c6fae4b8991cd1fcb51d0f22cbd6b963b94dafb6c7",
+          "native_sha256": "9d213c83858237fb87b668c6fae4b8991cd1fcb51d0f22cbd6b963b94dafb6c7"
+        },
+        "chart-webkit-narrow": {
+          "file": "windows-node-26.13.1-chart-webkit-narrow.json",
+          "sha256": "31b7aba54cfaddfb6f2383249ba80ddd1df8bed348c879e868d3f584543e1d3d",
+          "native_sha256": "31b7aba54cfaddfb6f2383249ba80ddd1df8bed348c879e868d3f584543e1d3d"
+        },
+        "labels-chromium": {
+          "file": "windows-node-26.13.1-labels-chromium.json",
+          "sha256": "fee027f26129e0d8ca85c7e1fe6837874496dd652c45c44bafbe0dc558404759",
+          "native_sha256": "fee027f26129e0d8ca85c7e1fe6837874496dd652c45c44bafbe0dc558404759"
+        },
+        "labels-webkit": {
+          "file": "windows-node-26.13.1-labels-webkit.json",
+          "sha256": "091903049f1df7d313dd9c3adb904e4ff8d92b92fe0ea4353cff8ce4a9b9199f",
+          "native_sha256": "091903049f1df7d313dd9c3adb904e4ff8d92b92fe0ea4353cff8ce4a9b9199f"
+        },
+        "motion-chromium": {
+          "file": "windows-node-26.13.1-motion-chromium.json",
+          "sha256": "4b5f32a90061a0181611d0861a5a9ee0869475a6b73f0ff584ad6d40f0fb5b59",
+          "native_sha256": "4b5f32a90061a0181611d0861a5a9ee0869475a6b73f0ff584ad6d40f0fb5b59"
+        },
+        "motion-webkit": {
+          "file": "windows-node-26.13.1-motion-webkit.json",
+          "sha256": "db1c6e142a67c6ff34edf701b47957ea2afd724767e61ba3e17a5cab39b77ff1",
+          "native_sha256": "db1c6e142a67c6ff34edf701b47957ea2afd724767e61ba3e17a5cab39b77ff1"
+        },
+        "navigation-chromium-desktop": {
+          "file": "windows-node-26.13.1-navigation-chromium-desktop.json",
+          "sha256": "9924613f4378e1afe0d9ebb023733994102f73889437a91dfc7dbb23bfa1b9d9",
+          "native_sha256": "9924613f4378e1afe0d9ebb023733994102f73889437a91dfc7dbb23bfa1b9d9"
+        },
+        "navigation-chromium-narrow": {
+          "file": "windows-node-26.13.1-navigation-chromium-narrow.json",
+          "sha256": "de16fbfa3ccb0f836b082f624fcc5c4275a0e112839b4561dcfd274dcbd0b868",
+          "native_sha256": "de16fbfa3ccb0f836b082f624fcc5c4275a0e112839b4561dcfd274dcbd0b868"
+        },
+        "navigation-webkit-desktop": {
+          "file": "windows-node-26.13.1-navigation-webkit-desktop.json",
+          "sha256": "f6ca7daa8b76cda22cf87fbb545110e46a23a984823422f5507286777bba850f",
+          "native_sha256": "f6ca7daa8b76cda22cf87fbb545110e46a23a984823422f5507286777bba850f"
+        },
+        "navigation-webkit-narrow": {
+          "file": "windows-node-26.13.1-navigation-webkit-narrow.json",
+          "sha256": "c2ef1508fca9b08fe92ab93cbeb38569b829fdc8ff14c8089e945c5b924006b2",
+          "native_sha256": "c2ef1508fca9b08fe92ab93cbeb38569b829fdc8ff14c8089e945c5b924006b2"
+        },
+        "overflow-chromium-landscape": {
+          "file": "windows-node-26.13.1-overflow-chromium-landscape.json",
+          "sha256": "e05c57332702104b7a62a9feeb3eb95b1324f1673f345a9a72adb3bd9463e432",
+          "native_sha256": "e05c57332702104b7a62a9feeb3eb95b1324f1673f345a9a72adb3bd9463e432"
+        },
+        "overflow-chromium-narrow": {
+          "file": "windows-node-26.13.1-overflow-chromium-narrow.json",
+          "sha256": "914dd3a3bef554163415c4b2846c7b45b6eba0d58c960570a57c2ab8d55ec46d",
+          "native_sha256": "914dd3a3bef554163415c4b2846c7b45b6eba0d58c960570a57c2ab8d55ec46d"
+        },
+        "overflow-webkit-landscape": {
+          "file": "windows-node-26.13.1-overflow-webkit-landscape.json",
+          "sha256": "8d34dcab4697664a5817703f997d8d4718b64a0b1eb2d2766367f6c7f415e424",
+          "native_sha256": "8d34dcab4697664a5817703f997d8d4718b64a0b1eb2d2766367f6c7f415e424"
+        },
+        "overflow-webkit-narrow": {
+          "file": "windows-node-26.13.1-overflow-webkit-narrow.json",
+          "sha256": "287b8dc766a2d1aa24a7a9a56aee2186e759e9a552e5807e19bc770bf8a4c72d",
+          "native_sha256": "287b8dc766a2d1aa24a7a9a56aee2186e759e9a552e5807e19bc770bf8a4c72d"
+        }
+      }
+    },
+    {
+      "platform": "linux",
+      "node": "24.22.3",
+      "engines": [
+        "chromium",
+        "firefox"
+      ],
+      "offline_install": false,
+      "node_executable_sha256": "a7ec1b37e6ff9d187e4198c5b6df9a4eb1c74dd31804fb3bac55cc4ceca1ac01",
+      "native_result_sha256": "d55e44226aa1a665413bc8ec50e1aa12bcdab55e969a9a949d3fd75d7f4a446f",
+      "cases": {
+        "chart-chromium-desktop": {
+          "file": "linux-node-24.22.3-chart-chromium-desktop.json",
+          "sha256": "9a0e92d643c327f6747251d59c3d980c7d3f6875391b3d60b8f6965b3cf1cfcd",
+          "native_sha256": "9a0e92d643c327f6747251d59c3d980c7d3f6875391b3d60b8f6965b3cf1cfcd"
+        },
+        "chart-chromium-landscape": {
+          "file": "linux-node-24.22.3-chart-chromium-landscape.json",
+          "sha256": "f1229b0c2332aa9ef3c3dc6b464fdc9d86658a506e1d238e139b967c604da64a",
+          "native_sha256": "f1229b0c2332aa9ef3c3dc6b464fdc9d86658a506e1d238e139b967c604da64a"
+        },
+        "chart-chromium-narrow": {
+          "file": "linux-node-24.22.3-chart-chromium-narrow.json",
+          "sha256": "c1706eef906eb2b9ed2f74120c2e1fe1f09bf69929db77b6274d89c2f163f82b",
+          "native_sha256": "c1706eef906eb2b9ed2f74120c2e1fe1f09bf69929db77b6274d89c2f163f82b"
+        },
+        "chart-firefox-desktop": {
+          "file": "linux-node-24.22.3-chart-firefox-desktop.json",
+          "sha256": "a2fe732cdf989d6619f21276a48ed8aa54652d7fab098473c30140c566a9d3ed",
+          "native_sha256": "a2fe732cdf989d6619f21276a48ed8aa54652d7fab098473c30140c566a9d3ed"
+        },
+        "chart-firefox-landscape": {
+          "file": "linux-node-24.22.3-chart-firefox-landscape.json",
+          "sha256": "d2e64c7473b2f113606c7dd481917860a34b1cddf60f8ea40372113a68414c9e",
+          "native_sha256": "d2e64c7473b2f113606c7dd481917860a34b1cddf60f8ea40372113a68414c9e"
+        },
+        "chart-firefox-narrow": {
+          "file": "linux-node-24.22.3-chart-firefox-narrow.json",
+          "sha256": "6de82c42eb3c3c8bf5b9b06c56c9032c5876175a3a1b5272e2054060ddd18ade",
+          "native_sha256": "6de82c42eb3c3c8bf5b9b06c56c9032c5876175a3a1b5272e2054060ddd18ade"
+        },
+        "labels-chromium": {
+          "file": "linux-node-24.22.3-labels-chromium.json",
+          "sha256": "6c5087c6a86fd6b09995c8e3a56bd62e2e248ccf7638c6a4c15e73bcd77fe995",
+          "native_sha256": "6c5087c6a86fd6b09995c8e3a56bd62e2e248ccf7638c6a4c15e73bcd77fe995"
+        },
+        "labels-firefox": {
+          "file": "linux-node-24.22.3-labels-firefox.json",
+          "sha256": "658a215c70a569cd983d50beb690e9f46ba5e95c3b8f624acc29ebb7679d4175",
+          "native_sha256": "658a215c70a569cd983d50beb690e9f46ba5e95c3b8f624acc29ebb7679d4175"
+        },
+        "motion-chromium": {
+          "file": "linux-node-24.22.3-motion-chromium.json",
+          "sha256": "2e9eac024cd3e4b36cf714d998cb2e2810c504678d3be27f135893877d4be813",
+          "native_sha256": "2e9eac024cd3e4b36cf714d998cb2e2810c504678d3be27f135893877d4be813"
+        },
+        "motion-firefox": {
+          "file": "linux-node-24.22.3-motion-firefox.json",
+          "sha256": "857ce169bbd64259801e87d7bf6a71a4e86a4febde427045703ab32f482e93c4",
+          "native_sha256": "857ce169bbd64259801e87d7bf6a71a4e86a4febde427045703ab32f482e93c4"
+        },
+        "navigation-chromium-desktop": {
+          "file": "linux-node-24.22.3-navigation-chromium-desktop.json",
+          "sha256": "482b3c4674b36c711c7c9a299cdca240cd393aec1f710d89da580ea6337dc280",
+          "native_sha256": "482b3c4674b36c711c7c9a299cdca240cd393aec1f710d89da580ea6337dc280"
+        },
+        "navigation-chromium-narrow": {
+          "file": "linux-node-24.22.3-navigation-chromium-narrow.json",
+          "sha256": "ea8f6f4ce28357d0ad9dc8a40d2781a8e0112570bc912aa5f08bae72d80327b1",
+          "native_sha256": "ea8f6f4ce28357d0ad9dc8a40d2781a8e0112570bc912aa5f08bae72d80327b1"
+        },
+        "navigation-firefox-desktop": {
+          "file": "linux-node-24.22.3-navigation-firefox-desktop.json",
+          "sha256": "83811660378db6d460cd237e3e730a420fa452b25cc0a7da95247e43426472a5",
+          "native_sha256": "83811660378db6d460cd237e3e730a420fa452b25cc0a7da95247e43426472a5"
+        },
+        "navigation-firefox-narrow": {
+          "file": "linux-node-24.22.3-navigation-firefox-narrow.json",
+          "sha256": "cc76589f78dec332231221365995024787667b6abb17dc8181568348bd2a05ad",
+          "native_sha256": "cc76589f78dec332231221365995024787667b6abb17dc8181568348bd2a05ad"
+        },
+        "overflow-chromium-landscape": {
+          "file": "linux-node-24.22.3-overflow-chromium-landscape.json",
+          "sha256": "60a72a38e6ce06c7e83c66180cde38500a093809d81cfaaf67fe07eeb5d39105",
+          "native_sha256": "60a72a38e6ce06c7e83c66180cde38500a093809d81cfaaf67fe07eeb5d39105"
+        },
+        "overflow-chromium-narrow": {
+          "file": "linux-node-24.22.3-overflow-chromium-narrow.json",
+          "sha256": "6dabbeec088f249bc21a21a632ab69769c74c616b946b12fe4b5409efb91dffa",
+          "native_sha256": "6dabbeec088f249bc21a21a632ab69769c74c616b946b12fe4b5409efb91dffa"
+        },
+        "overflow-firefox-landscape": {
+          "file": "linux-node-24.22.3-overflow-firefox-landscape.json",
+          "sha256": "3da51a9bfc18f419b121c49441e90abd56e82e9382b5fb593a23f5a06ac21b6a",
+          "native_sha256": "3da51a9bfc18f419b121c49441e90abd56e82e9382b5fb593a23f5a06ac21b6a"
+        },
+        "overflow-firefox-narrow": {
+          "file": "linux-node-24.22.3-overflow-firefox-narrow.json",
+          "sha256": "f74fec5968340cab95a6cc9dfb6f54e284672f054b83be6ff61681ff5e6f16de",
+          "native_sha256": "f74fec5968340cab95a6cc9dfb6f54e284672f054b83be6ff61681ff5e6f16de"
+        }
+      }
+    },
+    {
+      "platform": "linux",
+      "node": "26.13.1",
+      "engines": [
+        "chromium",
+        "firefox"
+      ],
+      "offline_install": true,
+      "node_executable_sha256": "d931c649850ffa7155b8ceffb400dc916ef325866e509cc52ae36e33e8fbb9a9",
+      "native_result_sha256": "6e5ac5a12482c6c26dfb566398f7ad490ba3da78a2aca18e2db50dc793d21639",
+      "cases": {
+        "chart-chromium-desktop": {
+          "file": "linux-node-26.13.1-chart-chromium-desktop.json",
+          "sha256": "aa5e29ddcbc78f02de6271c42eb279b7b8e07f3c81eea84f6829e1d263c57935",
+          "native_sha256": "aa5e29ddcbc78f02de6271c42eb279b7b8e07f3c81eea84f6829e1d263c57935"
+        },
+        "chart-chromium-landscape": {
+          "file": "linux-node-26.13.1-chart-chromium-landscape.json",
+          "sha256": "314579c670b9fee346de88f7fd568bfb1d6b687c1d1d8f7e595f10738fefcba0",
+          "native_sha256": "314579c670b9fee346de88f7fd568bfb1d6b687c1d1d8f7e595f10738fefcba0"
+        },
+        "chart-chromium-narrow": {
+          "file": "linux-node-26.13.1-chart-chromium-narrow.json",
+          "sha256": "c118e8890ac0840529ffe425d27a71e4adc1f21a2ef914a72dea205c86b94880",
+          "native_sha256": "c118e8890ac0840529ffe425d27a71e4adc1f21a2ef914a72dea205c86b94880"
+        },
+        "chart-firefox-desktop": {
+          "file": "linux-node-26.13.1-chart-firefox-desktop.json",
+          "sha256": "54d00f6beaed095518f900d6b18aa980e4f2007df8df86b01595e630bff2b428",
+          "native_sha256": "54d00f6beaed095518f900d6b18aa980e4f2007df8df86b01595e630bff2b428"
+        },
+        "chart-firefox-landscape": {
+          "file": "linux-node-26.13.1-chart-firefox-landscape.json",
+          "sha256": "ba3e7b3353e9cc4629f6c299b1b0b8185cf8ad090ac3c753e6d3570a0d55f49a",
+          "native_sha256": "ba3e7b3353e9cc4629f6c299b1b0b8185cf8ad090ac3c753e6d3570a0d55f49a"
+        },
+        "chart-firefox-narrow": {
+          "file": "linux-node-26.13.1-chart-firefox-narrow.json",
+          "sha256": "197870c484a6c6af9049beda3ed65114c1ab289abdc001d65dd6ec2de24062ad",
+          "native_sha256": "197870c484a6c6af9049beda3ed65114c1ab289abdc001d65dd6ec2de24062ad"
+        },
+        "labels-chromium": {
+          "file": "linux-node-26.13.1-labels-chromium.json",
+          "sha256": "72b79a0c059a865d9755102a784fb0e3e1c75d2df93140337b94e5056677dc7d",
+          "native_sha256": "72b79a0c059a865d9755102a784fb0e3e1c75d2df93140337b94e5056677dc7d"
+        },
+        "labels-firefox": {
+          "file": "linux-node-26.13.1-labels-firefox.json",
+          "sha256": "e98226b1e535343c27d49d19cb1df6dfe9055cec4da2ebe3200f82e7d9668945",
+          "native_sha256": "e98226b1e535343c27d49d19cb1df6dfe9055cec4da2ebe3200f82e7d9668945"
+        },
+        "motion-chromium": {
+          "file": "linux-node-26.13.1-motion-chromium.json",
+          "sha256": "a6597ed1b78ff5d71170ec1cb606036040533b560aec07640cf677a064e6bf7b",
+          "native_sha256": "a6597ed1b78ff5d71170ec1cb606036040533b560aec07640cf677a064e6bf7b"
+        },
+        "motion-firefox": {
+          "file": "linux-node-26.13.1-motion-firefox.json",
+          "sha256": "c52c3db2447d904bb3f7184995da67a075cf97140d341e4df9a689acb49bc218",
+          "native_sha256": "c52c3db2447d904bb3f7184995da67a075cf97140d341e4df9a689acb49bc218"
+        },
+        "navigation-chromium-desktop": {
+          "file": "linux-node-26.13.1-navigation-chromium-desktop.json",
+          "sha256": "0791e87aff89fa16731ecaf9a3c2a78ca232de919725d59947f5b703240ef5c6",
+          "native_sha256": "0791e87aff89fa16731ecaf9a3c2a78ca232de919725d59947f5b703240ef5c6"
+        },
+        "navigation-chromium-narrow": {
+          "file": "linux-node-26.13.1-navigation-chromium-narrow.json",
+          "sha256": "9e76e28411261c613692f4233bda566400eb2a3906b5c5d3996d1e1afe8dfefe",
+          "native_sha256": "9e76e28411261c613692f4233bda566400eb2a3906b5c5d3996d1e1afe8dfefe"
+        },
+        "navigation-firefox-desktop": {
+          "file": "linux-node-26.13.1-navigation-firefox-desktop.json",
+          "sha256": "1ba6a654ab8dd01b87fde93bb9ab6b6a313421716f8de41c03cb5162db7f155d",
+          "native_sha256": "1ba6a654ab8dd01b87fde93bb9ab6b6a313421716f8de41c03cb5162db7f155d"
+        },
+        "navigation-firefox-narrow": {
+          "file": "linux-node-26.13.1-navigation-firefox-narrow.json",
+          "sha256": "a15a4108a50888cd73684ddfb728da69539412b66711f8bdb161230f783c55db",
+          "native_sha256": "a15a4108a50888cd73684ddfb728da69539412b66711f8bdb161230f783c55db"
+        },
+        "overflow-chromium-landscape": {
+          "file": "linux-node-26.13.1-overflow-chromium-landscape.json",
+          "sha256": "85d53fb7698ed1f8a2d84463d879b3a73dadc8a0311b33cf8fbddcf8adc915b4",
+          "native_sha256": "85d53fb7698ed1f8a2d84463d879b3a73dadc8a0311b33cf8fbddcf8adc915b4"
+        },
+        "overflow-chromium-narrow": {
+          "file": "linux-node-26.13.1-overflow-chromium-narrow.json",
+          "sha256": "f69fa778007d92e7ebf9287f65d04498ce527051e9dce867fde0884967933720",
+          "native_sha256": "f69fa778007d92e7ebf9287f65d04498ce527051e9dce867fde0884967933720"
+        },
+        "overflow-firefox-landscape": {
+          "file": "linux-node-26.13.1-overflow-firefox-landscape.json",
+          "sha256": "f189340bf7db9d4dad31c4e6a2bfef239055946e70a7013a5d2e6a016db2648f",
+          "native_sha256": "f189340bf7db9d4dad31c4e6a2bfef239055946e70a7013a5d2e6a016db2648f"
+        },
+        "overflow-firefox-narrow": {
+          "file": "linux-node-26.13.1-overflow-firefox-narrow.json",
+          "sha256": "0314dc44d8e46a87be3653d20ad161faaa6bb2d27e1ac7ebd405baf3b4acaaf7",
+          "native_sha256": "0314dc44d8e46a87be3653d20ad161faaa6bb2d27e1ac7ebd405baf3b4acaaf7"
+        }
+      }
+    }
+  ],
+  "prior_qualification": {
+    "git_commit": "a9552b3ef07ed2490134f255b8ad1ca87b54525a",
+    "path": "artifacts/repaired-skill-readiness/slides-navigation-v1/qualification.json",
+    "sha256": "b55c53c2e3c3226629ea25c7f10db8ca75d8b69ba7d379feddc30e091981c72e"
+  },
   "full_accessibility_audit": false,
   "agent_performance_tested": false,
-  "notes": [
-    "Component controls only; no model benchmark.",
-    "Linux WebKit could not launch without additional system libraries; Windows WebKit was tested.",
-    "The unchanged upstream animate-count example names an undefined countUp keyframe."
-  ]
+  "package_manager_qualification": {
+    "windows_graph_native_sha256": "2c2441c0f0221bc96f2756f728f87ffcfc4da046c99b0478a3e835c8dcccf334",
+    "linux_graph_native_sha256": "121d28c8c71ade57648b3c82e0f13e45e898c8eabbcf5fe459ac76b02d1439a1",
+    "single_document": true,
+    "two_document_application_graph_equal": true,
+    "source_guidance": [
+      {
+        "url": "https://docs.github.com/en/code-security/reference/supply-chain-security/dependency-graph-supported-package-ecosystems",
+        "native_result_sha256": "2f67c57705fcd6abb1f61acdd878236894c7ce877412f12b0438d476cae8230f"
+      },
+      {
+        "url": "https://docs.github.com/en/code-security/reference/supply-chain-security/supported-ecosystems-and-repositories",
+        "native_result_sha256": "b7cb6e54772171cd17eb299e60e16e10f4cddafeb28462b1c26a170ccec6ecdf"
+      },
+      {
+        "url": "https://pnpm.io/lockfile",
+        "native_result_sha256": "ef6ac5318dcedc518b54ad25abf773c9605e971900e2432a3a1bc78383d3efaf"
+      },
+      {
+        "url": "https://pnpm.io/cli/install",
+        "native_result_sha256": "881bedf78a0fa2680d2fc215133153bef0e90fc619d281349735859e4f100617"
+      },
+      {
+        "url": "https://playwright.dev/docs/browsers",
+        "native_result_sha256": "e37c08277312557e3ce02f50fb0c6e0ba48c2e6cb154d82d539148c56be2cac6"
+      }
+    ]
+  },
+  "source_sha256": {
+    "artifacts/repaired-skill-readiness/slides-navigation-v1/reproduce.py": "59c0603b9d54a3a273d3f14d8bcfee1b7d92855322353e65d7b5cb89f1dea629",
+    "artifacts/repaired-skill-readiness/slides-navigation-v1/manager.json": "2d298b2dbba0176d68cb5c778dcbf43a566fa0d0f5dbc862f6e2a7b9d1c397e2",
+    "artifacts/repaired-skill-readiness/slides-navigation-v1/dependencies/package.json": "f415d03eca561692809dadf13d18a69b9b1462a51e73b1f1cf459cd5f7bde9f6",
+    "artifacts/repaired-skill-readiness/slides-navigation-v1/dependencies/pnpm-lock.yaml": "755d2ace38bd47e1f63f175c4b49d416c9efe442ea6459e3f1ed8e14f2a240ab",
+    "artifacts/repaired-skill-readiness/slides-navigation-v1/labels.cjs": "ffa45adb72127185ed4d161012cb7184b87b3fed32e2e038fe3001529b5461af",
+    "artifacts/repaired-skill-readiness/slides-navigation-v1/motion.cjs": "40d1cc58b86640479760a654c8a61d03981bf0559ca7a17fbbac6a81da6276b9",
+    "artifacts/repaired-skill-readiness/slides-navigation-v1/navigation.cjs": "aa4954943038ca81a132083ff694d2a003ea856c70c7bd6b40c8f970ae0c4185",
+    "artifacts/repaired-skill-readiness/slides-navigation-v1/chart.cjs": "1b730a037fc8dbc35aca4e3e77e0f704b83c6df4eb520adacf49a7304acb8fe4",
+    "artifacts/repaired-skill-readiness/slides-navigation-v1/overflow.cjs": "d7a867b5aee79fae03589032e8fdef057adcf6591c04730b6bb342191925ad44",
+    "included/repaired/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-slides/SKILL.md": "659acd0ad156ae2663421b74412e4b16d9e9d4d3ee7603187e15e3422b55ba0a",
+    "included/repaired/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-slides/references/html-template.md": "090d3bb90fb22b97fdf6352e463bf7d61802fb1352592e40453c65312643384d"
+  },
+  "artifacts": {
+    "results/linux-node-24.22.3-chart-chromium-desktop.json": "9a0e92d643c327f6747251d59c3d980c7d3f6875391b3d60b8f6965b3cf1cfcd",
+    "results/linux-node-24.22.3-chart-chromium-landscape.json": "f1229b0c2332aa9ef3c3dc6b464fdc9d86658a506e1d238e139b967c604da64a",
+    "results/linux-node-24.22.3-chart-chromium-narrow.json": "c1706eef906eb2b9ed2f74120c2e1fe1f09bf69929db77b6274d89c2f163f82b",
+    "results/linux-node-24.22.3-chart-firefox-desktop.json": "a2fe732cdf989d6619f21276a48ed8aa54652d7fab098473c30140c566a9d3ed",
+    "results/linux-node-24.22.3-chart-firefox-landscape.json": "d2e64c7473b2f113606c7dd481917860a34b1cddf60f8ea40372113a68414c9e",
+    "results/linux-node-24.22.3-chart-firefox-narrow.json": "6de82c42eb3c3c8bf5b9b06c56c9032c5876175a3a1b5272e2054060ddd18ade",
+    "results/linux-node-24.22.3-labels-chromium.json": "6c5087c6a86fd6b09995c8e3a56bd62e2e248ccf7638c6a4c15e73bcd77fe995",
+    "results/linux-node-24.22.3-labels-firefox.json": "658a215c70a569cd983d50beb690e9f46ba5e95c3b8f624acc29ebb7679d4175",
+    "results/linux-node-24.22.3-motion-chromium.json": "2e9eac024cd3e4b36cf714d998cb2e2810c504678d3be27f135893877d4be813",
+    "results/linux-node-24.22.3-motion-firefox.json": "857ce169bbd64259801e87d7bf6a71a4e86a4febde427045703ab32f482e93c4",
+    "results/linux-node-24.22.3-navigation-chromium-desktop.json": "482b3c4674b36c711c7c9a299cdca240cd393aec1f710d89da580ea6337dc280",
+    "results/linux-node-24.22.3-navigation-chromium-narrow.json": "ea8f6f4ce28357d0ad9dc8a40d2781a8e0112570bc912aa5f08bae72d80327b1",
+    "results/linux-node-24.22.3-navigation-firefox-desktop.json": "83811660378db6d460cd237e3e730a420fa452b25cc0a7da95247e43426472a5",
+    "results/linux-node-24.22.3-navigation-firefox-narrow.json": "cc76589f78dec332231221365995024787667b6abb17dc8181568348bd2a05ad",
+    "results/linux-node-24.22.3-overflow-chromium-landscape.json": "60a72a38e6ce06c7e83c66180cde38500a093809d81cfaaf67fe07eeb5d39105",
+    "results/linux-node-24.22.3-overflow-chromium-narrow.json": "6dabbeec088f249bc21a21a632ab69769c74c616b946b12fe4b5409efb91dffa",
+    "results/linux-node-24.22.3-overflow-firefox-landscape.json": "3da51a9bfc18f419b121c49441e90abd56e82e9382b5fb593a23f5a06ac21b6a",
+    "results/linux-node-24.22.3-overflow-firefox-narrow.json": "f74fec5968340cab95a6cc9dfb6f54e284672f054b83be6ff61681ff5e6f16de",
+    "results/linux-node-26.13.1-chart-chromium-desktop.json": "aa5e29ddcbc78f02de6271c42eb279b7b8e07f3c81eea84f6829e1d263c57935",
+    "results/linux-node-26.13.1-chart-chromium-landscape.json": "314579c670b9fee346de88f7fd568bfb1d6b687c1d1d8f7e595f10738fefcba0",
+    "results/linux-node-26.13.1-chart-chromium-narrow.json": "c118e8890ac0840529ffe425d27a71e4adc1f21a2ef914a72dea205c86b94880",
+    "results/linux-node-26.13.1-chart-firefox-desktop.json": "54d00f6beaed095518f900d6b18aa980e4f2007df8df86b01595e630bff2b428",
+    "results/linux-node-26.13.1-chart-firefox-landscape.json": "ba3e7b3353e9cc4629f6c299b1b0b8185cf8ad090ac3c753e6d3570a0d55f49a",
+    "results/linux-node-26.13.1-chart-firefox-narrow.json": "197870c484a6c6af9049beda3ed65114c1ab289abdc001d65dd6ec2de24062ad",
+    "results/linux-node-26.13.1-labels-chromium.json": "72b79a0c059a865d9755102a784fb0e3e1c75d2df93140337b94e5056677dc7d",
+    "results/linux-node-26.13.1-labels-firefox.json": "e98226b1e535343c27d49d19cb1df6dfe9055cec4da2ebe3200f82e7d9668945",
+    "results/linux-node-26.13.1-motion-chromium.json": "a6597ed1b78ff5d71170ec1cb606036040533b560aec07640cf677a064e6bf7b",
+    "results/linux-node-26.13.1-motion-firefox.json": "c52c3db2447d904bb3f7184995da67a075cf97140d341e4df9a689acb49bc218",
+    "results/linux-node-26.13.1-navigation-chromium-desktop.json": "0791e87aff89fa16731ecaf9a3c2a78ca232de919725d59947f5b703240ef5c6",
+    "results/linux-node-26.13.1-navigation-chromium-narrow.json": "9e76e28411261c613692f4233bda566400eb2a3906b5c5d3996d1e1afe8dfefe",
+    "results/linux-node-26.13.1-navigation-firefox-desktop.json": "1ba6a654ab8dd01b87fde93bb9ab6b6a313421716f8de41c03cb5162db7f155d",
+    "results/linux-node-26.13.1-navigation-firefox-narrow.json": "a15a4108a50888cd73684ddfb728da69539412b66711f8bdb161230f783c55db",
+    "results/linux-node-26.13.1-overflow-chromium-landscape.json": "85d53fb7698ed1f8a2d84463d879b3a73dadc8a0311b33cf8fbddcf8adc915b4",
+    "results/linux-node-26.13.1-overflow-chromium-narrow.json": "f69fa778007d92e7ebf9287f65d04498ce527051e9dce867fde0884967933720",
+    "results/linux-node-26.13.1-overflow-firefox-landscape.json": "f189340bf7db9d4dad31c4e6a2bfef239055946e70a7013a5d2e6a016db2648f",
+    "results/linux-node-26.13.1-overflow-firefox-narrow.json": "0314dc44d8e46a87be3653d20ad161faaa6bb2d27e1ac7ebd405baf3b4acaaf7",
+    "results/windows-node-24.22.3-chart-chromium-desktop.json": "545c7119e5e12367add02b52a087621548343ce2aa8b404381dfefd245635e81",
+    "results/windows-node-24.22.3-chart-chromium-landscape.json": "291c393519e7d5ab9c90198545cbd3e7fb41cc8a7a5029dc76ca99fc132dc315",
+    "results/windows-node-24.22.3-chart-chromium-narrow.json": "c3d124a720cca406c613f803afe4511aca29cbd9eb97488bc1a31629acb8db45",
+    "results/windows-node-24.22.3-chart-webkit-desktop.json": "fa8e71571416541e3ecb6a624b7a737d85f9a9df95f1a273b28542b2fc848eb3",
+    "results/windows-node-24.22.3-chart-webkit-landscape.json": "ffd2d79fb2cdde826e5f70057b50c09b4e75ff97d9af0c0b21ed3a36ebc41d5d",
+    "results/windows-node-24.22.3-chart-webkit-narrow.json": "2ebd7af123dcf077140ee0b25178fbc0f85e4849d1a2472e30cb89ae4e227e6d",
+    "results/windows-node-24.22.3-labels-chromium.json": "048fec6885d9fed607257e74a3d6e06116fae2772c05113d51a2ac9196b7c5b7",
+    "results/windows-node-24.22.3-labels-webkit.json": "24904c9c07981fddb5e28f81f49f369aaece9253f2eaeb614b5e56d20ef79a71",
+    "results/windows-node-24.22.3-motion-chromium.json": "0632b23dd9c39c608bd307db8752591ef15007c9b338e5954765381328cb44d6",
+    "results/windows-node-24.22.3-motion-webkit.json": "0bce30e57a8f534006c859b5ff57bf3cd70315c418607a6b8733b589de4bbf68",
+    "results/windows-node-24.22.3-navigation-chromium-desktop.json": "db4a17567f23e86d591f96bfd856167a0bcde5f17266db6f2233045e733cea23",
+    "results/windows-node-24.22.3-navigation-chromium-narrow.json": "e74b0e9d604bca7101a3b829a9864463876c13776d78120bf5462408935f83be",
+    "results/windows-node-24.22.3-navigation-webkit-desktop.json": "ff36684edebe9f9fd3c4a2ccc3c08e7e43be7780a24b675d2ddf2ba326b717a6",
+    "results/windows-node-24.22.3-navigation-webkit-narrow.json": "46e871224ad9fe713d56db27352a15edfe760c85c017fefbdfcef56fdecd5a8f",
+    "results/windows-node-24.22.3-overflow-chromium-landscape.json": "374218f7bcb20238b1092c15031dc7714d6cf286d25d8607afd9540638bcae7e",
+    "results/windows-node-24.22.3-overflow-chromium-narrow.json": "fa8b46868845fdb6ba17d8e9a21d06900d25f1bfdcb0c721fb8dcccc76b3dc01",
+    "results/windows-node-24.22.3-overflow-webkit-landscape.json": "81fd07ca014ae065b55b75ce753172112507fe78142aa5d03731ec7f96560307",
+    "results/windows-node-24.22.3-overflow-webkit-narrow.json": "8f4ae256b9e9724f56ac517dc0cef2ec307a61406847dd52618ff1ca46d47950",
+    "results/windows-node-26.13.1-chart-chromium-desktop.json": "a459a218729ca8547880f04ebc5237d9239d440faef402854a2f6e1665469765",
+    "results/windows-node-26.13.1-chart-chromium-landscape.json": "e844818d58a7accc3b943447810c339bd4e630c05eecde6260909bb14174dde6",
+    "results/windows-node-26.13.1-chart-chromium-narrow.json": "ef93bdac59a9cead984a37f7023c64e85a924fbdf96d187a2a4a55c65939582a",
+    "results/windows-node-26.13.1-chart-webkit-desktop.json": "58a82407236619c205da2c03d992e67d18d567860df9ecf28faa683a40f992ef",
+    "results/windows-node-26.13.1-chart-webkit-landscape.json": "9d213c83858237fb87b668c6fae4b8991cd1fcb51d0f22cbd6b963b94dafb6c7",
+    "results/windows-node-26.13.1-chart-webkit-narrow.json": "31b7aba54cfaddfb6f2383249ba80ddd1df8bed348c879e868d3f584543e1d3d",
+    "results/windows-node-26.13.1-labels-chromium.json": "fee027f26129e0d8ca85c7e1fe6837874496dd652c45c44bafbe0dc558404759",
+    "results/windows-node-26.13.1-labels-webkit.json": "091903049f1df7d313dd9c3adb904e4ff8d92b92fe0ea4353cff8ce4a9b9199f",
+    "results/windows-node-26.13.1-motion-chromium.json": "4b5f32a90061a0181611d0861a5a9ee0869475a6b73f0ff584ad6d40f0fb5b59",
+    "results/windows-node-26.13.1-motion-webkit.json": "db1c6e142a67c6ff34edf701b47957ea2afd724767e61ba3e17a5cab39b77ff1",
+    "results/windows-node-26.13.1-navigation-chromium-desktop.json": "9924613f4378e1afe0d9ebb023733994102f73889437a91dfc7dbb23bfa1b9d9",
+    "results/windows-node-26.13.1-navigation-chromium-narrow.json": "de16fbfa3ccb0f836b082f624fcc5c4275a0e112839b4561dcfd274dcbd0b868",
+    "results/windows-node-26.13.1-navigation-webkit-desktop.json": "f6ca7daa8b76cda22cf87fbb545110e46a23a984823422f5507286777bba850f",
+    "results/windows-node-26.13.1-navigation-webkit-narrow.json": "c2ef1508fca9b08fe92ab93cbeb38569b829fdc8ff14c8089e945c5b924006b2",
+    "results/windows-node-26.13.1-overflow-chromium-landscape.json": "e05c57332702104b7a62a9feeb3eb95b1324f1673f345a9a72adb3bd9463e432",
+    "results/windows-node-26.13.1-overflow-chromium-narrow.json": "914dd3a3bef554163415c4b2846c7b45b6eba0d58c960570a57c2ab8d55ec46d",
+    "results/windows-node-26.13.1-overflow-webkit-landscape.json": "8d34dcab4697664a5817703f997d8d4718b64a0b1eb2d2766367f6c7f415e424",
+    "results/windows-node-26.13.1-overflow-webkit-narrow.json": "287b8dc766a2d1aa24a7a9a56aee2186e759e9a552e5807e19bc770bf8a4c72d"
+  }
 }

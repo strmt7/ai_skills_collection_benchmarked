@@ -1,0 +1,55 @@
+{
+  "cases": {
+    "correct_assertion": {
+      "independent_pytest": {
+        "errors": 0,
+        "exit": 0,
+        "failures": 0,
+        "passed": 1,
+        "skipped": 0,
+        "tests": 1
+      },
+      "native_metrics": {
+        "branch_coverage": 0.7,
+        "executable_correctness": 1.0,
+        "line_coverage": 0.9090909090909091,
+        "syntax_correctness": 1.0
+      }
+    },
+    "incorrect_assertion": {
+      "independent_pytest": {
+        "errors": 0,
+        "exit": 1,
+        "failures": 1,
+        "passed": 0,
+        "skipped": 0,
+        "tests": 1
+      },
+      "native_metrics": {
+        "branch_coverage": 0.7,
+        "executable_correctness": 1.0,
+        "line_coverage": 0.9090909090909091,
+        "syntax_correctness": 1.0
+      }
+    },
+    "no_call": {
+      "independent_pytest": {
+        "errors": 0,
+        "exit": 0,
+        "failures": 0,
+        "passed": 1,
+        "skipped": 0,
+        "tests": 1
+      },
+      "native_metrics": {
+        "branch_coverage": 0.0,
+        "executable_correctness": 0.0,
+        "line_coverage": 0.0,
+        "syntax_correctness": 1.0
+      }
+    }
+  },
+  "composite_score": null,
+  "model_attempts": 0,
+  "schema_version": 1
+}
