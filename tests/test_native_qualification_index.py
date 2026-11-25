@@ -2,11 +2,14 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
+import shutil
+import subprocess
 from pathlib import Path
 from typing import Any
 
 import pytest
-from validate_native_qualification_index import INDEX, validate
+from validate_native_qualification_index import INDEX, ROOT, validate
 
 
 def digest(path: Path) -> str:
@@ -140,3 +143,36 @@ def test_historical_source_inventory_requires_portable_ids_and_digests(
     write(index_file, index)
 
     assert not validate(qualified_history)["ok"]
+
+
+@pytest.mark.parametrize("autocrlf", ["true", "false"])
+def test_bun_qualification_bytes_survive_git_checkout(autocrlf: str) -> None:
+    git = shutil.which("git")
+    if git is None or not (ROOT / ".git").exists():
+        pytest.skip("Git checkout is required for the checkout filter control")
+
+    environment = {key: value for key, value in os.environ.items() if not key.upper().startswith("GIT_")}
+    environment.update(GIT_CONFIG_NOSYSTEM="1", GIT_CONFIG_GLOBAL=os.devnull)
+    bundle = ROOT / "artifacts/repaired-skill-readiness/bun-runtime-v2"
+    for name in ("review.json", "reproduce.py", "linux/result.json", "windows/result.json"):
+        file = bundle / name
+        path = file.relative_to(ROOT).as_posix()
+        output = subprocess.run(
+            [
+                git,
+                "-c",
+                "core.longpaths=true",
+                "-c",
+                f"core.autocrlf={autocrlf}",
+                "cat-file",
+                "--filters",
+                f"--path={path}",
+                f":{path}",
+            ],
+            cwd=ROOT,
+            env=environment,
+            check=True,
+            capture_output=True,
+            timeout=20,
+        )
+        assert file.read_bytes() == output.stdout, path

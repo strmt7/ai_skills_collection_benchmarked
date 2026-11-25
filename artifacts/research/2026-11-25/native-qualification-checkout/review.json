@@ -1,0 +1,12 @@
+{
+  "artifacts": {
+    "observations.json": "e657d99e5d78980a7497597b5926df9821ca042c98e98bac1ee73e555be9a65c"
+  },
+  "observed_on": "2026-11-25",
+  "schema_version": 1,
+  "scope": "Four newly qualified Bun files retain their identical committed bytes under either Git checkout conversion setting.",
+  "source_sha256": {
+    ".gitattributes": "a501d5a4ca7cfb103396edec02c3081365b215a83050b8edda72736c3fe35430",
+    "tests/test_native_qualification_index.py": "64c14cab3af548ad3d015d957de68360697e58af9f0d555b3ad1013f0ee958ac"
+  }
+}

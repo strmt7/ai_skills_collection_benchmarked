@@ -237,7 +237,6 @@
       "sources": [
         "requirements-dev-lock.txt",
         "tests/test_agent_tool_policy.py",
-        "tests/test_native_qualification_index.py",
         "toolchains/bootstrap/requirements.txt",
         "tools/search_semantic_corpus.py",
         "tools/validate_agent_tool_policy.py",
@@ -347,7 +346,6 @@
         "sha256": "18685b3b16824cb7f7506306c562f588c015620d530dd4b52a4bdac5e68657d2"
       },
       "sources": [
-        ".gitattributes",
         "tools/validate_catalog.py"
       ]
     },
@@ -479,6 +477,17 @@
         "artifacts/repaired-skill-readiness/bun-runtime-v2/reproduce.py",
         "docs/installation.md",
         "included/improved/skills/bun-runtime-current/SKILL.md"
+      ]
+    },
+    {
+      "id": "qualification-checkout-fidelity",
+      "review": {
+        "path": "artifacts/research/2026-11-25/native-qualification-checkout/review.json",
+        "sha256": "df4bef19fe53b6b60c91e957377e3314eda52c17b56e54401491f3b9a66fa02f"
+      },
+      "sources": [
+        ".gitattributes",
+        "tests/test_native_qualification_index.py"
       ]
     }
   ],
@@ -772,6 +781,7 @@
         ".github/workflows/pnpm-cache-install.yml",
         "docs/improvement-plan.md",
         "requirements-dev-lock.txt",
+        "tests/test_native_qualification_index.py",
         "toolchains/bootstrap/README.md"
       ]
     },
@@ -808,6 +818,7 @@
         "docs/native-benchmark-controller.md",
         "tests/test_grade_swe_skills_submission.py",
         "tests/test_native_benchmark_runtime.py",
+        "tests/test_native_qualification_index.py",
         "tests/test_native_trial_runner.py",
         "tests/test_subject_toolchains.py",
         "tools/_native_benchmark_runtime.py",
@@ -919,6 +930,15 @@
       "superseded_sources": [
         "docs/installation.md",
         "included/improved/skills/eval-harness-integrity/SKILL.md"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-25/catalog-refresh-validation/review.json",
+        "sha256": "18685b3b16824cb7f7506306c562f588c015620d530dd4b52a4bdac5e68657d2"
+      },
+      "superseded_sources": [
+        ".gitattributes"
       ]
     }
   ],
