@@ -22,6 +22,14 @@ from qualify_trial_context import check as check_context
 
 PROFILE = "windows-native-packaging-anonymous-v1"
 TASK = "swe-skills-bench/batch1/python-packaging"
+GO_PROFILE = "windows-native-go-monads-anonymous-v1"
+GO_TASK = "swe-skills-bench/batch3/go-monads-mo"
+GO_PROMPT_SHA256 = "2cb95adbf3a593c6cc9098c2799039a67004823e4b044c8282d58169a6ebd115"
+GO_VERIFIER_SHA256 = "cf36811cb42b196f4ea8ca13c5a547a0485126d126f4fd34126a6a9359b10e75"
+GO_IMAGE = (
+    "docker.io/zhangyiiiiii/swe-skills-bench-golang@sha256:"
+    "08a709af3502f43282367befe0ae3ba641efe7300cf9d2295c01eb12564c6180"
+)
 ATTEMPT_EVIDENCE = frozenset(
     {
         "plan.json",
@@ -38,7 +46,7 @@ ATTEMPT_EVIDENCE = frozenset(
         "setup-space.json",
     }
 )
-CASES = {
+CASES: dict[str, tuple[str, str, float | None]] = {
     "edited": ("complete", "task_passed", 1.0),
     "unchanged": ("complete", "task_failed", 0.0),
     "truncated": ("collection", "harness_error", None),
@@ -50,6 +58,33 @@ CASES = {
     "preflight-space": ("storage_preflight", "harness_error", None),
     "timeout": ("collection", "harness_error", None),
     "isolation": ("complete", "task_passed", 1.0),
+}
+
+
+@dataclass(frozen=True)
+class Calibration:
+    task: str
+    cases: dict[str, tuple[str, str, float | None]]
+    unchanged_counts: dict[str, int]
+    edited_counts: dict[str, int]
+    tool_markers: tuple[str, ...]
+
+
+CALIBRATIONS = {
+    PROFILE: Calibration(
+        TASK,
+        CASES,
+        {"passed": 0, "failed": 10, "skipped": 1, "errors": 0, "total": 11},
+        {"passed": 11, "failed": 0, "skipped": 0, "errors": 0, "total": 11},
+        ("SUBJECT_DEPENDENCY_IMPORTS_VERIFIED", "NATIVE_SUBJECT_EDIT_COMPLETED"),
+    ),
+    GO_PROFILE: Calibration(
+        GO_TASK,
+        {**CASES, "unchanged": ("complete", "task_failed", 3 / 14)},
+        {"passed": 3, "failed": 11, "skipped": 0, "errors": 0, "total": 14},
+        {"passed": 14, "failed": 0, "skipped": 0, "errors": 0, "total": 14},
+        ("NATIVE_GO_TOOLCHAIN_VERIFIED", "NATIVE_GO_PROXY_READ_ONLY_VERIFIED", "NATIVE_SUBJECT_EDIT_COMPLETED"),
+    ),
 }
 
 
@@ -135,7 +170,12 @@ def local_catalog_control(attempt: Path, catalog: LocalCatalog, inventory: dict[
 
 
 def control(
-    name: str, directory: Path, positive: dict[str, Any], inventory: dict[str, str], local: LocalCatalog | None = None
+    name: str,
+    directory: Path,
+    positive: dict[str, Any],
+    inventory: dict[str, str],
+    local: LocalCatalog | None = None,
+    calibration: Calibration = CALIBRATIONS[PROFILE],
 ) -> dict[str, Any]:
     attempt = directory / "attempt"
     summary, plan, result, transport = (
@@ -148,7 +188,10 @@ def control(
         )
     )
     require(summary["passed"] is True, "The control producer reported failure: " + name)
-    require((result["stage"], result["status"], result["score"]) == CASES[name], "Wrong control outcome: " + name)
+    require(
+        (result["stage"], result["status"], result["score"]) == calibration.cases[name],
+        "Wrong control outcome: " + name,
+    )
     require(
         all(type(value) is int and value == 0 for value in (summary["model_requests"], transport["model_requests"])),
         "Model results are not scripted controls",
@@ -264,11 +307,7 @@ def control(
             and any(event["type"] == "turn.completed" for event in events),
             "Native turn did not complete",
         )
-        counts = (
-            {"passed": 0, "failed": 10, "skipped": 1, "errors": 0, "total": 11}
-            if name == "unchanged"
-            else {"passed": 11, "failed": 0, "skipped": 0, "errors": 0, "total": 11}
-        )
+        counts = calibration.unchanged_counts if name == "unchanged" else calibration.edited_counts
         graded = document(attempt / "grading/result.json")
         require(type(graded["score"]) is float, "Native grader score must be numeric")
         require(
@@ -281,7 +320,7 @@ def control(
             "Original native scorer counts differ",
         )
         require(
-            graded["task_id"] == TASK
+            graded["task_id"] == calibration.task
             and graded["execution_source_sha256"] == source_hashes()
             and graded["model_requests"] == 0,
             "Native grader profile differs",
@@ -290,8 +329,8 @@ def control(
         if name != "unchanged":
             output = tool_output(directory, inventory)
             require(
-                "SUBJECT_DEPENDENCY_IMPORTS_VERIFIED" in output and "NATIVE_SUBJECT_EDIT_COMPLETED" in output,
-                "Prepared imports or edits did not execute",
+                all(marker in output for marker in calibration.tool_markers),
+                "Prepared tools, imports or edits did not execute",
             )
             if name == "isolation":
                 require(
@@ -299,6 +338,11 @@ def control(
                     and "NATIVE_INTEGRATED_ISOLATION_VERIFIED" in output,
                     "Integrated isolation probe did not execute",
                 )
+                if calibration.task == GO_TASK:
+                    require(
+                        "NATIVE_GO_REFERENCE_ACCESS_DENIED" in output,
+                        "Go isolation did not verify that the subject lacks reference access",
+                    )
     else:
         require(not (attempt / "grading").exists(), "Interrupted control reached grading")
         if name == "truncated":
@@ -364,31 +408,65 @@ def control(
     return {"case": name, "stage": result["stage"], "status": result["status"], "score": result["score"]}
 
 
+def verify_go_calibration(admitted: dict[str, Any]) -> None:
+    task, plan, runtime = admitted["task"], admitted["plan"], admitted["runtime"]
+    require(
+        task["schema_version"] == 4
+        and task["source"] == {"repository": "samber/mo", "commit": "35a143a391a281ca954b388bd8c6795ea1ee1955"}
+        and task["image_reference"] == GO_IMAGE
+        and task["verifier"]["sha256"] == GO_VERIFIER_SHA256
+        and task["min_pass_rate"] == 1.0
+        and plan["prompt"]["sha256"] == GO_PROMPT_SHA256,
+        "Go calibration requires the frozen publisher task, prompt, image and verifier",
+    )
+    toolchains = runtime.get("toolchains")
+    if toolchains is None:
+        raise ValueError("Go calibration requires the qualified compiler and module proxy")
+    payloads = {item["name"]: item for item in toolchains.payloads()}
+    modules = {row["target"]: row["sha256"] for row in task["go_environment"]["modules"]}
+    require(
+        set(payloads) == {"go", "go-module-proxy"}
+        and payloads["go"]["version"] == task["go_environment"]["go_version"]
+        and "go" in payloads["go"]["commands"]
+        and not payloads["go-module-proxy"]["commands"]
+        and {name: row["sha256"] for name, row in payloads["go-module-proxy"]["files"].items()} == modules,
+        "Go subject toolchain differs from the frozen developer runtime",
+    )
+
+
 def verify(specification: dict[str, Any]) -> dict[str, Any]:
+    profile = specification.get("profile")
+    calibration = CALIBRATIONS.get(profile) if isinstance(profile, str) else None
+    if calibration is None:
+        raise ValueError("Unsupported native boundary profile")
     require(
         set(specification) == {"schema_version", "profile", "context_directory", "controls", "execution_source_sha256"}
         and type(specification["schema_version"]) is int
-        and specification["schema_version"] == 1
-        and specification["profile"] == PROFILE,
+        and specification["schema_version"] == 1,
         "Invalid boundary qualification specification",
     )
     sources = execution_sources()
     require(specification["execution_source_sha256"] == sources, "Boundary specification sources changed")
     directories = specification["controls"]
-    require(isinstance(directories, dict) and set(directories) == set(CASES), "The complete control matrix is required")
+    require(
+        isinstance(directories, dict) and set(directories) == set(calibration.cases),
+        "The complete control matrix is required",
+    )
     paths = {name: owned(path) for name, path in directories.items()}
-    require(len(set(paths.values())) == len(CASES), "Control directories must be distinct")
+    require(len(set(paths.values())) == len(calibration.cases), "Control directories must be distinct")
     positive_path = paths["edited"] / "plan.json"
     admitted = load_plan(positive_path)
     positive = admitted["plan"]
     require(
-        admitted["task"]["id"] == TASK
+        admitted["task"]["id"] == calibration.task
         and positive["schema_version"] == 3
         and positive["partition"] == "development"
         and positive["condition"] == "default"
         and positive["interventions"] == [],
         "Unsupported calibration task",
     )
+    if profile == GO_PROFILE:
+        verify_go_calibration(admitted)
     context = owned(specification["context_directory"])
     context_report = check_context(context)
     if context_report["ok"] is not True:
@@ -405,10 +483,10 @@ def verify(specification: dict[str, Any]) -> dict[str, Any]:
     local = admitted["runtime"].get("local_catalog")
     if local is not None:
         remember(Path(local.location), inventory)
-    results = [control(name, paths[name], positive, inventory, local) for name in CASES]
+    results = [control(name, paths[name], positive, inventory, local, calibration) for name in calibration.cases]
     require(execution_sources() == sources, "Boundary sources changed during qualification")
     return {
-        "profile": PROFILE,
+        "profile": profile,
         "execution_boundary_qualified": True,
         "model_transport_qualified": False,
         "model_efficacy_established": False,
@@ -494,11 +572,13 @@ def admit(plan_path: Path, qualification: Path) -> QualifiedNativeTrial:
         require(plan[key] == positive[key], "Trial differs from the qualified profile: " + key)
     for key in ("task", "subject_runtime", "grader_runtime"):
         require(plan[key]["sha256"] == positive[key]["sha256"], "Trial uses an unqualified asset: " + key)
+    if validation["profile"] == GO_PROFILE:
+        require(plan["prompt"]["sha256"] == GO_PROMPT_SHA256, "Go trial uses an unqualified publisher prompt")
     require(raw(receipt) == frozen, "Boundary receipt changed during admission")
     return QualifiedNativeTrial(
         admitted["plan_sha256"],
         sha256(frozen),
-        PROFILE,
+        validation["profile"],
         receipt,
         tuple(sorted(validation["input_sha256"].items())),
         validation["admission_source_sha256"],

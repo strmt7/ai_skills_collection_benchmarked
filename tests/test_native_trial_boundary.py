@@ -239,6 +239,58 @@ def test_complete_matrix_roundtrip_and_scoped_admission(matrix):
         boundary.verify_binding(admitted)
 
 
+@pytest.fixture
+def go_calibration():
+    module = "example.org/dependency/@v/v1.0.0.mod"
+    digest = "9" * 64
+    payloads = [
+        {"name": "go", "version": "go1.22.5", "commands": {"go": ["bin/go.exe"]}},
+        {"name": "go-module-proxy", "commands": {}, "files": {module: {"sha256": digest}}},
+    ]
+
+    class Toolchains:
+        def payloads(self):
+            return payloads
+
+    admitted = {
+        "task": {
+            "schema_version": 4,
+            "source": {"repository": "samber/mo", "commit": "35a143a391a281ca954b388bd8c6795ea1ee1955"},
+            "image_reference": boundary.GO_IMAGE,
+            "verifier": {"sha256": boundary.GO_VERIFIER_SHA256},
+            "min_pass_rate": 1.0,
+            "go_environment": {"go_version": "go1.22.5", "modules": [{"target": module, "sha256": digest}]},
+        },
+        "plan": {"prompt": {"sha256": boundary.GO_PROMPT_SHA256}},
+        "runtime": {"toolchains": Toolchains()},
+    }
+    return admitted, payloads
+
+
+def test_go_calibration_accepts_a_shared_offline_graph(go_calibration):
+    admitted, _ = go_calibration
+    boundary.verify_go_calibration(admitted)
+
+
+@pytest.mark.parametrize("fault", ["prompt", "verifier", "compiler", "module", "missing-proxy", "proxy-command"])
+def test_go_calibration_rejects_different_task_or_tool_inputs(go_calibration, fault):
+    admitted, payloads = go_calibration
+    if fault == "prompt":
+        admitted["plan"]["prompt"]["sha256"] = "0" * 64
+    elif fault == "verifier":
+        admitted["task"]["verifier"]["sha256"] = "0" * 64
+    elif fault == "compiler":
+        payloads[0]["version"] = "go1.23.0"
+    elif fault == "module":
+        admitted["task"]["go_environment"]["modules"][0]["sha256"] = "0" * 64
+    elif fault == "missing-proxy":
+        payloads.pop()
+    else:
+        payloads[1]["commands"] = {"proxy": ["proxy.exe"]}
+    with pytest.raises(ValueError, match="Go (subject toolchain|calibration)"):
+        boundary.verify_go_calibration(admitted)
+
+
 def test_stale_context_receipt_reports_which_component_changed(matrix, monkeypatch):
     failure = "Context qualification sources changed in tools/_trial_context.py"
     monkeypatch.setattr(boundary, "check_context", lambda path: {"ok": False, "errors": [failure]})

@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "observed_comparison": {
+    "task": "swe-skills-bench/batch3/go-monads-mo",
+    "model": "qwen3:8b",
+    "reasoning_effort": "high",
+    "original_prompt_sha256": "2cb95adbf3a593c6cc9098c2799039a67004823e4b044c8282d58169a6ebd115",
+    "preregistration_sha256": "856a8a3621e798f92dd6f81e0dfd9fbd83a79c5db2220f6830a6e6464ac1a91a",
+    "scope": "Exploratory paired comparison on one public task.",
+    "planned_arms": 3,
+    "scored_arms": 1,
+    "outcomes": [
+      {
+        "condition": "karpathy",
+        "status": "task_failed",
+        "score": 0.21428571428571427,
+        "native_counts": {
+          "passed": 3,
+          "failed": 11,
+          "skipped": 0,
+          "errors": 0,
+          "total": 14
+        },
+        "usage": {
+          "input_tokens": 141077,
+          "cached_input_tokens": 75464,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 14570,
+          "reasoning_output_tokens": 0
+        },
+        "result_sha256": "ac03f30e637c3925e290089c8d2cf63cda1d9f4dd4276603859e0d30c5367714"
+      },
+      {
+        "condition": "default",
+        "status": "launch_unverified",
+        "score": null,
+        "native_counts": null
+      },
+      {
+        "condition": "collection",
+        "status": "launch_unverified",
+        "score": null,
+        "native_counts": null
+      }
+    ],
+    "collection_minus_baseline": {
+      "default": null,
+      "karpathy": null
+    },
+    "confirmatory": false
+  },
+  "official_harness_model_attempts": 1,
+  "launch_refusals": [
+    {
+      "condition": "default",
+      "reason": "available RAM below the frozen admission floor",
+      "required_start_ram_bytes": 19327352832,
+      "inference_started": false,
+      "native_stderr_sha256": "4b65d061db0061677dd69918a6b5dc4ea6d89def56e92999622e5a9a79a8a164"
+    },
+    {
+      "condition": "collection",
+      "reason": "available RAM below the frozen admission floor",
+      "required_start_ram_bytes": 19327352832,
+      "inference_started": false,
+      "native_stderr_sha256": "4b65d061db0061677dd69918a6b5dc4ea6d89def56e92999622e5a9a79a8a164"
+    }
+  ],
+  "comparative_effect_established": false
+}

@@ -154,8 +154,7 @@
         "tools/run_swe_skills_trial.py",
         "tests/test_subject_toolchains.py",
         "tests/test_native_trial_plan.py",
-        "tests/test_native_trial_runner.py",
-        "docs/native-benchmark-controller.md"
+        "tests/test_native_trial_runner.py"
       ]
     },
     {
@@ -212,8 +211,6 @@
         ".github/workflows/release.yml",
         "docs/coverage.md",
         "tools/qualify_trial_context.py",
-        "tools/qualify_native_trial_boundary.py",
-        "tests/test_native_trial_boundary.py",
         "tests/test_qualify_trial_context.py",
         "tests/test_coverage_bundle.py",
         "tools/validate_catalog.py",
@@ -267,6 +264,19 @@
         ".github/workflows/offline-validation.yml",
         ".github/workflows/pnpm-cache-install.yml",
         "tests/test_frontend_ownership.py"
+      ]
+    },
+    {
+      "id": "native-go-study-admission",
+      "review": {
+        "path": "artifacts/research/2026-11-25/go-study-admission/review.json",
+        "sha256": "bf99efaac4d28d99b651c355ae77702a79c16d359be99254ea0dd355aab85c96"
+      },
+      "sources": [
+        "docs/benchmark-execution-plan.md",
+        "docs/native-benchmark-controller.md",
+        "tests/test_native_trial_boundary.py",
+        "tools/qualify_native_trial_boundary.py"
       ]
     }
   ],
@@ -510,8 +520,10 @@
       },
       "superseded_sources": [
         ".github/workflows/offline-validation.yml",
-        "tests/test_agent_tool_policy.py",
-        "tools/validate_agent_tool_policy.py"
+        "tools/qualify_native_trial_boundary.py",
+        "tests/test_native_trial_boundary.py",
+        "tools/validate_agent_tool_policy.py",
+        "tests/test_agent_tool_policy.py"
       ]
     },
     {
@@ -575,6 +587,16 @@
       },
       "superseded_sources": [
         "included/improved/skills/tdd-workflow-current/SKILL.md"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-24/go-native-controls/review.json",
+        "sha256": "0e43dd1b61f03561c079786ab0e6e859bb84142040cc5e4ea4120668b1fefe28"
+      },
+      "superseded_sources": [
+        "docs/native-benchmark-controller.md",
+        "docs/benchmark-execution-plan.md"
       ]
     }
   ]

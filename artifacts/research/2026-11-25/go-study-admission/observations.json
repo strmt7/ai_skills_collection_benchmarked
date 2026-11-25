@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "scope": "Model-free qualification for the preselected Go Monads development task. The positive reference was authored from the task and starter source before running the publisher grader.",
+  "task": {
+    "id": "swe-skills-bench/batch3/go-monads-mo",
+    "source": {
+      "repository": "samber/mo",
+      "commit": "35a143a391a281ca954b388bd8c6795ea1ee1955"
+    },
+    "benchmark_commit": "4d3450d9216a590a8726fcb3604b5143daca776b",
+    "publisher_prompt_sha256": "2cb95adbf3a593c6cc9098c2799039a67004823e4b044c8282d58169a6ebd115",
+    "publisher_verifier_sha256": "cf36811cb42b196f4ea8ca13c5a547a0485126d126f4fd34126a6a9359b10e75",
+    "publisher_image": "docker.io/zhangyiiiiii/swe-skills-bench-golang@sha256:08a709af3502f43282367befe0ae3ba641efe7300cf9d2295c01eb12564c6180",
+    "original_fraction_threshold": 1.0,
+    "offline_module_records": 41
+  },
+  "reference": {
+    "modified_files": {
+      "option.go": {
+        "bytes": 9781,
+        "sha256": "610916abfbc1a5c627b362ee1887fc6f3c95cf7237daaa7cda571f1d5c1915b8"
+      },
+      "option_test.go": {
+        "bytes": 18416,
+        "sha256": "3b93ea92d4bfebb3fa581deacfea738e4384e542fc30e329c4f6f3dabef4f9ef"
+      }
+    },
+    "reference_grader_result_sha256": "b0efde332ea1b34f7be47a12c8de9a276cc2841954f9f27a4788a1793133979f",
+    "project_tests_passed": 71,
+    "private_compiler_profile_removed": true,
+    "native_counts": {
+      "passed": 14,
+      "failed": 0,
+      "skipped": 0,
+      "errors": 0,
+      "total": 14
+    },
+    "score": 1.0
+  },
+  "admission": {
+    "profile": "windows-native-go-monads-anonymous-v1",
+    "native_controls": [
+      {
+        "case": "edited",
+        "stage": "complete",
+        "status": "task_passed",
+        "score": 1.0
+      },
+      {
+        "case": "unchanged",
+        "stage": "complete",
+        "status": "task_failed",
+        "score": 0.21428571428571427
+      },
+      {
+        "case": "truncated",
+        "stage": "collection",
+        "status": "harness_error",
+        "score": null
+      },
+      {
+        "case": "budget",
+        "stage": "collection",
+        "status": "harness_error",
+        "score": null
+      },
+      {
+        "case": "accounting",
+        "stage": "collection",
+        "status": "harness_error",
+        "score": null
+      },
+      {
+        "case": "logical",
+        "stage": "final_storage",
+        "status": "harness_error",
+        "score": null
+      },
+      {
+        "case": "space",
+        "stage": "collection",
+        "status": "harness_error",
+        "score": null
+      },
+      {
+        "case": "spaceerror",
+        "stage": "collection",
+        "status": "harness_error",
+        "score": null
+      },
+      {
+        "case": "preflight-space",
+        "stage": "storage_preflight",
+        "status": "harness_error",
+        "score": null
+      },
+      {
+        "case": "timeout",
+        "stage": "collection",
+        "status": "harness_error",
+        "score": null
+      },
+      {
+        "case": "isolation",
+        "stage": "complete",
+        "status": "task_passed",
+        "score": 1.0
+      }
+    ],
+    "independent_packaging_controls_revalidated": 11,
+    "wrong_scope_inputs_rejected": 3,
+    "grader_reference_unreachable_from_subject": true,
+    "receipt_sha256": "112939cb127bf87f3e9443ad31ede015922293436e4412c7d544270e9db6fad4"
+  },
+  "comparison_inputs": {
+    "preregistration_sha256": "856a8a3621e798f92dd6f81e0dfd9fbd83a79c5db2220f6830a6e6464ac1a91a",
+    "exploratory_model": "qwen3:8b",
+    "serial_arm_order": [
+      "karpathy",
+      "default",
+      "collection"
+    ],
+    "counted_model_trials_at_freeze": 0,
+    "model_transport_qualified_by_this_evidence": false,
+    "comparative_skill_gain_established": false
+  }
+}

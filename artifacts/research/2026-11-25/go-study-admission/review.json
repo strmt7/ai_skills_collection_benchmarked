@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-25",
+  "scope": "Positive original-grader reference, native Go profile controls and scope rejection, plus Packaging compatibility.",
+  "source_sha256": {
+    "docs/benchmark-execution-plan.md": "941241905205c166bb31bec1d80e866586a9247bd5a36bc1809ae9d605beb117",
+    "docs/native-benchmark-controller.md": "264e7f2962c62610de7fbfff006854b4b3e990474109afba80b0bf9eb5ea03eb",
+    "tests/test_native_trial_boundary.py": "d15b5fbfd27e6b22bbdfe73645cf946ec855c9cd448b0fe39ae3668a038734b5",
+    "tools/qualify_native_trial_boundary.py": "4c1853ed77e5308d6c6bdfab34a6c596cba9283b6a25aadc471856cb2e6d398c"
+  },
+  "artifacts": {
+    "observations.json": "3b673bd14ca63ba27abc11397cf581baed49063337ce4702a310a66924b71316"
+  },
+  "comparative_model_attempts": 0,
+  "model_efficacy_established": false
+}

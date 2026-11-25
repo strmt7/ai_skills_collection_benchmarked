@@ -37,9 +37,22 @@ grader control using the publisher's exact prompt, image and tests. The
 unchanged source scored 3/14 and the malformed module scored 1/14. A missing
 offline dependency stopped preparation before scoring. The end-to-end replay
 verified the intended submission edit and reproduced 3/14. These scripted
-controls qualify this path for development. A counted comparison still requires
-admission for this study and matched model runs. See the
+controls qualify this path for development. See the
 [Go native controls](../artifacts/research/2026-11-24/go-native-controls/review.json).
+
+An independent reference passed 71 Go project tests and 14/14 publisher cases.
+The Windows subject transferred its two source edits and reproduced the full
+score. Eleven Go controls qualified the task-specific anonymous execution
+profile. The isolation control verified that the subject could not access the
+grader-only reference. Cross-profile and prompt substitutions were rejected,
+and the existing Packaging profile passed its recheck. A comparative claim
+requires admitted model outcomes. See the
+[Go study admission](../artifacts/research/2026-11-25/go-study-admission/review.json).
+
+The first local Qwen3 8B comparison scored the Karpathy arm at 3/14.
+The default and collection arms were refused before inference when host RAM
+fell below the frozen launch floor. Paired effects remain unavailable.
+[Go comparison record](../artifacts/research/2026-11-25/go-development-comparison/observations.json)
 
 The Windows subject adapter now supports automatic, hash-locked dependency
 installation into a fresh private profile. In the Packaging development cell,

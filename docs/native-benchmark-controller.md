@@ -253,8 +253,8 @@ silently assigned new budgets.
 
 ### Qualify an anonymous development profile
 
-`tools/qualify_native_trial_boundary.py` verifies eleven independent packaging
-controls and the native context controls against their recorded observations.
+`tools/qualify_native_trial_boundary.py` verifies eleven native controls for
+each admitted task and checks the recorded context controls.
 It checks the original scorer's passing and failing results, incomplete streams,
 write and storage limits, observation errors, an interrupted running tool,
 protected-path and network access, and owned-process cleanup. A marker in a
@@ -267,14 +267,21 @@ execution and after grading.
 The timeout control also observes the running tool's PID and creation time from
 the host and confirms its termination; an empty CLI job alone is insufficient.
 
-The specification declares `schema_version: 1`, profile
-`windows-native-packaging-anonymous-v1`, `execution_source_sha256`, an absolute
-`context_directory`, and a `controls` object mapping all eleven case names to
-their absolute evidence directories: `edited`, `unchanged`, `truncated`, `budget`,
-`accounting`, `logical`, `space`, `spaceerror`, `preflight-space`, `timeout` and
-`isolation`. Paths stay in this checkout's ignored `.venv`; generate them for
-the current installation. This is a trusted-controller evidence check, not
-cryptographic attestation of arbitrary third-party results.
+Set `schema_version` to 1 and select `windows-native-packaging-anonymous-v1`
+or `windows-native-go-monads-anonymous-v1` for the matching task. Supply
+`execution_source_sha256`, an absolute `context_directory`, and a `controls`
+object mapping `edited`, `unchanged`, `truncated`, `budget`, `accounting`,
+`logical`, `space`, `spaceerror`, `preflight-space`, `timeout` and `isolation`
+to their absolute evidence directories. Generate these paths in the current
+checkout's ignored `.venv`. The checker trusts the controller's custody of
+these files and verifies the native evidence against that record.
+
+The Go profile binds the original Go Monads prompt, project revision,
+publisher image and verifier. The admitted Windows compiler must match the
+grader's Go release, and its data-only module proxy must contain the same
+records by path and digest. Successful edited controls verify the compiler
+and the read-only proxy from the actual subject shell. The reference scores
+14/14 and the unchanged project scores 3/14.
 
 ```powershell
 .\dev.ps1 python tools/qualify_native_trial_boundary.py --specification .venv/native-controls/specification.json --output .venv/native-controls/qualified
