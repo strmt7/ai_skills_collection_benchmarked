@@ -1,0 +1,64 @@
+{
+  "bundle_sha256": "6e6a0efc1b98d6cc0a2fa5f6e4950649b4fa30d4233b737bd7714d76ce3d1419",
+  "control_runs": 36,
+  "identical_native_metric_task_ids": [
+    685,
+    777,
+    1805,
+    1976,
+    2086,
+    2242,
+    2299,
+    2850,
+    2932,
+    2977,
+    3072,
+    3095
+  ],
+  "model_attempts": 0,
+  "observations": {
+    "exact": {
+      "detected": 24,
+      "inconclusive": 0,
+      "measurable_defect_runs": 12,
+      "planned_defects": 24,
+      "publisher": {
+        "measured": 12
+      },
+      "reference": {
+        "passed": 12
+      },
+      "survived": 0
+    },
+    "incorrect": {
+      "detected": null,
+      "inconclusive": null,
+      "measurable_defect_runs": 0,
+      "planned_defects": 24,
+      "publisher": {
+        "measured": 12
+      },
+      "reference": {
+        "test_failed": 12
+      },
+      "survived": null
+    },
+    "shape": {
+      "detected": 0,
+      "inconclusive": 0,
+      "measurable_defect_runs": 12,
+      "planned_defects": 24,
+      "publisher": {
+        "measured": 12
+      },
+      "reference": {
+        "passed": 12
+      },
+      "survived": 24
+    }
+  },
+  "public_tasks": 12,
+  "schema_version": 1,
+  "selection_sha256": "5c1d2fd6edf296ab129127d5ef42f0961bc4635a5bc8086b46d83201c3a96d16",
+  "study_plan_sha256": "ade568d9b06b1de9bb8cb836d984b0f8aa1e4f2f0d65ed520f9fe1fd30373739"
+}

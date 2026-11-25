@@ -22,9 +22,16 @@ def fenced(text: str, heading: str, language: str = "typescript") -> str:
 
 
 def modules() -> tuple[dict[str, str], dict[str, str]]:
-    api = (PACKAGES / "api-design-current/provenance/original-SKILL.md").read_text(encoding="utf-8")
-    backend = (PACKAGES / "backend-patterns-current/provenance/original-SKILL.md").read_text(encoding="utf-8")
-    conventions = (PACKAGES / "repository-conventions-current/provenance/original-SKILL.md").read_text(encoding="utf-8")
+    bindings: dict[str, str] = {}
+
+    def read_source(path: Path) -> str:
+        raw = path.read_bytes()
+        bindings[path.relative_to(ROOT).as_posix()] = hashlib.sha256(raw).hexdigest()
+        return raw.decode("utf-8").replace("\r\n", "\n").replace("\r", "\n")
+
+    api = read_source(PACKAGES / "api-design-current/provenance/original-SKILL.md")
+    backend = read_source(PACKAGES / "backend-patterns-current/provenance/original-SKILL.md")
+    conventions = read_source(PACKAGES / "repository-conventions-current/provenance/original-SKILL.md")
     post = fenced(api, "### TypeScript (Next.js API Route)")
     post = "\n".join(line for line in post.splitlines() if not line.startswith("import "))
     fragments = [post]
@@ -35,53 +42,50 @@ def modules() -> tuple[dict[str, str], dict[str, str]]:
         ("### Structured Logging", "const logger ="),
     ]:
         fragments.append(fenced(backend, heading).split(end, 1)[0])
-    source = (HERE / "adapters/source-prefix.mts").read_text(encoding="utf-8") + "\n"
-    source += "\n".join(fragments) + "\n" + (HERE / "adapters/source-suffix.mts").read_text(encoding="utf-8")
+    source = read_source(HERE / "adapters/source-prefix.mts") + "\n"
+    source += "\n".join(fragments) + "\n" + read_source(HERE / "adapters/source-suffix.mts")
     source += "\nexport async function preserveFailure(operation: () => Promise<unknown>) {\nconst riskyOperation = operation;\n"
     source += fenced(conventions, "## Error Handling") + "\n}\n"
-    go_source = (HERE / "adapters/source-go.go").read_text(encoding="utf-8")
+    go_source = read_source(HERE / "adapters/source-go.go")
     if "json.NewDecoder(r.Body).Decode(&req)" not in fenced(api, "### Go (net/http)", "go"):
         raise ValueError("Pinned Go excerpt changed; review rather than guessing")
-    profile = (PACKAGES / "repository-conventions-current/SKILL.md").read_text(encoding="utf-8")
+    profile = read_source(PACKAGES / "repository-conventions-current/SKILL.md")
     profile = profile.split("```typescript\n", 1)[1].split("```", 1)[0]
-    template = (HERE / "adapters/maintained.mts.template").read_text(encoding="utf-8")
+    template = read_source(HERE / "adapters/maintained.mts.template")
     if template.count("/* PROFILE_EXCERPT */") != 1:
         raise ValueError("Exactly one profile excerpt placeholder required")
-    go = (PACKAGES / "api-design-current/references/decode-json.go").read_text(encoding="utf-8")
+    go = read_source(PACKAGES / "api-design-current/references/decode-json.go")
     if not go.startswith("package httpjson\n"):
         raise ValueError("Reviewed Go package declaration changed")
     prepared = {
         "source.mts": source,
         "maintained.mts": template.replace("/* PROFILE_EXCERPT */", profile),
-        "request-json.mts": (PACKAGES / "api-design-current/references/request-json.ts").read_text(encoding="utf-8"),
-        "boundaries.mts": (PACKAGES / "backend-patterns-current/references/boundaries.ts").read_text(encoding="utf-8"),
+        "request-json.mts": read_source(PACKAGES / "api-design-current/references/request-json.ts"),
+        "boundaries.mts": read_source(PACKAGES / "backend-patterns-current/references/boundaries.ts"),
         "source-go/source.go": go_source,
         "maintained-go/decode.go": go.replace("package httpjson", "package bodycontrols", 1),
-        "maintained-go/fixture.go": (HERE / "adapters/maintained-go.go").read_text(encoding="utf-8"),
+        "maintained-go/fixture.go": read_source(HERE / "adapters/maintained-go.go"),
     }
+    go_controls = read_source(HERE / "go-controls_test.go")
+    go_cases = read_source(HERE / "go-cases.json")
     for arm in ARMS:
-        prepared[f"{arm}-go/controls_test.go"] = (HERE / "go-controls_test.go").read_text(encoding="utf-8")
-        prepared[f"{arm}-go/cases.json"] = (HERE / "go-cases.json").read_text(encoding="utf-8")
+        prepared[f"{arm}-go/controls_test.go"] = go_controls
+        prepared[f"{arm}-go/cases.json"] = go_cases
     files = [
         HERE / name
         for name in [
             "contract.json",
-            "go-cases.json",
             "node-controls.mjs",
             "qualification.mjs",
-            "go-controls_test.go",
             "prepare_backend.py",
             "run_backend_native.py",
             "environment.json",
             "source-provenance.json",
         ]
     ]
-    files += sorted((HERE / "adapters").iterdir())
     files += [HERE.parent / "frontend" / name for name in ["package.json", "package-lock.json"]]
     files += [ROOT / "tools/_windows_owned_python.py"]
-    for name in ["api-design-current", "backend-patterns-current", "repository-conventions-current"]:
-        files += sorted(file for file in (PACKAGES / name).rglob("*") if file.is_file())
-    bindings = {file.relative_to(ROOT).as_posix(): digest(file) for file in files}
+    bindings.update({file.relative_to(ROOT).as_posix(): digest(file) for file in files})
     return prepared, bindings
 
 

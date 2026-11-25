@@ -1,0 +1,176 @@
+{
+  "arms": {
+    "maintained": {
+      "go": {
+        "body-budget": true,
+        "concatenated-values": true,
+        "trailing-garbage": true,
+        "trailing-whitespace": true,
+        "valid-object": true,
+        "wrong-field-type": true
+      },
+      "node": {
+        "auth-challenge": true,
+        "auth-downstream-async": true,
+        "auth-downstream-sync": true,
+        "auth-invalid": true,
+        "auth-scheme-case": true,
+        "auth-valid": true,
+        "auth-verifier-unavailable": true,
+        "exception-provenance": true,
+        "log-context-integrity": true,
+        "post-malformed-json": true,
+        "post-schema-rejected": true,
+        "post-valid-created": true,
+        "retry-cancelled-before-start": true,
+        "retry-permanent-stop": true,
+        "retry-transient-recovery": true,
+        "zod4-error-issues": true
+      },
+      "typecheck_exit_code": 0
+    },
+    "source": {
+      "go": {
+        "body-budget": false,
+        "concatenated-values": false,
+        "trailing-garbage": false,
+        "trailing-whitespace": true,
+        "valid-object": true,
+        "wrong-field-type": true
+      },
+      "node": {
+        "auth-challenge": false,
+        "auth-downstream-async": true,
+        "auth-downstream-sync": false,
+        "auth-invalid": true,
+        "auth-scheme-case": false,
+        "auth-valid": true,
+        "auth-verifier-unavailable": false,
+        "exception-provenance": false,
+        "log-context-integrity": false,
+        "post-malformed-json": false,
+        "post-schema-rejected": true,
+        "post-valid-created": true,
+        "retry-cancelled-before-start": false,
+        "retry-permanent-stop": false,
+        "retry-transient-recovery": true,
+        "zod4-error-issues": false
+      },
+      "typecheck_exit_code": 2
+    }
+  },
+  "frozen_runtime": {
+    "dependency_lock": "benchmarks/component-controls/frontend/package-lock.json",
+    "direct_versions": {
+      "@types/react": "19.3.0",
+      "jsdom": "30.1.3",
+      "react": "19.3.1",
+      "react-dom": "19.3.1",
+      "typescript": "7.0.2",
+      "zod": "4.6.7"
+    },
+    "go_archive_sha256": "f26081f438319757f8a1b46d7d0b2c5ec7583d4038e485e0aa725cfde7885fff",
+    "go_version": "go version go1.27.3 windows/amd64",
+    "node_version": "v26.12.1",
+    "npm_version": "12.2.1",
+    "platform": "Windows x64"
+  },
+  "generated_program_sha256": {
+    "boundaries.mts": "5b35c0dbfcb17c26b55954ef7753da946bb09b56bc2f1b36cbaedb50c3431bb9",
+    "maintained-go/cases.json": "a06e60035747563b61b756cf94e4cdf9f81263e86c19d90bd2eccff773c8e587",
+    "maintained-go/controls_test.go": "50f57c6d7e53e33cc3a835b2e5d0ef2a5b6a560debc5a9afdff34f31950d1417",
+    "maintained-go/decode.go": "e79cf06922afe5da7739ec94d9cd2c8a1bc851f9a0b48819049b622a897765d8",
+    "maintained-go/fixture.go": "e5ec58c5f492b094869e25c7c2273ce21d8d6960da5ad8eb687748c98b09d063",
+    "maintained.mts": "2b4df7957fb4cdc989bf48949264cbcfb4ce488f652b57a03ffd054096fcb498",
+    "request-json.mts": "5b4b5289755e86c8d6d60ed19ca3bdb442260dbd6262c3bb5ce075e76774d5a5",
+    "source-go/cases.json": "a06e60035747563b61b756cf94e4cdf9f81263e86c19d90bd2eccff773c8e587",
+    "source-go/controls_test.go": "50f57c6d7e53e33cc3a835b2e5d0ef2a5b6a560debc5a9afdff34f31950d1417",
+    "source-go/source.go": "6b0d1affd271027cb044270f037d8bed7e304da419fbbf81de7bfc6ce9f73bc7",
+    "source.mts": "8fbf025ef5db5710011443af7933a445eb5b33635e16323472196b57c5942eb2"
+  },
+  "generated_programs_match_previous_execution": true,
+  "model_attempts": 0,
+  "native_capture_sha256": {
+    "go-telemetry-off.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "go-telemetry-off.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "go-version.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "go-version.stdout.log": "8a7482001971a0707b9cb457418796cfa6dcb3cdfcc3ff560a2f1d87635285c4",
+    "maintained-compile.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "maintained-compile.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "maintained-go-vet.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "maintained-go-vet.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "maintained-go.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "maintained-go.stdout.log": "18542a492fa2aa2f7e5e7c85534c3da64d297572851a120bcd1591bdadb7b5be",
+    "maintained-node.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "maintained-node.stdout.log": "5ad140b413919903fed7fb63b18a737ecca1ff6a560d5f0a95218d193ff02749",
+    "node-version.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "node-version.stdout.log": "8414c2bd27b97e294970d0f1c728101d493b3594597935181c891c1286e1ab8c",
+    "observations.json": "6cbcb1932130db1af5da4749507cd90369a945dfcaa6fc31dbb1fab4ee93bd98",
+    "processes.json": "1b9936b26642e8649cec0e0862f98375dd2e7430d4d5043f2d36e6bb46c32843",
+    "qualification.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "qualification.stdout.log": "01e76abb6749720d90fe065ec830af009c4b0a6503161026b181f761866caaa9",
+    "source-compile.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source-compile.stdout.log": "4733550ede1adebf5b37f7db3153b370a4945c2afccec0b6297bad815416d8f0",
+    "source-go.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source-go.stdout.log": "d6666407ff72a04e7840f50872f84839ded8e8e1fd9c50e8a24ab1a38528474b",
+    "source-node.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source-node.stdout.log": "e08e0b9231318bbd7b74deb6f0a011564539f3a3ed785c8cf2f173456a994c1f"
+  },
+  "previous_requalification": {
+    "path": "artifacts/research/2026-11-25/stable-rest-contracts/backend-replay.json",
+    "sha256": "a17a2419cfa2230a4c48c7c7eb2d5b61dc9dfeb85e622a04b95e57fe9bde049f"
+  },
+  "previous_result_sha256": "edb5745931f167e139d0706a87fa5ce7526c7316a97824b753747fd0cc4f441b",
+  "previous_revision": "5dca8651a6123ae6025d8b530c22fcd3c27cdaa6",
+  "schema_version": 1,
+  "scope": "Requalify the executable backend component inputs and retain the earlier native outputs.",
+  "scope_change": {
+    "changed_implementation": [
+      "benchmarks/component-controls/backend/prepare_backend.py"
+    ],
+    "current_bindings": 24,
+    "previous_bindings": 35,
+    "removed_unread_package_files": [
+      "included/improved/skills/api-design-current/LICENSE",
+      "included/improved/skills/api-design-current/NOTICE.md",
+      "included/improved/skills/api-design-current/SKILL.md",
+      "included/improved/skills/api-design-current/provenance/original-agents/openai.yaml",
+      "included/improved/skills/backend-patterns-current/LICENSE",
+      "included/improved/skills/backend-patterns-current/NOTICE.md",
+      "included/improved/skills/backend-patterns-current/SKILL.md",
+      "included/improved/skills/backend-patterns-current/provenance/original-agents/openai.yaml",
+      "included/improved/skills/repository-conventions-current/LICENSE",
+      "included/improved/skills/repository-conventions-current/NOTICE.md",
+      "included/improved/skills/repository-conventions-current/provenance/original-agents/openai.yaml"
+    ]
+  },
+  "verified_current_binding": {
+    "errors": [],
+    "native_capture_sha256": {
+      "go-telemetry-off.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "go-telemetry-off.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "go-version.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "go-version.stdout.log": "8a7482001971a0707b9cb457418796cfa6dcb3cdfcc3ff560a2f1d87635285c4",
+      "maintained-compile.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "maintained-compile.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "maintained-go-vet.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "maintained-go-vet.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "maintained-go.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "maintained-go.stdout.log": "3bc8561b21d62964c31f42d78d709d16e7bb4cd53ebea37bee02958141a6fd0d",
+      "maintained-node.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "maintained-node.stdout.log": "5ad140b413919903fed7fb63b18a737ecca1ff6a560d5f0a95218d193ff02749",
+      "node-version.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "node-version.stdout.log": "8414c2bd27b97e294970d0f1c728101d493b3594597935181c891c1286e1ab8c",
+      "observations.json": "a6e198c4d4212552439f418c40a4f81b83f74e3b8c4e92334ca36b2dee763dae",
+      "processes.json": "1b9936b26642e8649cec0e0862f98375dd2e7430d4d5043f2d36e6bb46c32843",
+      "qualification.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "qualification.stdout.log": "01e76abb6749720d90fe065ec830af009c4b0a6503161026b181f761866caaa9",
+      "source-compile.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source-compile.stdout.log": "4733550ede1adebf5b37f7db3153b370a4945c2afccec0b6297bad815416d8f0",
+      "source-go.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source-go.stdout.log": "8242d07c353947cc69a8504aec9d17bb6277f778a091e1d3ada12b1e6c3b4d6c",
+      "source-node.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source-node.stdout.log": "e08e0b9231318bbd7b74deb6f0a011564539f3a3ed785c8cf2f173456a994c1f"
+    }
+  }
+}

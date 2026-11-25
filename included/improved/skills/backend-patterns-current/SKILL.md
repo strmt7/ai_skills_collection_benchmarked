@@ -50,6 +50,10 @@ identity cardinality and state retention. A local map is not a distributed
 limiter. An in-memory queue that logs and drops failures is not durable delivery:
 define acknowledgements, retry/dead-letter handling, shutdown and idempotency
 before using it for critical work. Preserve the project's supported OS.
+For jobs that must survive process exits, use the application's durable queue
+and prove the request-to-job handoff. Read
+[Durable job boundaries](references/durable-jobs.md) when changing delivery,
+worker ownership, or an effect that can be retried.
 
 **Logs:** reserve severity, message and timestamp fields. Keep approved context
 separate from those fields, and apply explicit redaction/allowlisting and size

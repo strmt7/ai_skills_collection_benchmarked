@@ -18,6 +18,10 @@ To verify the published inputs without installing Node or Go:
 python benchmarks/component-controls/backend/prepare_backend.py --check
 ```
 
+The component record binds the inputs read by the generator and the executable
+control harness. The maintained skill manifest separately binds the complete
+skill packages, including guidance and optional references.
+
 To rerun the actual controls on Windows x64, provision the exact Node/npm
 dependencies described in [the frontend controls](../frontend/README.md) and
 Go 1.27.3. Choose explicit executable paths and a new workspace directly inside

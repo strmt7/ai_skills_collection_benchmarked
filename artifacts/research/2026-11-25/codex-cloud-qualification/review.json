@@ -1,0 +1,48 @@
+{
+  "artifacts": {},
+  "assessment": "A cloud task request alone does not establish a matched model or effort. Requiring observed identity and context preserves the official native sign-in guard.",
+  "base_revision": "5dca8651a6123ae6025d8b530c22fcd3c27cdaa6",
+  "cli_help_sha256": "117bb8dac289d39eab303fa964de5b67b88b1d77f4d3503072d2f94c54d0d6cf",
+  "manual": {
+    "native_result_sha256": "c7ca444f2a8650ceaeb29e7321f4405bca0a6c01c3c254ccc9777a8e0744c1cf",
+    "native_url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+    "provider_version": "0.9.6+catalog.portable1",
+    "status_code": 200
+  },
+  "observations": {
+    "cloud_tasks_submitted": 0,
+    "local_model_and_effort_fields_in_submit": false,
+    "model_attempts": 0,
+    "verified_submit_keys": [
+      "branch",
+      "environment_id",
+      "input_items",
+      "run_environment_in_qa_mode",
+      "optional best_of_n"
+    ]
+  },
+  "official_sources": {
+    "https://github.com/openai/codex/blob/rust-v0.172.0/codex-rs/cloud-tasks-client/src/http.rs": {
+      "git_blob": "b6ea46bbf9076703cd1f06e405fb4a755d80e9b3",
+      "sha256": "43261ecb85b032f4578d6328984e73f5d127fded2e41883bf49cb48577f95b0e"
+    },
+    "https://github.com/openai/codex/blob/rust-v0.172.0/codex-rs/cloud-tasks/src/cli.rs": {
+      "git_blob": "e2c3a24442277d64483c1f85f827fb3ab7bd5156",
+      "sha256": "9ffbf4e43e12986a3ade28f05bc3d70e80d2860314f32ace7b3060148bc2fbaa"
+    },
+    "https://github.com/openai/codex/blob/rust-v0.172.0/codex-rs/cloud-tasks/src/lib.rs": {
+      "git_blob": "864e9e067c2578d08c5f2b01c405b4b060e4f386",
+      "sha256": "73c1704a8cedfb11ab396c5779b68a828ae4b25013839dec2c8886ac2db71092"
+    }
+  },
+  "redirect_preflight": {
+    "intended_url": "https://developers.openai.com/codex/cli/reference",
+    "native_result_sha256": "1c58bd9e4d988d50fb4652ba7c84cae84a9809f8ddaeae9ad6eaa5c92ea3dff2",
+    "status_code": 308
+  },
+  "schema_version": 1,
+  "scope": "Official Codex v0.172.0 cloud CLI submission contract.",
+  "source_sha256": {
+    "docs/research-codex-authentication.md": "d91558dac505beafed9da2865d9d2722c0c9f7a5a861fff36d59c8b19575465f"
+  }
+}

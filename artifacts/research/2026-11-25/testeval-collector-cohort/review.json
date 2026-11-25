@@ -1,0 +1,76 @@
+{
+  "artifacts": {
+    "native-reports.json": "6e6a0efc1b98d6cc0a2fa5f6e4950649b4fa30d4233b737bd7714d76ce3d1419",
+    "recheck.py": "0c74b07e7a1be11277f71a6a8537d64c06ab2b1a4d7880ee891271d543e09ad1",
+    "summary.json": "c14dd63d4a96a962aefe97b03bfcc8b77f70c50fa1d084f16bebd9c0992c3cde"
+  },
+  "base_revision": "5dca8651a6123ae6025d8b530c22fcd3c27cdaa6",
+  "limitations": "These are hand-authored public development controls. They establish a distinction between executed code and assertions that detect specified defects. They do not estimate unseen-task performance or model or skill gains.",
+  "model_attempts": 0,
+  "native_capture": {
+    "capture_inventory_sha256": "b2c5a05163c56ec2f6ef7551b8f79a5fc2d347f3992551d9fe3a0b6b6ef5993b",
+    "frozen_public_study_sha256": "ade568d9b06b1de9bb8cb836d984b0f8aa1e4f2f0d65ed520f9fe1fd30373739",
+    "independent_pytest_executions": 108,
+    "native_containers_closed": 144,
+    "native_publishers": 36,
+    "native_reports_sha256": "6e6a0efc1b98d6cc0a2fa5f6e4950649b4fa30d4233b737bd7714d76ce3d1419"
+  },
+  "observations": {
+    "by_control": {
+      "exact": {
+        "detected": 24,
+        "inconclusive": 0,
+        "measurable_defect_runs": 12,
+        "planned_defects": 24,
+        "publisher": {
+          "measured": 12
+        },
+        "reference": {
+          "passed": 12
+        },
+        "survived": 0
+      },
+      "incorrect": {
+        "detected": null,
+        "inconclusive": null,
+        "measurable_defect_runs": 0,
+        "planned_defects": 24,
+        "publisher": {
+          "measured": 12
+        },
+        "reference": {
+          "test_failed": 12
+        },
+        "survived": null
+      },
+      "shape": {
+        "detected": 0,
+        "inconclusive": 0,
+        "measurable_defect_runs": 12,
+        "planned_defects": 24,
+        "publisher": {
+          "measured": 12
+        },
+        "reference": {
+          "passed": 12
+        },
+        "survived": 24
+      }
+    },
+    "control_runs": 36,
+    "identical_native_metrics_tasks": 12,
+    "public_tasks": 12
+  },
+  "replay": "python artifacts/research/2026-11-25/testeval-collector-cohort/recheck.py",
+  "schema_version": 1,
+  "scope": "Complete model-free replay of 12 frozen public TestEval development tasks and three predeclared test controls.",
+  "source_sha256": {
+    "docs/benchmark-execution-plan.md": "4c0bd9a042a084140b54b3de1864d99c325a70d7c7d32f96efc4a34ec0a0bf8f",
+    "tests/test_testeval_collector_archive.py": "2031f8cbec4deaaaf2fc1b892fc3de0ec0efa8cd885e3a177ba9f1b389024fb2"
+  },
+  "unchanged_runner_inputs_sha256": {
+    "benchmarks/agent-effectiveness/development/testeval-pilot-v2/native-profile.json": "a97da16e3271ed87664e25cb60d153dfc680bd0fc544465a3f1b35a5b7e4ee26",
+    "tools/_native_benchmark_runtime.py": "b36647bc427ad8b59e61ada097c3b6feda4a3529fed2bae09b60b7a2b08372fa",
+    "tools/collect_testeval_submission.py": "d17d8e12eda081f7c584a92a69dcb2c7b822e40bfec350a900e38393a52fd678"
+  }
+}

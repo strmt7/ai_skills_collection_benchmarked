@@ -521,7 +521,6 @@
       },
       "sources": [
         "benchmarks/agent-effectiveness/development/testeval-pilot-v2/native-profile.json",
-        "docs/benchmark-execution-plan.md",
         "tests/test_collect_testeval_submission.py",
         "tools/_native_benchmark_runtime.py",
         "tools/collect_testeval_submission.py",
@@ -535,8 +534,43 @@
         "sha256": "e7b67568fc37a1fdee93b30d01084a7745d26874b9162c2a09a8aaef826dba8f"
       },
       "sources": [
-        "benchmarks/component-controls/backend/result.json",
         "included/improved/skills/api-design-current/SKILL.md"
+      ]
+    },
+    {
+      "id": "backend-durable-jobs-and-component-closure",
+      "review": {
+        "path": "artifacts/research/2026-11-25/backend-durable-jobs/review.json",
+        "sha256": "5fca06354c9c58641dd8b18314e83d6b3917787c8e1afbc4b8a87c0fa7ececfb"
+      },
+      "sources": [
+        "benchmarks/component-controls/backend/README.md",
+        "benchmarks/component-controls/backend/prepare_backend.py",
+        "benchmarks/component-controls/backend/result.json",
+        "included/improved/skills/backend-patterns-current/SKILL.md",
+        "included/improved/skills/backend-patterns-current/references/durable-jobs.md",
+        "tests/test_backend_component_inputs.py"
+      ]
+    },
+    {
+      "id": "official-codex-cloud-submission",
+      "review": {
+        "path": "artifacts/research/2026-11-25/codex-cloud-qualification/review.json",
+        "sha256": "e95950e56a839299373c3021a4ccbef34cd2cc2327e604da170847871d73877c"
+      },
+      "sources": [
+        "docs/research-codex-authentication.md"
+      ]
+    },
+    {
+      "id": "testeval-public-collector-cohort",
+      "review": {
+        "path": "artifacts/research/2026-11-25/testeval-collector-cohort/review.json",
+        "sha256": "4bb73a5247a23191bb17dd241c24a4e6f632b8a2f516c427e11a866c62a5f456"
+      },
+      "sources": [
+        "docs/benchmark-execution-plan.md",
+        "tests/test_testeval_collector_archive.py"
       ]
     }
   ],
@@ -1053,6 +1087,24 @@
       "review": {
         "path": "artifacts/research/2026-11-25/testeval-pilot-grading/review.json",
         "sha256": "556301f1e03e67e7c9c38809b746776e7c88994f5890dc2fab8e2a3f66dedbda"
+      },
+      "superseded_sources": [
+        "docs/benchmark-execution-plan.md"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-25/stable-rest-contracts/review.json",
+        "sha256": "e7b67568fc37a1fdee93b30d01084a7745d26874b9162c2a09a8aaef826dba8f"
+      },
+      "superseded_sources": [
+        "benchmarks/component-controls/backend/result.json"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-25/testeval-native-collector/review.json",
+        "sha256": "fc2dd94bddad65d6fc2b593a1476434ad20e5271db8da9845b5106122eba8f2e"
       },
       "superseded_sources": [
         "docs/benchmark-execution-plan.md"

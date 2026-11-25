@@ -376,6 +376,15 @@ submission handoff, and independent defect witnesses for the frozen study.
 The earlier grading qualification spans 12 public tasks and zero model attempts.
 [Grader qualification](../artifacts/research/2026-11-25/testeval-pilot-grading/review.json) · [Collector qualification](../artifacts/research/2026-11-25/testeval-native-collector/review.json)
 
+We replayed three model-free controls on all 12 selected public tasks through
+the collector in 144 isolated stages. The publisher metrics were identical
+across the controls for every task. The precise assertions detected all 24
+prepared defects. The shape-only assertions passed on every reference and
+detected zero of those defects. The incorrect assertions failed every reference,
+leaving their defect sensitivity unmeasured. The archived native reports can
+be regraded offline. This run recorded zero model attempts.
+[Public control results and replay](../artifacts/research/2026-11-25/testeval-collector-cohort/review.json)
+
 ## Success criteria and reporting
 
 Preregister per-suite practical effect thresholds, independent task counts,

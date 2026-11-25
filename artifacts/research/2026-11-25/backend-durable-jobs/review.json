@@ -1,0 +1,73 @@
+{
+  "artifacts": {
+    "component-native-replay.json": "c2cdb35874828c0ed98bb1f305aba82dc115489a49652d508fb8ed2656087281",
+    "reproduce.py": "8d8c3aca629c20b7533cf8d456fc1d5f5877102acd39bcdcac4dadce5ce98190",
+    "sqlite-control.native.json": "f1b5dc8603b543fe922f9441fa11dbc4e34c7440e8a14f9df35d4090bbfe8217",
+    "sqlite-linux.native.json": "dbf4e0e11ae0399245cb943f6d53613d1f2c751f84cd016694180279d8cc4e69"
+  },
+  "base_revision": "5dca8651a6123ae6025d8b530c22fcd3c27cdaa6",
+  "limitations": "SQLite controls covered independent process exits, a database-local effect and expired claims. No external effect, database engine failover or model efficacy was measured.",
+  "mirrored_package": {
+    "commit": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+    "resources": {
+      "SKILL.md": {
+        "review_scope": "Read API, storage, middleware, validation, caching, retries, queue, logging and application-auth guidance. Replayed the example process-local queue with an unfinished job and verified the replacement durability contract in SQLite.",
+        "sha256": "d4d3c9c54b5bf5af3c1711fe16ef28db1538d4c272cfa0e4420da60c368fef02",
+        "status": "reviewed"
+      },
+      "agents/openai.yaml": {
+        "review_scope": "Reviewed routing, display metadata and implicit invocation. Maintained guidance preserves the existing agent-neutral entrypoint.",
+        "sha256": "f9ee88273743b1bc1d0a69c19d2544cc8f579688fc4b4518d68925e3f4a88c7a",
+        "status": "reviewed"
+      }
+    }
+  },
+  "model_attempts": 0,
+  "observations": {
+    "controlled_process_stops": 4,
+    "durable_sqlite_events": 16,
+    "linux_oci_events_match_windows": true,
+    "maintained_component_results": {
+      "go": 6,
+      "node": 16
+    },
+    "mirrored_process_local_queue": [
+      {
+        "acknowledged": 2,
+        "finished": false,
+        "queued": 1,
+        "started": true
+      },
+      {
+        "queued_after_fresh_process": 0
+      }
+    ],
+    "mirrored_process_local_queue_capture_sha256": {
+      "after": "dddafbe219aa8e92f8bb9af046103ea3f9e2fbddfe76a87779b3827de48f3128",
+      "before": "b48e34e0c7056b77ef59b79cc8220ae48d74c037a521dbf34b41ef44cf0137c4"
+    },
+    "sqlite_runtime_versions": {
+      "linux_oci_target": "3.46.1",
+      "windows": "3.50.4"
+    }
+  },
+  "schema_version": 1,
+  "scope": "Process-exit durability controls for one SQLite database and independent replay of existing Node and Go components.",
+  "source_sha256": {
+    "benchmarks/component-controls/backend/README.md": "ee3c982fab3181ace6c6d92a8d88d894dc5ae542f0fe3a9b06a2c80435335bfc",
+    "benchmarks/component-controls/backend/prepare_backend.py": "66e3ce945620f2680f8ad7284d811c8e5aa2f7e8284bb6e0688f180702f1881d",
+    "benchmarks/component-controls/backend/result.json": "5e1824a5706e6faaeb349ed439b572c4256a061ef2494e75f2b2d8b1fdfb12d6",
+    "included/improved/skills/backend-patterns-current/SKILL.md": "a22a76de8fc146ca48ae38f6630e2f0ad1c671dc8faa82f43e3df79cbb5622bb",
+    "included/improved/skills/backend-patterns-current/references/durable-jobs.md": "e1ba103d91d1b1f6823d628b0f830323a534af85279e2f3daf685740561920db",
+    "tests/test_backend_component_inputs.py": "bcc69e0b8a7802291569c73f94482077dcce07b63b8eca2230b496a841aaca37"
+  },
+  "sources_read": [
+    {
+      "native_result_sha256": "e2063d371da8f299ad711ef154908b567e14a5ace375860cf298638924ec81c8",
+      "native_url": "https://www.postgresql.org/docs/current/sql-select.html#SQL-FOR-UPDATE-SHARE",
+      "provider_version": "0.9.6+catalog.portable1",
+      "scope": "Row locking and skip behavior for concurrent queue consumers.",
+      "status_code": 200
+    }
+  ]
+}

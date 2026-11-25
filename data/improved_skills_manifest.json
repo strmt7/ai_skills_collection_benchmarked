@@ -404,14 +404,15 @@
       "license_source_sha": "b832b6f642312312367c07688dc7426db40a82ed",
       "original_path": "included/improved/skills/backend-patterns-current/provenance/original-SKILL.md",
       "overlay_path": "included/improved/skills/backend-patterns-current",
-      "overlay_sha256": "c67e6a483b6808864a0aece3ea6eda7f32c2cce06cebf65a384bc522485dc2de",
+      "overlay_sha256": "a22a76de8fc146ca48ae38f6630e2f0ad1c671dc8faa82f43e3df79cbb5622bb",
       "package_file_sha256": {
         "LICENSE": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
         "NOTICE.md": "0f026acda8a64ea97da6b95240a9210af7b06a65bfec4479959617f9348728e7",
-        "SKILL.md": "c67e6a483b6808864a0aece3ea6eda7f32c2cce06cebf65a384bc522485dc2de",
+        "SKILL.md": "a22a76de8fc146ca48ae38f6630e2f0ad1c671dc8faa82f43e3df79cbb5622bb",
         "provenance/original-SKILL.md": "952e95fd7e8d0b17f13835dde8067d7dd2abd019e6e17821d5ebf913113c589e",
         "provenance/original-agents/openai.yaml": "6a56b16e6ea055931bc38979c12279e7cd3ac7d3440bdd8fa1dc3152d003d36b",
-        "references/boundaries.ts": "5b35c0dbfcb17c26b55954ef7753da946bb09b56bc2f1b36cbaedb50c3431bb9"
+        "references/boundaries.ts": "5b35c0dbfcb17c26b55954ef7753da946bb09b56bc2f1b36cbaedb50c3431bb9",
+        "references/durable-jobs.md": "e1ba103d91d1b1f6823d628b0f830323a534af85279e2f3daf685740561920db"
       },
       "performance_status": "unbenchmarked",
       "skill_id": "affaan-m-everything-claude-code-agents-skills-backend-patterns-skill-md",

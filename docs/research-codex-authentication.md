@@ -208,3 +208,17 @@ instruction constructors still use the same home, and thread instructions do
 not replace the global contribution. No supported unattended isolation route was
 established in those paths; this is not a proof that none can exist. The real
 profile remains untouched and the launch refusal remains closed.
+
+## Cloud launch options in Codex 0.172.0
+
+The stable CLI's `codex cloud exec` accepts an environment, branch, prompt,
+and attempt count. The reviewed implementation sends those values and a
+task-mode flag to its cloud backend. The task request has no fields for the
+local model or reasoning-effort overrides that a matched trial needs to bind.
+This review covers the CLI submission path. It made zero cloud tasks and
+observed no server-resolved model. [Official command reference](https://learn.chatgpt.com/docs/developer-commands?surface=cli) · [Pinned submit implementation](https://github.com/openai/codex/blob/rust-v0.172.0/codex-rs/cloud-tasks/src/lib.rs#L237-L263)
+
+A cloud experiment needs a separately qualified route that records the
+server-resolved model, reasoning settings, tool access, and actual instructions
+in each condition. Retain the dedicated signed-in-home admission rule for
+native trials.

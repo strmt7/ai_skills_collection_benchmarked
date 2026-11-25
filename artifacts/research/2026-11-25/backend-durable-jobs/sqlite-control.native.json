@@ -1,0 +1,215 @@
+{
+  "events": [
+    {
+      "exit": 0,
+      "operation": "initialize",
+      "parameters": [],
+      "value": {
+        "status": "ready"
+      }
+    },
+    {
+      "exit": 73,
+      "operation": "accept",
+      "parameters": [
+        "example-order",
+        "blue",
+        "before_commit"
+      ],
+      "value": null
+    },
+    {
+      "exit": 0,
+      "operation": "state",
+      "parameters": [],
+      "value": {
+        "effects": [],
+        "jobs": [],
+        "requests": []
+      }
+    },
+    {
+      "exit": 73,
+      "operation": "accept",
+      "parameters": [
+        "example-order",
+        "blue",
+        "after_commit"
+      ],
+      "value": null
+    },
+    {
+      "exit": 0,
+      "operation": "state",
+      "parameters": [],
+      "value": {
+        "effects": [],
+        "jobs": [
+          [
+            "example-order",
+            "ready",
+            0
+          ]
+        ],
+        "requests": [
+          [
+            "example-order"
+          ]
+        ]
+      }
+    },
+    {
+      "exit": 0,
+      "operation": "accept",
+      "parameters": [
+        "example-order",
+        "blue",
+        "none"
+      ],
+      "value": {
+        "job": "example-order",
+        "status": "accepted"
+      }
+    },
+    {
+      "exit": 0,
+      "operation": "accept",
+      "parameters": [
+        "example-order",
+        "green",
+        "none"
+      ],
+      "value": {
+        "status": "conflict"
+      }
+    },
+    {
+      "exit": 0,
+      "operation": "claim",
+      "parameters": [
+        "10"
+      ],
+      "value": {
+        "expires": 20,
+        "generation": 1,
+        "job": "example-order",
+        "status": "leased"
+      }
+    },
+    {
+      "exit": 0,
+      "operation": "claim",
+      "parameters": [
+        "19"
+      ],
+      "value": {
+        "status": "empty"
+      }
+    },
+    {
+      "exit": 73,
+      "operation": "finish",
+      "parameters": [
+        "example-order",
+        "1",
+        "19",
+        "before_commit"
+      ],
+      "value": null
+    },
+    {
+      "exit": 0,
+      "operation": "state",
+      "parameters": [],
+      "value": {
+        "effects": [],
+        "jobs": [
+          [
+            "example-order",
+            "leased",
+            1
+          ]
+        ],
+        "requests": [
+          [
+            "example-order"
+          ]
+        ]
+      }
+    },
+    {
+      "exit": 0,
+      "operation": "claim",
+      "parameters": [
+        "20"
+      ],
+      "value": {
+        "expires": 30,
+        "generation": 2,
+        "job": "example-order",
+        "status": "leased"
+      }
+    },
+    {
+      "exit": 0,
+      "operation": "finish",
+      "parameters": [
+        "example-order",
+        "1",
+        "22",
+        "none"
+      ],
+      "value": {
+        "status": "lease_rejected"
+      }
+    },
+    {
+      "exit": 73,
+      "operation": "finish",
+      "parameters": [
+        "example-order",
+        "2",
+        "22",
+        "after_commit"
+      ],
+      "value": null
+    },
+    {
+      "exit": 0,
+      "operation": "claim",
+      "parameters": [
+        "30"
+      ],
+      "value": {
+        "status": "empty"
+      }
+    },
+    {
+      "exit": 0,
+      "operation": "state",
+      "parameters": [],
+      "value": {
+        "effects": [
+          [
+            "example-order"
+          ]
+        ],
+        "jobs": [
+          [
+            "example-order",
+            "done",
+            2
+          ]
+        ],
+        "requests": [
+          [
+            "example-order"
+          ]
+        ]
+      }
+    }
+  ],
+  "model_attempts": 0,
+  "scope": "Single SQLite database with a transactional local effect",
+  "sqlite": "3.50.4"
+}
