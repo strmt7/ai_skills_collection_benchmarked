@@ -1,16 +1,25 @@
 {
-  "node": "v26.13.0",
-  "npm": "12.2.1",
-  "next": "Next.js v16.4.3",
-  "dev_help_exit": 0,
-  "build_help_exit": 0,
-  "analyze_help_exit": 0,
+  "schema_version": 1,
+  "platform": "Windows",
+  "node": "v26.13.1",
+  "npm": "12.2.3",
+  "next": "Next.js v16.4.6",
   "unsupported_exit": 1,
   "turbo_exit": 0,
   "webpack_exit": 0,
   "analyze_exit": 0,
   "expected_html": true,
   "root_in_analyzer": true,
-  "package_lock_sha256": "bb6e3620814e60c69becac9c7d78b0489663697efc93880e71126eb199bb28c9",
+  "export_records": 2882,
+  "export_sha256": "b85b11376fd0f09b1b16f6ad2ed4e7ead7210b544e0a7e731a7b02257c44042c",
+  "package_lock_sha256": "89f9b94c2b39e4c489de5dc661a5959e9c42e5566bf1ff094995e79d3021ec94",
+  "inputs_sha256": {
+    "reproduce.py": "9699b5ac120d18789bc5030d1addee6c56a44132abab11b76f278dbb86bd6615",
+    "fixture/package-lock.json": "89f9b94c2b39e4c489de5dc661a5959e9c42e5566bf1ff094995e79d3021ec94",
+    "fixture/package.json": "155989d051b727ee55c48c002e30f10e7e1d9243e566be567cd9bb932c6f5a9c",
+    "fixture/project/app/layout.js": "313c75416442551fc0b1858490f74d828ab83505c5aa624639fe0e5d2bd71152",
+    "fixture/project/app/page.js": "125fe606d4bb07b1de481f362df456bdf4b0aed4598ee167dcf466efaff5f8e0",
+    "fixture/project/package.json": "4a0d76e1ba5c21e2ffbae9f7ecfc725d73db8a5562061650bbe30b6f171e9c97"
+  },
   "agent_efficacy_scored": false
 }

@@ -7,6 +7,7 @@ import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import express from 'express';
 import { inventory } from './inventory.mjs';
+import { withFixtureHttp } from './fixture-http.mjs';
 
 function fixture(files, run) {
   const root = mkdtempSync(path.join(tmpdir(), 'docs-inventory-'));
@@ -110,14 +111,10 @@ const app = express(); const api = Router(); app.get('/health', handler); api.po
   const routes = fixture(files, root => inventory(root).routes);
   const app = express(); const api = express.Router();
   app.get('/health', (_req,res) => res.sendStatus(204)); api.post('/items', (_req,res) => res.sendStatus(204)); app.use('/v1/', api);
-  const server = app.listen(0, '127.0.0.1');
-  try {
-    await new Promise((resolve, reject) => { server.once('listening', resolve); server.once('error', reject); });
-    const port = server.address().port;
+  await withFixtureHttp(app, async request => {
     for (const route of routes) {
-      const response = await fetch(`http://127.0.0.1:${port}${route.path}`, { method: route.method });
-      assert.equal(response.status, 204, `${route.method} ${route.path}`);
+      assert.equal(await request(route.path, route.method), 204, `${route.method} ${route.path}`);
     }
-    assert.equal((await fetch(`http://127.0.0.1:${port}/wrong`)).status, 404);
-  } finally { await new Promise((resolve, reject) => server.close(error => error ? reject(error) : resolve())); }
+    assert.equal(await request('/wrong'), 404);
+  });
 });

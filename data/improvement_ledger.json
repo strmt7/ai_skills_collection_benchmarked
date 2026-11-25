@@ -681,11 +681,21 @@
       },
       "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/nextjs-turbopack",
       "research": {
-        "evidence": [],
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-25/dependency-consumer-controls/review.json",
+            "sha256": "86105ef6edb788548a19d807229c0e4a4e002d7d5545959c2f5c534b89d767cc"
+          }
+        ],
         "status": "pending"
       },
       "revision": {
-        "evidence": [],
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-25/dependency-consumer-controls/review.json",
+            "sha256": "86105ef6edb788548a19d807229c0e4a4e002d7d5545959c2f5c534b89d767cc"
+          }
+        ],
         "status": "pending"
       },
       "source_repo": "affaan-m/everything-claude-code",
@@ -14404,7 +14414,11 @@
           {
             "path": "artifacts/repaired-skill-readiness/vaex-delayed-statistics-v1/qualification.json",
             "scope": "Selected Vaex CSV and delayed statistics controls; not a full research review or agent evaluation.",
-            "sha256": "33b2a229af27d6e7734b3a75aa9f9ae81b558845572da6b294a5ec175963e475"
+            "sha256": "11252f52abe9bb7ffebec3564e8866113154163a527194b71249f04e372ae1c6"
+          },
+          {
+            "path": "artifacts/research/2026-11-25/dependency-consumer-controls/review.json",
+            "sha256": "86105ef6edb788548a19d807229c0e4a4e002d7d5545959c2f5c534b89d767cc"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
@@ -14445,7 +14459,11 @@
           {
             "path": "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/vaex-delayed-statistics/repair.json",
             "scope": "Selected Vaex delayed-statistics overlay with Windows and Linux component controls; not a full skill repair or agent evaluation.",
-            "sha256": "6e954e2faf404d7d553edb503e9cdad0486e6ebb4b5f302255badbe9185e0d6c"
+            "sha256": "61b0ff29f28d504ae4b92e0370c1dfaf857b6c4d4b832cd587730504d92b7144"
+          },
+          {
+            "path": "artifacts/research/2026-11-25/dependency-consumer-controls/review.json",
+            "sha256": "86105ef6edb788548a19d807229c0e4a4e002d7d5545959c2f5c534b89d767cc"
           }
         ],
         "status": "in_progress"
@@ -23174,7 +23192,7 @@
           },
           {
             "path": "docs/research-image-cli-resources.md",
-            "sha256": "798eef99da3f05901bb24242a260199cef755cb6542e3cc06e7679bff55f3721"
+            "sha256": "9e51a4a5e8d87e52d5f687ce12dd566685606ab686da34c3a3a290ab540f79c1"
           },
           {
             "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
@@ -23183,6 +23201,10 @@
           {
             "path": "artifacts/research/2026-11-10/image-dependency-refresh/review.json",
             "sha256": "ded36b838d119d57050c6ef6657162fc994e153367a6ddf97caa6d5e35deeb2f"
+          },
+          {
+            "path": "artifacts/research/2026-11-25/dependency-consumer-controls/review.json",
+            "sha256": "86105ef6edb788548a19d807229c0e4a4e002d7d5545959c2f5c534b89d767cc"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
@@ -23351,11 +23373,15 @@
           },
           {
             "path": "docs/research-image-cli-resources.md",
-            "sha256": "798eef99da3f05901bb24242a260199cef755cb6542e3cc06e7679bff55f3721"
+            "sha256": "9e51a4a5e8d87e52d5f687ce12dd566685606ab686da34c3a3a290ab540f79c1"
           },
           {
             "path": "artifacts/research/2026-11-10/image-dependency-refresh/review.json",
             "sha256": "ded36b838d119d57050c6ef6657162fc994e153367a6ddf97caa6d5e35deeb2f"
+          },
+          {
+            "path": "artifacts/research/2026-11-25/dependency-consumer-controls/review.json",
+            "sha256": "86105ef6edb788548a19d807229c0e4a4e002d7d5545959c2f5c534b89d767cc"
           }
         ],
         "scope": "Explicit licensed overlay retains immutable provenance; current graph and bounded logo repair pass component controls; provider configuration and credential storage remain unqualified, with no agent efficacy claim",
@@ -23588,11 +23614,15 @@
           {
             "path": "docs/research-docs-from-code-js-inventory.md",
             "scope": "Selected JavaScript and TypeScript parser and Express/Next.js controls; not agent efficacy.",
-            "sha256": "533d26b50d1bcfb65553bbd4421c2746440452c650bc00760fe1562ef5ec20a3"
+            "sha256": "81bf82e8e01b77e93b3340824fd206b872ca89921dc5fffe37aa691cacc8229e"
           },
           {
             "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
             "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          },
+          {
+            "path": "artifacts/research/2026-11-25/dependency-consumer-controls/review.json",
+            "sha256": "86105ef6edb788548a19d807229c0e4a4e002d7d5545959c2f5c534b89d767cc"
           }
         ],
         "open_work": [
@@ -23622,7 +23652,11 @@
           {
             "path": "artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/qualification.json",
             "scope": "Source-bound controls with selected Express and Next.js runtime fixtures; no agent trial.",
-            "sha256": "2049e26c4968e9af5ecc4f498ce4aeb750a08eefe257cffceceeced1fb68d9df"
+            "sha256": "a7eb5d616fdda05b39da20efe7ad5f022d0bae138644a138a40dad53b30f00d9"
+          },
+          {
+            "path": "artifacts/research/2026-11-25/dependency-consumer-controls/review.json",
+            "sha256": "86105ef6edb788548a19d807229c0e4a4e002d7d5545959c2f5c534b89d767cc"
           }
         ],
         "status": "in_progress"
@@ -28008,12 +28042,12 @@
             {
               "path": "artifacts/repaired-skill-readiness/next-turbopack-v1/windows-result.json",
               "scope": "Selected version-specific component controls and upstream observation; not an agent evaluation.",
-              "sha256": "1750263eef3a404ebcd34bcace2e4eab38492ca5ea86040fe5888581ce249790"
+              "sha256": "1606dd07ca9ba458fe44078680432f09631d05b0570d2f53bf2b00298bba66e1"
             },
             {
               "path": "artifacts/repaired-skill-readiness/next-turbopack-v1/linux-result.json",
               "scope": "Selected version-specific component controls and upstream observation; not an agent evaluation.",
-              "sha256": "19aceb5a695bb73686f50fd41e68894a47dd36afad8fa19c1b3f362f70351aa6"
+              "sha256": "8267d3dac407c47477ead76fcad7fa701b05f436a1a6f87258f68ada299e92a7"
             },
             {
               "path": "artifacts/repaired-skill-readiness/next-turbopack-v1/upstream-observation.json",
@@ -28067,7 +28101,7 @@
             {
               "path": "included/repaired/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/nextjs-turbopack/repair.json",
               "scope": "Maintained version-specific overlay; upstream mirror remains unchanged.",
-              "sha256": "0534182588674fe9682cae796194b0a473217903cc9034fe3b0f85e27ff2966a"
+              "sha256": "237cd3031318424aafa3ce9ea59b80a5456043bbf7c46eab8aef9fc06b4039cf"
             },
             {
               "path": "included/improved/skills/nextjs-turbopack-cache/SKILL.md",

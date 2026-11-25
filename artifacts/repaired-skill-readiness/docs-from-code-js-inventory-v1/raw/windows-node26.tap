@@ -1,0 +1,58 @@
+TAP version 13
+# Subtest: identifies Next route exports, JS and TypeScript; excludes unrelated cache
+ok 1 - identifies Next route exports, JS and TypeScript; excludes unrelated cache
+  ---
+  duration_ms: 32.6345
+  type: 'test'
+  ...
+# Subtest: Next conventions preserve patterns and disclose unresolved cases
+ok 2 - Next conventions preserve patterns and disclose unresolved cases
+  ---
+  duration_ms: 15.4221
+  type: 'test'
+  ...
+# Subtest: tracks Express direct and mounted routers without treating arbitrary get as a route
+ok 3 - tracks Express direct and mounted routers without treating arbitrary get as a route
+  ---
+  duration_ms: 10.7941
+  type: 'test'
+  ...
+# Subtest: CommonJS and reassignment are handled conservatively
+ok 4 - CommonJS and reassignment are handled conservatively
+  ---
+  duration_ms: 8.7044
+  type: 'test'
+  ...
+# Subtest: malformed input fails atomically without executing target source
+ok 5 - malformed input fails atomically without executing target source
+  ---
+  duration_ms: 56.6731
+  type: 'test'
+  ...
+# Subtest: controlled Next.js 16 route handlers agree with filesystem candidates
+ok 6 - controlled Next.js 16 route handlers agree with filesystem candidates
+  ---
+  duration_ms: 2247.5686
+  type: 'test'
+  ...
+# Subtest: Next fixture exits with failure after a controlled framework error
+ok 7 - Next fixture exits with failure after a controlled framework error
+  ---
+  duration_ms: 711.8433
+  type: 'test'
+  ...
+# Subtest: controlled Express 5 requests agree with direct and mounted route candidates
+ok 8 - controlled Express 5 requests agree with direct and mounted route candidates
+  ---
+  duration_ms: 27.8951
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3299.1482

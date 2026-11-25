@@ -33,11 +33,20 @@ jobs:
           python-version: "3.14.10"
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version: "26.13.0"
+          node-version: "26.13.1"
           cache: npm
           cache-dependency-path: included/improved/skills/cover-image-workflow-current/assets/package-lock.json
       - name: Select the qualified npm release
-        run: npm install --global npm@12.2.2 --ignore-scripts --no-fund
+        run: npm install --global npm@12.2.3 --ignore-scripts --no-fund
+      - name: Exercise the upstream CLI with the current dependency graph
+        shell: bash
+        run: |
+          stage="$GITHUB_WORKSPACE/.venv/image-cli-dependency-control"
+          python tools/prepare_image_cli_controls.py --stage "$stage"
+          npm ci --ignore-scripts --no-fund --prefix "$stage"
+          node benchmarks/dependency-regressions/image_cli_current_controls.mjs \
+            --package-root "$stage" --output "$RUNNER_TEMP/image-cli-dependency-control.json"
+          python tools/prepare_image_cli_controls.py --stage "$stage" --check
       - name: Prepare the source-locked repair without changing the mirror
         shell: bash
         run: >-
@@ -70,6 +79,7 @@ jobs:
           path: |
             ${{ runner.temp }}/image-cli-acceptance.json
             ${{ runner.temp }}/image-logo-resources.json
+            ${{ runner.temp }}/image-cli-dependency-control.json
             ${{ runner.temp }}/repaired-image-cli/repair-preparation.json
           if-no-files-found: error
           retention-days: 30

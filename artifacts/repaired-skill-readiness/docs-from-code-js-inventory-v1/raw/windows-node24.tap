@@ -2,49 +2,49 @@ TAP version 13
 # Subtest: identifies Next route exports, JS and TypeScript; excludes unrelated cache
 ok 1 - identifies Next route exports, JS and TypeScript; excludes unrelated cache
   ---
-  duration_ms: 17.9592
+  duration_ms: 23.3617
   type: 'test'
   ...
 # Subtest: Next conventions preserve patterns and disclose unresolved cases
 ok 2 - Next conventions preserve patterns and disclose unresolved cases
   ---
-  duration_ms: 11.0849
+  duration_ms: 15.6886
   type: 'test'
   ...
 # Subtest: tracks Express direct and mounted routers without treating arbitrary get as a route
 ok 3 - tracks Express direct and mounted routers without treating arbitrary get as a route
   ---
-  duration_ms: 11.441
+  duration_ms: 10.2395
   type: 'test'
   ...
 # Subtest: CommonJS and reassignment are handled conservatively
 ok 4 - CommonJS and reassignment are handled conservatively
   ---
-  duration_ms: 4.0407
+  duration_ms: 10.1015
   type: 'test'
   ...
 # Subtest: malformed input fails atomically without executing target source
 ok 5 - malformed input fails atomically without executing target source
   ---
-  duration_ms: 61.9892
+  duration_ms: 79.4437
   type: 'test'
   ...
 # Subtest: controlled Next.js 16 route handlers agree with filesystem candidates
 ok 6 - controlled Next.js 16 route handlers agree with filesystem candidates
   ---
-  duration_ms: 5010.1425
+  duration_ms: 2219.4525
   type: 'test'
   ...
 # Subtest: Next fixture exits with failure after a controlled framework error
 ok 7 - Next fixture exits with failure after a controlled framework error
   ---
-  duration_ms: 863.483
+  duration_ms: 805.0479
   type: 'test'
   ...
 # Subtest: controlled Express 5 requests agree with direct and mounted route candidates
 ok 8 - controlled Express 5 requests agree with direct and mounted route candidates
   ---
-  duration_ms: 46.2048
+  duration_ms: 31.1194
   type: 'test'
   ...
 1..8
@@ -55,4 +55,4 @@ ok 8 - controlled Express 5 requests agree with direct and mounted route candida
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 6218.6196
+# duration_ms 3421.4317

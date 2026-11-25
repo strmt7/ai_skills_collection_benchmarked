@@ -47,6 +47,7 @@ def main(argv: list[str] | None = None) -> int:
         SCRIPT.parent / "package-lock.json",
         HERE / "inventory.test.mjs",
         HERE / "next-live.mjs",
+        HERE / "fixture-http.mjs",
         HERE / "package.json",
         HERE / "package-lock.json",
         HERE / "reproduce.py",
@@ -61,7 +62,7 @@ def main(argv: list[str] | None = None) -> int:
     with tempfile.TemporaryDirectory(prefix="docs-js-inventory-") as tmp:
         temporary = Path(tmp)
         shutil.copyfile(SCRIPT, temporary / "inventory.mjs")
-        for name in ("inventory.test.mjs", "next-live.mjs", "package.json", "package-lock.json"):
+        for name in ("inventory.test.mjs", "next-live.mjs", "fixture-http.mjs", "package.json", "package-lock.json"):
             shutil.copyfile(HERE / name, temporary / name)
         environment = dict(os.environ, NEXT_TELEMETRY_DISABLED="1")
         install = subprocess.run(

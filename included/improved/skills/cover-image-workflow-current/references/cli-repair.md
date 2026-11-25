@@ -23,7 +23,7 @@ bytes, replaces three JavaScript files and both dependency declarations, and wri
 receipt. It installs nothing and makes no provider request. Preserve a failed
 partial stage for diagnosis; select a new output for a new attempt.
 
-To reproduce the component controls, use the qualified Node 26.13.0/npm 12.2.2
+To reproduce the component controls, use the qualified Node 26.13.1/npm 12.2.3
 cohort and the staged lock:
 
 ```sh

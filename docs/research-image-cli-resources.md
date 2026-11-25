@@ -24,13 +24,15 @@ captures retain those current sources and the older stable model page; their
 digests and reviewed scopes are recorded in the resource-review artifact.
 Documentation does not establish actual account access or visual fidelity.
 
-The existing improved overlay now carries all nine latest stable direct package
-versions observed at review, including GenAI 2.31.0, Conf 16.0.0 and Inquirer
-Prompts 8.7.4. A normal locked install and advisory audit passed on the qualified
-Node 26.12.1/npm 12.2.1 cohort. Transitive deprecation warnings remain visible.
-No dependency override or advisory suppression was added.
+The earlier repair installed and qualified GenAI 2.31.0 and the corresponding
+lock. The current baseline and repaired CLI use the same 128 resolved packages,
+including GenAI 3.6.1, Conf 16.0.0 and Inquirer Prompts 8.8.1. Node 26.13.1 and
+npm 12.2.3 passed nine baseline controls, 43 repaired acceptance controls and
+14 repaired resource controls on Windows and Linux. The installed repair
+returned zero registry advisories on both systems.
+[Current graph and results](../artifacts/research/2026-11-25/dependency-consumer-controls/review.json)
 
-The new independent
+In the earlier paired comparison,
 [`image_logo_resource_controls.mjs`](../benchmarks/dependency-regressions/image_logo_resource_controls.mjs)
 ran against original and repaired code with the same current package graph.
 Its task and expected outcomes come from download, privacy and image-decoding

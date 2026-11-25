@@ -123,12 +123,12 @@
     },
     {
       "path": "package.json",
-      "sha256": "7516f6be36f44cccd21b758ac47bcff6881a08b6d477fce2e939eee54c048ef3",
+      "sha256": "d232229ab8e8d5cd4c50f6f071e766bedfe086c78fe07861e214c357931eba90",
       "text": true
     },
     {
       "path": "package-lock.json",
-      "sha256": "2ae8788f07982864fc63bb82fab3c8a40265ca97d27c38eac9f9f01330120353",
+      "sha256": "afda1a5b52725a2027517b6a08bb3d5cfcf84a7a6406cbaf4ff2761e7d2b1f89",
       "text": true
     }
   ]

@@ -387,6 +387,46 @@
         "tools/prepare_crawl4ai_source.py",
         "tools/verify_crawl4ai_wheel.py"
       ]
+    },
+    {
+      "id": "locked-dependency-consumers",
+      "review": {
+        "path": "artifacts/research/2026-11-25/dependency-consumer-controls/review.json",
+        "sha256": "86105ef6edb788548a19d807229c0e4a4e002d7d5545959c2f5c534b89d767cc"
+      },
+      "sources": [
+        "artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/fixture-http.mjs",
+        "artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/inventory.test.mjs",
+        "artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/next-live.mjs",
+        "artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/package-lock.json",
+        "artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/package.json",
+        "artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/reproduce.py",
+        "artifacts/repaired-skill-readiness/next-turbopack-v1/fixture/package-lock.json",
+        "artifacts/repaired-skill-readiness/next-turbopack-v1/fixture/package.json",
+        "artifacts/repaired-skill-readiness/next-turbopack-v1/fixture/project/app/layout.js",
+        "artifacts/repaired-skill-readiness/next-turbopack-v1/fixture/project/app/page.js",
+        "artifacts/repaired-skill-readiness/next-turbopack-v1/fixture/project/package.json",
+        "artifacts/repaired-skill-readiness/next-turbopack-v1/reproduce.py",
+        "artifacts/repaired-skill-readiness/vaex-delayed-statistics-v1/build-requirements.txt",
+        "artifacts/repaired-skill-readiness/vaex-delayed-statistics-v1/reproduce.py",
+        "artifacts/repaired-skill-readiness/vaex-delayed-statistics-v1/requirements-linux.txt",
+        "artifacts/repaired-skill-readiness/vaex-delayed-statistics-v1/requirements-windows.txt",
+        "artifacts/repaired-skill-readiness/vaex-delayed-statistics-v1/requirements.in",
+        "benchmarks/dependency-regressions/fixtures/image-cli-current/package-lock.json",
+        "benchmarks/dependency-regressions/fixtures/image-cli-current/package.json",
+        "benchmarks/dependency-regressions/image_cli_acceptance_controls.mjs",
+        "benchmarks/dependency-regressions/image_cli_current_controls.mjs",
+        "benchmarks/dependency-regressions/image_logo_resource_controls.mjs",
+        "included/improved/skills/cover-image-workflow-current/assets/package-lock.json",
+        "included/improved/skills/cover-image-workflow-current/assets/package.json",
+        "included/improved/skills/cover-image-workflow-current/references/source-files.json",
+        "included/improved/skills/cover-image-workflow-current/scripts/prepare_cli.py",
+        "included/repaired/skills/by-category/documents-spreadsheets-presentations/reddit-verified-gtm-registry/docs-from-code-js-inventory/scripts/inventory.mjs",
+        "included/repaired/skills/by-category/documents-spreadsheets-presentations/reddit-verified-gtm-registry/docs-from-code-js-inventory/scripts/package-lock.json",
+        "included/repaired/skills/by-category/documents-spreadsheets-presentations/reddit-verified-gtm-registry/docs-from-code-js-inventory/scripts/package.json",
+        "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/vaex-delayed-statistics/SKILL.md",
+        "tools/prepare_image_cli_controls.py"
+      ]
     }
   ],
   "historical_reviews": [

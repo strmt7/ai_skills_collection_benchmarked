@@ -7,6 +7,6 @@
     "node": ">=24.11.0"
   },
   "dependencies": {
-    "@babel/parser": "8.0.10"
+    "@babel/parser": "8.1.3"
   }
 }

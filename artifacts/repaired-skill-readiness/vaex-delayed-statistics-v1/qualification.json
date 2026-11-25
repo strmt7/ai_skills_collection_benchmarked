@@ -4,7 +4,8 @@
   "full_skill_reviewed": false,
   "initial_control_failure": {
     "reason": "The first control assumed a fresh executor counter; dataframes shared the counter in one process. The revised control compares before and after on the same executor.",
-    "stderr_sha256": "cb87b073b3b0193db952ff226284d44df8d9408bcfc96601a683a2b256e50470"
+    "stderr_sha256": "cb87b073b3b0193db952ff226284d44df8d9408bcfc96601a683a2b256e50470",
+    "release": "4.19.0"
   },
   "limitations": [
     "Small synthetic fixtures do not establish larger-than-memory behavior, performance or every Vaex input and operation.",
@@ -13,23 +14,23 @@
     "The overlay addresses selected examples only and does not establish agent effectiveness."
   ],
   "local_python_versions": {
-    "linux": "3.12.3",
-    "windows": "3.12.10"
+    "linux": "3.12.16",
+    "windows": "3.12.16"
   },
   "requirements_sha256": {
-    "build-requirements.txt": "0496f2e6a919f0b7391a91009453b77d9a641b5b8045593d7fa22762e6765a52",
-    "requirements-linux.txt": "09b4f3cc32f027630a38879929fc7ea258ed0bb7b9ff8adef4cc3da4a1041f55",
-    "requirements-windows.txt": "cdc4e5dae51c2d5b9701c34a97cf5a676d12d0db74a33fd3bc1f6de277d590e7",
-    "requirements.in": "8e490b38fb54fcf1e7c2a8bad344eed2b6b778f6ad8ae364b7ebb87f39ba47c9"
+    "build-requirements.txt": "f92da9d7275043caba0e3ff30e167015e452730006ea0862daa53672dc1164fc",
+    "requirements-linux.txt": "cab9565db7c36ead6c4ede7e0e9d486993fb9e9d849f8181e79fd523a40de345",
+    "requirements-windows.txt": "cab9565db7c36ead6c4ede7e0e9d486993fb9e9d849f8181e79fd523a40de345",
+    "requirements.in": "18807606796fae45f22cd766406c91d269c24627daf244498a3292b78d85305f"
   },
   "results": {
-    "linux-result.json": "4629977e9170f1f571bac93b9aef75a1c366cadd4d38c1f32556620106e96277",
-    "windows-result.json": "4f520147b6d358a264dd668ac8df90f90154d33751de8a334fa1f947a202572d"
+    "windows-result.json": "8715a704515fdefe5c7c5e41008538e122b044d455095622a28183a79bec9ac9",
+    "linux-result.json": "33bca69b196bd39c847a556ea81b785f57e0cbcba4fa17f9b526ba5a6c8d7737"
   },
-  "runner_sha256": "131de3ff28caddf160027c9a63dc3d105b27b588d1fecc72ae39ad08c2c7264e",
+  "runner_sha256": "d30b09a29f61a03eb2f576401a177379f91a6ab8d36dbe901a091a749039c705",
   "schema_version": 1,
   "scope": "Selected Vaex CSV and delayed-statistic examples on independent finite synthetic data.",
-  "skill_sha256": "139b206d134e9ae9c0a1ec95b6d4e9056d27a5814c87b3a9f2f7d00b0a1d88b2",
+  "skill_sha256": "cbcbf730009969be53bb6ef42d8135c6b9d5c3827d31942ffbf84cdcef6b64cd",
   "source_distribution": {
     "declared_license": "UNKNOWN",
     "locally_built_wheel_distributed": false,
@@ -52,5 +53,11 @@
       "url": "https://vaex.io/docs/guides/io.html"
     }
   },
-  "vaex_core_version": "4.19.0"
+  "vaex_core_version": "4.20.0",
+  "previous_qualification": {
+    "commit": "530e4a2318ee84dc547473a8963c943b6693b568",
+    "path": "artifacts/repaired-skill-readiness/vaex-delayed-statistics-v1/qualification.json",
+    "sha256": "33b2a229af27d6e7734b3a75aa9f9ae81b558845572da6b294a5ec175963e475"
+  },
+  "pyarrow_version": "26.0.1"
 }

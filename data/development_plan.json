@@ -474,7 +474,7 @@
         "R9",
         "R12"
       ],
-      "next_action": "Retain the qualified Windows provider installation and track its exact-head hosted acceptance. Address the authenticated Dependabot inventory in manifest families, validating active consumers independently and preserving exact historical evidence. Complete stable dependency and action graphs, fresh and relocated automatic setup for the remaining toolchains, distribution licensing and effective protection verification. Keep the separately held scanner findings visible.",
+      "next_action": "Track exact-head acceptance and Dependabot dispositions for the qualified Next.js, Vaex and image CLI consumer graphs. Resolve the remaining dependency families through their actual producers and preserve immutable earlier inputs. Complete stable graphs, isolated setup and distribution qualification. Keep the held scanner findings visible.",
       "deliverables": [
         "Fresh-cache and recovery qualification",
         "Workflow-to-source trigger map",
@@ -535,6 +535,10 @@
           "path": "artifacts/research/2026-11-25/portable-crawl4ai-096/review.json",
           "sha256": "3ac7964ff7cc41f66d803e1cff785cb037f67888652e703011a3751cf4a7f77b",
           "scope": "Exact portable provider source, compatible graph, browser payloads, fresh automatic setup, interruption and recovery."
+        },
+        {
+          "path": "artifacts/research/2026-11-25/dependency-consumer-controls/review.json",
+          "sha256": "86105ef6edb788548a19d807229c0e4a4e002d7d5545959c2f5c534b89d767cc"
         }
       ]
     },

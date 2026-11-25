@@ -1,1 +1,2 @@
-vaex-core==4.19.0
+vaex-core==4.20.0
+pyarrow==26.0.1

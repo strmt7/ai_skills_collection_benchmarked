@@ -12,22 +12,27 @@
   "overlay_sha256": {
     "SKILL.md": "f019593cf5d924b597de2f29ca84fe68bc7e8fbc14aa367b5af52ab4335bbb35",
     "scripts/inventory.mjs": "3cd613a35e4892d993ea9092f1095a9dc8efd6ed72e31c5abfb7efc12c9fb117",
-    "scripts/package.json": "abfa6c09bd39c70c971205dad934791f39afee8f32af07e92d8971de0505632d",
-    "scripts/package-lock.json": "067178f0f346d3149728cd078bf925098a347e68128619f22cbb9113da5a8058",
+    "scripts/package.json": "a8bee0d77c1977fa4865bb82cf9f14f5e0108fbfa898cdaf909a1b2b2e9ff164",
+    "scripts/package-lock.json": "64f88eae95a8bbe567e3eee052542afa2fd13f3d30336b8ddc49905fd175d8e7",
     "provenance/original.SKILL.md": "5d14fa7f29a9e3d8b572e370052ecbd295b81c7f5ec19ac95d619b6f691a000e",
     "provenance/upstream.README.md": "70c14cec2db6ac7e26ccc0e09e02e4d4e7c71520f43dc3cf98b39a04270fd3bc"
   },
   "evidence_sha256": {
-    "inventory.test.mjs": "7049de10bba00604b9ed6b8a7ac8e7150ae85c8d420f929930b352e6752fadc0",
-    "next-live.mjs": "a751baa7ee9c9fdaa656f4b7bd24e85a1dd354e3404e4cf07f8c6246422549b6",
-    "package.json": "e264de4767320cfbd428e6eb1d5d810883a38fac23f5db5ed605c3e206eeca95",
-    "package-lock.json": "e313ab384711953e0b47192ad752f6bbac56a63f07c4bb1bffad1c7099e91c57",
-    "reproduce.py": "cc3242623869ac724f8663658b98ee6b9fb8f12c2514cbd7ae2fc6e214eda10c",
-    "qualification.json": "2049e26c4968e9af5ecc4f498ce4aeb750a08eefe257cffceceeced1fb68d9df",
+    "inventory.test.mjs": "1a518b50a4e2f696532e686705574eb030fc041ac3c9c7aca73bf9a1f9aa4e00",
+    "next-live.mjs": "4d29649b9f03ad8070a345190858d87b1ec58389cab084d684193bc3108451a6",
+    "package.json": "195dd15bc1ac9ecc8132a7cfbc73dc7a8f1cbdc81a09a0a01c0cb5233de101a7",
+    "package-lock.json": "140e3ac6e46b9c29efea5dd9096565fc9642f3dcdc82b106985952948cdca6e5",
+    "reproduce.py": "5150af4d8e252b2b2fe82a5985228f1869927e944e3ce1a5f620e4521276667d",
+    "qualification.json": "a7eb5d616fdda05b39da20efe7ad5f022d0bae138644a138a40dad53b30f00d9",
     "sources.json": "03d707895f8f406a98ec650f4150928215356992f1d2984a1741f1a43c96ab3d",
-    "windows-node24-result.json": "5673509841d1003832adb7246de32848494ad3e000b9c3bb1d87ec882ac1535c",
-    "linux-node24-result.json": "d4f08856fff5cebb62034e504e09f1339911890228f379077b4e7f0c0702b36b",
-    "raw/windows-node24.tap": "d4ae0e2dbe2c8e5ab10c5f7a14c8debeac7cb80a08dc16cd191f0f0b9fe57742",
-    "raw/linux-node24.tap": "aa2baf9068bb35a926d69db2450f222246633bd2dec66637238f370dcb0afa38"
+    "windows-node24-result.json": "caa4841e0211df0a9d3224b7a214f9d84dc5f9c24ea8a5654e0327297201899f",
+    "linux-node24-result.json": "ded67e7ff6b82c55aaa474f75fecfd01145809518f690f6fe8f83f604dcbd4d5",
+    "raw/windows-node24.tap": "88cd229c232e9e8771bf0ba604bfc6521dfb5c4d426f0a5af15579a9895d1871",
+    "raw/linux-node24.tap": "b79b8bffd1b4d28b8d127beed4f2d172e778dcb8b7fb0be1b599bc9eeafbf1f8",
+    "fixture-http.mjs": "f930960de5388108611847c44100dc834ac61d8ab3a33d25688faa93d9f81463",
+    "linux-node26-result.json": "8abe589a54873779c8187a9f2cebd285e77b64a71f31a20ae4bf34f32f737fbc",
+    "windows-node26-result.json": "ce69715d8d9f3da1bef9475072f31d0ec0758847328b67f9dbaaf3c0b06b40fc",
+    "raw/linux-node26.tap": "ad35ec0b6b0fea758bf5317e4e02a9fc711b094c5d0c5e0408e61f92ba8e79b3",
+    "raw/windows-node26.tap": "3121430e605be295ebe75b282bfddabcaa717056be740937e28e8872e031106d"
   }
 }

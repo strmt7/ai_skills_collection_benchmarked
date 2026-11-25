@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
-import { mkdtempSync, mkdirSync, writeFileSync } from 'node:fs';
-import { createServer } from 'node:http';
+import { mkdtempSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { withFixtureHttp } from './fixture-http.mjs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import next from 'next';
@@ -11,32 +11,27 @@ async function main() {
   // The parent owns this directory and removes it after this process exits.
   const root = mkdtempSync(path.join(base, 'next-fixture-'));
   const put = (name, text) => { const full = path.join(root, name); mkdirSync(path.dirname(full), { recursive: true }); writeFileSync(full, text); };
-  put('package.json', JSON.stringify({ private: true, dependencies: { next: '16.4.3', react: '19.3.1', 'react-dom': '19.3.1' } }));
+  const { dependencies } = JSON.parse(readFileSync(path.join(base, 'package.json'), 'utf8'));
+  const nextDependencies = Object.fromEntries(['next', 'react', 'react-dom'].map(name => [name, dependencies[name]]));
+  put('package.json', JSON.stringify({ private: true, dependencies: nextDependencies }));
   put('app/(shop)/products/route.js', 'export function GET() { return Response.json({ok:true}); }');
   put('app/api/ping/route.js', 'export function GET() { return new Response("pong"); }');
   put('app/_private/route.js', 'export function GET() { return new Response("private"); }');
   const candidates = inventory(root).routes;
   const app = next({ dev: true, dir: root, hostname: '127.0.0.1', port: 0 });
-  let server;
   try {
     await app.prepare();
     if (process.argv.includes('--controlled-failure')) throw new Error('controlled Next failure');
-    server = createServer(app.getRequestHandler());
-    await new Promise((resolve, reject) => { server.once('error', reject); server.listen(0, '127.0.0.1', resolve); });
-    const port = server.address().port;
-    for (const route of candidates) {
-      const response = await fetch(`http://127.0.0.1:${port}${route.path}`, {method:route.method});
-      assert.equal(response.status, 200, `${route.method} ${route.path}`);
-    }
-    assert.equal(candidates.length, 2);
-    assert.equal((await fetch(`http://127.0.0.1:${port}/_private`)).status, 404);
+    await withFixtureHttp(app.getRequestHandler(), async request => {
+      for (const route of candidates) {
+        assert.equal(await request(route.path, route.method), 200, `${route.method} ${route.path}`);
+      }
+      assert.equal(candidates.length, 2);
+      assert.equal(await request('/_private'), 404);
+    });
     console.log('Next.js route-handler control passed: 2 routes and private-folder exclusion');
   } finally {
-    try {
-      if (server) await new Promise((resolve, reject) => server.close(error => error ? reject(error) : resolve()));
-    } finally {
-      await app.close();
-    }
+    await app.close();
   }
 }
 try {

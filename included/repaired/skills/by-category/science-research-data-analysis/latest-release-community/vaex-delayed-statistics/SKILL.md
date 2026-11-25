@@ -14,8 +14,8 @@ This maintained overlay covers selected CSV and delayed-statistic examples from
 the [locked Vaex skill](provenance/original.SKILL.md), its
 [performance reference](provenance/original.performance.md) and
 [I/O reference](provenance/original.io_operations.md). It was tested with
-`vaex-core` 4.19.0 and Python 3.12 in the recorded Windows and Linux
-environments. It is not a full review or an agent-performance result.
+`vaex-core` 4.20.0, PyArrow 26.0.1 and Python 3.12.16 on Windows and Linux.
+The controls cover the examples below.
 
 A virtual column or expression can be lazy, but a call such as
 `df.value.mean()` computes its result by default. Assigning that result to a
@@ -46,7 +46,7 @@ calculations. Batching these two delayed operations can reduce repeated passes,
 but actual memory use and performance depend on the input, operations and
 environment. Measure them before claiming larger-than-memory behavior.
 
-`vaex-core` 4.19.0 declares Python `>=3.9,<3.13` and constrains Dask below
+`vaex-core` 4.20.0 declares Python `>=3.9,<3.16` and constrains Dask below
 2024.9. Use a separately resolved environment when those requirements conflict
 with other tools. Its `aplus` dependency was available only as a source
 distribution in the tested environment; the published package metadata did not

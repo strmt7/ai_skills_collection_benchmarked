@@ -40,6 +40,7 @@ def test_overlay_preserves_upstream_and_binds_evidence():
     }
     assert set(repair["evidence_sha256"]) == {
         "inventory.test.mjs",
+        "fixture-http.mjs",
         "next-live.mjs",
         "package.json",
         "package-lock.json",
@@ -48,8 +49,12 @@ def test_overlay_preserves_upstream_and_binds_evidence():
         "sources.json",
         "windows-node24-result.json",
         "linux-node24-result.json",
+        "windows-node26-result.json",
+        "linux-node26-result.json",
         "raw/windows-node24.tap",
         "raw/linux-node24.tap",
+        "raw/windows-node26.tap",
+        "raw/linux-node26.tap",
     }
     for path, expected in repair["overlay_sha256"].items():
         assert digest(OVERLAY / path) == expected, path
@@ -61,7 +66,13 @@ def test_recorded_runs_bind_inputs_and_keep_scope_explicit():
     qualification = json.loads((EVIDENCE / "qualification.json").read_text(encoding="utf-8"))
     assert qualification["cases"] == 8
     assert qualification["agent_performance_tested"] is False
-    assert {run["platform"] for run in qualification["runs"]} == {"Windows", "Linux"}
+    assert len(qualification["runs"]) == 4
+    assert {(run["platform"], run["node"]) for run in qualification["runs"]} == {
+        ("Windows", "v24.22.3"),
+        ("Windows", "v26.13.1"),
+        ("Linux", "v24.22.3"),
+        ("Linux", "v26.13.1"),
+    }
     for run in qualification["runs"]:
         result_path = EVIDENCE / f"{run['name']}-result.json"
         tap_path = EVIDENCE / "raw" / f"{run['name']}.tap"
@@ -70,6 +81,7 @@ def test_recorded_runs_bind_inputs_and_keep_scope_explicit():
         result = json.loads(result_path.read_text(encoding="utf-8"))
         assert result["status"] == "passed"
         assert result["platform"] == run["platform"] and result["node"] == run["node"]
+        assert result["npm"] == "12.2.3"
         assert result["minimal_runtime_install_and_cli_passed"] is True
         assert result["owned_express_and_next_fixtures_executed"] is True
         assert result["target_project_imported_by_inventory"] is False

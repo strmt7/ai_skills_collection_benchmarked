@@ -28,7 +28,9 @@ def require(condition: bool, message: str) -> None:
 
 
 def run() -> dict[str, Any]:
-    require(version("vaex-core") == "4.19.0", "The control requires vaex-core 4.19.0")
+    require(version("vaex-core") == "4.20.0", "The control requires vaex-core 4.20.0")
+    arrow = version("pyarrow")
+    require(arrow == "26.0.1", "The control requires PyArrow 26.0.1")
     skill = (OVERLAY / "SKILL.md").read_text(encoding="utf-8")
     snippets = [part.split("```", 1)[0] for part in skill.split("```python\n")[1:]]
     require(len(snippets) == 1, "Expected one maintained example")
@@ -75,6 +77,7 @@ def run() -> dict[str, Any]:
         "platform": platform.system(),
         "python": platform.python_version(),
         "vaex_core": version("vaex-core"),
+        "pyarrow": arrow,
         "dask": version("dask"),
         "skill_sha256": hashlib.sha256((OVERLAY / "SKILL.md").read_bytes()).hexdigest(),
         "checks": [

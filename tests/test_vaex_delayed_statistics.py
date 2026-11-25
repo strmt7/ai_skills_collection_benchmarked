@@ -52,7 +52,7 @@ def test_qualified_vaex_examples_bind_to_original_and_both_platforms():
         result = json.loads(result_path.read_bytes())
         assert sha(result_path) == digest
         assert result["platform"].lower() == filename.removesuffix("-result.json")
-        assert result["vaex_core"] == "4.19.0"
+        assert (result["vaex_core"], result["pyarrow"], result["python"]) == ("4.20.0", "26.0.1", "3.12.16")
         assert result["dask"] == "2024.8.2"
         assert result["skill_sha256"] == qualification["skill_sha256"]
         assert set(result["checks"]) == expected

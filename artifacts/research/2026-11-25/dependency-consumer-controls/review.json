@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-25",
+  "scope": "Current component installations, execution and dependency graphs",
+  "previous_qualification_files": {
+    "head": "530e4a2318ee84dc547473a8963c943b6693b568",
+    "paths": {
+      "artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/qualification.json": "2049e26c4968e9af5ecc4f498ce4aeb750a08eefe257cffceceeced1fb68d9df",
+      "artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/package-lock.json": "e313ab384711953e0b47192ad752f6bbac56a63f07c4bb1bffad1c7099e91c57",
+      "included/repaired/skills/by-category/documents-spreadsheets-presentations/reddit-verified-gtm-registry/docs-from-code-js-inventory/scripts/package-lock.json": "067178f0f346d3149728cd078bf925098a347e68128619f22cbb9113da5a8058",
+      "artifacts/repaired-skill-readiness/next-turbopack-v1/fixture/package-lock.json": "bb6e3620814e60c69becac9c7d78b0489663697efc93880e71126eb199bb28c9",
+      "artifacts/repaired-skill-readiness/next-turbopack-v1/windows-result.json": "1750263eef3a404ebcd34bcace2e4eab38492ca5ea86040fe5888581ce249790",
+      "artifacts/repaired-skill-readiness/next-turbopack-v1/linux-result.json": "19aceb5a695bb73686f50fd41e68894a47dd36afad8fa19c1b3f362f70351aa6",
+      "artifacts/repaired-skill-readiness/vaex-delayed-statistics-v1/qualification.json": "33b2a229af27d6e7734b3a75aa9f9ae81b558845572da6b294a5ec175963e475",
+      "artifacts/repaired-skill-readiness/vaex-delayed-statistics-v1/requirements-linux.txt": "09b4f3cc32f027630a38879929fc7ea258ed0bb7b9ff8adef4cc3da4a1041f55",
+      "artifacts/repaired-skill-readiness/vaex-delayed-statistics-v1/requirements-windows.txt": "cdc4e5dae51c2d5b9701c34a97cf5a676d12d0db74a33fd3bc1f6de277d590e7",
+      "benchmarks/dependency-regressions/fixtures/image-cli-current/package-lock.json": "a466003cd8fed7d2493c54fc9d0cc790146ccc3146647910fe1ea1b01c624368",
+      "benchmarks/dependency-regressions/fixtures/image-cli-current/package.json": "9a01ea580438a68ab251460d110bf74da1800873eae2b8a2cf6b98e8cb93941b",
+      "included/improved/skills/cover-image-workflow-current/assets/package.json": "7516f6be36f44cccd21b758ac47bcff6881a08b6d477fce2e939eee54c048ef3",
+      "included/improved/skills/cover-image-workflow-current/assets/package-lock.json": "2ae8788f07982864fc63bb82fab3c8a40265ca97d27c38eac9f9f01330120353",
+      "included/improved/skills/cover-image-workflow-current/references/source-files.json": "32c78cfdb79a70cf61202ccaad34bb5806d878d2ad784a308d40c2d28482beca"
+    }
+  },
+  "source_sha256": {
+    "artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/fixture-http.mjs": "f930960de5388108611847c44100dc834ac61d8ab3a33d25688faa93d9f81463",
+    "artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/inventory.test.mjs": "1a518b50a4e2f696532e686705574eb030fc041ac3c9c7aca73bf9a1f9aa4e00",
+    "artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/next-live.mjs": "4d29649b9f03ad8070a345190858d87b1ec58389cab084d684193bc3108451a6",
+    "artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/package-lock.json": "140e3ac6e46b9c29efea5dd9096565fc9642f3dcdc82b106985952948cdca6e5",
+    "artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/package.json": "195dd15bc1ac9ecc8132a7cfbc73dc7a8f1cbdc81a09a0a01c0cb5233de101a7",
+    "artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/reproduce.py": "5150af4d8e252b2b2fe82a5985228f1869927e944e3ce1a5f620e4521276667d",
+    "artifacts/repaired-skill-readiness/next-turbopack-v1/fixture/package-lock.json": "89f9b94c2b39e4c489de5dc661a5959e9c42e5566bf1ff094995e79d3021ec94",
+    "artifacts/repaired-skill-readiness/next-turbopack-v1/fixture/package.json": "155989d051b727ee55c48c002e30f10e7e1d9243e566be567cd9bb932c6f5a9c",
+    "artifacts/repaired-skill-readiness/next-turbopack-v1/fixture/project/app/layout.js": "313c75416442551fc0b1858490f74d828ab83505c5aa624639fe0e5d2bd71152",
+    "artifacts/repaired-skill-readiness/next-turbopack-v1/fixture/project/app/page.js": "125fe606d4bb07b1de481f362df456bdf4b0aed4598ee167dcf466efaff5f8e0",
+    "artifacts/repaired-skill-readiness/next-turbopack-v1/fixture/project/package.json": "4a0d76e1ba5c21e2ffbae9f7ecfc725d73db8a5562061650bbe30b6f171e9c97",
+    "artifacts/repaired-skill-readiness/next-turbopack-v1/reproduce.py": "9699b5ac120d18789bc5030d1addee6c56a44132abab11b76f278dbb86bd6615",
+    "artifacts/repaired-skill-readiness/vaex-delayed-statistics-v1/build-requirements.txt": "f92da9d7275043caba0e3ff30e167015e452730006ea0862daa53672dc1164fc",
+    "artifacts/repaired-skill-readiness/vaex-delayed-statistics-v1/reproduce.py": "d30b09a29f61a03eb2f576401a177379f91a6ab8d36dbe901a091a749039c705",
+    "artifacts/repaired-skill-readiness/vaex-delayed-statistics-v1/requirements-linux.txt": "cab9565db7c36ead6c4ede7e0e9d486993fb9e9d849f8181e79fd523a40de345",
+    "artifacts/repaired-skill-readiness/vaex-delayed-statistics-v1/requirements-windows.txt": "cab9565db7c36ead6c4ede7e0e9d486993fb9e9d849f8181e79fd523a40de345",
+    "artifacts/repaired-skill-readiness/vaex-delayed-statistics-v1/requirements.in": "18807606796fae45f22cd766406c91d269c24627daf244498a3292b78d85305f",
+    "benchmarks/dependency-regressions/fixtures/image-cli-current/package-lock.json": "56ea380edeb5465f4fea2ed1e5c73dec28722d470b765bb190aa13d54a198324",
+    "benchmarks/dependency-regressions/fixtures/image-cli-current/package.json": "bf4ad0c3b321a25f6394455d5851e0bd19c7b7424b6cc3077f6fe8ec738b6f04",
+    "benchmarks/dependency-regressions/image_cli_acceptance_controls.mjs": "c25fa28fe61d76f8d26bd6ca2be69612bec1cdfb08f272c7d71691d83b4d848c",
+    "benchmarks/dependency-regressions/image_cli_current_controls.mjs": "d16c87addaa60b2c2c8c0b6bd4f6fe1bd9db9db5d3bbce8a706785b89f23db75",
+    "benchmarks/dependency-regressions/image_logo_resource_controls.mjs": "222712ad20a92da31b0a4d6e1fc5c92b5bf5217f785a94d2e8da5e4eb4f8f1fc",
+    "included/improved/skills/cover-image-workflow-current/assets/package-lock.json": "afda1a5b52725a2027517b6a08bb3d5cfcf84a7a6406cbaf4ff2761e7d2b1f89",
+    "included/improved/skills/cover-image-workflow-current/assets/package.json": "d232229ab8e8d5cd4c50f6f071e766bedfe086c78fe07861e214c357931eba90",
+    "included/improved/skills/cover-image-workflow-current/references/source-files.json": "8a1b52b5514e30f3c5b1325771ca47ef9ec535b4641cf21bc1ae43276c09d64b",
+    "included/improved/skills/cover-image-workflow-current/scripts/prepare_cli.py": "00216393e2f046100eea1fb125b14dc62fb79e4a57f607fd52e8727c3dc47272",
+    "included/repaired/skills/by-category/documents-spreadsheets-presentations/reddit-verified-gtm-registry/docs-from-code-js-inventory/scripts/inventory.mjs": "3cd613a35e4892d993ea9092f1095a9dc8efd6ed72e31c5abfb7efc12c9fb117",
+    "included/repaired/skills/by-category/documents-spreadsheets-presentations/reddit-verified-gtm-registry/docs-from-code-js-inventory/scripts/package-lock.json": "64f88eae95a8bbe567e3eee052542afa2fd13f3d30336b8ddc49905fd175d8e7",
+    "included/repaired/skills/by-category/documents-spreadsheets-presentations/reddit-verified-gtm-registry/docs-from-code-js-inventory/scripts/package.json": "a8bee0d77c1977fa4865bb82cf9f14f5e0108fbfa898cdaf909a1b2b2e9ff164",
+    "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/vaex-delayed-statistics/SKILL.md": "cbcbf730009969be53bb6ef42d8135c6b9d5c3827d31942ffbf84cdcef6b64cd",
+    "tools/prepare_image_cli_controls.py": "dcd546f857b41e4b25097076180733e543002f885754e559ee4ca1421b9e1904"
+  },
+  "artifacts": {},
+  "captures": [
+    {
+      "intended_url": "https://nextjs.org/docs/app/api-reference/cli/next",
+      "provider_version": "0.9.6+catalog.portable1",
+      "native_result_sha256": "76ce0228837bf6f65c6d204d1b74b25db5d2f0bc2a50df0f3e824c88b062318f",
+      "status_code": 200
+    },
+    {
+      "intended_url": "https://vaex.io/docs/example_async.html",
+      "provider_version": "0.9.6+catalog.portable1",
+      "native_result_sha256": "f8b368c62a96f7db18c08a61e99202672e4c5f7a9d079b6799ab2c588e076c76",
+      "status_code": 200
+    }
+  ],
+  "observations": {
+    "node_inventory": {
+      "path": "artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/qualification.json",
+      "sha256": "a7eb5d616fdda05b39da20efe7ad5f022d0bae138644a138a40dad53b30f00d9"
+    },
+    "next": {
+      "windows": {
+        "path": "artifacts/repaired-skill-readiness/next-turbopack-v1/windows-result.json",
+        "sha256": "1606dd07ca9ba458fe44078680432f09631d05b0570d2f53bf2b00298bba66e1"
+      },
+      "linux": {
+        "path": "artifacts/repaired-skill-readiness/next-turbopack-v1/linux-result.json",
+        "sha256": "8267d3dac407c47477ead76fcad7fa701b05f436a1a6f87258f68ada299e92a7"
+      }
+    },
+    "vaex": {
+      "path": "artifacts/repaired-skill-readiness/vaex-delayed-statistics-v1/qualification.json",
+      "sha256": "11252f52abe9bb7ffebec3564e8866113154163a527194b71249f04e372ae1c6"
+    },
+    "images": {
+      "windows": {
+        "platform": "Windows",
+        "node": "v26.13.1",
+        "npm": "12.2.3",
+        "baseline_lock": "56ea380edeb5465f4fea2ed1e5c73dec28722d470b765bb190aa13d54a198324",
+        "repair_lock": "afda1a5b52725a2027517b6a08bb3d5cfcf84a7a6406cbaf4ff2761e7d2b1f89",
+        "packages": 128,
+        "checks": {
+          "baseline": {
+            "sha256": "2b437160a5a4b9459ee9a7c628a66957523779cf2cd70bc59861c7878b9f10db",
+            "checks": 9,
+            "status": true
+          },
+          "acceptance": {
+            "sha256": "2a1005124eb151c6fbaae4e07a58f401ced18a9f8eb85bddc540526f64f0f714",
+            "checks": 43,
+            "status": true
+          },
+          "resources": {
+            "sha256": "32fe319dca1294baa62351062af72a7673fb286c195f9dd47066a92780feb006",
+            "checks": 14,
+            "status": true
+          }
+        },
+        "registry_advisories": 0,
+        "model_efficacy_scored": false,
+        "temporary_fixture_removed": true
+      },
+      "linux": {
+        "platform": "Linux",
+        "node": "v26.13.1",
+        "npm": "12.2.3",
+        "baseline_lock": "56ea380edeb5465f4fea2ed1e5c73dec28722d470b765bb190aa13d54a198324",
+        "repair_lock": "afda1a5b52725a2027517b6a08bb3d5cfcf84a7a6406cbaf4ff2761e7d2b1f89",
+        "packages": 128,
+        "checks": {
+          "baseline": {
+            "sha256": "2b437160a5a4b9459ee9a7c628a66957523779cf2cd70bc59861c7878b9f10db",
+            "checks": 9,
+            "status": true
+          },
+          "acceptance": {
+            "sha256": "2a1005124eb151c6fbaae4e07a58f401ced18a9f8eb85bddc540526f64f0f714",
+            "checks": 43,
+            "status": true
+          },
+          "resources": {
+            "sha256": "32fe319dca1294baa62351062af72a7673fb286c195f9dd47066a92780feb006",
+            "checks": 14,
+            "status": true
+          }
+        },
+        "registry_advisories": 0,
+        "model_efficacy_scored": false,
+        "temporary_fixture_removed": true
+      }
+    }
+  },
+  "diagnostics": {
+    "next_invalid_option": "Adding --help exercised the help path and returned zero. The corrected control reached option validation.",
+    "linux_image_source": "Copying the Windows checkout changed executable modes in the fixture. The Git archive kept the committed modes."
+  },
+  "model_efficacy_scored": false,
+  "windows_result_line_endings": {
+    "artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/windows-node24-result.json": {
+      "native_sha256": "d013670d971e0b2ad88c3369b460251f8361c30584cceef8a75368208458c1cc",
+      "tracked_sha256": "caa4841e0211df0a9d3224b7a214f9d84dc5f9c24ea8a5654e0327297201899f"
+    },
+    "artifacts/repaired-skill-readiness/next-turbopack-v1/windows-result.json": {
+      "native_sha256": "b4a9e9a5e2e6d356c8fa7acabd1d20c64aabc4b6a52e44864726f25376d3a359",
+      "tracked_sha256": "1606dd07ca9ba458fe44078680432f09631d05b0570d2f53bf2b00298bba66e1"
+    },
+    "artifacts/repaired-skill-readiness/vaex-delayed-statistics-v1/windows-result.json": {
+      "native_sha256": "d8e8113cced69fe63cbc4a6898443e6d0f28692178ddb1b7227a67041f240589",
+      "tracked_sha256": "8715a704515fdefe5c7c5e41008538e122b044d455095622a28183a79bec9ac9"
+    },
+    "artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/windows-node26-result.json": {
+      "native_sha256": "10e5178aef6d1d77f8b16e4c06b1e158aaf0b3bd26ec59c4f3ad7df1059b680d",
+      "tracked_sha256": "ce69715d8d9f3da1bef9475072f31d0ec0758847328b67f9dbaaf3c0b06b40fc"
+    }
+  }
+}

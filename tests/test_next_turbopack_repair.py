@@ -32,14 +32,17 @@ def test_overlay_preserves_original_and_binds_evidence() -> None:
 
 def test_component_observations_and_locked_versions() -> None:
     lock = json.loads((ARTIFACT / "fixture/package-lock.json").read_text(encoding="utf-8"))
-    assert lock["packages"]["node_modules/next"]["version"] == "16.4.3"
+    assert lock["packages"]["node_modules/next"]["version"] == "16.4.6"
     assert lock["packages"]["node_modules/react"]["version"] == "19.3.1"
     assert lock["packages"]["node_modules/react-dom"]["version"] == "19.3.1"
     for platform in ("windows", "linux"):
         data = json.loads((ARTIFACT / f"{platform}-result.json").read_text(encoding="utf-8"))
-        assert (data["node"], data["npm"], data["next"]) == ("v26.13.0", "12.2.1", "Next.js v16.4.3")
+        assert (data["node"], data["npm"], data["next"]) == ("v26.13.1", "12.2.3", "Next.js v16.4.6")
         assert data["unsupported_exit"] == 1
         assert data["turbo_exit"] == data["webpack_exit"] == data["analyze_exit"] == 0
         assert data["expected_html"] and data["root_in_analyzer"]
+        assert data["export_records"] > 1
         assert data["agent_efficacy_scored"] is False
         assert data["package_lock_sha256"] == digest(ARTIFACT / "fixture/package-lock.json")
+        for name, expected in data["inputs_sha256"].items():
+            assert digest(ARTIFACT / name) == expected, name
