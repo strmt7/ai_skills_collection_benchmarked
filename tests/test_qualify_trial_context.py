@@ -3,12 +3,44 @@ from __future__ import annotations
 import copy
 import json
 import os
+import sys
 from pathlib import Path
 from typing import Any
 from xml.sax.saxutils import escape
 
 import pytest
 import qualify_trial_context as controls
+
+
+@pytest.mark.skipif(sys.platform != "win32", reason="The context qualifier uses the Windows command paths")
+@pytest.mark.parametrize("failure", [False, True])
+def test_context_fixture_is_removed_and_diagnostics_retained(tmp_path, monkeypatch, failure):
+    monkeypatch.setattr(controls, "ROOT", tmp_path)
+    runtime = tmp_path / "runtime.exe"
+    runtime.touch()
+    output = tmp_path / ".venv" / "control"
+    owned: list[Path] = []
+
+    def observe(cli, python, roots, destination, fixtures, *, git, shell):
+        owned.append(fixtures)
+        (fixtures / "workspace").mkdir()
+        (fixtures / "workspace" / "fixture.txt").write_bytes(b"owned workspace input")
+        (fixtures / "controller").mkdir()
+        (destination / "capture.native").write_bytes(b"retained observation")
+        assert not (destination / "qualification.json").exists()
+        if failure:
+            raise ValueError("command failed")
+        return {"ok": True}
+
+    monkeypatch.setattr(controls, "_observe_context", observe)
+    if failure:
+        with pytest.raises(ValueError, match="command failed"):
+            controls.qualify(runtime, runtime, (tmp_path,), output, git=runtime)
+    else:
+        assert controls.qualify(runtime, runtime, (tmp_path,), output, git=runtime) == {"ok": True}
+    assert len(owned) == 1 and not owned[0].exists()
+    assert (output / "capture.native").read_bytes() == b"retained observation"
+    assert (output / "qualification.json").exists() is (not failure)
 
 
 @pytest.fixture

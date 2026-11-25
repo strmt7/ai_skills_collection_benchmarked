@@ -205,8 +205,6 @@
         "pyproject.toml",
         ".github/workflows/release.yml",
         "docs/coverage.md",
-        "tools/qualify_trial_context.py",
-        "tests/test_qualify_trial_context.py",
         "tests/test_coverage_bundle.py",
         "tools/validate_catalog.py",
         "tests/test_documentation_contracts.py"
@@ -290,13 +288,28 @@
         "sha256": "21d771a6055016c7a14d7fc0451226b4a2b0cf044895da74623ca6444a597f7e"
       },
       "sources": [
-        "docs/native-benchmark-controller.md",
         "tests/test_native_trial_boundary.py",
         "tests/test_native_trial_runner.py",
         "tests/test_subject_toolchains.py",
         "tools/_subject_toolchains.py",
         "tools/qualify_native_trial_boundary.py",
         "tools/run_swe_skills_trial.py"
+      ]
+    },
+    {
+      "id": "codex-0172-runtime",
+      "review": {
+        "path": "artifacts/research/2026-11-25/codex-0172-runtime/review.json",
+        "sha256": "f8421961875909bd86738f36d735e4147586e2231daf17b30fa0bfc34e8323cb"
+      },
+      "sources": [
+        "docs/native-benchmark-controller.md",
+        "tests/test_qualify_trial_context.py",
+        "tests/test_trial_account_readiness.py",
+        "toolchains/bootstrap/README.md",
+        "toolchains/bootstrap/codex.json",
+        "tools/check_native_trial_readiness.py",
+        "tools/qualify_trial_context.py"
       ]
     }
   ],
@@ -325,7 +338,9 @@
         "tools/_windows_storage_budget.py",
         "tools/_windows_trial_process.py",
         "tools/grade_swe_skills_submission.py",
-        "tools/run_agent_trial.py"
+        "tools/run_agent_trial.py",
+        "toolchains/bootstrap/codex.json",
+        "tools/check_native_trial_readiness.py"
       ]
     },
     {
@@ -344,7 +359,9 @@
         "tools/_windows_storage_budget.py",
         "tools/_windows_trial_process.py",
         "tools/grade_swe_skills_submission.py",
-        "tools/run_agent_trial.py"
+        "tools/run_agent_trial.py",
+        "toolchains/bootstrap/codex.json",
+        "tools/check_native_trial_readiness.py"
       ]
     },
     {
@@ -459,7 +476,8 @@
         "sha256": "5386596e9fda519f44eca8e890f79eb278a190216acbd5ee5758f0156203b5a0"
       },
       "superseded_sources": [
-        "dev.ps1"
+        "dev.ps1",
+        "toolchains/bootstrap/README.md"
       ]
     },
     {
@@ -476,7 +494,8 @@
       },
       "superseded_sources": [
         "dev.ps1",
-        "tests/test_frontend_ownership.py"
+        "tests/test_frontend_ownership.py",
+        "toolchains/bootstrap/README.md"
       ]
     },
     {
@@ -502,7 +521,8 @@
         "sha256": "6323b9865876784ec62b9a691dcf9c53935bda93a3b4675279c51992be55d06a"
       },
       "superseded_sources": [
-        "tests/test_frontend_ownership.py"
+        "tests/test_frontend_ownership.py",
+        "toolchains/bootstrap/README.md"
       ]
     },
     {
@@ -544,7 +564,9 @@
         "tests/test_native_trial_boundary.py",
         "tools/validate_agent_tool_policy.py",
         "tests/test_agent_tool_policy.py",
-        "included/improved/skills/verification-loop-shell-status/SKILL.md"
+        "included/improved/skills/verification-loop-shell-status/SKILL.md",
+        "tests/test_qualify_trial_context.py",
+        "tools/qualify_trial_context.py"
       ]
     },
     {
@@ -565,7 +587,8 @@
         ".github/workflows/mcp-python-sdk.yml",
         ".github/workflows/offline-validation.yml",
         ".github/workflows/pnpm-cache-install.yml",
-        "requirements-dev-lock.txt"
+        "requirements-dev-lock.txt",
+        "toolchains/bootstrap/README.md"
       ]
     },
     {
@@ -643,6 +666,15 @@
       "review": {
         "path": "artifacts/research/2026-11-25/native-command-verification/review.json",
         "sha256": "c55c9261d4f23a1cae0c8293b7a945653960847fd34bdb392e02859938991c31"
+      },
+      "superseded_sources": [
+        "docs/native-benchmark-controller.md"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-25/native-tool-launcher/review.json",
+        "sha256": "21d771a6055016c7a14d7fc0451226b4a2b0cf044895da74623ca6444a597f7e"
       },
       "superseded_sources": [
         "docs/native-benchmark-controller.md"

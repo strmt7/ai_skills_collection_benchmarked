@@ -272,6 +272,11 @@ Execution sources and admission-checker sources are bound separately. Updating
 the checker invalidates its receipt without relabelling or rerunning unchanged
 native execution evidence. The admitted checker bytes are checked again before
 execution and after grading.
+
+Context qualification keeps its controller profiles and workspaces in one
+disposable directory. It removes the directory before recording qualification
+and retains native observations in the selected evidence directory.
+
 The timeout control also observes the running tool's PID and creation time from
 the host and confirms its termination; an empty CLI job alone is insufficient.
 
@@ -512,10 +517,16 @@ requested model and reasoning effort. It requests no token export, interactive
 login, Reserve operation or explicit forced refresh. Native authentication can
 still refresh credentials when its normal lifecycle requires it.
 
-The checker discards raw RPC responses and stderr from bounded memory, retaining
-sanitized decisions, account-identity hashes, implementation sources and process
-results in `readiness.json`. The official CLI retains its normal native state;
-this is not a promise to erase its authentication/cache files.
+The checker uses disposable controller and workspace directories separate from
+the report path. This gives native SQLite a shorter temporary path on Windows.
+It removes the scratch directories when the check closes and discards raw RPC
+responses and stderr. The evidence directory retains implementation sources,
+process results, sanitized decisions and an account-identity hash. The official
+CLI maintains its normal sign-in state in the declared profile.
+
+Codex CLI 0.172.0 passed 13 synthetic readiness controls covering account and
+model metadata, refresh, profile inputs and configuration stability.
+[Codex CLI 0.172.0 qualification](../artifacts/research/2026-11-25/codex-0172-runtime/review.json)
 
 The [11 native controls](../artifacts/research/2026-11-11/native-account-readiness/review.json)
 include successful metadata, unavailable or denied usage, an unavailable model,
@@ -550,14 +561,15 @@ success or a specific backend weights snapshot.
 
 ## Vendor catalog and shared-profile limits
 
-The admitted CLI is 0.169.0. Native signed-in subjects use the unmodified model
+The admitted CLI is 0.172.0. Native signed-in subjects use the unmodified model
 catalog from that exact public source commit, through the supported
 `model_catalog_json` option. Both maintained runners verify executable and catalog
 sizes and hashes before execution and again before grading. Execution evidence
 retains the public pin and binds it to the protocol source digest; archived command
 validation does not require the original host installation. All experimental
-conditions use identical vendor metadata. This does not replace the model's
-default instructions with a collection-specific prompt.
+conditions use identical vendor metadata and retain the vendor's default model
+instructions. Setup, context and publisher controls are recorded in the
+[Codex CLI 0.172.0 qualification](../artifacts/research/2026-11-25/codex-0172-runtime/review.json).
 
 This addresses an observed channel: `--ignore-user-config` alone still permits
 matching cached model instructions when online catalog refresh fails. Three

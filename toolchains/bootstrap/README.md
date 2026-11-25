@@ -61,6 +61,10 @@ context qualification; model trials remain disabled until the complete runner
 boundary is qualified. Provisioning the CLI does not authorize a model request.
 
 The active package and complete payload are pinned in [codex.json](codex.json).
+Codex 0.172.0 passed fresh Windows x64 setup, verified reuse, context disposal
+and model-free Go and Python Packaging calibration.
+[Codex CLI 0.172.0 runtime qualification](../../artifacts/research/2026-11-25/codex-0172-runtime/review.json)
+
 The [0.169.0 CLI and 0.13.8 installer review](../../artifacts/research/2026-11-13/windows-pydicom-and-stable-tools/review.json)
 records publisher integrity, nine native setup controls and Windows source,
 pytest and grading-handoff checks. It also revokes two earlier candidate

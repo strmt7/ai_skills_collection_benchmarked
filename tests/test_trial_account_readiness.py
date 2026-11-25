@@ -3,11 +3,60 @@ from __future__ import annotations
 import copy
 import json
 import tomllib
+from pathlib import Path
 from typing import Any
 
 import _trial_account_readiness as readiness
+import check_native_trial_readiness as readiness_cli
 import pytest
 from _trial_context import TrialContext
+
+
+@pytest.mark.parametrize("failure", [False, True])
+def test_readiness_keeps_disposable_scratch_separate_from_evidence(tmp_path, monkeypatch, failure):
+    profile = tmp_path / "owned-signin"
+    profile.mkdir()
+    runtime_root = tmp_path / "runtime"
+    runtime_root.mkdir()
+    plan_path = tmp_path / "plan.json"
+    plan_path.touch()
+    output = tmp_path / ".venv" / "isolated-reports" / "readiness"
+    provider = {"authentication": "codex_signin", "codex_home": str(profile), "credential_store": "file"}
+    plan = {"provider": provider, "model": "gpt-6.1-sol", "reasoning_effort": "high", "execution_source_sha256": {}}
+    runtime = {"cli": runtime_root / "codex", "python": runtime_root / "python", "roots": (runtime_root,)}
+    scratch: list[Path] = []
+
+    def context(controller, workspace, cli, python, roots):
+        assert controller.parent == workspace.parent and workspace.is_dir()
+        assert not workspace.is_relative_to(output) and not controller.is_relative_to(profile)
+        controller.mkdir()
+        (controller / "temporary").mkdir()
+        (controller / "temporary" / "owned-state").touch()
+        scratch.append(workspace.parent)
+        return workspace
+
+    def probe(workspace, selected, model, effort):
+        assert workspace.exists() and selected == provider and model == "gpt-6.1-sol" and effort == "high"
+        if failure:
+            raise RuntimeError("metadata failure")
+        return {"status": "eligible", "model_inferences": 0}
+
+    monkeypatch.setattr(readiness_cli, "ROOT", tmp_path)
+    monkeypatch.setattr(
+        readiness_cli, "load_plan", lambda path: {"plan": plan, "runtime": runtime, "plan_sha256": "test"}
+    )
+    monkeypatch.setattr(readiness_cli, "execution_sources", dict)
+    monkeypatch.setattr(readiness_cli, "archive_sources", lambda directory, sources: directory.mkdir())
+    monkeypatch.setattr(readiness_cli, "create_context", context)
+    monkeypatch.setattr(readiness_cli, "probe", probe)
+    if failure:
+        with pytest.raises(RuntimeError, match="metadata failure"):
+            readiness_cli.run(plan_path, output)
+    else:
+        assert readiness_cli.run(plan_path, output)["status"] == "eligible"
+    assert len(scratch) == 1 and not scratch[0].exists()
+    assert (output / "sources").is_dir()
+    assert (output / "readiness.json").exists() is (not failure)
 
 
 def account(identity="account-a"):

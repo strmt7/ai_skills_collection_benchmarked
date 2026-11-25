@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-25",
+  "scope": "Official Codex CLI 0.172.0 and disposable native context qualification",
+  "source_sha256": {
+    "docs/native-benchmark-controller.md": "6cca2f8148c65a57c9012defe611455db309bba7e34906bade1bc2bbaf5167c7",
+    "tests/test_qualify_trial_context.py": "f908989e5b3eb7ebfcb87ae7eae19ea2785a2dbba1477deb8da89747d50d87cd",
+    "tests/test_trial_account_readiness.py": "f506ad3d41fb1a9045baaa6018afef3ae27351059f1bb5b34c8dd2982f8d8ffa",
+    "toolchains/bootstrap/README.md": "ab1b3b0c65006b262d882ad48525730fdd08434ac52e298f9ead0ad6c8164678",
+    "toolchains/bootstrap/codex.json": "ba19414eee75368b808031f6a3eefe9f24dd7a330375c7d7b9da1cfbf996190f",
+    "tools/check_native_trial_readiness.py": "8d942364abd040f080d6ba99cab8685c34bab2a1d5e8b93e5f5f73d5cc26d5c7",
+    "tools/qualify_trial_context.py": "ae469282ad93d111e26b0f89340e45c2e040736c896bbeabeaf3da3e94ba2b99"
+  },
+  "artifacts": {
+    "observations.json": "840b7f501dfb57ceabd6e8b70b7cf710133322d017ad7bb4153673a14926e4fc"
+  },
+  "comparative_model_attempts": 0,
+  "model_efficacy_established": false
+}

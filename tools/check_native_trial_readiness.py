@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import tempfile
 from pathlib import Path
 from typing import Any
 
@@ -35,10 +36,12 @@ def run(plan_path: Path, output: Path) -> dict[str, Any]:
         raise ValueError("The selected sign-in home changed during path admission")
     output.mkdir(parents=True)
     archive_sources(output / "sources", plan["execution_source_sha256"])
-    workspace = output / "workspace"
-    workspace.mkdir()
-    context = create_context(output / "controller", workspace, runtime["cli"], runtime["python"], runtime["roots"])
-    report = probe(context, provider, plan["model"], plan["reasoning_effort"])
+    with tempfile.TemporaryDirectory(prefix="skills-readiness-") as temporary:
+        scratch = checked_path(Path(temporary))
+        workspace = scratch / "workspace"
+        workspace.mkdir()
+        context = create_context(scratch / "controller", workspace, runtime["cli"], runtime["python"], runtime["roots"])
+        report = probe(context, provider, plan["model"], plan["reasoning_effort"])
     if plan["execution_source_sha256"] != execution_sources():
         report.update(status="harness_error", eligible=False, error_type="SourceChanged")
     report.update(plan_sha256=admitted["plan_sha256"], execution_source_sha256=plan["execution_source_sha256"])

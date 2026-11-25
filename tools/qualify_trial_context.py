@@ -15,7 +15,7 @@ from typing import Any
 from xml.sax.saxutils import escape
 
 from _lib_b.io_utils import write_json
-from _trial_context import SYSTEM_VARIABLES, TrialContext, create_context, options, temporary_home
+from _trial_context import SYSTEM_VARIABLES, TrialContext, create_context, options
 from _trial_rpc import command_control
 from _trial_transcript import strict_json
 from _windows_appcontainer import checked_path
@@ -330,12 +330,21 @@ def qualify(cli: Path, python: Path, roots: tuple[Path, ...], output: Path, *, g
         raise ValueError("An explicit admitted Git executable is required")
     if not output.is_relative_to(ROOT / ".venv") or output == ROOT / ".venv":
         raise ValueError("Use a dedicated private output directory inside this clone's .venv")
+    output.mkdir(parents=True, exist_ok=False)
+    with tempfile.TemporaryDirectory(prefix="skills-context-fixtures-") as temporary:
+        fixtures = checked_path(Path(temporary))
+        record = _observe_context(cli, python, roots, output, fixtures, git=git, shell=shell)
+    write_json(output / "qualification.json", record)
+    return record
+
+
+def _observe_context(
+    cli: Path, python: Path, roots: tuple[Path, ...], output: Path, fixtures: Path, *, git: Path, shell: Path
+) -> dict[str, Any]:
     initial = sources()
     initial_git = digest(git)
-    output.mkdir(parents=True, exist_ok=False)
-    fixtures = Path(tempfile.mkdtemp(prefix="skills-context-fixtures-"))
     positive_workspace, workspace = fixtures / "positive/task", fixtures / "clean/task"
-    positive_home, home = temporary_home(), temporary_home()
+    positive_home, home = fixtures / "positive-controller", fixtures / "baseline-controller"
     write_json(
         output / "source-binding.json",
         {
@@ -419,7 +428,7 @@ def qualify(cli: Path, python: Path, roots: tuple[Path, ...], output: Path, *, g
         (output / "native-command/probe-after.native").write_bytes(source.read(len(PROBE.encode("utf-8")) + 1))
     checks = observed_checks(output)
     checks["sources_unchanged"] = sources() == initial
-    record = {
+    return {
         "schema_version": 1,
         "checks": checks,
         "ok": all(checks.values()),
@@ -438,8 +447,6 @@ def qualify(cli: Path, python: Path, roots: tuple[Path, ...], output: Path, *, g
         "codex_home": context.controller_environment["CODEX_HOME"],
         "evidence_sha256": {name: digest(output / name) for name in EVIDENCE_NAMES},
     }
-    write_json(output / "qualification.json", record)
-    return record
 
 
 def check(output: Path) -> dict[str, Any]:

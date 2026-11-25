@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-25",
+  "scope": "Windows x64 official Codex CLI bootstrap, context and original publisher controls",
+  "release": {
+    "version": "0.172.0",
+    "source_commit": "3d86e43b075adeba2193ec5c22ac92f55afd82e6",
+    "archive_sha256": "4e45a12e8711a35ba9de65b45c49dc400e67a8bd0e2c18a7793673bddbe67b0d",
+    "archive_bytes": 196154811,
+    "cli_sha256": "3f42b12274b353ecb3ec555e6c8d0a43f6c6cb29c3a546179bc12dee4855deb6",
+    "package_files": 47,
+    "source_resources": {
+      "LICENSE": {
+        "url": "https://raw.githubusercontent.com/openai/codex/3d86e43b075adeba2193ec5c22ac92f55afd82e6/LICENSE",
+        "bytes": 10926,
+        "sha256": "d17f227e4df5da1600391338865ce0f3055211760a36688f816941d58232d8dc"
+      },
+      "NOTICE": {
+        "url": "https://raw.githubusercontent.com/openai/codex/3d86e43b075adeba2193ec5c22ac92f55afd82e6/NOTICE",
+        "bytes": 242,
+        "sha256": "9d71575ecfd9a843fc1677b0efb08053c6ba9fd686a0de1a6f5382fd3c220915"
+      },
+      "models.json": {
+        "url": "https://raw.githubusercontent.com/openai/codex/3d86e43b075adeba2193ec5c22ac92f55afd82e6/codex-rs/models-manager/models.json",
+        "bytes": 667893,
+        "sha256": "d50b6749506d97e5f334dbabcb666eb1689f423cf3e88cfabdcf3c536b873068"
+      }
+    },
+    "cold_install_passed": true,
+    "verified_install_reused": true
+  },
+  "independent_command_fixture": {
+    "runtime_sha256": "e57f3446e640568eb889d653bd0ec8d18cb6bcf6fa4c7efa87852ed26bd76ac7",
+    "evaluator_source_sha256": "40cbec3dd9dbe026924da98a60f38ef02d46acecce847dcb2047e940a9ac3016",
+    "observations": [
+      {
+        "mode": "python-current",
+        "expected_exit": null,
+        "tool_exit": 0,
+        "marker_present": true,
+        "offline_source_observed": false,
+        "workspace_inputs_unchanged": true,
+        "native_process_sha256": "94db89745b1b3c911cd3f20302bac003d9bff3475f5b378839e360b091592891",
+        "native_transcript_sha256": "6f1cfffc719a97e493ee6dd07528a74790ee9440ed254c3e46dee53e366e1755",
+        "compiled_launcher_sha256": "0e5b760a9547e49dcc535fc56e4add9664e16aa7ef780b9cf0f0fb54650502e8",
+        "owned_processes_remaining": 0,
+        "scripted_transport_stopped": true,
+        "scripted_provider_errors": [],
+        "launcher_bytes_verified": false,
+        "controller_exit": 0,
+        "controller_timed_out": false,
+        "model_inferences": 0,
+        "workspace_profile_removed": true
+      },
+      {
+        "mode": "go-offline",
+        "expected_exit": 0,
+        "tool_exit": 0,
+        "marker_present": true,
+        "offline_source_observed": true,
+        "workspace_inputs_unchanged": true,
+        "native_process_sha256": "3497b56306cc8b3dcdf1ee2924ee3dc5b9ad24c879dbb0b14b7fae41b4bf8bda",
+        "native_transcript_sha256": "9861687db458b6f370952cb12cfaa28c8f8d75d2bf4d31896510a4ade5d89e2e",
+        "compiled_launcher_sha256": "9c5b92fe6cc86d141e2ba410065fc9062a373e1aa9140093b5856ffef7428e5e",
+        "owned_processes_remaining": 0,
+        "scripted_transport_stopped": true,
+        "scripted_provider_errors": [],
+        "launcher_bytes_verified": true,
+        "controller_exit": 0,
+        "controller_timed_out": false,
+        "model_inferences": 0,
+        "workspace_profile_removed": true
+      },
+      {
+        "mode": "go-invalid-command",
+        "expected_exit": 2,
+        "tool_exit": 2,
+        "marker_present": true,
+        "offline_source_observed": false,
+        "workspace_inputs_unchanged": true,
+        "native_process_sha256": "4f2aec89e06c4fc830233f1e661091e5d3425f03952ebd63a3144efb510e7db8",
+        "native_transcript_sha256": "e6511ea51aa42a65a3795d7d482a7235fe86c6c725c60e9e3bcc876207cfee07",
+        "compiled_launcher_sha256": "6d4498cf2e4ff8be6038f28c2acc0d267d7ba1f315808e111f438511f1fdb168",
+        "owned_processes_remaining": 0,
+        "scripted_transport_stopped": true,
+        "scripted_provider_errors": [],
+        "launcher_bytes_verified": true,
+        "controller_exit": 0,
+        "controller_timed_out": false,
+        "model_inferences": 0,
+        "workspace_profile_removed": true
+      }
+    ]
+  },
+  "native_contexts": {
+    "0.172.0": {
+      "controls_passed": 17,
+      "scratch_removed": true,
+      "receipt_sha256": "9048c2b78fe4b9e79fd6596909dbfec6c9c51f5a6130d0ba364b920461667128",
+      "cli_sha256": "3f42b12274b353ecb3ec555e6c8d0a43f6c6cb29c3a546179bc12dee4855deb6"
+    },
+    "0.169.0": {
+      "controls_passed": 17,
+      "scratch_removed": true,
+      "receipt_sha256": "bfb40652a97b725e640f449b370b4c7f84ce6d51a5209dcd4847712a639034f9",
+      "cli_sha256": "ce1945eb440b5481ed1233ebaf32b7056ee7e4e452fa62ffe1cbfb26103cdee0"
+    }
+  },
+  "rejected_missing_read_grant": {
+    "expected_error_observed": true,
+    "temporary_workspace_removed": true,
+    "qualification_absent": true,
+    "diagnostics_retained": true
+  },
+  "publisher_controls": {
+    "go": {
+      "publisher_counts": {
+        "passed": 14,
+        "total": 14
+      },
+      "controls_passed": 11,
+      "native_boundary_sha256": "e583c116bc16bfcc8b5d6023ed93737d1d34b9e8291fdd1a84a8e8234aa4074b",
+      "control_execution_sha256": "9c672454f6f52f1ff190f826dfc7a571796907965f1d871c5622214ecc159c7e"
+    },
+    "packaging": {
+      "publisher_counts": {
+        "passed": 11,
+        "total": 11
+      },
+      "controls_passed": 11,
+      "native_boundary_sha256": "5a313477ecf649bef006a0b4ad2859279bc815880e15d41e9eeebc49b8a82a73",
+      "control_execution_sha256": "886faad2674e245ddee106b33033e901fa82efb9e751944d88d59d43b77c598f"
+    }
+  },
+  "synthetic_account_metadata_controls": {
+    "passed": 13,
+    "qualification_sha256": "0775487eda7a9be0c8f983f2ee2ed40f3d5d28447e2862817e580ebfaf7692d5"
+  },
+  "windows_sqlite_scratch": {
+    "publisher_migration": {
+      "url": "https://raw.githubusercontent.com/openai/codex/3d86e43b075adeba2193ec5c22ac92f55afd82e6/codex-rs/state/migrations/0023_drop_logs.sql",
+      "git_blob": "dce1ffc20d5e3f913c45e2cbd7c83868ac621e80"
+    },
+    "paired_profile_path_characters": 212,
+    "deep_report_native_exit_before_fix": 1,
+    "same_depth_short_temporary_directory_eligible": true,
+    "normal_entrypoint_eligible_after_fix": true,
+    "normal_entrypoint_report_sha256": "8e53dfcdf3d052beb594cbbc086b25c04bc0b46a088a4a726f6404e0824a174f",
+    "runtime_scratch_outside_the_evidence_directory": true
+  },
+  "go_task_recomposition": {
+    "old_source_receipt_rejected": true,
+    "new_composition_sha256": "586f0e22d83d20aa2b44b0d661f4226c89f886cdf3b92975e8c2a66f3ffd0227",
+    "unchanged_publisher_counts": {
+      "passed": 3,
+      "failed": 11,
+      "skipped": 0,
+      "errors": 0,
+      "total": 14
+    },
+    "negative_controls": {
+      "unchanged": "task_failed",
+      "malformed": "task_failed",
+      "missing_dependency": "harness_error"
+    }
+  },
+  "official_noninteractive_documentation": {
+    "url": "https://learn.chatgpt.com/docs/non-interactive-mode",
+    "native_result_sha256": "20670755cdf38f4776c90f43708075edac7686b953e5c2b2d22e4dc3857e3eb7",
+    "provider_version": "0.9.5+catalog.portable4"
+  },
+  "requested_comparison_configuration_declared_in_vendor_catalog": {
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "high"
+  },
+  "signed_in_model_route_established": false,
+  "comparative_model_trials": 0,
+  "model_efficacy_established": false
+}
