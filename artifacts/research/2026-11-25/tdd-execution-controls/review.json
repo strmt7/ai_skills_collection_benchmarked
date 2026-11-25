@@ -1,0 +1,37 @@
+{
+  "disposition": "Current upstream resource review complete. Keep the already qualified TDD overlay during composition of a source-current revision. Prefer matching case identities before and after a change, plus runner status and the result phase.",
+  "finding": "The same test artifacts and case identity observed the intended wrong result and passed after the program correction. Expected failure, empty selection, import failure, setup failure and teardown failure supplied different evidence from that assertion.",
+  "model_attempts": 0,
+  "native_envelope_line_endings": {
+    "native_sha256": "76986d4e40849369e1fab8556ec51280b067c678cd9bc531495231ec2b5059e4",
+    "path": "observations.json",
+    "published_sha256": "a758c44db0bf66ebda18ba6174257d857d81e0ab943a762819ae5052161a4bf3",
+    "transformation": "Converted CRLF to LF. JSON values and native subprocess digests are unchanged."
+  },
+  "native_test_outcomes": {
+    "path": "observations.json",
+    "sha256": "a758c44db0bf66ebda18ba6174257d857d81e0ab943a762819ae5052161a4bf3"
+  },
+  "observed_on": "2026-11-25",
+  "official_documentation": {
+    "native_result_sha256": "38550cfec7e71db878f2e08ee94a52e1699536e44bf7586329539d2cdf7fecc3",
+    "provider_version": "0.9.6+catalog.portable1",
+    "url": "https://docs.pytest.org/en/stable/reference/exit-codes.html"
+  },
+  "resources": {
+    "SKILL.md": {
+      "git_blob": "67300bf520db15fe9254837780dcef7cf97fd3e8",
+      "review_scope": "Reviewed the complete current entrypoint, runner selection, coverage rules, examples, isolation and CI recommendations. Current code uses separate dependency and runner roles. Portable guidance uses policy-specific coverage, meaningful failure diagnosis and observed browser state.",
+      "sha256": "e9507695657b05f26dd62127f1d6ff58e4015d624df65dd4d7e07f6470317393"
+    },
+    "agents/openai.yaml": {
+      "git_blob": "7f6355cf90d9d9e6726b7bca3ac82391f3340948",
+      "review_scope": "Reviewed activation, display labels, short description and default prompt. They can prompt intended selection but do not prove that a test executed or establish a portable coverage target.",
+      "sha256": "d68700053a6f3a4a65ec18e34bcef58e75986b5f8ae19f6e20e7412ccbd895a4"
+    }
+  },
+  "schema_version": 1,
+  "scope": "Independent synthetic pytest controls, not an agent trial or reproduction of all framework examples.",
+  "source_commit": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+  "source_skill_id": "affaan-m-everything-claude-code-agents-skills-tdd-workflow-skill-md"
+}

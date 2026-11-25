@@ -1,0 +1,87 @@
+{
+  "artifacts": {
+    "linux/result.json": "ec90b802d596ef7062b2dbc1d05ac41e9c69c0f67b5424656d7de2970f70f2a6",
+    "windows/result.json": "474203efca9f474fef7735abf1f19872ce01b1ed870a6e421a124def073b98ce"
+  },
+  "bun_release": "https://github.com/oven-sh/bun/releases/tag/bun-v1.4.5",
+  "historical_repair": {
+    "path": "docs/research-bun-runtime.md",
+    "revision": "51009d1b668db6d3a467254dc460890b7ec6048f",
+    "source_commit": "846ffb75da9a5f4e677d927af1ad4a1951652267"
+  },
+  "limitations": {
+    "hosted_deployment_observed": false,
+    "model_attempts": 0,
+    "performance_comparison_observed": false,
+    "scope": "Component controls for selected Bun and Node behavior. Model benefit, cross-version runtime equivalence and managed deployment readiness require more evidence."
+  },
+  "mirrored_resources": {
+    "SKILL.md": {
+      "disposition": "Reviewed. Preserve the project package manager and separate install, bundler, runtime and test compatibility. Avoid an unconditional drop-in compatibility or speed claim.",
+      "sha256": "b93720b74ea93e870ca87418f490f939b16e4cddace7fb3c97d2fa21398cc985"
+    },
+    "agents/openai.yaml": {
+      "disposition": "Reviewed. Existing optional display metadata; use more specific activation to reduce tool switches in mixed runtimes.",
+      "sha256": "a467a198dcc9115b801075ddba6851de5f9529e8dab3ac80e19d7d3b2eca08ec"
+    }
+  },
+  "official_sources": {
+    "bun-lockfile": {
+      "native_sha256": "03914b3345f79d57949898e988ba9054e7c3f3dd5bd989fff36276fc7cd2b317",
+      "provider_version": "0.9.6+catalog.portable1",
+      "url": "https://bun.com/docs/pm/lockfile"
+    },
+    "bun-runtime": {
+      "native_sha256": "75bd2be6720b38dd6bfab98bacd6739d5c441dbf4eaf3a5fdbba7fba8aeb8ae1",
+      "provider_version": "0.9.6+catalog.portable1",
+      "url": "https://bun.com/docs/runtime"
+    },
+    "bun-test": {
+      "native_sha256": "f6a20acb131aba8d6c5590879a0eb4087a3aa286b2263b0eb9af333fc659ad3f",
+      "provider_version": "0.9.6+catalog.portable1",
+      "url": "https://bun.com/docs/test"
+    },
+    "bun-vercel": {
+      "native_sha256": "61cfe53932abfce446735fc9564e3092cbffc5dd7ba3984e1c6b2e9024a5db8f",
+      "provider_version": "0.9.6+catalog.portable1",
+      "url": "https://vercel.com/docs/functions/runtimes/bun"
+    }
+  },
+  "original_sha256": "b93720b74ea93e870ca87418f490f939b16e4cddace7fb3c97d2fa21398cc985",
+  "platforms": {
+    "linux": {
+      "cases": 12,
+      "path": "artifacts/repaired-skill-readiness/bun-runtime-v2/linux/result.json",
+      "sha256": "ec90b802d596ef7062b2dbc1d05ac41e9c69c0f67b5424656d7de2970f70f2a6"
+    },
+    "windows": {
+      "cases": 12,
+      "path": "artifacts/repaired-skill-readiness/bun-runtime-v2/windows/result.json",
+      "sha256": "474203efca9f474fef7735abf1f19872ce01b1ed870a6e421a124def073b98ce"
+    }
+  },
+  "reproduce": {
+    "argv": [
+      "python",
+      "artifacts/repaired-skill-readiness/bun-runtime-v2/reproduce.py",
+      "<qualified Node v24.22.3 executable>",
+      "<new output>"
+    ],
+    "scope": "Use Windows or Linux x64, an isolated scratch location and network access to the pinned Bun archive.",
+    "sha256": "71aa4f96381abb60b9c0f5b073dd16c389a3e5c927b6519f08164c697ebcd95c"
+  },
+  "schema_version": 1,
+  "shared_lock_sha256": "59912fe72e8001cd3ef4506c781f65ca47d05378d3818d2bdb52c5bb2632301a",
+  "source_commit": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+  "source_development_observation": {
+    "commit": "4adeee6732a12d1540f49a4d50a38ce8c97f9a53",
+    "skill_blob": "5bd36c2412dc4f0c332b39828bd378eda56fd9b6"
+  },
+  "source_release": "https://github.com/affaan-m/everything-claude-code/releases/tag/v2.2.3",
+  "source_sha256": {
+    "artifacts/repaired-skill-readiness/bun-runtime-v2/reproduce.py": "71aa4f96381abb60b9c0f5b073dd16c389a3e5c927b6519f08164c697ebcd95c",
+    "docs/installation.md": "bee09fb5f1fd8f102563e04a66135fb95ac0921d8bb1e0ec57e6c1a4e54e7a8a",
+    "included/improved/skills/bun-runtime-current/SKILL.md": "8387534db6c70784c88e9069c7e631af5396a29aed2bb508e446ae2e89f8b9d9"
+  },
+  "source_skill_id": "affaan-m-everything-claude-code-agents-skills-bun-runtime-skill-md"
+}

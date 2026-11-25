@@ -1,5 +1,4 @@
 {
-  "schema_version": 2,
   "components": [
     {
       "id": "native-project-resources",
@@ -123,8 +122,7 @@
         "tools/_trial_catalog.py",
         "tools/_trial_execution_evidence.py",
         "tests/test_trial_local_catalog.py",
-        "tests/test_trial_execution_evidence.py",
-        "docs/agent-trial-protocol.md"
+        "tests/test_trial_execution_evidence.py"
       ]
     },
     {
@@ -217,8 +215,7 @@
         "tools/manage_improvement_ledger.py",
         "tests/test_improvement_ledger.py",
         "docs/benchmark-execution-plan.md",
-        "docs/improvement-plan.md",
-        "docs/installation.md"
+        "docs/improvement-plan.md"
       ]
     },
     {
@@ -364,8 +361,7 @@
         "docs/native-benchmark-controller.md",
         "tests/test_trial_account_readiness.py",
         "tools/_trial_account_readiness.py",
-        "tools/_trial_context.py",
-        "tools/_trial_signin.py"
+        "tools/_trial_context.py"
       ]
     },
     {
@@ -459,6 +455,30 @@
         "artifacts/repaired-skill-readiness/slides-navigation-v1/overflow.cjs",
         "included/repaired/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-slides/SKILL.md",
         "included/repaired/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-slides/references/html-template.md"
+      ]
+    },
+    {
+      "id": "official-codex-signin-profile",
+      "review": {
+        "path": "artifacts/research/2026-11-25/independent-signin-profile/review.json",
+        "sha256": "803fd3f56c6ab9d36f5757f7d0ca126262660df2590e706e50fadabc1e0b1168"
+      },
+      "sources": [
+        "docs/agent-trial-protocol.md",
+        "tests/test_trial_signin.py",
+        "tools/_trial_signin.py"
+      ]
+    },
+    {
+      "id": "bun-runtime-component-controls",
+      "review": {
+        "path": "artifacts/repaired-skill-readiness/bun-runtime-v2/review.json",
+        "sha256": "f726bcd98f7ce5b2b9facd6c6be67e83401fb72caf8ae821ed98726b7104aff9"
+      },
+      "sources": [
+        "artifacts/repaired-skill-readiness/bun-runtime-v2/reproduce.py",
+        "docs/installation.md",
+        "included/improved/skills/bun-runtime-current/SKILL.md"
       ]
     }
   ],
@@ -609,6 +629,7 @@
         "sha256": "428e35bfb1366f30772c0c7768986cefe4da3b8e7ff9f9188bf6b8b91bbec836"
       },
       "superseded_sources": [
+        "docs/agent-trial-protocol.md",
         "docs/native-benchmark-controller.md",
         "tests/test_native_trial_plan.py",
         "tests/test_native_trial_runner.py",
@@ -878,6 +899,28 @@
       "superseded_sources": [
         "docs/installation.md"
       ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-25/official-signed-metadata/review.json",
+        "sha256": "19bebf91660608a9885a715603cf171e6763314f63d57cbbf452a7512880dfe7"
+      },
+      "superseded_sources": [
+        "docs/improvement-plan.md",
+        "tests/test_trial_signin.py",
+        "tools/_trial_signin.py"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-25/ecc-testing-requalification/review.json",
+        "sha256": "d7be0e096565bfc9122823d9a4e28c68877b63551f6d7364fd9df93abb966050"
+      },
+      "superseded_sources": [
+        "docs/installation.md",
+        "included/improved/skills/eval-harness-integrity/SKILL.md"
+      ]
     }
-  ]
+  ],
+  "schema_version": 2
 }

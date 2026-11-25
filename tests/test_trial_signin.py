@@ -127,16 +127,58 @@ def test_global_instructions_are_rejected_before_status_without_reading_content(
 
 def test_global_instructions_created_during_status_are_also_rejected(native, monkeypatch):
     context, declaration, state = native
-    original = signin.require_instruction_free_home
+    original = signin.require_independent_home
 
     def check(home):
         if state["calls"]:
             (home / "AGENTS.md").write_bytes(b"late-private-canary")
         original(home)
 
-    monkeypatch.setattr(signin, "require_instruction_free_home", check)
+    monkeypatch.setattr(signin, "require_independent_home", check)
     with pytest.raises(ValueError, match="global instructions"):
         bind_credentials(context, declaration, {})
+    assert len(state["calls"]) == 1
+
+
+@pytest.mark.parametrize("late", [False, True])
+def test_signin_rejects_undeclared_rules_before_subject_launch(native, monkeypatch, late):
+    context, declaration, state = native
+    directory = Path(declaration["codex_home"]) / "rules"
+    directory.mkdir()
+    rule = directory / "owned.rules"
+
+    def write_rule():
+        rule.write_bytes(b"private-rule-canary")
+
+    if late:
+        original = signin.read_signin_status
+
+        def insert_rule(*args, **kwargs):
+            result = original(*args, **kwargs)
+            write_rule()
+            return result
+
+        monkeypatch.setattr(signin, "read_signin_status", insert_rule)
+    else:
+        write_rule()
+
+    with pytest.raises(signin.SigninAdmissionError, match="execution rules") as error:
+        bind_credentials(context, declaration, {})
+    assert len(state["calls"]) == int(late)
+    assert error.value.admission["reason"] == "global_rules_present"
+    assert "private-rule-canary" not in str(error.value) + json.dumps(error.value.admission)
+    assert rule.read_bytes() == b"private-rule-canary"
+
+
+def test_signin_ignores_entries_the_native_rule_loader_does_not_read(native):
+    context, declaration, state = native
+    directory = Path(declaration["codex_home"]) / "rules"
+    directory.mkdir()
+    (directory / "notes.txt").write_text("owned", encoding="utf-8")
+    subdirectory = directory / "directory.rules"
+    subdirectory.mkdir()
+    (subdirectory / "nested.rules").touch()
+    assert bind_credentials(context, declaration, {}).signin is not None
     assert len(state["calls"]) == 1
 
 

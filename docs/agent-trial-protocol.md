@@ -83,10 +83,12 @@ remains private, and release restores the controller's original `CODEX_HOME`;
 it neither revokes nor removes the existing sign-in. Native provider retry and
 transport defaults remain active inside fixed process time and resource limits.
 
-`--ignore-user-config` does not disable global `AGENTS.md` discovery. Native
-admission therefore rejects either `AGENTS.md` or `AGENTS.override.md` in the
-selected home before and after status, without reading or modifying its content.
-These checks do not freeze a shared home against concurrent changes. The
+Codex loads global instructions and user execution rules separately from
+`config.toml`. Use a dedicated, independently signed-in home for benchmark
+subjects. The runner checks for `AGENTS.md`, `AGENTS.override.md` and native
+`rules/*.rules` inputs before and after checking sign-in status. It checks entry
+metadata and preserves normal execution-policy enforcement. Keep the dedicated
+home exclusively assigned to the trial while it runs. The
 [native sign-in controls](../artifacts/research/2026-11-11/native-signin-controller/review.json)
 use synthetic credentials and owned endpoints. They do not qualify real account
 refresh, every context channel or the complete model boundary; the launch guard

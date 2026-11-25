@@ -1,0 +1,74 @@
+{
+  "platform": "windows",
+  "bun": "1.4.5",
+  "node": "v24.22.3",
+  "archive_sha256": "3c081c73865e7a3453a9d514cc2ba3d699880621bcf67bb17241ff5194cb1d4b",
+  "node_sha256": "86fc4785327db5f5c7558dc6156c543b433c313e813a222e088086222ab4afa6",
+  "lock_sha256": "59912fe72e8001cd3ef4506c781f65ca47d05378d3818d2bdb52c5bb2632301a",
+  "frozen_without_lock_installed": true,
+  "frozen_without_lock_created_lock": false,
+  "checks": {
+    "bun-version": {
+      "exit": 0,
+      "stdout_sha256": "f43a0292c674542a2d676a0f4f588a7ffbe1cbac25090df344b12ff1279f7820",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "node-version": {
+      "exit": 0,
+      "stdout_sha256": "55f2db537fd636d05d89ca28ab8d58a615660c99a0ace159b2c65adcd32f374c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "frozen-without-lock": {
+      "exit": 0,
+      "stdout_sha256": "d3b6990444d8c39543087fedbd88503c13cd021c4f556d7035e093a1de58f949",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "lock-only": {
+      "exit": 0,
+      "stdout_sha256": "35517b4ffb7d6c90fcc6c88a3e9eb71f3fdd70d0f17639311b4c75fbe58cd98a",
+      "stderr_sha256": "47f54b390e29cf9d23c0e13e15bbff6224c42e067872d642b63deb38a8c5152c"
+    },
+    "frozen-install": {
+      "exit": 0,
+      "stdout_sha256": "736c969d0560859927852c1ad5478b6d5b8167abccb11a8a573dd2d31410944b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "typescript-runtime": {
+      "exit": 0,
+      "stdout_sha256": "22cb5aef292bd4dd2c56e11b75f767fc62cfc59038e78792815f4dd6b709889b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "typescript-transpile-only": {
+      "exit": 0,
+      "stdout_sha256": "0c68feae3aa59d3d3d7ebe892e077d98f82108b7c38af3d2c6d50b44572f4c77",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "node-target-build": {
+      "exit": 0,
+      "stdout_sha256": "be08194fa561484919eefee41c76fdbe26f0d093d334ea97a09790d48432543a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "node-target-runtime": {
+      "exit": 0,
+      "stdout_sha256": "22cb5aef292bd4dd2c56e11b75f767fc62cfc59038e78792815f4dd6b709889b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "passing-test": {
+      "exit": 0,
+      "stdout_sha256": "b3e72acbeaa96d7965ccd9e73a918c679aad805e9bf2f069ceb4cc6805a00ae8",
+      "stderr_sha256": "72022b9f02e6fd83617776e0e0fb353ec985d2473ea89db5f1a5cd8a7bd2ed7d"
+    },
+    "failed-assertion": {
+      "exit": 1,
+      "stdout_sha256": "b3e72acbeaa96d7965ccd9e73a918c679aad805e9bf2f069ceb4cc6805a00ae8",
+      "stderr_sha256": "65a4cc9b777d5c1a2fc696f1dfbe69e944a5677d18e1181f5e98d296ecb8e561"
+    },
+    "rejected-drift": {
+      "exit": 1,
+      "stdout_sha256": "8a552ed1535889af009ac7ead2a4c4046c698e87d6fd2441c61cd8f8b76ce826",
+      "stderr_sha256": "30a31d132f36c10d3e9d37c86220076b11de98061126095a7ce390380a6d2a8a"
+    }
+  },
+  "scratch_removed": true,
+  "model_attempts": 0
+}

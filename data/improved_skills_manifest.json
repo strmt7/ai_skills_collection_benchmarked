@@ -6,6 +6,24 @@
       "license": "MIT",
       "license_file_sha256": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
       "license_source_sha": "b832b6f642312312367c07688dc7426db40a82ed",
+      "original_path": "included/improved/skills/bun-runtime-current/provenance/original-SKILL.md",
+      "overlay_path": "included/improved/skills/bun-runtime-current",
+      "overlay_sha256": "8387534db6c70784c88e9069c7e631af5396a29aed2bb508e446ae2e89f8b9d9",
+      "package_file_sha256": {
+        "LICENSE": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
+        "SKILL.md": "8387534db6c70784c88e9069c7e631af5396a29aed2bb508e446ae2e89f8b9d9",
+        "provenance/original-SKILL.md": "b93720b74ea93e870ca87418f490f939b16e4cddace7fb3c97d2fa21398cc985"
+      },
+      "performance_status": "unbenchmarked",
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-bun-runtime-skill-md",
+      "source_commit": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+      "source_file_sha256": "b93720b74ea93e870ca87418f490f939b16e4cddace7fb3c97d2fa21398cc985",
+      "source_url": "https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/bun-runtime/SKILL.md"
+    },
+    {
+      "license": "MIT",
+      "license_file_sha256": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
+      "license_source_sha": "b832b6f642312312367c07688dc7426db40a82ed",
       "original_path": "included/improved/skills/eval-harness-integrity/provenance/original-SKILL.md",
       "overlay_path": "included/improved/skills/eval-harness-integrity",
       "overlay_sha256": "1ca16b131a0e99e029a799e3f19f7ed56e7d7f31a11e0f7bab56a74c361f5127",

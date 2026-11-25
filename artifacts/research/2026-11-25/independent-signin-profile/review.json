@@ -1,0 +1,37 @@
+{
+  "artifacts": {
+    "admission.json": "e48af9e5265932b2a305983db2bbb20b00b6d3e1e3032310c3b6ce4ffadb66fd",
+    "startup.json": "9e8d022d99689106f048e5767b4252771ad74ba38745afc8aa94be642e0814ed"
+  },
+  "base_revision": "51009d1b668db6d3a467254dc460890b7ec6048f",
+  "change": "Detect user execution rule inputs before and after the official status check and report the cause without reading rule contents. Keep the native command and its execution-policy enforcement.",
+  "cli_executable_sha256": "3f42b12274b353ecb3ec555e6c8d0a43f6c6cb29c3a546179bc12dee4855deb6",
+  "cli_source_commit": "3d86e43b075adeba2193ec5c22ac92f55afd82e6",
+  "cli_version": "0.172.0",
+  "comparative_model_attempts": 0,
+  "mechanism": "The ordinary exec command reads user rule inputs independently of user config. A synthetic invalid rule prevented endpoint contact. Separate diagnostic countercontrols distinguished policy loading from process or transport startup.",
+  "model_efficacy_established": false,
+  "native_envelope_line_endings": {
+    "native_sha256": "3df9511b31f1526185b13abcc3ce173c64437f2178a648635f94f287b1ad52e5",
+    "path": "startup.json",
+    "published_sha256": "9e8d022d99689106f048e5767b4252771ad74ba38745afc8aa94be642e0814ed",
+    "transformation": "Converted CRLF to LF. JSON values and native subprocess digests are unchanged."
+  },
+  "observed_on": "2026-11-25",
+  "official_documentation": {
+    "native_result_sha256": "249f2039b5e787f4ea36ee1e18ca84f59f76c4b6226ebfc522dfdc8d46d94b35",
+    "provider_version": "0.9.6+catalog.portable1",
+    "url": "https://learn.chatgpt.com/docs/non-interactive-mode"
+  },
+  "regression_tests": {
+    "expected_failures_before": 2,
+    "focused_tests_passed_after": 51
+  },
+  "schema_version": 1,
+  "scope": "Source-bound Codex CLI startup and admission controls using isolated unsigned homes and an owned scripted peer.",
+  "source_sha256": {
+    "docs/agent-trial-protocol.md": "0fd15e95917f42f701bca604e520a63b6f371cc13b3405b2420f48bdc90a2ae8",
+    "tests/test_trial_signin.py": "7dcecd99b7def87e8b85b246798a92a077a7628237e8512f3102411ac9651861",
+    "tools/_trial_signin.py": "928c51abbe440047e443c0d5e3d8d47918a1b04284bc2b23cccf868c7445c2e2"
+  }
+}

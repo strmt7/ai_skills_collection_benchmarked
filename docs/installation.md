@@ -148,8 +148,8 @@ Some reviewed instructions have known limitations:
   check whether a delayed response can overwrite newer results in the UI.
   Agent efficacy remains unbenchmarked.
 
-- The Bun skill assumes frozen installs are always locked. A [Bun repair](../included/repaired/skills/by-category/testing-qa-benchmarking/selected-structure-reference/bun-runtime/SKILL.md)
-  makes the lockfile precondition explicit. [See the runtime controls](research-bun-runtime.md).
+- For Bun projects, use the [maintained Bun runtime skill](../included/improved/skills/bun-runtime-current/SKILL.md) to verify the
+  lockfile, runtime and test behavior. The [Windows and Linux controls](../artifacts/repaired-skill-readiness/bun-runtime-v2/review.json) tested Bun 1.4.5.
 
 - The maintained [local web app testing skill](../included/improved/skills/webapp-testing-current/SKILL.md)
   includes a tested Playwright server configuration and an instance check.

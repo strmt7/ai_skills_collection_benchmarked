@@ -1,0 +1,118 @@
+{
+  "pytest_version": "9.2.0",
+  "python_version": "3.14.10",
+  "controls": {
+    "wrong-result": {
+      "exit_code": 1,
+      "result_nodes": [
+        "failure"
+      ],
+      "identities": [
+        {
+          "class": "test_capacity",
+          "name": "test_limit"
+        }
+      ],
+      "program_sha256": "aee4a0345dfb6bbb7e99dd24f0605b22a0af1956d715437512d8db06f5ce59e1",
+      "test_sha256": "46ff516b6fc88b2746eff74712bd804904c9c2d96ed41373aecae6853cb93de2",
+      "junit_sha256": "42fd0d5766ecef253d8ce1ac9c8ee3ba8634499b55f0e86885ea2936f17babb3",
+      "stdout_sha256": "426f38c324894708fdeeea93cfd60ba56808e3b3c1a5ace6379ea27e2c822875",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "correct-result": {
+      "exit_code": 0,
+      "result_nodes": [],
+      "identities": [
+        {
+          "class": "test_capacity",
+          "name": "test_limit"
+        }
+      ],
+      "program_sha256": "4a0001498a75064f0374b3c883f8e787f8963d1554c36b85771aef14fe8c6f56",
+      "test_sha256": "46ff516b6fc88b2746eff74712bd804904c9c2d96ed41373aecae6853cb93de2",
+      "junit_sha256": "54276c94b2e408c9937a5c621625d649ab8e8c57edbb1c71d0adb87c05983d01",
+      "stdout_sha256": "ef72a13f9958b536e504227b8820285bd090a9dcf888ae1b2c3c702c477036cf",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "expected-failure": {
+      "exit_code": 0,
+      "result_nodes": [
+        "skipped"
+      ],
+      "identities": [
+        {
+          "class": "test_capacity",
+          "name": "test_limit"
+        }
+      ],
+      "program_sha256": "aee4a0345dfb6bbb7e99dd24f0605b22a0af1956d715437512d8db06f5ce59e1",
+      "test_sha256": "9b220f8387240ba6e7c8c1c10268c9123c6efa7748f273a62011dd7797bd2e7a",
+      "junit_sha256": "9b8f61aba265b9c6d8bcb3c5c225d9476f3005338f4575dc666dde7da29f57f8",
+      "stdout_sha256": "edcf99692acb7df7e4a398cfb6de1d7a2cd5b7578af92a9e4788ca6e0ec2137e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "excluded-case": {
+      "exit_code": 5,
+      "result_nodes": [],
+      "identities": [],
+      "program_sha256": "4a0001498a75064f0374b3c883f8e787f8963d1554c36b85771aef14fe8c6f56",
+      "test_sha256": "46ff516b6fc88b2746eff74712bd804904c9c2d96ed41373aecae6853cb93de2",
+      "junit_sha256": "9ed41babe00c4d7b0373111ce83be4adea8092a28bc1e479fde256eb04388430",
+      "stdout_sha256": "fdb3e01a6484e58b92134123a0d2d45a5c9ddfdda35cda54bd91abf3dbe9c253",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "collection-error": {
+      "exit_code": 2,
+      "result_nodes": [
+        "error"
+      ],
+      "identities": [
+        {
+          "class": "",
+          "name": "test_capacity"
+        }
+      ],
+      "program_sha256": "aee4a0345dfb6bbb7e99dd24f0605b22a0af1956d715437512d8db06f5ce59e1",
+      "test_sha256": "c48d8977089978423dfea2456853d9669b9c025f225ce7ca70f51ee8f0051bc1",
+      "junit_sha256": "d88fe80c56ac2e812dd8c0d797b7cecc358c66ff20731ca697b4f053c489c930",
+      "stdout_sha256": "febd3741a07bef21ccca745c8a9d13acbea809ad4a359902aa537969496e4e67",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "setup-error": {
+      "exit_code": 1,
+      "result_nodes": [
+        "error"
+      ],
+      "identities": [
+        {
+          "class": "test_capacity",
+          "name": "test_limit"
+        }
+      ],
+      "program_sha256": "4a0001498a75064f0374b3c883f8e787f8963d1554c36b85771aef14fe8c6f56",
+      "test_sha256": "97737c376c2214983713c4f9ea1f168b8d7d7b0491f0db982e623f432e40503d",
+      "junit_sha256": "31c22d3ae2bfe5d21a85f2ff218d6b4b9b50b3fbdbb7e2790a601fdcd10338bc",
+      "stdout_sha256": "eec9ead8c067164b62c02735f72c9b0f6707f8a488fe57bb740776b1d11454aa",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "teardown-error": {
+      "exit_code": 1,
+      "result_nodes": [
+        "error"
+      ],
+      "identities": [
+        {
+          "class": "test_capacity",
+          "name": "test_limit"
+        }
+      ],
+      "program_sha256": "4a0001498a75064f0374b3c883f8e787f8963d1554c36b85771aef14fe8c6f56",
+      "test_sha256": "c00e6aa231005dfa079e49cd7f96df6cfa524babf120c51c8efa3b18617ebc2b",
+      "junit_sha256": "1021050809035190e9a90c0d50c5e3d65f4ee5b1d3a7f1094f1e782fe4e3f776",
+      "stdout_sha256": "af7b27bcc98ecece5c4fe282242a09568a78b0290253e3d6d69cffdbbb67b987",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "scratch_removed": true,
+  "model_attempts": 0
+}

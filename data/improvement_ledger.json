@@ -129,12 +129,42 @@
       },
       "mirrored_path": "included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/bun-runtime",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/repaired-skill-readiness/bun-runtime-v2/review.json",
+            "scope": "Current source, complete two-resource inventory, official documentation and 24 native runtime controls.",
+            "sha256": "f726bcd98f7ce5b2b9facd6c6be67e83401fb72caf8ae821ed98726b7104aff9"
+          }
+        ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "review_scope": "Reviewed. Preserve the project package manager and separate install, bundler, runtime and test compatibility. Avoid an unconditional drop-in compatibility or speed claim.",
+            "sha256": "b93720b74ea93e870ca87418f490f939b16e4cddace7fb3c97d2fa21398cc985",
+            "status": "reviewed"
+          },
+          "agents/openai.yaml": {
+            "review_scope": "Reviewed. Existing optional display metadata; use more specific activation to reduce tool switches in mixed runtimes.",
+            "sha256": "a467a198dcc9115b801075ddba6851de5f9529e8dab3ac80e19d7d3b2eca08ec",
+            "status": "reviewed"
+          }
+        },
+        "status": "complete"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "included/improved/skills/bun-runtime-current/SKILL.md",
+            "scope": "Experimental overlay for lockfile, runtime, test and bundler workflows.",
+            "sha256": "8387534db6c70784c88e9069c7e631af5396a29aed2bb508e446ae2e89f8b9d9"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/bun-runtime-v2/review.json",
+            "scope": "Publication source, normal entrypoints and measured functional scope.",
+            "sha256": "f726bcd98f7ce5b2b9facd6c6be67e83401fb72caf8ae821ed98726b7104aff9"
+          }
+        ],
+        "status": "complete"
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
@@ -787,22 +817,27 @@
           {
             "path": "artifacts/research/2026-11-25/ecc-testing-requalification/review.json",
             "sha256": "d7be0e096565bfc9122823d9a4e28c68877b63551f6d7364fd9df93abb966050"
+          },
+          {
+            "path": "artifacts/research/2026-11-25/tdd-execution-controls/review.json",
+            "scope": "Complete current two-resource source review and seven independent native outcome controls.",
+            "sha256": "0d633606e01df995282e15da9c321ee72f77bcebfa79854f04a6a76fb8803aea"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
         "resources": {
           "SKILL.md": {
-            "review_scope": "Reviewed runner resolution, meaningful red phase, supported pytest statuses, coverage guidance and released versus unreleased documentation.",
+            "review_scope": "Reviewed the complete current entrypoint, runner selection, coverage rules, examples, isolation and CI recommendations. Current code uses separate dependency and runner roles. Portable guidance uses policy-specific coverage, meaningful failure diagnosis and observed browser state.",
             "sha256": "e9507695657b05f26dd62127f1d6ff58e4015d624df65dd4d7e07f6470317393",
             "status": "reviewed"
           },
           "agents/openai.yaml": {
-            "review_scope": "Reviewed display name, activation summary, explicit invocation and implicit invocation flag. This metadata changes discovery and has no independently executable code.",
+            "review_scope": "Reviewed activation, display labels, short description and default prompt. They can prompt intended selection but do not prove that a test executed or establish a portable coverage target.",
             "sha256": "d68700053a6f3a4a65ec18e34bcef58e75986b5f8ae19f6e20e7412ccbd895a4",
             "status": "reviewed"
           }
         },
-        "status": "in_progress"
+        "status": "complete"
       },
       "revision": {
         "evidence": [
@@ -810,6 +845,10 @@
             "path": "artifacts/research/2026-11-25/ecc-testing-requalification/review.json",
             "sha256": "d7be0e096565bfc9122823d9a4e28c68877b63551f6d7364fd9df93abb966050"
           }
+        ],
+        "open_work": [
+          "Rebind the maintained TDD intervention to the current source pin and requalify its synchronized asynchronous guidance accessibly.",
+          "Run isolated independent model comparisons after the study launcher and grader are admitted."
         ],
         "status": "in_progress"
       },

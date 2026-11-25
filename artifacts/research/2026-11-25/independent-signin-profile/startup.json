@@ -1,0 +1,94 @@
+{
+  "cli": "0.172.0",
+  "synthetic_only": true,
+  "model_inferences": 0,
+  "peer_stopped": true,
+  "scratch_removed": true,
+  "controls": {
+    "clean": {
+      "request_paths": [
+        "/v1/responses"
+      ],
+      "rules_error": false,
+      "controlled_terminal": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 1,
+        "output_bytes": 764,
+        "output_limit_bytes": 262144,
+        "wall_time_limit_seconds": 28.0,
+        "job_memory_limit_bytes": 1610612736,
+        "job_peak_memory_used_bytes": 34054144,
+        "active_process_limit": 24,
+        "explicit_environment": true,
+        "write_io_limit_bytes": 134217728,
+        "job_write_io_bytes": 2619201,
+        "write_io_overshoot_bytes": 0,
+        "write_io_observation_error": null,
+        "write_io_enforcement": "polled_job_transfer_accounting",
+        "hard_storage_quota": false
+      }
+    },
+    "synthetic-rules": {
+      "request_paths": [],
+      "rules_error": true,
+      "controlled_terminal": false,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 1,
+        "output_bytes": 250,
+        "output_limit_bytes": 262144,
+        "wall_time_limit_seconds": 28.0,
+        "job_memory_limit_bytes": 1610612736,
+        "job_peak_memory_used_bytes": 8982528,
+        "active_process_limit": 24,
+        "explicit_environment": true,
+        "write_io_limit_bytes": 134217728,
+        "job_write_io_bytes": 782,
+        "write_io_overshoot_bytes": 0,
+        "write_io_observation_error": null,
+        "write_io_enforcement": "polled_job_transfer_accounting",
+        "hard_storage_quota": false
+      }
+    },
+    "ignore-synthetic-rules": {
+      "request_paths": [
+        "/v1/responses"
+      ],
+      "rules_error": false,
+      "controlled_terminal": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 1,
+        "output_bytes": 781,
+        "output_limit_bytes": 262144,
+        "wall_time_limit_seconds": 28.0,
+        "job_memory_limit_bytes": 1610612736,
+        "job_peak_memory_used_bytes": 35176448,
+        "active_process_limit": 24,
+        "explicit_environment": true,
+        "write_io_limit_bytes": 134217728,
+        "job_write_io_bytes": 2619249,
+        "write_io_overshoot_bytes": 0,
+        "write_io_observation_error": null,
+        "write_io_enforcement": "polled_job_transfer_accounting",
+        "hard_storage_quota": false
+      }
+    }
+  }
+}

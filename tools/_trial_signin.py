@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import io
 import os
+import stat
 from dataclasses import dataclass, replace
 from pathlib import Path, PurePath, PureWindowsPath
 from typing import TYPE_CHECKING, Any
@@ -18,11 +19,13 @@ class SigninAdmissionError(ValueError):
     """Retain safe process evidence while discarding native status text."""
 
     def __init__(self, admission: dict[str, Any]) -> None:
-        message = (
-            "Native sign-in storage contains global instructions outside the benchmark conditions"
-            if admission.get("reason") == "global_instructions_present"
-            else "The official CLI did not admit a completed ChatGPT sign-in status check"
-        )
+        reasons = {
+            "global_instructions_present": "Native sign-in storage contains global instructions outside the benchmark conditions",
+            "global_rules_present": "Native sign-in storage contains execution rules outside the benchmark conditions",
+        }
+        reason = admission.get("reason")
+        fallback = "The official CLI did not admit a completed ChatGPT sign-in status check"
+        message = reasons.get(reason, fallback) if isinstance(reason, str) else fallback
         super().__init__(message)
         self.admission = admission
 
@@ -160,12 +163,12 @@ def read_signin_status(context: TrialContext, home: Path, store: str) -> dict[st
 
 
 def bind_signin(context: TrialContext, declaration: dict[str, str]) -> TrialContext:
-    """Admit a ChatGPT sign-in and an instruction-free profile for trial execution."""
+    """Admit a ChatGPT sign-in from an independent profile for trial execution."""
     home = signin_home(context, declaration)
     store = declaration["credential_store"]
-    require_instruction_free_home(home)
+    require_independent_home(home)
     process = read_signin_status(context, home, store)
-    require_instruction_free_home(home)
+    require_independent_home(home)
     environment = {**context.controller_environment, "CODEX_HOME": str(home)}
     return replace(context, controller_environment=environment, signin=NativeSignin(home, store, process))
 
@@ -181,11 +184,22 @@ def global_instructions_present(home: Path) -> bool:
     return False
 
 
-def require_instruction_free_home(home: Path) -> None:
-    """Reject global instruction entries without reading or changing user content.
+def global_rules_present(home: Path) -> bool:
+    """Observe the pinned CLI's top-level user rule scope without opening files."""
+    directory = home / "rules"
+    try:
+        info = directory.lstat()
+    except FileNotFoundError:
+        return False
+    if not stat.S_ISDIR(info.st_mode) or getattr(info, "st_file_attributes", 0) & stat.FILE_ATTRIBUTE_REPARSE_POINT:
+        return True
+    with os.scandir(directory) as entries:
+        return any(Path(entry.name).suffix == ".rules" and entry.is_file(follow_symlinks=False) for entry in entries)
 
-    The pinned CLI loads these separately from config.toml and the project byte
-    limit. These checks do not freeze a shared profile against concurrent writes.
-    """
+
+def require_independent_home(home: Path) -> None:
+    """Require only declared profile context and preserve the normal execution policy."""
     if global_instructions_present(home):
         raise SigninAdmissionError({"admitted": False, "mode": "not_checked", "reason": "global_instructions_present"})
+    if global_rules_present(home):
+        raise SigninAdmissionError({"admitted": False, "mode": "not_checked", "reason": "global_rules_present"})
