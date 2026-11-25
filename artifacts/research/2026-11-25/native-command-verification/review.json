@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-25",
+  "scope": "Qualification of native command diagnostics and verification guidance using independent CLI controls.",
+  "source_sha256": {
+    "docs/native-benchmark-controller.md": "2c69bbc72ae07779e52229134c33530e9238bab21b8daab4165aa9098d2c543f",
+    "included/improved/skills/verification-loop-shell-status/SKILL.md": "e2d4aa146727b49c0621127cd6e0b723babe1480d5520f816e2b369496b08b8a",
+    "tests/test_analyze_native_trial_commands.py": "92a98d74961203f89a77b6d799d4794ea2e161af01a6b8c9262eb73f20c488d5",
+    "tools/analyze_native_trial_commands.py": "77cfa8a51e505637bbc8d6b6515dbee3ac51ee6988a94d2f121dc8c98d604c91"
+  },
+  "artifacts": {
+    "observations.json": "72c7ee191f6ab32c6a5bff65e5602b043eb6f07fa17f820b3e953661034e798d"
+  },
+  "comparative_model_attempts": 0,
+  "model_efficacy_established": false
+}

@@ -38,6 +38,15 @@ need tests that merely restate them.
 
 ## Preserve real status and evidence
 
+Use the executable, subcommand and operands specified by the project or tool.
+If a task command prints usage and fails, check that syntax before retrying.
+Before retrying to recover, look for evidence of a transient failure or correct
+the relevant input. Retain the original failure.
+In PowerShell, use `& $executable` to invoke a quoted or variable executable
+path. Use a direct process API with an argument vector when argument boundaries
+matter, particularly for an empty argument under Windows PowerShell 5.1.
+Verify the received arguments when the result depends on exact values.
+
 Capture each command's exit status and complete bounded log before displaying
 excerpts. A default POSIX pipeline reports the last program's status: piping a
 failed build through `head`, `tail` or `grep` can report success and truncate

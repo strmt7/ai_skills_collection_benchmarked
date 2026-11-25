@@ -1877,6 +1877,10 @@
           {
             "path": "artifacts/research/2026-11-17/frontend-stream-contract/review.json",
             "sha256": "6323b9865876784ec62b9a691dcf9c53935bda93a3b4675279c51992be55d06a"
+          },
+          {
+            "path": "artifacts/research/2026-11-25/native-command-verification/observations.json",
+            "sha256": "72c7ee191f6ab32c6a5bff65e5602b043eb6f07fa17f820b3e953661034e798d"
           }
         ],
         "open_work": [
@@ -1915,6 +1919,12 @@
           {
             "path": "artifacts/research/2026-11-17/frontend-stream-contract/review.json",
             "sha256": "6323b9865876784ec62b9a691dcf9c53935bda93a3b4675279c51992be55d06a"
+          },
+          {
+            "path": "artifacts/research/2026-11-25/native-command-verification/review.json",
+            "sha256": "c55c9261d4f23a1cae0c8293b7a945653960847fd34bdb392e02859938991c31",
+            "current_overlay_sha256": "e2d4aa146727b49c0621127cd6e0b723babe1480d5520f816e2b369496b08b8a",
+            "scope": "Verified native command and artifact behavior. Agent effectiveness for this revision remains open."
           }
         ],
         "status": "in_progress"

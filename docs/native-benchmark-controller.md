@@ -434,6 +434,20 @@ The controller and subject shell each have a private PowerShell module analysis
 cache. The subject cache lives in its reserved runtime profile, outside the
 captured source files.
 
+Inspect the recorded command outcomes of a completed or interrupted attempt:
+
+```powershell
+.\dev.ps1 python tools/analyze_native_trial_commands.py --attempt <attempt-directory>
+```
+
+The analyzer verifies the transcript's recorded SHA-256 before reading its
+events. Its JSON reports zero exits, nonzero exits, and commands observed
+without an exit. It counts adjacent identical nonzero commands when the
+previous command finished before the next appeared. A turn boundary or an
+intervening tool action breaks the streak. The summary contains counts and
+evidence hashes. Use the grader result for the task score and the private
+transcript for command details.
+
 This adapter uses a Windows subject and a Linux grader. It does not reproduce
 the publisher's complete agent harness. Task-specific subject dependency
 readiness still requires its own qualification. Tasks depending on POSIX executable modes need additional

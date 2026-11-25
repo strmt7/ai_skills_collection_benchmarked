@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-25",
+  "scope": "Windows native command behavior and diagnostic verification",
+  "primary_references": [
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_parsing?view=powershell-5.1",
+      "provider_version": "0.9.5+catalog.portable4",
+      "http_status": 200,
+      "native_result_sha256": "8c1b6f7114f907bfbb6ab4b570be7aa9180f21445d91de0ceb384b9678d4477c",
+      "scope": "Native argument passing in Windows PowerShell 5.1"
+    },
+    {
+      "url": "https://docs.python.org/3.14/library/subprocess.html",
+      "provider_version": "0.9.5+catalog.portable4",
+      "http_status": 200,
+      "native_result_sha256": "4e3c190ba6b2580ea30f72f52034272f5c8f3b3adf6efaf70c2764aea49115b7",
+      "scope": "Argument-sequence conversion on Windows"
+    }
+  ],
+  "native_controls": {
+    "passed": true,
+    "method": "scripted controls using actual native processes; independent of skill text and grader",
+    "python_version": "3.14.10",
+    "shell_engine": "Windows PowerShell",
+    "controls": [
+      {
+        "case": "missing-subcommand",
+        "mechanism": "vector",
+        "expected_exit": 2,
+        "observed_exit": 2,
+        "artifact_contract_met": true,
+        "artifact_sha256": null,
+        "usage_reported": true,
+        "success_message": false,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "782cf22c9f1ad95b2a09042217c209ae442df36188ae0c172609a1394fea5e47",
+        "native_process_sha256": "20707c18250243b7999cbf6dbf7434b0faa14878d44c3f57ff946f16eeb93fb9",
+        "owned_children_after": 0,
+        "termination_reason": null,
+        "passed": true
+      },
+      {
+        "case": "identical-retry",
+        "mechanism": "vector",
+        "expected_exit": 2,
+        "observed_exit": 2,
+        "artifact_contract_met": true,
+        "artifact_sha256": null,
+        "usage_reported": true,
+        "success_message": false,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "782cf22c9f1ad95b2a09042217c209ae442df36188ae0c172609a1394fea5e47",
+        "native_process_sha256": "67e314e0c05becf72479580f941a1027d71e7a79ff212730224fbcfea21cc931",
+        "owned_children_after": 0,
+        "termination_reason": null,
+        "passed": true
+      },
+      {
+        "case": "quoted-shell",
+        "mechanism": "shell",
+        "expected_exit": 0,
+        "observed_exit": 0,
+        "artifact_contract_met": true,
+        "artifact_sha256": "0a876f4e1262eddff6ee80525e63ec6f401d22986a318e73b0c0d9999540ecad",
+        "usage_reported": false,
+        "success_message": true,
+        "stdout_sha256": "46c5091794801a0e3eaac15c5a17861bab168a8f7b891b1b2f74f1e01bf327a3",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "native_process_sha256": "b74d433a95c4e9afed50b0b4744de504d6e1cda131e48c74016ad9a20559dd49",
+        "owned_children_after": 0,
+        "termination_reason": null,
+        "passed": true
+      },
+      {
+        "case": "shell-empty",
+        "mechanism": "shell",
+        "expected_exit": 2,
+        "observed_exit": 2,
+        "artifact_contract_met": true,
+        "artifact_sha256": null,
+        "usage_reported": true,
+        "success_message": false,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "474681df8acff6c742ed3e4fb9d3ccbee57b3dabfb5483f294d48b883911c32a",
+        "native_process_sha256": "7cbef580d04f12e3273594e8d7c555ea6ce8a5130cc970c1bdcbfc17c519c271",
+        "owned_children_after": 0,
+        "termination_reason": null,
+        "passed": true
+      },
+      {
+        "case": "vector-empty",
+        "mechanism": "vector",
+        "expected_exit": 0,
+        "observed_exit": 0,
+        "artifact_contract_met": true,
+        "artifact_sha256": "091d5507c8d25a82f30500de14f8cfeb39704c4fbea3a81fc37e00d31564ef40",
+        "usage_reported": false,
+        "success_message": true,
+        "stdout_sha256": "46c5091794801a0e3eaac15c5a17861bab168a8f7b891b1b2f74f1e01bf327a3",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "native_process_sha256": "dbe482862237dbc8f4ced9c637290068c18eb05f16a6e6b013644cab13b9a1e9",
+        "owned_children_after": 0,
+        "termination_reason": null,
+        "passed": true
+      },
+      {
+        "case": "nonzero-with-output",
+        "mechanism": "vector",
+        "expected_exit": 7,
+        "observed_exit": 7,
+        "artifact_contract_met": true,
+        "artifact_sha256": "9fa801c705219e36130328df0e7d24179f8051ea80c8c1a1784befe04e8fd326",
+        "usage_reported": false,
+        "success_message": true,
+        "stdout_sha256": "46c5091794801a0e3eaac15c5a17861bab168a8f7b891b1b2f74f1e01bf327a3",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "native_process_sha256": "14cb629c8260fc2760945105118b80c4ee7a972cb1205a107244b8bf7151d2b5",
+        "owned_children_after": 0,
+        "termination_reason": null,
+        "passed": true
+      }
+    ],
+    "temporary_profile_removed": true,
+    "model_requests": 0,
+    "scripted_transcript_sha256": "b8a6b03cd37fac12fcb29003ea9b3ca0d6ed5c01015ff3974ddbf276962f30ea",
+    "fixture_source_sha256": "2c5e6bf9124c4463aca7a3472d5e4d69799793f05a4cc2e789a87de901f81e36",
+    "scripted_transcript_command_counts": {
+      "completed_without_exit_code": 0,
+      "exit_nonzero": 4,
+      "exit_zero": 2,
+      "longest_identical_failure_streak": 2,
+      "observed": 6,
+      "repeated_identical_failures": 1,
+      "without_completion": 0
+    },
+    "task_evaluator_independent_of_skill_text": true
+  },
+  "prior_model_attempt": {
+    "scenario": "Go SWE-Skills development trial, Karpathy condition",
+    "provider_model_snapshot": null,
+    "publisher_checks": {
+      "passed": 3,
+      "failed": 11,
+      "skipped": 0,
+      "errors": 0,
+      "total": 14
+    },
+    "source_files_written": 0,
+    "source_files_deleted": 0,
+    "reconstruction_sha256": "aaafe3ffae821276b64dcb504d45bf1f66a6c3e2c121aa51ecb5a64e7ba7ecd5",
+    "command_diagnostics": {
+      "attempt_result_sha256": "ac03f30e637c3925e290089c8d2cf63cda1d9f4dd4276603859e0d30c5367714",
+      "attempt_status": "task_failed",
+      "commands": {
+        "completed_without_exit_code": 0,
+        "exit_nonzero": 9,
+        "exit_zero": 0,
+        "longest_identical_failure_streak": 8,
+        "observed": 13,
+        "repeated_identical_failures": 7,
+        "without_completion": 4
+      },
+      "ok": true,
+      "schema_version": 1,
+      "transcript_sha256": "fb30b71106fda2e2b00a62ce163df99f5796a43fa22dbc905323edcde8a58be5",
+      "turn_completed": true
+    }
+  },
+  "new_model_attempts": 0,
+  "model_efficacy_established": false
+}

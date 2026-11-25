@@ -205,7 +205,6 @@
         "tools/_lib_b/frontmatter_utils.py",
         "tools/run_agent_trial.py",
         "tests/test_frontmatter_utils.py",
-        "included/improved/skills/verification-loop-shell-status/SKILL.md",
         "CONTRIBUTING.md",
         "pyproject.toml",
         ".github/workflows/release.yml",
@@ -274,9 +273,21 @@
       },
       "sources": [
         "docs/benchmark-execution-plan.md",
-        "docs/native-benchmark-controller.md",
         "tests/test_native_trial_boundary.py",
         "tools/qualify_native_trial_boundary.py"
+      ]
+    },
+    {
+      "id": "native-command-verification",
+      "review": {
+        "path": "artifacts/research/2026-11-25/native-command-verification/review.json",
+        "sha256": "c55c9261d4f23a1cae0c8293b7a945653960847fd34bdb392e02859938991c31"
+      },
+      "sources": [
+        "docs/native-benchmark-controller.md",
+        "included/improved/skills/verification-loop-shell-status/SKILL.md",
+        "tests/test_analyze_native_trial_commands.py",
+        "tools/analyze_native_trial_commands.py"
       ]
     }
   ],
@@ -523,7 +534,8 @@
         "tools/qualify_native_trial_boundary.py",
         "tests/test_native_trial_boundary.py",
         "tools/validate_agent_tool_policy.py",
-        "tests/test_agent_tool_policy.py"
+        "tests/test_agent_tool_policy.py",
+        "included/improved/skills/verification-loop-shell-status/SKILL.md"
       ]
     },
     {
@@ -597,6 +609,15 @@
       "superseded_sources": [
         "docs/native-benchmark-controller.md",
         "docs/benchmark-execution-plan.md"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-25/go-study-admission/review.json",
+        "sha256": "bf99efaac4d28d99b651c355ae77702a79c16d359be99254ea0dd355aab85c96"
+      },
+      "superseded_sources": [
+        "docs/native-benchmark-controller.md"
       ]
     }
   ]
