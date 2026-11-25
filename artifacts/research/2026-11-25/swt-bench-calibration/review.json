@@ -1,0 +1,76 @@
+{
+  "artifacts": {},
+  "comparative_model_attempts": 0,
+  "controls": {
+    "always-pass": {
+      "after_test_log_sha256": "b365e7b78f23207625ae43276798248710d86f26460f1ed2a60c7ce75e4161e3",
+      "before_test_log_sha256": "246b74d76bc1380d185b97c09b1ade4a835adb9bae47ab1514c53e15e103cdec",
+      "empty_patch_error_after_test": true,
+      "native_artifact_sha256": "f6760247117ef1a53200f9fda95d0b362ba3be37c33b07eb71756b9017fa31c2",
+      "native_cached_completion_counter": 0,
+      "native_completed_case_evidence": true,
+      "official_added_fail_to_pass": 0,
+      "official_coverage_delta": 0.0,
+      "publisher_report_sha256": "1aef26fab870eceff3fe76535c3a98ecc14aba4d3cd6a0e1ab21613c2f4e7a1a",
+      "reported_failed_to_pass": 0,
+      "reported_missing_to_pass": 0,
+      "reported_nonpass_status_to_pass": 0,
+      "resolved": false
+    },
+    "gold": {
+      "after_test_log_sha256": "bfa9d9c19a3c198bdd719c22dc21177f26f51a1ee6c571d6a1a3b5f4afee2991",
+      "before_test_log_sha256": "a886a0e5911198052fa7c7d791c8cd7ff9c1d036b2898b46b56523c8f68826e4",
+      "empty_patch_error_after_test": true,
+      "native_artifact_sha256": "680d921e4186ebde66364c62f6f7b36f6ea0b39019f844d7743e082e02facdaf",
+      "native_cached_completion_counter": 0,
+      "native_completed_case_evidence": true,
+      "official_added_fail_to_pass": 1,
+      "official_coverage_delta": 1.0,
+      "publisher_report_sha256": "b15d27679caacbdabe30f5c990b5562ee66f1935c17a27660b83ec19941141cd",
+      "reported_failed_to_pass": 1,
+      "reported_missing_to_pass": 0,
+      "reported_nonpass_status_to_pass": 0,
+      "resolved": true
+    }
+  },
+  "earlier_observations": {
+    "cleanup_receipt_sha256": "fd8acf4391cd0a891fddcd3dc80e9723b52d0f997522b4a89003cc1c7217fe63",
+    "initial_archive_sha256": "f93e986bc1da2ee865d3cecd2b424bc3abaf4c8150ea53bdafda47102db7d98e",
+    "initial_native_control": "The negative test passed before and after the fix. The wrapper initially required the cached-report aggregate to be one on a freshly generated report.",
+    "runtime_abi_resolution": "Published editdistance wheels did not admit CPython 3.13 or 3.14 at the tested native ABI."
+  },
+  "observed_on": "2026-11-25",
+  "previous_commit": "e5794b4515cfe90a2ba061cc93663fe29ecb5b76",
+  "runner": {
+    "container_count_after_cleanup": 0,
+    "cpu_limit": 2,
+    "dependency_lock_sha256": "b219e12eff018a0a653fe6ecea163e16db1ebd4a50ad5415b55f6f3d2104c822",
+    "locked_dependencies": 37,
+    "memory_limit_bytes": 5368709120,
+    "process_limit": 768,
+    "python": "3.12.16",
+    "release": "1.3.0",
+    "rootless_engine": true,
+    "source_archive_sha256": "7e05c4206c9e981e068a612a729c958695b81cc444a1d200b6e91dbb4a8e87a9",
+    "source_commit": "443e03b385089bf8bd787fb8b79fb9a49b7bfb2a0",
+    "sympy_log_parser_sha256": "d27b856507128fe7b6a940a12bd86d7aa38872fd1f7869c49e103251b69d2664",
+    "temporary_storage_removed": true
+  },
+  "schema_version": 1,
+  "scope": "One official, model-free SWT-Bench test-generation calibration case with separate negative and publisher reference controls.",
+  "source_sha256": {
+    "docs/benchmark-expansion.md": "4a36b71409f4f40b66d5b1f682758ebeacf37a90aeaeff1ac80355586b0d4512",
+    "included/improved/skills/eval-harness-integrity/references/grader-admission.md": "409257ede7bc6482b26e6a60e21cecf4cf4440ca35d05b6e536866a8299b39a7"
+  },
+  "task": {
+    "dataset": "princeton-nlp/SWE-bench_Lite",
+    "dataset_commit": "6ec7bb89b9342f664a54a6e0a6ea6501d3437cc2",
+    "dataset_sha256": "7a21f37b8bc179c7db5beeb14e88ac538ba283455c776e6b2535bbfb6e3551b4",
+    "instance_id": "sympy__sympy-19254",
+    "partition": "public_development",
+    "selection_sha256": "65f2726d473607e577593e5e99abab42ae39f3e0fefb34e69d0a3b1b9b181ddd",
+    "source_commit": "e0ef1da13e2ab2a77866c05246f73c871ca9388c",
+    "source_repo": "sympy/sympy",
+    "task_sha256": "beed6ad99923430b024d0532a921403d18e5887526a2508e01dd909efd8effd7"
+  }
+}

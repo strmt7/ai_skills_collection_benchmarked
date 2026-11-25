@@ -1,28 +1,28 @@
 {
   "schema_version": 1,
-  "upstream_version": "0.9.5",
-  "version": "0.9.5+catalog.portable4",
-  "archive_url": "https://files.pythonhosted.org/packages/ea/ad/44b57b650c3c0afaeea917bd7e6b87a64cd1108be53431690483cde0eb2d/crawl4ai-0.9.5.tar.gz",
-  "archive_sha256": "84fa6f4970fbb086a68893c9fb18605a93fcd609c72bee6fbb1d2715924afbff",
-  "archive_bytes": 577411,
-  "archive_members": 181,
-  "archive_root": "crawl4ai-0.9.5",
-  "source_files": 165,
-  "unpacked_bytes": 2523041,
-  "source_date_epoch": 1791973534,
+  "upstream_version": "0.9.6",
+  "version": "0.9.6+catalog.portable1",
+  "archive_url": "https://files.pythonhosted.org/packages/7a/72/e6364b6a8d406d962b329aec1dad84725eeedde719bfe16537b4017e1db9/crawl4ai-0.9.6.tar.gz",
+  "archive_sha256": "2279e244bb73c2bbdfb2aff8dcfb957a7b2a1910a7fe680ac3df5512b9720a49",
+  "archive_bytes": 597792,
+  "archive_members": 193,
+  "archive_root": "crawl4ai-0.9.6",
+  "source_files": 177,
+  "unpacked_bytes": 2596799,
+  "source_date_epoch": 1795168012,
   "vendor_url": "https://github.com/strmt7/FlitzZip/blob/69580f97f7d360f92fe20f40aedabede811b3e01/tools/crawl4ai_download_opener.py",
   "vendor_sha256": "a289fe4e7f42f46f639dc0090f25c9d72f16dc5c8888906d8b22e60ebd8e4717",
-  "notice_sha256": "de85bf2754a67294cac7f62184333cf8f6c99c3a2e019f1f8ef0c2004c1c5d4d",
+  "notice_sha256": "4142b3a935875279c35a89d45c333833e7e0ecc7663beed894c220a40f428b4a",
   "changed_file_sha256": {
-    "crawl4ai/async_crawler_strategy.py": "a9f440b4b582a06c7f579d9e3d533efaf8c05fbfe03806f6edc8908be37b4400",
-    "crawl4ai/models.py": "62947f54ce386d80546b8f70b9ef66c0fa7f47235c63ebd9170f1939565584b5",
-    "crawl4ai/browser_manager.py": "58b26bb5e6839011d10d7eb139b2f4d1efcb3303592ea20151e9496505b566bc",
-    "crawl4ai/__version__.py": "ee2076220bf186d176b8a36fd8d7af5fd608e08548ee8512901c0c16841a1558",
+    "crawl4ai/async_crawler_strategy.py": "9e695be763c663d989128e86c26726da2641ecbd354d5b18b2f176c78bdb1a19",
+    "crawl4ai/models.py": "0d78efc23464918775e0f49f4a202c2791f118b697e5accf097f5d05c2155ee4",
+    "crawl4ai/browser_manager.py": "5d786a27c1558e9275bef6572287fae53352064f5ade30c15a07af319a3fea47",
+    "crawl4ai/__version__.py": "b84a7584d08338c4dc55c81a212c4a9fc3120260eb2cec90abbd26e431e2979e",
     "crawl4ai/catalog_download.py": "a289fe4e7f42f46f639dc0090f25c9d72f16dc5c8888906d8b22e60ebd8e4717",
-    "pyproject.toml": "4389ce44fba965c7274278b6f999f74152db6d12993eba9bc7110f5b85974aad",
-    "CATALOG_BUILD_NOTICE.txt": "de85bf2754a67294cac7f62184333cf8f6c99c3a2e019f1f8ef0c2004c1c5d4d"
+    "pyproject.toml": "96beae87ebf62d678512219f25a4e948f3b7149d981fcde1f95a86ca97d2b898",
+    "CATALOG_BUILD_NOTICE.txt": "4142b3a935875279c35a89d45c333833e7e0ecc7663beed894c220a40f428b4a"
   },
-  "qualified_wheel_sha256": "89ec8a5f2d95cc25d637dc8ae21726c6dff2c16f33979a002ebba53b7e1f0adc",
+  "qualified_wheel_sha256": "db7285b9873f20dacc810c57d8d9594a605711b994bc05ea0a3c7c10e047bf95",
   "qualified_platform": "Windows x64 CPython 3.13.18",
   "qualification_scope": "Native component controls; no coding-agent efficacy score",
   "runtime_files": [
@@ -32,11 +32,11 @@
     },
     {
       "path": "crawl4ai/__version__.py",
-      "sha256": "ee2076220bf186d176b8a36fd8d7af5fd608e08548ee8512901c0c16841a1558"
+      "sha256": "b84a7584d08338c4dc55c81a212c4a9fc3120260eb2cec90abbd26e431e2979e"
     },
     {
       "path": "crawl4ai/adaptive_crawler.py",
-      "sha256": "5d725f1a73a3f78634cbe73bc753f75b815e3ef1af313612194fa383a01410de"
+      "sha256": "b3cafbe28f69909c9d1bc90f7c3aecdf3c11bc636b2334e65ce5bfd7efbd2518"
     },
     {
       "path": "crawl4ai/antibot_detector.py",
@@ -44,15 +44,15 @@
     },
     {
       "path": "crawl4ai/async_configs.py",
-      "sha256": "8d59242f593226071476abcb5deeb9695328f0fb27f9eb19bd688bfac14393a3"
+      "sha256": "f452779f43ffb65c994c954d3389c0f8400868d47008939bfdd58e2e955b72cd"
     },
     {
       "path": "crawl4ai/async_crawler_strategy.py",
-      "sha256": "a9f440b4b582a06c7f579d9e3d533efaf8c05fbfe03806f6edc8908be37b4400"
+      "sha256": "9e695be763c663d989128e86c26726da2641ecbd354d5b18b2f176c78bdb1a19"
     },
     {
       "path": "crawl4ai/async_database.py",
-      "sha256": "16264e47eac8404d2eb37e9ad6247ff0b3120609beeea18a73b2097d0c649fe7"
+      "sha256": "a01d00faf9723f7846567a06c2700023dd4bf16dc711cf1f3a46e4667442b2e5"
     },
     {
       "path": "crawl4ai/async_dispatcher.py",
@@ -64,11 +64,11 @@
     },
     {
       "path": "crawl4ai/async_url_seeder.py",
-      "sha256": "5a5be79cc1bc5ca23a6d8592ab1d5da7b4008ac0ff0855e3036446add58f7402"
+      "sha256": "2ef7da5fcae47c3d1569f655e300e766faa04571ee3c8ecbd3329c53ddab6d8d"
     },
     {
       "path": "crawl4ai/async_webcrawler.py",
-      "sha256": "9a4692b7d85426dbc33231971f39736e68a73548b73f6e10ec25cdab02e49e9d"
+      "sha256": "510e844951a151cc1dacade5566f4b69012afbc8bd125e730e4c4e4c35113f6b"
     },
     {
       "path": "crawl4ai/browser_adapter.py",
@@ -76,7 +76,7 @@
     },
     {
       "path": "crawl4ai/browser_manager.py",
-      "sha256": "58b26bb5e6839011d10d7eb139b2f4d1efcb3303592ea20151e9496505b566bc"
+      "sha256": "5d786a27c1558e9275bef6572287fae53352064f5ade30c15a07af319a3fea47"
     },
     {
       "path": "crawl4ai/browser_profiler.py",
@@ -100,99 +100,7 @@
     },
     {
       "path": "crawl4ai/cli.py",
-      "sha256": "e1e91cad55d12b76daf3bb2367962ff6c92f000c737ac705140cc1727f679212"
-    },
-    {
-      "path": "crawl4ai/cloud_notice.py",
-      "sha256": "fe1fa7d7f1202c6cbe3c48c8e9e4536b639e942c68ab14e6fc6afc7b0710359e"
-    },
-    {
-      "path": "crawl4ai/config.py",
-      "sha256": "bebe789527a3cb37fbd08ab980f7f4092e2ead78a1221ab26d73fc32304a17f5"
-    },
-    {
-      "path": "crawl4ai/content_filter_strategy.py",
-      "sha256": "e31a6ad933bc673dcb18359792098a245a0c6d23e76a27c92b37fa292f2f92ba"
-    },
-    {
-      "path": "crawl4ai/content_filter_strategy_lxml.py",
-      "sha256": "6308c52e8b3f419ccb2406373ce2e90af73e16be761d17274f48eab00e18d634"
-    },
-    {
-      "path": "crawl4ai/content_scraping_strategy.py",
-      "sha256": "07abc8b5add38a370d19e09ae9a76e01169987290193a4598a844c758e76bf48"
-    },
-    {
-      "path": "crawl4ai/docker_client.py",
-      "sha256": "7179796b8c6330cb213d9dab26c998f4f341620d6946eaef459932983ab64866"
-    },
-    {
-      "path": "crawl4ai/domain_mapper.py",
-      "sha256": "e9bbfee43026c80eef56d63231033bf87f1215023e99fc5716a11dc47bf8910c"
-    },
-    {
-      "path": "crawl4ai/egress_policy.py",
-      "sha256": "75ecbd2e24d64e3f9d9bb4ef25e9f8c84bf4384f2856a2a7ccd434731566e5ff"
-    },
-    {
-      "path": "crawl4ai/extraction_strategy.py",
-      "sha256": "1321909cdbc139a87718e7969456272b4685d065e25a4e9f6690bd6c8a75d11b"
-    },
-    {
-      "path": "crawl4ai/hub.py",
-      "sha256": "0e11ff1f50f40a46aa06ebad235aef8877e18c605981e647cf51fa4e86f216bc"
-    },
-    {
-      "path": "crawl4ai/install.py",
-      "sha256": "baabe501b85a428aad3e13b61e2e7e3f78ec5203dac30bce049c687a65280751"
-    },
-    {
-      "path": "crawl4ai/link_preview.py",
-      "sha256": "7af9a24b661562a8f18aed0b0c035a24fb6071ef939721b494d9e644b96b9167"
-    },
-    {
-      "path": "crawl4ai/markdown_generation_strategy.py",
-      "sha256": "f6ea10df7b96f2876c8769afc7638a83884315c87abf41036f8710420669fa00"
-    },
-    {
-      "path": "crawl4ai/migrations.py",
-      "sha256": "346de8b7143371fa4062d73056e8e00f6f69923b84745197caf81838130cf580"
-    },
-    {
-      "path": "crawl4ai/model_loader.py",
-      "sha256": "814d5bc8c2df6691ee5c4417ffd2602c7774903d7ff200465a4851515864b8b4"
-    },
-    {
-      "path": "crawl4ai/models.py",
-      "sha256": "62947f54ce386d80546b8f70b9ef66c0fa7f47235c63ebd9170f1939565584b5"
-    },
-    {
-      "path": "crawl4ai/prompts.py",
-      "sha256": "71040b4fc4cff70a8cd6da5c4596ac0427e7dfe35c0ebbaf16fe6bfe5a90cc29"
-    },
-    {
-      "path": "crawl4ai/proxy_strategy.py",
-      "sha256": "5862ee5c22cba41a8c14e3dfe3a89b6ba3f5b66c8c9fcd0967adffd758bc1835"
-    },
-    {
-      "path": "crawl4ai/ssl_certificate.py",
-      "sha256": "f6a33889f3488d9699bbcc737d94bb2f14226d3f9087f938f4770f57df10e5c3"
-    },
-    {
-      "path": "crawl4ai/table_extraction.py",
-      "sha256": "ba823c843bfc14bf1965093a3f515ba8898e886c8ae480c0309a6063c1c2b817"
-    },
-    {
-      "path": "crawl4ai/types.py",
-      "sha256": "7d702100e738bc049941b48a8d6d1c4642900748549a54cdd05424d1d38501b4"
-    },
-    {
-      "path": "crawl4ai/user_agent_generator.py",
-      "sha256": "cd57dce84a0086df20460fe0aea4ef0e24b6f819f8b3a84872c14275a0b91723"
-    },
-    {
-      "path": "crawl4ai/utils.py",
-      "sha256": "e58e6d47dcde165b926acd7ad72631b3aabb4c6240669bd15b788b2a2b546514"
+      "sha256": "39d58fb4b76822639ec397823296f21fd0880a61a0b0d55ae85611205a828c10"
     },
     {
       "path": "crawl4ai/cloud/__init__.py",
@@ -203,8 +111,28 @@
       "sha256": "bfb25406e97e046e072ecc29d9e6445f8dd3fdcd451b8e9c8b48ffbde3bc0144"
     },
     {
+      "path": "crawl4ai/cloud_notice.py",
+      "sha256": "8bc1a3e9ab1d5ccbc55ada6474f245d6459c44860fc4b094f766c73a6afc9c0a"
+    },
+    {
       "path": "crawl4ai/components/crawler_monitor.py",
       "sha256": "fde7065b4ed652146d45d6544464327ad4b35d97772b6e11a000ec67bfac7cb9"
+    },
+    {
+      "path": "crawl4ai/config.py",
+      "sha256": "40f3dfdcdcde81a4b0a03fbac160f245a8e164b49999ef544c94b6575aad0b94"
+    },
+    {
+      "path": "crawl4ai/content_filter_strategy.py",
+      "sha256": "9b92cae51a7200a16f6ac1660e969cd510e49e2bf7a0007ea9a58d08d87e26c5"
+    },
+    {
+      "path": "crawl4ai/content_filter_strategy_lxml.py",
+      "sha256": "d9f9da7dda870e9b18c457f0f85844a9c3134ad5ec9133634fc57d8cff23642c"
+    },
+    {
+      "path": "crawl4ai/content_scraping_strategy.py",
+      "sha256": "1a98046bb4dc1c08662226bc74fc9c0e8f0bec6bca11b3e762f8b7c336f4eef3"
     },
     {
       "path": "crawl4ai/crawlers/__init__.py",
@@ -236,15 +164,15 @@
     },
     {
       "path": "crawl4ai/deep_crawling/base_strategy.py",
-      "sha256": "a5b858855b1bf0a23ac8abe2eca102b3b6ff35f0d6ced7b9a6911e2b15e90fd7"
+      "sha256": "92640bbc5fda1100516ef946dd300af01b2c953bbfdc57acdc6bbf763fb61d2c"
     },
     {
       "path": "crawl4ai/deep_crawling/bff_strategy.py",
-      "sha256": "7b3f0a5508234331222e6f40e59ece3f98bf22d717a218a16aa14e9a42996fa1"
+      "sha256": "976eed99d236a9ec5a3a23f9239b01583541011eb0d55a989a3b71b88e2bfbf6"
     },
     {
       "path": "crawl4ai/deep_crawling/bfs_strategy.py",
-      "sha256": "3c2b64cde51213302541eba34a08892a92e7072fff1973e8ca075c9350af2df9"
+      "sha256": "ff33243f0ff82c0e1abd22c45659436e605fcdb0bfbb21a315b28438b4185972"
     },
     {
       "path": "crawl4ai/deep_crawling/crazy.py",
@@ -252,19 +180,35 @@
     },
     {
       "path": "crawl4ai/deep_crawling/dfs_strategy.py",
-      "sha256": "4d91e0119d3501bf0373cbc38a4b7715b1d1e3624a214b55296be0e8bf4026ef"
+      "sha256": "915825d807bcc0820cf0aa0e21e88edc468a4509ddbb03b9cb9e62299c5b700a"
     },
     {
       "path": "crawl4ai/deep_crawling/filters.py",
-      "sha256": "55858c24196e99536e3ed15c13dcbe40f0ab2eb10c65dd1a23af4f553dd08ef6"
+      "sha256": "dccfaeecb676bc653941eaf13e68fc5c9d134995b4089cdf7cf54b06b5f4b09c"
     },
     {
       "path": "crawl4ai/deep_crawling/scorers.py",
       "sha256": "549ddd640613b3795dc0bca8a5ce72bb3ff27f8633810781d571192030c776d8"
     },
     {
+      "path": "crawl4ai/docker_client.py",
+      "sha256": "556f3738eac319f3cb50269aca01586e8064947b33cefce0e0c9d3361a9ed1d0"
+    },
+    {
+      "path": "crawl4ai/domain_mapper.py",
+      "sha256": "de11760ff5857995d4fac5c5b2d2e9f550971564543419c5a96c569d104909a8"
+    },
+    {
+      "path": "crawl4ai/egress_policy.py",
+      "sha256": "75ecbd2e24d64e3f9d9bb4ef25e9f8c84bf4384f2856a2a7ccd434731566e5ff"
+    },
+    {
+      "path": "crawl4ai/extraction_strategy.py",
+      "sha256": "067e0a422d8926cd79b71f5d56516dd83889c2d4bb363cf06d8125d47eb2000b"
+    },
+    {
       "path": "crawl4ai/html2text/__init__.py",
-      "sha256": "90d72a5271143776996d4d72856aaabd74c8892856d8963e8670a9e8ec5a9680"
+      "sha256": "0782d246590f40a703feae1e0075197ddc5e95cb2cb53bb61fce7499812ccafb"
     },
     {
       "path": "crawl4ai/html2text/__main__.py",
@@ -289,6 +233,14 @@
     {
       "path": "crawl4ai/html2text/utils.py",
       "sha256": "5e973ca8de27b22fab430be245ed0bc7c5220afd48c33dea3473df22a928b817"
+    },
+    {
+      "path": "crawl4ai/hub.py",
+      "sha256": "0e11ff1f50f40a46aa06ebad235aef8877e18c605981e647cf51fa4e86f216bc"
+    },
+    {
+      "path": "crawl4ai/install.py",
+      "sha256": "504fb49bb37698eaceaffb070c90ca47eb59e1cca436924e9df773bbaa6a276f"
     },
     {
       "path": "crawl4ai/js_snippet/__init__.py",
@@ -347,16 +299,44 @@
       "sha256": "381412350032ca8e4456f3bf0c355e16e5e6ecc220317381abd03479d28e0a12"
     },
     {
+      "path": "crawl4ai/link_preview.py",
+      "sha256": "7af9a24b661562a8f18aed0b0c035a24fb6071ef939721b494d9e644b96b9167"
+    },
+    {
+      "path": "crawl4ai/markdown_generation_strategy.py",
+      "sha256": "20fa16651cf0efed9244cb7b45044ba1eb50b2ada6e9a59648310a4c0d96bedc"
+    },
+    {
+      "path": "crawl4ai/migrations.py",
+      "sha256": "346de8b7143371fa4062d73056e8e00f6f69923b84745197caf81838130cf580"
+    },
+    {
+      "path": "crawl4ai/model_loader.py",
+      "sha256": "814d5bc8c2df6691ee5c4417ffd2602c7774903d7ff200465a4851515864b8b4"
+    },
+    {
+      "path": "crawl4ai/models.py",
+      "sha256": "0d78efc23464918775e0f49f4a202c2791f118b697e5accf097f5d05c2155ee4"
+    },
+    {
       "path": "crawl4ai/processors/pdf/__init__.py",
-      "sha256": "ceda427f4175b2f69bc055a4ed02dad143bdc822a89c56d9d641a53ef36ee253"
+      "sha256": "147fcef4262be1e67c020da056f7e3824fd10f98aa4777c6e9786aa1eb36c7b7"
     },
     {
       "path": "crawl4ai/processors/pdf/processor.py",
-      "sha256": "f50e0a3d3537b04cf8eb82dddf67f2629f046e74c1841118bfa8fb358a36be08"
+      "sha256": "10d209c196b146694dcb3fba344c944e0ce3f59427da4fdc9d3102f682736d27"
     },
     {
       "path": "crawl4ai/processors/pdf/utils.py",
       "sha256": "da4c73301a8d0d577026081d8cc7a6dd2b8be116b32de0635195526c040a686f"
+    },
+    {
+      "path": "crawl4ai/prompts.py",
+      "sha256": "71040b4fc4cff70a8cd6da5c4596ac0427e7dfe35c0ebbaf16fe6bfe5a90cc29"
+    },
+    {
+      "path": "crawl4ai/proxy_strategy.py",
+      "sha256": "5862ee5c22cba41a8c14e3dfe3a89b6ba3f5b66c8c9fcd0967adffd758bc1835"
     },
     {
       "path": "crawl4ai/script/__init__.py",
@@ -373,6 +353,26 @@
     {
       "path": "crawl4ai/script/c4ai_script.py",
       "sha256": "e87ef7fba82b59e3cbed0736f81ef336196db2cdf593346d2b1668865ebb0ec4"
+    },
+    {
+      "path": "crawl4ai/ssl_certificate.py",
+      "sha256": "007756d3e8bd35e220917282ed57379c7616722dc6e7005f0e64689c70a8c78c"
+    },
+    {
+      "path": "crawl4ai/table_extraction.py",
+      "sha256": "8850808cd5dabc5d64dbb7905ec8ac2bf808ca8fd8f6325478bb6cf20f48bd22"
+    },
+    {
+      "path": "crawl4ai/types.py",
+      "sha256": "7d702100e738bc049941b48a8d6d1c4642900748549a54cdd05424d1d38501b4"
+    },
+    {
+      "path": "crawl4ai/user_agent_generator.py",
+      "sha256": "f123e45445d237cc21673ab638af8db73b71841963a62fac0465a7f010f55254"
+    },
+    {
+      "path": "crawl4ai/utils.py",
+      "sha256": "ee26821a2aee71bab93118cef1e04481ea9c2de3c77b250ff1a8e5073b5962bc"
     }
   ]
 }

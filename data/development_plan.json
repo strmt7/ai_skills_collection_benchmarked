@@ -358,7 +358,7 @@
         "R9",
         "R12"
       ],
-      "next_action": "Retain the completed Go block and replicated packaging floor without repeating unchanged inputs. Qualify a different public development task and an admitted model route with independent passing and failing controls. Use a predeclared capability calibration before freezing further matched blocks. Preserve all twelve graphs and assignments in the original frame.",
+      "next_action": "Use the calibrated SWT-Bench and SkillsBench controls as runner evidence. Qualify independent subject execution and artifact handoff before model attempts in each new lane. Retain the matched Go and packaging floors and every frozen task graph. Use a predeclared capability calibration on a different task before interpreting paired skill effects.",
       "deliverables": [
         "All attempt transcripts and native results",
         "Usage and failure accounting",
@@ -382,6 +382,11 @@
           "path": "artifacts/research/2026-11-25/go-development-comparison/completed-block.json",
           "sha256": "cb3b619b8fccbb530519b8a92e3528aa1e9f48b550bf281aba7a332f1faaaa3f",
           "scope": "One matched local Qwen3 8B Go block; all conditions matched the unchanged control."
+        },
+        {
+          "path": "artifacts/research/2026-11-25/swt-bench-calibration/review.json",
+          "sha256": "c935b137990030308319bd4d16480c8206cc84ad8d48a5605ccd643672b44ff6",
+          "scope": "Native SWT-Bench model-free control pair and source-bound reporting review."
         }
       ],
       "dependency_scope": "Per study"
@@ -469,7 +474,7 @@
         "R9",
         "R12"
       ],
-      "next_action": "Qualify and publish the working PowerShell stream repair, actions/setup-go v7.1.0 pin and verified LLVM 23.1.6 app-local runtime update; focused controls pass but new hosted acceptance remains pending. The 8be77acf checkpoint has 16 terminal workflows: ten successes/six failures. Codecov processed it at 70.19%, while report reconciliation and the tracked-lines UI remain open. DeepSource skipped because Analysis quota is exhausted; security remediation is held. Complete every compatible stable dependency/workflow graph, fresh/relocated safe automatic setup, missing MSVC/SDK provisioning scope, distribution licensing and effective protection verification.",
+      "next_action": "Retain the qualified Windows provider installation and track its exact-head hosted acceptance. Address the authenticated Dependabot inventory in manifest families, validating active consumers independently and preserving exact historical evidence. Complete stable dependency and action graphs, fresh and relocated automatic setup for the remaining toolchains, distribution licensing and effective protection verification. Keep the separately held scanner findings visible.",
       "deliverables": [
         "Fresh-cache and recovery qualification",
         "Workflow-to-source trigger map",
@@ -525,6 +530,11 @@
           "path": "artifacts/research/2026-11-17/uv-shared-pin/observations.json",
           "sha256": "45da77c64c4f65f5b8d99e5c454ae873b46384ec3da1954033b055ed4c063a48",
           "scope": "Installed and verified uv 0.13.9 on Windows and replayed the pinned setup action against the same version file. Verified the updated locked dependency graph."
+        },
+        {
+          "path": "artifacts/research/2026-11-25/portable-crawl4ai-096/review.json",
+          "sha256": "3ac7964ff7cc41f66d803e1cff785cb037f67888652e703011a3751cf4a7f77b",
+          "scope": "Exact portable provider source, compatible graph, browser payloads, fresh automatic setup, interruption and recovery."
         }
       ]
     },

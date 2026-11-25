@@ -22,11 +22,21 @@ or benchmark verifier was run by those probes.
 | [Terminal-Bench 4.1](https://github.com/harbor-framework/terminal-bench/releases/tag/v4.1.0) | Terminal workflows and resource-sensitive tool use. | The release API identifies 4.1.0 as the latest published stable release observed here, superseding the researched 4.0 announcement. Full and CPU-only datasets have different denominators. |
 | [WorkArena / WorkArena++](https://github.com/ServiceNow/WorkArena) | Enterprise browser workflows, composed planning and application-state outcomes. | Requires approved ServiceNow instances and a qualified BrowserGym stack. No instance was accessed. Its documented oracle demo is not agent performance. |
 | [ScienceAgentBench](https://osu-nlp-group.github.io/ScienceAgentBench/) | Scientific programming and discipline-specific output correctness. | Review data licenses, dependency environments and scientific oracles. Program execution alone does not establish scientific validity. |
+| [SWT-Bench](https://swtbench.com/) | Test generation for real repository issues, measured on the buggy and repaired revisions. | Record the publisher's resolution and coverage metrics. Check separately which tests ran and failed before the fix. |
+| [TestGenEval](https://testgeneval.github.io/) | Test generation and completion under coverage and mutation checks. | Pin the task split and mutation policy. Keep its results separate from issue-specific bug detection. |
 
 Other registered methods answer narrower questions: function-calling checks
 assess tool-call behavior, browser frameworks provide environments, and ML
 competitions assess particular outputs. Do not average their scores into an
 unqualified universal skill score.
+
+The [SWT-Bench 1.3.0 calibration](../artifacts/research/2026-11-25/swt-bench-calibration/review.json)
+ran the official evaluator on one public SymPy issue. The always-passing
+control ran on both revisions and remained unresolved. The publisher's
+reference test failed before the fix, passed afterward and resolved the case.
+Both fresh attempts left the cached-completion counter at zero. The native
+per-case reports and test logs establish what ran. Both logs also record a
+post-test empty-patch reset error. The calibration used no model.
 
 ## What changes in our experiments
 
@@ -58,11 +68,10 @@ them as proof of untouched evaluation. No task solutions or reference patches
 were sought for candidate tuning, and none were imported into skill guidance.
 
 Freeze candidates before holdout execution. Later changes require a new
-candidate and new untouched evaluation material. The existing refusal to launch
-model trials remains until runner/grader integration is qualified. The owner
-permits that prerequisite work and serial subjects under the
-[benchmark-only exception](benchmark-subject-policy.md); unrelated security
-remediation remains paused. This review authorizes no release.
+candidate and new untouched evaluation material. Qualify runner and grader
+integration separately for each model-trial lane before its first attempt.
+Prerequisite controls and serial subjects follow the
+[benchmark-only exception](benchmark-subject-policy.md).
 
 ## Reproducing source checks
 

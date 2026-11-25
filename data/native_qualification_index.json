@@ -367,6 +367,26 @@
         "tools/_trial_context.py",
         "tools/_trial_signin.py"
       ]
+    },
+    {
+      "id": "portable-crawl4ai-096",
+      "review": {
+        "path": "artifacts/research/2026-11-25/portable-crawl4ai-096/review.json",
+        "sha256": "3ac7964ff7cc41f66d803e1cff785cb037f67888652e703011a3751cf4a7f77b"
+      },
+      "sources": [
+        "docs/agent-tools.md",
+        "tests/test_crawl4ai_source.py",
+        "toolchains/crawl4ai/CATALOG_BUILD_NOTICE.txt",
+        "toolchains/crawl4ai/README.md",
+        "toolchains/crawl4ai/browser.json",
+        "toolchains/crawl4ai/requirements-build.txt",
+        "toolchains/crawl4ai/requirements.txt",
+        "toolchains/crawl4ai/source.json",
+        "tools/crawl4ai_capture.py",
+        "tools/prepare_crawl4ai_source.py",
+        "tools/verify_crawl4ai_wheel.py"
+      ]
     }
   ],
   "historical_reviews": [

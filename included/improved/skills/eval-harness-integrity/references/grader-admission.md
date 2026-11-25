@@ -28,8 +28,14 @@ Separate three forms of missing output.
   infrastructure needs repair or adjudication. Keep the native denominator
   and every attempt in the accounting.
 
-Require the expected testcase identities, terminal completion, native report,
-exit status and score to agree. Keep auxiliary metrics in their actual units.
+Verify the expected task and test identities against the native per-case records.
+Check what each aggregate counter counts. A completion counter can count records
+that already existed when reporting began, even when the same reporting pass
+grades additional cases. Require native logs from the attempt and a terminal
+outcome for each admitted case. Preserve the official metric and record any
+diagnostic count with its own definition and unit. Treat a report regenerated
+from the same results as evidence for the existing attempt.
+
 Publisher result tables, oracle controls and synthetic transport tests each
 support their recorded scope. A claim that a skill improves an agent requires
 independent task outcomes under the declared intervention.

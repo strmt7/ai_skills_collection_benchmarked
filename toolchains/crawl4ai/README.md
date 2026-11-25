@@ -1,8 +1,8 @@
 # Crawl4AI research provider
 
-This identifies an explicit downstream build, **0.9.5+catalog.portable4**, from
-the latest non-prerelease Crawl4AI release checked on 25 October 2026 (0.9.5).
-Upstream classifies it as beta. It is not an official upstream release.
+The Windows provider builds **0.9.6+catalog.portable1** from the published
+[Crawl4AI 0.9.6 release](https://github.com/unclecode/crawl4ai/releases/tag/v0.9.6).
+The downstream version identifies this collection's portable adaptations.
 
 ## Install and use
 
@@ -16,7 +16,7 @@ From an intact clone on **Windows x64**:
 Missing dependencies install automatically. No preinstalled Python, Python
 launcher, browser, package manager or AI client is required. The frontend admits
 CPython **3.13.18**, its app-local native runtime, the complete hashed package
-graph and the matching **Playwright 1.65.0 / Chromium 158.0.8127.18** payloads.
+graph and the matching **Playwright 1.65.2 / Chromium 159.0.8154.6** payloads.
 It does not change global packages, persistent PATH, registry, shell profiles or
 another repository's provider. Foundation downloads use an owned OS cache;
 provider profiles, browsers and diagnostics stay inside this clone's `.venv`.
@@ -41,6 +41,10 @@ profile. Retain and read the native result before accepting a source; metadata
 starts with `scope_reviewed: false`. Failures retain native results and process
 diagnostics without retry or fallback. Setup controls qualify the crawler,
 not an external page or coding-agent improvement.
+
+The [Windows qualification](../../artifacts/research/2026-11-25/portable-crawl4ai-096/review.json)
+records the browser payloads, package build, automatic install and interrupted
+setup recovery for this release.
 
 For explicit profile management, the admitted CPython 3.13.18 interpreter can run
 `tools/crawl4ai_tool.py --home .venv/agent-tools/<name> setup`, then `check` or
@@ -81,13 +85,11 @@ The tools require no fixed drive, user account, global package installation,
 browser profile, MCP registration or particular AI agent. Windows is the
 qualified operating-system target for this provider.
 
-The earlier resolver review of Dependabot PRs 29–31 found incompatible major upgrades:
-The qualified Patchright 1.64.4 requires `pyee<15,>=13`; Crawl4AI 0.9.5 requires
-`xxhash~=3.4` and `snowballstemmer~=2.2`. Normal pip dry runs on each exact PR
-lock return `ResolutionImpossible`. Keep the newest compatible releases until
-upstream supports a newer graph and native qualification passes. No dependency
-ignore rule or advisory exclusion is added. The [resolver review](../../artifacts/research/2026-10-25/crawl4ai-dependency-pr-review.json)
-records exact PR heads, lock digests and native failure evidence.
+The complete Windows graph uses current compatible releases. Patchright 1.64.4
+requires `pyee<15,>=13`, which resolves to 14.0.0. Crawl4AI 0.9.6 requires
+`xxhash~=3.4` and `snowballstemmer~=2.2`, which resolve to 3.8.2 and 2.2.0.
+For earlier major-version resolution failures, see the
+[resolver review](../../artifacts/research/2026-10-25/crawl4ai-dependency-pr-review.json).
 
 **Build isolation matters:** upstream `setup.py` clears the cache under
 `CRAWL4_AI_BASE_DIRECTORY`, a different spelling from `CRAWL4AI_BASE_DIRECTORY`.

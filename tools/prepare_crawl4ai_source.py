@@ -61,7 +61,9 @@ def replace_once(text: str, old: str, new: str) -> str:
     return text.replace(old, new)
 
 
-def adapt(source: dict[str, bytes], vendor: bytes, notice: bytes, version: str) -> dict[str, bytes]:
+def adapt(
+    source: dict[str, bytes], vendor: bytes, notice: bytes, version: str, *, upstream_version: str
+) -> dict[str, bytes]:
     """Apply only the three reviewed repairs and their version/license metadata."""
     result = source.copy()
     strategy = source["crawl4ai/async_crawler_strategy.py"].decode("utf-8")
@@ -115,7 +117,9 @@ def adapt(source: dict[str, bytes], vendor: bytes, notice: bytes, version: str) 
     result["crawl4ai/browser_manager.py"] = browser.encode("utf-8")
     result["crawl4ai/catalog_download.py"] = vendor
     result["crawl4ai/__version__.py"] = replace_once(
-        source["crawl4ai/__version__.py"].decode("utf-8"), '__version__ = "0.9.5"', f'__version__ = "{version}"'
+        source["crawl4ai/__version__.py"].decode("utf-8"),
+        f'__version__ = "{upstream_version}"',
+        f'__version__ = "{version}"',
     ).encode("utf-8")
     result["pyproject.toml"] = replace_once(
         source["pyproject.toml"].decode("utf-8"),
@@ -170,7 +174,7 @@ def inputs(root: Path, archive: Path) -> tuple[dict[str, Any], dict[str, bytes]]
     source = archive_files(archive.read_bytes(), pin)
     if source["LICENSE"] != (directory / "vendor/LICENSE").read_bytes():
         raise ValueError("complete upstream Apache license differs")
-    repaired = adapt(source, vendor, notice, pin["version"])
+    repaired = adapt(source, vendor, notice, pin["version"], upstream_version=pin["upstream_version"])
     if {name: digest(repaired[name]) for name in pin["changed_file_sha256"]} != pin["changed_file_sha256"]:
         raise ValueError("adapted source differs from qualified source bytes")
     return pin, repaired

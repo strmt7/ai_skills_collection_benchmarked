@@ -1,8 +1,8 @@
 AI skills collection Crawl4AI portable source build
 
-Upstream Crawl4AI 0.9.5 source archive, SHA256 84fa6f4970fbb086a68893c9fb18605a93fcd609c72bee6fbb1d2715924afbff.
-Downstream version: 0.9.5+catalog.portable4. This is not an upstream published release.
-Modified 25 October 2026: async_crawler_strategy.py delegates download opening
+Upstream Crawl4AI 0.9.6 source archive, SHA256 2279e244bb73c2bbdfb2aff8dcfb957a7b2a1910a7fe680ac3df5512b9720a49.
+Downstream version: 0.9.6+catalog.portable1. This is not an upstream published release.
+Modified 25 November 2026: async_crawler_strategy.py delegates download opening
 and pre-normalization filename admission to catalog_download.py. The module is
 an unchanged Apache-2.0 source file from FlitzZip contributors:
 https://github.com/strmt7/FlitzZip/blob/69580f97f7d360f92fe20f40aedabede811b3e01/tools/crawl4ai_download_opener.py

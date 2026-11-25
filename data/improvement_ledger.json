@@ -368,6 +368,10 @@
           {
             "path": "artifacts/research/2026-11-25/ecc-testing-requalification/review.json",
             "sha256": "d7be0e096565bfc9122823d9a4e28c68877b63551f6d7364fd9df93abb966050"
+          },
+          {
+            "path": "artifacts/research/2026-11-25/swt-bench-calibration/review.json",
+            "sha256": "c935b137990030308319bd4d16480c8206cc84ad8d48a5605ccd643672b44ff6"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
@@ -390,6 +394,10 @@
           {
             "path": "artifacts/research/2026-11-25/ecc-testing-requalification/review.json",
             "sha256": "d7be0e096565bfc9122823d9a4e28c68877b63551f6d7364fd9df93abb966050"
+          },
+          {
+            "path": "artifacts/research/2026-11-25/swt-bench-calibration/review.json",
+            "sha256": "c935b137990030308319bd4d16480c8206cc84ad8d48a5605ccd643672b44ff6"
           }
         ],
         "status": "in_progress"

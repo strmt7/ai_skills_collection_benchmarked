@@ -1,0 +1,121 @@
+{
+  "artifacts": {},
+  "capture_receipts": {
+    "maintained-provider-capture": {
+      "extracted_characters": 22171,
+      "native_result_sha256": "76b3cf66f05d57bd5712b55c280423cb7a52f0ab14d831023196eb9e0e66a143",
+      "scope_reviewed": true,
+      "status": 200,
+      "url": "https://swtbench.com/"
+    },
+    "relocation-capture": {
+      "extracted_characters": 27572,
+      "native_result_sha256": "b221ad8ddff7ff3be4d0664b16c278a683f02e2d1fb45ff6b962ee94a0f38ceb",
+      "scope_reviewed": true,
+      "status": 200,
+      "url": "https://docs.crawl4ai.com/core/browser-crawler-config/"
+    }
+  },
+  "focused_regression_tests": 111,
+  "model_attempts": 0,
+  "normal_automatic_setup": {
+    "browser_controls_sha256": "8df2e61fe9c8aa83d4f32bd109b399a825430929aed833a9217ddddbb3d583f7",
+    "component_controls_sha256": "f2fde5a064325ebacb07d0938654c2886944b1fa60d73441198db627b17a879e",
+    "installation_sha256": "1d619d68bd1313d20d3a5545ec33a18aedf5c337bae0778be529a0ad97c1ddcf",
+    "owned_processes_after_cleanup": 0,
+    "owned_steps": 15
+  },
+  "observed_on": "2026-11-25",
+  "previous_commit": "e5794b4515cfe90a2ba061cc93663fe29ecb5b76",
+  "release": {
+    "browser_files_admitted": 596,
+    "chromium": "159.0.8154.6",
+    "native_component_controls": 20,
+    "playwright": "1.65.2",
+    "provider": "0.9.6+catalog.portable1",
+    "publisher_archive_count": 4,
+    "python": "3.13.18",
+    "reproducible_wheel_builds": 2,
+    "runtime_distributions": 98,
+    "source_archive_sha256": "2279e244bb73c2bbdfb2aff8dcfb957a7b2a1910a7fe680ac3df5512b9720a49",
+    "source_files_admitted": 87,
+    "upstream": "0.9.6",
+    "wheel_sha256": "db7285b9873f20dacc810c57d8d9594a605711b994bc05ea0a3c7c10e047bf95"
+  },
+  "relocated_installer": {
+    "fixture_source_paths": [
+      "dev.ps1",
+      "AGENTS.md",
+      "pyproject.toml",
+      "requirements-dev-lock.txt",
+      "tools",
+      "toolchains/bootstrap",
+      "toolchains/crawl4ai"
+    ],
+    "fresh_cache": true,
+    "initial_capture_destination_failure": "The fixture asked the provider to write beyond the relocated checkout. The successful fresh crawl wrote into the fixture's own .venv before copying evidence out.",
+    "initial_fixture_failure": {
+      "cause": "The initial fixture omitted the Windows SYSTEMDRIVE variable. The qualified fixture preserves the native system variable.",
+      "stderr_sha256": "04e8447af5d53d493128f034b4f2ec89b284b54b08e0c3ce78b59b26ea49a06c",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "interruption_preserved_active_pointer": true,
+    "native_phases": {
+      "fresh-check": {
+        "exit_code": 0,
+        "owned_processes_after_cleanup": 0,
+        "reason": null,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "685b94ede6fc26fb886874db9c6b13e4d4f761080cbd4f3a2c756b9c793b1f97"
+      },
+      "fresh-crawl": {
+        "exit_code": 0,
+        "owned_processes_after_cleanup": 0,
+        "reason": null,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "8221928ef9b054acdce181d29ef59b7409abe59554965ea6fead532b8cfd782b"
+      },
+      "interrupted-recovery": {
+        "exit_code": 124,
+        "owned_processes_after_cleanup": 0,
+        "reason": "timeout",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "recovered-check": {
+        "exit_code": 0,
+        "owned_processes_after_cleanup": 0,
+        "reason": null,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "28f88001ce932347b65338669fd7cf1e6ccb47626216dcc76a636c81804f2783"
+      },
+      "relocated-capture": {
+        "exit_code": 1,
+        "owned_processes_after_cleanup": 0,
+        "reason": null,
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "aa1504d66430feaf6c01005bf8187cf1f23e0029a087de95fe4dab1b88929045"
+      }
+    },
+    "path_with_spaces": true,
+    "previous_damaged_profile_retained_during_recovery": true,
+    "recovery_installed_distinct_profile": true,
+    "restricted_system_path": true,
+    "temporary_fixture_removed": true
+  },
+  "schema_version": 1,
+  "scope": "Windows x64 portable Crawl4AI source, runtime, automatic setup and interruption controls.",
+  "source_sha256": {
+    "docs/agent-tools.md": "d5edb5f3e63e26a635ed31275fbc1cd0918acdd0a617093a148aeeb6e389520a",
+    "tests/test_crawl4ai_source.py": "baedad040b9cc2ceea132f8006fa78d60abb639a1da3e96f491a84544f0ff959",
+    "toolchains/crawl4ai/CATALOG_BUILD_NOTICE.txt": "4142b3a935875279c35a89d45c333833e7e0ecc7663beed894c220a40f428b4a",
+    "toolchains/crawl4ai/README.md": "ad788549693cbc845f084ff2c6dc9a516fefbb1bbc56a0d613487b26932fb40f",
+    "toolchains/crawl4ai/browser.json": "a5eb26cc39b242a29ebcbd927982a3744dc702f4ac020168307c82026af3a94b",
+    "toolchains/crawl4ai/requirements-build.txt": "a0742c15ef6df0b6976de0333c7c66afc5ea8ba939e935bdab6e35abc8144bda",
+    "toolchains/crawl4ai/requirements.txt": "0704c9a8b808dd26e386112ca5abe8912473ef0bbb801bbe48a88653f927a199",
+    "toolchains/crawl4ai/source.json": "d33db8ed74729203bb7149b991e1e9027f908f33e488d078d21292d21fe1090a",
+    "tools/crawl4ai_capture.py": "5987d335fdf494f2d980b1290b1d770352dd530fa8cc08024cd713674df116af",
+    "tools/prepare_crawl4ai_source.py": "5a2f821b20f1424fa6fb8582bab6791eec1c2d0f4a159d8b9509d800689f5dcd",
+    "tools/verify_crawl4ai_wheel.py": "b374fc86a6c35d527dd0957d202dbe98bb50ffa16138ca00d2b9c8e52742c781"
+  }
+}

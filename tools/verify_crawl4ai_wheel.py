@@ -43,7 +43,8 @@ def verify_wheel(root: Path, wheel: Path) -> tuple[dict[str, Any], bytes]:
     # Retain public upstream coordinates in version-control for advisory services.
     # Only this generated install lock substitutes the admitted downstream wheel.
     lock = (directory / "requirements.txt").read_text(encoding="utf-8")
-    pattern = r"(?im)^crawl4ai==0\.9\.5 --hash=sha256:[0-9a-f]{64}$"
+    upstream = re.escape(pin["upstream_version"])
+    pattern = rf"(?im)^crawl4ai=={upstream} --hash=sha256:[0-9a-f]{{64}}$"
     lock, count = re.subn(pattern, f"Crawl4AI=={pin['version']} --hash=sha256:{pin['qualified_wheel_sha256']}", lock)
     if count != 1:
         raise ValueError("public runtime lock must contain exactly one pinned upstream Crawl4AI record")

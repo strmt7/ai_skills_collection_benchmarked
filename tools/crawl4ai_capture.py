@@ -18,7 +18,7 @@ from typing import Any
 from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
-AGENT = "AI-Skills-Research/0.9.5 (+https://github.com/strmt7/ai_skills_collection_benchmarked)"
+AGENT = "AI-Skills-Research/0.9.6 (+https://github.com/strmt7/ai_skills_collection_benchmarked)"
 
 
 def admit_sources() -> dict[str, Any]:

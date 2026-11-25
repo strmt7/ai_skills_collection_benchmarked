@@ -71,13 +71,17 @@ def adaptation():
     }
 
 
-def test_repairs_preserve_data_field_unrelated_bytes_and_explicit_modes(adaptation):
+@pytest.mark.parametrize("upstream_version", ("0.9.5", "0.9.6"))
+def test_repairs_preserve_data_field_unrelated_bytes_and_explicit_modes(adaptation, upstream_version):
     import ast
     from types import SimpleNamespace
 
+    adaptation["crawl4ai/__version__.py"] = f'__version__ = "{upstream_version}"\n'.encode()
     before = adaptation.copy()
-    result = source.adapt(adaptation, b"licensed source", b"full notice", "0.9.5+catalog.portable3")
+    version = upstream_version + "+catalog.portable1"
+    result = source.adapt(adaptation, b"licensed source", b"full notice", version, upstream_version=upstream_version)
     assert adaptation == before and result["untouched"] == before["untouched"]
+    assert f'__version__ = "{version}"'.encode() in result["crawl4ai/__version__.py"]
     namespace: dict[str, Any] = {}
     exec(compile(ast.parse(result["crawl4ai/models.py"]), "fixture", "exec"), namespace)
     model = namespace["CrawlResult"]()
@@ -111,7 +115,7 @@ def test_repairs_preserve_data_field_unrelated_bytes_and_explicit_modes(adaptati
 def test_source_anchor_drift_is_an_error(adaptation, name):
     adaptation[name] = b"changed source"
     with pytest.raises((ValueError, SyntaxError)):
-        source.adapt(adaptation, b"vendor", b"notice", "identified")
+        source.adapt(adaptation, b"vendor", b"notice", "identified", upstream_version="0.9.5")
 
 
 def test_stage_never_overwrites_and_check_is_strict(tmp_path, monkeypatch):
@@ -158,6 +162,7 @@ def test_wheel_lock_substitution_retains_every_dependency(tmp_path):
         output.writestr("fixture.dist-info/licenses/CATALOG_BUILD_NOTICE.txt", b"full notice")
     pin = {
         "version": "0.9.5+catalog.portable3",
+        "upstream_version": "0.9.5",
         "qualified_wheel_sha256": source.digest(package.read_bytes()),
         "runtime_files": [{"path": "crawl4ai/source.py", "sha256": source.digest(b"source")}],
     }

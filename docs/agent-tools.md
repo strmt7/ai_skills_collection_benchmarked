@@ -98,7 +98,7 @@ other tasks' existing providers. Strict browser research must request
 `enable_stealth=False`, robots checks, no retries/fallback, no external LLM and
 an isolated temporary profile. Verify actual browser behavior: automation must
 remain disclosed (`navigator.webdriver === true`), with no hiding or sandbox
-disabling flags. The unmodified 0.9.5 package hides automation even when its
+disabling flags. The unmodified 0.9.6 package hides automation even when its
 stealth boolean is false. Installation and configuration alone do not prove
 policy compliance; keep live qualification and native page captures.
 
