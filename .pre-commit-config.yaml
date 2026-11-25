@@ -4,31 +4,28 @@
 # Hook versions are pinned and maintained on main; automatic dependency-update
 # pull requests are disabled (see .github/dependabot.yml).
 
-default_language_version:
-  python: python3.12
-
 default_stages: [pre-commit]
 
 repos:
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.17.3
+    rev: 9026c9127e153371d7a78dfcb0c45ae2046a3d10  # v0.17.6
     hooks:
       - id: ruff-check
         args: [--fix]
       - id: ruff-format
 
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v2.4.1
+    rev: ad26ebfa797fcb9b8f83275937c1c1d6e126719c  # v2.4.1
     hooks:
       - id: mypy
         files: ^(tools/|tests/|benchmarks/agent-effectiveness/graders/)
         additional_dependencies:
-          - PyYAML>=6.0.2
-          - types-PyYAML>=6.0.12
+          - PyYAML==6.0.4
+          - types-PyYAML==6.0.12.20261122
           - pytest==9.2.0
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v6.0.0
+    rev: 3e8a8703264a2f4a69428a0aa4dcb512790b2c8c  # v6.0.0
     hooks:
       - id: check-added-large-files
         args: [--maxkb=1024]

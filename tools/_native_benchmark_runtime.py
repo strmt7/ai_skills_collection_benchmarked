@@ -13,7 +13,7 @@ import time
 import uuid
 from dataclasses import asdict, dataclass
 from pathlib import Path
-from typing import Protocol
+from typing import Any, BinaryIO, Protocol, cast
 
 from _native_image_archive import validate_image_archive
 from _trial_transcript import strict_json
@@ -179,6 +179,14 @@ class DockerError(RuntimeError):
         self.stderr = stderr
 
 
+@dataclass(frozen=True)
+class DockerCapture:
+    label: str
+    stdout: Path
+    stderr: Path
+    process: dict[str, Any]
+
+
 class DockerClient:
     owner_label = "org.ai-skills-benchmarked.qualification"
     root_label = "org.ai-skills-benchmarked.source-root"
@@ -288,17 +296,20 @@ class DockerClient:
         ):
             raise ValueError("Local image differs from the declared immutable identity")
 
-    def run(self, label: str, arguments: list[str], *, timeout: float = 30, missing: bool = False) -> bytes:
+    def capture(self, label: str, arguments: list[str], *, timeout: float = 30) -> DockerCapture:
+        """Retain native exit and output for commands whose nonzero exits carry evidence."""
         with self._records_lock:
             self.counter += 1
             label = f"{self.counter:03d}-" + label
         if not re.fullmatch(r"[a-z0-9-]+", label):
             raise ValueError("Invalid native command evidence label")
         argv = [str(self.docker), "--host", self.endpoint, "--config", str(self.config), *arguments]
+        stdout_path = self.output / (label + ".stdout.native")
+        stderr_path = self.output / (label + ".stderr.native")
         with (
             open(os.devnull, "rb") as stdin,
-            (self.output / (label + ".stdout.native")).open("xb") as stdout,
-            (self.output / (label + ".stderr.native")).open("xb") as stderr,
+            stdout_path.open("xb") as stdout,
+            stderr_path.open("xb") as stderr,
         ):
             result = self.run_owned(
                 argv,
@@ -315,14 +326,19 @@ class DockerClient:
         with self._records_lock:
             self.records.append({"argv": argv, "process": result})
             write_json(self.output / "processes.json", self.records)
-        raw_error = (self.output / (label + ".stderr.native")).read_bytes()
+        return DockerCapture(label, stdout_path, stderr_path, result)
+
+    def run(self, label: str, arguments: list[str], *, timeout: float = 30, missing: bool = False) -> bytes:
+        capture = self.capture(label, arguments, timeout=timeout)
+        result = capture.process
+        raw_error = capture.stderr.read_bytes()
         if (
             result["termination_reason"]
             or result["job_active_processes_after_cleanup"]
             or (result["exit_code"] != 0 and not (missing and result["exit_code"] == 1 and b"No such" in raw_error))
         ):
-            raise DockerError(label, raw_error)
-        return (self.output / (label + ".stdout.native")).read_bytes()
+            raise DockerError(capture.label, raw_error)
+        return capture.stdout.read_bytes()
 
     def ids(self, token: str) -> list[str]:
         if not re.fullmatch(r"[0-9a-f]{32}", token):
@@ -714,11 +730,12 @@ with tarfile.open("/tmp/benchmark-inputs.tar","r:") as archive:
 """
 
 
-def stage_inputs(lease: ContainerLease, output: Path, files: dict[str, bytes]) -> str:
+def stage_inputs(lease: ContainerLease, output: Path, files: dict[str, bytes], *, retain_packet: bool = True) -> str:
     """Transfer one deterministic packet into an exact owned container."""
     import io
     import struct
     import tarfile
+    from tempfile import TemporaryFile
 
     from _trial_protocol import relative_path
 
@@ -739,8 +756,6 @@ def stage_inputs(lease: ContainerLease, output: Path, files: dict[str, bytes]) -
     digest = sha256(raw)
     header = json.dumps({"bytes": len(raw), "sha256": digest}).encode()
     output.mkdir()
-    packet = output / "packet.native"
-    packet.write_bytes(struct.pack(">I", len(header)) + header + raw)
     argv = [
         str(client.docker),
         "--host",
@@ -759,14 +774,17 @@ def stage_inputs(lease: ContainerLease, output: Path, files: dict[str, bytes]) -
         INPUT_RECEIVER,
     ]
     with (
-        packet.open("rb") as stdin,
+        (output / "packet.native").open("x+b") if retain_packet else TemporaryFile(dir=output) as stdin,
         (output / "stdout.native").open("xb") as stdout,
         (output / "stderr.native").open("xb") as stderr,
     ):
+        stdin.write(struct.pack(">I", len(header)) + header)
+        stdin.write(raw)
+        stdin.seek(0)
         process = client.run_owned(
             argv,
             cwd=client.root,
-            stdin=stdin,
+            stdin=cast(BinaryIO, stdin),
             stdout=stdout,
             stderr=stderr,
             timeout=30,

@@ -32,10 +32,12 @@ consumers; check their actual contracts.
   Durable idempotency requires an atomic, scoped server contract covering payload
   conflicts, concurrent attempts, retention and partial failure. A process-local
   map is not a durable cross-instance guarantee.
-- Give pagination a stable total order and tie-breaker. A cursor must bind the
-  relevant query and access scope; opaque encoding alone supplies neither access
-  control nor integrity. Cursor pagination is not snapshot consistency under
-  arbitrary concurrent changes. Bound page size and query cost.
+- Give pagination a stable total order. Use an immutable unique tie-breaker when
+  sort values can tie. Match the cursor predicate to the full order, including
+  sort directions and null placement. Bind each cursor to the filter, sort, and
+  access scope. Define what concurrent inserts, deletes, and sort-key updates
+  can do to traversal. Choose a snapshot when the contract requires one result
+  set across pages. Bound page size and query cost.
 - Define public response fields explicitly. Keep internal diagnostics and
   credentials out of errors, URLs, examples and logs. Use placeholders that do not
   resemble provider credentials.
@@ -57,6 +59,11 @@ Unknown-field and domain validation policies remain the caller's responsibility.
 The server retains ownership of closing the request body.
 
 Verify ordinary success as well as malformed input, authorization boundaries,
-duplicate/replayed operations, ordering ties and failure responses relevant to the
-change. Run the actual supported framework when claiming framework readiness.
+duplicate or replayed operations, and failure responses relevant to the change.
+For pagination, seed ties across a page boundary and traverse every page. Compare
+the exact ordered IDs under different query plans or physical row orders.
+Exercise concurrent changes against the declared consistency guarantee.
+Generate HTTP dates through the platform formatter and verify the resulting
+header when changing deprecation behavior. Run the actual supported framework
+when claiming framework readiness.
 Selected component controls do not establish whole-skill or agent superiority.

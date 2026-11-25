@@ -1,0 +1,104 @@
+{
+  "artifacts": {
+    "native-reports.json": "3d437bd234c244cbbfda68082e010041b4f55f7c1f83c613c59939072eb3afc6"
+  },
+  "base_revision": "61d2936a2db5f1dc0adcd1084bf1408820973af1",
+  "independent_pytest_attempts": 10,
+  "limitation": "These four controls cover a public development task. They qualify acquisition, invocation, capture and grading. Agent comparisons require a separately qualified launcher and protected submission handoff.",
+  "model_attempts": 0,
+  "native_publisher_attempts": 4,
+  "observations": {
+    "exact": {
+      "containers_closed": 4,
+      "publisher_metrics": {
+        "branch_coverage": 0.9,
+        "executable_correctness": 1.0,
+        "line_coverage": 1.0,
+        "syntax_correctness": 1.0
+      },
+      "reference": "passed",
+      "retained_transfer_packets": 0,
+      "sensitivity": {
+        "detected": 2,
+        "inconclusive": 0,
+        "planned": 2,
+        "survived": 0
+      }
+    },
+    "incorrect": {
+      "containers_closed": 4,
+      "publisher_metrics": {
+        "branch_coverage": 0.9,
+        "executable_correctness": 1.0,
+        "line_coverage": 1.0,
+        "syntax_correctness": 1.0
+      },
+      "reference": "test_failed",
+      "retained_transfer_packets": 0,
+      "sensitivity": {
+        "detected": null,
+        "inconclusive": null,
+        "planned": 2,
+        "survived": null
+      }
+    },
+    "missing": {
+      "containers_closed": 2,
+      "publisher_metrics": {
+        "branch_coverage": 0.9,
+        "executable_correctness": 1.0,
+        "line_coverage": 1.0,
+        "syntax_correctness": 1.0
+      },
+      "reference": "passed",
+      "retained_transfer_packets": 0,
+      "sensitivity": {
+        "detected": 0,
+        "inconclusive": 2,
+        "planned": 2,
+        "survived": 0
+      }
+    },
+    "shape": {
+      "containers_closed": 4,
+      "publisher_metrics": {
+        "branch_coverage": 0.9,
+        "executable_correctness": 1.0,
+        "line_coverage": 1.0,
+        "syntax_correctness": 1.0
+      },
+      "reference": "passed",
+      "retained_transfer_packets": 0,
+      "sensitivity": {
+        "detected": 0,
+        "inconclusive": 0,
+        "planned": 2,
+        "survived": 2
+      }
+    }
+  },
+  "runtime": {
+    "host": "Windows x64",
+    "image_reference": "docker.io/library/python@sha256:080b4f1282edb604b21e61dfca35d1d215ed6cd1c17de27ccfc34e6fadc4ee49",
+    "python": "3.14.10",
+    "target": "linux/amd64"
+  },
+  "schema_version": 1,
+  "scope": "Reviewed model-free public TestEval controls and Windows Docker collector compatibility.",
+  "shared_native_runtime": {
+    "capture_native_exit": 4,
+    "container_closed": true,
+    "legacy_packet_retained": true,
+    "legacy_packet_sha256": "66f553a0099e63171d74a343e77cecbe8e7ab5d6fb2cf410ee911c7a308efaaf",
+    "native_processes_after_cleanup": 0,
+    "strict_run_raised": true
+  },
+  "source_sha256": {
+    "benchmarks/agent-effectiveness/development/testeval-pilot-v2/native-profile.json": "a97da16e3271ed87664e25cb60d153dfc680bd0fc544465a3f1b35a5b7e4ee26",
+    "docs/benchmark-execution-plan.md": "2ae5ff94d3716f9def3dc93c8a3aacc59a1d314e79834d044a67614b12d51ac0",
+    "tests/test_collect_testeval_submission.py": "3ea115beadcd4e6525820512d51df4e5bb0560ff509ae321bfad365b97a88276",
+    "tools/_native_benchmark_runtime.py": "b36647bc427ad8b59e61ada097c3b6feda4a3529fed2bae09b60b7a2b08372fa",
+    "tools/collect_testeval_submission.py": "d17d8e12eda081f7c584a92a69dcb2c7b822e40bfec350a900e38393a52fd678",
+    "tools/prepare_testeval_inputs.py": "45c6ae5df4bcb442a3b3068ec47de79bb79484e76013bb3371ede32c0cff9f93"
+  }
+}

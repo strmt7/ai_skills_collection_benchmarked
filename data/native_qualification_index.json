@@ -314,8 +314,7 @@
         "sha256": "cb02327aae970a7794554dfbd1a57e1707e4c77ccb5782c36d998d9990b094c7"
       },
       "sources": [
-        "tests/test_native_benchmark_runtime.py",
-        "tools/_native_benchmark_runtime.py"
+        "tests/test_native_benchmark_runtime.py"
       ]
     },
     {
@@ -494,7 +493,6 @@
         "sha256": "556301f1e03e67e7c9c38809b746776e7c88994f5890dc2fab8e2a3f66dedbda"
       },
       "sources": [
-        "docs/benchmark-execution-plan.md",
         "docs/recognized-skill-benchmarks.md",
         "included/improved/skills/eval-harness-integrity/SKILL.md",
         "included/improved/skills/eval-harness-integrity/references/grader-admission.md",
@@ -513,6 +511,32 @@
       "sources": [
         ".gitattributes",
         "tests/test_native_qualification_index.py"
+      ]
+    },
+    {
+      "id": "testeval-native-collector",
+      "review": {
+        "path": "artifacts/research/2026-11-25/testeval-native-collector/review.json",
+        "sha256": "fc2dd94bddad65d6fc2b593a1476434ad20e5271db8da9845b5106122eba8f2e"
+      },
+      "sources": [
+        "benchmarks/agent-effectiveness/development/testeval-pilot-v2/native-profile.json",
+        "docs/benchmark-execution-plan.md",
+        "tests/test_collect_testeval_submission.py",
+        "tools/_native_benchmark_runtime.py",
+        "tools/collect_testeval_submission.py",
+        "tools/prepare_testeval_inputs.py"
+      ]
+    },
+    {
+      "id": "api-pagination-and-backend-replay",
+      "review": {
+        "path": "artifacts/research/2026-11-25/stable-rest-contracts/review.json",
+        "sha256": "e7b67568fc37a1fdee93b30d01084a7745d26874b9162c2a09a8aaef826dba8f"
+      },
+      "sources": [
+        "benchmarks/component-controls/backend/result.json",
+        "included/improved/skills/api-design-current/SKILL.md"
       ]
     }
   ],
@@ -927,7 +951,8 @@
         "sha256": "cb02327aae970a7794554dfbd1a57e1707e4c77ccb5782c36d998d9990b094c7"
       },
       "superseded_sources": [
-        "docs/native-benchmark-controller.md"
+        "docs/native-benchmark-controller.md",
+        "tools/_native_benchmark_runtime.py"
       ]
     },
     {
@@ -1022,6 +1047,15 @@
       "superseded_sources": [
         "docs/benchmark-execution-plan.md",
         "included/improved/skills/eval-harness-integrity/SKILL.md"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-25/testeval-pilot-grading/review.json",
+        "sha256": "556301f1e03e67e7c9c38809b746776e7c88994f5890dc2fab8e2a3f66dedbda"
+      },
+      "superseded_sources": [
+        "docs/benchmark-execution-plan.md"
       ]
     }
   ],

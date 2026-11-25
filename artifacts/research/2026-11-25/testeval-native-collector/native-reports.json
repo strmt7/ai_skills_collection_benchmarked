@@ -1,0 +1,269 @@
+{
+  "controls": {
+    "exact": {
+      "capture": "{\n  \"schema_version\": 1,\n  \"plan_sha256\": \"ba4c063081b44b3ae6b4e1077586f54173bb3cf81720bc7289789fe7f66a2067\",\n  \"publisher\": {\n    \"source\": {\n      \"commit_sha\": \"6f67dee71de6ccda1767b8c219a93f4ae0a7ce90\",\n      \"dataset_sha256\": \"a37bcaae5fd88c978254aff5633355c7c76a324ad90b8d965f6213e522e022bf\",\n      \"evaluator_sha256\": \"0bed65d444033cd33218e3a4c75bc0b65d12b1c6fe24d8939cfe96dca255f7e3\"\n    },\n    \"subject_suite_sha256\": \"f7b6b495d3066f2aed802079673440ae8d8bf1de631700742d02bd13aebb8486\",\n    \"termination\": \"completed\",\n    \"exit_code\": 0,\n    \"stdout\": {\n      \"file\": \"publisher.stdout\",\n      \"sha256\": \"839100bf49cd54f3f2d97695ceeb5c77df57f116b6791cce135bc5d8113b9ea3\"\n    }\n  },\n  \"variants\": {\n    \"offset-result\": {\n      \"program_sha256\": \"f37a4863e95e73177ca0d3b05ab00056b208e304453a9d0a1ac5da96cf44b072\",\n      \"subject_suite_sha256\": \"f7b6b495d3066f2aed802079673440ae8d8bf1de631700742d02bd13aebb8486\",\n      \"termination\": \"completed\",\n      \"exit_code\": 1,\n      \"junit\": {\n        \"file\": \"pytest-offset-result.xml\",\n        \"sha256\": \"cb295fec26a2eeb8817584592adbb3220324d76b42a84a2badfeceea6b267e7c\"\n      }\n    },\n    \"reference\": {\n      \"program_sha256\": \"eed2a6bd93b2503733e588dee71db46a4989d7d1b5c1ce716fa66059e10308c4\",\n      \"subject_suite_sha256\": \"f7b6b495d3066f2aed802079673440ae8d8bf1de631700742d02bd13aebb8486\",\n      \"termination\": \"completed\",\n      \"exit_code\": 0,\n      \"junit\": {\n        \"file\": \"pytest-reference.xml\",\n        \"sha256\": \"3f09f00ee9f740a047f2082dbb19a94e2a1c130eb7f48ec417b3e8e99bf42066\"\n      }\n    },\n    \"zero-result\": {\n      \"program_sha256\": \"55080b7a9cc8cc3209bf84d86d2d796fc4a143362b002b8a64ea1c653e2fb301\",\n      \"subject_suite_sha256\": \"f7b6b495d3066f2aed802079673440ae8d8bf1de631700742d02bd13aebb8486\",\n      \"termination\": \"completed\",\n      \"exit_code\": 1,\n      \"junit\": {\n        \"file\": \"pytest-zero-result.xml\",\n        \"sha256\": \"9c60e0fcd2b4040c9eca63b329cb3f1dfcf61edd43bc627f1d8046ff090145fd\"\n      }\n    }\n  }\n}\n",
+      "plan": "{\n  \"programs\": {\n    \"offset-result\": \"f37a4863e95e73177ca0d3b05ab00056b208e304453a9d0a1ac5da96cf44b072\",\n    \"reference\": \"eed2a6bd93b2503733e588dee71db46a4989d7d1b5c1ce716fa66059e10308c4\",\n    \"zero-result\": \"55080b7a9cc8cc3209bf84d86d2d796fc4a143362b002b8a64ea1c653e2fb301\"\n  },\n  \"publisher\": {\n    \"commit_sha\": \"6f67dee71de6ccda1767b8c219a93f4ae0a7ce90\",\n    \"dataset_sha256\": \"a37bcaae5fd88c978254aff5633355c7c76a324ad90b8d965f6213e522e022bf\",\n    \"evaluator_sha256\": \"0bed65d444033cd33218e3a4c75bc0b65d12b1c6fe24d8939cfe96dca255f7e3\"\n  },\n  \"pytest_cases\": [\n    \"test_subject::test_numDifferentIntegers\"\n  ],\n  \"schema_version\": 1,\n  \"subject_suite_sha256\": \"f7b6b495d3066f2aed802079673440ae8d8bf1de631700742d02bd13aebb8486\",\n  \"task_id\": 1805\n}\n",
+      "reports": {
+        "publisher.stdout": "subject.jsonl\n[1]\n1\nSyntax Correctness: 1.0\nExecutable Correctness: 1.0\nline coverage@1 1.0\nbranch coverage@1 0.9\nAverage Line Coverage: 1.0, Average Branch Coverage: 0.9\n",
+        "pytest-offset-result.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?><testsuites name=\"pytest tests\"><testsuite name=\"pytest\" errors=\"0\" failures=\"1\" skipped=\"0\" tests=\"1\" time=\"0.025\" timestamp=\"2026-11-25T21:56:18.382173+00:00\" hostname=\"a44587c1cb8b\"><testcase classname=\"test_subject\" name=\"test_numDifferentIntegers\" time=\"0.000\"><failure message=\"assert [5, 2] == [4, 1]&#10;  &#10;  At index 0 diff: 5 != 4&#10;  Use -v to get more diff\">def test_numDifferentIntegers():\n        solution = Solution()\n        observed = [solution.numDifferentIntegers(*['001b0c00d007e7f002']), solution.numDifferentIntegers(*['a1b01c001'])]\n&gt;       assert observed == [4, 1]\nE       assert [5, 2] == [4, 1]\nE         \nE         At index 0 diff: 5 != 4\nE         Use -v to get more diff\n\ntest_subject.py:6: AssertionError</failure></testcase></testsuite></testsuites>",
+        "pytest-reference.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?><testsuites name=\"pytest tests\"><testsuite name=\"pytest\" errors=\"0\" failures=\"0\" skipped=\"0\" tests=\"1\" time=\"0.019\" timestamp=\"2026-11-25T21:56:10.448589+00:00\" hostname=\"44e6b2a7ffc5\"><testcase classname=\"test_subject\" name=\"test_numDifferentIntegers\" time=\"0.000\" /></testsuite></testsuites>",
+        "pytest-zero-result.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?><testsuites name=\"pytest tests\"><testsuite name=\"pytest\" errors=\"0\" failures=\"1\" skipped=\"0\" tests=\"1\" time=\"0.025\" timestamp=\"2026-11-25T21:56:25.665423+00:00\" hostname=\"9883d5303d94\"><testcase classname=\"test_subject\" name=\"test_numDifferentIntegers\" time=\"0.000\"><failure message=\"assert [0, 0] == [4, 1]&#10;  &#10;  At index 0 diff: 0 != 4&#10;  Use -v to get more diff\">def test_numDifferentIntegers():\n        solution = Solution()\n        observed = [solution.numDifferentIntegers(*['001b0c00d007e7f002']), solution.numDifferentIntegers(*['a1b01c001'])]\n&gt;       assert observed == [4, 1]\nE       assert [0, 0] == [4, 1]\nE         \nE         At index 0 diff: 0 != 4\nE         Use -v to get more diff\n\ntest_subject.py:6: AssertionError</failure></testcase></testsuite></testsuites>"
+      },
+      "verified_grade": {
+        "capture_sha256": "c8464060b289b11928a5bf1151b89118f858ac4c06a3c2ccf210315a86370845",
+        "defects": {
+          "offset-result": {
+            "counts": {
+              "errors": 0,
+              "exit": 1,
+              "failures": 1,
+              "passed": 0,
+              "skipped": 0,
+              "tests": 1
+            },
+            "exit_code": 1,
+            "status": "test_failed"
+          },
+          "zero-result": {
+            "counts": {
+              "errors": 0,
+              "exit": 1,
+              "failures": 1,
+              "passed": 0,
+              "skipped": 0,
+              "tests": 1
+            },
+            "exit_code": 1,
+            "status": "test_failed"
+          }
+        },
+        "native_test_eval": {
+          "exit_code": 0,
+          "metrics": {
+            "branch_coverage": 0.9,
+            "executable_correctness": 1.0,
+            "line_coverage": 1.0,
+            "syntax_correctness": 1.0
+          },
+          "status": "measured"
+        },
+        "plan_sha256": "ba4c063081b44b3ae6b4e1077586f54173bb3cf81720bc7289789fe7f66a2067",
+        "reference": {
+          "counts": {
+            "errors": 0,
+            "exit": 0,
+            "failures": 0,
+            "passed": 1,
+            "skipped": 0,
+            "tests": 1
+          },
+          "exit_code": 0,
+          "status": "passed"
+        },
+        "schema_version": 1,
+        "sensitivity": {
+          "detected": 2,
+          "inconclusive": 0,
+          "planned": 2,
+          "survived": 0
+        },
+        "task_id": 1805
+      }
+    },
+    "incorrect": {
+      "capture": "{\n  \"schema_version\": 1,\n  \"plan_sha256\": \"c3b7dd93a434ad2e03328f3cb5bf5eff76594e0a4df11b05c4f508893e66a414\",\n  \"publisher\": {\n    \"source\": {\n      \"commit_sha\": \"6f67dee71de6ccda1767b8c219a93f4ae0a7ce90\",\n      \"dataset_sha256\": \"a37bcaae5fd88c978254aff5633355c7c76a324ad90b8d965f6213e522e022bf\",\n      \"evaluator_sha256\": \"0bed65d444033cd33218e3a4c75bc0b65d12b1c6fe24d8939cfe96dca255f7e3\"\n    },\n    \"subject_suite_sha256\": \"04f26e1945f2da612c44cd42726eaae582e17fd4bd2fd1a4b7f1b2389f5df9cc\",\n    \"termination\": \"completed\",\n    \"exit_code\": 0,\n    \"stdout\": {\n      \"file\": \"publisher.stdout\",\n      \"sha256\": \"839100bf49cd54f3f2d97695ceeb5c77df57f116b6791cce135bc5d8113b9ea3\"\n    }\n  },\n  \"variants\": {\n    \"offset-result\": {\n      \"program_sha256\": \"f37a4863e95e73177ca0d3b05ab00056b208e304453a9d0a1ac5da96cf44b072\",\n      \"subject_suite_sha256\": \"04f26e1945f2da612c44cd42726eaae582e17fd4bd2fd1a4b7f1b2389f5df9cc\",\n      \"termination\": \"completed\",\n      \"exit_code\": 1,\n      \"junit\": {\n        \"file\": \"pytest-offset-result.xml\",\n        \"sha256\": \"2703cba134b245a276f63ee7252dc9fee357deba64fea0692314f55a000933e8\"\n      }\n    },\n    \"reference\": {\n      \"program_sha256\": \"eed2a6bd93b2503733e588dee71db46a4989d7d1b5c1ce716fa66059e10308c4\",\n      \"subject_suite_sha256\": \"04f26e1945f2da612c44cd42726eaae582e17fd4bd2fd1a4b7f1b2389f5df9cc\",\n      \"termination\": \"completed\",\n      \"exit_code\": 1,\n      \"junit\": {\n        \"file\": \"pytest-reference.xml\",\n        \"sha256\": \"2d203d2777f77d46b0464a4eb7f4c05b4b3a79ee6707b0c9d70738432964bd5e\"\n      }\n    },\n    \"zero-result\": {\n      \"program_sha256\": \"55080b7a9cc8cc3209bf84d86d2d796fc4a143362b002b8a64ea1c653e2fb301\",\n      \"subject_suite_sha256\": \"04f26e1945f2da612c44cd42726eaae582e17fd4bd2fd1a4b7f1b2389f5df9cc\",\n      \"termination\": \"completed\",\n      \"exit_code\": 1,\n      \"junit\": {\n        \"file\": \"pytest-zero-result.xml\",\n        \"sha256\": \"c14074057f6569737a3821f221df90da16e90b71bddcfa2b3127fe8576214371\"\n      }\n    }\n  }\n}\n",
+      "plan": "{\n  \"programs\": {\n    \"offset-result\": \"f37a4863e95e73177ca0d3b05ab00056b208e304453a9d0a1ac5da96cf44b072\",\n    \"reference\": \"eed2a6bd93b2503733e588dee71db46a4989d7d1b5c1ce716fa66059e10308c4\",\n    \"zero-result\": \"55080b7a9cc8cc3209bf84d86d2d796fc4a143362b002b8a64ea1c653e2fb301\"\n  },\n  \"publisher\": {\n    \"commit_sha\": \"6f67dee71de6ccda1767b8c219a93f4ae0a7ce90\",\n    \"dataset_sha256\": \"a37bcaae5fd88c978254aff5633355c7c76a324ad90b8d965f6213e522e022bf\",\n    \"evaluator_sha256\": \"0bed65d444033cd33218e3a4c75bc0b65d12b1c6fe24d8939cfe96dca255f7e3\"\n  },\n  \"pytest_cases\": [\n    \"test_subject::test_numDifferentIntegers\"\n  ],\n  \"schema_version\": 1,\n  \"subject_suite_sha256\": \"04f26e1945f2da612c44cd42726eaae582e17fd4bd2fd1a4b7f1b2389f5df9cc\",\n  \"task_id\": 1805\n}\n",
+      "reports": {
+        "publisher.stdout": "subject.jsonl\n[1]\n1\nSyntax Correctness: 1.0\nExecutable Correctness: 1.0\nline coverage@1 1.0\nbranch coverage@1 0.9\nAverage Line Coverage: 1.0, Average Branch Coverage: 0.9\n",
+        "pytest-offset-result.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?><testsuites name=\"pytest tests\"><testsuite name=\"pytest\" errors=\"0\" failures=\"1\" skipped=\"0\" tests=\"1\" time=\"0.025\" timestamp=\"2026-11-25T21:57:19.884681+00:00\" hostname=\"b97ff482f41e\"><testcase classname=\"test_subject\" name=\"test_numDifferentIntegers\" time=\"0.000\"><failure message=\"assert [5, 2] == [5, 1]&#10;  &#10;  At index 1 diff: 2 != 1&#10;  Use -v to get more diff\">def test_numDifferentIntegers():\n        solution = Solution()\n        observed = [solution.numDifferentIntegers(*['001b0c00d007e7f002']), solution.numDifferentIntegers(*['a1b01c001'])]\n&gt;       assert observed == [5, 1]\nE       assert [5, 2] == [5, 1]\nE         \nE         At index 1 diff: 2 != 1\nE         Use -v to get more diff\n\ntest_subject.py:6: AssertionError</failure></testcase></testsuite></testsuites>",
+        "pytest-reference.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?><testsuites name=\"pytest tests\"><testsuite name=\"pytest\" errors=\"0\" failures=\"1\" skipped=\"0\" tests=\"1\" time=\"0.024\" timestamp=\"2026-11-25T21:57:13.100051+00:00\" hostname=\"50a758ff9bdd\"><testcase classname=\"test_subject\" name=\"test_numDifferentIntegers\" time=\"0.000\"><failure message=\"assert [4, 1] == [5, 1]&#10;  &#10;  At index 0 diff: 4 != 5&#10;  Use -v to get more diff\">def test_numDifferentIntegers():\n        solution = Solution()\n        observed = [solution.numDifferentIntegers(*['001b0c00d007e7f002']), solution.numDifferentIntegers(*['a1b01c001'])]\n&gt;       assert observed == [5, 1]\nE       assert [4, 1] == [5, 1]\nE         \nE         At index 0 diff: 4 != 5\nE         Use -v to get more diff\n\ntest_subject.py:6: AssertionError</failure></testcase></testsuite></testsuites>",
+        "pytest-zero-result.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?><testsuites name=\"pytest tests\"><testsuite name=\"pytest\" errors=\"0\" failures=\"1\" skipped=\"0\" tests=\"1\" time=\"0.026\" timestamp=\"2026-11-25T21:57:27.141997+00:00\" hostname=\"d07aa309ebf4\"><testcase classname=\"test_subject\" name=\"test_numDifferentIntegers\" time=\"0.000\"><failure message=\"assert [0, 0] == [5, 1]&#10;  &#10;  At index 0 diff: 0 != 5&#10;  Use -v to get more diff\">def test_numDifferentIntegers():\n        solution = Solution()\n        observed = [solution.numDifferentIntegers(*['001b0c00d007e7f002']), solution.numDifferentIntegers(*['a1b01c001'])]\n&gt;       assert observed == [5, 1]\nE       assert [0, 0] == [5, 1]\nE         \nE         At index 0 diff: 0 != 5\nE         Use -v to get more diff\n\ntest_subject.py:6: AssertionError</failure></testcase></testsuite></testsuites>"
+      },
+      "verified_grade": {
+        "capture_sha256": "2df54a5a99ca961efce7fb1e29625f0d4b2288e0799ec4e65a4349e4d9e7a876",
+        "defects": {
+          "offset-result": {
+            "counts": {
+              "errors": 0,
+              "exit": 1,
+              "failures": 1,
+              "passed": 0,
+              "skipped": 0,
+              "tests": 1
+            },
+            "exit_code": 1,
+            "status": "test_failed"
+          },
+          "zero-result": {
+            "counts": {
+              "errors": 0,
+              "exit": 1,
+              "failures": 1,
+              "passed": 0,
+              "skipped": 0,
+              "tests": 1
+            },
+            "exit_code": 1,
+            "status": "test_failed"
+          }
+        },
+        "native_test_eval": {
+          "exit_code": 0,
+          "metrics": {
+            "branch_coverage": 0.9,
+            "executable_correctness": 1.0,
+            "line_coverage": 1.0,
+            "syntax_correctness": 1.0
+          },
+          "status": "measured"
+        },
+        "plan_sha256": "c3b7dd93a434ad2e03328f3cb5bf5eff76594e0a4df11b05c4f508893e66a414",
+        "reference": {
+          "counts": {
+            "errors": 0,
+            "exit": 1,
+            "failures": 1,
+            "passed": 0,
+            "skipped": 0,
+            "tests": 1
+          },
+          "exit_code": 1,
+          "status": "test_failed"
+        },
+        "schema_version": 1,
+        "sensitivity": {
+          "detected": null,
+          "inconclusive": null,
+          "planned": 2,
+          "survived": null
+        },
+        "task_id": 1805
+      }
+    },
+    "missing": {
+      "capture": "{\n  \"schema_version\": 1,\n  \"plan_sha256\": \"ba4c063081b44b3ae6b4e1077586f54173bb3cf81720bc7289789fe7f66a2067\",\n  \"publisher\": {\n    \"source\": {\n      \"commit_sha\": \"6f67dee71de6ccda1767b8c219a93f4ae0a7ce90\",\n      \"dataset_sha256\": \"a37bcaae5fd88c978254aff5633355c7c76a324ad90b8d965f6213e522e022bf\",\n      \"evaluator_sha256\": \"0bed65d444033cd33218e3a4c75bc0b65d12b1c6fe24d8939cfe96dca255f7e3\"\n    },\n    \"subject_suite_sha256\": \"f7b6b495d3066f2aed802079673440ae8d8bf1de631700742d02bd13aebb8486\",\n    \"termination\": \"completed\",\n    \"exit_code\": 0,\n    \"stdout\": {\n      \"file\": \"publisher.stdout\",\n      \"sha256\": \"839100bf49cd54f3f2d97695ceeb5c77df57f116b6791cce135bc5d8113b9ea3\"\n    }\n  },\n  \"variants\": {\n    \"offset-result\": {\n      \"program_sha256\": null,\n      \"subject_suite_sha256\": \"f7b6b495d3066f2aed802079673440ae8d8bf1de631700742d02bd13aebb8486\",\n      \"termination\": \"fixture_unavailable\",\n      \"exit_code\": null,\n      \"junit\": null\n    },\n    \"reference\": {\n      \"program_sha256\": \"eed2a6bd93b2503733e588dee71db46a4989d7d1b5c1ce716fa66059e10308c4\",\n      \"subject_suite_sha256\": \"f7b6b495d3066f2aed802079673440ae8d8bf1de631700742d02bd13aebb8486\",\n      \"termination\": \"completed\",\n      \"exit_code\": 0,\n      \"junit\": {\n        \"file\": \"pytest-reference.xml\",\n        \"sha256\": \"e67a02cc025e956ac29136c84d54e9db7b63334671ee9acbba0e7eb6eab56cbd\"\n      }\n    },\n    \"zero-result\": {\n      \"program_sha256\": null,\n      \"subject_suite_sha256\": \"f7b6b495d3066f2aed802079673440ae8d8bf1de631700742d02bd13aebb8486\",\n      \"termination\": \"fixture_unavailable\",\n      \"exit_code\": null,\n      \"junit\": null\n    }\n  }\n}\n",
+      "plan": "{\n  \"programs\": {\n    \"offset-result\": \"f37a4863e95e73177ca0d3b05ab00056b208e304453a9d0a1ac5da96cf44b072\",\n    \"reference\": \"eed2a6bd93b2503733e588dee71db46a4989d7d1b5c1ce716fa66059e10308c4\",\n    \"zero-result\": \"55080b7a9cc8cc3209bf84d86d2d796fc4a143362b002b8a64ea1c653e2fb301\"\n  },\n  \"publisher\": {\n    \"commit_sha\": \"6f67dee71de6ccda1767b8c219a93f4ae0a7ce90\",\n    \"dataset_sha256\": \"a37bcaae5fd88c978254aff5633355c7c76a324ad90b8d965f6213e522e022bf\",\n    \"evaluator_sha256\": \"0bed65d444033cd33218e3a4c75bc0b65d12b1c6fe24d8939cfe96dca255f7e3\"\n  },\n  \"pytest_cases\": [\n    \"test_subject::test_numDifferentIntegers\"\n  ],\n  \"schema_version\": 1,\n  \"subject_suite_sha256\": \"f7b6b495d3066f2aed802079673440ae8d8bf1de631700742d02bd13aebb8486\",\n  \"task_id\": 1805\n}\n",
+      "reports": {
+        "publisher.stdout": "subject.jsonl\n[1]\n1\nSyntax Correctness: 1.0\nExecutable Correctness: 1.0\nline coverage@1 1.0\nbranch coverage@1 0.9\nAverage Line Coverage: 1.0, Average Branch Coverage: 0.9\n",
+        "pytest-reference.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?><testsuites name=\"pytest tests\"><testsuite name=\"pytest\" errors=\"0\" failures=\"0\" skipped=\"0\" tests=\"1\" time=\"0.019\" timestamp=\"2026-11-25T21:57:43.817629+00:00\" hostname=\"aacb0dab532b\"><testcase classname=\"test_subject\" name=\"test_numDifferentIntegers\" time=\"0.000\" /></testsuite></testsuites>"
+      },
+      "verified_grade": {
+        "capture_sha256": "adcc411d6a0f3bb53cab91e56ed24b715335b75b4b89fad888e3d7aecdaf6cdb",
+        "defects": {
+          "offset-result": {
+            "counts": null,
+            "exit_code": null,
+            "status": "fixture_unavailable"
+          },
+          "zero-result": {
+            "counts": null,
+            "exit_code": null,
+            "status": "fixture_unavailable"
+          }
+        },
+        "native_test_eval": {
+          "exit_code": 0,
+          "metrics": {
+            "branch_coverage": 0.9,
+            "executable_correctness": 1.0,
+            "line_coverage": 1.0,
+            "syntax_correctness": 1.0
+          },
+          "status": "measured"
+        },
+        "plan_sha256": "ba4c063081b44b3ae6b4e1077586f54173bb3cf81720bc7289789fe7f66a2067",
+        "reference": {
+          "counts": {
+            "errors": 0,
+            "exit": 0,
+            "failures": 0,
+            "passed": 1,
+            "skipped": 0,
+            "tests": 1
+          },
+          "exit_code": 0,
+          "status": "passed"
+        },
+        "schema_version": 1,
+        "sensitivity": {
+          "detected": 0,
+          "inconclusive": 2,
+          "planned": 2,
+          "survived": 0
+        },
+        "task_id": 1805
+      }
+    },
+    "shape": {
+      "capture": "{\n  \"schema_version\": 1,\n  \"plan_sha256\": \"b31813faef6f04e3fda196c8ca99e5c1f891391bbc063591b1b8907d08c00809\",\n  \"publisher\": {\n    \"source\": {\n      \"commit_sha\": \"6f67dee71de6ccda1767b8c219a93f4ae0a7ce90\",\n      \"dataset_sha256\": \"a37bcaae5fd88c978254aff5633355c7c76a324ad90b8d965f6213e522e022bf\",\n      \"evaluator_sha256\": \"0bed65d444033cd33218e3a4c75bc0b65d12b1c6fe24d8939cfe96dca255f7e3\"\n    },\n    \"subject_suite_sha256\": \"9e8696de53d250b4a148b4d09283380bdc00855f686b68e31359cee794b3a6f1\",\n    \"termination\": \"completed\",\n    \"exit_code\": 0,\n    \"stdout\": {\n      \"file\": \"publisher.stdout\",\n      \"sha256\": \"839100bf49cd54f3f2d97695ceeb5c77df57f116b6791cce135bc5d8113b9ea3\"\n    }\n  },\n  \"variants\": {\n    \"offset-result\": {\n      \"program_sha256\": \"f37a4863e95e73177ca0d3b05ab00056b208e304453a9d0a1ac5da96cf44b072\",\n      \"subject_suite_sha256\": \"9e8696de53d250b4a148b4d09283380bdc00855f686b68e31359cee794b3a6f1\",\n      \"termination\": \"completed\",\n      \"exit_code\": 0,\n      \"junit\": {\n        \"file\": \"pytest-offset-result.xml\",\n        \"sha256\": \"b3ee99a0a852f83eb64c9041ead058bf7a6fc73db7fd9e60a331858941ba2fbf\"\n      }\n    },\n    \"reference\": {\n      \"program_sha256\": \"eed2a6bd93b2503733e588dee71db46a4989d7d1b5c1ce716fa66059e10308c4\",\n      \"subject_suite_sha256\": \"9e8696de53d250b4a148b4d09283380bdc00855f686b68e31359cee794b3a6f1\",\n      \"termination\": \"completed\",\n      \"exit_code\": 0,\n      \"junit\": {\n        \"file\": \"pytest-reference.xml\",\n        \"sha256\": \"554d4bc12301116a21e57139d5dbfde606e72f9ae2f2c9d0eefe2b0e0d215a14\"\n      }\n    },\n    \"zero-result\": {\n      \"program_sha256\": \"55080b7a9cc8cc3209bf84d86d2d796fc4a143362b002b8a64ea1c653e2fb301\",\n      \"subject_suite_sha256\": \"9e8696de53d250b4a148b4d09283380bdc00855f686b68e31359cee794b3a6f1\",\n      \"termination\": \"completed\",\n      \"exit_code\": 0,\n      \"junit\": {\n        \"file\": \"pytest-zero-result.xml\",\n        \"sha256\": \"3e36c9a12ca1bd3d5f291daea1bc52cb58f737ec4c299b491ba243a6d8e7ad39\"\n      }\n    }\n  }\n}\n",
+      "plan": "{\n  \"programs\": {\n    \"offset-result\": \"f37a4863e95e73177ca0d3b05ab00056b208e304453a9d0a1ac5da96cf44b072\",\n    \"reference\": \"eed2a6bd93b2503733e588dee71db46a4989d7d1b5c1ce716fa66059e10308c4\",\n    \"zero-result\": \"55080b7a9cc8cc3209bf84d86d2d796fc4a143362b002b8a64ea1c653e2fb301\"\n  },\n  \"publisher\": {\n    \"commit_sha\": \"6f67dee71de6ccda1767b8c219a93f4ae0a7ce90\",\n    \"dataset_sha256\": \"a37bcaae5fd88c978254aff5633355c7c76a324ad90b8d965f6213e522e022bf\",\n    \"evaluator_sha256\": \"0bed65d444033cd33218e3a4c75bc0b65d12b1c6fe24d8939cfe96dca255f7e3\"\n  },\n  \"pytest_cases\": [\n    \"test_subject::test_numDifferentIntegers\"\n  ],\n  \"schema_version\": 1,\n  \"subject_suite_sha256\": \"9e8696de53d250b4a148b4d09283380bdc00855f686b68e31359cee794b3a6f1\",\n  \"task_id\": 1805\n}\n",
+      "reports": {
+        "publisher.stdout": "subject.jsonl\n[1]\n1\nSyntax Correctness: 1.0\nExecutable Correctness: 1.0\nline coverage@1 1.0\nbranch coverage@1 0.9\nAverage Line Coverage: 1.0, Average Branch Coverage: 0.9\n",
+        "pytest-offset-result.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?><testsuites name=\"pytest tests\"><testsuite name=\"pytest\" errors=\"0\" failures=\"0\" skipped=\"0\" tests=\"1\" time=\"0.019\" timestamp=\"2026-11-25T21:56:49.655864+00:00\" hostname=\"5ed564280079\"><testcase classname=\"test_subject\" name=\"test_numDifferentIntegers\" time=\"0.000\" /></testsuite></testsuites>",
+        "pytest-reference.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?><testsuites name=\"pytest tests\"><testsuite name=\"pytest\" errors=\"0\" failures=\"0\" skipped=\"0\" tests=\"1\" time=\"0.018\" timestamp=\"2026-11-25T21:56:42.427552+00:00\" hostname=\"b55450b2626b\"><testcase classname=\"test_subject\" name=\"test_numDifferentIntegers\" time=\"0.000\" /></testsuite></testsuites>",
+        "pytest-zero-result.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?><testsuites name=\"pytest tests\"><testsuite name=\"pytest\" errors=\"0\" failures=\"0\" skipped=\"0\" tests=\"1\" time=\"0.018\" timestamp=\"2026-11-25T21:56:57.031721+00:00\" hostname=\"32500472ccd4\"><testcase classname=\"test_subject\" name=\"test_numDifferentIntegers\" time=\"0.000\" /></testsuite></testsuites>"
+      },
+      "verified_grade": {
+        "capture_sha256": "97b44006bc26a9036507a8ea35b189a9d1c9c084df4143d098671bb17f4e8e30",
+        "defects": {
+          "offset-result": {
+            "counts": {
+              "errors": 0,
+              "exit": 0,
+              "failures": 0,
+              "passed": 1,
+              "skipped": 0,
+              "tests": 1
+            },
+            "exit_code": 0,
+            "status": "passed"
+          },
+          "zero-result": {
+            "counts": {
+              "errors": 0,
+              "exit": 0,
+              "failures": 0,
+              "passed": 1,
+              "skipped": 0,
+              "tests": 1
+            },
+            "exit_code": 0,
+            "status": "passed"
+          }
+        },
+        "native_test_eval": {
+          "exit_code": 0,
+          "metrics": {
+            "branch_coverage": 0.9,
+            "executable_correctness": 1.0,
+            "line_coverage": 1.0,
+            "syntax_correctness": 1.0
+          },
+          "status": "measured"
+        },
+        "plan_sha256": "b31813faef6f04e3fda196c8ca99e5c1f891391bbc063591b1b8907d08c00809",
+        "reference": {
+          "counts": {
+            "errors": 0,
+            "exit": 0,
+            "failures": 0,
+            "passed": 1,
+            "skipped": 0,
+            "tests": 1
+          },
+          "exit_code": 0,
+          "status": "passed"
+        },
+        "schema_version": 1,
+        "sensitivity": {
+          "detected": 0,
+          "inconclusive": 0,
+          "planned": 2,
+          "survived": 2
+        },
+        "task_id": 1805
+      }
+    }
+  },
+  "task_id": 1805
+}

@@ -1,0 +1,148 @@
+{
+  "arms": {
+    "maintained": {
+      "go": {
+        "body-budget": true,
+        "concatenated-values": true,
+        "trailing-garbage": true,
+        "trailing-whitespace": true,
+        "valid-object": true,
+        "wrong-field-type": true
+      },
+      "node": {
+        "auth-challenge": true,
+        "auth-downstream-async": true,
+        "auth-downstream-sync": true,
+        "auth-invalid": true,
+        "auth-scheme-case": true,
+        "auth-valid": true,
+        "auth-verifier-unavailable": true,
+        "exception-provenance": true,
+        "log-context-integrity": true,
+        "post-malformed-json": true,
+        "post-schema-rejected": true,
+        "post-valid-created": true,
+        "retry-cancelled-before-start": true,
+        "retry-permanent-stop": true,
+        "retry-transient-recovery": true,
+        "zod4-error-issues": true
+      },
+      "typecheck_exit_code": 0
+    },
+    "source": {
+      "go": {
+        "body-budget": false,
+        "concatenated-values": false,
+        "trailing-garbage": false,
+        "trailing-whitespace": true,
+        "valid-object": true,
+        "wrong-field-type": true
+      },
+      "node": {
+        "auth-challenge": false,
+        "auth-downstream-async": true,
+        "auth-downstream-sync": false,
+        "auth-invalid": true,
+        "auth-scheme-case": false,
+        "auth-valid": true,
+        "auth-verifier-unavailable": false,
+        "exception-provenance": false,
+        "log-context-integrity": false,
+        "post-malformed-json": false,
+        "post-schema-rejected": true,
+        "post-valid-created": true,
+        "retry-cancelled-before-start": false,
+        "retry-permanent-stop": false,
+        "retry-transient-recovery": true,
+        "zod4-error-issues": false
+      },
+      "typecheck_exit_code": 2
+    }
+  },
+  "frozen_runtime": {
+    "dependency_lock": "benchmarks/component-controls/frontend/package-lock.json",
+    "direct_versions": {
+      "@types/react": "19.3.0",
+      "jsdom": "30.1.3",
+      "react": "19.3.1",
+      "react-dom": "19.3.1",
+      "typescript": "7.0.2",
+      "zod": "4.6.7"
+    },
+    "go_archive_sha256": "f26081f438319757f8a1b46d7d0b2c5ec7583d4038e485e0aa725cfde7885fff",
+    "go_version": "go version go1.27.3 windows/amd64",
+    "node_version": "v26.12.1",
+    "npm_version": "12.2.1",
+    "platform": "Windows x64"
+  },
+  "model_attempts": 0,
+  "native_capture_sha256": {
+    "go-telemetry-off.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "go-telemetry-off.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "go-version.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "go-version.stdout.log": "8a7482001971a0707b9cb457418796cfa6dcb3cdfcc3ff560a2f1d87635285c4",
+    "maintained-compile.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "maintained-compile.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "maintained-go-vet.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "maintained-go-vet.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "maintained-go.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "maintained-go.stdout.log": "01dae87d316bd9cbc8048f656c3eb641cf0f14de75bde736441c5afd1746c43f",
+    "maintained-node.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "maintained-node.stdout.log": "5ad140b413919903fed7fb63b18a737ecca1ff6a560d5f0a95218d193ff02749",
+    "node-version.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "node-version.stdout.log": "8414c2bd27b97e294970d0f1c728101d493b3594597935181c891c1286e1ab8c",
+    "observations.json": "c3f502664d73ef672876dfb65d43f9c2dfa94b603d28888b294757d0492fb57c",
+    "processes.json": "1b9936b26642e8649cec0e0862f98375dd2e7430d4d5043f2d36e6bb46c32843",
+    "qualification.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "qualification.stdout.log": "01e76abb6749720d90fe065ec830af009c4b0a6503161026b181f761866caaa9",
+    "source-compile.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source-compile.stdout.log": "4733550ede1adebf5b37f7db3153b370a4945c2afccec0b6297bad815416d8f0",
+    "source-go.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source-go.stdout.log": "aa0e7113bc0d825948098a0a54dd701769ae59c0104150e281e43fcafea88250",
+    "source-node.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source-node.stdout.log": "e08e0b9231318bbd7b74deb6f0a011564539f3a3ed785c8cf2f173456a994c1f"
+  },
+  "native_processes_after_cleanup": 0,
+  "observed_mismatches_against_original": [
+    "Source-bound inputs differ from published evidence"
+  ],
+  "prior_repo_revision": "61d2936a2db5f1dc0adcd1084bf1408820973af1",
+  "prior_result_sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad",
+  "schema_version": 1,
+  "scope": "Requalify the changed API guidance while retaining the recorded original raw outputs.",
+  "source_change": {
+    "current_sha256": "7111eb70b3523d0b96183625525bf737ab8a0f335ae8a101fed05148b07d4a6f",
+    "path": "included/improved/skills/api-design-current/SKILL.md",
+    "previous_sha256": "a2cc50f97199a580cfbdeb55a6ab892612387914b714dbb50f3a8740bcd64b8a"
+  },
+  "verified_current_binding": {
+    "error_count": 0,
+    "native_capture_sha256": {
+      "go-telemetry-off.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "go-telemetry-off.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "go-version.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "go-version.stdout.log": "8a7482001971a0707b9cb457418796cfa6dcb3cdfcc3ff560a2f1d87635285c4",
+      "maintained-compile.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "maintained-compile.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "maintained-go-vet.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "maintained-go-vet.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "maintained-go.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "maintained-go.stdout.log": "73616b03303f91512be64537c6c4f0769f2417ee5fd183d1b4febc1bd9ecc8bd",
+      "maintained-node.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "maintained-node.stdout.log": "5ad140b413919903fed7fb63b18a737ecca1ff6a560d5f0a95218d193ff02749",
+      "node-version.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "node-version.stdout.log": "8414c2bd27b97e294970d0f1c728101d493b3594597935181c891c1286e1ab8c",
+      "observations.json": "5f4e501967fcb0881a29ad441c219fad79c22dcb72493b23d3231646dc796547",
+      "processes.json": "1b9936b26642e8649cec0e0862f98375dd2e7430d4d5043f2d36e6bb46c32843",
+      "qualification.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "qualification.stdout.log": "01e76abb6749720d90fe065ec830af009c4b0a6503161026b181f761866caaa9",
+      "source-compile.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source-compile.stdout.log": "4733550ede1adebf5b37f7db3153b370a4945c2afccec0b6297bad815416d8f0",
+      "source-go.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source-go.stdout.log": "68c005708ac6b1b4fcb3a514fcf04f1e2e7e214c68f83bd3644df726302ce7ba",
+      "source-node.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source-node.stdout.log": "e08e0b9231318bbd7b74deb6f0a011564539f3a3ed785c8cf2f173456a994c1f"
+    },
+    "source_binding_verified": true
+  }
+}

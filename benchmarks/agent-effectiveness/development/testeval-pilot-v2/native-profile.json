@@ -1,0 +1,95 @@
+{
+  "image_reference": "docker.io/library/python@sha256:080b4f1282edb604b21e61dfca35d1d215ed6cd1c17de27ccfc34e6fadc4ee49",
+  "publisher_inputs": {
+    ".coveragerc": "20d13926587f80244fbf8425babab535e4a637c6184d28e4022ab369506aae3b",
+    "data_utils.py": "714938f0e2e4d5b1d97f36e72f3460574eea0227db93263b0cd6e38fe14f356c",
+    "eval_overall.py": "0bed65d444033cd33218e3a4c75bc0b65d12b1c6fe24d8939cfe96dca255f7e3",
+    "selected.jsonl": "d77e5dbaa3939903c54d1e6f887a3fc8876730293143f88d8ef00f538c64b232"
+  },
+  "python_environment": {
+    "machine": "x86_64",
+    "python_version": "3.14.10",
+    "resources": {
+      "memory_bytes": 536870912,
+      "tmpfs_bytes": 100663296
+    },
+    "schema_version": 1,
+    "setup_timeout_seconds": 90,
+    "wheels": [
+      {
+        "path": "wheels/coverage-7.17.5-cp314-cp314-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl",
+        "project": "coverage",
+        "sha256": "bf704353a9da00a67bc5965ba46dee91ee472a54369ebc267eeaacfe85ebc0db",
+        "version": "7.17.5"
+      },
+      {
+        "path": "wheels/iniconfig-2.3.1-py3-none-any.whl",
+        "project": "iniconfig",
+        "sha256": "9121e2c1fdb355232495be3194c8dfe87ccc2d5dee45947b78e68f499790d7a7",
+        "version": "2.3.1"
+      },
+      {
+        "path": "wheels/packaging-26.4-py3-none-any.whl",
+        "project": "packaging",
+        "sha256": "81383611a09c1bc0b08b76e0fd5829d7c6824c65b27a6aee339da133f4233ea2",
+        "version": "26.4"
+      },
+      {
+        "path": "wheels/pluggy-1.7.0-py3-none-any.whl",
+        "project": "pluggy",
+        "sha256": "7dd7b0d8832ba3cb632c306926ded123429211b83641b35dc5c41ad2d34f9bec",
+        "version": "1.7.0"
+      },
+      {
+        "path": "wheels/pygments-2.21.0-py3-none-any.whl",
+        "project": "pygments",
+        "sha256": "2363c69b61c4a97c838da3b130dcd6468f4848992b21a82f2a63ec34377137d9",
+        "version": "2.21.0"
+      },
+      {
+        "path": "wheels/pytest-9.2.0-py3-none-any.whl",
+        "project": "pytest",
+        "sha256": "07acdcf88ec174f907dc01af70bf52d49b014bbab03faeeade31c96b18c2e588",
+        "version": "9.2.0"
+      },
+      {
+        "path": "wheels/pytest_cov-7.1.0-py3-none-any.whl",
+        "project": "pytest-cov",
+        "sha256": "a0461110b7865f9a271aa1b51e516c9a95de9d696734a2f71e3e78f46e1d4678",
+        "version": "7.1.0"
+      },
+      {
+        "path": "wheels/sortedcontainers-2.4.0-py2.py3-none-any.whl",
+        "project": "sortedcontainers",
+        "sha256": "a163dcaede0f1c021485e957a39245190e74249897e2ae4b2aa38595db237ee0",
+        "version": "2.4.0"
+      },
+      {
+        "path": "wheels/tqdm-4.70.1-py3-none-any.whl",
+        "project": "tqdm",
+        "sha256": "c293e525e6fef9c20e8728fd4612df02a0aa31bb5fe91ecd93e123b1b7bffa73",
+        "version": "4.70.1"
+      },
+      {
+        "path": "wheels/pip-26.3-py3-none-any.whl",
+        "project": "pip",
+        "sha256": "f3b60b20ffaadd4415ed7957212a38ac63fa4c5fa375bd0f4a797777940fad13",
+        "version": "26.3"
+      }
+    ]
+  },
+  "schema_version": 1,
+  "selection_sha256": "5c1d2fd6edf296ab129127d5ef42f0961bc4635a5bc8086b46d83201c3a96d16",
+  "wheel_sources": {
+    "coverage": "https://files.pythonhosted.org/packages/df/6f/8343e92c0c3c51270f7ed15bb0875e04037caaa2bc415a1ab02a1662da63/coverage-7.17.5-cp314-cp314-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl",
+    "iniconfig": "https://files.pythonhosted.org/packages/56/43/4ca9e49d27a1fcf6bece6f6aec0ea46bb9112489b93d4b688fb415457bdb/iniconfig-2.3.1-py3-none-any.whl",
+    "packaging": "https://files.pythonhosted.org/packages/ba/7b/5504f91c9c2733f693d7759e50ede5d27119d4da7e5836c46d3b5ff81d56/packaging-26.4-py3-none-any.whl",
+    "pip": "https://files.pythonhosted.org/packages/07/25/ee8c38ae72d66b844ce8eb9711ba905dba21ca1a8a0c960057c41cd23337/pip-26.3-py3-none-any.whl",
+    "pluggy": "https://files.pythonhosted.org/packages/40/9e/2b38731e0fc536806f16490e1a12d7f0dc2a1235aa8cc07bcc75416a7daa/pluggy-1.7.0-py3-none-any.whl",
+    "pygments": "https://files.pythonhosted.org/packages/71/46/17f022dd3e953bf20a04a028a21ec746d942f8d2af30fa0f124fa0e6a684/pygments-2.21.0-py3-none-any.whl",
+    "pytest": "https://files.pythonhosted.org/packages/51/39/1f5d8c8877a0fa327db959c19341d4be61660de1ab6b7391f9eb805bcd67/pytest-9.2.0-py3-none-any.whl",
+    "pytest-cov": "https://files.pythonhosted.org/packages/9d/7a/d968e294073affff457b041c2be9868a40c1c71f4a35fcc1e45e5493067b/pytest_cov-7.1.0-py3-none-any.whl",
+    "sortedcontainers": "https://files.pythonhosted.org/packages/32/46/9cb0e58b2deb7f82b84065f37f3bffeb12413f947f9388e4cac22c4621ce/sortedcontainers-2.4.0-py2.py3-none-any.whl",
+    "tqdm": "https://files.pythonhosted.org/packages/a7/03/921a3d3c75785aca9ebfbfcabfbc3a1be12e2ab5265deb026d55a5a3f83e/tqdm-4.70.1-py3-none-any.whl"
+  }
+}

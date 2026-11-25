@@ -330,31 +330,51 @@ model-free grader controls. The schedule establishes the assignments alone.
 Native execution still requires the declared model, subject runtime, independent
 grader and trial qualification. [Frozen selection](../benchmarks/agent-effectiveness/development/testeval-pilot-v2/selection.json) · [Publisher](https://github.com/LLM4SoftwareTesting/TestEval)
 
-#### Grade public TestEval captures
+#### Capture and grade public TestEval submissions
 
 Freeze the task, exact publisher inputs, prepared defect programs, and grading
 rules before the attempt. Verify that each prepared defect changes a known
 behavior on admissible input. After collecting a submission, bind its suite
-digest and expected pytest case IDs to the controller's grade plan. Collect
-the native publisher stdout and independent JUnit outputs in isolated
-processes. Keep plans, expected outcomes and captures outside subject access.
+digest and expected pytest case IDs to the controller's grade plan. Keep plans,
+expected outcomes and captures outside subject access.
+
+On a Windows x64 development host with an admitted local Linux x64 Docker
+engine, prepare the input cache and run the collector on a reviewed development
+suite. Use the schema-1 runtime declaration with the image pinned for this pilot.
+[TestEval profile](../benchmarks/agent-effectiveness/development/testeval-pilot-v2/native-profile.json) · [Runtime declaration](native-benchmark-controller.md)
 
 ```powershell
-python tools/grade_testeval_submission.py --plan plan.json --capture capture.json
+./dev.ps1 python tools/prepare_testeval_inputs.py --output .venv/testeval/assets
+./dev.ps1 python tools/collect_testeval_submission.py --plan plan.json --suite suite.py `
+    --defects defects --assets .venv/testeval/assets --runtime runtime.json --output .venv/testeval/run-001
 ```
 
-The command verifies captured bytes and reconciles publisher inputs, program
-and suite identities, case outcomes and native exits. Save its JSON output
-and pass it back with `--check result.json` to verify an existing grade.
-An incorrect reference result leaves sensitivity unmeasured. A skipped,
-failed-to-start or interrupted defect run remains visible in the planned
-count. The publisher's metrics keep their original scale.
+Preparation downloads missing publisher files and wheels, verifies their
+digests and retains only the selected public programs. Each publisher and
+pytest stage gets a fresh, bounded container with network disabled. Supply each
+prepared defect as `defects/<variant>.py`. The collector writes native reports,
+an outcome for every planned stage, and `grade.json` to a new ignored directory.
+Exit 1 means a measurement is incomplete. Exit 2 means collection could not
+start or finalize.
 
-The grade consumer reads captured reports. Admission for a model study
-still requires a qualified launcher, a protected collector and independent
-defect witnesses for the frozen study. The current qualification uses 12
-public tasks and zero model attempts.
-[Grader qualification](../artifacts/research/2026-11-25/testeval-pilot-grading/review.json)
+Recheck a capture without launching a container.
+
+```powershell
+./dev.ps1 python tools/grade_testeval_submission.py --plan .venv/testeval/run-001/plan.json `
+    --capture .venv/testeval/run-001/capture.json --check .venv/testeval/run-001/grade.json
+```
+
+The grade reconciles publisher inputs, program and suite identities, case
+outcomes, and native exits. An incorrect reference result leaves sensitivity
+unmeasured. A skipped, missing, or interrupted defect remains in the planned
+count. TestEval's coverage measures code execution and can match even when
+assertions check different behavior. The independent pytest outcomes measure
+whether the suite passes on the reference and detects each prepared defect.
+
+Admission for a model study still requires a qualified launcher, protected
+submission handoff, and independent defect witnesses for the frozen study.
+The earlier grading qualification spans 12 public tasks and zero model attempts.
+[Grader qualification](../artifacts/research/2026-11-25/testeval-pilot-grading/review.json) · [Collector qualification](../artifacts/research/2026-11-25/testeval-native-collector/review.json)
 
 ## Success criteria and reporting
 

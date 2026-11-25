@@ -1,0 +1,45 @@
+{
+  "baseline_plan_change": [
+    [
+      "a",
+      "b"
+    ],
+    [
+      "b",
+      "a"
+    ]
+  ],
+  "baseline_same_plan": [
+    [
+      "a",
+      "b"
+    ],
+    [
+      "c",
+      "d"
+    ]
+  ],
+  "calendar_verified_date": "Thu, 01 Jan 2026 00:00:00 GMT",
+  "example_http_date": "Sat, 01 Jan 2026 00:00:00 GMT",
+  "sqlite": "3.50.4",
+  "unique_cursor_order_after_insertion": [
+    [
+      "d",
+      "c"
+    ],
+    [
+      "b",
+      "a"
+    ]
+  ],
+  "unique_offset_order_plan_change": [
+    [
+      "d",
+      "c"
+    ],
+    [
+      "b",
+      "a"
+    ]
+  ]
+}
