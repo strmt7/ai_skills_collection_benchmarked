@@ -248,6 +248,24 @@ job before collecting its submission. Incomplete turns, resource-limit failures 
 invalid captures retain an error with no score. A completed capture enters the
 original Linux verifier and scorer, preserving their score and denominator.
 
+### Native TestEval handoff
+
+The TestEval adapter reconstructs the frozen public task in a fresh workspace
+outside the checkout. It verifies the starting capture before launch and
+accepts a submission after the owned native job closes and a single turn
+completes. The controller records missing output, invalid test data, extra
+workspace edits and interrupted execution separately. A valid `tests.json`
+is sealed with its exact bytes and passed to the existing TestEval collector.
+
+Seven controls exercised this route using the official Codex CLI and a
+deterministic local peer. A completed tool wrote the passing submission while
+the grader-only canary stayed inaccessible. The other six controls produced
+no grade. A failed tool call inside an exit-zero turn was recorded as a
+missing submission. Live model admission remains a separate gate.
+[Native controls and reproduction](../artifacts/research/2026-11-26/testeval-native-subject/review.json)
+
+### Software repair plans
+
 A schema-1 plan declares `id`, `partition`, `condition`, `model`,
 `reasoning_effort`, `time_limit_seconds`, `provider`, `baseline_collection`,
 `task`, `prompt`, `interventions`, `subject_runtime`, `grader_runtime` and

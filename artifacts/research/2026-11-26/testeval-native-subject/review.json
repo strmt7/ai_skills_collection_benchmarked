@@ -1,0 +1,49 @@
+{
+  "artifacts": {
+    "native-controls.json": "72045119a7de4c16f15ca3677f3d47c995b3b4960ba619df1b5597afdf776996",
+    "reproduce.py": "98b22f8b6d225d22c9ba9f6675adca4f9d3e771a1bb9e541bed2af491b36ef88"
+  },
+  "base_revision": "2425128344d5d4c5feadf3c0fc209c73f1858135",
+  "context_scope": "Current source-bound native context-only qualification",
+  "execution_sources_sha256": {
+    "tools/_scripted_tool_control.py": "ad1a5b57b44fdf54f6abeafb43fb56c40c7cf2edcf708729966f3b4a9d47034f",
+    "tools/_testeval_subject.py": "14def19786a90c3ee84e5608d08b618ef10e365393cb34f09c9df69e56959a09",
+    "tools/_trial_collection.py": "5c2388bc3a2a361c4ee0a4465e73745651eb87c0baaa91066f0afc33874cb5e0",
+    "tools/_trial_context.py": "9644724991b501d404762f4b5785d151c6fba460614128e4eac39eeed7255418",
+    "tools/_windows_trial_process.py": "ab73c62bb12bb9e255bc321694860168b1cf9f555ffa3c589192ec0ac08aa9e2",
+    "tools/collect_testeval_submission.py": "a2379d8adcb82de53096bac75eaf11b4ee16c02822770d8d355e12ca9ad46b6a",
+    "tools/grade_testeval_submission.py": "94db6bea22c03a00939ad2a9317e89f84e4446156ae6c34d120ea9906a0459c0",
+    "tools/qualify_trial_context.py": "ae469282ad93d111e26b0f89340e45c2e040736c896bbeabeaf3da3e94ba2b99",
+    "tools/run_agent_trial.py": "fb82cb8fcf3c6ec04745269549c4039e90338a8ad15a9a8aaa6ec4f04acd4f16",
+    "tools/transfer_benchmark_submission.py": "aa8abf2156e2274200360465dc8bf7b36e7218f7843c2682fe0d6d34414c6faa"
+  },
+  "observations": {
+    "controls": 7,
+    "incomplete_or_ineligible": 6,
+    "model_attempts": 0,
+    "native_grader_stages_closed": 4,
+    "sealed_and_graded": 1
+  },
+  "official_authentication_research": {
+    "native_result_sha256": "693ea27f70364de076629822ae0ba1ab80b9c914981d8e6315c9cb27a82811d2",
+    "native_url": "https://learn.chatgpt.com/docs/auth?surface=app",
+    "provider_version": "0.9.6+catalog.portable1",
+    "status_code": 200
+  },
+  "official_cli_version": "0.172.0",
+  "remaining": "Separate live signed-in admission must verify an instruction-clean profile, the requested model and effort, real inference transport and the matched schedule.",
+  "retained_failed_control": {
+    "cause": "The initial control used a .NET method disallowed by native PowerShell Constrained Language.",
+    "cli_exit": 0,
+    "correction": "Supported file cmdlets with a verified native tool exit and exact resulting file bytes.",
+    "sha256": "dbb564e06733663aebfc48beabfef034c4639c18a912cc9e996c9a41c8c0b544",
+    "tool_exit": 1
+  },
+  "schema_version": 1,
+  "scope": "Owned Windows Codex CLI process, completed native turn, exact file capture and sealed TestEval handoff.",
+  "source_sha256": {
+    "docs/native-benchmark-controller.md": "e86a7e3b0998a17a6b2a59d1cb4dfd4072deb1ab797a61ce924c4a4fb950df18",
+    "tests/test_testeval_subject_handoff.py": "703390d026514ce89495dbc1af7aafcc4b7a0b726ecc833a7a948f709622c05a",
+    "tools/_testeval_subject.py": "14def19786a90c3ee84e5608d08b618ef10e365393cb34f09c9df69e56959a09"
+  }
+}

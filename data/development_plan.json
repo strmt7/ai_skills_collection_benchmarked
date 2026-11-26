@@ -83,7 +83,7 @@
         "R9",
         "R12"
       ],
-      "next_action": "Retain the passing current scripted Windows packaging boundary and the failed Qwen3 1.7B live tool/artifact probe. Its completed turn and executed command establish a native observation, while the expected artifact was absent. Qualify the signed-in GPT-6.1 Sol high route in a clean owned context. Each supplementary route needs its own source, identity, collection and scoring evidence.",
+      "next_action": "Use the verified native Codex-to-TestEval handoff and retained Packaging controls. Qualify an instruction-clean signed-in profile for GPT-6.1 Sol high and bind observed model identity and effort before admission. Connect the admitted route to the frozen 36-slot TestEval schedule. Keep the failed local Qwen artifact probe in its recorded scope and qualify supplemental routes separately.",
       "deliverables": [
         "Maintained qualification entrypoint and frozen input assets",
         "Provider/model identity and capability admission",
@@ -166,6 +166,11 @@
           "path": "artifacts/research/2026-11-14/bootstrap-command-resources/review.json",
           "sha256": "5386596e9fda519f44eca8e890f79eb278a190216acbd5ee5758f0156203b5a0",
           "scope": "190 focused tests; paired source-bound enclosing-limit controls; refreshed eleven native and seventeen context controls. Metadata-only backend check passed; corrected-enclosure generation and comparative efficacy remain unverified."
+        },
+        {
+          "path": "artifacts/research/2026-11-26/testeval-native-subject/review.json",
+          "sha256": "2355cd7a40ab0fb9eb13be17c834e8c0218cd94906de72e5601f349784c814aa",
+          "scope": "Seven source-bound native CLI controls, one sealed publisher and companion grade, six ungraded outcomes, and zero model attempts."
         }
       ]
     },

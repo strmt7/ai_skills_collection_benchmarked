@@ -352,7 +352,6 @@
         "sha256": "19bebf91660608a9885a715603cf171e6763314f63d57cbbf452a7512880dfe7"
       },
       "sources": [
-        "docs/native-benchmark-controller.md",
         "tests/test_trial_account_readiness.py",
         "tools/_trial_account_readiness.py",
         "tools/_trial_context.py"
@@ -589,6 +588,18 @@
       },
       "sources": [
         "included/improved/skills/tdd-workflow-current/SKILL.md"
+      ]
+    },
+    {
+      "id": "testeval-native-codex-subject-handoff",
+      "review": {
+        "path": "artifacts/research/2026-11-26/testeval-native-subject/review.json",
+        "sha256": "2355cd7a40ab0fb9eb13be17c834e8c0218cd94906de72e5601f349784c814aa"
+      },
+      "sources": [
+        "docs/native-benchmark-controller.md",
+        "tests/test_testeval_subject_handoff.py",
+        "tools/_testeval_subject.py"
       ]
     }
   ],
@@ -1023,6 +1034,7 @@
       },
       "superseded_sources": [
         "docs/improvement-plan.md",
+        "docs/native-benchmark-controller.md",
         "tests/test_trial_signin.py",
         "tools/_trial_signin.py"
       ]
