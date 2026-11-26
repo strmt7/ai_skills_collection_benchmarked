@@ -67,6 +67,7 @@ Start here:
 - [Host-agnostic installation](docs/installation.md)
 - [Agent consumability checklist](docs/agent-consumability.md)
 - [Contributing guide](CONTRIBUTING.md)
+- [Continue development from GitHub or Codex Cloud](docs/development-handoff.md)
 - [Changelog](CHANGELOG.md)
 
 For local validation on Windows x64, run:
