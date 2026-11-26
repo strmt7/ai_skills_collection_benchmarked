@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-26",
+  "scope": "Windows x64 reproduction, automatic installation, live cross-root search, stale source rejection and preserved earlier provider.",
+  "source_sha256": {
+    "toolchains/cocoindex-code/CATALOG_BUILD_NOTICE.txt": "b42d14d16771724123ad2009f9044d4764f77513b266dbd4b22041e1558673be",
+    "toolchains/cocoindex-code/README.md": "5e5201b84da0c93e3d65adb8e72392b44fbc3f9fa08e0b950cc43def35957383",
+    "toolchains/cocoindex-code/requirements.txt": "d2037e6467d1c50cd2b788f6b5142f34cbb255a636291f5d9ddd34a8972d67a8",
+    "toolchains/cocoindex-code/source.json": "72d1dc1a2f8e7a19ae7f83d7b5ed3125cdf10952d4e90b72fb1903eaa9610616"
+  },
+  "artifacts": {
+    "observations.json": "6e66fc9959e74cf758a73292e240bb80dd47ec8d0d1a591268286ea900c3cc8e"
+  }
+}

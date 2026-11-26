@@ -83,7 +83,7 @@
         "R9",
         "R12"
       ],
-      "next_action": "Use the verified native Codex-to-TestEval handoff and retained Packaging controls. Qualify an instruction-clean signed-in profile for GPT-6.1 Sol high and bind observed model identity and effort before admission. Connect the admitted route to the frozen 36-slot TestEval schedule. For a separate Gemma 4 local study, qualify the public native grader handoff when the frozen host-memory threshold permits a trial. Retain earlier local setup and task failures.",
+      "next_action": "Qualify an instruction-clean signed-in profile for GPT-6.1 Sol high and bind observed model identity and effort before admission to the frozen 36-slot workspace study. Maintain the workspace submission contract and its two unscored local delivery failures. Prospectively freeze a separate single-turn final-message TestEval lane using the original publisher prompt and grader, then qualify it on a fresh development task before any counted trials.",
       "deliverables": [
         "Maintained qualification entrypoint and frozen input assets",
         "Provider/model identity and capability admission",
@@ -176,6 +176,11 @@
           "path": "artifacts/research/2026-11-26/local-model-calibration/review.json",
           "sha256": "41eb8627ec3e150c92db6b4dfd692de2812805d0e686a31d6d17ddc21bc81e51",
           "scope": "Unscored local model tool control passed with an exact retained artifact. The initial output-removal failure, cold memory stop and public TestEval admission stop are retained."
+        },
+        {
+          "path": "artifacts/research/2026-11-26/testeval-delivery-routes/observations.json",
+          "sha256": "6e2c7d286704e4d8d263177cabbc34266dc9bea0d0bbf23f4cd651f08fef0660",
+          "scope": "Two real local runs produced no workspace submission. Byte-exact native final-message delivery passed an authored fixture, the original grader, and two independent defect checks. No model comparison was scored."
         }
       ]
     },
@@ -489,7 +494,7 @@
         "R9",
         "R12"
       ],
-      "next_action": "Track exact-head acceptance and Dependabot dispositions for the qualified Next.js, Vaex and image CLI consumer graphs. Resolve the remaining dependency families through their actual producers and preserve immutable earlier inputs. Complete stable graphs, isolated setup and distribution qualification. Keep the held scanner findings visible.",
+      "next_action": "Track exact-head hosted acceptance for the qualified CocoIndex Code 0.2.44 Windows CPU build, public-page Crawl4AI capture policy, and source-bound coverage. Qualify remaining incompatible or untested dependency graphs through their actual producers. Verify isolated fresh, resumed and relocated setup, with attention to bootstrap write costs and automatic recovery. Preserve earlier evidence and keep held scanner results visible.",
       "deliverables": [
         "Fresh-cache and recovery qualification",
         "Workflow-to-source trigger map",
@@ -554,6 +559,16 @@
         {
           "path": "artifacts/research/2026-11-25/dependency-consumer-controls/review.json",
           "sha256": "86105ef6edb788548a19d807229c0e4a4e002d7d5545959c2f5c534b89d767cc"
+        },
+        {
+          "path": "artifacts/research/2026-11-26/cocoindex-0244-managed-native/review.json",
+          "sha256": "8ac0ca60d596119579d6e8ac65efad5a55424bafaf817c84f449b593d7dcef63",
+          "scope": "Windows x64 reproduction, automatic installation, live cross-root search, stale source rejection and preserved earlier provider."
+        },
+        {
+          "path": "artifacts/research/2026-11-26/crawl4ai-public-page-policy/review.json",
+          "sha256": "9c1214617d96045515507a5cf775316464242d0335f5ba206e9c11d81cb383f9",
+          "scope": "Native public HTTPS captures through the Windows frontend and an owned browser fixture for robots advice and HTTP 403."
         }
       ]
     },

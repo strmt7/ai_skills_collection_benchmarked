@@ -1,4 +1,4 @@
-Catalog-maintained local CPU provider based on CocoIndex Code 0.2.43.
+Catalog-maintained local CPU provider based on CocoIndex Code 0.2.44.
 Original project: https://github.com/cocoindex-io/cocoindex-code
 License: Apache-2.0; original LICENSE and notices remain included.
 Changes: static downstream version, omit the unused cloud embedding dependency,

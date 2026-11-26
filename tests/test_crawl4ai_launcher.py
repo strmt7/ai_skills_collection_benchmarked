@@ -324,5 +324,40 @@ def test_live_browser_policy_rejects_hidden_automation_sandbox_bypass_and_foreig
         assert native["success"] and observations[0]["navigator_webdriver"] is True
         assert observations[0]["browser_processes"] == 1 and observations[0]["forbidden_flags"] == []
     assert settings["enable_stealth"] is False and settings["ignore_https_errors"] is False
-    assert settings["check_robots_txt"] is True and settings["max_retries"] == 0
+    assert settings["check_robots_txt"] is False and settings["max_retries"] == 0
     assert settings["fallback_fetch_function"] is None and settings["extraction_strategy"] is None
+
+
+@pytest.mark.parametrize(("http_status", "exit_code"), [(200, 0), (403, 1)])
+def test_public_capture_keeps_native_status_without_automatically_admitting_content(
+    tmp_path, monkeypatch, http_status, exit_code
+):
+    url = "https://example.org/public"
+    content = {
+        "url": url,
+        "status_code": http_status,
+        "success": True,
+        "markdown": {"raw_markdown": "Substantive extracted page content. " * 4},
+    }
+
+    async def result(requested_url, provider_home):
+        assert requested_url == url and provider_home == tmp_path
+        return content, [{"navigator_webdriver": True}]
+
+    monkeypatch.setattr(capture, "capture", result)
+    monkeypatch.setattr(capture, "admit_sources", lambda: {"version": "test", "runtime_files": []})
+    monkeypatch.setenv("CRAWL4AI_CHROMIUM_SANDBOX", "true")
+    native = tmp_path / "capture.json"
+    metadata = tmp_path / "metadata.json"
+
+    assert (
+        capture.main(["--url", url, "--output", str(native), "--metadata", str(metadata), "--home", str(tmp_path)])
+        == exit_code
+    )
+    assert json.loads(native.read_bytes()) == content
+    report = json.loads(metadata.read_bytes())
+    assert report["status_code"] == http_status
+    assert report["native_result_sha256"] == hashlib.sha256(native.read_bytes()).hexdigest()
+    assert report["strict_policy"]["robots"] is False
+    assert report["eligible_for_scope_review"] is (http_status == 200)
+    assert report["scope_reviewed"] is False

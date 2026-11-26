@@ -1,4 +1,4 @@
-"""Capture one native Crawl4AI result using the admitted strict browser policy.
+"""Capture one native Crawl4AI result using the admitted public-page browser policy.
 
 This product includes software developed by UncleCode (https://x.com/unclecode)
 as part of the Crawl4AI project (https://github.com/unclecode/crawl4ai).
@@ -19,6 +19,7 @@ from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 AGENT = "AI-Skills-Research/0.9.6 (+https://github.com/strmt7/ai_skills_collection_benchmarked)"
+CHECK_ROBOTS_TXT = False
 
 
 def admit_sources() -> dict[str, Any]:
@@ -88,7 +89,7 @@ async def capture(url: str, home: Path) -> tuple[dict[str, Any], list[dict[str, 
         accept_downloads=False,
     )
     run = CrawlerRunConfig(
-        check_robots_txt=True,
+        check_robots_txt=CHECK_ROBOTS_TXT,
         page_timeout=45000,
         cache_mode=CacheMode.BYPASS,
         verbose=False,
@@ -170,7 +171,7 @@ def main(argv: list[str] | None = None) -> int:
         "capture_implementation_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         "browser_observations": observations,
         "strict_policy": {
-            "robots": True,
+            "robots": CHECK_ROBOTS_TXT,
             "tls_verification": True,
             "sandbox": True,
             "stealth": False,

@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-26",
+  "evidence_class": "native public-page launcher and owned browser fixture controls",
+  "provider_version": "0.9.6+catalog.portable1",
+  "capture_implementation_sha256": "e86ed1d85d0b6f86eabe9d5b5717875d0bd4869b244eb58581d2437ca9da316d",
+  "public_capture_robots_check": false,
+  "source_review_required": true,
+  "normal_frontend": [
+    {
+      "url": "https://github.com/cocoindex-io/cocoindex-code/releases/tag/v0.2.44",
+      "http_status": 200,
+      "capture_exit_code": 0,
+      "navigation_error": null,
+      "native_sha256": "d4267cd771e71e6ba744ac73e61e31b99cc3650db3c1b8457c0bda369f33fb43",
+      "metadata_sha256": "01be9b04f2016d8d20c95c8769c0591017359d3014562cacca4b24721202a112",
+      "process_sha256": "44956892218d2050fa8f8283504a40cc3a3073c6ad06a2a81cace72fe23530b6",
+      "eligible_for_scope_review": true
+    },
+    {
+      "url": "https://httpbin.org/status/403",
+      "http_status": null,
+      "capture_exit_code": 1,
+      "navigation_error": "ERR_HTTP_RESPONSE_CODE_FAILURE",
+      "native_sha256": "940310bb797e3c7e8c45b262c7a54bb9abcbd90daa90d87c370b7b3e4f679686",
+      "metadata_sha256": "d139ce700d4e95f1f34e2757844344eb8b955dba824136855ba619c741da572b",
+      "process_sha256": "d9a14892cc746866f4daf4b3e77459b9a3428fdd2724833cce110c181f09594b",
+      "eligible_for_scope_review": false
+    },
+    {
+      "url": "https://httpstat.us/403",
+      "http_status": null,
+      "capture_exit_code": 1,
+      "navigation_error": "ERR_EMPTY_RESPONSE",
+      "native_sha256": "0da2d41a3ce34e40200a5807bdd089ebbbfac13e1e654591f944c87d970729df",
+      "metadata_sha256": "dfff5f9cc5fef9e10570120477ed54085e800e72fa5a7e2cb1eff3d638fc9e26",
+      "process_sha256": "239df8c88dc468bcca11f845b6863d9e830b679284b1bb208e01c4f00995ce60",
+      "eligible_for_scope_review": false
+    }
+  ],
+  "loopback_controls": {
+    "cases": [
+      {
+        "case": "public",
+        "resource": "/public-doc",
+        "http_status": 200,
+        "capture_exit_code": 0,
+        "native_sha256": "b01d2b62a80408066fd6dc1febe5b914e5847cb03ffb83abca406e12d3fedc7b",
+        "metadata_sha256": "34c19ca39e05ad36a02c54d09cf97d485469a75960969160d3a137c80cdf178b",
+        "eligible_for_scope_review": true
+      },
+      {
+        "case": "denied",
+        "resource": "/denied",
+        "http_status": 403,
+        "capture_exit_code": 1,
+        "native_sha256": "266a79701cf163ca9c9e8cde51f4a84e8621bf1288adf7ba7472eb43464019cb",
+        "metadata_sha256": "1d2ca3083602287722f14c3eee38723837ded164375d1bd1e041ea5b36a978fe",
+        "eligible_for_scope_review": false
+      }
+    ],
+    "robots_txt_disallows_public_fixture": true,
+    "robots_requests": 0,
+    "fixture_listener_closed": true,
+    "test_only_loopback_url_admission": true
+  },
+  "fixture_receipt_sha256": "9cd815a633caf4491267cdaeb9f9756aa66cc8cc4afa9d6418c7cdf5a1626393",
+  "fixture_process_sha256": "2fcfd7bcb634c649b8752ccfd67dd68fbdc2a7bc280de1f9382f13aaaee496ec",
+  "initial_synthetic_enclosure_stop": {
+    "termination_reason": "write_io_limit",
+    "write_io_limit_bytes": 536870912,
+    "process_sha256": "67a792a202bccec29f8274338fccdbd025bb5ef4c6d7715ffbcfbc90aae8e94d",
+    "active_children_after_cleanup": 0
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-26",
+  "scope": "Native public HTTPS captures through the Windows frontend and an owned browser fixture for robots advice and HTTP 403.",
+  "source_sha256": {
+    ".agents/skills/crawl4ai-research/SKILL.md": "22e9b789ceeb32a55b65e28da0f34c99dc9ee526cbb6dda8512159bd60393f5d",
+    "docs/agent-tools.md": "e576aca184a274bcf80533a522cbc83f024a3359986593032e1a330f485134f5",
+    "tests/test_crawl4ai_launcher.py": "bb3758d3ddad5d661ece62a8cdba2ff17b16bcce69d3d1f1715c73134cccec74",
+    "toolchains/crawl4ai/README.md": "f333334bd0bd9ac5b1cb28b40fa8c8b617178adf0c12e52fc7c7454581ec81cd",
+    "tools/crawl4ai_capture.py": "e86ed1d85d0b6f86eabe9d5b5717875d0bd4869b244eb58581d2437ca9da316d"
+  },
+  "artifacts": {
+    "observations.json": "83c7bff5812e6aa068a903f5d2f5a6358b076939351a320f658891fa5a17d04d"
+  }
+}

@@ -23,8 +23,9 @@ API, stream, package and archive captures retain their native transports.
 Read the selected provider's installation, version, dependency and cache rules.
 Configure its path and compatible interpreter explicitly. Reuse an admitted
 hash-locked environment; never silently install unpinned extras or alter another
-task's provider. Use the native headless CLI or public API with robots checks,
-no external LLM, no personal profile, no stealth or challenge bypass.
+task's provider. Use the native headless CLI or public API with an isolated
+profile and external LLM and stealth disabled. Treat `robots.txt` as advisory
+for public pages. Honor access denials and browser challenges.
 
 Before invocation, select the research question, exact URL, bounded page timeout
 and new output destination. Keep captures outside Git until reviewed. Retain the

@@ -108,9 +108,10 @@ and three official pages were captured with the repaired provider. These local
 records do not constitute hosted browser qualification. This provider's
 qualified target remains Windows x64.
 
-Strict research uses robots checks, TLS verification, Chromium sandbox opt-in,
-`enable_stealth=False`, an identifying user agent, no personal/persistent profile,
-no external LLM, no retry or fallback, and bounded deadlines. A live check must
+Public-page captures treat `robots.txt` as advisory and honor HTTP access denials.
+Captures use TLS verification, Chromium sandbox opt-in, `enable_stealth=False`,
+an identifying user agent, a temporary profile and bounded deadlines. The launcher
+disables external LLMs, retries and fallback. A live check must
 show `navigator.webdriver === true` and no automation-hiding flags. Setting a
 configuration boolean alone did not establish this in the unmodified package.
 Do not launch the optional stealth mode during research; CI only checks its

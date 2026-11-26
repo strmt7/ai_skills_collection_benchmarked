@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-26",
+  "evidence_class": "native Windows x64 toolchain qualification",
+  "publisher_version": "0.2.44",
+  "publisher_maturity": "Alpha",
+  "cocoindex_core_version": "1.0.26",
+  "upstream_source_sha256": "1e82bdb96e7f5d7571fe3fcbbcff21746e4636f02dd4967f2d82f5e389956688",
+  "source_date_epoch": 1795628541,
+  "matching_wheel_builds": 2,
+  "matching_wheel_path_classes": [
+    "path with spaces",
+    "path with spaces and Unicode"
+  ],
+  "qualified_wheel_sha256": "1862155df5d576043ea589747e752cf05cbd6962ac9db8e66c6004cae35e5752",
+  "original_license_unchanged": true,
+  "ordinary_frontend": {
+    "version": "0.2.44+catalog.local1",
+    "wheel_sha256": "1862155df5d576043ea589747e752cf05cbd6962ac9db8e66c6004cae35e5752",
+    "provider_source_files": 23,
+    "all_admitted_source_files": 126,
+    "runtime_distributions": 76,
+    "model_files": 11,
+    "normal_checkout_frontend": true,
+    "fresh_managed_install": true,
+    "managed_cache_reused": true,
+    "cross_root_semantic_search": true,
+    "stale_source_rejected": true,
+    "restored_index_admitted": true,
+    "verified_source_spans": 2,
+    "first_result": "src/invoice.py",
+    "peak_job_memory_bytes": 1153961984,
+    "child_commands": 5,
+    "active_children_after_cleanup": 0,
+    "synthetic_fixture": true,
+    "agent_efficacy_scored": false,
+    "isolated_lease_removed": true
+  },
+  "previous_managed_installation_intact": true,
+  "qualification_receipts": {
+    "build_reproduction_sha256": "6a1cbe6abd0d57dfedf4fac5dd0eefdd9f2c9331ac58b1fac8dd113cf3af18d4",
+    "install_sha256": "3d98d40dedaea6b19d4e398bdae2c325b5fab10ffb34cdf4a264e135fd7cd953",
+    "successful_search_sha256": "ba8ccda41737f7184bf6d042fb53f9db84fdc616df733cdebdd3181f4cb9181d",
+    "stale_search_sha256": "4666b1dea4829f55f38349257366c0292906c1780d62531f05cebe901684bf50",
+    "process_sha256_by_phase": {
+      "install": "0b434b6f1e5d1e445235c2e3b4840b6151bcf243c553a5003b5f9ba863aba8c7",
+      "index": "c289fa5485483a98903a00884a7cc4287f3235d659faea473647d75bca3dfe90",
+      "search": "655a375428045c00a7e623af91bc2db94b34cc53c2a40999c895e0366c0f542e",
+      "stale": "394ed14dd4ae17a6d4b10758f78267c0df3358f959cf17790c16bcdc34bc15ff",
+      "verify-existing-index": "55005a9a1707c44b1f1895891885c3afdb10e925ddbc03aa4eb735cf1b3c1bb2"
+    }
+  },
+  "publisher_release_evidence_sha256": "d4267cd771e71e6ba744ac73e61e31b99cc3650db3c1b8457c0bda369f33fb43"
+}

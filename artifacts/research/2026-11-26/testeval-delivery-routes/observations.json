@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-26",
+  "evidence_class": "unscored public TestEval readiness and model-free native transport",
+  "preobserved_development_task": 685,
+  "workspace_delivery_requires": "tests.json",
+  "workspace_model_attempts": [
+    {
+      "model": "qwen3:4b",
+      "independently_counted": false,
+      "workspace_outcome": "missing_submission",
+      "tool_executions": 0,
+      "transcript_sha256": "6183bf1b3a48574892f1344a8b85ecc144ff64df7c9f86079b41f648310e28ef",
+      "process_sha256": "7f9c77af5125077a808904f2c9e590cc25c5307abbb58e1814d2cf536e533e4d",
+      "actual_subject_seconds": 153.117,
+      "reply_utf8_bytes": 27,
+      "reply_sha256": "a032868adcdef6ba66d7d579f3113ff70e1ed431d3f541bbced76323789ed7af",
+      "message_shape": {
+        "directly_compileable_python": true,
+        "top_level_test_functions": [],
+        "json_string_list": true
+      },
+      "grade": null
+    },
+    {
+      "model": "gemma4:12b-it-qat",
+      "independently_counted": false,
+      "workspace_outcome": "missing_submission",
+      "tool_executions": 0,
+      "transcript_sha256": "bbdac287798a356c68d43cd85eb56e3cd3c4697d6fae327c03f6a760355ad773",
+      "process_sha256": "b676c48ce811ad4ddcc17c266ff64b687598619a8eb60af473e44297898f4c4d",
+      "actual_subject_seconds": 203.659,
+      "reply_utf8_bytes": 177,
+      "reply_sha256": "487872860bf2df458373fccee83bd0a838a4b0cec17dc2fb54cdcb8c47a9a68b",
+      "message_shape": {
+        "directly_compileable_python": false,
+        "top_level_test_functions": [],
+        "json_string_list": false
+      },
+      "grade": null
+    }
+  ],
+  "resource_closure": [
+    {
+      "model": "qwen3:4b",
+      "shared_weight_links_verified": 1,
+      "owned_native_job_closed": true
+    },
+    {
+      "model": "gemma4:12b-it-qat",
+      "shared_weight_links_verified": 2,
+      "owned_native_job_closed": true
+    }
+  ],
+  "extraction_controls": {
+    "byte_exact_positive": true,
+    "rejected_negative_cases": [
+      "duplicate_completed_turn",
+      "duplicate_thread",
+      "empty_final_reply",
+      "failed_job",
+      "incomplete_turn",
+      "leaked_process",
+      "narration_before_last_tool",
+      "reasoning_and_tool_only"
+    ]
+  },
+  "native_final_message_control": {
+    "evidence_class": "native model-free final-message delivery control",
+    "model_attempts": 0,
+    "comparative_attempts": 0,
+    "task_id": 685,
+    "authored_suite_sha256": "3cbf1032d302375b7e6eb3e3b6fb5541e27dccc7ac7b2aabcbaba0d0ad20bf02",
+    "native_reply_sha256": "3cbf1032d302375b7e6eb3e3b6fb5541e27dccc7ac7b2aabcbaba0d0ad20bf02",
+    "transcript_sha256": "af0735de73950cda3e3868f650d3058b5c48367b1d3e1d8fa45185759fccfd94",
+    "native_process_sha256": "5ed1b7c000dd5ed9785ac2ff7c60456bd716bcdde6ca0a12bdeb4485a97d3df5",
+    "reply_item": "item_1",
+    "original_evaluator_sha256": "0bed65d444033cd33218e3a4c75bc0b65d12b1c6fe24d8939cfe96dca255f7e3",
+    "original_user_template_sha256": "1a35679ff4ce7549759dc79b65efe3d9779fa2a9743fb8576de43bad37987a02",
+    "request_count": 1,
+    "byte_exact_final_message": true,
+    "subject_workspace_closed": true,
+    "publisher_result": {
+      "status": "measured",
+      "exit_code": 0,
+      "metrics": {
+        "syntax_correctness": 1.0,
+        "executable_correctness": 1.0,
+        "line_coverage": 0.9767441860465116,
+        "branch_coverage": 0.8461538461538461
+      }
+    },
+    "reference": "passed",
+    "sensitivity": {
+      "detected": 2,
+      "survived": 0,
+      "inconclusive": 0,
+      "planned": 2
+    },
+    "grader_leases_closed": 4,
+    "agent_efficacy_claim": false
+  },
+  "prospective_publisher_lane": {
+    "system_template_sha256": "a8f6462ff7ae23f50ae4ea7e26ed298d291eb3f9db0f4106ddd8f6be9553211a",
+    "user_template_sha256": "1a35679ff4ce7549759dc79b65efe3d9779fa2a9743fb8576de43bad37987a02",
+    "generator_sha256": "7184698e7aa1b847fe73547defbd7d81b0ae80e82b0cf2d99d6de75359c7eb24",
+    "transferred_value": "one exact final assistant message as one publisher tests entry",
+    "scope": "overall coverage at k=1 under the original public evaluator",
+    "publisher_full_multi_round_replication": false
+  },
+  "comparative_trials": 0,
+  "agent_efficacy_claim": false
+}

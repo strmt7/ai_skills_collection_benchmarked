@@ -60,8 +60,9 @@ the target project.
 ## Refresh and recovery
 
 Source changes invalidate the corpus binding. Preserve earlier evidence and
-index the relevant prefixes at a new corpus path. To verify an existing index,
-repeat its `index` command with `--check`.
+index the relevant prefixes at a new corpus path. An unsuccessful search exits
+nonzero and retains diagnostic JSON. Use results only when the receipt reports
+`ok: true`. To verify an existing index, repeat its `index` command with `--check`.
 
 Each command verifies the selected provider before use. Missing or changed
 packages trigger a fresh isolated installation; earlier profiles and failure
@@ -81,11 +82,13 @@ profiles and does not adopt that directory.
 
 ## Supported provider
 
-This is the explicitly identified `0.2.43+catalog.local1` build of
-[CocoIndex Code 0.2.43](https://github.com/cocoindex-io/cocoindex-code).
+This is the explicitly identified `0.2.44+catalog.local1` build of
+[CocoIndex Code 0.2.44](https://github.com/cocoindex-io/cocoindex-code/releases/tag/v0.2.44).
 Its author classifies the upstream package as Alpha. The qualified mode here is
 Windows x64 CPU search using CocoIndex 1.0.26 and the pinned
-`Snowflake/snowflake-arctic-embed-xs` model. Cloud embeddings are unsupported.
+`Snowflake/snowflake-arctic-embed-xs` model. CocoIndex 1.0.26 is the latest
+Windows build in the provider's supported range below 1.1. Cloud embeddings
+are unsupported.
 
 The local build removes the unused cloud embedding dependency and disables
 remote model code. This permits a normal, complete dependency installation with

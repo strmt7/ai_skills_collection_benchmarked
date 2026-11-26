@@ -54,7 +54,6 @@
         "tools/cocoindex_tool.py",
         "tools/cocoindex_runtime.py",
         "tests/test_cocoindex_provider.py",
-        "toolchains/cocoindex-code/README.md",
         ".agents/skills/cocoindex-code-search/SKILL.md"
       ]
     },
@@ -361,15 +360,12 @@
         "sha256": "3ac7964ff7cc41f66d803e1cff785cb037f67888652e703011a3751cf4a7f77b"
       },
       "sources": [
-        "docs/agent-tools.md",
         "tests/test_crawl4ai_source.py",
         "toolchains/crawl4ai/CATALOG_BUILD_NOTICE.txt",
-        "toolchains/crawl4ai/README.md",
         "toolchains/crawl4ai/browser.json",
         "toolchains/crawl4ai/requirements-build.txt",
         "toolchains/crawl4ai/requirements.txt",
         "toolchains/crawl4ai/source.json",
-        "tools/crawl4ai_capture.py",
         "tools/prepare_crawl4ai_source.py",
         "tools/verify_crawl4ai_wheel.py"
       ]
@@ -612,6 +608,33 @@
         "tools/record_coverage_shard.py",
         "tools/validate_coverage_bundle.py"
       ]
+    },
+    {
+      "id": "cocoindex-0244-managed-native",
+      "review": {
+        "path": "artifacts/research/2026-11-26/cocoindex-0244-managed-native/review.json",
+        "sha256": "8ac0ca60d596119579d6e8ac65efad5a55424bafaf817c84f449b593d7dcef63"
+      },
+      "sources": [
+        "toolchains/cocoindex-code/CATALOG_BUILD_NOTICE.txt",
+        "toolchains/cocoindex-code/README.md",
+        "toolchains/cocoindex-code/requirements.txt",
+        "toolchains/cocoindex-code/source.json"
+      ]
+    },
+    {
+      "id": "crawl4ai-public-page-policy",
+      "review": {
+        "path": "artifacts/research/2026-11-26/crawl4ai-public-page-policy/review.json",
+        "sha256": "9c1214617d96045515507a5cf775316464242d0335f5ba206e9c11d81cb383f9"
+      },
+      "sources": [
+        ".agents/skills/crawl4ai-research/SKILL.md",
+        "docs/agent-tools.md",
+        "tests/test_crawl4ai_launcher.py",
+        "toolchains/crawl4ai/README.md",
+        "tools/crawl4ai_capture.py"
+      ]
     }
   ],
   "historical_reviews": [
@@ -702,6 +725,7 @@
       "superseded_sources": [
         "docs/installation.md",
         "tests/test_semantic_search.py",
+        "toolchains/cocoindex-code/README.md",
         "tools/search_semantic_corpus.py"
       ]
     },
@@ -1182,6 +1206,17 @@
       },
       "superseded_sources": [
         ".github/workflows/offline-validation.yml"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-25/portable-crawl4ai-096/review.json",
+        "sha256": "3ac7964ff7cc41f66d803e1cff785cb037f67888652e703011a3751cf4a7f77b"
+      },
+      "superseded_sources": [
+        "docs/agent-tools.md",
+        "toolchains/crawl4ai/README.md",
+        "tools/crawl4ai_capture.py"
       ]
     }
   ],

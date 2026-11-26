@@ -1414,4 +1414,4 @@ wcwidth==0.9.4 \
     --hash=sha256:f279f32c8e206a9092fa350e53ca0c2bd8072e45b1c9fd31bb6d476b59b591c4 \
     --hash=sha256:f28d77153303450ee13ebbe888297e75cf532c754555b6cabafc9bdda16c421c \
     --hash=sha256:fd8d57d3cdfe570e3265c8fab1885c24e34ef40889c0759c0c304a19e9835954
-cocoindex-code[embeddings-local]==0.2.43 --hash=sha256:76b23b3c176f3cdace1f51ea1a332f4285e74fd296449e827be2134dbbdc885d
+cocoindex-code[embeddings-local]==0.2.44 --hash=sha256:b7968c34b3153a6c282989875ed1e1e8fd0dbcfb6a11938ccfdc497e7295c654
