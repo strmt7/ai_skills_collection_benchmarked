@@ -636,16 +636,19 @@
       ]
     },
     {
-      "id": "testeval-native-reply",
+      "id": "testeval-native-output-budget",
       "review": {
-        "path": "artifacts/research/2026-11-26/testeval-native-reply/review.json",
-        "sha256": "4564c347044848d717e1c1bc302362b9474ba9a5bec4b13e3a1b033b986bc8c4"
+        "path": "artifacts/research/2026-11-26/native-output-budget/review.json",
+        "sha256": "05b19ee7c1ccd3e223b1d5188edf53246ce6534d35b16b8e9ab4f9d9074afe15"
       },
       "sources": [
         "docs/recognized-skill-benchmarks.md",
         "tests/test_collect_testeval_reply.py",
+        "tests/test_stage_ollama_model.py",
         "tools/_trial_transcript.py",
-        "tools/collect_testeval_reply.py"
+        "tools/collect_testeval_reply.py",
+        "tools/inspect_testeval_reply.py",
+        "tools/stage_ollama_model.py"
       ]
     }
   ],
@@ -1232,6 +1235,17 @@
         "docs/agent-tools.md",
         "toolchains/crawl4ai/README.md",
         "tools/crawl4ai_capture.py"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-26/testeval-native-reply/review.json",
+        "sha256": "4564c347044848d717e1c1bc302362b9474ba9a5bec4b13e3a1b033b986bc8c4"
+      },
+      "superseded_sources": [
+        "docs/recognized-skill-benchmarks.md",
+        "tests/test_collect_testeval_reply.py",
+        "tools/collect_testeval_reply.py"
       ]
     }
   ],

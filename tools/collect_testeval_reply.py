@@ -22,8 +22,12 @@ from validate_testeval_calibration import read_evidence
 TRANSCRIPT_LIMIT = 8 * 1024**2
 
 
-def extract_reply(execution: Path, prompt_sha256: str) -> tuple[bytes, dict[str, Any]]:
-    """Bind the official export to one complete native turn and its frozen prompt."""
+def observe_completed_reply(
+    execution: Path, prompt_sha256: str, *, turn_output_budget: int | None = None
+) -> tuple[bytes | None, dict[str, Any]]:
+    """Measure a completed turn even when the client delivered no final reply."""
+    if turn_output_budget is not None and (type(turn_output_budget) is not int or turn_output_budget < 1):
+        raise ValueError("The declared turn output budget must be a positive token count")
     process = read_evidence(execution / "process.json")
     if not stopped_execution(object_from(process)):
         raise ValueError("The owned native subject did not finish successfully")
@@ -45,31 +49,56 @@ def extract_reply(execution: Path, prompt_sha256: str) -> tuple[bytes, dict[str,
         or "turn.failed" in types
     ):
         raise ValueError("One complete native client turn is required")
+    evidence: dict[str, Any] = {
+        "delivery": "native_final_message",
+        "native_process_sha256": sha256(process),
+        "native_transcript_sha256": sha256(transcript),
+        "prompt_sha256": prompt_sha256,
+        "usage": events[-1].get("usage"),
+        "reply_status": "missing",
+    }
+    if turn_output_budget is not None:
+        evidence["turn_output_budget"] = turn_output_budget
+        usage = evidence["usage"]
+        evidence["budget_status"] = (
+            "usage_unavailable" if usage is None else budget_status(usage["output_tokens"], turn_output_budget)
+        )
+
     items = [
         event["item"] for event in events[types.index("turn.started") + 1 : -1] if event["type"] == "item.completed"
     ]
     reply = items[-1] if items else {}
     identifier, message = reply.get("id"), reply.get("text")
+    if reply.get("type") != "agent_message":
+        return None, evidence
     if (
-        reply.get("type") != "agent_message"
-        or not isinstance(identifier, str)
+        not isinstance(identifier, str)
         or not identifier
         or sum(item.get("id") == identifier for item in items) != 1
         or not isinstance(message, str)
         or not message.strip()
     ):
-        raise ValueError("The completed native turn has no final assistant message")
+        evidence["reply_status"] = "invalid_message"
+        return None, evidence
     exported = read_evidence(execution / "last-message.native")
     if exported != message.encode("utf-8"):
         raise ValueError("The native last-message export differs from the completed transcript")
-    return exported, {
-        "delivery": "native_final_message",
-        "message_item_id": identifier,
-        "message_sha256": sha256(exported),
-        "native_process_sha256": sha256(process),
-        "native_transcript_sha256": sha256(transcript),
-        "prompt_sha256": prompt_sha256,
-    }
+    evidence.update(reply_status="verified", message_item_id=identifier, message_sha256=sha256(exported))
+    return exported, evidence
+
+
+def budget_status(observed: int, declared: int) -> str:
+    if observed < declared:
+        return "below_budget"
+    return "at_budget" if observed == declared else "above_budget"
+
+
+def extract_reply(execution: Path, prompt_sha256: str) -> tuple[bytes, dict[str, Any]]:
+    """Require a verified final message before sealing and grading."""
+    exported, evidence = observe_completed_reply(execution, prompt_sha256)
+    if exported is None:
+        raise ValueError("The completed native turn has no final assistant message")
+    return exported, evidence
 
 
 def collect_reply(

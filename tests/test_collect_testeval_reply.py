@@ -94,3 +94,55 @@ def test_invalid_native_input_does_not_create_grading_evidence(tmp_path, monkeyp
     with pytest.raises(ValueError, match="disjoint controller"):
         collect_reply(foreign, foreign, foreign, sha256(PROMPT), foreign, foreign, foreign, output)
     assert not output.exists()
+
+
+@pytest.mark.parametrize(
+    ("tokens", "status"), [(31, "below_budget"), (32, "at_budget"), (33, "above_budget"), (None, "usage_unavailable")]
+)
+def test_budget_checks_turn_usage_without_changing_delivery(native_turn, tokens, status):
+    from collect_testeval_reply import observe_completed_reply
+
+    execution, _, events = native_turn
+    if tokens is not None:
+        events[-1]["usage"] = {"input_tokens": 2092, "output_tokens": tokens}
+    write_jsonl(execution / "transcript.jsonl", events)
+    exported, observed = observe_completed_reply(execution, sha256(PROMPT), turn_output_budget=32)
+    assert exported == REPLY.encode()
+    assert observed["reply_status"] == "verified"
+    assert observed["budget_status"] == status
+    assert observed["usage"] == events[-1].get("usage")
+
+
+def test_inspect_completed_budgeted_reasoning_without_reply(native_turn, monkeypatch, capsys):
+    import inspect_testeval_reply as inspect
+
+    execution, _, events = native_turn
+    events[-2]["item"] = {"id": "one", "type": "reasoning", "text": "Considering the answer"}
+    events[-1]["usage"] = {"input_tokens": 2092, "output_tokens": 32}
+    (execution / "last-message.native").write_bytes(b"")
+    write_jsonl(execution / "transcript.jsonl", events)
+    args = ["--prompt-sha256", sha256(PROMPT), "--turn-output-budget", "32"]
+    monkeypatch.setattr(inspect, "ROOT", execution)
+    assert inspect.main(["--execution", str(execution), *args]) == 1
+    assert "controller-owned" in json.loads(capsys.readouterr().out)["error"]
+
+    owned = execution / ".venv"
+    owned.mkdir()
+    for name in ("process.json", "input.native", "last-message.native", "transcript.jsonl"):
+        (execution / name).rename(owned / name)
+    assert inspect.main(["--execution", str(owned), *args]) == 0
+    result = json.loads(capsys.readouterr().out)
+    assert result["ok"] and result["observation"]["reply_status"] == "missing"
+    assert result["observation"]["budget_status"] == "at_budget"
+    assert result["observation"]["usage"]["output_tokens"] == 32
+    assert "message_sha256" not in result["observation"]
+    with pytest.raises(ValueError, match="no final assistant message"):
+        extract_reply(owned, sha256(PROMPT))
+
+
+def test_observation_rejects_nonpositive_token_budget(native_turn):
+    from collect_testeval_reply import observe_completed_reply
+
+    execution, _, _ = native_turn
+    with pytest.raises(ValueError, match="positive token count"):
+        observe_completed_reply(execution, sha256(PROMPT), turn_output_budget=0)

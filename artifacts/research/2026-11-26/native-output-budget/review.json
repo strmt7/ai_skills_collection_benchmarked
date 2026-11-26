@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-26",
+  "scope": "Measured local generation limits, native TestEval missing-reply classification, byte-verified independent model staging, and bounded process/profile closure.",
+  "source_sha256": {
+    "docs/recognized-skill-benchmarks.md": "e19cd26ba59a7480f5dc15efdbf7d1a3e75ee8965f9041ef58fafa3c653d5cd1",
+    "tests/test_collect_testeval_reply.py": "2f7e1fd324c66427d920b0f4a1090cbe589c702b9fb0e519d7026ce95fccce30",
+    "tests/test_stage_ollama_model.py": "f5b34284e8f1283b5c4b9b6c03eb41da303d24c635327bdb60c1206f383f364f",
+    "tools/_trial_transcript.py": "5d27850c37e4bcc99c5d1bbc7d47cb81ac74b7dd94dd2af17dffc36f953d38ec",
+    "tools/collect_testeval_reply.py": "9b03d3973a76a37e62e4072c23232c891107aa63088548e90a211a0d62dbcca2",
+    "tools/inspect_testeval_reply.py": "de67b8b6258d9fd4b7697c0114d1d2de8bb4373973e36049f0763b37429537e1",
+    "tools/stage_ollama_model.py": "5ab72378ce6c8846fb41debd0593b6ffa2b30862db406c71c81be25cdddf82d6"
+  },
+  "artifacts": {
+    "observations.json": "fcd90cb96e8153dbaedf4add9cc3713632f790cb9aa0f992fa942032347045a6"
+  }
+}

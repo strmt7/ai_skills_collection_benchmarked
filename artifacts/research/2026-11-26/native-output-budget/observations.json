@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "scope": "Unscored local transport, budget and model-store controls",
+  "engine": "0.40.18",
+  "codex_cli_version": "0.172.0",
+  "base_model": "qwen3:4b",
+  "base_model_sha256": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+  "backend": [
+    {
+      "cap": 16,
+      "manifest_sha256": "4da702dc6ac42a5d6e213323d0e343c4f1a5755b155a1ad7b06535c86b593fc8",
+      "model": "catalog-output-limit:cap-16",
+      "native_chat": {
+        "done_reason": "length",
+        "eval_count": 16
+      },
+      "responses_stream": {
+        "event": "response.completed",
+        "output_tokens": 16,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "status": "completed"
+      },
+      "request_sha256": "b8d43079b904d15fef726446dce5f873c9ba507b180aabab3920f3457e2a9a24",
+      "stream_sha256": "384ac369181bd05192a3c025952cafa5d601b65f59a02ee1b9d922a6220b17f8",
+      "chat_sha256": "da4e6e4033eb80cb33d69948d4c09649b07fccd23ac567f0a23917a96ae062fa"
+    },
+    {
+      "cap": 32,
+      "manifest_sha256": "fffd6feadda7fe044c3cb0b3cfc174b84798e5b9c51ffa7d5ba1d46c6de1f1d7",
+      "model": "catalog-output-limit:cap-32",
+      "native_chat": {
+        "done_reason": "length",
+        "eval_count": 32
+      },
+      "responses_stream": {
+        "event": "response.completed",
+        "output_tokens": 32,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "status": "completed"
+      },
+      "request_sha256": "dc674a5486980bc0697f35762006ea86b91c7580b4f8780f6cc29860de8ca1ac",
+      "stream_sha256": "aecff9881ca6b8ee6c2d102cf2d0c7c17ee7275d35b592591490717be8243fdf",
+      "chat_sha256": "5e421e3e721657ab235e533a6f209c7bf2749f3c4968d9ba5e8eb7298e89c1ff"
+    }
+  ],
+  "native_client": {
+    "requests": 1,
+    "export_bytes": 0,
+    "completed_items": [
+      "error",
+      "reasoning"
+    ],
+    "observation": {
+      "delivery": "native_final_message",
+      "native_process_sha256": "ab82b6155107bcffb8e8a21a1af167702b9b8bfb673b11f243b0d4a9cf17e414",
+      "native_transcript_sha256": "c5286fb9a16e5e81bb1a3ac9d2d0d6d4f04d7957733ee90e31345a078c83d9c1",
+      "prompt_sha256": "847cb93dee51d78939dd0c4f00ff178622e000cf15ef1477aff7a4baa8bff1a6",
+      "usage": {
+        "input_tokens": 2092,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 32,
+        "reasoning_output_tokens": 0
+      },
+      "reply_status": "missing",
+      "turn_output_budget": 32,
+      "budget_status": "at_budget"
+    }
+  },
+  "private_copy": {
+    "model_inferences": 0,
+    "matched_derived_model_digests": 2,
+    "copied_bytes": 2497293931,
+    "private_weight_mtime_advanced": true,
+    "shared_weight_mtime_unchanged": true,
+    "file_identity_independent": true,
+    "owned_profile_removed": true,
+    "staging_tool_sha256": "5ab72378ce6c8846fb41debd0593b6ffa2b30862db406c71c81be25cdddf82d6"
+  },
+  "resource_closure": {
+    "closed_owned_servers_and_profiles": 5,
+    "released_model_stores": 2,
+    "controlled_directory_cases": 3,
+    "observed_live_profile_sharing_retries": [
+      2,
+      1
+    ],
+    "initial_shared_weight_content_sha256": "3e4cb14174460404e7a233e531675303b2fbf7749c02f91864fe311ab6344e4f",
+    "initial_shared_weight_bytes_unchanged": true,
+    "initial_hardlink_advanced_shared_modification_time": true,
+    "isolated_derivation_preserved_shared_modification_time": true,
+    "publisher_grader_leases_closed": 4
+  },
+  "publisher_collector_regression": {
+    "public_task": 685,
+    "reference_status": "passed",
+    "detected_independent_faults": 2,
+    "authored_control": true
+  },
+  "retained_setup_failures": [
+    "The first derivation probe expected the legacy manifest directory. The admitted engine uses its v2 directory.",
+    "The first native client setup omitted SYSTEMDRIVE and stopped before any model request.",
+    "An attribute-only directory handle did not reproduce the intended sharing violation. A full read handle did."
+  ],
+  "counted_comparison_tasks": 0
+}

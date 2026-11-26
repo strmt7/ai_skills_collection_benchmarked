@@ -105,6 +105,42 @@ receipt, original grader result, and independent reference and defect results.
 [Publisher evaluation instructions](https://github.com/LLM4SoftwareTesting/TestEval/blob/6f67dee71de6ccda1767b8c219a93f4ae0a7ce90/README.md#run-your-own-pipeline)
 
 
+### Inspect a completed turn before grading
+
+A completed native turn can consume its output budget without delivering a final
+message. Inspect the native process and transcript using the frozen request digest.
+
+```text
+python tools/inspect_testeval_reply.py --execution <native-records> --prompt-sha256 <frozen-digest> --turn-output-budget 32
+```
+
+Use the budget declared for the whole turn. Omit the option if the study has no
+turn-level token budget. The inspector checks the request, process closure and
+transcript. When a final reply exists it checks the exact CLI export. It reports
+delivery separately from usage below, at or above the declared budget, or reports
+unavailable usage. A successfully inspected missing reply is an ungraded outcome.
+When a turn makes several requests, the CLI's total usage covers the turn. Validate
+any per-request limit with independent backend evidence.
+
+On the qualified local Ollama setup, 16- and 32-token model limits stopped native
+chat at the configured counts. The Responses streams reported completion at those
+counts. A single Codex CLI request reached 32 output tokens with an empty final
+export. These controls establish delivery and budget behavior for the recorded
+configuration. [Native output budget evidence](../artifacts/research/2026-11-26/native-output-budget/observations.json)
+
+For a private Ollama trial, use the pinned publisher manifest and its verified
+blob cache to build a separate model store before starting the local server.
+
+```text
+python tools/stage_ollama_model.py --model qwen3:4b --manifest <pinned-manifest> --manifest-sha256 <digest> --cached-blobs <blobs-directory> --output .venv/benchmarks/local-model
+```
+
+The output parent must exist. The stage verifies every blob and writes the
+manifest after the copies pass. Ollama updates blob timestamps when deriving
+models, so use the staged store for that operation. The live isolation control
+reproduced both derived model identities while preserving the shared weight's
+file identity, byte count and modification time.
+
 ## Do not rely on benchmark reputation alone
 
 [OpenAI's February review](https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/)
