@@ -1,0 +1,61 @@
+{
+  "agent_performance_claim": false,
+  "codecov_cli": {
+    "binary_bytes": 18466776,
+    "binary_sha256": "8e1bfb71661378530f6ea21e82b414095899e565cbb4cf555c613064be17b973",
+    "explicit_file_upload_interface": true,
+    "linux_amd64_executed": true,
+    "publisher_signature_verified": true,
+    "same_host_no_network": true,
+    "scope": "Official Codecov CLI binary, publisher signature and upload command interface without an upload",
+    "signer_fingerprint": "27034E7FDB850E0BBC2C62FF806BB28AED779869",
+    "terminal_container": true,
+    "version": "v11.3.2",
+    "wrapper_download_same_as_release": true
+  },
+  "comparison": {
+    "different_revision_and_source_observed": true,
+    "existing_output_refused_without_overwrite": true,
+    "failed_validation_wrote_no_upload_paths": true,
+    "honest_matrix_reports_accepted": 2,
+    "honest_pytest_xdist_workers": 2,
+    "honest_report_metrics": [
+      {
+        "line-rate": "1",
+        "lines-covered": "2",
+        "lines-valid": "2"
+      },
+      {
+        "line-rate": "1",
+        "lines-covered": "2",
+        "lines-valid": "2"
+      }
+    ],
+    "isolated_coverage_data_file": true,
+    "missing_receipt_rejected": true,
+    "same_line_topology_native_reports": true,
+    "source_modified_during_passing_tests_rejected": true,
+    "stale_complete_shard_rejected": true,
+    "unproven_xml_rejected": true
+  },
+  "controller_sha256": "ac137f09977db288ac79ce5d74e710165655a16427c21be7f401a78fc0fbf987",
+  "environment": {
+    "coverage": "7.17.5",
+    "implementation": "cpython",
+    "platform": "win32",
+    "pytest": "9.2.0",
+    "pytest-cov": "7.1.0",
+    "pytest-xdist": "3.8.0",
+    "python": "3.14.10"
+  },
+  "observed_at_utc": "2026-11-26T03:26:33Z",
+  "preserved_unrelated_workflow_steps": true,
+  "schema_version": 1,
+  "scope": "Local native pytest, xdist and Coverage.py XML. Codecov's hosted upload is separate.",
+  "source_sha256": {
+    ".github/workflows/offline-validation.yml": "805aa30ef6896975b18ff6bfad39490138c505d881f433615fb80450a5421d58",
+    "tests/test_coverage_bundle.py": "454118812dbac97254535f05d62b81dcb2447b74bbbdae0c55ff824188947b5b",
+    "tools/record_coverage_shard.py": "23c4cf4c9bb9ff2de84557f7e97515bed78a4cd688e3bf091922c8bb85e1245b",
+    "tools/validate_coverage_bundle.py": "823f39b9cbc6dd90f04d716c9d867f1d35aa254eb28f37067eda87917a9997b8"
+  }
+}

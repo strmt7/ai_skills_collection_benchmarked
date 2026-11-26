@@ -197,8 +197,6 @@
         "CONTRIBUTING.md",
         "pyproject.toml",
         ".github/workflows/release.yml",
-        "docs/coverage.md",
-        "tests/test_coverage_bundle.py",
         "tests/test_documentation_contracts.py"
       ]
     },
@@ -249,7 +247,6 @@
       },
       "sources": [
         ".github/workflows/mcp-python-sdk.yml",
-        ".github/workflows/offline-validation.yml",
         ".github/workflows/pnpm-cache-install.yml",
         "tests/test_frontend_ownership.py"
       ]
@@ -601,6 +598,20 @@
         "tests/test_testeval_subject_handoff.py",
         "tools/_testeval_subject.py"
       ]
+    },
+    {
+      "id": "coverage-producer-binding",
+      "review": {
+        "path": "artifacts/research/2026-11-26/coverage-producer-binding/review.json",
+        "sha256": "d65f0ba3b867d2a4f4cb98a6731b74be9163edb6031c5c01df15037c239527ec"
+      },
+      "sources": [
+        ".github/workflows/offline-validation.yml",
+        "docs/coverage.md",
+        "tests/test_coverage_bundle.py",
+        "tools/record_coverage_shard.py",
+        "tools/validate_coverage_bundle.py"
+      ]
     }
   ],
   "historical_reviews": [
@@ -864,9 +875,11 @@
       },
       "superseded_sources": [
         ".github/workflows/offline-validation.yml",
+        "docs/coverage.md",
         "docs/improvement-plan.md",
         "included/improved/skills/verification-loop-shell-status/SKILL.md",
         "tests/test_agent_tool_policy.py",
+        "tests/test_coverage_bundle.py",
         "tests/test_native_trial_boundary.py",
         "tests/test_qualify_trial_context.py",
         "tools/qualify_native_trial_boundary.py",
@@ -1160,6 +1173,15 @@
       },
       "superseded_sources": [
         "docs/benchmark-execution-plan.md"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-24/scheduled-workflow-recovery/review.json",
+        "sha256": "4152ad5f4e015b7928fddc95d13ea0f002031079695205b0bb2a4a4f2ad60907"
+      },
+      "superseded_sources": [
+        ".github/workflows/offline-validation.yml"
       ]
     }
   ],

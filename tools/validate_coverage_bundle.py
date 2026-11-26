@@ -6,16 +6,40 @@ import argparse
 import hashlib
 import json
 import math
+import re
 import subprocess
 from collections.abc import Sequence
 from pathlib import Path, PurePosixPath
-from typing import Protocol
+from typing import Any, Protocol
 
+from _trial_transcript import strict_json
 from defusedxml import ElementTree as ET
 from defusedxml.common import DefusedXmlException
 
 ROOT = Path(__file__).resolve().parents[1]
 MAX_REPORT_BYTES = 16 * 1024 * 1024
+MAX_RECEIPT_BYTES = 2 * 1024 * 1024
+SHARD_RECEIPT = "coverage-shard.json"
+LANE_PATTERN = re.compile(r"coverage-[a-z0-9][a-z0-9.-]{0,95}")
+
+
+def git_output(root: Path, *arguments: str) -> bytes:
+    """Resolve source information in the checkout being measured."""
+    return subprocess.run(
+        ["git", "-c", "core.longpaths=true", *arguments],
+        cwd=root,
+        capture_output=True,
+        check=True,
+        timeout=30,
+    ).stdout
+
+
+def source_revision(root: Path) -> str:
+    """Read the exact checkout commit."""
+    revision = git_output(root, "rev-parse", "--verify", "HEAD^{commit}").decode("ascii").strip()
+    if not re.fullmatch(r"[a-f0-9]{40}|[a-f0-9]{64}", revision):
+        raise ValueError("coverage checkout revision is not a Git object ID")
+    return revision
 
 
 class CoverageElement(Protocol):
@@ -124,7 +148,56 @@ def _check_metrics(document: CoverageElement, total: int, covered: int) -> None:
         raise ValueError("declared coverage metrics disagree with observed lines")
 
 
-def validate_bundle(root: Path, directory: Path, expected_reports: int) -> tuple[dict, list[str]]:
+def inspect_report(root: Path, path: Path, directory: Path) -> dict[str, Any]:
+    """Validate a native report and identify its observed source bytes."""
+    raw, document = _report_document(path, directory)
+    sources, total, covered = _observed_sources(root, document)
+    _check_metrics(document, total, covered)
+    return {
+        "path": path.as_posix(),
+        "sha256": hashlib.sha256(raw).hexdigest(),
+        "source_sha256": sources,
+        "native_metrics": document.attrib,
+    }
+
+
+def shard_receipt(revision: str, lane: str, report: dict[str, Any]) -> dict[str, Any]:
+    """Describe the source snapshot and report from a successful pytest lane."""
+    if not LANE_PATTERN.fullmatch(lane):
+        raise ValueError(f"invalid coverage matrix lane: {lane!r}")
+    return {
+        "schema_version": 1,
+        "source_revision": revision,
+        "lane": lane,
+        "report_sha256": report["sha256"],
+        "source_sha256": report["source_sha256"],
+    }
+
+
+def _verify_receipt(path: Path, directory: Path, expected: dict[str, Any]) -> str:
+    receipt = path.with_name(SHARD_RECEIPT)
+    if not receipt.is_file():
+        raise ValueError("producer receipt missing")
+    if receipt.is_symlink() or not receipt.resolve().is_relative_to(directory.resolve()):
+        raise ValueError("linked or escaping producer receipt")
+    with receipt.open("rb") as stream:
+        raw = stream.read(MAX_RECEIPT_BYTES + 1)
+    if len(raw) > MAX_RECEIPT_BYTES:
+        raise ValueError("producer receipt exceeds 2 MiB")
+    actual = strict_json(raw.decode("utf-8"))
+    if not isinstance(actual, dict) or type(actual.get("schema_version")) is not int or actual != expected:
+        raise ValueError("producer receipt disagrees with the revision, matrix lane, report or measured sources")
+    return hashlib.sha256(raw).hexdigest()
+
+
+def validate_bundle(
+    root: Path,
+    directory: Path,
+    expected_reports: int,
+    revision: str,
+    *,
+    expected_lanes: Sequence[str] = (),
+) -> tuple[dict[str, Any], list[str]]:
     """Validate every report and collect errors without discarding valid reports."""
     errors = []
     reports = []
@@ -132,28 +205,27 @@ def validate_bundle(root: Path, directory: Path, expected_reports: int) -> tuple
     paths = sorted(directory.glob("*/coverage.xml"))
     if expected_reports < 1 or len(paths) != expected_reports:
         errors.append(f"Expected {expected_reports} coverage reports, found {len(paths)}")
+    if expected_lanes:
+        lanes = {path.parent.name for path in paths}
+        if len(set(expected_lanes)) != expected_reports or lanes != set(expected_lanes):
+            errors.append("Coverage reports must match the declared matrix lanes")
     for path in paths:
         try:
-            raw, document = _report_document(path, directory)
-            sources, total, covered = _observed_sources(root, document)
-            _check_metrics(document, total, covered)
+            record = inspect_report(root, path, directory)
+            lane = path.parent.name
+            record["producer_receipt_sha256"] = _verify_receipt(path, directory, shard_receipt(revision, lane, record))
+            sources = record["source_sha256"]
             if expected_sources is None:
                 expected_sources = sources
             elif sources != expected_sources:
                 raise ValueError("coverage source set differs across reports")
-            reports.append(
-                {
-                    "path": path.as_posix(),
-                    "sha256": hashlib.sha256(raw).hexdigest(),
-                    "source_sha256": sources,
-                    "native_metrics": document.attrib,
-                }
-            )
+            reports.append(record)
         except (OSError, ValueError, KeyError, ET.ParseError) as error:
             errors.append(f"{path.name!r} in {path.parent.name!r}: {error}")
     return {
         "measurement_kind": "python_tooling_test_coverage",
         "source_scope": "tools/",
+        "source_revision": revision,
         "agent_performance_claim": False,
         "reports": reports,
     }, errors
@@ -165,6 +237,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--root", type=Path, default=ROOT)
     parser.add_argument("--directory", type=Path, required=True)
     parser.add_argument("--expected-reports", type=int, required=True)
+    parser.add_argument("--expected-lanes", nargs="+", default=())
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--github-output", type=Path)
     parser.add_argument("--check", action="store_true")
@@ -175,18 +248,14 @@ def build_parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     """Validate the bundle and publish only verified upload paths."""
     args = build_parser().parse_args(argv)
-    report, errors = validate_bundle(args.root, args.directory, args.expected_reports)
     revision = None
+    errors: list[str] = []
+    report: dict[str, Any] = {"reports": []}
     try:
-        revision = subprocess.run(
-            ["git", "-c", "core.longpaths=true", "rev-parse", "--verify", "HEAD"],
-            cwd=args.root,
-            capture_output=True,
-            text=True,
-            check=True,
-            timeout=30,
-        ).stdout.strip()
-        report["source_revision"] = revision
+        revision = source_revision(args.root)
+        report, errors = validate_bundle(
+            args.root, args.directory, args.expected_reports, revision, expected_lanes=args.expected_lanes
+        )
         if not errors:
             if args.check:
                 if json.loads(args.output.read_text(encoding="utf-8")) != report:

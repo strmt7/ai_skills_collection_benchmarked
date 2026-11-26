@@ -31,20 +31,17 @@ or other sources of bias. The [Cochrane Handbook](https://www.cochrane.org/autho
 describes the general use and limitations of extreme-case missing-data
 sensitivity analysis; its clinical setting differs from these agent trials.
 
-The coverage workflow retains each measured XML report from the existing
-Python/OS matrix. A separate job validates the complete bundle and binds its
-referenced tooling files to the checked-out source before upload. Codecov merges
-those reports under the `python_tooling` flag. No carryforward is enabled for
-that flag. Native TypeScript/Go example controls, source mirrors and instructions
-are outside this Python coverage percentage.
+Each Python and OS job records the tooling sources before and after pytest.
+A passing job retains the native XML and a producer receipt with the commit,
+the matrix lane and SHA-256 digests of the report and measured files. The
+upload job verifies all five expected lanes against its checkout before
+sending the XML to Codecov. Codecov merges the reports under the
+`python_tooling` flag with carryforward disabled.
 
-The bundle validator checks that the reports agree on source files and that
-their declared line totals and rates match distinct recorded lines. It rejects
-unsafe upload paths and inconsistent reports. Its hash-locked XML parser rejects
-DTDs and declared entities while allowing ordinary XML comments. These checks do not
-prove that a report recorded every executable line or that the observations
-were honestly produced; the workflow and its retained test artifacts provide
-the execution context.
+The validator compares declared line totals and rates with the recorded lines.
+It can detect replaced reports even when two revisions share the same line
+numbers. The retained test runs and producer receipts give each measurement
+its execution context.
 
 The configuration follows FlitzZip's measured-report approach: SHA-pinned
 Codecov Action, a pinned CLI, GitHub OIDC, explicit report paths and upload
@@ -61,11 +58,11 @@ or missing finding should be inferred from an absent report.
 ## Run tests with coverage
 
 Use the [locked development environment](development.md#set-up-validation-from-a-fresh-clone).
-The following command runs the full suite, enforces the coverage floor and
-writes `coverage.xml`.
+With a clean `tools/` checkout, run the full suite with the same producer
+used by CI. Choose a new output directory for every measurement.
 
 ```sh
-python -m pytest -q -n 2 --cov=tools --cov-report=term-missing:skip-covered --cov-report=xml:coverage.xml
+python tools/record_coverage_shard.py --directory .venv/reports/local-coverage --lane coverage-local --pytest-args -q -n 2
 ```
 
 For normal development, run `python -m pytest -q` with a test path or node ID
