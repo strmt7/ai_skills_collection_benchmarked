@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-26",
+  "scope": "Portable installation archive, byte-exact committed resources, native agent discovery and fresh Windows provider setup.",
+  "base_revision": "94215eb89b7cf967892a04becb18c92fd6b9e06e",
+  "source_sha256": {
+    "docs/installation.md": "95e4b53d9abb79773a7c0666ad24fc40ac25f23fbd04c1b0b3c808fc2d91663d",
+    "tools/package_skills.py": "d6a50bb1ee8d6a6a87287a9f216aa4512e692eea0d80a1342f9b0fddbae0306a",
+    "tests/test_package_skills.py": "ffd451fa6c6d20f98d7d182253a7392741fbd26d7e607a664b6f743af24efef6"
+  },
+  "artifacts": {
+    "observations.json": "e8fdb9261d909c68994289d7205c4dbfc4fb36b9639a6e3c7c1331f185c7a393"
+  },
+  "limitations": [
+    "Native extraction and activation exercised two selected skills. The full portfolio control checked paths and file sizes.",
+    "Codex reported preexisting user-scope skills separately from the five package entries.",
+    "Fresh provider tests used the included locked bootstrap on Windows x64. Crawl4AI qualification used its native setup controls.",
+    "The installation observations measure packaging and tool execution. Comparative model outcomes require independent trials."
+  ]
+}

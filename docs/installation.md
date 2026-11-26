@@ -247,6 +247,37 @@ research. Keep the local policy and all linked resources accessible. Tool setup
 and actual execution receipts are required where those scopes apply; installing
 a skill or copying an entrypoint does not prove compliance.
 
+### Export a portable installation
+
+From the collection checkout, export one or more catalog IDs into a new ZIP.
+Find each ID on the skill's catalog page. The Windows launcher prepares the
+export tool and its dependencies using the collection's locked setup.
+
+```powershell
+$package = Join-Path $env:TEMP 'ai-skills-package.zip'
+.\dev.ps1 python tools/package_skills.py export --skill '<catalog-id>' --output $package
+.\dev.ps1 python tools/package_skills.py verify $package
+```
+
+Repeat `--skill` for each additional ID. The exporter records the current
+Git revision and the upstream commit and digests for each selected skill.
+Retain the output SHA-256 to verify a copy before extraction.
+
+```powershell
+$installation = Join-Path $env:TEMP 'ai-skills-installation'
+Expand-Archive -LiteralPath $package -DestinationPath $installation
+```
+
+Extract into a new directory. Open it in an agent that discovers
+`.agents/skills`, or provide the extracted `SKILL.md` path to your agent.
+Keep the package together so the agent can read the source material and
+mandatory policy. The extracted `README.md` explains provider setup.
+On Windows x64, the included launcher provisions missing mandatory tools
+using isolated caches. To move an installation, extract the ZIP at its new
+location and allow the launcher to prepare caches for that location.
+
+### Set up the required providers
+
 On Windows x64, the required providers have automatic setup entrypoints:
 
 Use CocoIndex Code's `--root` option to search the project where you apply a

@@ -657,7 +657,6 @@
         "docs/catalog/by-category/omero-django-docker-lab-infrastructure.md",
         "docs/catalog/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/ai-regression-testing-third-party-ecc-v1-10-0-ai-regression-testing.md",
         "docs/catalog/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/documentation-lookup-third-party-ecc-v1-10-0-documentation-lookup.md",
-        "docs/installation.md",
         "included/agent-ready/manifest.json",
         "included/selected/manifest.json",
         "included/skills/manifest.json",
@@ -684,6 +683,18 @@
         "tools/compare_upstream_trees.py",
         "tools/validate_catalog.py",
         "tools/validate_source_lock.py"
+      ]
+    },
+    {
+      "id": "detached-skill-installation",
+      "review": {
+        "path": "artifacts/research/2026-11-26/detached-skill-installation/review.json",
+        "sha256": "978b33671eac7a58852eccfe41f70baa6718c4a3ae0ef147f152e7d0bb1b5945"
+      },
+      "sources": [
+        "docs/installation.md",
+        "tools/package_skills.py",
+        "tests/test_package_skills.py"
       ]
     }
   ],
@@ -1348,6 +1359,7 @@
         "sha256": "99e0528e69f4f86f1ce0e2a365d88de8d276c6b60c5d8c1699c4a2b20921bd8d"
       },
       "superseded_sources": [
+        "docs/installation.md",
         "tests/test_catalog_data.py",
         "tools/build_catalog.py",
         "tools/validate_catalog.py"

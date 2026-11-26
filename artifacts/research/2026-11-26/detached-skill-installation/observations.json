@@ -1,0 +1,394 @@
+{
+  "schema_version": 1,
+  "base_revision": "94215eb89b7cf967892a04becb18c92fd6b9e06e",
+  "counted_model_attempts": 0,
+  "fixture_package": {
+    "collection_commit": "94215eb89b7cf967892a04becb18c92fd6b9e06e",
+    "skills": 2,
+    "files": 78,
+    "sha256": "cc194c2546cc46da1768d7bb234e6186c989b05f023993e50c9d0bc05c921e42"
+  },
+  "windows_extraction_and_discovery": {
+    "exact_files_after_native_extraction": 78,
+    "detached_sources_and_links_verified": 2,
+    "expected_skill_paths_loaded": 2,
+    "visible_package_skills": 5,
+    "external_user_scope_entries": 6,
+    "native_errors": [],
+    "model_requests": 0,
+    "temporary_installation_removed": true,
+    "qualifier": "discovery",
+    "stages": {
+      "extract": {
+        "process": {
+          "windows_job": true,
+          "assigned_before_resume": true,
+          "kill_on_close": true,
+          "job_active_processes_after_cleanup": 0,
+          "service_created_processes_tracked": false,
+          "termination_reason": null,
+          "exit_code": 0,
+          "output_bytes": 0,
+          "output_limit_bytes": 4194304,
+          "wall_time_limit_seconds": 60.0,
+          "job_memory_limit_bytes": 1610612736,
+          "job_peak_memory_used_bytes": 129159168,
+          "active_process_limit": 24,
+          "explicit_environment": true,
+          "write_io_limit_bytes": 134217728,
+          "job_write_io_bytes": 3004222,
+          "write_io_overshoot_bytes": 0,
+          "write_io_observation_error": null,
+          "write_io_enforcement": "polled_job_transfer_accounting",
+          "hard_storage_quota": false
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "native-discovery": {
+        "process": {
+          "windows_job": true,
+          "assigned_before_resume": true,
+          "kill_on_close": true,
+          "job_active_processes_after_cleanup": 0,
+          "service_created_processes_tracked": false,
+          "termination_reason": null,
+          "exit_code": 0,
+          "output_bytes": 86,
+          "output_limit_bytes": 4194304,
+          "wall_time_limit_seconds": 60.0,
+          "job_memory_limit_bytes": 1610612736,
+          "job_peak_memory_used_bytes": 34570240,
+          "active_process_limit": 24,
+          "explicit_environment": true,
+          "write_io_limit_bytes": 134217728,
+          "job_write_io_bytes": 2640484,
+          "write_io_overshoot_bytes": 0,
+          "write_io_observation_error": null,
+          "write_io_enforcement": "polled_job_transfer_accounting",
+          "hard_storage_quota": false
+        },
+        "stdout_sha256": "f13eda30edf9d22a28439f52c4044188da9d2f2380fe43bd2883f02faf4848e3",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  "native_cli_export_and_verify": {
+    "package": {
+      "collection_commit": "94215eb89b7cf967892a04becb18c92fd6b9e06e",
+      "skills": 2,
+      "files": 78,
+      "sha256": "cc194c2546cc46da1768d7bb234e6186c989b05f023993e50c9d0bc05c921e42"
+    },
+    "source_sha": "d6a50bb1ee8d6a6a87287a9f216aa4512e692eea0d80a1342f9b0fddbae0306a",
+    "isolated_temporary_root_removed": true,
+    "stages": {
+      "export": {
+        "process": {
+          "windows_job": true,
+          "assigned_before_resume": true,
+          "kill_on_close": true,
+          "job_active_processes_after_cleanup": 0,
+          "service_created_processes_tracked": false,
+          "termination_reason": null,
+          "exit_code": 0,
+          "output_bytes": 186,
+          "output_limit_bytes": 2097152,
+          "wall_time_limit_seconds": 240.0,
+          "job_memory_limit_bytes": 6442450944,
+          "job_peak_memory_used_bytes": 1218748416,
+          "active_process_limit": 100,
+          "explicit_environment": true
+        },
+        "stdout_sha256": "1192933ce7cf14c913055d4f45cd06161125dcd67bd8437c550b46251ade5676"
+      },
+      "verify": {
+        "process": {
+          "windows_job": true,
+          "assigned_before_resume": true,
+          "kill_on_close": true,
+          "job_active_processes_after_cleanup": 0,
+          "service_created_processes_tracked": false,
+          "termination_reason": null,
+          "exit_code": 0,
+          "output_bytes": 186,
+          "output_limit_bytes": 2097152,
+          "wall_time_limit_seconds": 240.0,
+          "job_memory_limit_bytes": 6442450944,
+          "job_peak_memory_used_bytes": 1171705856,
+          "active_process_limit": 100,
+          "explicit_environment": true
+        },
+        "stdout_sha256": "1192933ce7cf14c913055d4f45cd06161125dcd67bd8437c550b46251ade5676"
+      }
+    }
+  },
+  "layout_preflight": {
+    "commit": "94215eb89b7cf967892a04becb18c92fd6b9e06e",
+    "skills": 673,
+    "source_entries": 17673,
+    "source_bytes": 234187945,
+    "unique_portable_package_names": 18412,
+    "longest_project_relative_path": 165,
+    "recorded_source_inventory_sha256": "5540ae3cc0c55b3e20ca557f65859becb6e2d7e53de01bf3366e7bed7a5c8d17"
+  },
+  "resource_rich_bundle": {
+    "collection_commit": "94215eb89b7cf967892a04becb18c92fd6b9e06e",
+    "skills": 4,
+    "files": 364,
+    "sha256": "5af2f0d07a44c1933c5cc5147cb30b645d97fd3dbd2d41066864f5f2efe47eff",
+    "source_file_count": 294,
+    "source_bytes": 94769890,
+    "archive_bytes": 86848164,
+    "elapsed_seconds": 3.06,
+    "selected_ids": [
+      "aizzaku-create-infographics-skill-md",
+      "nextlevelbuilder-ui-ux-pro-max-skill-claude-skills-ui-styling-skill-md",
+      "anthropics-skills-skills-canvas-design-skill-md",
+      "anthropics-skills-skills-pptx-skill-md"
+    ],
+    "scratch_removed": true
+  },
+  "cold_provider_installation_and_initial_query": {
+    "extract": {
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 0,
+        "output_limit_bytes": 4194304,
+        "wall_time_limit_seconds": 60.0,
+        "job_memory_limit_bytes": 1610612736,
+        "job_peak_memory_used_bytes": 128921600,
+        "active_process_limit": 24,
+        "explicit_environment": true,
+        "write_io_limit_bytes": 134217728,
+        "job_write_io_bytes": 3004222,
+        "write_io_overshoot_bytes": 0,
+        "write_io_observation_error": null,
+        "write_io_enforcement": "polled_job_transfer_accounting",
+        "hard_storage_quota": false
+      },
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "crawl4ai-check": {
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 863,
+        "output_limit_bytes": 4194304,
+        "wall_time_limit_seconds": 560.0,
+        "job_memory_limit_bytes": 7516192768,
+        "job_peak_memory_used_bytes": 1612636160,
+        "active_process_limit": 128,
+        "explicit_environment": true
+      },
+      "stdout_sha256": "0aee858d484de0094098ebd0becfa25d10195cce913c89bc02e6cc5a0ef5edbe",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "cocoindex-check": {
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 867,
+        "output_limit_bytes": 4194304,
+        "wall_time_limit_seconds": 560.0,
+        "job_memory_limit_bytes": 7516192768,
+        "job_peak_memory_used_bytes": 607449088,
+        "active_process_limit": 128,
+        "explicit_environment": true
+      },
+      "stdout_sha256": "27a63e90a5bf0a52b0d97a1030d83115ff3b189c22437adb320281667e11b424",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "index": {
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 2606,
+        "output_limit_bytes": 4194304,
+        "wall_time_limit_seconds": 150.0,
+        "job_memory_limit_bytes": 5368709120,
+        "job_peak_memory_used_bytes": 1156050944,
+        "active_process_limit": 96,
+        "explicit_environment": true,
+        "write_io_limit_bytes": 1073741824,
+        "job_write_io_bytes": 2036835,
+        "write_io_overshoot_bytes": 0,
+        "write_io_observation_error": null,
+        "write_io_enforcement": "polled_job_transfer_accounting",
+        "hard_storage_quota": false
+      },
+      "stdout_sha256": "cbc44af59253ca24ff90fc6f54dbd467e6a2535de699cab317d08948ff2cdc59",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "search": {
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 1,
+        "output_bytes": 293,
+        "output_limit_bytes": 4194304,
+        "wall_time_limit_seconds": 150.0,
+        "job_memory_limit_bytes": 5368709120,
+        "job_peak_memory_used_bytes": 467718144,
+        "active_process_limit": 96,
+        "explicit_environment": true,
+        "write_io_limit_bytes": 1073741824,
+        "job_write_io_bytes": 208761,
+        "write_io_overshoot_bytes": 0,
+        "write_io_observation_error": null,
+        "write_io_enforcement": "polled_job_transfer_accounting",
+        "hard_storage_quota": false
+      },
+      "stdout_sha256": "5beda8e77f728ed2af1c9f86e3181dc808cc431dd33f379e87e69662ee14f524",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "provider_query_recheck": {
+    "exact_files_after_native_extraction": 78,
+    "detached_sources_and_links_verified": 2,
+    "foundation_initially_empty": true,
+    "cocoindex_automatic_install": true,
+    "verified_source_span": true,
+    "target_workspace_distinct": true,
+    "temporary_installation_removed": true,
+    "qualifier": "search-recheck",
+    "stages": {
+      "extract": {
+        "process": {
+          "windows_job": true,
+          "assigned_before_resume": true,
+          "kill_on_close": true,
+          "job_active_processes_after_cleanup": 0,
+          "service_created_processes_tracked": false,
+          "termination_reason": null,
+          "exit_code": 0,
+          "output_bytes": 0,
+          "output_limit_bytes": 4194304,
+          "wall_time_limit_seconds": 60.0,
+          "job_memory_limit_bytes": 1610612736,
+          "job_peak_memory_used_bytes": 128737280,
+          "active_process_limit": 24,
+          "explicit_environment": true,
+          "write_io_limit_bytes": 134217728,
+          "job_write_io_bytes": 3004222,
+          "write_io_overshoot_bytes": 0,
+          "write_io_observation_error": null,
+          "write_io_enforcement": "polled_job_transfer_accounting",
+          "hard_storage_quota": false
+        },
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "cocoindex-check": {
+        "process": {
+          "windows_job": true,
+          "assigned_before_resume": true,
+          "kill_on_close": true,
+          "job_active_processes_after_cleanup": 0,
+          "service_created_processes_tracked": false,
+          "termination_reason": null,
+          "exit_code": 0,
+          "output_bytes": 867,
+          "output_limit_bytes": 4194304,
+          "wall_time_limit_seconds": 560.0,
+          "job_memory_limit_bytes": 7516192768,
+          "job_peak_memory_used_bytes": 665948160,
+          "active_process_limit": 128,
+          "explicit_environment": true
+        },
+        "stdout_sha256": "6abe15edfc343f5d4bfa190b4273bb2894cf097b76f208ca1282761ca154036e",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "index": {
+        "process": {
+          "windows_job": true,
+          "assigned_before_resume": true,
+          "kill_on_close": true,
+          "job_active_processes_after_cleanup": 0,
+          "service_created_processes_tracked": false,
+          "termination_reason": null,
+          "exit_code": 0,
+          "output_bytes": 2606,
+          "output_limit_bytes": 4194304,
+          "wall_time_limit_seconds": 150.0,
+          "job_memory_limit_bytes": 5368709120,
+          "job_peak_memory_used_bytes": 1155260416,
+          "active_process_limit": 96,
+          "explicit_environment": true,
+          "write_io_limit_bytes": 1073741824,
+          "job_write_io_bytes": 2036776,
+          "write_io_overshoot_bytes": 0,
+          "write_io_observation_error": null,
+          "write_io_enforcement": "polled_job_transfer_accounting",
+          "hard_storage_quota": false
+        },
+        "stdout_sha256": "cd8a52309bf20e835fd5ad4de7a97f7cf613484cb1ef27eb05b62100a097c8de",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "search": {
+        "process": {
+          "windows_job": true,
+          "assigned_before_resume": true,
+          "kill_on_close": true,
+          "job_active_processes_after_cleanup": 0,
+          "service_created_processes_tracked": false,
+          "termination_reason": null,
+          "exit_code": 0,
+          "output_bytes": 2616,
+          "output_limit_bytes": 4194304,
+          "wall_time_limit_seconds": 150.0,
+          "job_memory_limit_bytes": 5368709120,
+          "job_peak_memory_used_bytes": 1162977280,
+          "active_process_limit": 96,
+          "explicit_environment": true,
+          "write_io_limit_bytes": 1073741824,
+          "job_write_io_bytes": 275523,
+          "write_io_overshoot_bytes": 0,
+          "write_io_observation_error": null,
+          "write_io_enforcement": "polled_job_transfer_accounting",
+          "hard_storage_quota": false
+        },
+        "stdout_sha256": "61dc44269024cd14eb718776b107ea828493746c3c0cbac187861a4826e2a604",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  "initial_query_control": {
+    "original_receipt_requested_outside_selected_project": true,
+    "native_exit": 1,
+    "accepted_receipt_location": "inside the selected Git project .venv/research"
+  },
+  "provider_versions": {
+    "crawl4ai": "0.9.6+catalog.portable1",
+    "crawl4ai_native_controls": 20,
+    "crawl4ai_external_page_exercised": false,
+    "cocoindex_code": "0.2.44+catalog.local1",
+    "cocoindex_target_search_matches": 1
+  }
+}
