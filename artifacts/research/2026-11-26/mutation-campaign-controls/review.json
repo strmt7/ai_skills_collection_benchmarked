@@ -1,0 +1,27 @@
+{
+  "model_evaluation_status": "unbenchmarked",
+  "reproduction": {
+    "entrypoint": {
+      "path": "artifacts/research/2026-11-26/mutation-campaign-controls/reproduce.py",
+      "sha256": "23643d6819693a1f3e533d3be47052e3ab64e85b447ffa3d3309060ab65f80bb"
+    },
+    "inputs": "A fresh private evidence directory with windows-node.json binding a compatible installed Node executable and npm-cli.js by SHA-256, plus the exact published @stryker-mutator/core npm metadata in stryker-core-release.native.json. Invocation passes the checkout path and evidence directory.",
+    "observations": {
+      "path": "artifacts/research/2026-11-26/mutation-campaign-controls/results.json",
+      "sha256": "ea25c8a60fcc9a0af1687b7918b8bc46bad54cececadc39e1234adb00159d5b3"
+    }
+  },
+  "schema_version": 1,
+  "scope": "This review qualifies a mutation testing provider on one controlled JavaScript fixture.",
+  "source": {
+    "checked_current_original_scope": {
+      "SKILL.md": "f4e993352968b9b188feb991e7e38a81372d2be3",
+      "references/optimization-strategies.md": "ff8f2735fe145c06d24356e0c1ad175771d3f522",
+      "workflows/configuration.md": "379de5d6470f35837ef4024f334fd93a233277cc"
+    },
+    "latest_checked_commit": "149d7b21f4067765b82e67029730b42d228ef4b4",
+    "locked_commit": "e8cc5baf9329ccb491bfa200e82eacbac83b1ead",
+    "locked_entrypoint_sha256": "24d6ac24476bd5f554e78dd0f6f73f781d1478b2a220989d78a8dc1283701ac5",
+    "locked_skill": "trailofbits-skills-plugins-mutation-testing-skills-mutation-testing-skill-md"
+  }
+}

@@ -601,6 +601,26 @@
       "source_commit": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
       "source_file_sha256": "8cfa22c35e5370c1f85400921d27e259cc99ba67a890625412bf2fc650a1d038",
       "source_url": "https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/e2e-testing/SKILL.md"
+    },
+    {
+      "license": "CC-BY-SA-4.0",
+      "license_file_sha256": "7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297",
+      "license_source_sha": "e8cc5baf9329ccb491bfa200e82eacbac83b1ead",
+      "original_path": "included/improved/skills/mutation-testing-current/provenance/original-SKILL.md",
+      "overlay_path": "included/improved/skills/mutation-testing-current",
+      "overlay_sha256": "79a14b5fa4dd0694edf0e7281d0d40c5cc615c2fcadf809382eec65748034d7d",
+      "package_file_sha256": {
+        "LICENSE": "7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297",
+        "NOTICE.md": "4fb45585cda1ed62a1c721d05d080f6dcaea30ca04ca92032019f3c70c7ac3f3",
+        "SKILL.md": "79a14b5fa4dd0694edf0e7281d0d40c5cc615c2fcadf809382eec65748034d7d",
+        "provenance/original-SKILL.md": "24d6ac24476bd5f554e78dd0f6f73f781d1478b2a220989d78a8dc1283701ac5",
+        "references/providers.md": "b2a5700d4ae48cfca4999471006300893ed4bbc2f4d3ec50d08d64a0fdb902fc"
+      },
+      "performance_status": "unbenchmarked",
+      "skill_id": "trailofbits-skills-plugins-mutation-testing-skills-mutation-testing-skill-md",
+      "source_commit": "e8cc5baf9329ccb491bfa200e82eacbac83b1ead",
+      "source_file_sha256": "24d6ac24476bd5f554e78dd0f6f73f781d1478b2a220989d78a8dc1283701ac5",
+      "source_url": "https://github.com/trailofbits/skills/blob/e8cc5baf9329ccb491bfa200e82eacbac83b1ead/plugins/mutation-testing/skills/mutation-testing/SKILL.md"
     }
   ]
 }

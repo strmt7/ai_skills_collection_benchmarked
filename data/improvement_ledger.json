@@ -21739,12 +21739,16 @@
       "research": {
         "evidence": [
           {
-            "path": "docs/research-property-and-mutation-testing.md",
-            "sha256": "48cbae202f044835d83ca43cb6b13ad61d84ebcf92c699eacbe9edb6c2392a4d"
-          },
-          {
             "path": "artifacts/research/2026-10-02/property-oracle-runtime-controls-v2.json",
             "sha256": "46d22fa4d0b5854729c183a75d3b36d4ba582434486328b0d4f135a68ebabe5e"
+          },
+          {
+            "path": "docs/research-property-and-mutation-testing.md",
+            "sha256": "48bc86841bb5583585c4e818d2809312e40155816ca72653a0604b708f7c2bf4"
+          },
+          {
+            "path": "artifacts/research/2026-11-26/mutation-campaign-controls/review.json",
+            "sha256": "5ece64cbacfd4ccc48a4591eb49cee78dfe9aabecbdb9176e9d539d2e037d2b5"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
@@ -21771,8 +21775,17 @@
         "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "included/improved/skills/mutation-testing-current/SKILL.md",
+            "sha256": "dba71e1dc97993abe78334b1c0f33c52a0361eea3acc37344c45997329e2fc2e"
+          },
+          {
+            "path": "artifacts/research/2026-11-26/mutation-campaign-controls/review.json",
+            "sha256": "5ece64cbacfd4ccc48a4591eb49cee78dfe9aabecbdb9176e9d539d2e037d2b5"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "trailofbits/skills",
       "source_signature": {
@@ -21792,7 +21805,7 @@
         "evidence": [
           {
             "path": "docs/research-property-and-mutation-testing.md",
-            "sha256": "48cbae202f044835d83ca43cb6b13ad61d84ebcf92c699eacbe9edb6c2392a4d"
+            "sha256": "48bc86841bb5583585c4e818d2809312e40155816ca72653a0604b708f7c2bf4"
           },
           {
             "path": "artifacts/research/2026-10-02/property-oracle-runtime-controls-v2.json",

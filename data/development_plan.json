@@ -83,7 +83,7 @@
         "R9",
         "R12"
       ],
-      "next_action": "Use the verified native Codex-to-TestEval handoff and retained Packaging controls. Qualify an instruction-clean signed-in profile for GPT-6.1 Sol high and bind observed model identity and effort before admission. Connect the admitted route to the frozen 36-slot TestEval schedule. Keep the failed local Qwen artifact probe in its recorded scope and qualify supplemental routes separately.",
+      "next_action": "Use the verified native Codex-to-TestEval handoff and retained Packaging controls. Qualify an instruction-clean signed-in profile for GPT-6.1 Sol high and bind observed model identity and effort before admission. Connect the admitted route to the frozen 36-slot TestEval schedule. For a separate Gemma 4 local study, qualify the public native grader handoff when the frozen host-memory threshold permits a trial. Retain earlier local setup and task failures.",
       "deliverables": [
         "Maintained qualification entrypoint and frozen input assets",
         "Provider/model identity and capability admission",
@@ -171,6 +171,11 @@
           "path": "artifacts/research/2026-11-26/testeval-native-subject/review.json",
           "sha256": "2355cd7a40ab0fb9eb13be17c834e8c0218cd94906de72e5601f349784c814aa",
           "scope": "Seven source-bound native CLI controls, one sealed publisher and companion grade, six ungraded outcomes, and zero model attempts."
+        },
+        {
+          "path": "artifacts/research/2026-11-26/local-model-calibration/review.json",
+          "sha256": "41eb8627ec3e150c92db6b4dfd692de2812805d0e686a31d6d17ddc21bc81e51",
+          "scope": "Unscored local model tool control passed with an exact retained artifact. The initial output-removal failure, cold memory stop and public TestEval admission stop are retained."
         }
       ]
     },
@@ -346,6 +351,11 @@
           "path": "artifacts/research/2026-11-25/ecc-testing-requalification/review.json",
           "sha256": "d7be0e096565bfc9122823d9a4e28c68877b63551f6d7364fd9df93abb966050",
           "scope": "Four current source packages, a late-response browser control and a completed-research inventory regression."
+        },
+        {
+          "path": "artifacts/research/2026-11-26/mutation-campaign-controls/review.json",
+          "sha256": "5ece64cbacfd4ccc48a4591eb49cee78dfe9aabecbdb9176e9d539d2e037d2b5",
+          "scope": "Source-preserving mutation-testing instruction overlay and actual Windows StrykerJS controls covering survivor, detection, and rejected baseline. This qualifies one provider workflow."
         }
       ]
     },

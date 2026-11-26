@@ -1,0 +1,27 @@
+{
+  "applicability": "This control supports further development of a supplemental Gemma transport. Comparative scores and official GPT-6.1 Sol high launch eligibility remain pending.",
+  "current_sources": {
+    "tools/_testeval_subject.py": "14def19786a90c3ee84e5608d08b618ef10e365393cb34f09c9df69e56959a09",
+    "tools/_trial_catalog.py": "36906f720b06cda62c2bf5966ef94889f636ed020ecc0ed24612d38d5c50ac02",
+    "tools/_trial_context.py": "9644724991b501d404762f4b5785d151c6fba460614128e4eac39eeed7255418",
+    "tools/_windows_trial_process.py": "ab73c62bb12bb9e255bc321694860168b1cf9f555ffa3c589192ec0ac08aa9e2",
+    "tools/run_agent_trial.py": "fb82cb8fcf3c6ec04745269549c4039e90338a8ad15a9a8aaa6ec4f04acd4f16"
+  },
+  "observations": {
+    "path": "artifacts/research/2026-11-26/local-model-calibration/observations.json",
+    "sha256": "b7e1fd39960e26a5385c046687bb66102869a4375911a6d6aecdc4b67da4d61c"
+  },
+  "protocol": {
+    "artifact_admission": "The qualification required exact file bytes after the native turn and process closed.",
+    "clarification": "The second Gemma run explicitly required retaining the output file.",
+    "initial": "Run a declared Powershell file write and read in a disposable native subject.",
+    "testeval": "The planned public publisher task was held at the configured memory check before a model launch."
+  },
+  "release_versions": {
+    "backend": "https://github.com/ollama/ollama/releases/tag/v0.40.18",
+    "harness": "https://github.com/openai/codex/releases/tag/rust-v0.172.0",
+    "model": "https://ollama.com/library/gemma4:12b-it-qat"
+  },
+  "role": "Independent unscored native subject readiness",
+  "schema_version": 1
+}

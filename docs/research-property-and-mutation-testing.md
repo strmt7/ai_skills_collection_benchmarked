@@ -61,7 +61,7 @@ Primary GitHub release metadata resolves Mewt **4.0.0** (June 18, 2026) and Muto
 `53b5d0798b5db725fafe6ca282cbf0d886b0162c`. Read its actual configuration guide,
 mechanics guide, result status types and counter logic, and relevant CLI definitions.
 The public tool is AGPL-3.0; the skill text is under its distinct upstream
-CC-BY-SA-4.0 license. No tool campaign or binary execution has been claimed.
+CC-BY-SA-4.0 license. Mewt and Muton campaigns remain unqualified.
 
 The original `[[test.per_target]]` structure is deprecated in Mewt 4.0; the current
 form is top-level `[[per_target]]` with `test.cmd` and `test.timeout`. Latest
@@ -108,3 +108,24 @@ Remaining: actual Mewt/Muton campaigns and restoration controls, other-language
 library release/API qualification, the added upstream reference resources,
 source publication, and independent agent comparisons. All control successes
 remain distinct from coding-agent efficacy and benchmark superiority.
+
+
+## Windows JavaScript campaign
+
+The current original-scope upstream files reaffirm the Mewt 4.0 per-target
+structure. The optimization guide still presents projected counts and warm
+run times as a worst-case duration. A campaign should include representative
+rebuild, timeout and resource observations before publishing a time budget.
+
+A native StrykerJS 10.1.1 replay used independently scoped input on Windows
+x64. Both valid suites pass the unchanged program. The coarse suite detects
+five generated changes and misses the cutoff mutation. Adding the relevant
+boundary assertion detects all six. A deliberately broken reference suite
+fails before a mutation report can be produced. All seven jobs closed and
+the disposable environment was removed.
+
+The maintained mutation-testing overlay preserves the locked original and
+adds platform-aware selection, bounded qualification and outcome accounting.
+Agent efficacy and the additional upstream resources remain separately tracked.
+[Native controls and scope](../artifacts/research/2026-11-26/mutation-campaign-controls/review.json)
+[Provider configuration](https://stryker-mutator.io/docs/stryker-js/configuration/)

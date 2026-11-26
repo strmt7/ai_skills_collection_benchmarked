@@ -1,0 +1,105 @@
+{
+  "comparative_attempts": 0,
+  "harness": {
+    "context_tokens": 16384,
+    "name": "Codex CLI",
+    "qualification_sha256": "1a84c92823f83dc135b152e757f4f3ff3a385b363d90599434255c72b19af73f",
+    "requested_reasoning_setting": "high",
+    "version": "0.172.0"
+  },
+  "observations": [
+    {
+      "cli_exit": 1,
+      "completed_turn": false,
+      "disposition": "resource_floor",
+      "exact_artifact": null,
+      "lane": "GPT-OSS 20B cold-load",
+      "manifest_sha256": "f38aa0c53da5f8c49d08c43a99df24ff53167fe68e24664a7777288e7656fdfe",
+      "native_backend_version": "0.40.18",
+      "native_listener_closed": true,
+      "process": {
+        "outer_exit": 1,
+        "receipt_sha256": "284bd029e3f7be0a550fda830f9846502db8839574c0a8184a395fb6688e83d6",
+        "remaining_processes": 0
+      },
+      "recorded_floor_crossing_bytes": 10445991936,
+      "rule_sha256": "95ba71f5e6fcd3154cf4f1b34cf1d9c5c8119b5988e1f31a4aa5baa7251badeb",
+      "subject_launches": 1,
+      "tool_events": null,
+      "transcript_sha256": "e3dfb87b6394f4a94893c07f16db2144962aac9811db2b00758411c332a79be4"
+    },
+    {
+      "cli_exit": 0,
+      "completed_turn": true,
+      "disposition": "output_removed",
+      "exact_artifact": false,
+      "lane": "Gemma 4 12B first retained-output check",
+      "manifest_sha256": "38044be4f923e5a55264ed7df4eaac2676651a905f735197c504045140c02bd3",
+      "min_observed_available_bytes": 21899145216,
+      "native_backend_version": "0.40.18",
+      "native_listener_closed": true,
+      "observed_context": 16384,
+      "peak_observed_vram_bytes": 7982106540,
+      "preload_manifest_sha256": "def5d1bb1c27ea9a685f0c20cc9b359b2e1b54dfad9cb4c6615052a893d6b2fa",
+      "process": {
+        "outer_exit": 1,
+        "receipt_sha256": "57a3599878184e1b97937b3526ec7b073944d32b2c25f83a57ab107e3b65eb71",
+        "remaining_processes": 0
+      },
+      "rule_sha256": "00c9d464bdd5e13e061a7658dc96f6b17270fe2dc41c9ca19c6dd29a595f21f8",
+      "subject_launches": 1,
+      "tool_events": 2,
+      "transcript_sha256": "188436ee8719f28a20ff4da27810e5d7cddb7852095086919f1d037a7dec6bda"
+    },
+    {
+      "cli_exit": 0,
+      "completed_turn": true,
+      "deliverable_sha256": "1d873a16a48496553ab27a1f3cc495a8f933454128431c2503d62de135350285",
+      "disposition": "qualified_unscored_tool_control",
+      "exact_artifact": true,
+      "lane": "Gemma 4 12B explicit retained-output check",
+      "manifest_sha256": "38044be4f923e5a55264ed7df4eaac2676651a905f735197c504045140c02bd3",
+      "min_observed_available_bytes": 21528162304,
+      "native_backend_version": "0.40.18",
+      "native_listener_closed": true,
+      "native_usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 13129,
+        "input_tokens": 19897,
+        "output_tokens": 471,
+        "reasoning_output_tokens": 0
+      },
+      "observed_context": 16384,
+      "peak_observed_vram_bytes": 7982106540,
+      "preload_manifest_sha256": "0be974d5ed65ab7035b69230d032a6d5aa751cecf04a6f5ee7eaa48b5bcb71fd",
+      "process": {
+        "outer_exit": 0,
+        "receipt_sha256": "2a90f59ceb1428dabe736199e3c159e49af26d013acbde8b684ea6c97072692e",
+        "remaining_processes": 0
+      },
+      "rule_sha256": "1a84c92823f83dc135b152e757f4f3ff3a385b363d90599434255c72b19af73f",
+      "scripted_catalog_control_sha256": "7918709ddbf46a412bef154a25b1b8872f6c9199e22721a7f249929e8cc6c9f2",
+      "subject_launches": 1,
+      "tool_events": 1,
+      "transcript_sha256": "0d9856a568a963fc1aefd0e8da30c757e1184ed945810bab5504c5bcaa7cfc72"
+    },
+    {
+      "disposition": "setup_memory_floor",
+      "lane": "Public TestEval task 685 readiness",
+      "native_grader_executions": 0,
+      "process": {
+        "outer_exit": 1,
+        "receipt_sha256": "88e0950e5ff42875307cbf17c922d09d280089a038c8824dfad6685108a2ec99",
+        "remaining_processes": 0
+      },
+      "requested_start_available_bytes": 21474836480,
+      "setup_error_sha256": "900f74670bf95438299b5c4e4f94bfc5b223bc761eb96f463afed933a1c9843d",
+      "subject_launches": 0
+    }
+  ],
+  "observed_on": "2026-11-26",
+  "publisher_scores": 0,
+  "schema_version": 1,
+  "scope": "Unscored tool and artifact calibration on Windows x64 using local released models",
+  "setup_failures_retained": true
+}

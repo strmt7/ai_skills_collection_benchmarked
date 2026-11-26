@@ -1,0 +1,46 @@
+{
+  "agent_comparative_attempts": 0,
+  "agent_model_inferences": 0,
+  "campaigns": {
+    "coarse": {
+      "native_report_sha256": "59f495cd97c09befaea4987782528b8587fb0f9c9e236cdcdd19b450268f3e73",
+      "status_counts": {
+        "Killed": 5,
+        "Survived": 1
+      },
+      "target_status": "Survived"
+    },
+    "precise": {
+      "native_report_sha256": "a02d80e766e18520486c084c55fa8ef8b36824cdf54ce9dc8f3f0da8c064e7fd",
+      "status_counts": {
+        "Killed": 6
+      },
+      "target_status": "Killed"
+    }
+  },
+  "job_closed_count": 7,
+  "negative_control_correction": "The first replay expected the wrong diagnostic text. The native exit and missing report were already correct. The full replay was repeated with the released tool's actual diagnostic.",
+  "observed_on": "2026-11-26",
+  "plan_sha256": "b74298b12c51be912cb5ffc170f25a3744c231c33878dc08e02ec0e638133a5b",
+  "rejected_baseline": {
+    "campaign_exit": 1,
+    "native_diagnostics_sha256": "aaea2939aae3a7ed424f539ef4b7027daeee10a09210859dfb1f7e0b993ed79a",
+    "report_emitted": false,
+    "runner_exit": 1
+  },
+  "runtime": {
+    "node": "v24.22.3",
+    "node_executable_sha256": "86fc4785327db5f5c7558dc6156c543b433c313e813a222e088086222ab4afa6",
+    "npm": "11.19.1",
+    "npm_cli_sha256": "3ce7cba6f5128dd5f54c98b6a5036b0f850496878cc2e21044b675fe3c594e3e"
+  },
+  "schema_version": 1,
+  "scope": "Windows x64 Node.js command runner; independent provider qualification",
+  "stryker": {
+    "official_registry_metadata_sha256": "5cdf94c13b6f93f04f2cda4a9436fcbcdf0d2bce7fb11c351d55c6179de51593",
+    "package_lock_sha256": "cb915a9e3f94dedb5e4065e0c7b8885600e025190de19d7e2719de66c2ebd4d7",
+    "upstream": "https://github.com/stryker-mutator/stryker-js",
+    "version": "10.1.1"
+  },
+  "temporary_workspace_and_cache_removed": true
+}
