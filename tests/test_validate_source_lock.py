@@ -81,9 +81,34 @@ def test_missing_source_root_env_var_does_not_break_offline(monkeypatch):
     assert validate_source_lock.resolve_source_root(None) is None
 
 
-def test_env_var_pointing_at_nonexistent_dir_is_ignored(monkeypatch):
-    monkeypatch.setenv("AI_SKILL_SOURCE_ROOT", "/definitely/does/not/exist/anywhere")
-    assert validate_source_lock.resolve_source_root(None) is None
+def test_env_var_pointing_at_nonexistent_dir_fails_live_validation(monkeypatch, tmp_path, capsys):
+    missing = tmp_path / "missing-checkouts"
+    monkeypatch.setenv("AI_SKILL_SOURCE_ROOT", str(missing))
+    assert validate_source_lock.resolve_source_root(None) == missing.resolve()
+    assert validate_source_lock.main(["--json"]) == 1
+    report = json.loads(capsys.readouterr().out)
+    assert report["mode"] == "live" and report["source_root"] == str(missing.resolve())
+    assert "does not exist" in report["errors"][0]
+
+
+def test_invalid_portable_lock_is_reported_before_reading_checkouts(monkeypatch, tmp_path, capsys):
+    lock = {
+        "lock_version": 2,
+        "hash_algorithm": "sha256",
+        "source_root": str(tmp_path),
+        "sources": [{"repo": "a/a", "origin_url": "/local/a", "local_dir": "../outside", "skills": None}],
+    }
+    path = tmp_path / "bad-lock.json"
+    path.write_text(json.dumps(lock), encoding="utf-8")
+
+    def unexpected_read(*_):
+        pytest.fail("invalid checkout binding was used")
+
+    monkeypatch.setattr(validate_source_lock, "run_git", unexpected_read)
+    assert validate_source_lock.main(["--lock", str(path), "--source-root", str(tmp_path), "--json"]) == 1
+    errors = "\n".join(json.loads(capsys.readouterr().out)["errors"])
+    for message in ("portable source lock contains local fields", "local_dir", "origin_url", "skills must be a list"):
+        assert message in errors
 
 
 def test_explicit_source_root_is_used_even_if_missing(monkeypatch, tmp_path):

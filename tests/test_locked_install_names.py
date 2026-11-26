@@ -69,7 +69,7 @@ def test_check_errors_remain_machine_readable_and_distinct_from_drift(tmp_path, 
         raise ValueError("source archive required")
 
     monkeypatch.setattr(builder, "scoped_refresh_inputs", refused)
-    assert builder.main(["--refresh-source", "owner/repo", "--check", "--json"]) == 2
+    assert builder.main(["--source-root", str(tmp_path), "--refresh-source", "owner/repo", "--check", "--json"]) == 2
     assert json.loads(capsys.readouterr().out) == {"ok": False, "mode": "check", "errors": ["source archive required"]}
 
 

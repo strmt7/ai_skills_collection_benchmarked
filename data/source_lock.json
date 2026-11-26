@@ -57,8 +57,7 @@
   ],
   "generated_on": "2026-04-17",
   "hash_algorithm": "sha256",
-  "lock_version": 1,
-  "source_root": "/tmp/ai_skill_sources",
+  "lock_version": 2,
   "sources": [
     {
       "commit_sha": "451d77df90621e3b666581d9835d246fb7147349",
@@ -9564,7 +9563,7 @@
     {
       "commit_sha": "289abdea7df857dc7a6ece937dbe0c5ecc964ccd",
       "local_dir": "lackeyjb__playwright-skill",
-      "origin_url": "https://github.com/lackeyjb/playwright-skill",
+      "origin_url": "https://github.com/lackeyjb/playwright-skill.git",
       "preserved_notice": {
         "commit_sha": "289abdea7df857dc7a6ece937dbe0c5ecc964ccd",
         "path": "artifacts/source-notices/lackeyjb-playwright-skill/289abdea7df857dc7a6ece937dbe0c5ecc964ccd/LICENSE",
@@ -24207,13 +24206,5 @@
       ],
       "tree_sha": "ae3070ee183d0bae220745ec9120964e6b671175"
     }
-  ],
-  "unused_staged_source_dirs": [
-    "Orchestra-Research__AI-Research-SKILLs",
-    "Prat011__awesome-llm-skills",
-    "alirezarezvani__claude-skills",
-    "cisco-ai-defense__skill-scanner",
-    "dadbodgeoff__drift",
-    "littleben__awesomeAgentskills"
   ]
 }

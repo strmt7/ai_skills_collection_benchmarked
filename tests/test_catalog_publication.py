@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import shutil
 from pathlib import Path
 
 import _catalog_publication as publication
@@ -194,6 +195,51 @@ def test_undeclared_generated_file_rejected(transaction):
     assert_originals(root, original)
 
 
+def test_recovery_cli_uses_observed_versions_after_an_unrecorded_move(transaction, monkeypatch, capsys):
+    root, staged, journal, original = transaction
+    relative = "data/catalog.json"
+    journal["status"] = "publishing"
+    journal["operations"] = [{"path": relative, "backed_up": False, "installed": False}]
+    publication.write_journal(staged, journal)
+    backup = staged / "previous" / relative
+    backup.parent.mkdir(parents=True)
+    (root / relative).rename(backup)
+    lock = staged.parent / "publication.lock"
+    lock.write_text(str(staged), encoding="utf-8")
+
+    monkeypatch.setattr(catalog, "ROOT", root)
+    monkeypatch.setattr(catalog, "GENERATED_OUTPUTS", tuple(row["path"] for row in journal["outputs"]))
+    assert catalog.main(["--recover-publication", "--json"]) == 0
+    result = json.loads(capsys.readouterr().out)
+    assert result["ok"] and result["status"] == "rolled_back"
+    assert_originals(root, original)
+    assert not lock.exists()
+
+
+def test_recovery_clears_owned_incomplete_generation_without_touching_targets(transaction):
+    root, staged, journal, original = transaction
+    incomplete = staged.parent / "build-in-progress-v2/generated"
+    incomplete.mkdir(parents=True)
+    (incomplete / "partial.txt").write_bytes(b"abandoned generated file")
+
+    result = publication.recover(root, tuple(row["path"] for row in journal["outputs"]))
+    assert result["status"] == "none" and result["partial_build_removed"] is True
+    assert_originals(root, original)
+    assert not incomplete.parent.exists() and staged.is_dir()
+
+
+def test_recovery_preserves_legacy_journal_without_a_writer_guard(transaction):
+    root, staged, journal, original = transaction
+    journal["schema_version"] = 1
+    publication.write_journal(staged, journal)
+    lock = staged.parent / "publication.lock"
+    lock.write_text(str(staged), encoding="utf-8")
+    with pytest.raises(ValueError, match="version-2"):
+        publication.recover(root, tuple(row["path"] for row in journal["outputs"]))
+    assert lock.exists() and json.loads((staged / "journal.json").read_bytes())["schema_version"] == 1
+    assert_originals(root, original)
+
+
 def test_unreadable_directory_is_not_treated_as_an_empty_tree(tmp_path, monkeypatch):
     def fail(path, *, onerror, followlinks):
         onerror(PermissionError("unreadable directory"))
@@ -233,25 +279,48 @@ def complete_generator(tmp_path, monkeypatch):
             }
         ],
     )
-    monkeypatch.setattr(
-        catalog,
-        "run_git",
-        lambda path, *args: (
-            ""
-            if args[0] == "status"
-            else "https://example.invalid/fixture.git"
-            if args[0] == "config"
-            else ("b" * 40 if args[-1] == "HEAD^{tree}" else "a" * 40)
-        ),
-    )
+
+    def git(path, *args):
+        if args[0] == "status":
+            return ""
+        if args[0] == "config":
+            repo = "other" if path.name == "other" else "example"
+            return f"https://github.com/fixture/{repo}.git"
+        return "b" * 40 if args[-1] == "HEAD^{tree}" else "a" * 40
+
+    monkeypatch.setattr(catalog, "run_git", git)
     monkeypatch.setattr(catalog, "git_latest_commit_epoch_for", lambda root, paths: 1790960401)
     monkeypatch.delenv("SOURCE_DATE_EPOCH", raising=False)
     return root, sources
 
 
-def test_generator_complete_roundtrip_and_freshness(complete_generator, capsys):
+def test_generation_is_portable_across_source_roots(complete_generator, monkeypatch, capsys):
     root, sources = complete_generator
+    monkeypatch.setenv("AI_SKILL_SOURCE_ROOT", str(root / "unavailable"))
     assert catalog.main(["--source-root", str(sources), "--json"]) == 0
+    capsys.readouterr()
+    lock = (root / "data/source_lock.json").read_bytes()
+    relocated = sources.parent / "other checkout root"
+    shutil.copytree(sources, relocated)
+    (relocated / "unrelated").mkdir()
+    original_git = catalog.run_git
+
+    def git(path, *args):
+        if args[0] == "config":
+            return "git@github.com:fixture/example.git"
+        return original_git(path, *args)
+
+    monkeypatch.setattr(catalog, "run_git", git)
+    monkeypatch.setenv("AI_SKILL_SOURCE_ROOT", str(relocated))
+    assert catalog.main(["--check", "--json"]) == 0
+    assert json.loads(capsys.readouterr().out)["different_outputs"] == []
+    assert (root / "data/source_lock.json").read_bytes() == lock
+
+
+def test_generator_complete_roundtrip_and_freshness(complete_generator, monkeypatch, capsys):
+    root, sources = complete_generator
+    monkeypatch.delenv("AI_SKILL_SOURCE_ROOT", raising=False)
+    assert catalog.main(["--json"]) == 0
     result = json.loads(capsys.readouterr().out)
     assert result["skills"] == 1
     assert (root / "docs/installation.md").read_text() == "maintained installation gates"
@@ -260,7 +329,10 @@ def test_generator_complete_roundtrip_and_freshness(complete_generator, capsys):
     assert root == catalog.ROOT and sources == catalog.SOURCE_ROOT
     before = {relative: publication.signature(root / relative) for relative in catalog.GENERATED_OUTPUTS}
     assert catalog.main(["--source-root", str(sources), "--check", "--json"]) == 0
-    assert json.loads(capsys.readouterr().out)["different_outputs"] == []
+    check = json.loads(capsys.readouterr().out)
+    assert check["different_outputs"] == [] and check["recovery_directory"] is None
+    stages = root / ".venv/generation-staging"
+    assert list(stages.glob("catalog-*")) == [Path(result["recovery_directory"])]
     assert before == {relative: publication.signature(root / relative) for relative in catalog.GENERATED_OUTPUTS}
     (root / "docs/methodology.md").write_text("drift", encoding="utf-8")
     assert catalog.main(["--source-root", str(sources), "--check", "--json"]) == 1
@@ -282,10 +354,19 @@ def scoped_generator(complete_generator, capsys):
     return root, sources
 
 
-def test_scoped_refresh_uses_only_selected_checkout_and_preserves_other_locks(scoped_generator, monkeypatch, capsys):
+@pytest.mark.parametrize("legacy", [False, True])
+def test_scoped_refresh_uses_only_selected_checkout_and_preserves_other_locks(
+    scoped_generator, monkeypatch, capsys, legacy
+):
     root, sources = scoped_generator
     before = json.loads((root / "data/skills_catalog.json").read_text())
-    old_lock = json.loads((root / "data/source_lock.json").read_text())
+    lock_path = root / "data/source_lock.json"
+    old_lock = json.loads(lock_path.read_text())
+    if legacy:
+        catalog.write_json(
+            lock_path,
+            {**old_lock, "lock_version": 1, "source_root": str(sources), "unused_staged_source_dirs": ["extra"]},
+        )
     retained = next(entry for entry in before if entry["source_repo"] == "fixture/other")
     mirror_signature = publication.signature(root / retained["mirrored_path"])
     # Its source checkout is deliberately unavailable: the locked mirror is the
@@ -311,6 +392,7 @@ def test_scoped_refresh_uses_only_selected_checkout_and_preserves_other_locks(sc
     lock = json.loads((root / "data/source_lock.json").read_text())
     assert lock["sources"][1] == old_lock["sources"][1]
     assert lock["sources"][0]["commit_sha"] == "c" * 40
+    assert lock["lock_version"] == 2 and lock.keys() == old_lock.keys()
     updated = next(entry for entry in after if entry["source_repo"] == "fixture/example")
     assert (root / updated["mirrored_path"] / "new.txt").read_text() == "new public resource\n"
     assert catalog.main([*arguments, "--check"]) == 0

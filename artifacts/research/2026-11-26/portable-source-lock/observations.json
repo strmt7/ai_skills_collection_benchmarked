@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-26",
+  "earlier_location_control": {
+    "input_reference_records_identical": true,
+    "changed_public_lock_fields": [
+      "source_root"
+    ],
+    "lock_sha256": [
+      "14e5ff065eefb97a225384e44e51bc8e271c24a91292274d665efb71fda535dc",
+      "10ccf421308dfb26d89f50a36345777211987a6a0cd2ccb0041a60c73d15f7bb"
+    ],
+    "scope": "Source-lock component with identical controlled Git metadata and distinct root paths"
+  },
+  "native_windows_relocation": {
+    "archived_v1_strict_retained_allowed_directory": true,
+    "bad_environment_checkout_root_failed_generation": true,
+    "bad_environment_checkout_root_failed_live_validation": true,
+    "distinct_workspaces": 2,
+    "explicit_checkout_root_overrode_bad_environment": true,
+    "git_version": "git version 2.56.0.windows.4",
+    "identical_lock_sha256": "f92d360074f0ff4d22d1a6f86a3b3ea2ed6c280c7b3cbc4826d306eb53433b7d",
+    "live_relaxed_admitted_unrelated_directory": true,
+    "live_strict_admitted_clean_stage": true,
+    "live_strict_reported_unrelated_directory": true,
+    "owned_temporary_root_removed": true,
+    "python_version": "3.14.10",
+    "retained_git_executable_mode": true,
+    "schema_version": 1,
+    "source_commit": "9fef15fc33735e831a36bca053472dfd2609923d",
+    "source_tree": "16f27880d5bba21b0ff769d97883070f8a11e53d",
+    "unrelated_checkout_origin_refused_without_publication": true,
+    "verified_output_signatures": {
+      "data/benchmark_assignments.json": "832281a0660bbe8056ca378afd2cfa790e78ceb42363c0eff3dc0c3fd22a81eb",
+      "data/benchmark_scenarios.json": "ee29307f74f8771a46189b64690add0d2c61bb4ab312b21420fa8042db774c0d",
+      "data/benchmark_tracks.json": "117997d68e3016b9f9f99d75ba6bf13f81b598ec409264773b340e82756c9001",
+      "data/best_practice_sources.json": "8c249f4c7a15388c553ba3acf7d4119081aeee58822c42ec5d69604500e13aad",
+      "data/skills_catalog.json": "da391e93406e723a473dab9b6ff1a1a1b1003479e4956fd087f9e75d3905d772",
+      "data/source_lock.json": "8b69dc4bf3bdc32369f947d245c367f58201897aa97c64eeb890e03f06d96117",
+      "docs/agent-consumability.md": "7d43cfcace91fa23902d645019e7d5c94c25fd20b38df466555e3a1ae6f58a94",
+      "docs/benchmark-runner-requirements.md": "8d4d24050da7b1b1b9d7b93c20a51a11a34f415d0b4fcc3bc92f533f0348c8b4",
+      "docs/benchmarks.md": "c5e659dfb43fb069a5daa6c2c3495f8f31716c1025ac6e5a90e18b3a84ad42b6",
+      "docs/catalog/by-category": "625215eae840143d9f9d81401644c32a8845fc320df0eb10d189dd8ee2bab511",
+      "docs/catalog/index.md": "96f7a64bc545283931625ddd070434f118cde9165f56f65535f124e2046563fb",
+      "docs/catalog/skills": "691fafb58c7d7c5ef8c8f9531fd8e4b8fa288e375a7dfd9a4295a98d23b76704",
+      "docs/immutable-audit-model.md": "dd05093eb54096ef6aa894d0bd743e39b9a961ac3d3500d7b3236b231a46322a",
+      "docs/methodology.md": "c1292fa3fd4f644e1df215769d55990ce777c01a85af869856ac1badaaf57249",
+      "docs/priority-skills.md": null,
+      "docs/selected-skills.md": "f37d603e4ad287d691a8530c7116bb9a3144245990b439ae67d9d95f113f55b6",
+      "docs/source-policy.md": "84b22a0c64280f8f3b00af2d4cc26f7fd197093edb7d3136bc737f11db4001b3",
+      "included/agent-ready": "d9c018141860a5d04d9f34bbfee90e4fa79be04fa9bd1ddd9d8d61dbd7267165",
+      "included/priority": null,
+      "included/selected": "db94d6f5c455734290cd6644d1b32356871b3fe90c7af644d51c368b178e5d59",
+      "included/skills": "fba8e1b6c78d2464ec3c06df21f2e19f0dde8c615c8a7881adfdc2a7756a4cf0"
+    }
+  },
+  "native_windows_recovery_recheck": {
+    "previous_review": "artifacts/research/2026-11-26/catalog-publication-recovery/review.json",
+    "native_controls": {
+      "pointer": {
+        "status": "rolled_back",
+        "native_exit": 37,
+        "versions_verified": true
+      },
+      "after-backup": {
+        "status": "rolled_back",
+        "native_exit": 37,
+        "versions_verified": true
+      },
+      "after-replace": {
+        "status": "rolled_back",
+        "native_exit": 37,
+        "versions_verified": true
+      },
+      "after-create": {
+        "status": "rolled_back",
+        "native_exit": 37,
+        "versions_verified": true
+      },
+      "after-retire": {
+        "status": "rolled_back",
+        "native_exit": 37,
+        "versions_verified": true
+      },
+      "after-published": {
+        "status": "published",
+        "native_exit": 37,
+        "versions_verified": true
+      },
+      "aborted-generation-cli": {
+        "ok": true,
+        "mode": "recover",
+        "status": "none",
+        "recovery_directory": null,
+        "partial_build_removed": true
+      },
+      "rollback-cli": {
+        "status": "rolled_back",
+        "originals_verified": true
+      },
+      "interrupted-recovery": {
+        "status": "rolled_back",
+        "successive_native_exits": [
+          37,
+          43
+        ]
+      },
+      "live-writer": {
+        "concurrent_recovery_refused": true,
+        "stage_removed": true
+      },
+      "unknown-observation": {
+        "change_preserved": true,
+        "pending_lock_preserved": true
+      },
+      "prepare-failure": {
+        "originals_verified": true,
+        "unclaimed_stage_removed": true
+      }
+    },
+    "owned_temporary_root_removed": true
+  },
+  "regression_tests": {
+    "passed": 151,
+    "skipped": 1,
+    "stdout_sha256": "5160f0fe1498c647ef7bfa5362274864e51adcf3c6ac84b1c798c83fbf29adf4"
+  },
+  "models_run": 0
+}

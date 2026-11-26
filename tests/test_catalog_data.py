@@ -37,8 +37,7 @@ def test_entry_provenance():
         declared = pins.get(origin, {})
         assert locked["commit_sha"] == entry["commit_sha"]
         upstream = declared.get("upstream_repo", entry["source_repo"])
-        if "upstream_repo" in declared:
-            assert locked["origin_url"] == f"https://github.com/{upstream}.git"
+        assert locked["origin_url"] == f"https://github.com/{upstream}.git"
         expected_immutable = f"https://github.com/{upstream}/blob/{entry['commit_sha']}/{entry['source_path']}"
         assert entry["immutable_source_url"] == expected_immutable
         if entry["latest_release_tag"]:
@@ -122,7 +121,8 @@ def test_tracks_are_real_urls():
 def test_source_lock_matches_catalog():
     catalog = {entry["id"]: entry for entry in load("data/skills_catalog.json")}
     lock = load("data/source_lock.json")
-    assert lock["lock_version"] == 1
+    assert lock["lock_version"] == 2
+    assert "source_root" not in lock and "unused_staged_source_dirs" not in lock
     assert lock["hash_algorithm"] == "sha256"
     locked = {skill["id"]: (source, skill) for source in lock["sources"] for skill in source["skills"]}
     assert set(locked) == set(catalog)

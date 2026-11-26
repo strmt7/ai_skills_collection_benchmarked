@@ -92,8 +92,10 @@ def git_history(tmp_path: Path):
     return lock, old_commit, old_tree, new_commit, new_tree
 
 
-def test_real_git_trees_produce_complete_resource_deltas(git_history):
+@pytest.mark.parametrize("lock_version", [1, 2])
+def test_real_git_trees_produce_complete_resource_deltas(git_history, lock_version):
     lock, old_commit, old_tree, new_commit, new_tree = git_history
+    lock["lock_version"] = lock_version
     report = comparison.compare(lock, "example/skills", old_commit, old_tree, new_commit, new_tree, {})
     assert (report["skill_count"], report["changed_skills"], report["missing_new_entrypoints"]) == (3, 2, 1)
     alpha, beta, gamma = report["skills"]

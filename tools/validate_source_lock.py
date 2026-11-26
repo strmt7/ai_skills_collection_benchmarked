@@ -21,10 +21,8 @@ from __future__ import annotations
 
 import argparse
 import json
-import os
 import subprocess
 import sys
-from collections.abc import Iterable
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -34,11 +32,10 @@ sys.path.insert(0, str(ROOT / "tools"))
 
 import build_catalog  # noqa: E402  (sys.path must be extended first)
 from _lib_b import dependency_graphs  # noqa: E402
+from _lib_b import source_lock as lock_format  # noqa: E402
+from _lib_b.source_lock import resolve_source_root  # noqa: E402
 
 DEFAULT_LOCK = ROOT / "data" / "source_lock.json"
-ENV_SOURCE_ROOT = "AI_SKILL_SOURCE_ROOT"
-LOCK_VERSION = 1
-HASH_ALGORITHM = "sha256"
 
 
 @dataclass
@@ -80,49 +77,57 @@ def run_git(path: Path, *args: str) -> str:
     return result.stdout.strip()
 
 
-def validate_top_level(lock: dict[str, Any], report: Report) -> None:
-    version = lock.get("lock_version")
-    if version != LOCK_VERSION:
-        report.fail(f"unsupported lock_version: expected {LOCK_VERSION}, got {version!r}")
-    algo = lock.get("hash_algorithm")
-    if algo != HASH_ALGORITHM:
-        report.fail(f"unsupported hash_algorithm: expected {HASH_ALGORITHM!r}, got {algo!r}")
-    sources = lock.get("sources")
-    if not isinstance(sources, list) or not sources:
-        report.fail("sources must be a non-empty list")
-
-
-def validate_unique_skill_ids(sources: Iterable[dict[str, Any]], report: Report) -> None:
-    seen: dict[str, str] = {}  # id -> source repo
-    for source in sources:
-        for skill in source.get("skills", []):
-            sid = skill.get("id")
-            if not isinstance(sid, str):
-                report.fail(f"{source.get('repo')}: skill entry missing id string")
-                continue
-            if sid in seen:
-                report.fail(f"duplicate skill id {sid!r}: appears in {seen[sid]} and {source.get('repo')}")
-            else:
-                seen[sid] = source.get("repo", "?")
-
-
 def validate_sources_structure(lock: dict[str, Any], report: Report) -> None:
-    required_source_fields = ("repo", "origin_url", "local_dir", "commit_sha", "tree_sha", "skill_count", "skills")
-    required_skill_fields = ("id", "source_path", "skill_file_sha256", "skill_dir_sha256")
-    for source in lock.get("sources", []):
-        for field_name in required_source_fields:
-            if field_name not in source:
-                report.fail(f"{source.get('repo', '?')}: missing field {field_name!r}")
-        if source.get("skill_count") != len(source.get("skills", [])):
-            report.fail(f"{source.get('repo')}: skill_count != len(skills)")
-        for skill in source.get("skills", []):
+    sources = lock.get("sources")
+    if not isinstance(sources, list):
+        return
+    seen_dirs: set[str] = set()
+    seen_skills: dict[str, str] = {}
+    source_fields = ("repo", "origin_url", "local_dir", "commit_sha", "tree_sha")
+    skill_fields = ("id", "source_path", "skill_file_sha256", "skill_dir_sha256")
+    for row_number, source in enumerate(sources, 1):
+        if not isinstance(source, dict):
+            report.fail(f"source row {row_number} must be an object")
+            continue
+        repo = source.get("repo", f"source row {row_number}")
+        for field_name in source_fields:
+            if not isinstance(source.get(field_name), str):
+                report.fail(f"{repo}: missing field {field_name!r} or invalid text")
+        directory = source.get("local_dir")
+        if not lock_format.is_checkout_name(directory):
+            report.fail(f"{repo}: local_dir must be a portable checkout directory name")
+        elif directory.casefold() in seen_dirs:
+            report.fail(f"{repo}: duplicate checkout directory {directory!r}")
+        else:
+            seen_dirs.add(directory.casefold())
+        if lock.get("lock_version") == lock_format.LOCK_VERSION:
+            origin = source.get("origin_url")
+            normalized = lock_format.normalize_origin(origin)
+            if normalized is None or normalized != origin:
+                report.fail(f"{repo}: origin_url must be a canonical public GitHub URL")
+        skills = source.get("skills")
+        if not isinstance(skills, list):
+            report.fail(f"{repo}: skills must be a list")
+            continue
+        if type(source.get("skill_count")) is not int or source["skill_count"] != len(skills):
+            report.fail(f"{repo}: skill_count != len(skills)")
+        for skill in skills:
+            if not isinstance(skill, dict):
+                report.fail(f"{repo}: skill entry must be an object")
+                continue
+            sid = skill.get("id")
+            if isinstance(sid, str):
+                if sid in seen_skills:
+                    report.fail(f"duplicate skill id {sid!r}: appears in {seen_skills[sid]} and {repo}")
+                else:
+                    seen_skills[sid] = str(repo)
             try:
                 build_catalog.validate_credential_policy(skill.get("credential_policy_version", 1))
             except ValueError as exc:
-                report.fail(f"{skill.get('id', '?')}: {exc}")
-            for field_name in required_skill_fields:
-                if field_name not in skill:
-                    report.fail(f"{skill.get('id', '?')}: missing field {field_name!r}")
+                report.fail(f"{repo}, skill {sid!r}: {exc}")
+            for field_name in skill_fields:
+                if not isinstance(skill.get(field_name), str):
+                    report.fail(f"{repo}, skill {sid!r}: missing field {field_name!r} or invalid text")
 
 
 def validate_mirrors(lock: dict[str, Any], report: Report) -> None:
@@ -206,7 +211,13 @@ def validate_live_checkouts(
                 report.fail(f"{source['repo']}: commit mismatch")
             if run_git(repo_dir, "rev-parse", "HEAD^{tree}") != source["tree_sha"]:
                 report.fail(f"{source['repo']}: tree mismatch")
-            if run_git(repo_dir, "config", "--get", "remote.origin.url") != source["origin_url"]:
+            observed_origin = run_git(repo_dir, "config", "--get", "remote.origin.url")
+            if lock["lock_version"] == lock_format.LOCK_VERSION:
+                normalized = lock_format.normalize_origin(observed_origin)
+                origin_matches = normalized is not None and normalized.casefold() == source["origin_url"].casefold()
+            else:
+                origin_matches = observed_origin == source["origin_url"]
+            if not origin_matches:
                 report.fail(f"{source['repo']}: origin mismatch")
             if strict and run_git(repo_dir, "status", "--short"):
                 report.fail(f"{source['repo']}: source checkout is dirty")
@@ -244,17 +255,6 @@ def validate_live_checkouts(
             report.checked_source_skills += 1
 
 
-def resolve_source_root(explicit: str | None) -> Path | None:
-    if explicit:
-        return Path(explicit).expanduser().resolve()
-    env_val = os.environ.get(ENV_SOURCE_ROOT)
-    if env_val:
-        path = Path(env_val).expanduser().resolve()
-        if path.is_dir():
-            return path
-    return None
-
-
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description=(
@@ -268,9 +268,8 @@ def build_parser() -> argparse.ArgumentParser:
         default=None,
         help=(
             "Directory containing local upstream checkouts. If omitted, the "
-            f"{ENV_SOURCE_ROOT} environment variable is consulted; if that is "
-            "unset or points to a non-directory, live-checkout validation is "
-            "skipped and only offline checks run."
+            f"{lock_format.ENV_SOURCE_ROOT} environment variable is consulted. "
+            "If it is unset or empty, only offline checks run."
         ),
     )
     parser.add_argument(
@@ -296,20 +295,28 @@ def main(argv: list[str] | None = None) -> int:
     lock = load_json(Path(args.lock))
     report = Report()
 
-    validate_top_level(lock, report)
-    validate_sources_structure(lock, report)
-    validate_unique_skill_ids(lock.get("sources", []), report)
-    for source in lock.get("sources", []):
-        try:
-            build_catalog.validate_preserved_notice(ROOT, source.get("preserved_notice"), source.get("commit_sha", ""))
-        except (OSError, ValueError) as error:
-            report.fail(f"{source.get('repo')}: {error}")
-    validate_mirrors(lock, report)
+    if not isinstance(lock, dict):
+        report.fail("source lock must be an object")
+    else:
+        report.errors.extend(lock_format.metadata_errors(lock))
+        validate_sources_structure(lock, report)
 
-    source_root = resolve_source_root(args.source_root)
+    source_root = None
+    try:
+        source_root = resolve_source_root(args.source_root)
+    except (OSError, ValueError) as error:
+        report.fail(str(error))
     mode = "live" if source_root else "offline"
-    if source_root:
-        validate_live_checkouts(lock, source_root, strict=args.strict, report=report)
+
+    if report.ok():
+        for source in lock["sources"]:
+            try:
+                build_catalog.validate_preserved_notice(ROOT, source.get("preserved_notice"), source["commit_sha"])
+            except (OSError, ValueError) as error:
+                report.fail(f"{source['repo']}: {error}")
+        validate_mirrors(lock, report)
+        if source_root:
+            validate_live_checkouts(lock, source_root, strict=args.strict, report=report)
 
     if args.json:
         print(

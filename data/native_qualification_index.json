@@ -661,10 +661,29 @@
         "included/agent-ready/manifest.json",
         "included/selected/manifest.json",
         "included/skills/manifest.json",
-        "tests/test_agent_ready_portability.py",
+        "tests/test_agent_ready_portability.py"
+      ]
+    },
+    {
+      "id": "portable-source-lock",
+      "review": {
+        "path": "artifacts/research/2026-11-26/portable-source-lock/review.json",
+        "sha256": "642eb1c4d39fc4ee0bb0ef1954c5815b1804636d699c14dd4a65a6ca038d2d7d"
+      },
+      "sources": [
+        "data/source_lock.json",
+        "docs/development.md",
         "tests/test_catalog_data.py",
+        "tests/test_catalog_publication.py",
+        "tests/test_compare_upstream_trees.py",
+        "tests/test_locked_install_names.py",
+        "tests/test_validate_source_lock.py",
+        "tools/_catalog_publication.py",
+        "tools/_lib_b/source_lock.py",
         "tools/build_catalog.py",
-        "tools/validate_catalog.py"
+        "tools/compare_upstream_trees.py",
+        "tools/validate_catalog.py",
+        "tools/validate_source_lock.py"
       ]
     }
   ],
@@ -934,6 +953,7 @@
       "superseded_sources": [
         ".github/workflows/offline-validation.yml",
         "docs/coverage.md",
+        "docs/development.md",
         "docs/improvement-plan.md",
         "included/improved/skills/verification-loop-shell-status/SKILL.md",
         "tests/test_agent_tool_policy.py",
@@ -965,6 +985,7 @@
         ".github/workflows/mcp-python-sdk.yml",
         ".github/workflows/offline-validation.yml",
         ".github/workflows/pnpm-cache-install.yml",
+        "docs/development.md",
         "docs/improvement-plan.md",
         "requirements-dev-lock.txt",
         "tests/test_native_qualification_index.py",
@@ -1319,6 +1340,28 @@
       },
       "superseded_sources": [
         "tools/validate_catalog.py"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-26/portable-agent-entrypoints/review.json",
+        "sha256": "99e0528e69f4f86f1ce0e2a365d88de8d276c6b60c5d8c1699c4a2b20921bd8d"
+      },
+      "superseded_sources": [
+        "tests/test_catalog_data.py",
+        "tools/build_catalog.py",
+        "tools/validate_catalog.py"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-26/catalog-publication-recovery/review.json",
+        "sha256": "a89400b481cc72c335a4ed02e5334ae8ce544bc0ecb8b027c0b5ef3368be6543"
+      },
+      "superseded_sources": [
+        "docs/development.md",
+        "tests/test_catalog_publication.py",
+        "tools/build_catalog.py"
       ]
     }
   ],

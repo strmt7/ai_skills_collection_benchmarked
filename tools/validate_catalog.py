@@ -36,6 +36,7 @@ sys.path.insert(0, str(ROOT / "tools"))
 
 import build_catalog  # noqa: E402
 from _lib_b import dependency_graphs  # noqa: E402
+from _lib_b import source_lock as lock_format  # noqa: E402
 from _source_admission import require_admitted_source  # noqa: E402
 from _source_history import historical_entries  # noqa: E402
 
@@ -257,15 +258,14 @@ def validate_catalog(report: Report) -> None:
     if not isinstance(source_lock, dict):
         report.fail("source lock must contain an object")
         source_lock = {}
-    report.require(source_lock.get("lock_version") == 1, "source lock version mismatch")
-    report.require(source_lock.get("hash_algorithm") == "sha256", "source lock hash algorithm mismatch")
+    for error in lock_format.metadata_errors(source_lock):
+        report.fail(f"source lock: {error}")
     try:
         historical_entries(ROOT)
     except (OSError, ValueError) as exc:
         report.require(False, f"source history: {exc}")
     sources = source_lock.get("sources")
     if not isinstance(sources, list):
-        report.fail("source lock requires a sources list")
         sources = []
     for number, source in enumerate(sources, 1):
         if not isinstance(source, dict):
@@ -284,10 +284,15 @@ def validate_catalog(report: Report) -> None:
                 source["commit_sha"] == declared["commit"],
                 f"{source['repo']} source lock commit differs from the declared checkout",
             )
-        upstream_repo = declared.get("upstream_repo", source["repo"])
-        if upstream_repo != source["repo"]:
+        upstream_repo = declared.get("upstream_repo") or source["repo"]
+        if declared:
             report.require(
-                source.get("origin_url") == f"https://github.com/{upstream_repo}.git",
+                source.get("local_dir") == declared["dir"],
+                f"{source['repo']} source lock checkout directory differs from its declaration",
+            )
+        if source_lock.get("lock_version") == lock_format.LOCK_VERSION or upstream_repo != source["repo"]:
+            report.require(
+                source.get("origin_url") == lock_format.canonical_origin(upstream_repo),
                 f"{source['repo']} canonical upstream origin differs from the declared checkout",
             )
         for skill_id, skill in _index_rows(report, source.get("skills"), "id", f"source lock {source['repo']}").items():

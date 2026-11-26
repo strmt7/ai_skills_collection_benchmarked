@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-26",
+  "scope": "Catalog generation and publication interruption recovery on Windows.",
+  "previous_release_control": {
+    "durable_backup_flag": false,
+    "target_absent": true,
+    "original_found_in_backup": true,
+    "ordinary_prepare_error_retained_stage": true,
+    "no_drift_check_retained_stage": true
+  },
+  "native_windows": {
+    "pointer": {
+      "status": "rolled_back",
+      "native_exit": 37,
+      "versions_verified": true
+    },
+    "after-backup": {
+      "status": "rolled_back",
+      "native_exit": 37,
+      "versions_verified": true
+    },
+    "after-replace": {
+      "status": "rolled_back",
+      "native_exit": 37,
+      "versions_verified": true
+    },
+    "after-create": {
+      "status": "rolled_back",
+      "native_exit": 37,
+      "versions_verified": true
+    },
+    "after-retire": {
+      "status": "rolled_back",
+      "native_exit": 37,
+      "versions_verified": true
+    },
+    "after-published": {
+      "status": "published",
+      "native_exit": 37,
+      "versions_verified": true
+    },
+    "aborted-generation-cli": {
+      "ok": true,
+      "mode": "recover",
+      "status": "none",
+      "recovery_directory": null,
+      "partial_build_removed": true
+    },
+    "rollback-cli": {
+      "status": "rolled_back",
+      "originals_verified": true
+    },
+    "interrupted-recovery": {
+      "status": "rolled_back",
+      "successive_native_exits": [
+        37,
+        43
+      ]
+    },
+    "live-writer": {
+      "concurrent_recovery_refused": true,
+      "stage_removed": true
+    },
+    "unknown-observation": {
+      "change_preserved": true,
+      "pending_lock_preserved": true
+    },
+    "prepare-failure": {
+      "originals_verified": true,
+      "unclaimed_stage_removed": true
+    }
+  },
+  "owned_native_scratch_removed": true,
+  "output_attestation": {
+    "regression_tests_passed": 56,
+    "temporary_test_root_removed": true,
+    "stdout_sha256": {
+      "pytest": "545a8dc8220f7dfd059d963538bdf5ac17672cd00187fe397bc06432cdcd3dde",
+      "lint": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "format": "d6f70559dc79d0585640e29e3a2ee6d2bf87ab6d13092f189460d06c2bf68e93",
+      "mypy": "f5e3ea91c7c611b9bbf18b89f7c5c653e6999b3ca7fbb75bf6c5af0b8a25dfa4"
+    }
+  },
+  "models_run": 0
+}

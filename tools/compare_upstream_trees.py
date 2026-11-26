@@ -12,6 +12,8 @@ from datetime import datetime
 from pathlib import Path, PurePosixPath
 from typing import Any
 
+from _lib_b.source_lock import metadata_errors
+
 MAX_INPUT_BYTES = 64 * 1024 * 1024
 MODES = {"tree": {"040000"}, "blob": {"100644", "100755", "120000"}, "commit": {"160000"}}
 OBJECT_ID = re.compile(r"[0-9a-f]{40}\Z")
@@ -144,14 +146,10 @@ def compare(
         or any(part in {".", ".."} for part in repo.split("/"))
     ):
         raise ValueError("Expected an owner/repository identity")
-    sources = lock.get("sources")
-    if (
-        type(lock.get("lock_version")) is not int
-        or lock["lock_version"] != 1
-        or lock.get("hash_algorithm") != "sha256"
-        or not isinstance(sources, list)
-    ):
-        raise ValueError("Unsupported source lock or missing sources")
+    errors = metadata_errors(lock)
+    if errors:
+        raise ValueError(f"Unsupported source lock: {'; '.join(errors)}")
+    sources = lock["sources"]
     selected = [source for source in sources if isinstance(source, dict) and source.get("repo") == repo]
     if len(selected) != 1:
         raise ValueError("Expected exactly one locked source for the selected repository")

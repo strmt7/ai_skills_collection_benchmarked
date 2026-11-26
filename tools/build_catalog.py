@@ -25,6 +25,7 @@ from typing import Any
 
 import _catalog_publication as publication
 from _lib_b import credential_neutralizations, dependency_graphs
+from _lib_b import source_lock as lock_format
 from _lib_b.credential_patterns import V2_NEUTRALIZATIONS
 from _lib_b.determinism import existing_field, git_latest_commit_epoch_for, resolve_timestamp
 from _source_admission import require_admitted_source
@@ -37,7 +38,8 @@ except Exception:  # pragma: no cover
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE_ROOT = Path(os.environ.get("AI_SKILL_SOURCE_ROOT", "/tmp/ai_skill_sources"))
+DEFAULT_SOURCE_CHECKOUTS = Path(".venv/source-checkouts")
+SOURCE_ROOT = ROOT / DEFAULT_SOURCE_CHECKOUTS
 BUILD_DATE = "2026-04-17"
 CREDENTIAL_POLICY_VERSION = 1
 MIN_SCENARIOS = 3
@@ -1314,7 +1316,10 @@ def validate_preserved_notice(root: Path, notice: Any, commit: str) -> dict[str,
 
 def source_pins(sources: list[dict[str, Any]]) -> dict[tuple[str, str], dict[str, Any]]:
     pins = {(source["repo"], source.get("tag") or "default-branch HEAD"): source for source in sources}
-    if len(pins) != len(sources) or len({source["dir"] for source in sources}) != len(sources):
+    names = [source["dir"] for source in sources]
+    if not all(lock_format.is_checkout_name(name) for name in names):
+        raise ValueError("source declarations must use portable checkout directory names")
+    if len(pins) != len(sources) or len({name.casefold() for name in names}) != len(sources):
         raise ValueError("source declarations must have distinct repository refs and checkout directories")
     return pins
 
@@ -1819,23 +1824,22 @@ def build_source_lock(entries: list[dict[str, Any]], sources: list[dict[str, Any
         entries_by_pin.setdefault((entry["source_repo"], entry["selected_ref"]), []).append(entry)
     if entries_by_pin.keys() - pins.keys():
         raise ValueError("catalog entries lack a declared source checkout")
-    declared_dirs = {source["dir"] for source in pins.values()}
-    staged_dirs = {path.name for path in SOURCE_ROOT.iterdir() if path.is_dir()} if SOURCE_ROOT.exists() else set()
-    sources = []
+    locked_sources = []
     for (repo, selected_ref), source in pins.items():
         repo_dir = SOURCE_ROOT / source["dir"]
         repo_entries = sorted(entries_by_pin.get((repo, selected_ref), []), key=lambda item: item["source_path"])
         if not repo_entries:
             continue
         commit = run_git(repo_dir, "rev-parse", "HEAD")
-        origin_url = run_git(repo_dir, "config", "--get", "remote.origin.url")
-        if "upstream_repo" in source and origin_url != f"https://github.com/{source['upstream_repo']}.git":
+        origin_url = lock_format.canonical_origin(source.get("upstream_repo", repo))
+        checkout_origin = lock_format.normalize_origin(run_git(repo_dir, "config", "--get", "remote.origin.url"))
+        if checkout_origin is None or checkout_origin.casefold() != origin_url.casefold():
             raise ValueError(f"{repo}: checkout origin differs from the declared upstream repository")
         if run_git(repo_dir, "status", "--porcelain=v1", "--untracked-files=all"):
             raise ValueError(f"source checkout changed during collection: {source['repo']}")
         if any(entry["commit_sha"] != commit for entry in repo_entries):
             raise ValueError(f"source HEAD changed after collection: {source['repo']}")
-        sources.append(
+        locked_sources.append(
             {
                 "repo": repo,
                 "local_dir": source["dir"],
@@ -1870,12 +1874,10 @@ def build_source_lock(entries: list[dict[str, Any]], sources: list[dict[str, Any
             }
         )
     return {
-        "lock_version": 1,
-        "hash_algorithm": "sha256",
+        "lock_version": lock_format.LOCK_VERSION,
+        "hash_algorithm": lock_format.HASH_ALGORITHM,
         "generated_on": BUILD_DATE,
-        "source_root": SOURCE_ROOT.as_posix(),
-        "sources": sources,
-        "unused_staged_source_dirs": sorted(staged_dirs - declared_dirs),
+        "sources": locked_sources,
         "best_practice_sources": [
             source | {"offline_verification": "url recorded for review; not hashed into source skill catalog"}
             for source in BEST_PRACTICE_SOURCES
@@ -2136,10 +2138,16 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Build the AI skill catalog from local source checkouts.")
     parser.add_argument(
         "--source-root",
-        default=str(SOURCE_ROOT),
-        help="Directory containing source repo checkouts. Defaults to AI_SKILL_SOURCE_ROOT or /tmp/ai_skill_sources.",
+        help=(
+            "Directory containing source repo checkouts. Defaults to "
+            f"{lock_format.ENV_SOURCE_ROOT} or {DEFAULT_SOURCE_CHECKOUTS.as_posix()} in this checkout."
+        ),
     )
-    parser.add_argument("--check", action="store_true", help="Stage and compare all outputs without publishing")
+    operation = parser.add_mutually_exclusive_group()
+    operation.add_argument("--check", action="store_true", help="Stage and compare all outputs without publishing")
+    operation.add_argument(
+        "--recover-publication", action="store_true", help="Recover an interrupted catalog publication on this checkout"
+    )
     parser.add_argument("--json", action="store_true", help="Emit publication or freshness results as JSON")
     parser.add_argument(
         "--refresh-source",
@@ -2231,6 +2239,7 @@ def scoped_refresh_inputs(root: Path, repos: set[str]) -> tuple[list[dict[str, A
     for entry in old_entries:
         publication.signature(publication.checked_path(root, entry["mirrored_path"]))
     verify_generated_outputs(root, old_entries, old_lock)
+    lock = lock_format.portable_lock(old_lock)
     declared = {source["repo"] for source in SOURCES}
     existing = {source["repo"] for source in old_lock["sources"]}
     if not repos or repos - declared or repos - existing:
@@ -2292,7 +2301,6 @@ def scoped_refresh_inputs(root: Path, repos: set[str]) -> tuple[list[dict[str, A
     ):
         raise ValueError("scoped refresh would rename retained skills; use a complete source build")
     new_lock = build_source_lock(updated, selected_sources)
-    lock = copy.deepcopy(old_lock)
     replacements: dict[str, list[dict[str, Any]]] = {}
     for source in new_lock["sources"]:
         replacements.setdefault(source["repo"], []).append(source)
@@ -2346,8 +2354,17 @@ def main(argv: list[str] | None = None) -> int:
     original_root, original_source, original_date = ROOT, SOURCE_ROOT, BUILD_DATE
     original_policy = CREDENTIAL_POLICY_VERSION
     root = ROOT.resolve()
+    mode = "recover" if args.recover_publication else "check" if args.check else "publish"
     try:
-        SOURCE_ROOT = Path(args.source_root).expanduser().resolve()
+        if args.recover_publication:
+            result = {"ok": True, "mode": mode, **publication.recover(root, GENERATED_OUTPUTS)}
+            print(json.dumps(result, indent=2) if args.json else result)
+            return 0
+        SOURCE_ROOT = lock_format.resolve_source_root(args.source_root) or SOURCE_ROOT.resolve()
+        if not SOURCE_ROOT.is_dir():
+            raise FileNotFoundError(
+                f"source checkout root is missing: {SOURCE_ROOT}. Set --source-root to its directory."
+            )
         CREDENTIAL_POLICY_VERSION = args.credential_policy
         BUILD_DATE = resolve_timestamp(
             existing_manifest_value=existing_field(root / "data/source_lock.json", "generated_on"),
@@ -2380,12 +2397,17 @@ def main(argv: list[str] | None = None) -> int:
                 ROOT = original_root
 
         transaction, journal = publication.prepare(root, GENERATED_OUTPUTS, build)
-        drift = publication.differences(root, transaction, journal)
-        if not args.check:
+        if args.check:
+            try:
+                drift = publication.differences(root, transaction, journal)
+            finally:
+                publication.discard_prepared(root, transaction)
+        else:
+            drift = publication.differences(root, transaction, journal)
             publication.publish(root, transaction, journal)
         result = {
             "ok": not drift if args.check else True,
-            "mode": "check" if args.check else "publish",
+            "mode": mode,
             "skills": len(entries),
             "scenarios": len(scenarios),
             "different_outputs": drift,
@@ -2393,14 +2415,14 @@ def main(argv: list[str] | None = None) -> int:
             "retained_skills": sum(entry["source_repo"] not in refreshed_repos for entry in entries)
             if refreshed_repos
             else 0,
-            "recovery_directory": str(transaction),
+            "recovery_directory": None if args.check else str(transaction),
         }
         print(json.dumps(result, indent=2) if args.json else result)
         return int(args.check and bool(drift))
-    except (OSError, ValueError, subprocess.SubprocessError) as exc:
+    except (OSError, ValueError, RuntimeError, subprocess.SubprocessError) as exc:
         if not args.json:
             raise
-        error = {"ok": False, "mode": "check" if args.check else "publish", "errors": [str(exc)]}
+        error = {"ok": False, "mode": mode, "errors": [str(exc)]}
         print(json.dumps(error, indent=2) if args.json else error)
         return 2
     finally:

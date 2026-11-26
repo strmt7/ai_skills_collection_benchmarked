@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-26",
+  "scope": "Recover the actual catalog output versions after abrupt process exit, and clean the owned temporary build slot.",
+  "base_revision": "5b295d74f2e4fc4d58cebc966e5d36577ea7923f",
+  "source_sha256": {
+    "docs/development.md": "30129c61c38dc560edbdc9a5aa904c3bd112c88a4eb467d4f9a6c275177a2e9f",
+    "tests/test_catalog_publication.py": "59a3802f5b73356b391400e1ba36a0ec72424ff543d1f3704caf4791d993f9e3",
+    "tools/_catalog_publication.py": "e6cdd657a3e77c2246db90ec9ee7368feb787210631ce1a433e978c33209aaac",
+    "tools/build_catalog.py": "b652c7b2564cc9bda710542be42a3c682222477ee55dcc7c7c5addf31ab66bb9"
+  },
+  "artifacts": {
+    "observations.json": "632948756459c1986318bbdbd627152395c42494b9489b8f2dbca283ae359015"
+  },
+  "limitations": [
+    "Controlled Windows process exits were exercised before and after output renames, during recovery, and after a completed journal record.",
+    "Legacy journals lack a process-owned writer guard; recovery preserves them for inspection.",
+    "This scope covers process interruption. It does not qualify power loss, uncoordinated writers from an older implementation, or concurrent user edits racing a filesystem rename."
+  ]
+}

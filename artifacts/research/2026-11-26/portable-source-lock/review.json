@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-26",
+  "scope": "Checkout-independent source locks, archived lock compatibility and catalog transaction recovery.",
+  "base_revision": "5b295d74f2e4fc4d58cebc966e5d36577ea7923f",
+  "source_sha256": {
+    "data/source_lock.json": "1b3a8c2615f839fbc8d1af9fbc115e6bdd15c050d90c2ceec3111c76efaf74e1",
+    "docs/development.md": "71780a17bee2b9b5733366eeb88c8466103dd2777d0998736af7c9e26afee529",
+    "tests/test_catalog_data.py": "635ae9f58bc465ae5b9a340ed31dc9eab5f6a49f52841dae366c10fbe5d1a5a2",
+    "tests/test_catalog_publication.py": "cf77f5432d61b250f2706348093cb7294cc2d8ccb5382aca76e3c3188c6de484",
+    "tests/test_compare_upstream_trees.py": "19624a89d177fa33bd552db6904af61df5e3b93f0ac7f9b2faea1d332e434bdc",
+    "tests/test_locked_install_names.py": "a526c2744ee2bb5dd1e9af327dd79767f891fe5278d311b6d416c58258a67cbf",
+    "tests/test_validate_source_lock.py": "b31fa3e3e4b803826e53fe1f71ebd12b6cdc89cbde9f76c60a61f6543fee736f",
+    "tools/_catalog_publication.py": "e6cdd657a3e77c2246db90ec9ee7368feb787210631ce1a433e978c33209aaac",
+    "tools/_lib_b/source_lock.py": "8043574e0674a34726949b5005752f670e3c55917ca7b49739e607c8fa4df044",
+    "tools/build_catalog.py": "9602b99d1ed9eaa84efb15b2a0b07cfe547cf8f3118fdc0cb7cbffcf5bf80c83",
+    "tools/compare_upstream_trees.py": "8757d0dbd5688458db9b7c149bb19bf1abdad8b33a9cff0f984aabf5886665b7",
+    "tools/validate_catalog.py": "f415fc4bdf8d50511dff64bf01fd4e0c2c75ddd0dac55d3d66a2d75a59c14365",
+    "tools/validate_source_lock.py": "57084f24efbf0ae53c69b5b733fe7c8bfc44cc803f9d8ca75541e3b537ef0d10"
+  },
+  "artifacts": {
+    "observations.json": "cd3400df8dd9478856224ec81800f1072c3156a4b5e9820e19dc53eebe0fd284"
+  },
+  "limitations": [
+    "Two Windows catalog generations used actual local Git clones of one controlled source. The published catalog independently passed the offline mirror and catalog validators.",
+    "The controlled relocation runs required no upstream network transfer. Complete upstream acquisition and a full rebuild across hosts remain separate qualification steps.",
+    "Catalog recovery was exercised with abrupt process exit and a live writer. Power loss and filesystem errors require separate qualification."
+  ]
+}
