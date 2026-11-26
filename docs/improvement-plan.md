@@ -248,8 +248,10 @@ Do not wait on a supposed publisher job without an actual job identity.
    the current native replay and prior independent verification-skill controls
    under their exact source identities.
 3. Preserve the smaller model's failed live probe and its four passing scripted
-   controls. Qualify the approved signed-in route in a clean context. Resolve
-   runtime and collection defects independently of whether a model solves a task.
+   controls. The pinned Codex CLI prepares matched GPT-6.2 Sol max inputs with
+   isolated local context. Qualify that target using the approved signed-in
+   route and confirm the native model and effort before freezing the comparison.
+   Resolve runtime and collection defects independently of task scores.
 4. Continue the original twelve runtime graphs and the separately scoped
    SkillsBench v1.1 build-recovery study. The two selected public task IDs are
    `fix-build-agentops` and `fix-build-google-auto`. Their publisher bytes and
@@ -266,7 +268,7 @@ collect its artifact and terminate cleanly. Metadata probes are insufficient.
 1. **P1.1: freeze the diagnostic boundary.** Record the official CLI version,
    source commit, executable digest, requested/reported model, reasoning setting,
    model catalog, backend identity, actual local weights digest where available,
-   context, tool schema and resource graph. Keep requested GPT-6.1 Sol high and
+   context, tool schema and resource graph. Keep requested GPT-6.2 Sol max and
    supplementary local-model results distinct. Do not demand unavailable private
    weight hashes for proprietary providers or infer identity from a model's prose.
 2. **P1.2: qualify native traces without inference.** The pinned official CLI
@@ -494,7 +496,7 @@ is unavailable. Both runs exercise the same single independent task.
 
 Preserve both floor observations and qualify a different, prospectively chosen
 development task before estimating transfer. The 12-task pilot and requested
-GPT-6.1 Sol high comparison have separate acceptance requirements.
+GPT-6.2 Sol max comparison have separate acceptance requirements.
 
 1. Freeze the admitted P1/P2 implementation, candidate artifacts and native
    scorer identities. Verify actual source bytes immediately before each attempt.
@@ -559,7 +561,7 @@ regression accounting and a frozen final candidate ready for P6 selection.
 1. Define the exact claim population: task domains, supported skill scopes,
    model families/configurations, agent harnesses and operating environments.
    Finite experiments cannot prove improvement for every possible model or agent.
-   The requested GPT-6.1 Sol high official-route comparison remains required;
+   The requested GPT-6.2 Sol max official-route comparison remains required;
    supplementary local results must be named as such.
 2. Use pilot feasibility and variance to determine adequate independent-task
    allocation and repetitions. Document a practically meaningful minimum effect

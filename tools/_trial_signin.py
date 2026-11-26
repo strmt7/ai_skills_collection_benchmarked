@@ -13,19 +13,19 @@ if TYPE_CHECKING:
     from _trial_context import TrialContext
 
 STORES = {"file", "keyring", "auto"}
+HOME_REJECTIONS = {
+    "global_instructions_present": "Native sign-in storage contains global instructions outside the benchmark conditions",
+    "global_rules_present": "Native sign-in storage contains execution rules outside the benchmark conditions",
+}
 
 
 class SigninAdmissionError(ValueError):
     """Retain safe process evidence while discarding native status text."""
 
     def __init__(self, admission: dict[str, Any]) -> None:
-        reasons = {
-            "global_instructions_present": "Native sign-in storage contains global instructions outside the benchmark conditions",
-            "global_rules_present": "Native sign-in storage contains execution rules outside the benchmark conditions",
-        }
         reason = admission.get("reason")
         fallback = "The official CLI did not admit a completed ChatGPT sign-in status check"
-        message = reasons.get(reason, fallback) if isinstance(reason, str) else fallback
+        message = HOME_REJECTIONS.get(reason, fallback) if isinstance(reason, str) else fallback
         super().__init__(message)
         self.admission = admission
 
@@ -101,6 +101,61 @@ def status_completed(value: Any) -> bool:
         and value.get("write_io_enforcement") == "polled_job_transfer_accounting"
         and value.get("hard_storage_quota") is False
     )
+
+
+def verify_failed_signin_admission(value: Any) -> None:
+    """Verify the safe metadata emitted for a rejected official CLI sign-in."""
+    if not isinstance(value, dict) or value.get("admitted") is not False or not isinstance(value.get("mode"), str):
+        raise ValueError("Invalid native sign-in failure metadata")
+    mode = value["mode"]
+    if mode == "not_checked":
+        if (
+            set(value) != {"admitted", "mode", "reason"}
+            or not isinstance(value["reason"], str)
+            or value["reason"] not in HOME_REJECTIONS
+        ):
+            raise ValueError("Invalid native sign-in profile rejection")
+        return
+
+    process = value.get("process")
+    fixed = {
+        "windows_job": True,
+        "assigned_before_resume": True,
+        "kill_on_close": True,
+        "explicit_environment": True,
+        "service_created_processes_tracked": False,
+        "job_active_processes_after_cleanup": 0,
+        "output_limit_bytes": 65536,
+        "job_memory_limit_bytes": 1024**3,
+        "active_process_limit": 8,
+    }
+    counters = {"exit_code", "output_bytes", "job_peak_memory_used_bytes"}
+    io_fields = {
+        "write_io_limit_bytes",
+        "job_write_io_bytes",
+        "write_io_overshoot_bytes",
+        "write_io_observation_error",
+        "write_io_enforcement",
+        "hard_storage_quota",
+    }
+    if (
+        mode not in {"chatgpt", "apikey", "unclassified"}
+        or set(value) != {"admitted", "mode", "process"}
+        or not isinstance(process, dict)
+        or set(process) != fixed.keys() | counters | io_fields | {"termination_reason", "wall_time_limit_seconds"}
+        or any(type(process[key]) is not type(expected) or process[key] != expected for key, expected in fixed.items())
+        or any(type(process[key]) is not int or process[key] < 0 for key in counters)
+        or type(process["wall_time_limit_seconds"]) not in (int, float)
+        or process["wall_time_limit_seconds"] != 20
+        or process["termination_reason"]
+        not in (None, "timeout", "output_limit", "write_io_limit", "resource_observation_error")
+        or (mode == "chatgpt" and status_completed(process))
+    ):
+        raise ValueError("Invalid native sign-in status failure")
+
+    from _windows_trial_process import verify_write_io_budget
+
+    verify_write_io_budget(process, 1024**2)
 
 
 def signin_home(context: TrialContext, declaration: dict[str, str]) -> Path:

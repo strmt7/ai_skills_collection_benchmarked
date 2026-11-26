@@ -229,11 +229,16 @@ def test_fixture_git_ignores_inherited_configuration_and_uses_owned_bounds(tmp_p
     observed: dict[str, Any] = {}
 
     def run(command, **kwargs):
+        config = Path(kwargs["environment"]["GIT_CONFIG_GLOBAL"])
+        assert config.read_bytes() == b""
+        template = Path(next(arg.removeprefix("--template=") for arg in command if arg.startswith("--template=")))
+        assert template.parent == config.parent and not any(template.iterdir())
         observed.update(command=command, options=kwargs)
         return {"exit_code": 0, "termination_reason": None, "job_active_processes_after_cleanup": 0}
 
     monkeypatch.setattr(controls, "run_owned", run)
-    output = tmp_path / "owned-evidence"
+    output = tmp_path.joinpath(*(["deep-evidence-directory"] * 12))
+    output.parent.mkdir(parents=True)
     controls.initialize_fixture(git, workspace, output)
     assert observed["command"][0] == str(git)
     options = observed["options"]
@@ -242,7 +247,10 @@ def test_fixture_git_ignores_inherited_configuration_and_uses_owned_bounds(tmp_p
     environment = options["environment"]
     assert "GIT_DIR" not in environment and "GIT_CONFIG_COUNT" not in environment
     assert environment["GIT_CONFIG_NOSYSTEM"] == "1" and environment["GIT_TERMINAL_PROMPT"] == "0"
-    assert Path(environment["GIT_CONFIG_GLOBAL"]).read_bytes() == b""
+    config = Path(environment["GIT_CONFIG_GLOBAL"])
+    assert len(str(output)) > 260 and not config.is_relative_to(output)
+    assert not config.parent.exists()
+    assert (output / "global.gitconfig").read_bytes() == b""
     assert (output / "process.json").is_file()
 
 

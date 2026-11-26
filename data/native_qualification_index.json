@@ -119,19 +119,8 @@
       },
       "sources": [
         "tools/_trial_catalog.py",
-        "tools/_trial_execution_evidence.py",
         "tests/test_trial_local_catalog.py",
         "tests/test_trial_execution_evidence.py"
-      ]
-    },
-    {
-      "id": "native-trial-shell-profile",
-      "review": {
-        "path": "artifacts/research/2026-11-24/go-native-controls/review.json",
-        "sha256": "0e43dd1b61f03561c079786ab0e6e859bb84142040cc5e4ea4120668b1fefe28"
-      },
-      "sources": [
-        "tests/test_trial_context.py"
       ]
     },
     {
@@ -191,7 +180,6 @@
         "docs/benchmark-subject-policy.md",
         "tools/_lib_b/__init__.py",
         "tools/_lib_b/frontmatter_utils.py",
-        "tools/run_agent_trial.py",
         "tests/test_frontmatter_utils.py",
         "CONTRIBUTING.md",
         "pyproject.toml",
@@ -208,8 +196,7 @@
       "sources": [
         "included/improved/skills/e2e-testing-current/references/out-of-order-results.md",
         "tools/manage_improvement_ledger.py",
-        "tests/test_improvement_ledger.py",
-        "docs/improvement-plan.md"
+        "tests/test_improvement_ledger.py"
       ]
     },
     {
@@ -269,11 +256,9 @@
       },
       "sources": [
         "tests/test_native_trial_boundary.py",
-        "tests/test_native_trial_runner.py",
         "tests/test_subject_toolchains.py",
         "tools/_subject_toolchains.py",
-        "tools/qualify_native_trial_boundary.py",
-        "tools/run_swe_skills_trial.py"
+        "tools/qualify_native_trial_boundary.py"
       ]
     },
     {
@@ -283,11 +268,9 @@
         "sha256": "f8421961875909bd86738f36d735e4147586e2231daf17b30fa0bfc34e8323cb"
       },
       "sources": [
-        "tests/test_qualify_trial_context.py",
         "toolchains/bootstrap/README.md",
         "toolchains/bootstrap/codex.json",
-        "tools/check_native_trial_readiness.py",
-        "tools/qualify_trial_context.py"
+        "tools/check_native_trial_readiness.py"
       ]
     },
     {
@@ -349,8 +332,7 @@
       },
       "sources": [
         "tests/test_trial_account_readiness.py",
-        "tools/_trial_account_readiness.py",
-        "tools/_trial_context.py"
+        "tools/_trial_account_readiness.py"
       ]
     },
     {
@@ -428,18 +410,6 @@
         "artifacts/repaired-skill-readiness/slides-navigation-v1/overflow.cjs",
         "included/repaired/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-slides/SKILL.md",
         "included/repaired/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-slides/references/html-template.md"
-      ]
-    },
-    {
-      "id": "official-codex-signin-profile",
-      "review": {
-        "path": "artifacts/research/2026-11-25/independent-signin-profile/review.json",
-        "sha256": "803fd3f56c6ab9d36f5757f7d0ca126262660df2590e706e50fadabc1e0b1168"
-      },
-      "sources": [
-        "docs/agent-trial-protocol.md",
-        "tests/test_trial_signin.py",
-        "tools/_trial_signin.py"
       ]
     },
     {
@@ -650,6 +620,30 @@
         "tools/inspect_testeval_reply.py",
         "tools/stage_ollama_model.py"
       ]
+    },
+    {
+      "id": "trial-scratch-lifecycle",
+      "review": {
+        "path": "artifacts/research/2026-11-26/trial-scratch-lifecycle/review.json",
+        "sha256": "d5df23eff962f481ac29192e662721c043f330975b1236b7b997c31a7c3732a5"
+      },
+      "sources": [
+        "docs/agent-trial-protocol.md",
+        "docs/improvement-plan.md",
+        "tests/test_agent_trial_runner.py",
+        "tests/test_native_trial_runner.py",
+        "tests/test_qualify_trial_context.py",
+        "tests/test_trial_context.py",
+        "tests/test_trial_setup_accounting.py",
+        "tests/test_trial_signin.py",
+        "tools/_trial_context.py",
+        "tools/_trial_execution_evidence.py",
+        "tools/_trial_signin.py",
+        "tools/qualify_trial_context.py",
+        "tools/run_agent_trial.py",
+        "tools/run_swe_skills_trial.py",
+        "tools/summarize_agent_trials.py"
+      ]
     }
   ],
   "historical_reviews": [
@@ -811,6 +805,7 @@
         "tests/test_qualify_trial_context.py",
         "tools/_native_trial_plan.py",
         "tools/_trial_context.py",
+        "tools/_trial_execution_evidence.py",
         "tools/qualify_native_trial_boundary.py",
         "tools/qualify_trial_context.py",
         "tools/run_swe_skills_trial.py"
@@ -925,6 +920,7 @@
         "tests/test_qualify_trial_context.py",
         "tools/qualify_native_trial_boundary.py",
         "tools/qualify_trial_context.py",
+        "tools/run_agent_trial.py",
         "tools/validate_agent_tool_policy.py",
         "tools/validate_catalog.py"
       ]
@@ -1015,6 +1011,7 @@
         "docs/native-benchmark-controller.md",
         "tests/test_native_trial_runner.py",
         "tests/test_subject_toolchains.py",
+        "tests/test_trial_context.py",
         "tools/_native_benchmark_runtime.py",
         "tools/_subject_toolchains.py",
         "tools/_trial_context.py",
@@ -1049,7 +1046,9 @@
         "sha256": "21d771a6055016c7a14d7fc0451226b4a2b0cf044895da74623ca6444a597f7e"
       },
       "superseded_sources": [
-        "docs/native-benchmark-controller.md"
+        "docs/native-benchmark-controller.md",
+        "tests/test_native_trial_runner.py",
+        "tools/run_swe_skills_trial.py"
       ]
     },
     {
@@ -1059,7 +1058,9 @@
       },
       "superseded_sources": [
         "docs/native-benchmark-controller.md",
-        "tests/test_trial_account_readiness.py"
+        "tests/test_qualify_trial_context.py",
+        "tests/test_trial_account_readiness.py",
+        "tools/qualify_trial_context.py"
       ]
     },
     {
@@ -1090,6 +1091,7 @@
         "docs/improvement-plan.md",
         "docs/native-benchmark-controller.md",
         "tests/test_trial_signin.py",
+        "tools/_trial_context.py",
         "tools/_trial_signin.py"
       ]
     },
@@ -1100,6 +1102,7 @@
       },
       "superseded_sources": [
         "docs/benchmark-execution-plan.md",
+        "docs/improvement-plan.md",
         "docs/installation.md",
         "included/improved/skills/e2e-testing-current/NOTICE.md",
         "included/improved/skills/e2e-testing-current/SKILL.md",
@@ -1246,6 +1249,17 @@
         "docs/recognized-skill-benchmarks.md",
         "tests/test_collect_testeval_reply.py",
         "tools/collect_testeval_reply.py"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-25/independent-signin-profile/review.json",
+        "sha256": "803fd3f56c6ab9d36f5757f7d0ca126262660df2590e706e50fadabc1e0b1168"
+      },
+      "superseded_sources": [
+        "docs/agent-trial-protocol.md",
+        "tests/test_trial_signin.py",
+        "tools/_trial_signin.py"
       ]
     }
   ],

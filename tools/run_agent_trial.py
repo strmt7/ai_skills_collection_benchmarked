@@ -10,7 +10,6 @@ import os
 import re
 import subprocess
 import sys
-import tempfile
 import time
 from collections.abc import Mapping
 from contextlib import ExitStack
@@ -22,7 +21,7 @@ from _trial_catalog import catalog_lease
 from _trial_collection import capture_owned
 from _trial_collection_contract import BOOTSTRAP
 from _trial_collection_manifest import validate_manifest
-from _trial_context import TrialContext, create_context, temporary_home
+from _trial_context import TrialContext, create_context, temporary_trial_paths
 from _trial_context import command as context_command
 from _trial_execution_evidence import FAILURE_OBSERVATIONS, context_record, failure_measurements
 from _trial_grading_process import (
@@ -121,7 +120,7 @@ def pinned_file(commit: str, path: str) -> bytes:
 
 
 def prepare(
-    protocol: dict[str, Any], condition: str, python: Path, *, workspace: Path | None = None
+    protocol: dict[str, Any], condition: str, python: Path, *, workspace: Path
 ) -> tuple[Path, str, dict[str, bytes]]:
     task = protocol["task"]
     inputs = {name: pinned_file(task["source_commit"], name) for name in task["files"]}
@@ -137,9 +136,7 @@ def prepare(
         if sha256(data) != skill["sha256"]:
             raise ValueError("condition instructions changed after protocol freeze")
         instructions.append(data.decode("utf-8"))
-    if workspace is None:
-        workspace = Path(tempfile.mkdtemp(prefix="skills-agent-trial-"))
-    elif not workspace.is_dir() or any(workspace.iterdir()):
+    if not workspace.is_dir() or any(workspace.iterdir()):
         raise ValueError("trial setup requires its newly reserved empty workspace")
     for name, data in inputs.items():
         target = checked_path(workspace, name)
@@ -565,7 +562,7 @@ def _run_controller(
     must supply their owned deterministic endpoint and canary credentials. They
     may not use this internal function for real-provider or model requests.
     """
-    with ExitStack() as credentials:
+    with ExitStack() as scratch, ExitStack() as credentials:
         protocol, protocol_hash = validate_protocol(protocol_path, output)
         validate_declaration(protocol, condition)
         expected_cases, _ = read_grading_manifest(protocol_path, protocol, protocol_hash)
@@ -574,13 +571,15 @@ def _run_controller(
         started, stage, workspace = time.monotonic(), "workspace", None
         record_attempt(output, protocol_hash, condition, "setup", stage, workspace)
         try:
-            workspace = Path(tempfile.mkdtemp(prefix="skills-agent-trial-"))
+            reserved_workspace, controller_home = scratch.enter_context(temporary_trial_paths())
+            reserved_workspace.mkdir()
+            workspace = reserved_workspace
             stage = "prepare"
             record_attempt(output, protocol_hash, condition, "setup", stage, workspace)
             workspace, prompt, inputs = prepare(protocol, condition, python, workspace=workspace)
             stage = "context"
             record_attempt(output, protocol_hash, condition, "setup", stage, workspace)
-            context = create_context(temporary_home(), workspace, cli, python, readable_roots)
+            context = create_context(controller_home, workspace, cli, python, readable_roots)
             if "provider" in protocol:
                 context = credentials.enter_context(
                     credential_lease(
@@ -694,6 +693,10 @@ def _run_controller(
                     evidence_names.extend(grading_evidence(grade))
                 except ValueError as exc:
                     collection_errors.append(str(exc))
+            stage = "cleanup"
+            record_attempt(output, protocol_hash, condition, "grading", stage, workspace)
+            scratch.close()
+            stage = "evidence"
             record_attempt(output, protocol_hash, condition, "finished", "result", workspace)
             evidence_hashes, evidence_errors = collect_evidence(output, evidence_names)
             collection_errors.extend(evidence_errors)

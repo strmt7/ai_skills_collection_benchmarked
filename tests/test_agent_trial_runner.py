@@ -276,7 +276,7 @@ def test_protocol_freeze_rejects_changed_inputs(tmp_path, monkeypatch, changed):
     else:
         skill.write_text("changed", encoding="utf-8")
     with pytest.raises(ValueError, match="changed|differ"):
-        trials.prepare(protocol, "improved", tmp_path / "python.exe")
+        trials.prepare(protocol, "improved", tmp_path / "python.exe", workspace=tmp_path / "unused-workspace")
 
 
 @pytest.fixture
@@ -598,8 +598,6 @@ def test_native_collection_rejects_a_hardlink_before_copying_any_source(tmp_path
 
 
 def test_invalid_trial_stream_is_recorded_without_grading(tmp_path, monkeypatch):
-    workspace = tmp_path / "workspace"
-    workspace.mkdir()
     protocol = {
         **declared_fixture(),
         "protocol_version": 4,
@@ -628,7 +626,7 @@ def test_invalid_trial_stream_is_recorded_without_grading(tmp_path, monkeypatch)
         ),
         encoding="utf-8",
     )
-    monkeypatch.setattr(trials, "prepare", lambda *args, **kwargs: (workspace, "fixture", {}))
+    monkeypatch.setattr(trials, "prepare", lambda *args, **kwargs: (kwargs["workspace"], "fixture", {}))
     monkeypatch.setattr(trials, "command", lambda *args: ["fixture"])
     monkeypatch.setattr(trials, "require_qualified_trial_execution", lambda: None)
 
@@ -637,13 +635,10 @@ def test_invalid_trial_stream_is_recorded_without_grading(tmp_path, monkeypatch)
 
     monkeypatch.setattr(trials, "external_grade", unexpected_grade)
 
-    context = TrialContext(tmp_path / "controller", workspace, Path("fixture"), Path("python"), (), {}, {})
-    monkeypatch.setattr(trials, "temporary_home", lambda: tmp_path / "private-cache/private")
-
-    def isolated_context(home, *args):
-        assert home.is_relative_to(tmp_path / "private-cache")
+    def isolated_context(home, workspace, *args):
+        assert home.parent == workspace.parent
         assert not home.is_relative_to(tmp_path / "attempt")
-        return context
+        return TrialContext(home, workspace, Path("fixture"), Path("python"), (), {}, {})
 
     monkeypatch.setattr(trials, "create_context", isolated_context)
     monkeypatch.setattr(trials, "read_workspace_file", lambda root, name, **kwargs: (root / name).read_bytes())

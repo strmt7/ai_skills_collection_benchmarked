@@ -18,7 +18,7 @@ from _native_trial_plan import ROOT, archive_sources, execution_sources, input_a
 from _subject_toolchains import LAUNCHER_EVIDENCE
 from _trial_catalog import catalog_lease
 from _trial_collection import capture_owned
-from _trial_context import command, create_context, temporary_home
+from _trial_context import command, create_context, temporary_trial_paths
 from _trial_execution_evidence import context_record
 from _trial_provider import credential_lease
 from _trial_transcript import parse_events, strict_json
@@ -94,6 +94,7 @@ def _run_controller(
     report: dict[str, Any] = {"schema_version": 1, "status": "harness_error", "score": None, "stage": "admission"}
     write_json(output / "attempt.json", report)
     setup_space: SpaceBudget | None = None
+    scratch = ExitStack()
     try:
         admitted = load_plan(plan_path)
         if qualification is not None:
@@ -161,8 +162,7 @@ def _run_controller(
             raise ValueError("Native task and runtime image differ")
         report["stage"] = "workspace"
         write_json(output / "attempt.json", report)
-        parent = Path(tempfile.mkdtemp(prefix="native-skill-subject-"))
-        workspace = parent / "workspace"
+        workspace, controller_home = scratch.enter_context(temporary_trial_paths())
         initial = plan_handoff(admitted["before"], admitted["before"])
         sealed = seal(initial, admitted["tree"], output / "initial.tar")
         rebuilt = restore(initial, admitted["tree"], output / "initial.tar", sealed["archive_sha256"], workspace)
@@ -177,7 +177,7 @@ def _run_controller(
         write_json(output / "attempt.json", report)
         verify_initial_workspace(workspace, output, runtime["python"], task, admitted["before"])
         subject_runtime(plan["subject_runtime"])
-        context = create_context(temporary_home(), workspace, runtime["cli"], runtime["python"], runtime["roots"])
+        context = create_context(controller_home, workspace, runtime["cli"], runtime["python"], runtime["roots"])
         if dependency_receipt is not None:
             paths = [checked_path(workspace / name) for name in runtime["dependencies"]["import_paths"]]
             if any(not path.is_relative_to(workspace) or not path.is_dir() for path in paths):
@@ -308,6 +308,9 @@ def _run_controller(
             raise ValueError("Frozen native attempt inputs changed during execution")
         if qualification is not None:
             verify_binding(qualification)
+        report["stage"] = "cleanup"
+        write_json(output / "attempt.json", report)
+        scratch.close()
         report.update(
             status=graded["status"],
             score=graded["score"],
@@ -319,8 +322,11 @@ def _run_controller(
     except (OSError, ValueError, KeyError, TypeError, RuntimeError) as error:
         report.update(status="harness_error", score=None, **exception_metadata(error))
     finally:
-        if setup_space is not None:
-            write_json(output / "setup-space.json", setup_space.record())
+        try:
+            scratch.close()
+        finally:
+            if setup_space is not None:
+                write_json(output / "setup-space.json", setup_space.record())
     names = [
         "plan.json",
         "launch.json",

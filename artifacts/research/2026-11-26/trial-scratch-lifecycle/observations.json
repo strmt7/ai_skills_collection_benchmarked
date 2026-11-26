@@ -1,0 +1,278 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-26",
+  "scope": "Scratch ownership, setup-error reporting, bounded Windows Git initialization and official harness metadata.",
+  "base_revision": "8dc2bce17e5787a0a1de0aa8f3a98a33cb640cf3",
+  "windows_version": "10.0.26300",
+  "python_version": "3.14.10",
+  "tests": {
+    "passed": 447,
+    "scoped_test_modules": [
+      "tests/test_trial_context.py",
+      "tests/test_trial_setup_accounting.py",
+      "tests/test_trial_signin.py",
+      "tests/test_native_trial_runner.py",
+      "tests/test_agent_trial_runner.py",
+      "tests/test_summarize_agent_trials.py",
+      "tests/test_trial_execution_evidence.py",
+      "tests/test_qualify_trial_context.py",
+      "tests/test_documentation_contracts.py",
+      "tests/test_trial_account_readiness.py"
+    ],
+    "ruff_check": true,
+    "ruff_format_check": true,
+    "mypy": true,
+    "owned_process_counts_at_close": {
+      "pytest": 0,
+      "ruff-lint": 0,
+      "ruff-format": 0,
+      "mypy": 0,
+      "native-lifecycle": 0
+    },
+    "native_stdout_sha256": {
+      "pytest": "0fb1c0750581e98a24a742a7895f7d88406011945786c13ddf75a1445fc7c8eb",
+      "ruff-lint": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "ruff-format": "47becdc7bcfd38c7c036ee66cb757f0aa4e68da6ad6e174ff6513d36cf87332b",
+      "mypy": "90a1c7f0215508dffe3f01bae139423d319d878d596f63e97241d47768e528d8",
+      "native-lifecycle": "945684bcd9d1f1e43d3d206183d0949dfbf3d2a09d1fc4c47e94628b401756a7"
+    },
+    "test_root_removed": true
+  },
+  "native_scratch": {
+    "signin": {
+      "error_type": "SigninAdmissionError",
+      "errno": null,
+      "winerror": null,
+      "native_signin_admission": {
+        "admitted": false,
+        "mode": "unclassified",
+        "process": {
+          "windows_job": true,
+          "assigned_before_resume": true,
+          "kill_on_close": true,
+          "job_active_processes_after_cleanup": 0,
+          "service_created_processes_tracked": false,
+          "termination_reason": null,
+          "exit_code": 1,
+          "output_bytes": 14,
+          "output_limit_bytes": 65536,
+          "wall_time_limit_seconds": 20.0,
+          "job_memory_limit_bytes": 1073741824,
+          "job_peak_memory_used_bytes": 8667136,
+          "active_process_limit": 8,
+          "explicit_environment": true,
+          "write_io_limit_bytes": 1048576,
+          "job_write_io_bytes": 534,
+          "write_io_overshoot_bytes": 0,
+          "write_io_observation_error": null,
+          "write_io_enforcement": "polled_job_transfer_accounting",
+          "hard_storage_quota": false
+        }
+      },
+      "scratch_removed": true
+    },
+    "success": {
+      "windows_job": true,
+      "assigned_before_resume": true,
+      "kill_on_close": true,
+      "job_active_processes_after_cleanup": 0,
+      "service_created_processes_tracked": false,
+      "termination_reason": null,
+      "exit_code": 0,
+      "output_bytes": 0,
+      "output_limit_bytes": 65536,
+      "wall_time_limit_seconds": 15.0,
+      "job_memory_limit_bytes": 536870912,
+      "job_peak_memory_used_bytes": 9830400,
+      "active_process_limit": 4,
+      "explicit_environment": true,
+      "write_io_limit_bytes": 1048576,
+      "job_write_io_bytes": 10,
+      "write_io_overshoot_bytes": 0,
+      "write_io_observation_error": null,
+      "write_io_enforcement": "polled_job_transfer_accounting",
+      "hard_storage_quota": false,
+      "scratch_removed": true
+    },
+    "timeout": {
+      "windows_job": true,
+      "assigned_before_resume": true,
+      "kill_on_close": true,
+      "job_active_processes_after_cleanup": 0,
+      "service_created_processes_tracked": false,
+      "termination_reason": "timeout",
+      "exit_code": 124,
+      "output_bytes": 0,
+      "output_limit_bytes": 65536,
+      "wall_time_limit_seconds": 1.0,
+      "job_memory_limit_bytes": 536870912,
+      "job_peak_memory_used_bytes": 9547776,
+      "active_process_limit": 4,
+      "explicit_environment": true,
+      "write_io_limit_bytes": 1048576,
+      "job_write_io_bytes": 10,
+      "write_io_overshoot_bytes": 0,
+      "write_io_observation_error": null,
+      "write_io_enforcement": "polled_job_transfer_accounting",
+      "hard_storage_quota": false,
+      "scratch_removed": true
+    },
+    "interruption": {
+      "controlled_interrupt_propagated": true,
+      "scratch_removed": true
+    }
+  },
+  "long_evidence_directory": {
+    "initial_git_exit": 128,
+    "initial_native_stderr_sha256": "162979a30c3bd731c116cac199c8bf124df100f2056428a4c7fb01ff5d31ef6a",
+    "mechanism": "Git for Windows reported filename too long for the global configuration path under the evidence directory.",
+    "current_git_exit": 0,
+    "scratch_binding": "Git input files live in a short temporary root; the exact config bytes and process observations remain in the evidence directory."
+  },
+  "official_model": {
+    "cli_version": "0.172.0",
+    "cli_sha256": "3f42b12274b353ecb3ec555e6c8d0a43f6c6cb29c3a546179bc12dee4855deb6",
+    "packaged_model_catalog_sha256": "d50b6749506d97e5f334dbabcb666eb1689f423cf3e88cfabdcf3c536b873068",
+    "model": "gpt-6.2-sol",
+    "reasoning_effort": "max",
+    "signed_metadata_eligible": true,
+    "ordinary_usage_allowed": true,
+    "configuration_metadata_confirmed": true,
+    "configuration_snapshots_match": true,
+    "existing_profile_has_global_instructions": true,
+    "existing_profile_has_global_rules": false,
+    "independent_signed_subject_context_qualified": false,
+    "methods": [
+      "initialize",
+      "config/read",
+      "account/read",
+      "account/rateLimits/read",
+      "model/list",
+      "account/read",
+      "config/read"
+    ],
+    "signin_status_process": {
+      "exit_code": 0,
+      "termination_reason": null,
+      "windows_job": true,
+      "job_active_processes_after_cleanup": 0,
+      "explicit_environment": true,
+      "assigned_before_resume": true,
+      "kill_on_close": true
+    },
+    "account_metadata_process": {
+      "exit_code": 0,
+      "termination_reason": null,
+      "windows_job": true,
+      "job_active_processes_after_cleanup": 0,
+      "explicit_environment": true,
+      "assigned_before_resume": true,
+      "kill_on_close": true
+    },
+    "metadata_scratch_removed": true,
+    "prepared_context_controls": {
+      "harness_version": "0.172.0",
+      "requested_model": "gpt-6.2-sol",
+      "requested_effort": "max",
+      "available_host_skill_paths": 6,
+      "observations": {
+        "baseline": {
+          "prepared_message_count": 6,
+          "matched_host_skill_paths": 0,
+          "matched_host_skill_catalog_descriptions": 0,
+          "profile_skill_canary": false,
+          "fixture_path_visible": false,
+          "fixture_skill_canary": false,
+          "intervention_canary": false,
+          "prepared_input_sha256": "1749319be3b9560165034bf669d38764a6013c396c38691edf8a08051aad809a",
+          "process_closed": true
+        },
+        "intervention": {
+          "prepared_message_count": 6,
+          "matched_host_skill_paths": 0,
+          "matched_host_skill_catalog_descriptions": 0,
+          "profile_skill_canary": false,
+          "fixture_path_visible": false,
+          "fixture_skill_canary": false,
+          "intervention_canary": true,
+          "prepared_input_sha256": "f44fef9aad773e444ab55950b2eb71db80a6a2d17152a2e509dbf448619af02a",
+          "process_closed": true
+        },
+        "include": {
+          "prepared_message_count": 6,
+          "matched_host_skill_paths": 0,
+          "matched_host_skill_catalog_descriptions": 6,
+          "profile_skill_canary": true,
+          "fixture_path_visible": false,
+          "fixture_skill_canary": true,
+          "intervention_canary": false,
+          "prepared_input_sha256": "dcf30f43b1e6846ad7fbe03fe42c7b00f503404c17c97feea9f0bf547435c19c",
+          "process_closed": true
+        },
+        "ordinary-discovery": {
+          "prepared_message_count": 6,
+          "matched_host_skill_paths": 0,
+          "matched_host_skill_catalog_descriptions": 6,
+          "profile_skill_canary": true,
+          "fixture_path_visible": false,
+          "fixture_skill_canary": true,
+          "intervention_canary": false,
+          "prepared_input_sha256": "528454b2887ffbb4b10bcafbe8b8857743704e0ad204a2a8391026e9cd35bda8",
+          "process_closed": true
+        },
+        "include-with-discovery": {
+          "prepared_message_count": 6,
+          "matched_host_skill_paths": 0,
+          "matched_host_skill_catalog_descriptions": 6,
+          "profile_skill_canary": true,
+          "fixture_path_visible": false,
+          "fixture_skill_canary": true,
+          "intervention_canary": false,
+          "prepared_input_sha256": "dc6696171a0cf52982450ecb7c6b72d50eeb516cee0556b01a11ce5ae17c797c",
+          "process_closed": true
+        }
+      },
+      "same_normalized_prefix": true,
+      "exact_declared_last_inputs": true,
+      "native_execution_mode": "debug prompt-input",
+      "model_turns_requested": 0,
+      "fixture_removed": true
+    },
+    "owned_document_budget_controls": {
+      "conditions": {
+        "positive-budget": {
+          "profile_instructions": true,
+          "profile_override": false,
+          "project_instructions": true,
+          "process_closed": true
+        },
+        "zero-budget": {
+          "profile_instructions": true,
+          "profile_override": false,
+          "project_instructions": false,
+          "process_closed": true
+        },
+        "zero-budget-override": {
+          "profile_instructions": false,
+          "profile_override": true,
+          "project_instructions": false,
+          "process_closed": true
+        }
+      },
+      "scope": "Prepared prompt controls on an unsigned disposable profile. A zero project-document budget leaves global profile instructions and their override eligible for inclusion.",
+      "native_observation_sha256": {
+        "positive-budget": "8fdf46e8f349a6c2abde119278bbbf6395ce3e00ae3afee79134c91d4236eaed",
+        "zero-budget": "fc0fd6490b6a304f86d28e4d74451c6dc416686bc9290e694df8744213224162",
+        "zero-budget-override": "877f670981688482aa16dbbff27cb58b60ad02ee4fe7f2ec4738f7d4e0402236"
+      },
+      "native_exec_help_sha256": "34ddfe0641ace4caaad89106468d9121bfa81978990eba230dc810985d00310d",
+      "native_exec_help_flags": [
+        "--ignore-user-config",
+        "--ignore-rules"
+      ]
+    }
+  },
+  "model_turns_requested": 0,
+  "comparative_model_attempts": 0,
+  "model_efficacy_established": false
+}

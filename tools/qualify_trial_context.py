@@ -128,52 +128,55 @@ def capture(context: TrialContext, command: list[str], output: Path) -> dict[str
 
 
 def initialize_fixture(git: Path, workspace: Path, output: Path) -> None:
-    """Initialize only the owned fixture with a bound executable and private configuration."""
+    """Initialize the owned fixture with short-lived Git inputs separate from its evidence."""
     output.mkdir()
-    template = output / "empty-template"
-    template.mkdir()
-    global_config = output / "global.gitconfig"
-    global_config.write_bytes(b"")
-    environment = {key: os.environ[key] for key in SYSTEM_VARIABLES}
-    system = Path(environment["SYSTEMROOT"])
-    environment.update(
-        PATH=os.pathsep.join(map(str, (git.parent, system / "System32"))),
-        GIT_CONFIG_NOSYSTEM="1",
-        GIT_CONFIG_GLOBAL=str(global_config),
-        GIT_TERMINAL_PROMPT="0",
-    )
-    command = [
-        str(git),
-        "-c",
-        "core.longpaths=true",
-        "init",
-        "--quiet",
-        "--initial-branch=main",
-        "--template=" + str(template),
-        str(workspace),
-    ]
-    write_json(output / "command.json", {"command": command, "environment": environment})
-    with (
-        open(os.devnull, "rb") as stdin,
-        (output / "stdout.native").open("xb") as stdout,
-        (output / "stderr.native").open("xb") as stderr,
-    ):
-        process = run_owned(
-            command,
-            cwd=workspace,
-            stdin=stdin,
-            stdout=stdout,
-            stderr=stderr,
-            timeout=10,
-            output_limit=1024**2,
-            memory_limit=512 * 1024**2,
-            process_limit=8,
-            write_io_limit=64 * 1024**2,
-            environment=environment,
+    with tempfile.TemporaryDirectory(prefix="skills-context-git-") as directory:
+        launch = checked_path(Path(directory))
+        template = launch / "empty-template"
+        template.mkdir()
+        global_config = launch / "global.gitconfig"
+        global_config.write_bytes(b"")
+        (output / global_config.name).write_bytes(global_config.read_bytes())
+        environment = {key: os.environ[key] for key in SYSTEM_VARIABLES}
+        system = Path(environment["SYSTEMROOT"])
+        environment.update(
+            PATH=os.pathsep.join(map(str, (git.parent, system / "System32"))),
+            GIT_CONFIG_NOSYSTEM="1",
+            GIT_CONFIG_GLOBAL=str(global_config),
+            GIT_TERMINAL_PROMPT="0",
         )
-    write_json(output / "process.json", process)
-    if not exited_cleanly(process):
-        raise ValueError("Owned fixture Git initialization failed; native evidence retained")
+        command = [
+            str(git),
+            "-c",
+            "core.longpaths=true",
+            "init",
+            "--quiet",
+            "--initial-branch=main",
+            "--template=" + str(template),
+            str(workspace),
+        ]
+        write_json(output / "command.json", {"command": command, "environment": environment})
+        with (
+            open(os.devnull, "rb") as stdin,
+            (output / "stdout.native").open("xb") as stdout,
+            (output / "stderr.native").open("xb") as stderr,
+        ):
+            process = run_owned(
+                command,
+                cwd=workspace,
+                stdin=stdin,
+                stdout=stdout,
+                stderr=stderr,
+                timeout=10,
+                output_limit=1024**2,
+                memory_limit=512 * 1024**2,
+                process_limit=8,
+                write_io_limit=64 * 1024**2,
+                environment=environment,
+            )
+        write_json(output / "process.json", process)
+        if not exited_cleanly(process):
+            raise ValueError("Owned fixture Git initialization failed; native evidence retained")
 
 
 def semantic_messages(items: list[dict[str, Any]], codex_home: Path) -> list[dict[str, Any]]:

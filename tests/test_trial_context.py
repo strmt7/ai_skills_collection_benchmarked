@@ -44,11 +44,16 @@ def test_controller_reservation_uses_the_os_temporary_location_outside_a_deep_ch
     system_temporary.mkdir()
     monkeypatch.chdir(checkout)
     monkeypatch.setattr(context.tempfile, "tempdir", str(system_temporary))
-    first, second = context.temporary_home(), context.temporary_home()
-    assert first != second and first.parent.is_dir() and second.parent.is_dir()
-    assert not first.exists() and not second.exists()
-    assert first.is_relative_to(system_temporary) and second.is_relative_to(system_temporary)
-    assert not first.is_relative_to(Path.cwd())
+    with context.temporary_trial_paths() as first, context.temporary_trial_paths() as second:
+        assert first[0].parent != second[0].parent
+        for workspace, controller in (first, second):
+            assert workspace.parent == controller.parent
+            assert workspace.parent.is_dir()
+            assert not workspace.exists() and not controller.exists()
+            assert workspace.is_relative_to(system_temporary) and not workspace.is_relative_to(checkout)
+            controller.mkdir()
+            workspace.mkdir()
+    assert not list(system_temporary.iterdir())
 
 
 def test_private_context_has_separate_empty_profiles_and_no_parent_state(paths):

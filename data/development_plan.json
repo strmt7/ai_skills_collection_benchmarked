@@ -83,7 +83,7 @@
         "R9",
         "R12"
       ],
-      "next_action": "Local output-limit and private model-stage controls now pass. Freeze representative native readiness tasks and an observed request budget before the next local comparison. Qualify the separate instruction-clean official GPT-6.1 Sol high route. Keep all original local outcomes and count missing replies separately from timeouts.",
+      "next_action": "The official Codex CLI confirms GPT-6.2 Sol max for the existing account and accepts the matched unsigned prompt controls. Qualify an instruction-clean signed-in context, then run and retain one representative native calibration before freezing comparison blocks. Keep local-model outcomes and plan their separate native budget.",
       "deliverables": [
         "Maintained qualification entrypoint and frozen input assets",
         "Provider/model identity and capability admission",
@@ -98,7 +98,7 @@
         "No personal instructions, memory, shared configuration/history or credentials contaminate a subject; the requested official signed-in route remains a separate acceptance requirement",
         "Complete execution/edit/collection/grading controls and clone-validatable admission pass before counted comparisons"
       ],
-      "policy": "Use only the official harness or app with existing sign-in for the requested GPT-6.1 Sol high target; no OpenAI API key or substitute direct-API route. Local models are supplementary; never silently replace that target.",
+      "policy": "Use only the official harness or app with existing sign-in for the requested GPT-6.2 Sol max target; no OpenAI API key or substitute direct-API route. Local models are supplementary; never silently replace that target.",
       "expansion_rule": "Add runtime features only for an observed blocking requirement; stop broad infrastructure expansion when this gate passes.",
       "evidence": [
         {
@@ -191,6 +191,11 @@
           "path": "artifacts/research/2026-11-26/native-output-budget/review.json",
           "sha256": "05b19ee7c1ccd3e223b1d5188edf53246ce6534d35b16b8e9ab4f9d9074afe15",
           "scope": "Measured local generation limits, native TestEval missing-reply classification, byte-verified independent model staging, and bounded process/profile closure. These controls include zero comparative tasks."
+        },
+        {
+          "path": "artifacts/research/2026-11-26/trial-scratch-lifecycle/review.json",
+          "sha256": "d5df23eff962f481ac29192e662721c043f330975b1236b7b997c31a7c3732a5",
+          "scope": "447 scoped tests, native cleanup and long Windows evidence-path controls, and signed GPT-6.2 Sol max metadata. The independent signed-in benchmark context and model trials remain open."
         }
       ]
     },
@@ -411,7 +416,7 @@
         {
           "path": "artifacts/research/2026-11-17/packaging-development/observations.json",
           "sha256": "7b0de2d5702f61b855c55be3745e82203cb69baa918940df55df41411c9a1bb7",
-          "scope": "Three valid native scores on the single public packaging task, all at the floor. The original 12-task frame and GPT-6.1 Sol high comparison retain separate scope."
+          "scope": "Three valid native scores on the single public packaging task, all at the floor. The original 12-task frame and new GPT-6.2 Sol max comparison retain separate scope."
         },
         {
           "path": "artifacts/research/2026-11-25/go-development-comparison/completed-block.json",

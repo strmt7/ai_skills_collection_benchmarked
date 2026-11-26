@@ -49,6 +49,8 @@ def native(tmp_path, monkeypatch):
             "assigned_before_resume": True,
             "kill_on_close": True,
             "explicit_environment": True,
+            "service_created_processes_tracked": False,
+            "job_peak_memory_used_bytes": 64 * 1024**2,
             "exit_code": 0,
             "termination_reason": None,
             "job_active_processes_after_cleanup": 0,
@@ -58,6 +60,7 @@ def native(tmp_path, monkeypatch):
             "active_process_limit": 8,
             "write_io_limit_bytes": 1024**2,
             "job_write_io_bytes": 24,
+            "write_io_overshoot_bytes": 0,
             "write_io_observation_error": None,
             "write_io_enforcement": "polled_job_transfer_accounting",
             "hard_storage_quota": False,
@@ -67,7 +70,7 @@ def native(tmp_path, monkeypatch):
     def status(arguments, **options):
         state["calls"].append((arguments, options))
         options["stderr"].write(state["text"])
-        return state["process"].copy()
+        return {**state["process"], "output_bytes": len(state["text"])}
 
     monkeypatch.setattr("_windows_trial_process.run_owned", status)
     return context, declaration, state
@@ -203,6 +206,7 @@ def test_non_chatgpt_or_ambiguous_status_is_retained_without_raw_output(native, 
         "apikey" if text.startswith((b"Logged in using an API key - ", b"API key configured - ")) else "unclassified"
     )
     assert metadata["native_signin_admission"]["mode"] == expected
+    signin.verify_failed_signin_admission(metadata["native_signin_admission"])
     assert "private-status-canary" not in str(error.value) + json.dumps(metadata)
     assert context.signin is None
     assert state["calls"][0][1]["stderr"].closed

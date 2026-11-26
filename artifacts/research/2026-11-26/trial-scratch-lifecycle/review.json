@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-26",
+  "scope": "Current source-bound Windows runner lifecycle, failed sign-in reporting, Git fixture path separation and model-free native harness controls.",
+  "base_revision": "8dc2bce17e5787a0a1de0aa8f3a98a33cb640cf3",
+  "source_sha256": {
+    "docs/agent-trial-protocol.md": "c512f19edbe1fc245605e90bf8492af47ae85deba0f4e1338d3b6cd650ea8648",
+    "docs/improvement-plan.md": "297baff6f5fcd09dd2a3260b9af82a8b04f4c8fd326f8c3c36058bae9cf512a0",
+    "tests/test_agent_trial_runner.py": "1ae83756d2f2411efd7a9df1a012894e9bbed259a679c64490c1a2e01a5eb7e8",
+    "tests/test_native_trial_runner.py": "edcb2f3129175a5c9085bce000c0a93d4b5735d2d7ad33f6b12993d1548a8c12",
+    "tests/test_qualify_trial_context.py": "ff7c3332169b3cd0ce73b94961c99ceaece8b77f87ee69b55fb2e881c874724f",
+    "tests/test_trial_context.py": "957b542135e026e4460d2a840ff1e95dc4a50a8fe8bc3b0b65d33eef31140be4",
+    "tests/test_trial_setup_accounting.py": "5978c188f326ffb2d208715b4f9110ae09988e7b9c657c1d2fbc07203d9997bf",
+    "tests/test_trial_signin.py": "f64ae98a854edb483e30b6bcefdddc030c8cf4c28db196054996b56d457dba1c",
+    "tools/_trial_context.py": "21d2dc1c1e6951825b7f77c0cd71305e20ba7383c28e660084a51f0db013071f",
+    "tools/_trial_execution_evidence.py": "729dfa2a772b4b0a2a69415ef6642c38b1728f1a0ad996676bfac3d92ae7413c",
+    "tools/_trial_signin.py": "410275cb2b024be7736a0cd8a3a9000e86942552ba8ab73a4958141a1fba590b",
+    "tools/qualify_trial_context.py": "6bcb5b177328c57219c6ca3b653a83b2947441b76536f46dc82dc722035a9d14",
+    "tools/run_agent_trial.py": "e875e5b99386ca299c8482d2d361fa868b41aa71091217585d2a397f1c2779a4",
+    "tools/run_swe_skills_trial.py": "d9abc3ebc97a2537053dd097a9078f3d81cdcb4b778e3ee54d9350c7a399e1d7",
+    "tools/summarize_agent_trials.py": "d4c46b6fe3c1ee1dd890e81a3928cc952f74afdbd01f1d38f9186b4810e306fe"
+  },
+  "artifacts": {
+    "observations.json": "91180676b27c283058a9e78dec2280a91d575b268470b8be0f50e09c54692f0c"
+  },
+  "limitations": [
+    "The 447 tests cover the scoped benchmark controller, reporting and context contracts. Actual native success, timeout, controlled interruption and empty-profile rejection were observed separately.",
+    "Forced termination of the controller and subsequent crash recovery remain open.",
+    "GPT-6.2 Sol max account and effective configuration metadata were observed through the official CLI. The existing signed profile has global instructions; the isolated prompt controls used a disposable unsigned context.",
+    "The active signed benchmark boundary, representative model calibration and paired efficacy comparisons remain open. No model turn was requested."
+  ],
+  "comparative_model_attempts": 0,
+  "model_efficacy_established": false
+}

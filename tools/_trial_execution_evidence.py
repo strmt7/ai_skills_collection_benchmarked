@@ -14,7 +14,7 @@ from _trial_signin import STORES, NativeSignin, status_completed
 from _trial_transcript import parse_events, strict_json
 
 SETUP_STAGES = {"workspace", "prepare", "context", "prompt", "command", "launch_record"}
-CONTROLLER_STAGES = {"agent", "transcript", "submission", "grader", "evidence", "result"}
+CONTROLLER_STAGES = {"agent", "transcript", "submission", "grader", "evidence", "cleanup", "result"}
 FAILURE_OBSERVATIONS = {
     "setup_failed": {"attempt.json", "setup-error.json", "prompt.txt", "launch.json"},
     "controller_failed": {

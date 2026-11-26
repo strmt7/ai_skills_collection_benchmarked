@@ -38,6 +38,7 @@ from _trial_grading_process import (
 from _trial_manifest import read_grading_manifest, validate_grade_checks
 from _trial_prompt import verify_prompt
 from _trial_protocol import validate_declaration
+from _trial_signin import SigninAdmissionError, verify_failed_signin_admission
 from _trial_transcript import parse_events, strict_json
 from _trial_workspace_changes import workspace_changes
 
@@ -413,15 +414,27 @@ def _verify_failed_attempt(directory: Path, result: dict[str, Any]) -> None:
     attempt = read_json(directory / "attempt.json")
     verify_attempt(attempt, result["protocol_sha256"], result["condition"], phase)
     error = read_json(directory / error_name)
+    native_signin = isinstance(error, dict) and error.get("error_type") == SigninAdmissionError.__name__
+    fields = {"stage", "error_type", "errno", "winerror"}
+    if native_signin:
+        fields.add("native_signin_admission")
     if (
         not isinstance(error, dict)
-        or set(error) != {"stage", "error_type", "errno", "winerror"}
+        or set(error) != fields
         or error["stage"] != attempt["stage"]
         or not isinstance(error["error_type"], str)
         or re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", error["error_type"]) is None
         or any(error[name] is not None and type(error[name]) is not int for name in ("errno", "winerror"))
     ):
         raise ValueError("failure metadata disagrees with its lifecycle record")
+    if native_signin:
+        if (
+            phase != "setup_failed"
+            or error["stage"] != "context"
+            or any(error[name] is not None for name in ("errno", "winerror"))
+        ):
+            raise ValueError("Native sign-in failure belongs to pre-launch context admission")
+        verify_failed_signin_admission(error["native_signin_admission"])
 
 
 def _verify_checks(

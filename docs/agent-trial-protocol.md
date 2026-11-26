@@ -336,15 +336,22 @@ or the complete model execution boundary.
 
 After qualification and protocol validation, the runner reserves each attempt
 directory before preparing its workspace. `attempt.json` records the controller
-phase. A pre-launch setup exception produces an unscored `harness_error` with
+phase. The subject workspace and the temporary controller profile share a
+disposable root. Normal completion releases that root before the runner
+records a finished result. An independent sign-in profile and retained
+attempt artifacts live outside that disposable root.
+
+A pre-launch setup exception produces an unscored `harness_error` with
 unavailable usage and process exit status, plus structured error type, `errno`
-and Windows error code. Exception messages and local variables are not copied
-into the published diagnostics. Reports verify this separate failure path and
-retain missing prompt evidence as unavailable, including across task summaries.
+and Windows error code. A rejected official CLI sign-in can also retain its
+classified profile rejection or bounded native status-process metadata.
+Reports validate this evidence and retain missing prompt observations as
+unavailable, including across task summaries.
 Ordinary controller exceptions after setup produce a separate `controller_failed`
 record and an unscored `harness_error`. This includes agent execution, transcript
-reading, collection, grading, evidence selection and final result storage when
-the error record can still be saved. The error records its stage and OS error
+reading, collection, grading, evidence selection, scratch release and final
+result storage when the error record can still be saved. The error records
+its stage and OS error
 domains, without copying exception messages or local variables. A fixed inventory
 retains available controller and native observations; it never traverses grader
 scratch or controller profiles.

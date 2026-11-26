@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import tempfile
 from contextlib import contextmanager
 from pathlib import Path
 from typing import Any
@@ -70,18 +71,22 @@ def frozen(tmp_path, monkeypatch):
         lambda selected: tmp_path / "cache" if selected == trials.ROOT / ".venv/agent-trial-contexts" else selected,
     )
     monkeypatch.setattr(trials, "read_workspace_file", lambda root, name, **kwargs: (root / name).read_bytes())
-    workspace = tmp_path / "workspace"
-    workspace.mkdir()
-    monkeypatch.setattr(trials.tempfile, "mkdtemp", lambda **kwargs: str(workspace))
+    scratch = tmp_path / "scratch"
+    scratch.mkdir()
+    monkeypatch.setattr(tempfile, "tempdir", str(scratch))
     monkeypatch.setattr(trials, "prepare", lambda *args, **kwargs: (kwargs["workspace"], "owned fixture", {}))
-    monkeypatch.setattr(
-        trials,
-        "create_context",
-        lambda home, work, *args: TrialContext(home, work, Path("fixture"), Path("python"), (), {}, {}),
-    )
+
+    def context(home, work, *args):
+        home.mkdir()
+        (home / "private-state").write_text("owned", encoding="utf-8")
+        (work / "working-file").write_text("owned", encoding="utf-8")
+        return TrialContext(home, work, Path("fixture"), Path("python"), (), {}, {})
+
+    monkeypatch.setattr(trials, "create_context", context)
     monkeypatch.setattr(trials, "command", lambda *args: ["fixture"])
     output = tmp_path / "trials/repetition-1/default"
-    return path, protocol, digest, output
+    yield path, protocol, digest, output
+    assert not list(scratch.iterdir())
 
 
 def test_explicit_empty_credentials_cannot_fall_back_to_the_parent_environment(frozen, monkeypatch):
@@ -114,7 +119,7 @@ def test_prelaunch_errors_leave_verifiable_unscored_results(frozen, monkeypatch,
         raise OSError(5, "SYNTHETIC_PRIVATE_MARKER must not enter published diagnostics")
 
     if stage == "workspace":
-        monkeypatch.setattr(trials.tempfile, "mkdtemp", fail)
+        monkeypatch.setattr(tempfile, "mkdtemp", fail)
     elif stage == "launch_record":
 
         def write(target, value):
@@ -143,6 +148,53 @@ def test_prelaunch_errors_leave_verifiable_unscored_results(frozen, monkeypatch,
     assert report["conditions"]["default"]["status_counts"]["harness_error"] == 1
     assert report["prompt_runtime_evidence"]["unavailable_attempts"] == 1
     assert "Executed prompt evidence is unavailable for 1 infrastructure-failed attempt." in summary.render(report)
+
+
+@pytest.mark.parametrize("change", [None, "admitted", "reason", "extra_field"])
+def test_signin_profile_rejection_is_reported_without_a_model_attempt(frozen, change):
+    path, protocol, _, output = frozen
+    signin_profile = path.parent / "independent-signin"
+    signin_profile.mkdir()
+    instructions = signin_profile / "AGENTS.md"
+    instructions.write_text("owned profile fixture", encoding="utf-8")
+    protocol["provider"] = {
+        "authentication": "codex_signin",
+        "codex_home": str(signin_profile),
+        "credential_store": "file",
+    }
+    path.write_text(json.dumps(protocol), encoding="utf-8")
+    digest = trials.sha256(path.read_bytes())
+    manifest_path = path.with_name("protocol.grading.json")
+    manifest = json.loads(manifest_path.read_bytes())
+    manifest["protocol_sha256"] = digest
+    manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+
+    result = trials.run(path, "default", output, Path("fixture"), Path("python"))
+    assert result["attempt_phase"] == "setup_failed" and result["status"] == "harness_error"
+    error_path = output / "setup-error.json"
+    metadata = json.loads(error_path.read_bytes())
+    assert metadata["native_signin_admission"] == {
+        "admitted": False,
+        "mode": "not_checked",
+        "reason": "global_instructions_present",
+    }
+    assert instructions.read_text(encoding="utf-8") == "owned profile fixture"
+    if change is None:
+        assert summary.summarize(path, output.parents[1])["conditions"]["default"]["status_counts"] == {
+            "harness_error": 1,
+        }
+    else:
+        key, value = {
+            "admitted": ("admitted", True),
+            "reason": ("reason", "unknown"),
+            "extra_field": ("note", "extra"),
+        }[change]
+        metadata["native_signin_admission"][key] = value
+        error_path.write_text(json.dumps(metadata), encoding="utf-8")
+        result["evidence_sha256"]["setup-error.json"] = trials.sha256(error_path.read_bytes())
+        (output / "result.json").write_text(json.dumps(result), encoding="utf-8")
+        with pytest.raises(ValueError, match="native sign-in"):
+            summary.verify_result(output, protocol, digest, "default", frozenset({"independent-case"}))
 
 
 def test_setup_failure_cannot_be_relabelled_after_a_launch_capture(frozen, monkeypatch):
@@ -318,7 +370,7 @@ def test_controller_releases_credentials_before_collection_and_on_failure(contro
     assert parent == {key: secret}
 
 
-@pytest.mark.parametrize("stage", ["agent", "transcript", "submission", "grader", "evidence", "result"])
+@pytest.mark.parametrize("stage", ["agent", "transcript", "submission", "grader", "evidence", "cleanup", "result"])
 def test_postsetup_controller_failures_remain_counted_without_invented_measurements(controller_run, monkeypatch, stage):
     path, protocol, digest, output = controller_run
     original_write = trials.write_json
@@ -337,6 +389,16 @@ def test_postsetup_controller_failures_remain_counted_without_invented_measureme
             return original_write(target, value)
 
         monkeypatch.setattr(trials, "write_json", write)
+    elif stage == "cleanup":
+        reserve = trials.temporary_trial_paths
+
+        @contextmanager
+        def failed_release():
+            with reserve() as paths:
+                yield paths
+            fail()
+
+        monkeypatch.setattr(trials, "temporary_trial_paths", failed_release)
     else:
         monkeypatch.setattr(
             trials,

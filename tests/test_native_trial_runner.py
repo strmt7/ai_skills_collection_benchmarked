@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+from contextlib import contextmanager
 from pathlib import Path
 from types import SimpleNamespace
 from typing import Any
@@ -34,8 +35,8 @@ def attempt(tmp_path, monkeypatch):
         "grader_runtime": {},
     }
     task = {"id": "original-author-task", "image_reference": "frozen-image", "collection_policy": {}}
-    parent = tmp_path / "subject"
-    parent.mkdir()
+    scratch = tmp_path / "scratch"
+    scratch.mkdir()
     state: dict[str, Any] = {
         "grade_calls": 0,
         "collection_calls": 0,
@@ -64,9 +65,14 @@ def attempt(tmp_path, monkeypatch):
     monkeypatch.setattr(trials, "DockerClient", lambda *args: SimpleNamespace(reference="frozen-image"))
     monkeypatch.setattr(trials, "plan_handoff", lambda *args: None)
     monkeypatch.setattr(trials, "seal", lambda *args: {"archive_sha256": "a" * 64})
-    monkeypatch.setattr(trials, "restore", lambda *args: {})
+
+    def restore(*args):
+        args[-1].mkdir()
+        return {}
+
+    monkeypatch.setattr(trials, "restore", restore)
     monkeypatch.setattr(trials, "verify_initial_workspace", lambda *args: None)
-    monkeypatch.setattr(trials.tempfile, "mkdtemp", lambda **kwargs: str(parent))
+    monkeypatch.setattr(trials.tempfile, "tempdir", str(scratch))
     monkeypatch.setattr(
         trials,
         "create_context",
@@ -143,12 +149,31 @@ def attempt(tmp_path, monkeypatch):
     monkeypatch.setattr(trials, "execute_agent", execute)
     monkeypatch.setattr(trials, "capture_owned", capture)
     monkeypatch.setattr(trials, "grade", grade)
-    return plan_path, tmp_path / ".venv/attempt", state
+    yield plan_path, tmp_path / ".venv/attempt", state
+    assert not list(scratch.iterdir())
 
 
 def invoke(attempt):
     path, output, _ = attempt
     return trials._run_controller(path, output, credential_source={"NATIVE_FIXTURE": "owned fixture credential"})
+
+
+def test_native_cleanup_failure_withholds_a_completed_grade(attempt, monkeypatch):
+    reserve = trials.temporary_trial_paths
+
+    @contextmanager
+    def failed_release():
+        with reserve() as paths:
+            yield paths
+        raise OSError(5, "controlled release failure")
+
+    monkeypatch.setattr(trials, "temporary_trial_paths", failed_release)
+    _, output, state = attempt
+    result = invoke(attempt)
+    assert state["grade_calls"] == 1
+    assert result["stage"] == "cleanup"
+    assert result["status"] == "harness_error" and result["score"] is None
+    assert (output / "grading/result.json").is_file()
 
 
 def test_native_fraction_and_denominator_are_preserved(attempt):

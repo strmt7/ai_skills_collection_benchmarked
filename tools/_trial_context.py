@@ -5,7 +5,8 @@ from __future__ import annotations
 import json
 import os
 import tempfile
-from collections.abc import Mapping
+from collections.abc import Iterator, Mapping
+from contextlib import contextmanager
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -28,9 +29,12 @@ DISABLED_FEATURES = (
 SYSTEM_VARIABLES = ("SYSTEMROOT", "WINDIR", "COMSPEC", "PATHEXT", "SYSTEMDRIVE")
 
 
-def temporary_home() -> Path:
-    """Reserve a private controller location independent of checkout depth."""
-    return checked_path(Path(tempfile.mkdtemp(prefix="skills-agent-controller-"))) / "private"
+@contextmanager
+def temporary_trial_paths() -> Iterator[tuple[Path, Path]]:
+    """Own sibling subject and controller paths in a short-lived system temporary root."""
+    with tempfile.TemporaryDirectory(prefix="skills-trial-") as directory:
+        root = checked_path(Path(directory))
+        yield root / "workspace", root / "controller"
 
 
 @dataclass(frozen=True)
