@@ -1,6 +1,6 @@
 ---
 name: tdd-workflow-current
-description: Use when changing software behavior or repairing a regression. Verify that the same focused check observes the defect and passes after the implementation changes.
+description: Use when changing software behavior, repairing a regression, or adding tests. Verify that focused tests distinguish correct behavior from the relevant defect.
 license: MIT
 metadata:
   source: affaan-m/everything-claude-code
@@ -47,6 +47,15 @@ research. Keep the required execution evidence.
   configuration changes, verify the affected example, parser, or consuming
   command. Prefer tests that distinguish credible regressions from correct
   behavior over assertions that repeat implementation details.
+
+## Add tests to unchanged behavior
+
+Derive expected outputs, order, counts or effects from the caller's contract.
+Run the new tests on the unchanged program. When assertion strength matters,
+exercise a plausible wrong result in a disposable fixture or with the existing
+mutation runner. Confirm that the intended assertion fails. Record collection
+errors and cases that never ran separately. Preserve the production program
+and choose a few faults that represent the contract under test.
 
 Follow the project's coverage policy. Use coverage to locate unexercised
 behavior and check assertions separately. Report commands and observed pass,

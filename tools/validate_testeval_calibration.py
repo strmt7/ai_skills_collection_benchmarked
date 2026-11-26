@@ -68,8 +68,8 @@ def publisher_metrics(content: bytes) -> dict[str, float]:
     return dict(zip(labels, metrics, strict=True))
 
 
-def independent_pytest(content: bytes, status_text: bytes, expected: list[str]) -> dict[str, int]:
-    """Reconcile the frozen case set, JUnit case outcomes, suite counts and exit."""
+def pytest_report(content: bytes, status_text: bytes) -> tuple[dict[str, int], set[str]]:
+    """Reconcile native case outcomes, suite counts and process exit."""
     text = content.decode("utf-8")
     document = SafeXML.fromstring(text, forbid_dtd=True, forbid_entities=True, forbid_external=True)
     if document.tag not in {"testsuite", "testsuites"}:
@@ -77,12 +77,13 @@ def independent_pytest(content: bytes, status_text: bytes, expected: list[str]) 
     suites = [document] if document.tag == "testsuite" else document.findall("testsuite")
     counts = dict(tests=0, failures=0, errors=0, skipped=0)
     seen: set[str] = set()
-    if not expected or len(expected) != len(set(expected)):
-        raise ValueError("The contract requires distinct expected independent tests")
     for suite in suites:
         measured = dict.fromkeys(counts, 0)
         for case in suite.findall("testcase"):
-            identifier = f"{case.attrib['classname']}::{case.attrib['name']}"
+            module, name = case.attrib["classname"], case.attrib["name"]
+            if not module.strip() or not name.strip():
+                raise ValueError("Independent pytest case requires a module and name")
+            identifier = f"{module}::{name}"
             if identifier in seen:
                 raise ValueError(f"Duplicate independent test case {identifier}")
             seen.add(identifier)
@@ -96,13 +97,23 @@ def independent_pytest(content: bytes, status_text: bytes, expected: list[str]) 
             raise ValueError("JUnit totals disagree with the individual test cases")
         for key, count in measured.items():
             counts[key] += count
-    if seen != set(expected) or len(document.findall(".//testcase")) != counts["tests"]:
+    if not seen or len(document.findall(".//testcase")) != counts["tests"]:
         raise ValueError("Independent pytest collected a different case set")
     status = int(status_text.decode("ascii").strip())
     if status != int(bool(counts["failures"] + counts["errors"])):
         raise ValueError("Independent pytest exit disagrees with the recorded outcomes")
     passed = counts["tests"] - counts["failures"] - counts["errors"] - counts["skipped"]
-    return {**counts, "passed": passed, "exit": status}
+    return {**counts, "passed": passed, "exit": status}, seen
+
+
+def independent_pytest(content: bytes, status_text: bytes, expected: list[str]) -> dict[str, int]:
+    """Verify an authored case inventory against the native report."""
+    if not expected or len(expected) != len(set(expected)):
+        raise ValueError("The contract requires distinct expected independent tests")
+    counts, seen = pytest_report(content, status_text)
+    if seen != set(expected):
+        raise ValueError("Independent pytest collected a different case set")
+    return counts
 
 
 def inspect(directory: Path, manifest: dict[str, Any]) -> dict[str, Any]:

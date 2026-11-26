@@ -1,0 +1,212 @@
+{
+  "cases": {
+    "missing_units": {
+      "behavior": {
+        "assertion_failed": true,
+        "branch_count": 4,
+        "executed_branches": [
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            6
+          ]
+        ],
+        "executed_lines": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "exit": 1,
+        "statement_count": 7
+      },
+      "shape": {
+        "assertion_failed": false,
+        "branch_count": 4,
+        "executed_branches": [
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            6
+          ]
+        ],
+        "executed_lines": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "exit": 0,
+        "statement_count": 7
+      }
+    },
+    "reference": {
+      "behavior": {
+        "assertion_failed": false,
+        "branch_count": 4,
+        "executed_branches": [
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            6
+          ]
+        ],
+        "executed_lines": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "exit": 0,
+        "statement_count": 7
+      },
+      "shape": {
+        "assertion_failed": false,
+        "branch_count": 4,
+        "executed_branches": [
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            6
+          ]
+        ],
+        "executed_lines": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "exit": 0,
+        "statement_count": 7
+      }
+    },
+    "reordered": {
+      "behavior": {
+        "assertion_failed": true,
+        "branch_count": 4,
+        "executed_branches": [
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            6
+          ]
+        ],
+        "executed_lines": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "exit": 1,
+        "statement_count": 7
+      },
+      "shape": {
+        "assertion_failed": false,
+        "branch_count": 4,
+        "executed_branches": [
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            6
+          ]
+        ],
+        "executed_lines": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "exit": 0,
+        "statement_count": 7
+      }
+    }
+  },
+  "coverage_version": "7.17.5",
+  "model_attempts": 0,
+  "pytest_version": "9.2.0",
+  "python_version": "3.14.10"
+}

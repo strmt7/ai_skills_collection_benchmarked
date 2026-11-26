@@ -222,7 +222,6 @@
         "sha256": "cf7199c7f54ddea8bb80fc165c8b1a6852233e28a0ece9f19e7479c2f3b9b941"
       },
       "sources": [
-        "included/improved/skills/tdd-workflow-current/SKILL.md",
         "included/improved/skills/tdd-workflow-current/NOTICE.md",
         "included/improved/skills/tdd-workflow-current/provenance/original-SKILL.md"
       ]
@@ -497,9 +496,7 @@
         "included/improved/skills/eval-harness-integrity/SKILL.md",
         "included/improved/skills/eval-harness-integrity/references/grader-admission.md",
         "tests/test_grade_testeval_submission.py",
-        "tests/test_validate_testeval_calibration.py",
-        "tools/grade_testeval_submission.py",
-        "tools/validate_testeval_calibration.py"
+        "tests/test_validate_testeval_calibration.py"
       ]
     },
     {
@@ -521,9 +518,7 @@
       },
       "sources": [
         "benchmarks/agent-effectiveness/development/testeval-pilot-v2/native-profile.json",
-        "tests/test_collect_testeval_submission.py",
         "tools/_native_benchmark_runtime.py",
-        "tools/collect_testeval_submission.py",
         "tools/prepare_testeval_inputs.py"
       ]
     },
@@ -569,8 +564,31 @@
         "sha256": "4bb73a5247a23191bb17dd241c24a4e6f632b8a2f516c427e11a866c62a5f456"
       },
       "sources": [
-        "docs/benchmark-execution-plan.md",
         "tests/test_testeval_collector_archive.py"
+      ]
+    },
+    {
+      "id": "testeval-sealed-submission-handoff",
+      "review": {
+        "path": "artifacts/research/2026-11-26/testeval-sealed-handoff/review.json",
+        "sha256": "ec4c054b2f62b93ceec10b97046ef3fa8559e4779aa39dc17b80d6f919cc73e2"
+      },
+      "sources": [
+        "docs/benchmark-execution-plan.md",
+        "tests/test_collect_testeval_submission.py",
+        "tools/collect_testeval_submission.py",
+        "tools/grade_testeval_submission.py",
+        "tools/validate_testeval_calibration.py"
+      ]
+    },
+    {
+      "id": "tdd-test-only-assertions",
+      "review": {
+        "path": "artifacts/research/2026-11-26/test-only-assertions/review.json",
+        "sha256": "8e5f8d659a08899ca5e51feca44e9013bef3faf13871f85ab8b127df93a89543"
+      },
+      "sources": [
+        "included/improved/skills/tdd-workflow-current/SKILL.md"
       ]
     }
   ],
@@ -1089,7 +1107,9 @@
         "sha256": "556301f1e03e67e7c9c38809b746776e7c88994f5890dc2fab8e2a3f66dedbda"
       },
       "superseded_sources": [
-        "docs/benchmark-execution-plan.md"
+        "docs/benchmark-execution-plan.md",
+        "tools/grade_testeval_submission.py",
+        "tools/validate_testeval_calibration.py"
       ]
     },
     {
@@ -1105,6 +1125,26 @@
       "review": {
         "path": "artifacts/research/2026-11-25/testeval-native-collector/review.json",
         "sha256": "fc2dd94bddad65d6fc2b593a1476434ad20e5271db8da9845b5106122eba8f2e"
+      },
+      "superseded_sources": [
+        "docs/benchmark-execution-plan.md",
+        "tests/test_collect_testeval_submission.py",
+        "tools/collect_testeval_submission.py"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-25/tdd-portable-workflow/review.json",
+        "sha256": "cf7199c7f54ddea8bb80fc165c8b1a6852233e28a0ece9f19e7479c2f3b9b941"
+      },
+      "superseded_sources": [
+        "included/improved/skills/tdd-workflow-current/SKILL.md"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-25/testeval-collector-cohort/review.json",
+        "sha256": "4bb73a5247a23191bb17dd241c24a4e6f632b8a2f516c427e11a866c62a5f456"
       },
       "superseded_sources": [
         "docs/benchmark-execution-plan.md"

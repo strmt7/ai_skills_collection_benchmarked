@@ -29,10 +29,10 @@
       "overlay_sha256": "6a1c2d5a3e5845ad20b08752e92aefb33cc70bf1d75c370606ce70fe486e743b",
       "package_file_sha256": {
         "LICENSE": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
+        "SKILL.md": "6a1c2d5a3e5845ad20b08752e92aefb33cc70bf1d75c370606ce70fe486e743b",
         "provenance/original-SKILL.md": "49a5a10975860bb2d7e3c4e260ff19b6580e43f5fbc7770b32dece02dde48e49",
         "references/grader-admission.md": "38816c482fdaa6a31823bdec8f6c061153c933dc4e42440324ff9819a704bfe6",
-        "references/repeated-attempts.md": "5144b51701c5ab684ad74ecf9954b782c7ad882b5ea1b88dc77f10dd22650024",
-        "SKILL.md": "6a1c2d5a3e5845ad20b08752e92aefb33cc70bf1d75c370606ce70fe486e743b"
+        "references/repeated-attempts.md": "5144b51701c5ab684ad74ecf9954b782c7ad882b5ea1b88dc77f10dd22650024"
       },
       "performance_status": "unbenchmarked",
       "skill_id": "affaan-m-everything-claude-code-agents-skills-eval-harness-skill-md",
@@ -90,9 +90,9 @@
       "package_file_sha256": {
         "LICENSE": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
         "NOTICE.md": "6e7fa532e6dc05253979c6ec607087914d5f4c8011e0fee04f4dd9406eb1436e",
+        "SKILL.md": "c9362dde3aabde490a8a5dd9148dcf66d98cde2b14e8ebf39b640b4fbc8799a5",
         "provenance/original-SKILL.md": "6d4a399d856207297168cc03f3f8c90d4085ff14566bb928af3c97d9a31f2650",
-        "references/native-command-status.md": "d6caac29bb75db8e51ac771cf2e45cdce48e530837cb7bc4bf12574af9533ef7",
-        "SKILL.md": "c9362dde3aabde490a8a5dd9148dcf66d98cde2b14e8ebf39b640b4fbc8799a5"
+        "references/native-command-status.md": "d6caac29bb75db8e51ac771cf2e45cdce48e530837cb7bc4bf12574af9533ef7"
       },
       "performance_status": "unbenchmarked",
       "skill_id": "affaan-m-everything-claude-code-agents-skills-verification-loop-skill-md",
@@ -138,14 +138,14 @@
       "overlay_path": "included/improved/skills/webapp-testing-current",
       "overlay_sha256": "834de7555860b16302960b61ba2f7dd06a9cc7f0bea5040f7b588d5efffad288",
       "package_file_sha256": {
-        "assets/playwright.config.cjs": "58b6ccc74b0df8d143b2cc43455af4f39a068137463b59906ab8f7a4bd00c7a3",
-        "assets/preview-health.spec.cjs": "992c0c548fd3e3ae8075d57580c0735d41ef8cf7fdcfa393d7d78c268f2e3a8d",
         "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
         "NOTICE.md": "e58746562255167a5098d96c82bcd52700b1fdc8a0bbcc39cb137e0e28e974e9",
+        "SKILL.md": "834de7555860b16302960b61ba2f7dd06a9cc7f0bea5040f7b588d5efffad288",
+        "assets/playwright.config.cjs": "58b6ccc74b0df8d143b2cc43455af4f39a068137463b59906ab8f7a4bd00c7a3",
+        "assets/preview-health.spec.cjs": "992c0c548fd3e3ae8075d57580c0735d41ef8cf7fdcfa393d7d78c268f2e3a8d",
         "provenance/original-SKILL.md": "1f77d7de1954dd311fbd319e993f54ce8de4f5855e59289630adb414d9bfdabc",
         "references/controls.md": "12c98261dd0aa48b8a9c3b3243a4dde753df0fc2241e3c8f4c5009b33bb196db",
-        "references/playwright-managed-server.md": "9a20310a13d37e4b662a2d762f4c212101b6de0c92dde74669d127a94bc01c3d",
-        "SKILL.md": "834de7555860b16302960b61ba2f7dd06a9cc7f0bea5040f7b588d5efffad288"
+        "references/playwright-managed-server.md": "9a20310a13d37e4b662a2d762f4c212101b6de0c92dde74669d127a94bc01c3d"
       },
       "performance_status": "unbenchmarked",
       "skill_id": "anthropics-skills-skills-webapp-testing-skill-md",
@@ -544,11 +544,11 @@
       "license_source_sha": "b832b6f642312312367c07688dc7426db40a82ed",
       "original_path": "included/improved/skills/tdd-workflow-current/provenance/original-SKILL.md",
       "overlay_path": "included/improved/skills/tdd-workflow-current",
-      "overlay_sha256": "d92372384e524b781fe82d2530b5a78737c9082e0fced9424362ec1c515da976",
+      "overlay_sha256": "7e84869704792b077a2cdb2fe56c26f0c7cae2ae2fbaafb378890e1808d1bd4f",
       "package_file_sha256": {
         "LICENSE": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
         "NOTICE.md": "70e4436e06d37ad0943b6c2853c107679da39785c9d6808143c4602c7a7265ec",
-        "SKILL.md": "d92372384e524b781fe82d2530b5a78737c9082e0fced9424362ec1c515da976",
+        "SKILL.md": "7e84869704792b077a2cdb2fe56c26f0c7cae2ae2fbaafb378890e1808d1bd4f",
         "provenance/original-SKILL.md": "e9507695657b05f26dd62127f1d6ff58e4015d624df65dd4d7e07f6470317393"
       },
       "performance_status": "unbenchmarked",
@@ -558,49 +558,49 @@
       "source_url": "https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/tdd-workflow/SKILL.md"
     },
     {
-      "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-makefile-generator-skill-md",
-      "source_commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
-      "source_url": "https://github.com/akin-ozer/cc-devops-skills/blob/7fe7595e4512f8ce43dcf956aa5190b96d627dd1/devops-skills-plugin/skills/makefile-generator/SKILL.md",
-      "source_file_sha256": "c0090361f2f9999c81050beb7d65aaf4338094559bd227d944aafbf1500286fe",
-      "overlay_path": "included/improved/skills/makefile-generator-cpp",
-      "original_path": "included/improved/skills/makefile-generator-cpp/provenance/original-SKILL.md",
-      "overlay_sha256": "fa7331261f4a5230f45edbc742924146504b64de65f396b4fb632cf37b8c7316",
       "license": "Apache-2.0",
-      "license_source_sha": "f49a4e16e68b128803cc2dcea614603632b04eac",
       "license_file_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "license_source_sha": "f49a4e16e68b128803cc2dcea614603632b04eac",
+      "original_path": "included/improved/skills/makefile-generator-cpp/provenance/original-SKILL.md",
+      "overlay_path": "included/improved/skills/makefile-generator-cpp",
+      "overlay_sha256": "fa7331261f4a5230f45edbc742924146504b64de65f396b4fb632cf37b8c7316",
       "package_file_sha256": {
-        "generate.py": "aaff7fb0607dd8924d6216b832b0ee73f7e06d779a814578c8ad3031f129b4f0",
         "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
         "NOTICE.md": "2c13c3a2e93cbc2e849f7342c7bee270502ea2fc8223d5601187ee44dcbd9ed8",
-        "provenance/original-generate.sh": "f85287a85ab0b152b2d7f8681642d616031896e4e75d45b78970de514a324747",
+        "SKILL.md": "fa7331261f4a5230f45edbc742924146504b64de65f396b4fb632cf37b8c7316",
+        "generate.py": "aaff7fb0607dd8924d6216b832b0ee73f7e06d779a814578c8ad3031f129b4f0",
         "provenance/original-SKILL.md": "c0090361f2f9999c81050beb7d65aaf4338094559bd227d944aafbf1500286fe",
+        "provenance/original-generate.sh": "f85287a85ab0b152b2d7f8681642d616031896e4e75d45b78970de514a324747",
         "references/build-reliability.md": "f623bd66209a463e4146553169408f4f1c2c895badbda245d46a785a58569317",
         "references/configuration-and-variables.md": "143127ba439978bd4efc1973238c18ef0ee32c55f4f4fa33ba31459692a849dc",
-        "SKILL.md": "fa7331261f4a5230f45edbc742924146504b64de65f396b4fb632cf37b8c7316",
         "templates/cpp.mk": "7c8df9fa6b16ed267b249e19e277579d17320b8b0a4a94a9c78c2959b56e4384",
         "test_generator.py": "8a002cc3e5254b1dd5783fe673d95c50f15bf5eded7ede3e114e7808775d821c"
       },
-      "performance_status": "unbenchmarked"
+      "performance_status": "unbenchmarked",
+      "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-makefile-generator-skill-md",
+      "source_commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+      "source_file_sha256": "c0090361f2f9999c81050beb7d65aaf4338094559bd227d944aafbf1500286fe",
+      "source_url": "https://github.com/akin-ozer/cc-devops-skills/blob/7fe7595e4512f8ce43dcf956aa5190b96d627dd1/devops-skills-plugin/skills/makefile-generator/SKILL.md"
     },
     {
-      "skill_id": "affaan-m-everything-claude-code-agents-skills-e2e-testing-skill-md",
-      "source_commit": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
-      "source_url": "https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/e2e-testing/SKILL.md",
-      "source_file_sha256": "8cfa22c35e5370c1f85400921d27e259cc99ba67a890625412bf2fc650a1d038",
-      "overlay_path": "included/improved/skills/e2e-testing-current",
-      "original_path": "included/improved/skills/e2e-testing-current/provenance/original-SKILL.md",
-      "overlay_sha256": "83c0d831be800f6556451921501627ca87d036fac840bcfc0de1799ff812261f",
       "license": "MIT",
-      "license_source_sha": "b832b6f642312312367c07688dc7426db40a82ed",
       "license_file_sha256": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
+      "license_source_sha": "b832b6f642312312367c07688dc7426db40a82ed",
+      "original_path": "included/improved/skills/e2e-testing-current/provenance/original-SKILL.md",
+      "overlay_path": "included/improved/skills/e2e-testing-current",
+      "overlay_sha256": "83c0d831be800f6556451921501627ca87d036fac840bcfc0de1799ff812261f",
       "package_file_sha256": {
         "LICENSE": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
         "NOTICE.md": "c76439472dd7ef6b8ede6ba1c8fc29d23c3607a587a42252759b2d85beabca84",
+        "SKILL.md": "83c0d831be800f6556451921501627ca87d036fac840bcfc0de1799ff812261f",
         "provenance/original-SKILL.md": "8cfa22c35e5370c1f85400921d27e259cc99ba67a890625412bf2fc650a1d038",
-        "references/out-of-order-results.md": "b710e989f86914fb5dfffbe7bbba5e8e816601f14eb7603244ae5d74b5c3c0c5",
-        "SKILL.md": "83c0d831be800f6556451921501627ca87d036fac840bcfc0de1799ff812261f"
+        "references/out-of-order-results.md": "b710e989f86914fb5dfffbe7bbba5e8e816601f14eb7603244ae5d74b5c3c0c5"
       },
-      "performance_status": "unbenchmarked"
+      "performance_status": "unbenchmarked",
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-e2e-testing-skill-md",
+      "source_commit": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+      "source_file_sha256": "8cfa22c35e5370c1f85400921d27e259cc99ba67a890625412bf2fc650a1d038",
+      "source_url": "https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/e2e-testing/SKILL.md"
     }
   ]
 }

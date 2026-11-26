@@ -5,19 +5,34 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+import tarfile
 from pathlib import Path
+from tempfile import TemporaryDirectory
 from typing import Any
 
 from _native_benchmark_runtime import ContainerLease, DockerClient, LeaseResources, stage_inputs, write_json
 from _native_grader_dependencies import PYTHON, environment_packet, validate_environment
 from _trial_transcript import strict_json
-from grade_testeval_submission import grade, sha256, validate_plan
+from grade_testeval_submission import (
+    ASSIGNMENT_FIELDS,
+    CAPTURE_EVIDENCE,
+    TEST_SUBMISSION,
+    grade,
+    is_digest,
+    load_test_snippets,
+    sha256,
+    validate_plan,
+    validate_task_plan,
+)
+from transfer_benchmark_submission import plan_handoff, restore
+from validate_testeval_calibration import read_evidence
 
 ROOT = Path(__file__).resolve().parents[1]
 PILOT = ROOT / "benchmarks/agent-effectiveness/development/testeval-pilot-v2"
 INPUT = "/tmp/benchmark-inputs"
 WORKSPACE = "/tmp/testeval"
 TIMEOUT = 30
+PUBLISHER_TIMEOUT = 150
 ASSET_LIMIT = 16 * 1024**2
 PREPARE = f"""
 import json,sys
@@ -39,8 +54,11 @@ if sys.argv[1]=="publisher":
     env["PYTEST_PLUGINS"]="pytest_cov.plugin"
     args=["eval_overall.py","--path","subject.jsonl","--ks","1"]
 else:
+    tests=sorted(p.name for p in work.glob("test_subject*.py"))
+    if not tests:
+        raise ValueError("Independent pytest stage requires generated test files")
     args=["-m","pytest","-q","-c","/dev/null","-p","no:cacheprovider",
-          "--junitxml=report.xml","test_subject.py"]
+          "--junitxml=report.xml",*tests]
 os.execve(sys.executable,[sys.executable,"-B","-X","utf8",*args],env)
 """
 
@@ -112,13 +130,15 @@ def run_stage(
     payload: dict[str, bytes],
     dependencies: dict[str, bytes],
     environment: dict[str, Any],
+    *,
+    timeout: int = TIMEOUT,
 ) -> tuple[str, int | None, bytes]:
     mode = "publisher" if name == "publisher" else "pytest"
     setup_timeout = environment["setup_timeout_seconds"]
     lease = ContainerLease(
         client,
         output / (name + ".lease.json"),
-        seconds=setup_timeout + TIMEOUT + 90,
+        seconds=setup_timeout + timeout + 90,
         resources=LeaseResources(**environment["resources"], executable_workspace=True),
     )
     stage = "setup_failed"
@@ -138,7 +158,7 @@ def run_stage(
         )
         stage = "interrupted"
         argv = ["container", "exec", "--user=65534:65534", identity]
-        result = client.capture(name, [*argv, PYTHON, "-I", "-B", "-c", EXECUTE, mode], timeout=TIMEOUT)
+        result = client.capture(name, [*argv, PYTHON, "-I", "-B", "-c", EXECUTE, mode], timeout=timeout)
         process = result.process
         if process["job_active_processes_after_cleanup"] or process["termination_reason"]:
             termination = "timed_out" if process["termination_reason"] == "timeout" else "interrupted"
@@ -165,17 +185,91 @@ def run_stage(
         lease.close()
 
 
+def capture_directory(output: Path) -> Path:
+    directory = output.resolve()
+    ignored = (ROOT / ".venv").resolve()
+    if directory == ignored or not directory.is_relative_to(ignored) or directory.exists():
+        raise ValueError("Use a new TestEval capture directory in this checkout's ignored state")
+    return directory
+
+
 def collect(plan_path: Path, suite: Path, defects: Path, assets: Path, runtime: Path, output: Path) -> dict[str, Any]:
-    """Execute a trusted, reviewed development suite and account for all planned stages."""
-    plan_bytes = read_asset(plan_path)
+    """Execute a reviewed development suite with an authored pytest inventory."""
+    raw = read_asset(plan_path)
+    plan = object_from(raw)
+    validate_plan(plan)
+    if plan["schema_version"] != 1:
+        raise ValueError("A version 2 grade plan must come from a sealed handoff")
+    content = read_asset(suite, plan["subject_suite_sha256"]).decode("utf-8")
+    return _collect_admitted(raw, [content], defects, assets, runtime, output)
+
+
+def collect_handoff(
+    task_path: Path, handoff_dir: Path, archive_sha256: str, defects: Path, assets: Path, runtime: Path, output: Path
+) -> dict[str, Any]:
+    """Grade only exact tests reconstructed from a controller-owned handoff."""
+    task_bytes = read_evidence(task_path)
+    task = object_from(task_bytes)
+    validate_task_plan(task)
+    directory = handoff_dir.resolve(strict=True)
+    if not directory.is_relative_to((ROOT / ".venv").resolve()) or not is_digest(archive_sha256):
+        raise ValueError("TestEval handoff requires controller-owned paths and the sealed archive digest")
+    output = capture_directory(output)
+    if output.is_relative_to(directory) or directory.is_relative_to(output):
+        raise ValueError("TestEval handoff and capture directories must be disjoint")
+    baseline = read_asset(directory / "baseline.collection.json", task["baseline_manifest_sha256"])
+    submission = read_evidence(directory / "submission.collection.json")
+    handoff = plan_handoff(baseline, submission)
+    if (
+        set(handoff.delta["writes"]) != {TEST_SUBMISSION}
+        or handoff.delta["deletes"]
+        or handoff.submission["directories"] != handoff.baseline["directories"]
+    ):
+        raise ValueError(f"TestEval handoff must change only {TEST_SUBMISSION}")
+    with TemporaryDirectory(prefix="testeval-restore-", dir=output.parent) as scratch:
+        rebuilt = Path(scratch) / "workspace"
+        receipt = restore(handoff, directory / "baseline", directory / "submission.tar", archive_sha256, rebuilt)
+        tests = read_evidence(rebuilt / TEST_SUBMISSION)
+    snippets = load_test_snippets(tests)
+    admitted = {
+        CAPTURE_EVIDENCE["task_plan"]: task_bytes,
+        CAPTURE_EVIDENCE["handoff"]: json.dumps(receipt, sort_keys=True).encode("utf-8") + b"\n",
+        TEST_SUBMISSION: tests,
+    }
+    plan = {
+        "schema_version": 2,
+        **{key: task[key] for key in ASSIGNMENT_FIELDS},
+        "subject_suite_sha256": sha256(tests),
+        **{key: {"file": name, "sha256": sha256(admitted[name])} for key, name in CAPTURE_EVIDENCE.items()},
+    }
+    raw = json.dumps(plan, sort_keys=True).encode("utf-8") + b"\n"
+    return _collect_admitted(raw, snippets, defects, assets, runtime, output, admitted=admitted)
+
+
+def _collect_admitted(
+    plan_bytes: bytes,
+    snippets: list[str],
+    defects: Path,
+    assets: Path,
+    runtime: Path,
+    output: Path,
+    *,
+    admitted: dict[str, bytes] | None = None,
+) -> dict[str, Any]:
     plan = object_from(plan_bytes)
     validate_plan(plan)
+    version = plan["schema_version"]
+    if (version == 2) != (admitted is not None):
+        raise ValueError("Version 2 TestEval grading requires admitted submission evidence")
     profile_bytes, profile, selection = load_profile()
     task, publisher = publisher_inputs(profile, selection, plan, assets)
     suite_digest = plan["subject_suite_sha256"]
-    suite_bytes = read_asset(suite, suite_digest)
-    prediction = json.dumps({**task, "tests": [suite_bytes.decode("utf-8")]}, sort_keys=True).encode() + b"\n"
+    prediction = json.dumps({**task, "tests": snippets}, sort_keys=True).encode("utf-8") + b"\n"
     publisher["predictions/subject.jsonl"] = prediction
+    subject_files = {}
+    for index, snippet in enumerate(snippets, 1):
+        name = "test_subject.py" if version == 1 else f"test_subject_{index:02}.py"
+        subject_files["stage/" + name] = b"from under_test import Solution\n\n" + snippet.encode("utf-8")
     programs = {"reference": task["code"].encode("utf-8")}
     for name, digest in plan["programs"].items():
         if name != "reference":
@@ -192,13 +286,14 @@ def collect(plan_path: Path, suite: Path, defects: Path, assets: Path, runtime: 
     dependencies["task.json"] = json.dumps({"python_environment": environment}, sort_keys=True).encode()
     if object_from(read_asset(runtime)).get("image_reference") != profile["image_reference"]:
         raise ValueError("Runtime differs from the frozen public TestEval pilot image")
-    output = output.resolve()
-    if not output.is_relative_to(ROOT / ".venv"):
-        raise ValueError("Use a new TestEval capture directory in this checkout's ignored state")
+    output = capture_directory(output)
     output.mkdir()
     (output / "plan.json").write_bytes(plan_bytes)
     (output / "native-profile.json").write_bytes(profile_bytes)
     (output / "collector.py.txt").write_bytes(Path(__file__).read_bytes())
+    for name, content in (admitted or {}).items():
+        with (output / name).open("xb") as stream:
+            stream.write(content)
     publisher_stage: dict[str, Any] = {
         "source": plan["publisher"],
         "subject_suite_sha256": suite_digest,
@@ -217,7 +312,7 @@ def collect(plan_path: Path, suite: Path, defects: Path, assets: Path, runtime: 
         for name, digest in plan["programs"].items()
     }
     capture = {
-        "schema_version": 1,
+        "schema_version": version,
         "plan_sha256": sha256(plan_bytes),
         "publisher": publisher_stage,
         "variants": variants,
@@ -232,6 +327,7 @@ def collect(plan_path: Path, suite: Path, defects: Path, assets: Path, runtime: 
         {"stage/" + name: data for name, data in publisher.items()},
         dependencies,
         environment,
+        **({"timeout": PUBLISHER_TIMEOUT} if version == 2 else {}),
     )
     publisher_stage.update(
         termination=termination, exit_code=code, stdout=report_file(output, "publisher.stdout", content)
@@ -243,10 +339,7 @@ def collect(plan_path: Path, suite: Path, defects: Path, assets: Path, runtime: 
             client,
             output,
             stage_name,
-            {
-                "stage/under_test.py": program,
-                "stage/test_subject.py": b"from under_test import Solution\n\n" + suite_bytes,
-            },
+            {"stage/under_test.py": program, **subject_files},
             dependencies,
             environment,
         )
@@ -261,16 +354,27 @@ def collect(plan_path: Path, suite: Path, defects: Path, assets: Path, runtime: 
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
-    for option in ("plan", "suite", "defects", "assets", "runtime", "output"):
+    for option in ("plan", "defects", "assets", "runtime", "output"):
         parser.add_argument("--" + option, required=True, type=Path)
+    submission = parser.add_mutually_exclusive_group(required=True)
+    submission.add_argument("--suite", type=Path, help="Reviewed suite with a version 1 grade plan")
+    submission.add_argument("--handoff", type=Path, help="Sealed submission directory with a version 2 task plan")
+    parser.add_argument("--archive-sha256", help="Controller's digest for the sealed submission.tar")
     return parser
 
 
 def main(argv: list[str] | None = None) -> int:
-    args = build_parser().parse_args(argv)
+    parser = build_parser()
+    args = parser.parse_args(argv)
+    if (args.handoff is None) != (args.archive_sha256 is None):
+        parser.error("--handoff and --archive-sha256 must be supplied together")
     try:
-        result = collect(args.plan, args.suite, args.defects, args.assets, args.runtime, args.output)
-    except (KeyError, OSError, RuntimeError, ValueError) as error:
+        inputs = (args.defects, args.assets, args.runtime, args.output)
+        if args.handoff is None:
+            result = collect(args.plan, args.suite, *inputs)
+        else:
+            result = collect_handoff(args.plan, args.handoff, args.archive_sha256, *inputs)
+    except (KeyError, OSError, RuntimeError, TypeError, ValueError, tarfile.TarError) as error:
         print(f"TestEval collection failed: {error}", file=sys.stderr)
         return 2
     print(json.dumps({"ok": True, "result": result}, indent=2))

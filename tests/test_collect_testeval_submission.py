@@ -9,6 +9,8 @@ import collect_testeval_submission as collector
 import grade_testeval_submission as grader
 import pytest
 from _native_benchmark_runtime import DockerCapture
+from _trial_collection_policy import default_collection_policy
+from transfer_benchmark_submission import plan_handoff, seal
 
 REFERENCE = b"class Solution: pass\n"
 DEFECT = b"class Solution: ...\n"
@@ -170,3 +172,141 @@ def test_interruption_keeps_the_stage_and_closes_owned_lease(tmp_path, monkeypat
         },
     ) == ("timed_out", None, b"")
     assert observed == ["started", "closed"]
+
+
+def snapshot(directory: Path, files: dict[str, bytes]) -> bytes:
+    directory.mkdir()
+    for name, data in files.items():
+        (directory / name).write_bytes(data)
+    return json.dumps(
+        {
+            "collection_version": 1,
+            "status": "collected",
+            "policy": default_collection_policy(),
+            "files": {name: {"bytes": len(data), "sha256": grader.sha256(data)} for name, data in files.items()},
+            "directories": [],
+            "directory_count": 0,
+            "excluded": [],
+            "file_count": len(files),
+            "total_bytes": sum(map(len, files.values())),
+            "post_inventory_matches": True,
+            "atomic_snapshot": False,
+            "precondition": "All subject execution must be stopped before capture.",
+        },
+        sort_keys=True,
+    ).encode("utf-8")
+
+
+@pytest.fixture
+def sealed_submission(pilot):
+    plan, _, defects, assets, runtime, output = pilot
+    (defects / "offset.py").write_bytes(DEFECT)
+    directory = output.with_name("handoff")
+    directory.mkdir()
+    tests = [SUITE.decode(), "def test_repeat(): pass\n"]
+    raw = json.dumps(tests, ensure_ascii=False).encode()
+    before = snapshot(directory / "baseline", {"task.txt": b"Exercise current observable behavior"})
+    after = snapshot(directory / "captured", {"task.txt": b"Exercise current observable behavior", "tests.json": raw})
+    (directory / "baseline.collection.json").write_bytes(before)
+    (directory / "submission.collection.json").write_bytes(after)
+    receipt = seal(plan_handoff(before, after), directory / "captured", directory / "submission.tar")
+    frozen = json.loads(plan.read_bytes())
+    task = directory.parent / "task-plan.json"
+    task.write_text(
+        json.dumps(
+            {
+                **{key: frozen[key] for key in grader.ASSIGNMENT_FIELDS},
+                "schema_version": 2,
+                "baseline_manifest_sha256": grader.sha256(before),
+            }
+        ),
+        encoding="utf-8",
+    )
+    return task, directory, receipt["archive_sha256"], defects, assets, runtime, output, raw, tests
+
+
+def two_case_report(*, defect: bool = False, alternate: bool = False) -> bytes:
+    first = "test_other" if alternate else "test_value"
+    tag = "<failure/>" if defect else ""
+    return (
+        f'<testsuite tests="2" errors="0" failures="{int(defect)}" skipped="0">'
+        f'<testcase classname="test_subject_01" name="{first}">{tag}</testcase>'
+        '<testcase classname="test_subject_02" name="test_repeat"/></testsuite>'
+    ).encode()
+
+
+@pytest.mark.parametrize(
+    ("case", "defect_status", "sensitivity"),
+    [
+        ("matching", "test_failed", {"detected": 1, "survived": 0, "inconclusive": 0, "planned": 1}),
+        ("renamed", "report_invalid", {"detected": 0, "survived": 0, "inconclusive": 1, "planned": 1}),
+        (
+            "no-reference",
+            "reference_inventory_unavailable",
+            {"detected": None, "survived": None, "inconclusive": None, "planned": 1},
+        ),
+    ],
+)
+def test_sealed_submission_uses_the_reference_inventory(
+    sealed_submission, monkeypatch, case, defect_status, sensitivity
+):
+    task, handoff, archive, defects, assets, runtime, output, raw, snippets = sealed_submission
+    observed = []
+    monkeypatch.setattr(collector, "DockerClient", lambda *args: object())
+
+    def execute(client, output, name, payload, dependencies, environment, *, timeout=collector.TIMEOUT):
+        observed.append(name)
+        if name == "publisher":
+            assert timeout == collector.PUBLISHER_TIMEOUT
+            prediction = json.loads(payload["stage/predictions/subject.jsonl"])
+            assert prediction["tests"] == snippets
+            return "completed", 0, PUBLISHER
+        assert timeout == collector.TIMEOUT
+        for index, snippet in enumerate(snippets, 1):
+            assert (
+                payload[f"stage/test_subject_{index:02}.py"]
+                == b"from under_test import Solution\n\n" + snippet.encode()
+            )
+        if name == "pytest-reference":
+            assert payload["stage/under_test.py"] == REFERENCE
+            if case == "no-reference":
+                return "timed_out", None, b""
+            return "completed", 0, two_case_report()
+        assert payload["stage/under_test.py"] == DEFECT
+        return "completed", 1, two_case_report(defect=True, alternate=case == "renamed")
+
+    monkeypatch.setattr(collector, "run_stage", execute)
+    result = collector.collect_handoff(task, handoff, archive, defects, assets, runtime, output)
+    assert observed == ["publisher", "pytest-reference", "pytest-offset"]
+    assert result["defects"]["offset"]["status"] == defect_status
+    assert result["sensitivity"] == sensitivity
+    expected = None if case == "no-reference" else ["test_subject_01::test_value", "test_subject_02::test_repeat"]
+    assert result["reference_pytest_cases"] == expected
+    assert result["submission_snippets"] == 2 and result["archive_sha256"] == archive
+    assert (output / "tests.json").read_bytes() == raw
+    assert grader.grade((output / "plan.json").read_bytes(), output / "capture.json") == result
+    (output / "tests.json").write_bytes(raw + b"\n")
+    with pytest.raises(ValueError, match="Evidence bytes changed for tests.json"):
+        grader.grade((output / "plan.json").read_bytes(), output / "capture.json")
+
+
+@pytest.mark.parametrize("drift", ["archive", "baseline", "unrelated-file"])
+def test_unadmitted_handoff_never_creates_a_container(sealed_submission, monkeypatch, drift):
+    task, directory, archive, defects, assets, runtime, output, _, _ = sealed_submission
+    if drift == "archive":
+        with (directory / "submission.tar").open("ab") as stream:
+            stream.write(b"changed")
+    elif drift == "baseline":
+        with (directory / "baseline.collection.json").open("ab") as stream:
+            stream.write(b" ")
+    else:
+        other = snapshot(directory / "additional", {"tests.json": b"[]", "other.txt": b"changed"})
+        (directory / "submission.collection.json").write_bytes(other)
+
+    def unexpected(*args):
+        pytest.fail("Unadmitted handoff must fail before Docker initialization")
+
+    monkeypatch.setattr(collector, "DockerClient", unexpected)
+    with pytest.raises(ValueError, match="controller's digest|frozen identity|change only"):
+        collector.collect_handoff(task, directory, archive, defects, assets, runtime, output)
+    assert not output.exists()

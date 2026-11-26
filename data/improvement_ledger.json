@@ -920,9 +920,13 @@
           {
             "path": "artifacts/research/2026-11-25/tdd-portable-workflow/review.json",
             "sha256": "cf7199c7f54ddea8bb80fc165c8b1a6852233e28a0ece9f19e7479c2f3b9b941"
+          },
+          {
+            "path": "artifacts/research/2026-11-26/test-only-assertions/review.json",
+            "sha256": "8e5f8d659a08899ca5e51feca44e9013bef3faf13871f85ab8b127df93a89543"
           }
         ],
-        "disposition": "Updated the maintained portable overlay and retained the exact current MIT-licensed source. Original activation metadata remains in the locked mirror."
+        "disposition": "Maintain the portable workflow and add a test-only validation route with independent order and quantity controls."
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
@@ -29288,6 +29292,70 @@
         }
       },
       "skill_id": "affaan-m-everything-claude-code-agents-skills-everything-claude-code-skill-md"
+    },
+    {
+      "catalog_revision": "790306ba1963071b143693b70752391aff2d2f5e",
+      "review": {
+        "category": "Testing, QA & benchmarking",
+        "evaluation": {
+          "evidence": [
+            {
+              "path": "artifacts/research/2026-11-25/go-development-comparison/completed-block.json",
+              "sha256": "cb3b619b8fccbb530519b8a92e3528aa1e9f48b550bf281aba7a332f1faaaa3f"
+            }
+          ],
+          "status": "in_progress"
+        },
+        "mirrored_path": "included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/tdd-workflow-everything-claude-code",
+        "research": {
+          "evidence": [
+            {
+              "path": "artifacts/research/2026-11-25/ecc-testing-requalification/review.json",
+              "sha256": "d7be0e096565bfc9122823d9a4e28c68877b63551f6d7364fd9df93abb966050"
+            },
+            {
+              "path": "artifacts/research/2026-11-25/tdd-execution-controls/review.json",
+              "scope": "Complete current two-resource source review and seven independent native outcome controls.",
+              "sha256": "0d633606e01df995282e15da9c321ee72f77bcebfa79854f04a6a76fb8803aea"
+            },
+            {
+              "path": "artifacts/research/2026-11-25/tdd-portable-workflow/review.json",
+              "sha256": "cf7199c7f54ddea8bb80fc165c8b1a6852233e28a0ece9f19e7479c2f3b9b941"
+            }
+          ],
+          "resource_hash_policy": "catalog-canonical-v1",
+          "resources": {
+            "SKILL.md": {
+              "review_scope": "Reviewed the complete current locked entrypoint and its test, coverage, browser, setup and CI claims. Retained test-runner discovery, meaningful case execution, partial-setup cleanup and risk-based verification. Added matching case identity before and after a repair.",
+              "sha256": "e9507695657b05f26dd62127f1d6ff58e4015d624df65dd4d7e07f6470317393",
+              "status": "reviewed"
+            },
+            "agents/openai.yaml": {
+              "review_scope": "Reviewed activation and description. Generic workflow guidance applies to observed test execution without requiring a specific agent or activation implementation.",
+              "sha256": "d68700053a6f3a4a65ec18e34bcef58e75986b5f8ae19f6e20e7412ccbd895a4",
+              "status": "reviewed"
+            }
+          },
+          "status": "complete"
+        },
+        "revision": {
+          "status": "complete",
+          "evidence": [
+            {
+              "path": "artifacts/research/2026-11-25/tdd-portable-workflow/review.json",
+              "sha256": "cf7199c7f54ddea8bb80fc165c8b1a6852233e28a0ece9f19e7479c2f3b9b941"
+            }
+          ],
+          "disposition": "Updated the maintained portable overlay and retained the exact current MIT-licensed source. Original activation metadata remains in the locked mirror."
+        },
+        "source_repo": "affaan-m/everything-claude-code",
+        "source_signature": {
+          "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+          "skill_dir_sha256": "42d96a102bba09ff5d42329f9ee4344d83524d80890400f5a34259f8f1f6d7e0",
+          "skill_file_sha256": "e9507695657b05f26dd62127f1d6ff58e4015d624df65dd4d7e07f6470317393"
+        }
+      },
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-tdd-workflow-skill-md"
     }
   ],
   "time_gates": [

@@ -1,0 +1,37 @@
+{
+  "artifacts": {
+    "dispatch-control.native.json": "d26dd28a19a1a19844e9bbd92531fc276da352b407fb2dddc9de7968ca03e2c8",
+    "reproduce.py": "9983514f03adec22ce74f8c281e9297810dc1f6040cd0de55a3ce57aed4bfa6c"
+  },
+  "base_revision": "790306ba1963071b143693b70752391aff2d2f5e",
+  "limitation": "The fault contracts came from observable dispatch behavior. This qualifies the example and guidance, not a model performance gain.",
+  "observations": {
+    "behavior_assertions_detected": 2,
+    "model_attempts": 0,
+    "native_runs": 6,
+    "reference_statement_and_branch_reach_equal": true,
+    "shape_assertions_detected": 0
+  },
+  "original_skill": {
+    "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+    "skill_dir_sha256": "42d96a102bba09ff5d42329f9ee4344d83524d80890400f5a34259f8f1f6d7e0",
+    "skill_file_sha256": "e9507695657b05f26dd62127f1d6ff58e4015d624df65dd4d7e07f6470317393"
+  },
+  "primary_method": {
+    "native_result_sha256": "f309e2d2e6b41243db777d715cba2fc0862e9b202c8d481bc0b537f24b40dd77",
+    "native_url": "https://research.google/pubs/state-of-mutation-testing-at-google/",
+    "provider_version": "0.9.6+catalog.portable1",
+    "status_code": 200
+  },
+  "prior_revision": [
+    {
+      "path": "artifacts/research/2026-11-25/tdd-portable-workflow/review.json",
+      "sha256": "cf7199c7f54ddea8bb80fc165c8b1a6852233e28a0ece9f19e7479c2f3b9b941"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Test-only additions on an ordinary dispatch transformation.",
+  "source_sha256": {
+    "included/improved/skills/tdd-workflow-current/SKILL.md": "7e84869704792b077a2cdb2fe56c26f0c7cae2ae2fbaafb378890e1808d1bd4f"
+  }
+}

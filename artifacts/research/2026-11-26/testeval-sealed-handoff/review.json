@@ -1,0 +1,96 @@
+{
+  "artifacts": {
+    "native-reports.json": "bdac151a1ddfa82c81208edff2b84531516a3e5a129e9c8fac5b4b209cc23da3",
+    "recheck.py": "0414cb0dd697169e06adfb27f312e6c5542a5ffd68a6019c1f13d78eec9afbf5"
+  },
+  "base_revision": "790306ba1963071b143693b70752391aff2d2f5e",
+  "boundary": "Scripted producers were closed before capture. The capture transfer and publisher and companion graders were exercised. Live model access and a model subject's private-directory permissions were not measured.",
+  "execution_sources_sha256": {
+    "tools/_native_benchmark_runtime.py": "b36647bc427ad8b59e61ada097c3b6feda4a3529fed2bae09b60b7a2b08372fa",
+    "tools/_trial_collection.py": "5c2388bc3a2a361c4ee0a4465e73745651eb87c0baaa91066f0afc33874cb5e0",
+    "tools/collect_testeval_submission.py": "a2379d8adcb82de53096bac75eaf11b4ee16c02822770d8d355e12ca9ad46b6a",
+    "tools/grade_testeval_submission.py": "94db6bea22c03a00939ad2a9317e89f84e4446156ae6c34d120ea9906a0459c0",
+    "tools/transfer_benchmark_submission.py": "aa8abf2156e2274200360465dc8bf7b36e7218f7843c2682fe0d6d34414c6faa",
+    "tools/validate_testeval_calibration.py": "24052e16bc379c8e4c41db01f966c1e50b60131fb22888a4efdceede347d35c1"
+  },
+  "observations": {
+    "archive_digest_rejected": true,
+    "by_control": {
+      "changed-case-inventory": {
+        "cases": 3,
+        "containers_closed": 4,
+        "defects": {
+          "repeat-last": "report_invalid",
+          "reverse-order": "report_invalid"
+        },
+        "detected": 0,
+        "exit": 1,
+        "inconclusive": 2,
+        "native_metrics": {
+          "branch_coverage": 0.8461538461538461,
+          "executable_correctness": 1.0,
+          "line_coverage": 0.9767441860465116,
+          "syntax_correctness": 1.0
+        },
+        "reference": "passed"
+      },
+      "twenty-snippets": {
+        "cases": 20,
+        "containers_closed": 4,
+        "defects": {
+          "repeat-last": "test_failed",
+          "reverse-order": "test_failed"
+        },
+        "detected": 2,
+        "exit": 0,
+        "inconclusive": 0,
+        "native_metrics": {
+          "branch_coverage": 0.8461538461538461,
+          "executable_correctness": 1.0,
+          "line_coverage": 0.9767441860465116,
+          "syntax_correctness": 1.0
+        },
+        "reference": "passed"
+      },
+      "wrong-reference": {
+        "cases": 2,
+        "containers_closed": 4,
+        "defects": {
+          "repeat-last": "test_failed",
+          "reverse-order": "test_failed"
+        },
+        "detected": null,
+        "exit": 0,
+        "inconclusive": null,
+        "native_metrics": {
+          "branch_coverage": 0.8461538461538461,
+          "executable_correctness": 1.0,
+          "line_coverage": 0.9767441860465116,
+          "syntax_correctness": 1.0
+        },
+        "reference": "test_failed"
+      }
+    },
+    "legacy_outcomes_reproduced": true,
+    "model_attempts": 0,
+    "native_stages_closed": 16,
+    "scripted_producers": 3
+  },
+  "prospective_study_plan_sha256": "90d158882c066be4a68ba7705bc191bf3fb86915e332fc2a1ebf11218cc9d840",
+  "publisher_method": {
+    "native_result_sha256": "454dca6c3907397353d1f03cef2a4416358993dd2c2aa632f8dea02179c4a689",
+    "native_url": "https://arxiv.org/html/2406.04531v1",
+    "provider_version": "0.9.6+catalog.portable1",
+    "status_code": 200
+  },
+  "replay": "python artifacts/research/2026-11-26/testeval-sealed-handoff/recheck.py",
+  "schema_version": 1,
+  "scope": "Public TestEval sealed-submission controls and legacy collector replay.",
+  "source_sha256": {
+    "docs/benchmark-execution-plan.md": "2351fdb8645e42de1fbf7141daa3774c2f02fd8baf0b6c257b684e0db9fbfe25",
+    "tests/test_collect_testeval_submission.py": "f678f1694f3d85399c97e989dbd4a5c73f69d3a4e07439856684c37374c831c4",
+    "tools/collect_testeval_submission.py": "a2379d8adcb82de53096bac75eaf11b4ee16c02822770d8d355e12ca9ad46b6a",
+    "tools/grade_testeval_submission.py": "94db6bea22c03a00939ad2a9317e89f84e4446156ae6c34d120ea9906a0459c0",
+    "tools/validate_testeval_calibration.py": "24052e16bc379c8e4c41db01f966c1e50b60131fb22888a4efdceede347d35c1"
+  }
+}

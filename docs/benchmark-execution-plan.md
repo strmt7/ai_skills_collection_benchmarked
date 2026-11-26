@@ -385,6 +385,65 @@ leaving their defect sensitivity unmeasured. The archived native reports can
 be regraded offline. This run recorded zero model attempts.
 [Public control results and replay](../artifacts/research/2026-11-25/testeval-collector-cohort/review.json)
 
+### Grade a sealed test submission
+
+Before subject execution, freeze a version 2 task plan with `task_id`,
+`publisher`, `programs` and `baseline_manifest_sha256`. The publisher object
+identifies the commit, dataset and evaluator. The program map binds the
+reference and each independently prepared defect to its digest. The baseline
+digest identifies the controller's complete workspace capture.
+
+The subject delivers `tests.json`, an ordered JSON array of one to twenty
+Python source strings. Use the publisher's required test function for the
+task. Each string becomes one entry in its native `tests` array, in the same
+order and with the submitted source unchanged. The authors used twenty rounds
+for overall coverage. This interface supports that file format for the public
+development pilot. [TestEval overall coverage method](https://arxiv.org/html/2406.04531v1#S3.SS2)
+
+After the subject stops, capture its workspace and use the
+[sealed transfer procedure](native-benchmark-controller.md#subject-to-grader-integration).
+Keep the following paths in a private, controller-owned handoff directory
+under `.venv`.
+
+| Path | Contents |
+| --- | --- |
+| `baseline/` | The captured starting workspace |
+| `baseline.collection.json` | The exact starting capture manifest |
+| `submission.collection.json` | The stopped subject's capture manifest |
+| `submission.tar` | The sealed delta that adds or modifies only `tests.json` |
+
+Pass the archive digest returned by the seal operation.
+
+```powershell
+./dev.ps1 python tools/collect_testeval_submission.py --plan task-plan.json `
+    --handoff .venv/testeval/handoff --archive-sha256 $archiveDigest `
+    --defects defects --assets .venv/testeval/assets --runtime runtime.json `
+    --output .venv/testeval/run-002
+```
+
+The companion grader reads the complete case inventory from the native
+reference execution and verifies that each defect executed the same cases.
+Each submitted snippet gets its own pytest module. Different or missing case
+inventories make a defect run inconclusive. A failed reference leaves
+sensitivity unmeasured. The publisher reports its own coverage and
+executability independently. In particular, its pinned evaluator can count
+an assertion failure as executable.
+
+The output retains the frozen task plan, handoff receipt, exact submission
+and native reports. Use the same offline recheck command with this output's
+`plan.json`, `capture.json` and `grade.json`. The reviewed `--suite` mode remains
+available for archived version 1 controls. Qualifying model admission and
+the complete study schedule remain separate requirements.
+
+Three sealed controls and one legacy replay completed across sixteen native
+stages. The twenty-snippet control detected both prepared defects. The
+collector kept both defect results inconclusive when their case inventory
+changed. The incorrect reference left sensitivity unmeasured while the
+publisher recorded executable correctness of one. A mismatched archive
+digest was rejected before a capture was created. These observations recorded
+zero model attempts.
+[Sealed submission controls](../artifacts/research/2026-11-26/testeval-sealed-handoff/review.json)
+
 ## Success criteria and reporting
 
 Preregister per-suite practical effect thresholds, independent task counts,

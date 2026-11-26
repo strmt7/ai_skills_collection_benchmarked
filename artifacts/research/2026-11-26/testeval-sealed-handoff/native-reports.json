@@ -1,0 +1,254 @@
+{
+  "controls": {
+    "changed-case-inventory": {
+      "controller_exit": 1,
+      "grade": {
+        "archive_sha256": "0cf57ab0172d0b6403614dcb23eb32c1698ee7299c3ce47caec0599640a1b758",
+        "capture_sha256": "46bd44f874c8a9732680c0fca2b495697686b6ca64f94a30affdcc94263dad8a",
+        "defects": {
+          "repeat-last": {
+            "counts": null,
+            "exit_code": 0,
+            "status": "report_invalid"
+          },
+          "reverse-order": {
+            "counts": null,
+            "exit_code": 0,
+            "status": "report_invalid"
+          }
+        },
+        "native_test_eval": {
+          "exit_code": 0,
+          "metrics": {
+            "branch_coverage": 0.8461538461538461,
+            "executable_correctness": 1.0,
+            "line_coverage": 0.9767441860465116,
+            "syntax_correctness": 1.0
+          },
+          "status": "measured"
+        },
+        "plan_sha256": "0503f54cee841b9b9701999b75cb6aca2e1d19fe2a19e3d65d11d11fbcbf03c8",
+        "reference": {
+          "counts": {
+            "errors": 0,
+            "exit": 0,
+            "failures": 0,
+            "passed": 3,
+            "skipped": 0,
+            "tests": 3
+          },
+          "exit_code": 0,
+          "status": "passed"
+        },
+        "reference_pytest_cases": [
+          "test_subject_01::test_findRedundantDirectedConnection",
+          "test_subject_01::test_reference_only",
+          "test_subject_02::test_findRedundantDirectedConnection"
+        ],
+        "schema_version": 2,
+        "sensitivity": {
+          "detected": 0,
+          "inconclusive": 2,
+          "planned": 2,
+          "survived": 0
+        },
+        "submission_snippets": 2,
+        "task_id": 685,
+        "task_plan_sha256": "b1c9f6b479163371a2c2d53b694fe4b932ac1df1667d18abd8c31811fc97b8ac"
+      },
+      "records": {
+        "capture.json": "{\n  \"schema_version\": 2,\n  \"plan_sha256\": \"0503f54cee841b9b9701999b75cb6aca2e1d19fe2a19e3d65d11d11fbcbf03c8\",\n  \"publisher\": {\n    \"source\": {\n      \"commit_sha\": \"6f67dee71de6ccda1767b8c219a93f4ae0a7ce90\",\n      \"dataset_sha256\": \"a37bcaae5fd88c978254aff5633355c7c76a324ad90b8d965f6213e522e022bf\",\n      \"evaluator_sha256\": \"0bed65d444033cd33218e3a4c75bc0b65d12b1c6fe24d8939cfe96dca255f7e3\"\n    },\n    \"subject_suite_sha256\": \"027a5a02b6848a12c6fee9923b692dacd36bbc9a7b209f77e7fdecde8775f67f\",\n    \"termination\": \"completed\",\n    \"exit_code\": 0,\n    \"stdout\": {\n      \"file\": \"publisher.stdout\",\n      \"sha256\": \"2b8db4986abb7c9a97cace8e48ead597b2ae45369ebf2f543127346ad55bf636\"\n    }\n  },\n  \"variants\": {\n    \"reference\": {\n      \"program_sha256\": \"aa4091943f63bb9185a5d6db3e0d53764a124b2ff9c32335c2149b3534ddca39\",\n      \"subject_suite_sha256\": \"027a5a02b6848a12c6fee9923b692dacd36bbc9a7b209f77e7fdecde8775f67f\",\n      \"termination\": \"completed\",\n      \"exit_code\": 0,\n      \"junit\": {\n        \"file\": \"pytest-reference.xml\",\n        \"sha256\": \"cf18c15a1fe91c812ffc4490b5c9702a8b75fd3b2ad23ffb76af26fdcd453b46\"\n      }\n    },\n    \"repeat-last\": {\n      \"program_sha256\": \"e72ef71f5b50ad6742a0bef9edfc9dbf00128124efe96ccdefcedb1c37e413d2\",\n      \"subject_suite_sha256\": \"027a5a02b6848a12c6fee9923b692dacd36bbc9a7b209f77e7fdecde8775f67f\",\n      \"termination\": \"completed\",\n      \"exit_code\": 0,\n      \"junit\": {\n        \"file\": \"pytest-repeat-last.xml\",\n        \"sha256\": \"6ad0052fa98e407d55a4b83462f82cdadaa1fd1f6bcfebb557505ba5b0744994\"\n      }\n    },\n    \"reverse-order\": {\n      \"program_sha256\": \"33d58fb421a85b2425209ebeba14713afc0f10cbf77b6d3fd8f8ceac4b4d02ae\",\n      \"subject_suite_sha256\": \"027a5a02b6848a12c6fee9923b692dacd36bbc9a7b209f77e7fdecde8775f67f\",\n      \"termination\": \"completed\",\n      \"exit_code\": 0,\n      \"junit\": {\n        \"file\": \"pytest-reverse-order.xml\",\n        \"sha256\": \"772927cc708416389acf057385592b1a424aff1b7ebb25953754735de9a05a95\"\n      }\n    }\n  }\n}\n",
+        "handoff.json": "{\"archive_sha256\": \"0cf57ab0172d0b6403614dcb23eb32c1698ee7299c3ce47caec0599640a1b758\", \"baseline_manifest_sha256\": \"0c42b3e01b24346c4a4c9e54e8cd2a99461b11a4aacc87e9d03e7e80c6e63336\", \"deletes\": [], \"directory_count\": 0, \"file_count\": 2, \"handoff_version\": 1, \"status\": \"grader_tree_rebuilt\", \"submission_manifest_sha256\": \"8902be441523ac4cfc46c1408c1538e4ee0544246cc9cf60702f45317d4e265a\", \"total_bytes\": 946, \"writes\": {\"tests.json\": {\"bytes\": 904, \"sha256\": \"027a5a02b6848a12c6fee9923b692dacd36bbc9a7b209f77e7fdecde8775f67f\"}}}\n",
+        "plan.json": "{\"handoff\": {\"file\": \"handoff.json\", \"sha256\": \"c821a7f75ce1b2177156b148db11965cf77d8dc3d2dcfc515737e261233422e9\"}, \"programs\": {\"reference\": \"aa4091943f63bb9185a5d6db3e0d53764a124b2ff9c32335c2149b3534ddca39\", \"repeat-last\": \"e72ef71f5b50ad6742a0bef9edfc9dbf00128124efe96ccdefcedb1c37e413d2\", \"reverse-order\": \"33d58fb421a85b2425209ebeba14713afc0f10cbf77b6d3fd8f8ceac4b4d02ae\"}, \"publisher\": {\"commit_sha\": \"6f67dee71de6ccda1767b8c219a93f4ae0a7ce90\", \"dataset_sha256\": \"a37bcaae5fd88c978254aff5633355c7c76a324ad90b8d965f6213e522e022bf\", \"evaluator_sha256\": \"0bed65d444033cd33218e3a4c75bc0b65d12b1c6fe24d8939cfe96dca255f7e3\"}, \"schema_version\": 2, \"subject_suite_sha256\": \"027a5a02b6848a12c6fee9923b692dacd36bbc9a7b209f77e7fdecde8775f67f\", \"task_id\": 685, \"task_plan\": {\"file\": \"task-plan.json\", \"sha256\": \"b1c9f6b479163371a2c2d53b694fe4b932ac1df1667d18abd8c31811fc97b8ac\"}}\n",
+        "publisher.stdout": "subject.jsonl\n[1]\n1\nSyntax Correctness: 1.0\nExecutable Correctness: 1.0\nline coverage@1 0.9767441860465116\nbranch coverage@1 0.8461538461538461\nAverage Line Coverage: 0.9767441860465116, Average Branch Coverage: 0.8461538461538461\n",
+        "pytest-reference.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?><testsuites name=\"pytest tests\"><testsuite name=\"pytest\" errors=\"0\" failures=\"0\" skipped=\"0\" tests=\"3\" time=\"0.020\" timestamp=\"2026-11-26T00:00:40.652072+00:00\" hostname=\"8436bfa52f4e\"><testcase classname=\"test_subject_01\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_01\" name=\"test_reference_only\" time=\"0.000\" /><testcase classname=\"test_subject_02\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /></testsuite></testsuites>",
+        "pytest-repeat-last.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?><testsuites name=\"pytest tests\"><testsuite name=\"pytest\" errors=\"0\" failures=\"0\" skipped=\"0\" tests=\"2\" time=\"0.020\" timestamp=\"2026-11-26T00:00:47.821505+00:00\" hostname=\"c35216598ea3\"><testcase classname=\"test_subject_01\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_02\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /></testsuite></testsuites>",
+        "pytest-reverse-order.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?><testsuites name=\"pytest tests\"><testsuite name=\"pytest\" errors=\"0\" failures=\"0\" skipped=\"0\" tests=\"2\" time=\"0.022\" timestamp=\"2026-11-26T00:00:54.828255+00:00\" hostname=\"8d58dbd6824a\"><testcase classname=\"test_subject_01\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_02\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /></testsuite></testsuites>",
+        "task-plan.json": "{\n  \"baseline_manifest_sha256\": \"0c42b3e01b24346c4a4c9e54e8cd2a99461b11a4aacc87e9d03e7e80c6e63336\",\n  \"programs\": {\n    \"reference\": \"aa4091943f63bb9185a5d6db3e0d53764a124b2ff9c32335c2149b3534ddca39\",\n    \"repeat-last\": \"e72ef71f5b50ad6742a0bef9edfc9dbf00128124efe96ccdefcedb1c37e413d2\",\n    \"reverse-order\": \"33d58fb421a85b2425209ebeba14713afc0f10cbf77b6d3fd8f8ceac4b4d02ae\"\n  },\n  \"publisher\": {\n    \"commit_sha\": \"6f67dee71de6ccda1767b8c219a93f4ae0a7ce90\",\n    \"dataset_sha256\": \"a37bcaae5fd88c978254aff5633355c7c76a324ad90b8d965f6213e522e022bf\",\n    \"evaluator_sha256\": \"0bed65d444033cd33218e3a4c75bc0b65d12b1c6fe24d8939cfe96dca255f7e3\"\n  },\n  \"schema_version\": 2,\n  \"task_id\": 685\n}\n",
+        "tests.json": "[\n  \"def test_findRedundantDirectedConnection():\\n    solution = Solution()\\n    observed = [solution.findRedundantDirectedConnection(*[[[1, 2], [1, 3], [2, 3]]]), solution.findRedundantDirectedConnection(*[[[1, 2], [2, 3], [3, 4], [4, 1], [1, 5]]])]\\n    assert all(type(value) is list for value in observed)\\n\\n\\nprobe = Solution()\\nif [probe.findRedundantDirectedConnection([[1, 2], [1, 3], [2, 3]]), probe.findRedundantDirectedConnection([[1, 2], [2, 3], [3, 4], [4, 1], [1, 5]])] == [[2, 3], [4, 1]]:\\n    def test_reference_only():\\n        assert isinstance(Solution(), Solution)\\n\",\n  \"def test_findRedundantDirectedConnection():\\n    solution = Solution()\\n    observed = [solution.findRedundantDirectedConnection(*[[[1, 2], [1, 3], [2, 3]]]), solution.findRedundantDirectedConnection(*[[[1, 2], [2, 3], [3, 4], [4, 1], [1, 5]]])]\\n    assert all(type(value) is list for value in observed)\\n\"\n]\n"
+      }
+    },
+    "twenty-snippets": {
+      "controller_exit": 0,
+      "grade": {
+        "archive_sha256": "baaa45bb7dd83ff4c55db16f03e03d51c6e72c4d4a4654fb1e98c7c4421e0644",
+        "capture_sha256": "09b43537ff376bdee6bc889c9590cae39f26e96ee9b430835a6975f316209d1d",
+        "defects": {
+          "repeat-last": {
+            "counts": {
+              "errors": 0,
+              "exit": 1,
+              "failures": 1,
+              "passed": 19,
+              "skipped": 0,
+              "tests": 20
+            },
+            "exit_code": 1,
+            "status": "test_failed"
+          },
+          "reverse-order": {
+            "counts": {
+              "errors": 0,
+              "exit": 1,
+              "failures": 1,
+              "passed": 19,
+              "skipped": 0,
+              "tests": 20
+            },
+            "exit_code": 1,
+            "status": "test_failed"
+          }
+        },
+        "native_test_eval": {
+          "exit_code": 0,
+          "metrics": {
+            "branch_coverage": 0.8461538461538461,
+            "executable_correctness": 1.0,
+            "line_coverage": 0.9767441860465116,
+            "syntax_correctness": 1.0
+          },
+          "status": "measured"
+        },
+        "plan_sha256": "c6e05087c7628144774c3208dd93f538995ab57b18a6ecb60fb7e4bc134ba2e8",
+        "reference": {
+          "counts": {
+            "errors": 0,
+            "exit": 0,
+            "failures": 0,
+            "passed": 20,
+            "skipped": 0,
+            "tests": 20
+          },
+          "exit_code": 0,
+          "status": "passed"
+        },
+        "reference_pytest_cases": [
+          "test_subject_01::test_findRedundantDirectedConnection",
+          "test_subject_02::test_findRedundantDirectedConnection",
+          "test_subject_03::test_findRedundantDirectedConnection",
+          "test_subject_04::test_findRedundantDirectedConnection",
+          "test_subject_05::test_findRedundantDirectedConnection",
+          "test_subject_06::test_findRedundantDirectedConnection",
+          "test_subject_07::test_findRedundantDirectedConnection",
+          "test_subject_08::test_findRedundantDirectedConnection",
+          "test_subject_09::test_findRedundantDirectedConnection",
+          "test_subject_10::test_findRedundantDirectedConnection",
+          "test_subject_11::test_findRedundantDirectedConnection",
+          "test_subject_12::test_findRedundantDirectedConnection",
+          "test_subject_13::test_findRedundantDirectedConnection",
+          "test_subject_14::test_findRedundantDirectedConnection",
+          "test_subject_15::test_findRedundantDirectedConnection",
+          "test_subject_16::test_findRedundantDirectedConnection",
+          "test_subject_17::test_findRedundantDirectedConnection",
+          "test_subject_18::test_findRedundantDirectedConnection",
+          "test_subject_19::test_findRedundantDirectedConnection",
+          "test_subject_20::test_findRedundantDirectedConnection"
+        ],
+        "schema_version": 2,
+        "sensitivity": {
+          "detected": 2,
+          "inconclusive": 0,
+          "planned": 2,
+          "survived": 0
+        },
+        "submission_snippets": 20,
+        "task_id": 685,
+        "task_plan_sha256": "b1c9f6b479163371a2c2d53b694fe4b932ac1df1667d18abd8c31811fc97b8ac"
+      },
+      "records": {
+        "capture.json": "{\n  \"schema_version\": 2,\n  \"plan_sha256\": \"c6e05087c7628144774c3208dd93f538995ab57b18a6ecb60fb7e4bc134ba2e8\",\n  \"publisher\": {\n    \"source\": {\n      \"commit_sha\": \"6f67dee71de6ccda1767b8c219a93f4ae0a7ce90\",\n      \"dataset_sha256\": \"a37bcaae5fd88c978254aff5633355c7c76a324ad90b8d965f6213e522e022bf\",\n      \"evaluator_sha256\": \"0bed65d444033cd33218e3a4c75bc0b65d12b1c6fe24d8939cfe96dca255f7e3\"\n    },\n    \"subject_suite_sha256\": \"689cdf30d6bdcea7a52ac30e8f55fc8945a579f58d7543b20ec911c29ce20913\",\n    \"termination\": \"completed\",\n    \"exit_code\": 0,\n    \"stdout\": {\n      \"file\": \"publisher.stdout\",\n      \"sha256\": \"2b8db4986abb7c9a97cace8e48ead597b2ae45369ebf2f543127346ad55bf636\"\n    }\n  },\n  \"variants\": {\n    \"reference\": {\n      \"program_sha256\": \"aa4091943f63bb9185a5d6db3e0d53764a124b2ff9c32335c2149b3534ddca39\",\n      \"subject_suite_sha256\": \"689cdf30d6bdcea7a52ac30e8f55fc8945a579f58d7543b20ec911c29ce20913\",\n      \"termination\": \"completed\",\n      \"exit_code\": 0,\n      \"junit\": {\n        \"file\": \"pytest-reference.xml\",\n        \"sha256\": \"32ef5b7b1c82f0250ffe176296a4d4a4f3c6bea411bebdb9f73650cc2d0fd6e2\"\n      }\n    },\n    \"repeat-last\": {\n      \"program_sha256\": \"e72ef71f5b50ad6742a0bef9edfc9dbf00128124efe96ccdefcedb1c37e413d2\",\n      \"subject_suite_sha256\": \"689cdf30d6bdcea7a52ac30e8f55fc8945a579f58d7543b20ec911c29ce20913\",\n      \"termination\": \"completed\",\n      \"exit_code\": 1,\n      \"junit\": {\n        \"file\": \"pytest-repeat-last.xml\",\n        \"sha256\": \"914ab938426ba1463edaa7525d3944cd2fae19ec9a4f5b7a098daf0defa4e7dd\"\n      }\n    },\n    \"reverse-order\": {\n      \"program_sha256\": \"33d58fb421a85b2425209ebeba14713afc0f10cbf77b6d3fd8f8ceac4b4d02ae\",\n      \"subject_suite_sha256\": \"689cdf30d6bdcea7a52ac30e8f55fc8945a579f58d7543b20ec911c29ce20913\",\n      \"termination\": \"completed\",\n      \"exit_code\": 1,\n      \"junit\": {\n        \"file\": \"pytest-reverse-order.xml\",\n        \"sha256\": \"964a6a19c4a97cc4f8acb205221acfc97eb420af3afaefa684386285eddd3a8c\"\n      }\n    }\n  }\n}\n",
+        "handoff.json": "{\"archive_sha256\": \"baaa45bb7dd83ff4c55db16f03e03d51c6e72c4d4a4654fb1e98c7c4421e0644\", \"baseline_manifest_sha256\": \"0c42b3e01b24346c4a4c9e54e8cd2a99461b11a4aacc87e9d03e7e80c6e63336\", \"deletes\": [], \"directory_count\": 0, \"file_count\": 2, \"handoff_version\": 1, \"status\": \"grader_tree_rebuilt\", \"submission_manifest_sha256\": \"19aafa5bbb63f2e3a05a2c95cfb502a5e4157b8418e35488086d08cb4dd84409\", \"total_bytes\": 6267, \"writes\": {\"tests.json\": {\"bytes\": 6225, \"sha256\": \"689cdf30d6bdcea7a52ac30e8f55fc8945a579f58d7543b20ec911c29ce20913\"}}}\n",
+        "plan.json": "{\"handoff\": {\"file\": \"handoff.json\", \"sha256\": \"eda31be891fcf6570451ec6385cd726f5c9752363c07340716fb6a5bd1f1aad1\"}, \"programs\": {\"reference\": \"aa4091943f63bb9185a5d6db3e0d53764a124b2ff9c32335c2149b3534ddca39\", \"repeat-last\": \"e72ef71f5b50ad6742a0bef9edfc9dbf00128124efe96ccdefcedb1c37e413d2\", \"reverse-order\": \"33d58fb421a85b2425209ebeba14713afc0f10cbf77b6d3fd8f8ceac4b4d02ae\"}, \"publisher\": {\"commit_sha\": \"6f67dee71de6ccda1767b8c219a93f4ae0a7ce90\", \"dataset_sha256\": \"a37bcaae5fd88c978254aff5633355c7c76a324ad90b8d965f6213e522e022bf\", \"evaluator_sha256\": \"0bed65d444033cd33218e3a4c75bc0b65d12b1c6fe24d8939cfe96dca255f7e3\"}, \"schema_version\": 2, \"subject_suite_sha256\": \"689cdf30d6bdcea7a52ac30e8f55fc8945a579f58d7543b20ec911c29ce20913\", \"task_id\": 685, \"task_plan\": {\"file\": \"task-plan.json\", \"sha256\": \"b1c9f6b479163371a2c2d53b694fe4b932ac1df1667d18abd8c31811fc97b8ac\"}}\n",
+        "publisher.stdout": "subject.jsonl\n[1]\n1\nSyntax Correctness: 1.0\nExecutable Correctness: 1.0\nline coverage@1 0.9767441860465116\nbranch coverage@1 0.8461538461538461\nAverage Line Coverage: 0.9767441860465116, Average Branch Coverage: 0.8461538461538461\n",
+        "pytest-reference.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?><testsuites name=\"pytest tests\"><testsuite name=\"pytest\" errors=\"0\" failures=\"0\" skipped=\"0\" tests=\"20\" time=\"0.049\" timestamp=\"2026-11-26T00:00:08.420007+00:00\" hostname=\"dc4ab680d902\"><testcase classname=\"test_subject_01\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_02\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_03\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_04\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_05\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_06\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_07\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_08\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_09\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_10\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_11\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_12\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_13\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_14\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_15\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_16\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_17\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_18\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_19\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_20\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /></testsuite></testsuites>",
+        "pytest-repeat-last.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?><testsuites name=\"pytest tests\"><testsuite name=\"pytest\" errors=\"0\" failures=\"1\" skipped=\"0\" tests=\"20\" time=\"0.054\" timestamp=\"2026-11-26T00:00:15.924062+00:00\" hostname=\"cee843bec90c\"><testcase classname=\"test_subject_01\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\"><failure message=\"assert [[3, 3], [1, 1]] == [[2, 3], [4, 1]]&#10;  &#10;  At index 0 diff: [3, 3] != [2, 3]&#10;  Use -v to get more diff\">def test_findRedundantDirectedConnection():\n        solution = Solution()\n        observed = [solution.findRedundantDirectedConnection(*[[[1, 2], [1, 3], [2, 3]]]), solution.findRedundantDirectedConnection(*[[[1, 2], [2, 3], [3, 4], [4, 1], [1, 5]]])]\n&gt;       assert observed == [[2, 3], [4, 1]]\nE       assert [[3, 3], [1, 1]] == [[2, 3], [4, 1]]\nE         \nE         At index 0 diff: [3, 3] != [2, 3]\nE         Use -v to get more diff\n\ntest_subject_01.py:6: AssertionError</failure></testcase><testcase classname=\"test_subject_02\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_03\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_04\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_05\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_06\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_07\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_08\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_09\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_10\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_11\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_12\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_13\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_14\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_15\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_16\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_17\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_18\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_19\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_20\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /></testsuite></testsuites>",
+        "pytest-reverse-order.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?><testsuites name=\"pytest tests\"><testsuite name=\"pytest\" errors=\"0\" failures=\"1\" skipped=\"0\" tests=\"20\" time=\"0.052\" timestamp=\"2026-11-26T00:00:23.689066+00:00\" hostname=\"f2395a128509\"><testcase classname=\"test_subject_01\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\"><failure message=\"assert [[3, 2], [1, 4]] == [[2, 3], [4, 1]]&#10;  &#10;  At index 0 diff: [3, 2] != [2, 3]&#10;  Use -v to get more diff\">def test_findRedundantDirectedConnection():\n        solution = Solution()\n        observed = [solution.findRedundantDirectedConnection(*[[[1, 2], [1, 3], [2, 3]]]), solution.findRedundantDirectedConnection(*[[[1, 2], [2, 3], [3, 4], [4, 1], [1, 5]]])]\n&gt;       assert observed == [[2, 3], [4, 1]]\nE       assert [[3, 2], [1, 4]] == [[2, 3], [4, 1]]\nE         \nE         At index 0 diff: [3, 2] != [2, 3]\nE         Use -v to get more diff\n\ntest_subject_01.py:6: AssertionError</failure></testcase><testcase classname=\"test_subject_02\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_03\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_04\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_05\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_06\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_07\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_08\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_09\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_10\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_11\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_12\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_13\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_14\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_15\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_16\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_17\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_18\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_19\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /><testcase classname=\"test_subject_20\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /></testsuite></testsuites>",
+        "task-plan.json": "{\n  \"baseline_manifest_sha256\": \"0c42b3e01b24346c4a4c9e54e8cd2a99461b11a4aacc87e9d03e7e80c6e63336\",\n  \"programs\": {\n    \"reference\": \"aa4091943f63bb9185a5d6db3e0d53764a124b2ff9c32335c2149b3534ddca39\",\n    \"repeat-last\": \"e72ef71f5b50ad6742a0bef9edfc9dbf00128124efe96ccdefcedb1c37e413d2\",\n    \"reverse-order\": \"33d58fb421a85b2425209ebeba14713afc0f10cbf77b6d3fd8f8ceac4b4d02ae\"\n  },\n  \"publisher\": {\n    \"commit_sha\": \"6f67dee71de6ccda1767b8c219a93f4ae0a7ce90\",\n    \"dataset_sha256\": \"a37bcaae5fd88c978254aff5633355c7c76a324ad90b8d965f6213e522e022bf\",\n    \"evaluator_sha256\": \"0bed65d444033cd33218e3a4c75bc0b65d12b1c6fe24d8939cfe96dca255f7e3\"\n  },\n  \"schema_version\": 2,\n  \"task_id\": 685\n}\n",
+        "tests.json": "[\n  \"def test_findRedundantDirectedConnection():\\n    solution = Solution()\\n    observed = [solution.findRedundantDirectedConnection(*[[[1, 2], [1, 3], [2, 3]]]), solution.findRedundantDirectedConnection(*[[[1, 2], [2, 3], [3, 4], [4, 1], [1, 5]]])]\\n    assert observed == [[2, 3], [4, 1]]\\n\",\n  \"def test_findRedundantDirectedConnection():\\n    solution = Solution()\\n    observed = [solution.findRedundantDirectedConnection(*[[[1, 2], [1, 3], [2, 3]]]), solution.findRedundantDirectedConnection(*[[[1, 2], [2, 3], [3, 4], [4, 1], [1, 5]]])]\\n    assert all(type(value) is list for value in observed)\\n\",\n  \"def test_findRedundantDirectedConnection():\\n    solution = Solution()\\n    observed = [solution.findRedundantDirectedConnection(*[[[1, 2], [1, 3], [2, 3]]]), solution.findRedundantDirectedConnection(*[[[1, 2], [2, 3], [3, 4], [4, 1], [1, 5]]])]\\n    assert all(type(value) is list for value in observed)\\n\",\n  \"def test_findRedundantDirectedConnection():\\n    solution = Solution()\\n    observed = [solution.findRedundantDirectedConnection(*[[[1, 2], [1, 3], [2, 3]]]), solution.findRedundantDirectedConnection(*[[[1, 2], [2, 3], [3, 4], [4, 1], [1, 5]]])]\\n    assert all(type(value) is list for value in observed)\\n\",\n  \"def test_findRedundantDirectedConnection():\\n    solution = Solution()\\n    observed = [solution.findRedundantDirectedConnection(*[[[1, 2], [1, 3], [2, 3]]]), solution.findRedundantDirectedConnection(*[[[1, 2], [2, 3], [3, 4], [4, 1], [1, 5]]])]\\n    assert all(type(value) is list for value in observed)\\n\",\n  \"def test_findRedundantDirectedConnection():\\n    solution = Solution()\\n    observed = [solution.findRedundantDirectedConnection(*[[[1, 2], [1, 3], [2, 3]]]), solution.findRedundantDirectedConnection(*[[[1, 2], [2, 3], [3, 4], [4, 1], [1, 5]]])]\\n    assert all(type(value) is list for value in observed)\\n\",\n  \"def test_findRedundantDirectedConnection():\\n    solution = Solution()\\n    observed = [solution.findRedundantDirectedConnection(*[[[1, 2], [1, 3], [2, 3]]]), solution.findRedundantDirectedConnection(*[[[1, 2], [2, 3], [3, 4], [4, 1], [1, 5]]])]\\n    assert all(type(value) is list for value in observed)\\n\",\n  \"def test_findRedundantDirectedConnection():\\n    solution = Solution()\\n    observed = [solution.findRedundantDirectedConnection(*[[[1, 2], [1, 3], [2, 3]]]), solution.findRedundantDirectedConnection(*[[[1, 2], [2, 3], [3, 4], [4, 1], [1, 5]]])]\\n    assert all(type(value) is list for value in observed)\\n\",\n  \"def test_findRedundantDirectedConnection():\\n    solution = Solution()\\n    observed = [solution.findRedundantDirectedConnection(*[[[1, 2], [1, 3], [2, 3]]]), solution.findRedundantDirectedConnection(*[[[1, 2], [2, 3], [3, 4], [4, 1], [1, 5]]])]\\n    assert all(type(value) is list for value in observed)\\n\",\n  \"def test_findRedundantDirectedConnection():\\n    solution = Solution()\\n    observed = [solution.findRedundantDirectedConnection(*[[[1, 2], [1, 3], [2, 3]]]), solution.findRedundantDirectedConnection(*[[[1, 2], [2, 3], [3, 4], [4, 1], [1, 5]]])]\\n    assert all(type(value) is list for value in observed)\\n\",\n  \"def test_findRedundantDirectedConnection():\\n    solution = Solution()\\n    observed = [solution.findRedundantDirectedConnection(*[[[1, 2], [1, 3], [2, 3]]]), solution.findRedundantDirectedConnection(*[[[1, 2], [2, 3], [3, 4], [4, 1], [1, 5]]])]\\n    assert all(type(value) is list for value in observed)\\n\",\n  \"def test_findRedundantDirectedConnection():\\n    solution = Solution()\\n    observed = [solution.findRedundantDirectedConnection(*[[[1, 2], [1, 3], [2, 3]]]), solution.findRedundantDirectedConnection(*[[[1, 2], [2, 3], [3, 4], [4, 1], [1, 5]]])]\\n    assert all(type(value) is list for value in observed)\\n\",\n  \"def test_findRedundantDirectedConnection():\\n    solution = Solution()\\n    observed = [solution.findRedundantDirectedConnection(*[[[1, 2], [1, 3], [2, 3]]]), solution.findRedundantDirectedConnection(*[[[1, 2], [2, 3], [3, 4], [4, 1], [1, 5]]])]\\n    assert all(type(value) is list for value in observed)\\n\",\n  \"def test_findRedundantDirectedConnection():\\n    solution = Solution()\\n    observed = [solution.findRedundantDirectedConnection(*[[[1, 2], [1, 3], [2, 3]]]), solution.findRedundantDirectedConnection(*[[[1, 2], [2, 3], [3, 4], [4, 1], [1, 5]]])]\\n    assert all(type(value) is list for value in observed)\\n\",\n  \"def test_findRedundantDirectedConnection():\\n    solution = Solution()\\n    observed = [solution.findRedundantDirectedConnection(*[[[1, 2], [1, 3], [2, 3]]]), solution.findRedundantDirectedConnection(*[[[1, 2], [2, 3], [3, 4], [4, 1], [1, 5]]])]\\n    assert all(type(value) is list for value in observed)\\n\",\n  \"def test_findRedundantDirectedConnection():\\n    solution = Solution()\\n    observed = [solution.findRedundantDirectedConnection(*[[[1, 2], [1, 3], [2, 3]]]), solution.findRedundantDirectedConnection(*[[[1, 2], [2, 3], [3, 4], [4, 1], [1, 5]]])]\\n    assert all(type(value) is list for value in observed)\\n\",\n  \"def test_findRedundantDirectedConnection():\\n    solution = Solution()\\n    observed = [solution.findRedundantDirectedConnection(*[[[1, 2], [1, 3], [2, 3]]]), solution.findRedundantDirectedConnection(*[[[1, 2], [2, 3], [3, 4], [4, 1], [1, 5]]])]\\n    assert all(type(value) is list for value in observed)\\n\",\n  \"def test_findRedundantDirectedConnection():\\n    solution = Solution()\\n    observed = [solution.findRedundantDirectedConnection(*[[[1, 2], [1, 3], [2, 3]]]), solution.findRedundantDirectedConnection(*[[[1, 2], [2, 3], [3, 4], [4, 1], [1, 5]]])]\\n    assert all(type(value) is list for value in observed)\\n\",\n  \"def test_findRedundantDirectedConnection():\\n    solution = Solution()\\n    observed = [solution.findRedundantDirectedConnection(*[[[1, 2], [1, 3], [2, 3]]]), solution.findRedundantDirectedConnection(*[[[1, 2], [2, 3], [3, 4], [4, 1], [1, 5]]])]\\n    assert all(type(value) is list for value in observed)\\n\",\n  \"def test_findRedundantDirectedConnection():\\n    solution = Solution()\\n    observed = [solution.findRedundantDirectedConnection(*[[[1, 2], [1, 3], [2, 3]]]), solution.findRedundantDirectedConnection(*[[[1, 2], [2, 3], [3, 4], [4, 1], [1, 5]]])]\\n    assert all(type(value) is list for value in observed)\\n\"\n]\n"
+      }
+    },
+    "wrong-reference": {
+      "controller_exit": 0,
+      "grade": {
+        "archive_sha256": "58b4eb2d037c94eb81e240cb4f1acbaebe4e5fcb5c7b0365a910d915e14d40c5",
+        "capture_sha256": "606d4f31e119f4243b85259d803b0b673c1205c0ac9c861992975596d57a955d",
+        "defects": {
+          "repeat-last": {
+            "counts": {
+              "errors": 0,
+              "exit": 1,
+              "failures": 1,
+              "passed": 1,
+              "skipped": 0,
+              "tests": 2
+            },
+            "exit_code": 1,
+            "status": "test_failed"
+          },
+          "reverse-order": {
+            "counts": {
+              "errors": 0,
+              "exit": 1,
+              "failures": 1,
+              "passed": 1,
+              "skipped": 0,
+              "tests": 2
+            },
+            "exit_code": 1,
+            "status": "test_failed"
+          }
+        },
+        "native_test_eval": {
+          "exit_code": 0,
+          "metrics": {
+            "branch_coverage": 0.8461538461538461,
+            "executable_correctness": 1.0,
+            "line_coverage": 0.9767441860465116,
+            "syntax_correctness": 1.0
+          },
+          "status": "measured"
+        },
+        "plan_sha256": "5765722e39dab2b2f041765cfc9633248648182388d02bb6b702686f27d36e84",
+        "reference": {
+          "counts": {
+            "errors": 0,
+            "exit": 1,
+            "failures": 1,
+            "passed": 1,
+            "skipped": 0,
+            "tests": 2
+          },
+          "exit_code": 1,
+          "status": "test_failed"
+        },
+        "reference_pytest_cases": [
+          "test_subject_01::test_findRedundantDirectedConnection",
+          "test_subject_02::test_findRedundantDirectedConnection"
+        ],
+        "schema_version": 2,
+        "sensitivity": {
+          "detected": null,
+          "inconclusive": null,
+          "planned": 2,
+          "survived": null
+        },
+        "submission_snippets": 2,
+        "task_id": 685,
+        "task_plan_sha256": "b1c9f6b479163371a2c2d53b694fe4b932ac1df1667d18abd8c31811fc97b8ac"
+      },
+      "records": {
+        "capture.json": "{\n  \"schema_version\": 2,\n  \"plan_sha256\": \"5765722e39dab2b2f041765cfc9633248648182388d02bb6b702686f27d36e84\",\n  \"publisher\": {\n    \"source\": {\n      \"commit_sha\": \"6f67dee71de6ccda1767b8c219a93f4ae0a7ce90\",\n      \"dataset_sha256\": \"a37bcaae5fd88c978254aff5633355c7c76a324ad90b8d965f6213e522e022bf\",\n      \"evaluator_sha256\": \"0bed65d444033cd33218e3a4c75bc0b65d12b1c6fe24d8939cfe96dca255f7e3\"\n    },\n    \"subject_suite_sha256\": \"d6ba5eedfc2e2375c3549280b9bf33d0705f3ce0c85018650185939960a1d28d\",\n    \"termination\": \"completed\",\n    \"exit_code\": 0,\n    \"stdout\": {\n      \"file\": \"publisher.stdout\",\n      \"sha256\": \"2b8db4986abb7c9a97cace8e48ead597b2ae45369ebf2f543127346ad55bf636\"\n    }\n  },\n  \"variants\": {\n    \"reference\": {\n      \"program_sha256\": \"aa4091943f63bb9185a5d6db3e0d53764a124b2ff9c32335c2149b3534ddca39\",\n      \"subject_suite_sha256\": \"d6ba5eedfc2e2375c3549280b9bf33d0705f3ce0c85018650185939960a1d28d\",\n      \"termination\": \"completed\",\n      \"exit_code\": 1,\n      \"junit\": {\n        \"file\": \"pytest-reference.xml\",\n        \"sha256\": \"03ab9704678b41d9332f40f47dac9bfa08286d71b16c73aa18fb35af2064f85f\"\n      }\n    },\n    \"repeat-last\": {\n      \"program_sha256\": \"e72ef71f5b50ad6742a0bef9edfc9dbf00128124efe96ccdefcedb1c37e413d2\",\n      \"subject_suite_sha256\": \"d6ba5eedfc2e2375c3549280b9bf33d0705f3ce0c85018650185939960a1d28d\",\n      \"termination\": \"completed\",\n      \"exit_code\": 1,\n      \"junit\": {\n        \"file\": \"pytest-repeat-last.xml\",\n        \"sha256\": \"b612673412ab8ae7ddedaebeb823cb42da73fed15850439c2a7533e39e7ace9e\"\n      }\n    },\n    \"reverse-order\": {\n      \"program_sha256\": \"33d58fb421a85b2425209ebeba14713afc0f10cbf77b6d3fd8f8ceac4b4d02ae\",\n      \"subject_suite_sha256\": \"d6ba5eedfc2e2375c3549280b9bf33d0705f3ce0c85018650185939960a1d28d\",\n      \"termination\": \"completed\",\n      \"exit_code\": 1,\n      \"junit\": {\n        \"file\": \"pytest-reverse-order.xml\",\n        \"sha256\": \"ebada9ec3e8e1afd99658ded0645350964d8f3bb9534d55668dff52a0de9d290\"\n      }\n    }\n  }\n}\n",
+        "handoff.json": "{\"archive_sha256\": \"58b4eb2d037c94eb81e240cb4f1acbaebe4e5fcb5c7b0365a910d915e14d40c5\", \"baseline_manifest_sha256\": \"0c42b3e01b24346c4a4c9e54e8cd2a99461b11a4aacc87e9d03e7e80c6e63336\", \"deletes\": [], \"directory_count\": 0, \"file_count\": 2, \"handoff_version\": 1, \"status\": \"grader_tree_rebuilt\", \"submission_manifest_sha256\": \"abd32462fcabe3f58f3e4cf38db1ad912127a6bd5aad44d62d3a52f951281c11\", \"total_bytes\": 651, \"writes\": {\"tests.json\": {\"bytes\": 609, \"sha256\": \"d6ba5eedfc2e2375c3549280b9bf33d0705f3ce0c85018650185939960a1d28d\"}}}\n",
+        "plan.json": "{\"handoff\": {\"file\": \"handoff.json\", \"sha256\": \"f1b051bbb8170da51c3d132f7f321017b138a59a86ec08db57cb03ee99a0baa3\"}, \"programs\": {\"reference\": \"aa4091943f63bb9185a5d6db3e0d53764a124b2ff9c32335c2149b3534ddca39\", \"repeat-last\": \"e72ef71f5b50ad6742a0bef9edfc9dbf00128124efe96ccdefcedb1c37e413d2\", \"reverse-order\": \"33d58fb421a85b2425209ebeba14713afc0f10cbf77b6d3fd8f8ceac4b4d02ae\"}, \"publisher\": {\"commit_sha\": \"6f67dee71de6ccda1767b8c219a93f4ae0a7ce90\", \"dataset_sha256\": \"a37bcaae5fd88c978254aff5633355c7c76a324ad90b8d965f6213e522e022bf\", \"evaluator_sha256\": \"0bed65d444033cd33218e3a4c75bc0b65d12b1c6fe24d8939cfe96dca255f7e3\"}, \"schema_version\": 2, \"subject_suite_sha256\": \"d6ba5eedfc2e2375c3549280b9bf33d0705f3ce0c85018650185939960a1d28d\", \"task_id\": 685, \"task_plan\": {\"file\": \"task-plan.json\", \"sha256\": \"b1c9f6b479163371a2c2d53b694fe4b932ac1df1667d18abd8c31811fc97b8ac\"}}\n",
+        "publisher.stdout": "subject.jsonl\n[1]\n1\nSyntax Correctness: 1.0\nExecutable Correctness: 1.0\nline coverage@1 0.9767441860465116\nbranch coverage@1 0.8461538461538461\nAverage Line Coverage: 0.9767441860465116, Average Branch Coverage: 0.8461538461538461\n",
+        "pytest-reference.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?><testsuites name=\"pytest tests\"><testsuite name=\"pytest\" errors=\"0\" failures=\"1\" skipped=\"0\" tests=\"2\" time=\"0.028\" timestamp=\"2026-11-26T00:01:11.715261+00:00\" hostname=\"e59ecb2a7436\"><testcase classname=\"test_subject_01\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\"><failure message=\"assert [[2, 3], [4, 1]] == [[3, 2], [4, 1]]&#10;  &#10;  At index 0 diff: [2, 3] != [3, 2]&#10;  Use -v to get more diff\">def test_findRedundantDirectedConnection():\n        solution = Solution()\n        observed = [solution.findRedundantDirectedConnection(*[[[1, 2], [1, 3], [2, 3]]]), solution.findRedundantDirectedConnection(*[[[1, 2], [2, 3], [3, 4], [4, 1], [1, 5]]])]\n&gt;       assert observed == [[3, 2], [4, 1]]\nE       assert [[2, 3], [4, 1]] == [[3, 2], [4, 1]]\nE         \nE         At index 0 diff: [2, 3] != [3, 2]\nE         Use -v to get more diff\n\ntest_subject_01.py:6: AssertionError</failure></testcase><testcase classname=\"test_subject_02\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /></testsuite></testsuites>",
+        "pytest-repeat-last.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?><testsuites name=\"pytest tests\"><testsuite name=\"pytest\" errors=\"0\" failures=\"1\" skipped=\"0\" tests=\"2\" time=\"0.029\" timestamp=\"2026-11-26T00:01:19.061738+00:00\" hostname=\"816e7b48ab06\"><testcase classname=\"test_subject_01\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\"><failure message=\"assert [[3, 3], [1, 1]] == [[3, 2], [4, 1]]&#10;  &#10;  At index 0 diff: [3, 3] != [3, 2]&#10;  Use -v to get more diff\">def test_findRedundantDirectedConnection():\n        solution = Solution()\n        observed = [solution.findRedundantDirectedConnection(*[[[1, 2], [1, 3], [2, 3]]]), solution.findRedundantDirectedConnection(*[[[1, 2], [2, 3], [3, 4], [4, 1], [1, 5]]])]\n&gt;       assert observed == [[3, 2], [4, 1]]\nE       assert [[3, 3], [1, 1]] == [[3, 2], [4, 1]]\nE         \nE         At index 0 diff: [3, 3] != [3, 2]\nE         Use -v to get more diff\n\ntest_subject_01.py:6: AssertionError</failure></testcase><testcase classname=\"test_subject_02\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /></testsuite></testsuites>",
+        "pytest-reverse-order.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?><testsuites name=\"pytest tests\"><testsuite name=\"pytest\" errors=\"0\" failures=\"1\" skipped=\"0\" tests=\"2\" time=\"0.032\" timestamp=\"2026-11-26T00:01:26.536831+00:00\" hostname=\"61574cf68f5f\"><testcase classname=\"test_subject_01\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\"><failure message=\"assert [[3, 2], [1, 4]] == [[3, 2], [4, 1]]&#10;  &#10;  At index 1 diff: [1, 4] != [4, 1]&#10;  Use -v to get more diff\">def test_findRedundantDirectedConnection():\n        solution = Solution()\n        observed = [solution.findRedundantDirectedConnection(*[[[1, 2], [1, 3], [2, 3]]]), solution.findRedundantDirectedConnection(*[[[1, 2], [2, 3], [3, 4], [4, 1], [1, 5]]])]\n&gt;       assert observed == [[3, 2], [4, 1]]\nE       assert [[3, 2], [1, 4]] == [[3, 2], [4, 1]]\nE         \nE         At index 1 diff: [1, 4] != [4, 1]\nE         Use -v to get more diff\n\ntest_subject_01.py:6: AssertionError</failure></testcase><testcase classname=\"test_subject_02\" name=\"test_findRedundantDirectedConnection\" time=\"0.000\" /></testsuite></testsuites>",
+        "task-plan.json": "{\n  \"baseline_manifest_sha256\": \"0c42b3e01b24346c4a4c9e54e8cd2a99461b11a4aacc87e9d03e7e80c6e63336\",\n  \"programs\": {\n    \"reference\": \"aa4091943f63bb9185a5d6db3e0d53764a124b2ff9c32335c2149b3534ddca39\",\n    \"repeat-last\": \"e72ef71f5b50ad6742a0bef9edfc9dbf00128124efe96ccdefcedb1c37e413d2\",\n    \"reverse-order\": \"33d58fb421a85b2425209ebeba14713afc0f10cbf77b6d3fd8f8ceac4b4d02ae\"\n  },\n  \"publisher\": {\n    \"commit_sha\": \"6f67dee71de6ccda1767b8c219a93f4ae0a7ce90\",\n    \"dataset_sha256\": \"a37bcaae5fd88c978254aff5633355c7c76a324ad90b8d965f6213e522e022bf\",\n    \"evaluator_sha256\": \"0bed65d444033cd33218e3a4c75bc0b65d12b1c6fe24d8939cfe96dca255f7e3\"\n  },\n  \"schema_version\": 2,\n  \"task_id\": 685\n}\n",
+        "tests.json": "[\n  \"def test_findRedundantDirectedConnection():\\n    solution = Solution()\\n    observed = [solution.findRedundantDirectedConnection(*[[[1, 2], [1, 3], [2, 3]]]), solution.findRedundantDirectedConnection(*[[[1, 2], [2, 3], [3, 4], [4, 1], [1, 5]]])]\\n    assert observed == [[3, 2], [4, 1]]\\n\",\n  \"def test_findRedundantDirectedConnection():\\n    solution = Solution()\\n    observed = [solution.findRedundantDirectedConnection(*[[[1, 2], [1, 3], [2, 3]]]), solution.findRedundantDirectedConnection(*[[[1, 2], [2, 3], [3, 4], [4, 1], [1, 5]]])]\\n    assert all(type(value) is list for value in observed)\\n\"\n]\n"
+      }
+    }
+  },
+  "schema_version": 1,
+  "study_plan": "{\n  \"expected\": {\n    \"changed-case-inventory\": {\n      \"cases\": 3,\n      \"detected\": 0,\n      \"exit\": 1,\n      \"inconclusive\": 2,\n      \"reference\": \"passed\"\n    },\n    \"twenty-snippets\": {\n      \"cases\": 20,\n      \"detected\": 2,\n      \"exit\": 0,\n      \"inconclusive\": 0,\n      \"reference\": \"passed\"\n    },\n    \"wrong-reference\": {\n      \"cases\": 2,\n      \"detected\": null,\n      \"exit\": 0,\n      \"inconclusive\": null,\n      \"reference\": \"test_failed\"\n    }\n  },\n  \"fixture_sha256\": {\n    \"repeat-last.py\": \"e72ef71f5b50ad6742a0bef9edfc9dbf00128124efe96ccdefcedb1c37e413d2\",\n    \"reverse-order.py\": \"33d58fb421a85b2425209ebeba14713afc0f10cbf77b6d3fd8f8ceac4b4d02ae\",\n    \"suite.py\": \"3cbf1032d302375b7e6eb3e3b6fb5541e27dccc7ac7b2aabcbaba0d0ad20bf02\"\n  },\n  \"frozen_legacy_plan_sha256\": \"5adb6f77b409c840f96c29a1257b1a08cf59d66f3ad556b632361db16ce75249\",\n  \"model_attempts\": 0,\n  \"source_sha256\": {\n    \"tools/_native_benchmark_runtime.py\": \"b36647bc427ad8b59e61ada097c3b6feda4a3529fed2bae09b60b7a2b08372fa\",\n    \"tools/_trial_collection.py\": \"5c2388bc3a2a361c4ee0a4465e73745651eb87c0baaa91066f0afc33874cb5e0\",\n    \"tools/collect_testeval_submission.py\": \"a2379d8adcb82de53096bac75eaf11b4ee16c02822770d8d355e12ca9ad46b6a\",\n    \"tools/grade_testeval_submission.py\": \"94db6bea22c03a00939ad2a9317e89f84e4446156ae6c34d120ea9906a0459c0\",\n    \"tools/transfer_benchmark_submission.py\": \"aa8abf2156e2274200360465dc8bf7b36e7218f7843c2682fe0d6d34414c6faa\",\n    \"tools/validate_testeval_calibration.py\": \"24052e16bc379c8e4c41db01f966c1e50b60131fb22888a4efdceede347d35c1\"\n  },\n  \"task_id\": 685\n}\n"
+}
