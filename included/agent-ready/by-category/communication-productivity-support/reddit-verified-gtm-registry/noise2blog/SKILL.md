@@ -1,10 +1,11 @@
 ---
 name: "noise2blog"
 description: "Turns rough notes, bullet points, voice transcripts, or tweet dumps into a polished, publication-ready blog post. Optionally enriches with Tavily research to add supporting data and credibility to claims. Use when asked to write a blog post from notes, turn rough ideas into an article, expand bullet points into a full post, clean up a voice transcript into a blog, or repurpose a tweet thread as an article. Trigger."
-source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-noise2blog-skill-md"
-category: "Communication, productivity & support"
-source_mirror: "../../../../../skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/noise2blog/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-noise2blog-skill-md"
+  category: "Communication, productivity & support"
+  source_mirror: "../../../../../skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/noise2blog/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # noise2blog
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/noise2blog/SKILL.md`
 - Source commit: `bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-varnan-tech-opendirectory-packages-cli-skills-noise2blog-skill-md`, `communication-productivity-and-support-enron-email`, `communication-productivity-and-support-ms-marco`, `communication-productivity-and-support-sec-edgar-companyfacts`
 

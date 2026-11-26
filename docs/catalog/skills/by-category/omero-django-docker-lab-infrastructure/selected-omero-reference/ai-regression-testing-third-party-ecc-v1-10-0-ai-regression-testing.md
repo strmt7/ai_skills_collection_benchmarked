@@ -4,7 +4,7 @@ Category: OMERO, Django, Docker & lab infrastructure
 
 Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/ai-regression-testing-third-party-ecc-v1-10-0-ai-regression-testing`
 
-Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/ai-regression-testing-third-party-ecc-v1-10-0-ai-regression-testing/SKILL.md`
+Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/ai-regression-testing-third-party-ecc-v1-10-0-ai-re-7cdffa776685/SKILL.md`
 
 Source: [ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/ai-regression-testing/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/ai-regression-testing/SKILL.md)
 

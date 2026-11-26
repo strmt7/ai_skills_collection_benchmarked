@@ -1,10 +1,11 @@
 ---
 name: "frontend-slides"
 description: "Create stunning, animation-rich HTML presentations from scratch or by converting PowerPoint files. Use when the user wants to build a presentation, convert a PPT/PPTX to web, or create slides for a talk/pitch. Helps non-designers discover their aesthetic through visual exploration rather than abstract choices."
-source_skill_id: "affaan-m-everything-claude-code-agents-skills-frontend-slides-skill-md"
-category: "Documents, spreadsheets & presentations"
-source_mirror: "../../../../../skills/by-category/documents-spreadsheets-presentations/selected-structure-reference/frontend-slides/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "affaan-m-everything-claude-code-agents-skills-frontend-slides-skill-md"
+  category: "Documents, spreadsheets & presentations"
+  source_mirror: "../../../../../skills/by-category/documents-spreadsheets-presentations/selected-structure-reference/frontend-slides/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # frontend-slides
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/documents-spreadsheets-presentations/selected-structure-reference/frontend-slides/SKILL.md`
 - Source commit: `c05b2d6614f62f6db0047669aa4eefb223d478f9`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-affaan-m-everything-claude-code-agents-skills-frontend-slides-skill-md`, `documents-spreadsheets-and-presentations-sec-edgar-companyfacts`, `documents-spreadsheets-and-presentations-enron-email`, `documents-spreadsheets-and-presentations-stackoverflow-survey`
 

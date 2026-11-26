@@ -1,10 +1,11 @@
 ---
-name: "verification-loop"
+name: "verification-loop-everything-claude-code"
 description: "A comprehensive verification system for Claude Code sessions. Use when verifying a Claude Code session's work before claiming it is complete."
-source_skill_id: "affaan-m-everything-claude-code-agents-skills-verification-loop-skill-md"
-category: "Testing, QA & benchmarking"
-source_mirror: "../../../../../skills/by-category/testing-qa-benchmarking/selected-structure-reference/verification-loop-everything-claude-code/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "affaan-m-everything-claude-code-agents-skills-verification-loop-skill-md"
+  category: "Testing, QA & benchmarking"
+  source_mirror: "../../../../../skills/by-category/testing-qa-benchmarking/selected-structure-reference/verification-loop-everything-claude-code/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # verification-loop
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/testing-qa-benchmarking/selected-structure-reference/verification-loop-everything-claude-code/SKILL.md`
 - Source commit: `c05b2d6614f62f6db0047669aa4eefb223d478f9`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-affaan-m-everything-claude-code-agents-skills-verification-loop-skill-md`, `testing-qa-and-benchmarking-swe-bench-lite`, `testing-qa-and-benchmarking-owasp-benchmark`, `testing-qa-and-benchmarking-local-omero-compose-workflows`
 

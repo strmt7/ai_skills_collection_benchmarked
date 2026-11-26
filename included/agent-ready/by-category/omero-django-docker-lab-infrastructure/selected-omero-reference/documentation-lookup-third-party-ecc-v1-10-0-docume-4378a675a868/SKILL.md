@@ -1,10 +1,11 @@
 ---
-name: "documentation-lookup"
+name: "documentation-lookup-third-party-ecc-v1-10-0-docume-4378a675a868"
 description: "Use up-to-date library and framework docs via Context7 MCP instead of training data. Activates for setup questions, API references, code examples, or when the user names a framework (e.g. React, Next.js, Prisma)."
-source_skill_id: "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-documentation-lookup-skill-md"
-category: "OMERO, Django, Docker & lab infrastructure"
-source_mirror: "../../../../../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/documentation-lookup-third-party-ecc-v1-10-0-documentation-lookup/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-documentation-lookup-skill-md"
+  category: "OMERO, Django, Docker & lab infrastructure"
+  source_mirror: "../../../../../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/documentation-lookup-third-party-ecc-v1-10-0-documentation-lookup/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # documentation-lookup
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/documentation-lookup-third-party-ecc-v1-10-0-documentation-lookup/SKILL.md`
 - Source commit: `b7c7cfa2a057f08eb872aadae49d89f521480114`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-documentation-lookup-skill-md`, `omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows`, `omero-django-docker-and-lab-infrastructure-ome-ngff-samples`, `omero-django-docker-and-lab-infrastructure-opentelemetry-demo`
 

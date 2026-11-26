@@ -1,10 +1,11 @@
 ---
 name: "trailmark-structural"
 description: "Runs full trailmark structural analysis with all pre-analysis passes (blast radius, taint propagation, privilege boundaries, complexity hotspots). Use when vivisect needs detailed structural data for a target. Triggers: structural analysis, blast radius, taint analysis, complexity hotspots."
-source_skill_id: "trailofbits-skills-plugins-trailmark-skills-trailmark-structural-skill-md"
-category: "Coding, refactoring & repository automation"
-source_mirror: "../../../../../skills/by-category/coding-refactoring-repository-automation/security-reference/trailmark-structural/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "trailofbits-skills-plugins-trailmark-skills-trailmark-structural-skill-md"
+  category: "Coding, refactoring & repository automation"
+  source_mirror: "../../../../../skills/by-category/coding-refactoring-repository-automation/security-reference/trailmark-structural/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # trailmark-structural
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/coding-refactoring-repository-automation/security-reference/trailmark-structural/SKILL.md`
 - Source commit: `e8cc5baf9329ccb491bfa200e82eacbac83b1ead`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-trailofbits-skills-plugins-trailmark-skills-trailmark-structural-skill-md`, `coding-refactoring-and-repository-automation-swe-bench-lite`, `coding-refactoring-and-repository-automation-kubernetes-examples`, `coding-refactoring-and-repository-automation-opentelemetry-demo`
 

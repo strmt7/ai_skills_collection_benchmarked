@@ -1,10 +1,11 @@
 ---
 name: "evolink-video"
 description: "AI video generation \u2014 Sora, Kling, Veo 3, Seedance, Hailuo, WAN, Grok. Text-to-video, image-to-video, video editing. 37 models, one API key."
-source_skill_id: "evolinkai-video-generation-skill-for-openclaw-skill-md"
-category: "Creative, media & design"
-source_mirror: "../../../../../skills/by-category/creative-media-design/creative-reference/evolink-video/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "evolinkai-video-generation-skill-for-openclaw-skill-md"
+  category: "Creative, media & design"
+  source_mirror: "../../../../../skills/by-category/creative-media-design/creative-reference/evolink-video/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # evolink-video
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/creative-media-design/creative-reference/evolink-video/SKILL.md`
 - Source commit: `83723cdfa9d43eb8dd79287651f0e3e291802e90`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-evolinkai-video-generation-skill-for-openclaw-skill-md`, `creative-media-and-design-coco-captions`, `creative-media-and-design-air-defense-android-benchmarks`, `creative-media-and-design-nyc-tlc-trip-records`
 

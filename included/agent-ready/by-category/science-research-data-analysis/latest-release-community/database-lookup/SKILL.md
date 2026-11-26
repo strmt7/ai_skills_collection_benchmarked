@@ -1,10 +1,11 @@
 ---
 name: "database-lookup"
 description: "Search 78 public scientific, biomedical, materials science, and economic databases via REST APIs. Covers physics/astronomy (NASA, NIST, SDSS, SIMBAD), earth/environment (USGS, NOAA, EPA), chemistry/drugs (PubChem, ChEMBL, DrugBank, FDA, KEGG, ZINC, BindingDB), materials (Materials Project, COD), biology/genomics (Reactome, UniProt, STRING, Ensembl, NCBI Gene, GEO, GTEx, PDB, AlphaFold, InterPro, BioGRID, Gene."
-source_skill_id: "k-dense-ai-scientific-agent-skills-scientific-skills-database-lookup-skill-md"
-category: "Science, research & data analysis"
-source_mirror: "../../../../../skills/by-category/science-research-data-analysis/latest-release-community/database-lookup/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "k-dense-ai-scientific-agent-skills-scientific-skills-database-lookup-skill-md"
+  category: "Science, research & data analysis"
+  source_mirror: "../../../../../skills/by-category/science-research-data-analysis/latest-release-community/database-lookup/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # database-lookup
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/science-research-data-analysis/latest-release-community/database-lookup/SKILL.md`
 - Source commit: `eb20fb0dcb0b1dadaa3db2737188f0755bbc4770`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-k-dense-ai-scientific-agent-skills-scientific-skills-database-lookup-skill-md`, `science-research-and-data-analysis-cellxgene-census`, `science-research-and-data-analysis-chembl`, `science-research-and-data-analysis-ome-ngff-samples`
 

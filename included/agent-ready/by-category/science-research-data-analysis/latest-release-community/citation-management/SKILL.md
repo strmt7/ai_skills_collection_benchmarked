@@ -1,10 +1,11 @@
 ---
 name: "citation-management"
 description: "Comprehensive citation management for academic research. Search Google Scholar and PubMed for papers, extract accurate metadata, validate citations, and generate properly formatted BibTeX entries. This skill should be used when you need to find papers, verify citation information, convert DOIs to BibTeX, or ensure reference accuracy in scientific writing."
-source_skill_id: "k-dense-ai-scientific-agent-skills-scientific-skills-citation-management-skill-md"
-category: "Science, research & data analysis"
-source_mirror: "../../../../../skills/by-category/science-research-data-analysis/latest-release-community/citation-management/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "k-dense-ai-scientific-agent-skills-scientific-skills-citation-management-skill-md"
+  category: "Science, research & data analysis"
+  source_mirror: "../../../../../skills/by-category/science-research-data-analysis/latest-release-community/citation-management/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # citation-management
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/science-research-data-analysis/latest-release-community/citation-management/SKILL.md`
 - Source commit: `eb20fb0dcb0b1dadaa3db2737188f0755bbc4770`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-k-dense-ai-scientific-agent-skills-scientific-skills-citation-management-skill-md`, `science-research-and-data-analysis-cellxgene-census`, `science-research-and-data-analysis-chembl`, `science-research-and-data-analysis-ome-ngff-samples`
 

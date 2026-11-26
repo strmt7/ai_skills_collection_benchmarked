@@ -1,10 +1,11 @@
 ---
-name: "documentation-lookup"
+name: "documentation-lookup-everything-claude-code"
 description: "Use up-to-date library and framework docs via Context7 MCP instead of training data. Activates for setup questions, API references, code examples, or when the user names a framework (e.g. React, Next.js, Prisma)."
-source_skill_id: "affaan-m-everything-claude-code-agents-skills-documentation-lookup-skill-md"
-category: "Search, retrieval & web automation"
-source_mirror: "../../../../../skills/by-category/search-retrieval-web-automation/selected-structure-reference/documentation-lookup-everything-claude-code/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "affaan-m-everything-claude-code-agents-skills-documentation-lookup-skill-md"
+  category: "Search, retrieval & web automation"
+  source_mirror: "../../../../../skills/by-category/search-retrieval-web-automation/selected-structure-reference/documentation-lookup-everything-claude-code/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # documentation-lookup
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/search-retrieval-web-automation/selected-structure-reference/documentation-lookup-everything-claude-code/SKILL.md`
 - Source commit: `c05b2d6614f62f6db0047669aa4eefb223d478f9`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-affaan-m-everything-claude-code-agents-skills-documentation-lookup-skill-md`, `search-retrieval-and-web-automation-common-crawl-warc`, `search-retrieval-and-web-automation-beir-retrieval`, `search-retrieval-and-web-automation-ms-marco`
 

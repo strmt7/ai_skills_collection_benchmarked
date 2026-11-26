@@ -1,10 +1,11 @@
 ---
 name: "dmux-workflows"
 description: "Single-session workflow coordination using dmux (tmux pane manager for AI agents). Patterns for single-session workflow coordination across Claude Code, Codex, OpenCode, and other harnesses. Use when running one AI session or coordinating single-session development workflows."
-source_skill_id: "affaan-m-everything-claude-code-agents-skills-dmux-workflows-skill-md"
-category: "Agent infrastructure & skill creation"
-source_mirror: "../../../../../skills/by-category/agent-infrastructure-skill-creation/selected-structure-reference/dmux-workflows/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "affaan-m-everything-claude-code-agents-skills-dmux-workflows-skill-md"
+  category: "Agent infrastructure & skill creation"
+  source_mirror: "../../../../../skills/by-category/agent-infrastructure-skill-creation/selected-structure-reference/dmux-workflows/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # dmux-workflows
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/agent-infrastructure-skill-creation/selected-structure-reference/dmux-workflows/SKILL.md`
 - Source commit: `c05b2d6614f62f6db0047669aa4eefb223d478f9`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-affaan-m-everything-claude-code-agents-skills-dmux-workflows-skill-md`, `agent-infrastructure-and-skill-creation-beir-retrieval`, `agent-infrastructure-and-skill-creation-swe-bench-lite`, `agent-infrastructure-and-skill-creation-common-crawl-warc`
 

@@ -1,10 +1,11 @@
 ---
 name: "azure-resource-lookup"
 description: "List, find, and show Azure resources across subscriptions or resource groups. Handles prompts like \"list websites\", \"list virtual machines\", \"list my VMs\", \"show storage accounts\", \"find container apps\", and \"what resources do I have\". USE FOR: resource inventory, find resources by tag, tag analysis, orphaned resource discovery (not for cost analysis), unattached disks, count resources by type, cross-subscription."
-source_skill_id: "microsoft-skills-github-plugins-azure-skills-skills-azure-resource-lookup-skill-md"
-category: "Cloud, Azure & Microsoft SDKs"
-source_mirror: "../../../../../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-resource-lookup/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "microsoft-skills-github-plugins-azure-skills-skills-azure-resource-lookup-skill-md"
+  category: "Cloud, Azure & Microsoft SDKs"
+  source_mirror: "../../../../../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-resource-lookup/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # azure-resource-lookup
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-resource-lookup/SKILL.md`
 - Source commit: `a2c05249c4a20103dd954ca702467aa328aac031`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-microsoft-skills-github-plugins-azure-skills-skills-azure-resource-lookup-skill-md`, `cloud-azure-and-microsoft-sdks-kubernetes-examples`, `cloud-azure-and-microsoft-sdks-opentelemetry-demo`, `cloud-azure-and-microsoft-sdks-sec-edgar-companyfacts`
 

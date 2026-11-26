@@ -1,10 +1,11 @@
 ---
 name: "support-metrics"
 description: "Generate a support metrics summary from [Gorgias](https://composio.dev/toolkits/gorgias) tickets and optionally push to [Google Sheets](https://composio.dev/toolkits/googlesheets)"
-source_skill_id: "composio-community-support-skills-support-metrics-skill-md"
-category: "Communication, productivity & support"
-source_mirror: "../../../../../skills/by-category/communication-productivity-support/support-reference/support-metrics/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "composio-community-support-skills-support-metrics-skill-md"
+  category: "Communication, productivity & support"
+  source_mirror: "../../../../../skills/by-category/communication-productivity-support/support-reference/support-metrics/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # support-metrics
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/communication-productivity-support/support-reference/support-metrics/SKILL.md`
 - Source commit: `b4f842c3cbdcae0c45771fd996c396aee80dde2e`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-composio-community-support-skills-support-metrics-skill-md`, `communication-productivity-and-support-enron-email`, `communication-productivity-and-support-ms-marco`, `communication-productivity-and-support-sec-edgar-companyfacts`
 

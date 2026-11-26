@@ -1,10 +1,11 @@
 ---
 name: "microsoft-docs"
 description: "Understand Microsoft technologies by querying official documentation. Use whenever the user asks how something works, wants tutorials, needs configuration options, limits, quotas, or best practices for any Microsoft technology (Azure, .NET, M365, Windows, Power Platform, etc.)\u2014even if they don't mention \"docs.\" If the question is about understanding a concept rather than writing code, this is the right skill."
-source_skill_id: "microsoft-skills-github-skills-microsoft-docs-skill-md"
-category: "Cloud, Azure & Microsoft SDKs"
-source_mirror: "../../../../../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-docs/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "microsoft-skills-github-skills-microsoft-docs-skill-md"
+  category: "Cloud, Azure & Microsoft SDKs"
+  source_mirror: "../../../../../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-docs/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # microsoft-docs
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-docs/SKILL.md`
 - Source commit: `a2c05249c4a20103dd954ca702467aa328aac031`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-microsoft-skills-github-skills-microsoft-docs-skill-md`, `cloud-azure-and-microsoft-sdks-kubernetes-examples`, `cloud-azure-and-microsoft-sdks-opentelemetry-demo`, `cloud-azure-and-microsoft-sdks-sec-edgar-companyfacts`
 

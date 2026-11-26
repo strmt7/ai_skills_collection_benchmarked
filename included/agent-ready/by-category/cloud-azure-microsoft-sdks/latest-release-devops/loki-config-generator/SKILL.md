@@ -1,10 +1,11 @@
 ---
 name: "loki-config-generator"
 description: "Generate/create Loki configs \u2014 ingester, querier, compactor, ruler, S3/GCS/Azure backends."
-source_skill_id: "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-loki-config-generator-skill-md"
-category: "Cloud, Azure & Microsoft SDKs"
-source_mirror: "../../../../../skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/loki-config-generator/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-loki-config-generator-skill-md"
+  category: "Cloud, Azure & Microsoft SDKs"
+  source_mirror: "../../../../../skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/loki-config-generator/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # loki-config-generator
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/loki-config-generator/SKILL.md`
 - Source commit: `7fe7595e4512f8ce43dcf956aa5190b96d627dd1`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-akin-ozer-cc-devops-skills-devops-skills-plugin-skills-loki-config-generator-skill-md`, `cloud-azure-and-microsoft-sdks-kubernetes-examples`, `cloud-azure-and-microsoft-sdks-opentelemetry-demo`, `cloud-azure-and-microsoft-sdks-sec-edgar-companyfacts`
 

@@ -1,10 +1,11 @@
 ---
 name: "azure-ai-agents-persistent-dotnet"
 description: "Azure AI Agents Persistent SDK for .NET. Low-level SDK for creating and managing AI agents with threads, messages, runs, and tools. Use for agent CRUD, conversation threads, streaming responses, function calling, file search, and code interpreter. Triggers: \"PersistentAgentsClient\", \"persistent agents\", \"agent threads\", \"agent runs\", \"streaming agents\", \"function calling agents .NET\"."
-source_skill_id: "microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-ai-agents-persistent-dotnet-skill-md"
-category: "Cloud, Azure & Microsoft SDKs"
-source_mirror: "../../../../../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-agents-persistent-dotnet/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-ai-agents-persistent-dotnet-skill-md"
+  category: "Cloud, Azure & Microsoft SDKs"
+  source_mirror: "../../../../../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-agents-persistent-dotnet/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # azure-ai-agents-persistent-dotnet
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-agents-persistent-dotnet/SKILL.md`
 - Source commit: `a2c05249c4a20103dd954ca702467aa328aac031`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-ai-agents-persistent-dotnet-skill-md`, `cloud-azure-and-microsoft-sdks-kubernetes-examples`, `cloud-azure-and-microsoft-sdks-opentelemetry-demo`, `cloud-azure-and-microsoft-sdks-sec-edgar-companyfacts`
 

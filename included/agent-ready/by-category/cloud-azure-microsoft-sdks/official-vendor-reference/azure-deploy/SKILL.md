@@ -1,10 +1,11 @@
 ---
 name: "azure-deploy"
 description: "Execute Azure deployments for ALREADY-PREPARED applications that have existing .azure/deployment-plan.md and infrastructure files. DO NOT use this skill when the user asks to CREATE a new application \u2014 use azure-prepare instead. This skill runs azd up, azd deploy, terraform apply, and az deployment commands with built-in error recovery. Requires .azure/deployment-plan.md from azure-prepare and validated status from."
-source_skill_id: "microsoft-skills-github-plugins-azure-skills-skills-azure-deploy-skill-md"
-category: "Cloud, Azure & Microsoft SDKs"
-source_mirror: "../../../../../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-deploy/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "microsoft-skills-github-plugins-azure-skills-skills-azure-deploy-skill-md"
+  category: "Cloud, Azure & Microsoft SDKs"
+  source_mirror: "../../../../../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-deploy/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # azure-deploy
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-deploy/SKILL.md`
 - Source commit: `a2c05249c4a20103dd954ca702467aa328aac031`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-microsoft-skills-github-plugins-azure-skills-skills-azure-deploy-skill-md`, `cloud-azure-and-microsoft-sdks-kubernetes-examples`, `cloud-azure-and-microsoft-sdks-opentelemetry-demo`, `cloud-azure-and-microsoft-sdks-sec-edgar-companyfacts`
 

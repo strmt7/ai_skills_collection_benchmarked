@@ -1,10 +1,11 @@
 ---
 name: "variant-analysis"
 description: "Find similar vulnerabilities and bugs across codebases using pattern-based analysis. Use when hunting bug variants, building CodeQL/Semgrep queries, analyzing security vulnerabilities, or performing systematic code audits after finding an initial issue."
-source_skill_id: "trailofbits-skills-plugins-variant-analysis-skills-variant-analysis-skill-md"
-category: "Security, compliance & risk"
-source_mirror: "../../../../../skills/by-category/security-compliance-risk/security-reference/variant-analysis/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "trailofbits-skills-plugins-variant-analysis-skills-variant-analysis-skill-md"
+  category: "Security, compliance & risk"
+  source_mirror: "../../../../../skills/by-category/security-compliance-risk/security-reference/variant-analysis/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # variant-analysis
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/security-compliance-risk/security-reference/variant-analysis/SKILL.md`
 - Source commit: `e8cc5baf9329ccb491bfa200e82eacbac83b1ead`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-trailofbits-skills-plugins-variant-analysis-skills-variant-analysis-skill-md`, `security-compliance-and-risk-owasp-benchmark`, `security-compliance-and-risk-owasp-juice-shop`, `security-compliance-and-risk-kubernetes-examples`
 

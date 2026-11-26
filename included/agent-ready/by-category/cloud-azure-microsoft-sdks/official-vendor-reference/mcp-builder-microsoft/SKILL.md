@@ -1,10 +1,11 @@
 ---
-name: "mcp-builder"
+name: "mcp-builder-microsoft"
 description: "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP), Node/TypeScript (MCP SDK), or C#/.NET (Microsoft MCP SDK)."
-source_skill_id: "microsoft-skills-github-skills-mcp-builder-skill-md"
-category: "Cloud, Azure & Microsoft SDKs"
-source_mirror: "../../../../../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/mcp-builder-microsoft/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "microsoft-skills-github-skills-mcp-builder-skill-md"
+  category: "Cloud, Azure & Microsoft SDKs"
+  source_mirror: "../../../../../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/mcp-builder-microsoft/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # mcp-builder
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/mcp-builder-microsoft/SKILL.md`
 - Source commit: `a2c05249c4a20103dd954ca702467aa328aac031`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-microsoft-skills-github-skills-mcp-builder-skill-md`, `cloud-azure-and-microsoft-sdks-kubernetes-examples`, `cloud-azure-and-microsoft-sdks-opentelemetry-demo`, `cloud-azure-and-microsoft-sdks-sec-edgar-companyfacts`
 

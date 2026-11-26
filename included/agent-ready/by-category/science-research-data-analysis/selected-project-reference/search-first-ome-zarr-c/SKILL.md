@@ -1,10 +1,11 @@
 ---
-name: "search-first"
+name: "search-first-ome-zarr-c"
 description: "Search the repo, the frozen upstream snapshot, and official upstream sources before adding code or dependencies."
-source_skill_id: "strmt7-ome-zarr-c-agents-skills-search-first-skill-md"
-category: "Science, research & data analysis"
-source_mirror: "../../../../../skills/by-category/science-research-data-analysis/selected-project-reference/search-first-ome-zarr-c/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "strmt7-ome-zarr-c-agents-skills-search-first-skill-md"
+  category: "Science, research & data analysis"
+  source_mirror: "../../../../../skills/by-category/science-research-data-analysis/selected-project-reference/search-first-ome-zarr-c/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # search-first
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/science-research-data-analysis/selected-project-reference/search-first-ome-zarr-c/SKILL.md`
 - Source commit: `a9238a81742f96c89acf6d83fce6d6b882ac4d1c`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-strmt7-ome-zarr-c-agents-skills-search-first-skill-md`, `science-research-and-data-analysis-cellxgene-census`, `science-research-and-data-analysis-chembl`, `science-research-and-data-analysis-ome-ngff-samples`
 

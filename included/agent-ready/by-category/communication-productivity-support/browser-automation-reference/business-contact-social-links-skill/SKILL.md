@@ -1,10 +1,11 @@
 ---
 name: "business-contact-social-links-skill"
 description: "This skill helps users automatically extract official website and social media profiles. Agent should proactively apply this skill when users express needs like search for official website and social media contacts of a company, find YouTube and LinkedIn profiles by company name, extract social media links from a specific website URL, discover a company's X and Facebook presence, gather business contact details."
-source_skill_id: "browser-act-skills-business-contact-social-links-skill-skill-md"
-category: "Communication, productivity & support"
-source_mirror: "../../../../../skills/by-category/communication-productivity-support/browser-automation-reference/business-contact-social-links-skill/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "browser-act-skills-business-contact-social-links-skill-skill-md"
+  category: "Communication, productivity & support"
+  source_mirror: "../../../../../skills/by-category/communication-productivity-support/browser-automation-reference/business-contact-social-links-skill/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # business-contact-social-links-skill
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/communication-productivity-support/browser-automation-reference/business-contact-social-links-skill/SKILL.md`
 - Source commit: `749ed52133b85606cf402b7fda95949542cbb8f8`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-browser-act-skills-business-contact-social-links-skill-skill-md`, `communication-productivity-and-support-enron-email`, `communication-productivity-and-support-ms-marco`, `communication-productivity-and-support-sec-edgar-companyfacts`
 

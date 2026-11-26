@@ -1,10 +1,11 @@
 ---
 name: "refund-processor"
 description: "Process a refund request by gathering context and preparing the refund workflow."
-source_skill_id: "composio-community-support-skills-refund-processor-skill-md"
-category: "DevOps, cloud & operations"
-source_mirror: "../../../../../skills/by-category/devops-cloud-operations/support-reference/refund-processor/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "composio-community-support-skills-refund-processor-skill-md"
+  category: "DevOps, cloud & operations"
+  source_mirror: "../../../../../skills/by-category/devops-cloud-operations/support-reference/refund-processor/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # refund-processor
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/devops-cloud-operations/support-reference/refund-processor/SKILL.md`
 - Source commit: `b4f842c3cbdcae0c45771fd996c396aee80dde2e`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-composio-community-support-skills-refund-processor-skill-md`, `devops-cloud-and-operations-kubernetes-examples`, `devops-cloud-and-operations-opentelemetry-demo`, `devops-cloud-and-operations-local-omero-compose-workflows`
 

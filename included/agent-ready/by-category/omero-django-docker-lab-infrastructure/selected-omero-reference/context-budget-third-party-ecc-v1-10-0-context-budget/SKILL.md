@@ -1,10 +1,11 @@
 ---
-name: "context-budget"
+name: "context-budget-third-party-ecc-v1-10-0-context-budget"
 description: "Audits Claude Code context window consumption across agents, skills, MCP servers, and rules. Identifies bloat, redundant components, and produces prioritized token-savings recommendations."
-source_skill_id: "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-context-budget-skill-md"
-category: "OMERO, Django, Docker & lab infrastructure"
-source_mirror: "../../../../../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/context-budget-third-party-ecc-v1-10-0-context-budget/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-context-budget-skill-md"
+  category: "OMERO, Django, Docker & lab infrastructure"
+  source_mirror: "../../../../../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/context-budget-third-party-ecc-v1-10-0-context-budget/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # context-budget
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/context-budget-third-party-ecc-v1-10-0-context-budget/SKILL.md`
 - Source commit: `b7c7cfa2a057f08eb872aadae49d89f521480114`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-context-budget-skill-md`, `omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows`, `omero-django-docker-and-lab-infrastructure-ome-ngff-samples`, `omero-django-docker-and-lab-infrastructure-opentelemetry-demo`
 

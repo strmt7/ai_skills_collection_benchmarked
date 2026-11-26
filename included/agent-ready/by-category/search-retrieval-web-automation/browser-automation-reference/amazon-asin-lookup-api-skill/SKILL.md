@@ -1,10 +1,11 @@
 ---
 name: "amazon-asin-lookup-api-skill"
 description: "This skill helps users extract structured product details from Amazon using a specific ASIN (Amazon Standard Identification Number). Use this skill when the user asks to get Amazon product details by ASIN, lookup Amazon product title and price using ASIN, extract Amazon product ratings and reviews count for a specific ASIN, check Amazon product availability and current price, get Amazon product description and."
-source_skill_id: "browser-act-skills-amazon-asin-lookup-api-skill-skill-md"
-category: "Search, retrieval & web automation"
-source_mirror: "../../../../../skills/by-category/search-retrieval-web-automation/browser-automation-reference/amazon-asin-lookup-api-skill/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "browser-act-skills-amazon-asin-lookup-api-skill-skill-md"
+  category: "Search, retrieval & web automation"
+  source_mirror: "../../../../../skills/by-category/search-retrieval-web-automation/browser-automation-reference/amazon-asin-lookup-api-skill/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # amazon-asin-lookup-api-skill
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/search-retrieval-web-automation/browser-automation-reference/amazon-asin-lookup-api-skill/SKILL.md`
 - Source commit: `749ed52133b85606cf402b7fda95949542cbb8f8`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-browser-act-skills-amazon-asin-lookup-api-skill-skill-md`, `search-retrieval-and-web-automation-common-crawl-warc`, `search-retrieval-and-web-automation-beir-retrieval`, `search-retrieval-and-web-automation-ms-marco`
 

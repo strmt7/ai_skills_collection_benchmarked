@@ -1,10 +1,11 @@
 ---
 name: "iso-13485-certification"
 description: "Comprehensive toolkit for preparing ISO 13485 certification documentation for medical device Quality Management Systems. Use when users need help with ISO 13485 QMS documentation, including (1) conducting gap analysis of existing documentation, (2) creating Quality Manuals, (3) developing required procedures and work instructions, (4) preparing Medical Device Files, (5) understanding ISO 13485 requirements, or (6)."
-source_skill_id: "k-dense-ai-scientific-agent-skills-scientific-skills-iso-13485-certification-skill-md"
-category: "Science, research & data analysis"
-source_mirror: "../../../../../skills/by-category/science-research-data-analysis/latest-release-community/iso-13485-certification/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "k-dense-ai-scientific-agent-skills-scientific-skills-iso-13485-certification-skill-md"
+  category: "Science, research & data analysis"
+  source_mirror: "../../../../../skills/by-category/science-research-data-analysis/latest-release-community/iso-13485-certification/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # iso-13485-certification
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/science-research-data-analysis/latest-release-community/iso-13485-certification/SKILL.md`
 - Source commit: `eb20fb0dcb0b1dadaa3db2737188f0755bbc4770`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-k-dense-ai-scientific-agent-skills-scientific-skills-iso-13485-certification-skill-md`, `science-research-and-data-analysis-cellxgene-census`, `science-research-and-data-analysis-chembl`, `science-research-and-data-analysis-ome-ngff-samples`
 

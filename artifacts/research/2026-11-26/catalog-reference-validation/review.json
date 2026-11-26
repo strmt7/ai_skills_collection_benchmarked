@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-26",
+  "base_revision": "fa20c91871b43837097cd73ccdddfa4190839004",
+  "scope": "Deterministic catalog reference diagnostics and prospective benchmark guide alignment.",
+  "source_sha256": {
+    "docs/recognized-skill-benchmarks.md": "d6d470d42945d3da40ddb1c11eef7925c14ba028938867ae35a3b702ec223b15",
+    "tests/test_catalog_reference_validation.py": "8e3355961098635f30ef11ea8c1befea24ee0d110cfc548c4f5ac4adba457ae7",
+    "tools/validate_catalog.py": "a4759ebcf396b2d2914945de0795b9714d5c2e5b5c62784dafb9e71c804ec5de"
+  },
+  "artifacts": {
+    "observations.json": "9b0958199b87395299d0d648d8f8ae1e059d1630519af1741698e6d13d0a356d"
+  },
+  "limitations": [
+    "The injected defect cohort used actual generated input documents in memory. Distribution and model efficacy were outside the measured scope.",
+    "The guide now follows the active official target in the work order. Frozen protocols and archived outcomes retain their own model settings."
+  ]
+}

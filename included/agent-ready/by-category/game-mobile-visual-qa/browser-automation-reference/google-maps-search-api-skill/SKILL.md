@@ -1,10 +1,11 @@
 ---
 name: "google-maps-search-api-skill"
 description: "This skill is designed to help users automatically extract business data from Google Maps search results. The Agent should proactively apply this skill when the user makes the following requests searching for coffee shops in a specific city, finding dentists or medical clinics nearby, tracking competitors' locations in a certain area, extracting business leads from Google Maps lists, gathering restaurant data for."
-source_skill_id: "browser-act-skills-google-maps-search-api-skill-skill-md"
-category: "Game, mobile & visual QA"
-source_mirror: "../../../../../skills/by-category/game-mobile-visual-qa/browser-automation-reference/google-maps-search-api-skill/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "browser-act-skills-google-maps-search-api-skill-skill-md"
+  category: "Game, mobile & visual QA"
+  source_mirror: "../../../../../skills/by-category/game-mobile-visual-qa/browser-automation-reference/google-maps-search-api-skill/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # google-maps-search-api-skill
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/game-mobile-visual-qa/browser-automation-reference/google-maps-search-api-skill/SKILL.md`
 - Source commit: `749ed52133b85606cf402b7fda95949542cbb8f8`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-browser-act-skills-google-maps-search-api-skill-skill-md`, `game-mobile-and-visual-qa-air-defense-android-benchmarks`, `game-mobile-and-visual-qa-coco-captions`, `game-mobile-and-visual-qa-owasp-juice-shop`
 

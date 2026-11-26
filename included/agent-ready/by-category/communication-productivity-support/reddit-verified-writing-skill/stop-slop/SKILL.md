@@ -1,10 +1,11 @@
 ---
 name: "stop-slop"
 description: "Remove AI writing patterns from prose. Use when drafting, editing, or reviewing text to eliminate predictable AI tells."
-source_skill_id: "hardikpandya-stop-slop-skill-md"
-category: "Communication, productivity & support"
-source_mirror: "../../../../../skills/by-category/communication-productivity-support/reddit-verified-writing-skill/stop-slop/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "hardikpandya-stop-slop-skill-md"
+  category: "Communication, productivity & support"
+  source_mirror: "../../../../../skills/by-category/communication-productivity-support/reddit-verified-writing-skill/stop-slop/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # stop-slop
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/communication-productivity-support/reddit-verified-writing-skill/stop-slop/SKILL.md`
 - Source commit: `8da1f030185bdfe8471220585162991eaeb970e9`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-hardikpandya-stop-slop-skill-md`, `communication-productivity-and-support-enron-email`, `communication-productivity-and-support-ms-marco`, `communication-productivity-and-support-sec-edgar-companyfacts`
 

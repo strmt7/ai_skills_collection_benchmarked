@@ -1,10 +1,11 @@
 ---
 name: "parallel-web"
 description: "All-in-one web toolkit powered by parallel-cli, with a strong emphasis on academic and scientific sources. Use this skill whenever the user needs to search the web, fetch/extract URL content, enrich data with web-sourced fields, or run deep research reports. Covers: web search (fast lookups, research, current info \u2014 prioritizing peer-reviewed papers, preprints, and scholarly databases), URL extraction (fetching."
-source_skill_id: "k-dense-ai-scientific-agent-skills-scientific-skills-parallel-web-skill-md"
-category: "Science, research & data analysis"
-source_mirror: "../../../../../skills/by-category/science-research-data-analysis/latest-release-community/parallel-web/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "k-dense-ai-scientific-agent-skills-scientific-skills-parallel-web-skill-md"
+  category: "Science, research & data analysis"
+  source_mirror: "../../../../../skills/by-category/science-research-data-analysis/latest-release-community/parallel-web/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # parallel-web
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/science-research-data-analysis/latest-release-community/parallel-web/SKILL.md`
 - Source commit: `eb20fb0dcb0b1dadaa3db2737188f0755bbc4770`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-k-dense-ai-scientific-agent-skills-scientific-skills-parallel-web-skill-md`, `science-research-and-data-analysis-cellxgene-census`, `science-research-and-data-analysis-chembl`, `science-research-and-data-analysis-ome-ngff-samples`
 

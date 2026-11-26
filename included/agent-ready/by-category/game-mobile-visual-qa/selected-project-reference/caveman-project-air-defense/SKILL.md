@@ -1,10 +1,11 @@
 ---
-name: "caveman"
+name: "caveman-project-air-defense"
 description: "Mandatory concise-output mode for Project Air Defense agents."
-source_skill_id: "strmt7-project-air-defense-agents-skills-caveman-skill-md"
-category: "Game, mobile & visual QA"
-source_mirror: "../../../../../skills/by-category/game-mobile-visual-qa/selected-project-reference/caveman-project-air-defense/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "strmt7-project-air-defense-agents-skills-caveman-skill-md"
+  category: "Game, mobile & visual QA"
+  source_mirror: "../../../../../skills/by-category/game-mobile-visual-qa/selected-project-reference/caveman-project-air-defense/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # caveman
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/game-mobile-visual-qa/selected-project-reference/caveman-project-air-defense/SKILL.md`
 - Source commit: `77f082fe23a86ded15e696a22955b2a890da2fce`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-strmt7-project-air-defense-agents-skills-caveman-skill-md`, `game-mobile-and-visual-qa-air-defense-android-benchmarks`, `game-mobile-and-visual-qa-coco-captions`, `game-mobile-and-visual-qa-owasp-juice-shop`
 

@@ -1,10 +1,11 @@
 ---
 name: "aws-cost-optimization"
 description: "AWS cost optimization and FinOps workflows. Use this skill whenever the user mentions AWS costs, cloud spending, FinOps, Reserved Instances, Savings Plans, or cost reduction. Triggers include finding unused resources, analyzing the AWS bill, rightsizing EC2 or RDS instances, evaluating Spot instances, detecting cost anomalies, migrating to Graviton or newer instance generations, implementing tagging for cost."
-source_skill_id: "ahmedasmar-devops-claude-skills-aws-cost-optimization-skills-skill-md"
-category: "DevOps, cloud & operations"
-source_mirror: "../../../../../skills/by-category/devops-cloud-operations/devops-reference/aws-cost-optimization/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "ahmedasmar-devops-claude-skills-aws-cost-optimization-skills-skill-md"
+  category: "DevOps, cloud & operations"
+  source_mirror: "../../../../../skills/by-category/devops-cloud-operations/devops-reference/aws-cost-optimization/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # aws-cost-optimization
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/devops-cloud-operations/devops-reference/aws-cost-optimization/SKILL.md`
 - Source commit: `1489c33ad8829a11219e423327d6b59f8339cee4`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-ahmedasmar-devops-claude-skills-aws-cost-optimization-skills-skill-md`, `devops-cloud-and-operations-kubernetes-examples`, `devops-cloud-and-operations-opentelemetry-demo`, `devops-cloud-and-operations-local-omero-compose-workflows`
 

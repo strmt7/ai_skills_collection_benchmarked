@@ -1,10 +1,11 @@
 ---
 name: "frontend-patterns"
 description: "Frontend development patterns for React, Next.js, state management, performance optimization, and UI best practices. Use when building or reviewing React or Next.js components, state, or render performance."
-source_skill_id: "affaan-m-everything-claude-code-agents-skills-frontend-patterns-skill-md"
-category: "Frontend, UI & browser automation"
-source_mirror: "../../../../../skills/by-category/frontend-ui-browser-automation/selected-structure-reference/frontend-patterns/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "affaan-m-everything-claude-code-agents-skills-frontend-patterns-skill-md"
+  category: "Frontend, UI & browser automation"
+  source_mirror: "../../../../../skills/by-category/frontend-ui-browser-automation/selected-structure-reference/frontend-patterns/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # frontend-patterns
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/frontend-ui-browser-automation/selected-structure-reference/frontend-patterns/SKILL.md`
 - Source commit: `c05b2d6614f62f6db0047669aa4eefb223d478f9`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-affaan-m-everything-claude-code-agents-skills-frontend-patterns-skill-md`, `frontend-ui-and-browser-automation-owasp-juice-shop`, `frontend-ui-and-browser-automation-coco-captions`, `frontend-ui-and-browser-automation-air-defense-android-benchmarks`
 

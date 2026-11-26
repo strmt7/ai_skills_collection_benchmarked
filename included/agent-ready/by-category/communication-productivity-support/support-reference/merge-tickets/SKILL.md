@@ -1,10 +1,11 @@
 ---
 name: "merge-tickets"
 description: "Find and flag duplicate or related [Gorgias](https://composio.dev/toolkits/gorgias) tickets that should be merged"
-source_skill_id: "composio-community-support-skills-merge-tickets-skill-md"
-category: "Communication, productivity & support"
-source_mirror: "../../../../../skills/by-category/communication-productivity-support/support-reference/merge-tickets/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "composio-community-support-skills-merge-tickets-skill-md"
+  category: "Communication, productivity & support"
+  source_mirror: "../../../../../skills/by-category/communication-productivity-support/support-reference/merge-tickets/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # merge-tickets
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/communication-productivity-support/support-reference/merge-tickets/SKILL.md`
 - Source commit: `b4f842c3cbdcae0c45771fd996c396aee80dde2e`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-composio-community-support-skills-merge-tickets-skill-md`, `communication-productivity-and-support-enron-email`, `communication-productivity-and-support-ms-marco`, `communication-productivity-and-support-sec-edgar-companyfacts`
 

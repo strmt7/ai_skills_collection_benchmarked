@@ -1,10 +1,11 @@
 ---
 name: "kill-the-standup"
 description: "Reads yesterday's Linear issues and GitHub commits for the authenticated user, formats a standup update (done / doing / blockers), and posts it to Slack. Use when asked to write a standup, generate a standup update, post to the standup channel, summarize yesterday's work, or automate the daily standup. Trigger when a user says \"write my standup\", \"post standup\", \"generate standup update\", \"what did I do yesterday\",."
-source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-kill-the-standup-skill-md"
-category: "Communication, productivity & support"
-source_mirror: "../../../../../skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/kill-the-standup/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-kill-the-standup-skill-md"
+  category: "Communication, productivity & support"
+  source_mirror: "../../../../../skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/kill-the-standup/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # kill-the-standup
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/kill-the-standup/SKILL.md`
 - Source commit: `bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-varnan-tech-opendirectory-packages-cli-skills-kill-the-standup-skill-md`, `communication-productivity-and-support-enron-email`, `communication-productivity-and-support-ms-marco`, `communication-productivity-and-support-sec-edgar-companyfacts`
 

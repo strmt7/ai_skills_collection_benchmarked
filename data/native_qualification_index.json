@@ -315,16 +315,6 @@
       ]
     },
     {
-      "id": "catalog-refresh-checkout-and-pins",
-      "review": {
-        "path": "artifacts/research/2026-11-25/catalog-refresh-validation/review.json",
-        "sha256": "18685b3b16824cb7f7506306c562f588c015620d530dd4b52a4bdac5e68657d2"
-      },
-      "sources": [
-        "tools/validate_catalog.py"
-      ]
-    },
-    {
       "id": "official-codex-signed-metadata",
       "review": {
         "path": "artifacts/research/2026-11-25/official-signed-metadata/review.json",
@@ -420,7 +410,6 @@
       },
       "sources": [
         "artifacts/repaired-skill-readiness/bun-runtime-v2/reproduce.py",
-        "docs/installation.md",
         "included/improved/skills/bun-runtime-current/SKILL.md"
       ]
     },
@@ -599,7 +588,6 @@
       },
       "sources": [
         ".agents/skills/crawl4ai-research/SKILL.md",
-        "docs/agent-tools.md",
         "tests/test_crawl4ai_launcher.py",
         "toolchains/crawl4ai/README.md",
         "tools/crawl4ai_capture.py"
@@ -612,7 +600,6 @@
         "sha256": "05b19ee7c1ccd3e223b1d5188edf53246ce6534d35b16b8e9ab4f9d9074afe15"
       },
       "sources": [
-        "docs/recognized-skill-benchmarks.md",
         "tests/test_collect_testeval_reply.py",
         "tests/test_stage_ollama_model.py",
         "tools/_trial_transcript.py",
@@ -643,6 +630,41 @@
         "tools/run_agent_trial.py",
         "tools/run_swe_skills_trial.py",
         "tools/summarize_agent_trials.py"
+      ]
+    },
+    {
+      "id": "catalog-reference-validation",
+      "review": {
+        "path": "artifacts/research/2026-11-26/catalog-reference-validation/review.json",
+        "sha256": "4611ec7f46e9d51df1fa3fdab687782b38ec7671f63e436bbf5ad8da8425a2d4"
+      },
+      "sources": [
+        "docs/recognized-skill-benchmarks.md",
+        "tests/test_catalog_reference_validation.py"
+      ]
+    },
+    {
+      "id": "portable-agent-entrypoints",
+      "review": {
+        "path": "artifacts/research/2026-11-26/portable-agent-entrypoints/review.json",
+        "sha256": "99e0528e69f4f86f1ce0e2a365d88de8d276c6b60c5d8c1699c4a2b20921bd8d"
+      },
+      "sources": [
+        "data/skill_risk_audit.json",
+        "data/skills_catalog.json",
+        "data/static_benchmark_results.json",
+        "docs/agent-tools.md",
+        "docs/catalog/by-category/omero-django-docker-lab-infrastructure.md",
+        "docs/catalog/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/ai-regression-testing-third-party-ecc-v1-10-0-ai-regression-testing.md",
+        "docs/catalog/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/documentation-lookup-third-party-ecc-v1-10-0-documentation-lookup.md",
+        "docs/installation.md",
+        "included/agent-ready/manifest.json",
+        "included/selected/manifest.json",
+        "included/skills/manifest.json",
+        "tests/test_agent_ready_portability.py",
+        "tests/test_catalog_data.py",
+        "tools/build_catalog.py",
+        "tools/validate_catalog.py"
       ]
     }
   ],
@@ -1117,7 +1139,8 @@
         "sha256": "18685b3b16824cb7f7506306c562f588c015620d530dd4b52a4bdac5e68657d2"
       },
       "superseded_sources": [
-        ".gitattributes"
+        ".gitattributes",
+        "tools/validate_catalog.py"
       ]
     },
     {
@@ -1260,6 +1283,42 @@
         "docs/agent-trial-protocol.md",
         "tests/test_trial_signin.py",
         "tools/_trial_signin.py"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-26/native-output-budget/review.json",
+        "sha256": "05b19ee7c1ccd3e223b1d5188edf53246ce6534d35b16b8e9ab4f9d9074afe15"
+      },
+      "superseded_sources": [
+        "docs/recognized-skill-benchmarks.md"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/repaired-skill-readiness/bun-runtime-v2/review.json",
+        "sha256": "f726bcd98f7ce5b2b9facd6c6be67e83401fb72caf8ae821ed98726b7104aff9"
+      },
+      "superseded_sources": [
+        "docs/installation.md"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-26/crawl4ai-public-page-policy/review.json",
+        "sha256": "9c1214617d96045515507a5cf775316464242d0335f5ba206e9c11d81cb383f9"
+      },
+      "superseded_sources": [
+        "docs/agent-tools.md"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-26/catalog-reference-validation/review.json",
+        "sha256": "4611ec7f46e9d51df1fa3fdab687782b38ec7671f63e436bbf5ad8da8425a2d4"
+      },
+      "superseded_sources": [
+        "tools/validate_catalog.py"
       ]
     }
   ],

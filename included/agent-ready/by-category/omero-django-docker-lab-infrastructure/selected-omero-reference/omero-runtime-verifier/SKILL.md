@@ -1,10 +1,11 @@
 ---
 name: "omero-runtime-verifier"
 description: "Safe runtime-debugging workflow for OMERO Docker Extended, including Loki-first log triage, container venv discovery, and correct OMERO service-user usage."
-source_skill_id: "zmb-uzh-omero-docker-extended-agents-skills-omero-runtime-verifier-skill-md"
-category: "OMERO, Django, Docker & lab infrastructure"
-source_mirror: "../../../../../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/omero-runtime-verifier/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "zmb-uzh-omero-docker-extended-agents-skills-omero-runtime-verifier-skill-md"
+  category: "OMERO, Django, Docker & lab infrastructure"
+  source_mirror: "../../../../../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/omero-runtime-verifier/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # omero-runtime-verifier
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/omero-runtime-verifier/SKILL.md`
 - Source commit: `b7c7cfa2a057f08eb872aadae49d89f521480114`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-zmb-uzh-omero-docker-extended-agents-skills-omero-runtime-verifier-skill-md`, `omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows`, `omero-django-docker-and-lab-infrastructure-ome-ngff-samples`, `omero-django-docker-and-lab-infrastructure-opentelemetry-demo`
 

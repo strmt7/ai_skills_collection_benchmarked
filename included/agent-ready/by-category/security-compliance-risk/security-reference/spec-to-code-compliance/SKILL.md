@@ -1,10 +1,11 @@
 ---
 name: "spec-to-code-compliance"
 description: "Verifies code implements exactly what documentation specifies for blockchain audits. Use when comparing code against whitepapers, finding gaps between specs and implementation, or performing compliance checks for protocol implementations."
-source_skill_id: "trailofbits-skills-plugins-spec-to-code-compliance-skills-spec-to-code-compliance-skill-md"
-category: "Security, compliance & risk"
-source_mirror: "../../../../../skills/by-category/security-compliance-risk/security-reference/spec-to-code-compliance/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "trailofbits-skills-plugins-spec-to-code-compliance-skills-spec-to-code-compliance-skill-md"
+  category: "Security, compliance & risk"
+  source_mirror: "../../../../../skills/by-category/security-compliance-risk/security-reference/spec-to-code-compliance/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # spec-to-code-compliance
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/security-compliance-risk/security-reference/spec-to-code-compliance/SKILL.md`
 - Source commit: `e8cc5baf9329ccb491bfa200e82eacbac83b1ead`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-trailofbits-skills-plugins-spec-to-code-compliance-skills-spec-to-code-compliance-skill-md`, `security-compliance-and-risk-owasp-benchmark`, `security-compliance-and-risk-owasp-juice-shop`, `security-compliance-and-risk-kubernetes-examples`
 

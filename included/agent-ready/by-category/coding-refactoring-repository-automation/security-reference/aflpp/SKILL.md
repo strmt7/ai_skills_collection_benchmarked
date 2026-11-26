@@ -1,10 +1,11 @@
 ---
 name: "aflpp"
 description: "AFL++ is a fork of AFL with better fuzzing performance and advanced features. Use for multi-core fuzzing of C/C++ projects."
-source_skill_id: "trailofbits-skills-plugins-testing-handbook-skills-skills-aflpp-skill-md"
-category: "Coding, refactoring & repository automation"
-source_mirror: "../../../../../skills/by-category/coding-refactoring-repository-automation/security-reference/aflpp/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "trailofbits-skills-plugins-testing-handbook-skills-skills-aflpp-skill-md"
+  category: "Coding, refactoring & repository automation"
+  source_mirror: "../../../../../skills/by-category/coding-refactoring-repository-automation/security-reference/aflpp/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # aflpp
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/coding-refactoring-repository-automation/security-reference/aflpp/SKILL.md`
 - Source commit: `e8cc5baf9329ccb491bfa200e82eacbac83b1ead`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-trailofbits-skills-plugins-testing-handbook-skills-skills-aflpp-skill-md`, `coding-refactoring-and-repository-automation-swe-bench-lite`, `coding-refactoring-and-repository-automation-kubernetes-examples`, `coding-refactoring-and-repository-automation-opentelemetry-demo`
 

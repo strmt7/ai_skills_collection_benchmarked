@@ -58,7 +58,7 @@ The authors' earlier Hugging Face dataset at
 `a111a9d9e53722c7aafd951830b459b08439f2da` contains 49 rows under declared MIT
 terms. The 49 rows, the original paper's task counts, and the later archive's
 matched comparisons refer to different populations. Results for this
-collection and GPT-6.1 Sol require a new matched experiment.
+collection require a new matched experiment.
 
 ## TestEval for Python test generation
 
@@ -156,8 +156,9 @@ Integration must preserve pinned tasks and independent outcomes, keep oracles
 and verifiers outside solver access, review actual container isolation, and
 record every attempt. Freeze category/task sampling before evaluation. Compare
 default, original Karpathy-attributed instructions, upstream curated skills and
-this collection's revised skills with the same requested GPT-6.1 Sol high
-configuration. Distinguish unavailable resolved model identity, actual skill
+this collection's revised skills with the same model and reasoning effort.
+The [development work order](../data/development_plan.json) records the current
+official target. Distinguish unavailable resolved model identity, actual skill
 invocation, input/output/cache usage, infrastructure failures and task failures.
 Use task-level paired uncertainty across repetitions; do not publish only the
 best run. Include new owner-inspired cases and untouched holdouts so public

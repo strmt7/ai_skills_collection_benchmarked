@@ -1,10 +1,11 @@
 ---
 name: "azure-keyvault-certificates-rust"
 description: "Azure Key Vault Certificates SDK for Rust. Use for creating, importing, and managing certificates. Triggers: \"keyvault certificates rust\", \"CertificateClient rust\", \"create certificate rust\", \"import certificate rust\"."
-source_skill_id: "microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-keyvault-certificates-rust-skill-md"
-category: "Cloud, Azure & Microsoft SDKs"
-source_mirror: "../../../../../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-keyvault-certificates-rust/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-keyvault-certificates-rust-skill-md"
+  category: "Cloud, Azure & Microsoft SDKs"
+  source_mirror: "../../../../../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-keyvault-certificates-rust/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # azure-keyvault-certificates-rust
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-keyvault-certificates-rust/SKILL.md`
 - Source commit: `a2c05249c4a20103dd954ca702467aa328aac031`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-keyvault-certificates-rust-skill-md`, `cloud-azure-and-microsoft-sdks-kubernetes-examples`, `cloud-azure-and-microsoft-sdks-opentelemetry-demo`, `cloud-azure-and-microsoft-sdks-sec-edgar-companyfacts`
 

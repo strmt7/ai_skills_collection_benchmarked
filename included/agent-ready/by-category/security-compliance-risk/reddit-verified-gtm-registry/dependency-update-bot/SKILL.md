@@ -1,10 +1,11 @@
 ---
 name: "dependency-update-bot"
 description: "Scans your project for outdated npm, pip, Cargo, Go, or Ruby packages. Runs a CVE security audit. Fetches changelogs, summarizes breaking changes with Gemini, and opens one PR per risk group (patch, minor, major). Includes Diagnosis Mode for install conflicts. Use when asked to update dependencies, check for outdated packages, open dependency PRs, scan for package updates, audit for CVEs, or flag breaking changes."
-source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-dependency-update-bot-skill-md"
-category: "Security, compliance & risk"
-source_mirror: "../../../../../skills/by-category/security-compliance-risk/reddit-verified-gtm-registry/dependency-update-bot/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-dependency-update-bot-skill-md"
+  category: "Security, compliance & risk"
+  source_mirror: "../../../../../skills/by-category/security-compliance-risk/reddit-verified-gtm-registry/dependency-update-bot/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # dependency-update-bot
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/security-compliance-risk/reddit-verified-gtm-registry/dependency-update-bot/SKILL.md`
 - Source commit: `bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-varnan-tech-opendirectory-packages-cli-skills-dependency-update-bot-skill-md`, `security-compliance-and-risk-owasp-benchmark`, `security-compliance-and-risk-owasp-juice-shop`, `security-compliance-and-risk-kubernetes-examples`
 

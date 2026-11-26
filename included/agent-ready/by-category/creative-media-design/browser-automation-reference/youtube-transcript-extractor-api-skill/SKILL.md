@@ -1,10 +1,11 @@
 ---
 name: "youtube-transcript-extractor-api-skill"
 description: "This skill helps users automatically extract YouTube video transcripts and metadata via the BrowserAct API. The Agent should proactively apply this skill when users express needs like extracting full transcript from a specific YouTube video, getting subtitles and metadata for video content analysis, gathering video titles and likes counts, summarizing YouTube videos without watching them, collecting channel details."
-source_skill_id: "browser-act-skills-youtube-transcript-extractor-api-skill-skill-md"
-category: "Creative, media & design"
-source_mirror: "../../../../../skills/by-category/creative-media-design/browser-automation-reference/youtube-transcript-extractor-api-skill/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "browser-act-skills-youtube-transcript-extractor-api-skill-skill-md"
+  category: "Creative, media & design"
+  source_mirror: "../../../../../skills/by-category/creative-media-design/browser-automation-reference/youtube-transcript-extractor-api-skill/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # youtube-transcript-extractor-api-skill
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/creative-media-design/browser-automation-reference/youtube-transcript-extractor-api-skill/SKILL.md`
 - Source commit: `749ed52133b85606cf402b7fda95949542cbb8f8`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-browser-act-skills-youtube-transcript-extractor-api-skill-skill-md`, `creative-media-and-design-coco-captions`, `creative-media-and-design-air-defense-android-benchmarks`, `creative-media-and-design-nyc-tlc-trip-records`
 

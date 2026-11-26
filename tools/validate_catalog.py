@@ -89,10 +89,58 @@ def load(path: str | Path) -> Any:
     return json.loads((ROOT / path).read_text(encoding="utf-8"))
 
 
-def _unique_ids(report: Report, items: list[dict[str, Any]], key: str, label: str) -> list[Any]:
-    ids = [item[key] for item in items]
-    report.require(len(ids) == len(set(ids)), f"duplicate {label} ids")
-    return ids
+def _index_rows(report: Report, items: Any, key: str, label: str) -> dict[str, dict[str, Any]]:
+    if not isinstance(items, list):
+        report.fail(f"{label} must contain a list of records")
+        return {}
+    rows: dict[str, dict[str, Any]] = {}
+    for number, item in enumerate(items, 1):
+        identity = item.get(key) if isinstance(item, dict) else None
+        if not isinstance(identity, str) or not identity:
+            report.fail(f"{label} row {number} requires a nonempty {key}")
+        elif identity in rows:
+            report.fail(f"duplicate {label} id {identity}")
+        else:
+            rows[identity] = item
+    return rows
+
+
+def _compare_membership(report: Report, observed: set[str], expected: set[str], label: str) -> None:
+    for identity in sorted(expected - observed):
+        report.fail(f"{label} is missing {identity}")
+    for identity in sorted(observed - expected):
+        report.fail(f"{label} contains unexpected {identity}")
+
+
+def _required_text_fields(report: Report, row: dict[str, Any], fields: tuple[str, ...], label: str) -> bool:
+    missing = [name for name in fields if not isinstance(row.get(name), str) or not row[name]]
+    for name in missing:
+        report.fail(f"{label} requires nonempty text in {name}")
+    return not missing
+
+
+MANIFEST_FIELDS = (
+    "subcategory",
+    "install_name",
+    "mirrored_path",
+    "agent_ready_path",
+    "source_repo",
+    "source_path",
+    "immutable_source_url",
+    "commit_sha",
+    "skill_file_sha256",
+    "skill_dir_sha256",
+)
+CATALOG_TEXT_FIELDS = (
+    *MANIFEST_FIELDS,
+    "name",
+    "description",
+    "category",
+    "source_url",
+    "source_tier",
+    "selected_ref",
+    "selection_policy",
+)
 
 
 def _version_tuple(version: Any) -> tuple[int, ...]:
@@ -111,29 +159,36 @@ def validate_catalog(report: Report) -> None:
     best_practice_sources = load("data/best_practice_sources.json")
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
 
-    _unique_ids(report, track_items, "id", "track")
-    _unique_ids(report, scenario_items, "id", "scenario")
-    _unique_ids(report, assignment_items, "skill_id", "assignment skill")
-    _unique_ids(report, selected_manifest, "id", "selected manifest")
-    _unique_ids(report, skills_manifest, "id", "skills manifest")
-    _unique_ids(report, agent_ready_manifest, "id", "agent-ready manifest")
+    catalog_by_id = _index_rows(report, catalog, "id", "catalog")
+    tracks = _index_rows(report, track_items, "id", "track")
+    scenarios = _index_rows(report, scenario_items, "id", "scenario")
+    assignment_rows = _index_rows(report, assignment_items, "skill_id", "assignment")
+    selected_by_id = _index_rows(report, selected_manifest, "id", "selected manifest")
+    skills_manifest_by_id = _index_rows(report, skills_manifest, "id", "skills manifest")
+    agent_ready_by_id = _index_rows(report, agent_ready_manifest, "id", "agent-ready manifest")
 
-    tracks = {item["id"]: item for item in track_items}
-    scenarios = {item["id"]: item for item in scenario_items}
-    assignments = {item["skill_id"]: item["scenario_ids"] for item in assignment_items}
+    assignments = {}
+    for identity, item in assignment_rows.items():
+        assigned = item.get("scenario_ids")
+        if not isinstance(assigned, list) or any(not isinstance(value, str) or not value for value in assigned):
+            report.fail(f"assignment {identity} requires a list of nonempty scenario IDs")
+            continue
+        assignments[identity] = assigned
     assigned_scenario_ids = {scenario_id for scenario_ids in assignments.values() for scenario_id in scenario_ids}
 
+    catalog = list(catalog_by_id.values())
     report.catalog_entries = len(catalog)
     report.tracks = len(tracks)
     report.scenarios = len(scenarios)
-
     report.require(len(catalog) >= MIN_CATALOG, f"catalog has {len(catalog)} entries")
-    ids = _unique_ids(report, catalog, "id", "catalog")
-    report.require(set(assignments) <= set(ids), "assignment for unknown skill id")
-    for scenario_id in scenarios:
-        report.require(scenario_id in assigned_scenario_ids, f"unassigned scenario {scenario_id}")
+    for identity in sorted(assignment_rows.keys() - catalog_by_id.keys()):
+        report.fail(f"assignment for unknown skill id {identity}")
+    for scenario_id in sorted(scenarios.keys() - assigned_scenario_ids):
+        report.fail(f"unassigned scenario {scenario_id}")
 
-    missing_required = REQUIRED_REPOS - {entry["source_repo"] for entry in catalog}
+    missing_required = REQUIRED_REPOS - {
+        entry["source_repo"] for entry in catalog if isinstance(entry.get("source_repo"), str)
+    }
     report.require(not missing_required, f"missing required repos: {sorted(missing_required)}")
 
     readme_expectations = {
@@ -141,7 +196,7 @@ def validate_catalog(report: Report) -> None:
         f"- `{len(catalog)}` written skill mirrors under `included/skills/`.": "mirror count",
         f"- `{len(catalog)}` compact agent-ready skill entrypoints under `included/agent-ready/`.": "agent-ready count",
         f"- `{sum(1 for entry in catalog if entry.get('selected_subset'))}` selected repository entries.": "selected count",
-        f"- `{len({entry['category'] for entry in catalog})}` categories.": "category count",
+        f"- `{len({entry['category'] for entry in catalog if isinstance(entry.get('category'), str)})}` categories.": "category count",
         f"- `{len(scenarios)}` real-data scenario templates.": "scenario count",
         f"- Minimum `{MIN_SCENARIOS}` benchmark scenarios assigned per scenario-covered candidate.": "minimum scenario count",
     }
@@ -182,40 +237,48 @@ def validate_catalog(report: Report) -> None:
         url = str(track["url"])
         report.require(url in benchmarks_doc, f"benchmarks.md missing track URL {url}")
 
-    catalog_by_id = {entry["id"]: entry for entry in catalog}
-    skills_manifest_by_id = {entry["id"]: entry for entry in skills_manifest}
-    report.require(
-        set(skills_manifest_by_id) == set(catalog_by_id), "included skills manifest does not match catalog entries"
-    )
+    _compare_membership(report, set(skills_manifest_by_id), set(catalog_by_id), "included skills manifest")
     report.require(
         len(list((ROOT / "included" / "skills").rglob("SKILL.md"))) == len(catalog),
         "included skill SKILL.md count does not match catalog",
     )
-    agent_ready_by_id = {entry["id"]: entry for entry in agent_ready_manifest}
-    report.require(set(agent_ready_by_id) == set(catalog_by_id), "agent-ready manifest does not match catalog entries")
+    _compare_membership(report, set(agent_ready_by_id), set(catalog_by_id), "agent-ready manifest")
     report.require(
         len(list((ROOT / "included" / "agent-ready").rglob("SKILL.md"))) == len(catalog),
         "agent-ready SKILL.md count does not match catalog",
     )
-    install_names = [entry.get("install_name") for entry in catalog]
-    report.require(all(install_names), "catalog entry missing install_name")
+    install_names = [entry["install_name"] for entry in catalog if isinstance(entry.get("install_name"), str)]
     report.require(len(install_names) == len(set(install_names)), "duplicate catalog install_name")
-    report.require(max(len(name) for name in install_names) <= 80, "catalog install_name value exceeds path policy")
+    report.require(all(len(name) <= 80 for name in install_names), "catalog install_name value exceeds path policy")
 
     declared_pins = build_catalog.source_pins(build_catalog.SOURCES)
     locked_skills = {}
     locked_refs = set()
+    if not isinstance(source_lock, dict):
+        report.fail("source lock must contain an object")
+        source_lock = {}
     report.require(source_lock.get("lock_version") == 1, "source lock version mismatch")
     report.require(source_lock.get("hash_algorithm") == "sha256", "source lock hash algorithm mismatch")
     try:
         historical_entries(ROOT)
     except (OSError, ValueError) as exc:
         report.require(False, f"source history: {exc}")
-    for source in source_lock.get("sources", []):
-        identity = (source["repo"], source["selected_ref"])
-        report.require(identity not in locked_refs, f"duplicate source lock ref {identity}")
-        locked_refs.add(identity)
-        declared = declared_pins.get(identity, {})
+    sources = source_lock.get("sources")
+    if not isinstance(sources, list):
+        report.fail("source lock requires a sources list")
+        sources = []
+    for number, source in enumerate(sources, 1):
+        if not isinstance(source, dict):
+            report.fail(f"source lock row {number} must contain an object")
+            continue
+        if not _required_text_fields(
+            report, source, ("repo", "selected_ref", "commit_sha"), f"source lock row {number}"
+        ):
+            continue
+        source_ref = (source["repo"], source["selected_ref"])
+        report.require(source_ref not in locked_refs, f"duplicate source lock ref {source_ref}")
+        locked_refs.add(source_ref)
+        declared = declared_pins.get(source_ref, {})
         if "commit" in declared:
             report.require(
                 source["commit_sha"] == declared["commit"],
@@ -224,18 +287,20 @@ def validate_catalog(report: Report) -> None:
         upstream_repo = declared.get("upstream_repo", source["repo"])
         if upstream_repo != source["repo"]:
             report.require(
-                source["origin_url"] == f"https://github.com/{upstream_repo}.git",
+                source.get("origin_url") == f"https://github.com/{upstream_repo}.git",
                 f"{source['repo']} canonical upstream origin differs from the declared checkout",
             )
-        for skill in source.get("skills", []):
-            report.require(skill["id"] not in locked_skills, f"duplicate source lock skill {skill['id']}")
-            locked_skills[skill["id"]] = source | {"skill": skill, "upstream_repo": upstream_repo}
+        for skill_id, skill in _index_rows(report, source.get("skills"), "id", f"source lock {source['repo']}").items():
+            if skill_id in locked_skills:
+                report.fail(f"duplicate source lock skill {skill_id}")
+            else:
+                locked_skills[skill_id] = source | {"skill": skill, "upstream_repo": upstream_repo}
         try:
             require_admitted_source(ROOT, source["repo"], source["commit_sha"])
             build_catalog.validate_preserved_notice(ROOT, source.get("preserved_notice"), source["commit_sha"])
         except (OSError, ValueError) as error:
             report.require(False, f"{source.get('repo')}: {error}")
-    report.require(set(locked_skills) == set(catalog_by_id), "source lock skills do not match catalog")
+    _compare_membership(report, set(locked_skills), set(catalog_by_id), "source lock")
 
     for agent_ready_path in (ROOT / "included" / "agent-ready").rglob("SKILL.md"):
         text = agent_ready_path.read_text(encoding="utf-8").lower()
@@ -275,7 +340,6 @@ def validate_catalog(report: Report) -> None:
         entry_errors = [
             _collect_entry_errors(
                 e,
-                catalog_by_id,
                 skills_manifest_by_id,
                 agent_ready_by_id,
                 locked_skills,
@@ -291,7 +355,6 @@ def validate_catalog(report: Report) -> None:
                 pool.map(
                     lambda e: _collect_entry_errors(
                         e,
-                        catalog_by_id,
                         skills_manifest_by_id,
                         agent_ready_by_id,
                         locked_skills,
@@ -305,38 +368,32 @@ def validate_catalog(report: Report) -> None:
     for errs in entry_errors:
         report.errors.extend(errs)
 
-    selected_ids = {entry["id"] for entry in catalog if entry.get("selected_subset")}
-    manifest_ids = {entry["id"] for entry in selected_manifest}
-    report.require(manifest_ids == selected_ids, "selected manifest does not match selected catalog entries")
-    selected_install_names = [item.get("install_name") for item in selected_manifest]
-    report.require(all(selected_install_names), "selected manifest entry missing install_name")
+    selected_ids = {entry["id"] for entry in catalog if entry.get("selected_subset") is True}
+    _compare_membership(report, set(selected_by_id), selected_ids, "selected manifest")
+    selected_install_names = []
+    for identity, item in selected_by_id.items():
+        if _required_text_fields(report, item, ("install_name",), f"selected manifest {identity}"):
+            selected_install_names.append(item["install_name"])
+        catalog_entry = catalog_by_id.get(identity)
+        if catalog_entry is not None:
+            for key in MANIFEST_FIELDS:
+                report.require(item.get(key) == catalog_entry.get(key), f"{identity} selected manifest {key} mismatch")
+        mirror = item.get("mirrored_path")
+        if isinstance(mirror, str) and mirror and catalog_entry is not None:
+            mirror_path = ROOT / mirror
+            report.require(mirror_path.is_dir(), f"{identity} missing mirrored directory")
+            report.require((mirror_path / "SKILL.md").is_file(), f"{identity} mirrored directory missing SKILL.md")
+        required = item.get("has_required_frontmatter")
+        report.require(
+            type(required) is bool and item.get("standalone_installable") is required,
+            f"{identity} standalone_installable/frontmatter mismatch",
+        )
+        bulk_safe = required is True and item.get("name_conflict_group") is None
+        report.require(
+            "name_conflict_group" in item and item.get("bulk_install_safe") is bulk_safe,
+            f"{identity} invalid bulk_install_safe",
+        )
     report.require(len(selected_install_names) == len(set(selected_install_names)), "duplicate selected install_name")
-    for item in selected_manifest:
-        catalog_entry = catalog_by_id[item["id"]]
-        for key in (
-            "subcategory",
-            "install_name",
-            "mirrored_path",
-            "agent_ready_path",
-            "source_repo",
-            "source_path",
-            "immutable_source_url",
-            "commit_sha",
-            "skill_file_sha256",
-            "skill_dir_sha256",
-        ):
-            report.require(item.get(key) == catalog_entry[key], f"{item['id']} selected manifest {key} mismatch")
-        mirror_path = ROOT / item["mirrored_path"]
-        report.require(mirror_path.is_dir(), f"{item['id']} missing mirrored directory")
-        report.require((mirror_path / "SKILL.md").is_file(), f"{item['id']} mirrored directory missing SKILL.md")
-        report.require(
-            item["standalone_installable"] == item["has_required_frontmatter"],
-            f"{item['id']} standalone_installable/frontmatter mismatch",
-        )
-        report.require(
-            item["bulk_install_safe"] == (item["has_required_frontmatter"] and item["name_conflict_group"] is None),
-            f"{item['id']} invalid bulk_install_safe",
-        )
 
     text = readme.lower()
     for phrase in README_OVERCLAIM_PHRASES:
@@ -345,7 +402,6 @@ def validate_catalog(report: Report) -> None:
 
 def _collect_entry_errors(
     entry: dict[str, Any],
-    catalog_by_id: dict[str, Any],
     skills_manifest_by_id: dict[str, Any],
     agent_ready_by_id: dict[str, Any],
     locked_skills: dict[str, Any],
@@ -363,7 +419,6 @@ def _collect_entry_errors(
     _validate_entry(
         local,
         entry,
-        catalog_by_id,
         skills_manifest_by_id,
         agent_ready_by_id,
         locked_skills,
@@ -374,10 +429,35 @@ def _collect_entry_errors(
     return local.errors
 
 
+def _validate_agent_ready_entrypoint(report: Report, entry: dict[str, Any]) -> None:
+    identity = entry["id"]
+    try:
+        expected = build_catalog.skill_agent_ready_path(entry["category"], entry["subcategory"], entry["install_name"])
+    except ValueError as error:
+        report.fail(f"{identity} invalid agent-ready alias: {error}")
+        return
+    if entry["agent_ready_path"] != expected:
+        report.fail(f"{identity} agent_ready_path differs from the canonical layout")
+        return
+    scenarios = entry.get("benchmark_scenarios")
+    if not isinstance(scenarios, list) or any(not isinstance(value, str) or not value for value in scenarios):
+        report.fail(f"{identity} cannot render agent-ready entrypoint without valid scenario IDs")
+        return
+    path = ROOT / expected
+    try:
+        actual = path.read_bytes()
+    except OSError as error:
+        report.fail(f"{identity} cannot read agent-ready SKILL.md: {error}")
+        return
+    report.require(
+        actual == build_catalog.render_agent_ready_skill(entry).encode("utf-8"),
+        f"{identity} generated agent-ready SKILL.md differs from the canonical layout",
+    )
+
+
 def _validate_entry(
     report: Report,
     entry: dict[str, Any],
-    catalog_by_id: dict[str, Any],
     skills_manifest_by_id: dict[str, Any],
     agent_ready_by_id: dict[str, Any],
     locked_skills: dict[str, Any],
@@ -385,24 +465,9 @@ def _validate_entry(
     scenarios: dict[str, Any],
     tracks: dict[str, Any],
 ) -> None:
-    for key in (
-        "name",
-        "description",
-        "category",
-        "subcategory",
-        "install_name",
-        "mirrored_path",
-        "agent_ready_path",
-        "source_repo",
-        "source_path",
-        "source_url",
-        "immutable_source_url",
-        "commit_sha",
-        "selection_policy",
-        "skill_file_sha256",
-        "skill_dir_sha256",
-    ):
-        report.require(bool(entry.get(key)), f"{entry['id']} missing {key}")
+    identity = entry["id"]
+    if not _required_text_fields(report, entry, CATALOG_TEXT_FIELDS, f"catalog {identity}"):
+        return
     report.require(isinstance(entry.get("selected_subset"), bool), f"{entry['id']} invalid selected_subset")
     report.require(not entry["source_tier"].startswith("priority"), f"{entry['id']} has legacy priority source_tier")
     report.require("requested" not in entry["source_tier"], f"{entry['id']} has requested source_tier wording")
@@ -419,85 +484,72 @@ def _validate_entry(
         f"{entry['id']} mirrored_path/install_name mismatch",
     )
     report.require(
-        entry["agent_ready_path"]
-        == build_catalog.skill_agent_ready_path(entry["category"], entry["subcategory"], entry["install_name"]),
-        f"{entry['id']} agent_ready_path/install_name mismatch",
-    )
-    report.require(
         Path(entry["mirrored_path"]).name == entry["install_name"],
         f"{entry['id']} mirrored_path leaf does not match install_name",
     )
-    report.require(
-        Path(entry["agent_ready_path"]).parent.name == entry["install_name"],
-        f"{entry['id']} agent_ready_path leaf does not match install_name",
-    )
     for path_key in ("install_name", "mirrored_path", "agent_ready_path", "source_path", "immutable_source_url"):
         report.require("..." not in entry[path_key], f"{entry['id']} {path_key} contains an elided path")
-    locked = locked_skills[entry["id"]]
-    upstream = locked["upstream_repo"]
-    expected_immutable = f"https://github.com/{upstream}/blob/{entry['commit_sha']}/{entry['source_path']}"
-    report.require(entry["immutable_source_url"] == expected_immutable, f"{entry['id']} immutable_source_url mismatch")
-    if entry.get("latest_release_tag"):
-        expected_source = f"https://github.com/{upstream}/blob/{entry['latest_release_tag']}/{entry['source_path']}"
+    locked = locked_skills.get(identity)
+    if locked is not None:
+        upstream = locked["upstream_repo"]
+        expected_immutable = f"https://github.com/{upstream}/blob/{entry['commit_sha']}/{entry['source_path']}"
         report.require(
-            entry["selected_ref"] == entry["latest_release_tag"],
-            f"{entry['id']} selected_ref does not match latest_release_tag",
+            entry["immutable_source_url"] == expected_immutable, f"{entry['id']} immutable_source_url mismatch"
         )
-        report.require(entry["source_url"] == expected_source, f"{entry['id']} release source_url mismatch")
-    else:
-        report.require(
-            entry["source_url"] == expected_immutable,
-            f"{entry['id']} source_url should be commit-pinned without release tag",
-        )
+        if entry.get("latest_release_tag"):
+            expected_source = f"https://github.com/{upstream}/blob/{entry['latest_release_tag']}/{entry['source_path']}"
+            report.require(
+                entry["selected_ref"] == entry["latest_release_tag"],
+                f"{entry['id']} selected_ref does not match latest_release_tag",
+            )
+            report.require(entry["source_url"] == expected_source, f"{entry['id']} release source_url mismatch")
+        else:
+            report.require(
+                entry["source_url"] == expected_immutable,
+                f"{entry['id']} source_url should be commit-pinned without release tag",
+            )
     report.require(
         entry.get("benchmark_status") == "artifact_gated",
         f"{entry['id']} benchmark_status must remain artifact-gated until validated runtime artifacts exist",
     )
-    manifest_entry = skills_manifest_by_id[entry["id"]]
-    for key in (
-        "subcategory",
-        "install_name",
-        "mirrored_path",
-        "agent_ready_path",
-        "source_repo",
-        "source_path",
-        "immutable_source_url",
-        "commit_sha",
-        "skill_file_sha256",
-        "skill_dir_sha256",
-    ):
-        report.require(manifest_entry.get(key) == entry[key], f"{entry['id']} skills manifest {key} mismatch")
-    agent_ready = agent_ready_by_id[entry["id"]]
-    report.require(
-        agent_ready.get("agent_ready_path") == entry["agent_ready_path"], f"{entry['id']} agent-ready path mismatch"
-    )
-    agent_ready_path = ROOT / entry["agent_ready_path"]
-    report.require(agent_ready_path.is_file(), f"{entry['id']} missing agent-ready SKILL.md")
-    if agent_ready_path.is_file():
-        agent_text = agent_ready_path.read_text(encoding="utf-8")
-        report.require(agent_text.startswith("---\n"), f"{entry['id']} agent-ready SKILL.md missing frontmatter")
+    manifest_entry = skills_manifest_by_id.get(identity)
+    if manifest_entry is not None:
+        for key in MANIFEST_FIELDS:
+            report.require(manifest_entry.get(key) == entry[key], f"{identity} skills manifest {key} mismatch")
+    agent_ready = agent_ready_by_id.get(identity)
+    if agent_ready is not None:
         report.require(
-            entry["mirrored_path"] in agent_text or "../" in agent_text,
-            f"{entry['id']} agent-ready SKILL.md missing local source pointer",
+            agent_ready.get("agent_ready_path") == entry["agent_ready_path"], f"{identity} agent-ready path mismatch"
         )
-    report.require(locked["repo"] == entry["source_repo"], f"{entry['id']} source lock repo mismatch")
-    report.require(locked["commit_sha"] == entry["commit_sha"], f"{entry['id']} source lock commit mismatch")
-    report.require(locked["selected_ref"] == entry["selected_ref"], f"{entry['id']} source lock ref mismatch")
-    report.require(locked["skill"]["source_path"] == entry["source_path"], f"{entry['id']} source lock path mismatch")
-    report.require(
-        locked["skill"]["install_name"] == entry["install_name"], f"{entry['id']} source lock install_name mismatch"
-    )
-    report.require(
-        locked["skill"]["skill_file_sha256"] == entry["skill_file_sha256"],
-        f"{entry['id']} source lock file hash mismatch",
-    )
-    report.require(
-        locked["skill"]["skill_dir_sha256"] == entry["skill_dir_sha256"], f"{entry['id']} source lock dir hash mismatch"
-    )
+    _validate_agent_ready_entrypoint(report, entry)
+    if locked is not None:
+        report.require(locked["repo"] == entry["source_repo"], f"{entry['id']} source lock repo mismatch")
+        report.require(locked["commit_sha"] == entry["commit_sha"], f"{entry['id']} source lock commit mismatch")
+        report.require(locked["selected_ref"] == entry["selected_ref"], f"{entry['id']} source lock ref mismatch")
+        report.require(
+            locked["skill"].get("source_path") == entry["source_path"], f"{entry['id']} source lock path mismatch"
+        )
+        report.require(
+            locked["skill"].get("install_name") == entry["install_name"],
+            f"{entry['id']} source lock install_name mismatch",
+        )
+        report.require(
+            locked["skill"].get("skill_file_sha256") == entry["skill_file_sha256"],
+            f"{entry['id']} source lock file hash mismatch",
+        )
+        report.require(
+            locked["skill"].get("skill_dir_sha256") == entry["skill_dir_sha256"],
+            f"{entry['id']} source lock dir hash mismatch",
+        )
     policy = entry.get("credential_policy_version", 1)
     valid_policy = type(policy) is int and policy in (1, 2, 3)
     report.require(valid_policy, f"{entry['id']} unknown credential neutralization policy")
-    for label, record in (("source lock", locked["skill"]), ("manifest", manifest_entry)):
+    for label, record in (
+        ("source lock", locked["skill"] if locked is not None else None),
+        ("manifest", manifest_entry),
+    ):
+        if record is None:
+            continue
         report.require(
             record.get("credential_policy_version", 1) == policy,
             f"{entry['id']} {label} credential neutralization policy mismatch",
@@ -533,9 +585,13 @@ def _validate_entry(
             report.require(tree_hash == entry["skill_dir_sha256"], f"{entry['id']} mirrored directory hash mismatch")
         except (OSError, ValueError) as exc:
             report.require(False, f"{entry['id']} mirrored resource/mode validation failed: {exc}")
-    if entry["scenario_covered_candidate"]:
+    covered = entry.get("scenario_covered_candidate")
+    report.require(type(covered) is bool, f"{identity} invalid scenario_covered_candidate")
+    if covered is True:
         scenario_ids = assignments.get(entry["id"], [])
-        report.require(scenario_ids == entry["benchmark_scenarios"], f"{entry['id']} assignment does not match catalog")
+        report.require(
+            scenario_ids == entry.get("benchmark_scenarios"), f"{identity} assignment does not match catalog"
+        )
         report.require(len(scenario_ids) >= MIN_SCENARIOS, f"{entry['id']} has insufficient scenarios")
         report.require(
             scenario_ids and scenario_ids[0] == f"skill-proof-{entry['id']}",
@@ -547,7 +603,8 @@ def _validate_entry(
             if scenario is None:
                 continue
             report.require(scenario.get("real_data_or_workflow"), f"{scenario_id} not real-data/workflow")
-            report.require(scenario["dataset_track_id"] in tracks, f"{scenario_id} unknown track")
+            track = scenario.get("dataset_track_id")
+            report.require(isinstance(track, str) and track in tracks, f"{scenario_id} unknown track")
             for scenario_key in (
                 "expected_output_schema",
                 "environment_requirements",
@@ -556,10 +613,11 @@ def _validate_entry(
                 "dataset_snapshot_policy",
             ):
                 report.require(scenario.get(scenario_key), f"{scenario_id} missing {scenario_key}")
-            report.require(
-                (ROOT / scenario["evaluator_path"]).is_file(),
-                f"{scenario_id} missing evaluator file {scenario['evaluator_path']}",
-            )
+            evaluator = scenario.get("evaluator_path")
+            if isinstance(evaluator, str) and evaluator:
+                report.require((ROOT / evaluator).is_file(), f"{scenario_id} missing evaluator file {evaluator}")
+            else:
+                report.fail(f"{scenario_id} requires an evaluator path")
 
 
 def build_parser() -> argparse.ArgumentParser:

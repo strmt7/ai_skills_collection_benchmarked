@@ -1,10 +1,11 @@
 ---
 name: "opentrons-integration"
 description: "Official Opentrons Protocol API for OT-2 and Flex robots. Use when writing protocols specifically for Opentrons hardware with full access to Protocol API v2 features. Best for production Opentrons protocols, official API compatibility. For multi-vendor automation or broader equipment control use pylabrobot."
-source_skill_id: "k-dense-ai-scientific-agent-skills-scientific-skills-opentrons-integration-skill-md"
-category: "Science, research & data analysis"
-source_mirror: "../../../../../skills/by-category/science-research-data-analysis/latest-release-community/opentrons-integration/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "k-dense-ai-scientific-agent-skills-scientific-skills-opentrons-integration-skill-md"
+  category: "Science, research & data analysis"
+  source_mirror: "../../../../../skills/by-category/science-research-data-analysis/latest-release-community/opentrons-integration/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # opentrons-integration
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/science-research-data-analysis/latest-release-community/opentrons-integration/SKILL.md`
 - Source commit: `eb20fb0dcb0b1dadaa3db2737188f0755bbc4770`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-k-dense-ai-scientific-agent-skills-scientific-skills-opentrons-integration-skill-md`, `science-research-and-data-analysis-cellxgene-census`, `science-research-and-data-analysis-chembl`, `science-research-and-data-analysis-ome-ngff-samples`
 

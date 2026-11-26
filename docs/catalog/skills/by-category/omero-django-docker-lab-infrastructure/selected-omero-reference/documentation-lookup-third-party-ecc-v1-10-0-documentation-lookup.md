@@ -4,7 +4,7 @@ Category: OMERO, Django, Docker & lab infrastructure
 
 Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/documentation-lookup-third-party-ecc-v1-10-0-documentation-lookup`
 
-Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/documentation-lookup-third-party-ecc-v1-10-0-documentation-lookup/SKILL.md`
+Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/documentation-lookup-third-party-ecc-v1-10-0-docume-4378a675a868/SKILL.md`
 
 Source: [ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/documentation-lookup/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/documentation-lookup/SKILL.md)
 

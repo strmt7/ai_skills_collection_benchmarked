@@ -565,7 +565,7 @@
 
 - Skill page: [ai-regression-testing-third-party-ecc-v1-10-0-ai-regression-testing](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/ai-regression-testing-third-party-ecc-v1-10-0-ai-regression-testing.md)
 - Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/ai-regression-testing-third-party-ecc-v1-10-0-ai-regression-testing`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/ai-regression-testing-third-party-ecc-v1-10-0-ai-regression-testing/SKILL.md`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/ai-regression-testing-third-party-ecc-v1-10-0-ai-re-7cdffa776685/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/ai-regression-testing/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/ai-regression-testing/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Regression testing strategies for AI-assisted development. Sandbox-mode API testing without database dependencies, automated bug-check workflows, and patterns to catch AI blind spots where the same model writes and reviews code.
@@ -714,7 +714,7 @@
 
 - Skill page: [documentation-lookup-third-party-ecc-v1-10-0-documentation-lookup](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/documentation-lookup-third-party-ecc-v1-10-0-documentation-lookup.md)
 - Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/documentation-lookup-third-party-ecc-v1-10-0-documentation-lookup`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/documentation-lookup-third-party-ecc-v1-10-0-documentation-lookup/SKILL.md`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/documentation-lookup-third-party-ecc-v1-10-0-docume-4378a675a868/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/documentation-lookup/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/documentation-lookup/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Use up-to-date library and framework docs via Context7 MCP instead of training data. Activates for setup questions, API references, code examples, or when the user names a framework (e.g. React, Next.js, Prisma).

@@ -1,10 +1,11 @@
 ---
 name: "algorithmic-art"
 description: "Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems. Create original algorithmic art rather than copying existing artists' work to avoid copyright violations."
-source_skill_id: "anthropics-skills-skills-algorithmic-art-skill-md"
-category: "Creative, media & design"
-source_mirror: "../../../../../skills/by-category/creative-media-design/official-reference/algorithmic-art/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "anthropics-skills-skills-algorithmic-art-skill-md"
+  category: "Creative, media & design"
+  source_mirror: "../../../../../skills/by-category/creative-media-design/official-reference/algorithmic-art/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # algorithmic-art
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/creative-media-design/official-reference/algorithmic-art/SKILL.md`
 - Source commit: `2c7ec5e78b8e5d43ea02e90bb8826f6b9f147b0c`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-anthropics-skills-skills-algorithmic-art-skill-md`, `creative-media-and-design-coco-captions`, `creative-media-and-design-air-defense-android-benchmarks`, `creative-media-and-design-nyc-tlc-trip-records`
 

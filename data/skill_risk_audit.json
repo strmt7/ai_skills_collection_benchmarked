@@ -967,7 +967,7 @@
       "warning_count": 1
     },
     {
-      "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/ai-regression-testing-third-party-ecc-v1-10-0-ai-regression-testing/SKILL.md",
+      "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/ai-regression-testing-third-party-ecc-v1-10-0-ai-re-7cdffa776685/SKILL.md",
       "blocking_count": 0,
       "category": "OMERO, Django, Docker & lab infrastructure",
       "findings": [
@@ -1152,7 +1152,7 @@
       "warning_count": 1
     },
     {
-      "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/documentation-lookup-third-party-ecc-v1-10-0-documentation-lookup/SKILL.md",
+      "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/documentation-lookup-third-party-ecc-v1-10-0-docume-4378a675a868/SKILL.md",
       "blocking_count": 0,
       "category": "OMERO, Django, Docker & lab infrastructure",
       "findings": [

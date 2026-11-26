@@ -1,10 +1,11 @@
 ---
-name: "documentation-lookup"
+name: "documentation-lookup-omero-docker-extended"
 description: "Use current official documentation and release notes for OMERO, Django, Docker, Python, PostgreSQL, monitoring tools, and AI harnesses instead of memory."
-source_skill_id: "zmb-uzh-omero-docker-extended-agents-skills-documentation-lookup-skill-md"
-category: "OMERO, Django, Docker & lab infrastructure"
-source_mirror: "../../../../../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/documentation-lookup-omero-docker-extended/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "zmb-uzh-omero-docker-extended-agents-skills-documentation-lookup-skill-md"
+  category: "OMERO, Django, Docker & lab infrastructure"
+  source_mirror: "../../../../../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/documentation-lookup-omero-docker-extended/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # documentation-lookup
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/documentation-lookup-omero-docker-extended/SKILL.md`
 - Source commit: `b7c7cfa2a057f08eb872aadae49d89f521480114`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-zmb-uzh-omero-docker-extended-agents-skills-documentation-lookup-skill-md`, `omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows`, `omero-django-docker-and-lab-infrastructure-ome-ngff-samples`, `omero-django-docker-and-lab-infrastructure-opentelemetry-demo`
 

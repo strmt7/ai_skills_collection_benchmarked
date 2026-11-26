@@ -1,10 +1,11 @@
 ---
-name: "mcp-builder"
+name: "mcp-builder-anthropics"
 description: "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK)."
-source_skill_id: "anthropics-skills-skills-mcp-builder-skill-md"
-category: "Agent infrastructure & skill creation"
-source_mirror: "../../../../../skills/by-category/agent-infrastructure-skill-creation/official-reference/mcp-builder-anthropics/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "anthropics-skills-skills-mcp-builder-skill-md"
+  category: "Agent infrastructure & skill creation"
+  source_mirror: "../../../../../skills/by-category/agent-infrastructure-skill-creation/official-reference/mcp-builder-anthropics/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # mcp-builder
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/agent-infrastructure-skill-creation/official-reference/mcp-builder-anthropics/SKILL.md`
 - Source commit: `2c7ec5e78b8e5d43ea02e90bb8826f6b9f147b0c`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-anthropics-skills-skills-mcp-builder-skill-md`, `agent-infrastructure-and-skill-creation-beir-retrieval`, `agent-infrastructure-and-skill-creation-swe-bench-lite`, `agent-infrastructure-and-skill-creation-common-crawl-warc`
 

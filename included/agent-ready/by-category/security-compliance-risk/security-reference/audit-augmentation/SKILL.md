@@ -1,10 +1,11 @@
 ---
 name: "audit-augmentation"
 description: "Augments Trailmark code graphs with external audit findings from SARIF static analysis results and weAudit annotation files. Maps findings to graph nodes by file and line overlap, creates severity-based subgraphs, and enables cross-referencing findings with pre-analysis data (blast radius, taint, etc.). Use when projecting SARIF results onto a code graph, overlaying weAudit annotations, cross-referencing Semgrep or."
-source_skill_id: "trailofbits-skills-plugins-trailmark-skills-audit-augmentation-skill-md"
-category: "Security, compliance & risk"
-source_mirror: "../../../../../skills/by-category/security-compliance-risk/security-reference/audit-augmentation/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "trailofbits-skills-plugins-trailmark-skills-audit-augmentation-skill-md"
+  category: "Security, compliance & risk"
+  source_mirror: "../../../../../skills/by-category/security-compliance-risk/security-reference/audit-augmentation/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # audit-augmentation
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/security-compliance-risk/security-reference/audit-augmentation/SKILL.md`
 - Source commit: `e8cc5baf9329ccb491bfa200e82eacbac83b1ead`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-trailofbits-skills-plugins-trailmark-skills-audit-augmentation-skill-md`, `security-compliance-and-risk-owasp-benchmark`, `security-compliance-and-risk-owasp-juice-shop`, `security-compliance-and-risk-kubernetes-examples`
 

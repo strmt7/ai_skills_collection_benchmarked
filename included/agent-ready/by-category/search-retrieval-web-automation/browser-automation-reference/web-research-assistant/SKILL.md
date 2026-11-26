@@ -1,10 +1,11 @@
 ---
 name: "web-research-assistant"
 description: "AI-powered web research assistant that leverages BrowserAct API to supplement restricted web access by searching the internet for additional information. Designed for OpenClaw and Claude Code."
-source_skill_id: "browser-act-skills-web-research-assistant-skill-md"
-category: "Search, retrieval & web automation"
-source_mirror: "../../../../../skills/by-category/search-retrieval-web-automation/browser-automation-reference/web-research-assistant/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "browser-act-skills-web-research-assistant-skill-md"
+  category: "Search, retrieval & web automation"
+  source_mirror: "../../../../../skills/by-category/search-retrieval-web-automation/browser-automation-reference/web-research-assistant/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # web-research-assistant
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/search-retrieval-web-automation/browser-automation-reference/web-research-assistant/SKILL.md`
 - Source commit: `749ed52133b85606cf402b7fda95949542cbb8f8`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-browser-act-skills-web-research-assistant-skill-md`, `search-retrieval-and-web-automation-common-crawl-warc`, `search-retrieval-and-web-automation-beir-retrieval`, `search-retrieval-and-web-automation-ms-marco`
 

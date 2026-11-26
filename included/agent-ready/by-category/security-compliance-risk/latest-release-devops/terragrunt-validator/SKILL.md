@@ -1,10 +1,11 @@
 ---
 name: "terragrunt-validator"
 description: "Validate, lint, audit, or check Terragrunt .hcl/terragrunt.hcl files, stacks, modules, compliance."
-source_skill_id: "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-terragrunt-validator-skill-md"
-category: "Security, compliance & risk"
-source_mirror: "../../../../../skills/by-category/security-compliance-risk/latest-release-devops/terragrunt-validator/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-terragrunt-validator-skill-md"
+  category: "Security, compliance & risk"
+  source_mirror: "../../../../../skills/by-category/security-compliance-risk/latest-release-devops/terragrunt-validator/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # terragrunt-validator
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/security-compliance-risk/latest-release-devops/terragrunt-validator/SKILL.md`
 - Source commit: `7fe7595e4512f8ce43dcf956aa5190b96d627dd1`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-akin-ozer-cc-devops-skills-devops-skills-plugin-skills-terragrunt-validator-skill-md`, `security-compliance-and-risk-owasp-benchmark`, `security-compliance-and-risk-owasp-juice-shop`, `security-compliance-and-risk-kubernetes-examples`
 

@@ -1,10 +1,11 @@
 ---
 name: "gitops-workflows"
 description: "GitOps deployment workflows with ArgoCD and Flux. Use this skill whenever the user mentions GitOps, ArgoCD, Flux, Flagger, Argo Rollouts, or continuous deployment to Kubernetes. Triggers include setting up ArgoCD or Flux from scratch, designing Git repository structures (monorepo vs polyrepo, app-of-apps), deploying to multiple clusters with ApplicationSets, managing secrets in Git (SOPS, Sealed Secrets, External."
-source_skill_id: "ahmedasmar-devops-claude-skills-gitops-workflows-skills-skill-md"
-category: "DevOps, cloud & operations"
-source_mirror: "../../../../../skills/by-category/devops-cloud-operations/devops-reference/gitops-workflows/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "ahmedasmar-devops-claude-skills-gitops-workflows-skills-skill-md"
+  category: "DevOps, cloud & operations"
+  source_mirror: "../../../../../skills/by-category/devops-cloud-operations/devops-reference/gitops-workflows/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # gitops-workflows
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/devops-cloud-operations/devops-reference/gitops-workflows/SKILL.md`
 - Source commit: `1489c33ad8829a11219e423327d6b59f8339cee4`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-ahmedasmar-devops-claude-skills-gitops-workflows-skills-skill-md`, `devops-cloud-and-operations-kubernetes-examples`, `devops-cloud-and-operations-opentelemetry-demo`, `devops-cloud-and-operations-local-omero-compose-workflows`
 

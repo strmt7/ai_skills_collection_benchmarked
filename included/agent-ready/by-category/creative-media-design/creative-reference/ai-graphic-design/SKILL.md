@@ -1,10 +1,11 @@
 ---
 name: "ai-graphic-design"
 description: "Guide for creating logos, brand identities, and visual assets using AI tools \u2014 covers tool selection, prompt engineering, vectorization pipelines, mockups, automation, and IP safety."
-source_skill_id: "designrique-ai-graphic-design-skill-skill-md"
-category: "Creative, media & design"
-source_mirror: "../../../../../skills/by-category/creative-media-design/creative-reference/ai-graphic-design/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "designrique-ai-graphic-design-skill-skill-md"
+  category: "Creative, media & design"
+  source_mirror: "../../../../../skills/by-category/creative-media-design/creative-reference/ai-graphic-design/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # ai-graphic-design
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/creative-media-design/creative-reference/ai-graphic-design/SKILL.md`
 - Source commit: `7d9d03b290f076e51d0b574659cda2ca9347651e`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-designrique-ai-graphic-design-skill-skill-md`, `creative-media-and-design-coco-captions`, `creative-media-and-design-air-defense-android-benchmarks`, `creative-media-and-design-nyc-tlc-trip-records`
 

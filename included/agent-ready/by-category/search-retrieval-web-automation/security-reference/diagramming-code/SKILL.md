@@ -1,10 +1,11 @@
 ---
 name: "diagramming-code"
 description: "Generates Mermaid diagrams from Trailmark code graphs. Produces call graphs, class hierarchies, module dependency maps, containment diagrams, complexity heatmaps, and attack surface data flow visualizations. Use when visualizing code architecture, drawing call graphs, generating class diagrams, creating dependency maps, producing complexity heatmaps, or visualizing data flow and attack surface paths as Mermaid."
-source_skill_id: "trailofbits-skills-plugins-trailmark-skills-diagramming-code-skill-md"
-category: "Search, retrieval & web automation"
-source_mirror: "../../../../../skills/by-category/search-retrieval-web-automation/security-reference/diagramming-code/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "trailofbits-skills-plugins-trailmark-skills-diagramming-code-skill-md"
+  category: "Search, retrieval & web automation"
+  source_mirror: "../../../../../skills/by-category/search-retrieval-web-automation/security-reference/diagramming-code/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # diagramming-code
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/search-retrieval-web-automation/security-reference/diagramming-code/SKILL.md`
 - Source commit: `e8cc5baf9329ccb491bfa200e82eacbac83b1ead`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-trailofbits-skills-plugins-trailmark-skills-diagramming-code-skill-md`, `search-retrieval-and-web-automation-common-crawl-warc`, `search-retrieval-and-web-automation-beir-retrieval`, `search-retrieval-and-web-automation-ms-marco`
 

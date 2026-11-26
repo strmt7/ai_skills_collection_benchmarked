@@ -1,10 +1,11 @@
 ---
 name: "browser-act"
 description: "Browser automation CLI for AI agents with anti-detection stealth browsing, captcha solving, and parallel multi-browser support. Use when the user needs to interact with websites, including navigating pages, filling forms, clicking buttons, taking screenshots, extracting data, scraping sites with bot detection, or automating any browser task. Also use when the user needs to connect to their existing Chrome session,."
-source_skill_id: "browser-act-skills-browser-act-skill-md"
-category: "Communication, productivity & support"
-source_mirror: "../../../../../skills/by-category/communication-productivity-support/browser-automation-reference/browser-act/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "browser-act-skills-browser-act-skill-md"
+  category: "Communication, productivity & support"
+  source_mirror: "../../../../../skills/by-category/communication-productivity-support/browser-automation-reference/browser-act/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # browser-act
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/communication-productivity-support/browser-automation-reference/browser-act/SKILL.md`
 - Source commit: `749ed52133b85606cf402b7fda95949542cbb8f8`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-browser-act-skills-browser-act-skill-md`, `communication-productivity-and-support-enron-email`, `communication-productivity-and-support-ms-marco`, `communication-productivity-and-support-sec-edgar-companyfacts`
 

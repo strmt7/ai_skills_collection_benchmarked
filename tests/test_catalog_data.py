@@ -59,7 +59,7 @@ def test_install_names_are_concrete_and_not_elided():
         for key in ["install_name", "mirrored_path", "agent_ready_path", "source_path", "immutable_source_url"]:
             assert "..." not in entry[key], (entry["id"], key)
         assert Path(entry["mirrored_path"]).name == entry["install_name"]
-        assert Path(entry["agent_ready_path"]).parent.name == entry["install_name"]
+        assert Path(entry["agent_ready_path"]).parent.name == build_catalog.agent_ready_name(entry["install_name"])
 
 
 def test_selected_repositories_present():

@@ -1,10 +1,11 @@
 ---
 name: "gemini-image-generation"
 description: "Generate or edit images with Gemini using the Google GenAI SDK. Use when the user asks to create, transform, render, or save one or more images in an OpenClaw skill workflow."
-source_skill_id: "ztj7728-gemini-image-generation-skill-md"
-category: "DevOps, cloud & operations"
-source_mirror: "../../../../../skills/by-category/devops-cloud-operations/creative-reference/gemini-image-generation/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "ztj7728-gemini-image-generation-skill-md"
+  category: "DevOps, cloud & operations"
+  source_mirror: "../../../../../skills/by-category/devops-cloud-operations/creative-reference/gemini-image-generation/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # gemini-image-generation
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/devops-cloud-operations/creative-reference/gemini-image-generation/SKILL.md`
 - Source commit: `9d2727cab3ab9e50d20f4ba4ae57aa57755edecd`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-ztj7728-gemini-image-generation-skill-md`, `devops-cloud-and-operations-kubernetes-examples`, `devops-cloud-and-operations-opentelemetry-demo`, `devops-cloud-and-operations-local-omero-compose-workflows`
 

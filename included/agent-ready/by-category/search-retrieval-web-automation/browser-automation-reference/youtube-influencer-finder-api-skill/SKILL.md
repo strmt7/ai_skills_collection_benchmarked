@@ -1,10 +1,11 @@
 ---
 name: "youtube-influencer-finder-api-skill"
 description: "This skill helps users extract YouTube influencer profiles including social links, subscriber counts, and channel stats via the BrowserAct API. Agent should proactively apply this skill when users express needs like finding YouTube creators for specific keywords, discovering influencers for a marketing campaign, extracting YouTube channel contact emails, scraping YouTube influencer social media links, gathering."
-source_skill_id: "browser-act-skills-youtube-influencer-finder-api-skill-skill-md"
-category: "Search, retrieval & web automation"
-source_mirror: "../../../../../skills/by-category/search-retrieval-web-automation/browser-automation-reference/youtube-influencer-finder-api-skill/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "browser-act-skills-youtube-influencer-finder-api-skill-skill-md"
+  category: "Search, retrieval & web automation"
+  source_mirror: "../../../../../skills/by-category/search-retrieval-web-automation/browser-automation-reference/youtube-influencer-finder-api-skill/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # youtube-influencer-finder-api-skill
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/search-retrieval-web-automation/browser-automation-reference/youtube-influencer-finder-api-skill/SKILL.md`
 - Source commit: `749ed52133b85606cf402b7fda95949542cbb8f8`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-browser-act-skills-youtube-influencer-finder-api-skill-skill-md`, `search-retrieval-and-web-automation-common-crawl-warc`, `search-retrieval-and-web-automation-beir-retrieval`, `search-retrieval-and-web-automation-ms-marco`
 

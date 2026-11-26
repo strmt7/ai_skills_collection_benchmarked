@@ -1,10 +1,11 @@
 ---
 name: "producthunt-launch-kit"
 description: "Use for producthunt-launch-kit workflows. Source sections include Product Hunt Launch Kit, Step 1: Gather Product Details, Step 2: Gallery Strategy."
-source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-producthunt-launch-kit-skill-md"
-category: "Finance, commerce & forecasting"
-source_mirror: "../../../../../skills/by-category/finance-commerce-forecasting/reddit-verified-gtm-registry/producthunt-launch-kit/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-producthunt-launch-kit-skill-md"
+  category: "Finance, commerce & forecasting"
+  source_mirror: "../../../../../skills/by-category/finance-commerce-forecasting/reddit-verified-gtm-registry/producthunt-launch-kit/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # producthunt-launch-kit
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/finance-commerce-forecasting/reddit-verified-gtm-registry/producthunt-launch-kit/SKILL.md`
 - Source commit: `bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-varnan-tech-opendirectory-packages-cli-skills-producthunt-launch-kit-skill-md`, `finance-commerce-and-forecasting-sec-edgar-companyfacts`, `finance-commerce-and-forecasting-nyc-tlc-trip-records`, `finance-commerce-and-forecasting-stackoverflow-survey`
 

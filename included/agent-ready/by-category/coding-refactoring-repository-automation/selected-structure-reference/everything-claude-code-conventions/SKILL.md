@@ -1,10 +1,11 @@
 ---
 name: "everything-claude-code-conventions"
 description: "Development conventions and patterns for everything-claude-code. JavaScript project with conventional commits."
-source_skill_id: "affaan-m-everything-claude-code-agents-skills-everything-claude-code-skill-md"
-category: "Coding, refactoring & repository automation"
-source_mirror: "../../../../../skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/everything-claude-code-conventions/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "affaan-m-everything-claude-code-agents-skills-everything-claude-code-skill-md"
+  category: "Coding, refactoring & repository automation"
+  source_mirror: "../../../../../skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/everything-claude-code-conventions/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # everything-claude-code-conventions
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/everything-claude-code-conventions/SKILL.md`
 - Source commit: `846ffb75da9a5f4e677d927af1ad4a1951652267`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-affaan-m-everything-claude-code-agents-skills-everything-claude-code-skill-md`, `coding-refactoring-and-repository-automation-swe-bench-lite`, `coding-refactoring-and-repository-automation-kubernetes-examples`, `coding-refactoring-and-repository-automation-opentelemetry-demo`
 

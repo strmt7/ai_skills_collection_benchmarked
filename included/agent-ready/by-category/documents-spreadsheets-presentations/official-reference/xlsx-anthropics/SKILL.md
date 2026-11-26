@@ -1,10 +1,11 @@
 ---
-name: "xlsx"
+name: "xlsx-anthropics"
 description: "Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to: open, read, edit, or fix an existing .xlsx, .xlsm, .csv, or .tsv file (e.g., adding columns, computing formulas, formatting, charting, cleaning messy data); create a new spreadsheet from scratch or from other data sources; or convert between tabular file formats. Trigger especially when the user."
-source_skill_id: "anthropics-skills-skills-xlsx-skill-md"
-category: "Documents, spreadsheets & presentations"
-source_mirror: "../../../../../skills/by-category/documents-spreadsheets-presentations/official-reference/xlsx-anthropics/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "anthropics-skills-skills-xlsx-skill-md"
+  category: "Documents, spreadsheets & presentations"
+  source_mirror: "../../../../../skills/by-category/documents-spreadsheets-presentations/official-reference/xlsx-anthropics/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # xlsx
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/documents-spreadsheets-presentations/official-reference/xlsx-anthropics/SKILL.md`
 - Source commit: `2c7ec5e78b8e5d43ea02e90bb8826f6b9f147b0c`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-anthropics-skills-skills-xlsx-skill-md`, `documents-spreadsheets-and-presentations-sec-edgar-companyfacts`, `documents-spreadsheets-and-presentations-enron-email`, `documents-spreadsheets-and-presentations-stackoverflow-survey`
 

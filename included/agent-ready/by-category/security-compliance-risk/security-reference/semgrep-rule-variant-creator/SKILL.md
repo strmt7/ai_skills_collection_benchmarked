@@ -1,10 +1,11 @@
 ---
 name: "semgrep-rule-variant-creator"
 description: "Creates language variants of existing Semgrep rules. Use when porting a Semgrep rule to specified target languages. Takes an existing rule and target languages as input, produces independent rule+test directories for each language."
-source_skill_id: "trailofbits-skills-plugins-semgrep-rule-variant-creator-skills-semgrep-rule-variant-creator-skill-md"
-category: "Security, compliance & risk"
-source_mirror: "../../../../../skills/by-category/security-compliance-risk/security-reference/semgrep-rule-variant-creator/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "trailofbits-skills-plugins-semgrep-rule-variant-creator-skills-semgrep-rule-variant-creator-skill-md"
+  category: "Security, compliance & risk"
+  source_mirror: "../../../../../skills/by-category/security-compliance-risk/security-reference/semgrep-rule-variant-creator/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # semgrep-rule-variant-creator
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/security-compliance-risk/security-reference/semgrep-rule-variant-creator/SKILL.md`
 - Source commit: `e8cc5baf9329ccb491bfa200e82eacbac83b1ead`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-trailofbits-skills-plugins-semgrep-rule-variant-creator-skills-semgrep-rule-variant-creator-skill-md`, `security-compliance-and-risk-owasp-benchmark`, `security-compliance-and-risk-owasp-juice-shop`, `security-compliance-and-risk-kubernetes-examples`
 

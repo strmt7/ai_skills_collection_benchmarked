@@ -1,10 +1,11 @@
 ---
 name: "youtube-channel-api-skill"
 description: "This skill helps users automatically extract structured channel data from YouTube search results via BrowserAct API. Agent should proactively apply this skill when users express needs like finding YouTube channels about specific topics, collecting data on YouTube content creators, tracking YouTube influencers in specific industries, getting YouTube channel information for competitor analysis, searching for YouTube."
-source_skill_id: "browser-act-skills-youtube-channel-api-skill-skill-md"
-category: "Search, retrieval & web automation"
-source_mirror: "../../../../../skills/by-category/search-retrieval-web-automation/browser-automation-reference/youtube-channel-api-skill/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "browser-act-skills-youtube-channel-api-skill-skill-md"
+  category: "Search, retrieval & web automation"
+  source_mirror: "../../../../../skills/by-category/search-retrieval-web-automation/browser-automation-reference/youtube-channel-api-skill/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # youtube-channel-api-skill
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/search-retrieval-web-automation/browser-automation-reference/youtube-channel-api-skill/SKILL.md`
 - Source commit: `749ed52133b85606cf402b7fda95949542cbb8f8`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-browser-act-skills-youtube-channel-api-skill-skill-md`, `search-retrieval-and-web-automation-common-crawl-warc`, `search-retrieval-and-web-automation-beir-retrieval`, `search-retrieval-and-web-automation-ms-marco`
 

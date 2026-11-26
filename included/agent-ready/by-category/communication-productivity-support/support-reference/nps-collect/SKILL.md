@@ -1,10 +1,11 @@
 ---
 name: "nps-collect"
 description: "Send NPS/CSAT surveys and analyze results using [Delighted](https://composio.dev/toolkits/delighted) or [Satismeter](https://composio.dev/toolkits/satismeter)"
-source_skill_id: "composio-community-support-skills-nps-collect-skill-md"
-category: "Communication, productivity & support"
-source_mirror: "../../../../../skills/by-category/communication-productivity-support/support-reference/nps-collect/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "composio-community-support-skills-nps-collect-skill-md"
+  category: "Communication, productivity & support"
+  source_mirror: "../../../../../skills/by-category/communication-productivity-support/support-reference/nps-collect/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # nps-collect
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/communication-productivity-support/support-reference/nps-collect/SKILL.md`
 - Source commit: `b4f842c3cbdcae0c45771fd996c396aee80dde2e`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-composio-community-support-skills-nps-collect-skill-md`, `communication-productivity-and-support-enron-email`, `communication-productivity-and-support-ms-marco`, `communication-productivity-and-support-sec-edgar-companyfacts`
 

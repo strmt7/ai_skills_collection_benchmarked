@@ -1,10 +1,11 @@
 ---
 name: "github-project-contributor-finder-api-skill"
 description: "This skill helps users extract GitHub repository project details and contributor contact information using keywords, stars, and update dates. Agent should proactively apply this skill when users express needs like search for GitHub projects by keywords, find top open-source contributors in specific domains, extract developer contacts from GitHub repositories, discover trending repositories with high stars, gather."
-source_skill_id: "browser-act-skills-github-project-contributor-finder-api-skill-skill-md"
-category: "Search, retrieval & web automation"
-source_mirror: "../../../../../skills/by-category/search-retrieval-web-automation/browser-automation-reference/github-project-contributor-finder-api-skill/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "browser-act-skills-github-project-contributor-finder-api-skill-skill-md"
+  category: "Search, retrieval & web automation"
+  source_mirror: "../../../../../skills/by-category/search-retrieval-web-automation/browser-automation-reference/github-project-contributor-finder-api-skill/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # github-project-contributor-finder-api-skill
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/search-retrieval-web-automation/browser-automation-reference/github-project-contributor-finder-api-skill/SKILL.md`
 - Source commit: `749ed52133b85606cf402b7fda95949542cbb8f8`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-browser-act-skills-github-project-contributor-finder-api-skill-skill-md`, `search-retrieval-and-web-automation-common-crawl-warc`, `search-retrieval-and-web-automation-beir-retrieval`, `search-retrieval-and-web-automation-ms-marco`
 

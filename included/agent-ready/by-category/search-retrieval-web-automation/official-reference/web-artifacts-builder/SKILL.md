@@ -1,10 +1,11 @@
 ---
 name: "web-artifacts-builder"
 description: "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts."
-source_skill_id: "anthropics-skills-skills-web-artifacts-builder-skill-md"
-category: "Search, retrieval & web automation"
-source_mirror: "../../../../../skills/by-category/search-retrieval-web-automation/official-reference/web-artifacts-builder/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "anthropics-skills-skills-web-artifacts-builder-skill-md"
+  category: "Search, retrieval & web automation"
+  source_mirror: "../../../../../skills/by-category/search-retrieval-web-automation/official-reference/web-artifacts-builder/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # web-artifacts-builder
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/search-retrieval-web-automation/official-reference/web-artifacts-builder/SKILL.md`
 - Source commit: `2c7ec5e78b8e5d43ea02e90bb8826f6b9f147b0c`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-anthropics-skills-skills-web-artifacts-builder-skill-md`, `search-retrieval-and-web-automation-common-crawl-warc`, `search-retrieval-and-web-automation-beir-retrieval`, `search-retrieval-and-web-automation-ms-marco`
 

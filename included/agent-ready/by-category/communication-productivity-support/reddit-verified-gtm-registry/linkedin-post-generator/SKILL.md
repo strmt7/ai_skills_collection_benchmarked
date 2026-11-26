@@ -1,10 +1,11 @@
 ---
 name: "linkedin-post-generator"
 description: "Converts any content, blog post URL, pasted article, GitHub PR description, or a description of something built, into a formatted LinkedIn post with proper hook, story arc, and formatting. Optionally posts directly to LinkedIn via Composio. Use when asked to write a LinkedIn post, turn a blog into a LinkedIn update, announce a shipped feature, share a case study on LinkedIn, or post something professionally.."
-source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-linkedin-post-generator-skill-md"
-category: "Communication, productivity & support"
-source_mirror: "../../../../../skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/linkedin-post-generator/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-linkedin-post-generator-skill-md"
+  category: "Communication, productivity & support"
+  source_mirror: "../../../../../skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/linkedin-post-generator/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # linkedin-post-generator
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/linkedin-post-generator/SKILL.md`
 - Source commit: `bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-varnan-tech-opendirectory-packages-cli-skills-linkedin-post-generator-skill-md`, `communication-productivity-and-support-enron-email`, `communication-productivity-and-support-ms-marco`, `communication-productivity-and-support-sec-edgar-companyfacts`
 

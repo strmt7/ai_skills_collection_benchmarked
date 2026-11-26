@@ -1,10 +1,11 @@
 ---
 name: "zhihu-search-api-skill"
 description: "This skill helps users automatically extract structured article details and full content from Zhihu via the BrowserAct API. Agent should proactively apply this skill when users express needs like: searching for Zhihu articles on a specific topic, tracking industry trends on Zhihu, monitoring public relations or sentiment on Zhihu, collecting competitor updates, getting the latest reports on specific keywords,."
-source_skill_id: "browser-act-skills-zhihu-search-api-skill-skill-md"
-category: "DevOps, cloud & operations"
-source_mirror: "../../../../../skills/by-category/devops-cloud-operations/browser-automation-reference/zhihu-search-api-skill/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "browser-act-skills-zhihu-search-api-skill-skill-md"
+  category: "DevOps, cloud & operations"
+  source_mirror: "../../../../../skills/by-category/devops-cloud-operations/browser-automation-reference/zhihu-search-api-skill/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # zhihu-search-api-skill
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/devops-cloud-operations/browser-automation-reference/zhihu-search-api-skill/SKILL.md`
 - Source commit: `749ed52133b85606cf402b7fda95949542cbb8f8`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-browser-act-skills-zhihu-search-api-skill-skill-md`, `devops-cloud-and-operations-kubernetes-examples`, `devops-cloud-and-operations-opentelemetry-demo`, `devops-cloud-and-operations-local-omero-compose-workflows`
 

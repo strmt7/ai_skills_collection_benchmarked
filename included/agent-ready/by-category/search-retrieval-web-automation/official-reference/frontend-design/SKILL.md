@@ -1,10 +1,11 @@
 ---
 name: "frontend-design"
 description: "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics."
-source_skill_id: "anthropics-skills-skills-frontend-design-skill-md"
-category: "Search, retrieval & web automation"
-source_mirror: "../../../../../skills/by-category/search-retrieval-web-automation/official-reference/frontend-design/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "anthropics-skills-skills-frontend-design-skill-md"
+  category: "Search, retrieval & web automation"
+  source_mirror: "../../../../../skills/by-category/search-retrieval-web-automation/official-reference/frontend-design/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # frontend-design
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/search-retrieval-web-automation/official-reference/frontend-design/SKILL.md`
 - Source commit: `2c7ec5e78b8e5d43ea02e90bb8826f6b9f147b0c`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-anthropics-skills-skills-frontend-design-skill-md`, `search-retrieval-and-web-automation-common-crawl-warc`, `search-retrieval-and-web-automation-beir-retrieval`, `search-retrieval-and-web-automation-ms-marco`
 

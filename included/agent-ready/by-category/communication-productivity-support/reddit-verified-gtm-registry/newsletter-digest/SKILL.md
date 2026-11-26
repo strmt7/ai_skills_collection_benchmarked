@@ -1,10 +1,11 @@
 ---
 name: "newsletter-digest"
 description: "Aggregates RSS feeds from the past week, synthesizes the top stories using Gemini, and publishes a newsletter digest to Ghost CMS. Optionally outputs formatted Markdown for Substack or any other platform. Use when asked to generate a newsletter, create a weekly digest, summarize RSS feeds, compile top stories for a newsletter, or publish a digest to Ghost. Trigger when a user mentions newsletter digest, weekly."
-source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-newsletter-digest-skill-md"
-category: "Communication, productivity & support"
-source_mirror: "../../../../../skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/newsletter-digest/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-newsletter-digest-skill-md"
+  category: "Communication, productivity & support"
+  source_mirror: "../../../../../skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/newsletter-digest/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # newsletter-digest
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/newsletter-digest/SKILL.md`
 - Source commit: `bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-varnan-tech-opendirectory-packages-cli-skills-newsletter-digest-skill-md`, `communication-productivity-and-support-enron-email`, `communication-productivity-and-support-ms-marco`, `communication-productivity-and-support-sec-edgar-companyfacts`
 

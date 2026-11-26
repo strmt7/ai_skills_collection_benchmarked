@@ -1,10 +1,11 @@
 ---
 name: "agent-media"
 description: "AI UGC video production from the terminal using the `agent-media` CLI."
-source_skill_id: "yuvalsuede-agent-media-skill-skill-md"
-category: "Creative, media & design"
-source_mirror: "../../../../../skills/by-category/creative-media-design/creative-reference/agent-media/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "yuvalsuede-agent-media-skill-skill-md"
+  category: "Creative, media & design"
+  source_mirror: "../../../../../skills/by-category/creative-media-design/creative-reference/agent-media/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # agent-media
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/creative-media-design/creative-reference/agent-media/SKILL.md`
 - Source commit: `c37c209942bad44588f4d93b744473d733f95e6d`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-yuvalsuede-agent-media-skill-skill-md`, `creative-media-and-design-coco-captions`, `creative-media-and-design-air-defense-android-benchmarks`, `creative-media-and-design-nyc-tlc-trip-records`
 

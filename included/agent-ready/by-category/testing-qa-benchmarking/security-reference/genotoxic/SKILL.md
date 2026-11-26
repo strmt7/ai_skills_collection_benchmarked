@@ -1,10 +1,11 @@
 ---
 name: "genotoxic"
 description: "Graph-informed mutation testing triage. Parses codebases with Trailmark, runs mutation testing and necessist, then uses survived mutants, unnecessary test statements, and call graph data to identify false positives, missing test coverage, and fuzzing targets. Use when triaging survived mutants, analyzing mutation testing results, identifying test gaps, finding fuzzing targets from weak tests, running mutation."
-source_skill_id: "trailofbits-skills-plugins-trailmark-skills-genotoxic-skill-md"
-category: "Testing, QA & benchmarking"
-source_mirror: "../../../../../skills/by-category/testing-qa-benchmarking/security-reference/genotoxic/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "trailofbits-skills-plugins-trailmark-skills-genotoxic-skill-md"
+  category: "Testing, QA & benchmarking"
+  source_mirror: "../../../../../skills/by-category/testing-qa-benchmarking/security-reference/genotoxic/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # genotoxic
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/testing-qa-benchmarking/security-reference/genotoxic/SKILL.md`
 - Source commit: `e8cc5baf9329ccb491bfa200e82eacbac83b1ead`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-trailofbits-skills-plugins-trailmark-skills-genotoxic-skill-md`, `testing-qa-and-benchmarking-swe-bench-lite`, `testing-qa-and-benchmarking-owasp-benchmark`, `testing-qa-and-benchmarking-local-omero-compose-workflows`
 

@@ -1,10 +1,11 @@
 ---
-name: "ckm:brand"
+name: "ckm-brand"
 description: "Brand voice, visual identity, messaging frameworks, asset management, brand consistency. Activate for branded content, tone of voice, marketing assets, brand compliance, style guides."
-source_skill_id: "nextlevelbuilder-ui-ux-pro-max-skill-claude-skills-brand-skill-md"
-category: "Security, compliance & risk"
-source_mirror: "../../../../../skills/by-category/security-compliance-risk/latest-release-creative/ckm-brand/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "nextlevelbuilder-ui-ux-pro-max-skill-claude-skills-brand-skill-md"
+  category: "Security, compliance & risk"
+  source_mirror: "../../../../../skills/by-category/security-compliance-risk/latest-release-creative/ckm-brand/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # ckm:brand
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/security-compliance-risk/latest-release-creative/ckm-brand/SKILL.md`
 - Source commit: `07f4ef3ac2568c25a3b0c8ef5165a86abc3e56e4`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-nextlevelbuilder-ui-ux-pro-max-skill-claude-skills-brand-skill-md`, `security-compliance-and-risk-owasp-benchmark`, `security-compliance-and-risk-owasp-juice-shop`, `security-compliance-and-risk-kubernetes-examples`
 

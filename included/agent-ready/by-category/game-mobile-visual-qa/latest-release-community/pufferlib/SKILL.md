@@ -1,10 +1,11 @@
 ---
 name: "pufferlib"
 description: "High-performance reinforcement learning framework optimized for speed and scale. Use when you need fast parallel training, vectorized environments, single-session systems, or integration with game environments (Atari, Procgen, NetHack). Achieves 2-10x speedups over standard implementations. For quick prototyping or standard algorithm implementations with extensive documentation, use stable-baselines3 instead."
-source_skill_id: "k-dense-ai-scientific-agent-skills-scientific-skills-pufferlib-skill-md"
-category: "Game, mobile & visual QA"
-source_mirror: "../../../../../skills/by-category/game-mobile-visual-qa/latest-release-community/pufferlib/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "k-dense-ai-scientific-agent-skills-scientific-skills-pufferlib-skill-md"
+  category: "Game, mobile & visual QA"
+  source_mirror: "../../../../../skills/by-category/game-mobile-visual-qa/latest-release-community/pufferlib/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # pufferlib
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/game-mobile-visual-qa/latest-release-community/pufferlib/SKILL.md`
 - Source commit: `eb20fb0dcb0b1dadaa3db2737188f0755bbc4770`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-k-dense-ai-scientific-agent-skills-scientific-skills-pufferlib-skill-md`, `game-mobile-and-visual-qa-air-defense-android-benchmarks`, `game-mobile-and-visual-qa-coco-captions`, `game-mobile-and-visual-qa-owasp-juice-shop`
 

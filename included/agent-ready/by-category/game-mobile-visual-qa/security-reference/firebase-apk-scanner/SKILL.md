@@ -1,10 +1,11 @@
 ---
 name: "firebase-apk-scanner"
 description: "Scans Android APKs for Firebase security misconfigurations including open databases, storage buckets, authentication issues, and exposed cloud functions. Use when analyzing APK files for Firebase vulnerabilities, performing mobile app security audits, or testing Firebase endpoint security. For authorized security research only."
-source_skill_id: "trailofbits-skills-plugins-firebase-apk-scanner-skills-firebase-apk-scanner-skill-md"
-category: "Game, mobile & visual QA"
-source_mirror: "../../../../../skills/by-category/game-mobile-visual-qa/security-reference/firebase-apk-scanner/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "trailofbits-skills-plugins-firebase-apk-scanner-skills-firebase-apk-scanner-skill-md"
+  category: "Game, mobile & visual QA"
+  source_mirror: "../../../../../skills/by-category/game-mobile-visual-qa/security-reference/firebase-apk-scanner/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # firebase-apk-scanner
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/game-mobile-visual-qa/security-reference/firebase-apk-scanner/SKILL.md`
 - Source commit: `e8cc5baf9329ccb491bfa200e82eacbac83b1ead`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-trailofbits-skills-plugins-firebase-apk-scanner-skills-firebase-apk-scanner-skill-md`, `game-mobile-and-visual-qa-air-defense-android-benchmarks`, `game-mobile-and-visual-qa-coco-captions`, `game-mobile-and-visual-qa-owasp-juice-shop`
 

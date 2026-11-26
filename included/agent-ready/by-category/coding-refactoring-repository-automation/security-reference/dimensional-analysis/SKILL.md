@@ -1,10 +1,11 @@
 ---
 name: "dimensional-analysis"
 description: "Annotates codebases with dimensional analysis comments documenting units, dimensions, and decimal scaling. Use when someone asks to annotate units in a codebase, perform a dimensional analysis, or find vulnerabilities in a DeFi protocol, offchain code, or other blockchain-related codebase with arithmetic. Prevents dimensional mismatches and catches formula bugs early."
-source_skill_id: "trailofbits-skills-plugins-dimensional-analysis-skills-dimensional-analysis-skill-md"
-category: "Coding, refactoring & repository automation"
-source_mirror: "../../../../../skills/by-category/coding-refactoring-repository-automation/security-reference/dimensional-analysis/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "trailofbits-skills-plugins-dimensional-analysis-skills-dimensional-analysis-skill-md"
+  category: "Coding, refactoring & repository automation"
+  source_mirror: "../../../../../skills/by-category/coding-refactoring-repository-automation/security-reference/dimensional-analysis/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # dimensional-analysis
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/coding-refactoring-repository-automation/security-reference/dimensional-analysis/SKILL.md`
 - Source commit: `e8cc5baf9329ccb491bfa200e82eacbac83b1ead`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-trailofbits-skills-plugins-dimensional-analysis-skills-dimensional-analysis-skill-md`, `coding-refactoring-and-repository-automation-swe-bench-lite`, `coding-refactoring-and-repository-automation-kubernetes-examples`, `coding-refactoring-and-repository-automation-opentelemetry-demo`
 

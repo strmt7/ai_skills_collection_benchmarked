@@ -1,10 +1,11 @@
 ---
 name: "bria-ai"
 description: "AI image generation, editing, and background removal API via Bria.ai \u2014 remove backgrounds to get transparent PNGs and cutouts, generate images from text prompts, and edit photos with natural language instructions. Also create product photography and lifestyle shots, replace or blur backgrounds, upscale resolution, restyle, and batch-generate visual assets. Use this skill whenever the user wants to remove a."
-source_skill_id: "bria-ai-bria-skill-skills-bria-ai-skill-md"
-category: "Creative, media & design"
-source_mirror: "../../../../../skills/by-category/creative-media-design/latest-release-creative/bria-ai/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "bria-ai-bria-skill-skills-bria-ai-skill-md"
+  category: "Creative, media & design"
+  source_mirror: "../../../../../skills/by-category/creative-media-design/latest-release-creative/bria-ai/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # bria-ai
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/creative-media-design/latest-release-creative/bria-ai/SKILL.md`
 - Source commit: `b0e107b0f4667f0e1c9177bcd491b7d436c6932d`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-bria-ai-bria-skill-skills-bria-ai-skill-md`, `creative-media-and-design-coco-captions`, `creative-media-and-design-air-defense-android-benchmarks`, `creative-media-and-design-nyc-tlc-trip-records`
 

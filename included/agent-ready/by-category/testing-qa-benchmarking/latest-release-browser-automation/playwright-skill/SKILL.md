@@ -1,10 +1,11 @@
 ---
 name: "playwright-skill"
 description: "Complete browser automation with Playwright. Auto-detects dev servers, writes reusable test scripts, and supports screenshots, responsive checks, UX validation, login flows, link checks, and arbitrary browser automation. Use when the user wants to test a website, automate browser interactions, validate web functionality, or perform browser-based testing."
-source_skill_id: "lackeyjb-playwright-skill-skills-playwright-skill-skill-md"
-category: "Testing, QA & benchmarking"
-source_mirror: "../../../../../skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-skill/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "lackeyjb-playwright-skill-skills-playwright-skill-skill-md"
+  category: "Testing, QA & benchmarking"
+  source_mirror: "../../../../../skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-skill/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # playwright-skill
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-skill/SKILL.md`
 - Source commit: `289abdea7df857dc7a6ece937dbe0c5ecc964ccd`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-lackeyjb-playwright-skill-skills-playwright-skill-skill-md`, `testing-qa-and-benchmarking-swe-bench-lite`, `testing-qa-and-benchmarking-owasp-benchmark`, `testing-qa-and-benchmarking-local-omero-compose-workflows`
 

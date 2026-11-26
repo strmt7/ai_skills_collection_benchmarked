@@ -1,10 +1,11 @@
 ---
-name: "verification-loop"
+name: "verification-loop-simple-ai-bitcoin-trading-binance"
 description: "Use for verification-loop workflows. Source sections include Verification Loop, Principle, Process."
-source_skill_id: "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md"
-category: "Testing, QA & benchmarking"
-source_mirror: "../../../../../skills/by-category/testing-qa-benchmarking/selected-project-reference/verification-loop-simple-ai-bitcoin-trading-binance/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md"
+  category: "Testing, QA & benchmarking"
+  source_mirror: "../../../../../skills/by-category/testing-qa-benchmarking/selected-project-reference/verification-loop-simple-ai-bitcoin-trading-binance/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # verification-loop
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/testing-qa-benchmarking/selected-project-reference/verification-loop-simple-ai-bitcoin-trading-binance/SKILL.md`
 - Source commit: `451d77df90621e3b666581d9835d246fb7147349`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md`, `testing-qa-and-benchmarking-swe-bench-lite`, `testing-qa-and-benchmarking-owasp-benchmark`, `testing-qa-and-benchmarking-local-omero-compose-workflows`
 

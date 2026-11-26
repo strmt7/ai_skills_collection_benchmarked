@@ -1,10 +1,11 @@
 ---
 name: "coverage-analysis"
 description: "Coverage analysis measures code exercised during fuzzing. Use when assessing harness effectiveness or identifying fuzzing blockers."
-source_skill_id: "trailofbits-skills-plugins-testing-handbook-skills-skills-coverage-analysis-skill-md"
-category: "Testing, QA & benchmarking"
-source_mirror: "../../../../../skills/by-category/testing-qa-benchmarking/security-reference/coverage-analysis/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "trailofbits-skills-plugins-testing-handbook-skills-skills-coverage-analysis-skill-md"
+  category: "Testing, QA & benchmarking"
+  source_mirror: "../../../../../skills/by-category/testing-qa-benchmarking/security-reference/coverage-analysis/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # coverage-analysis
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/testing-qa-benchmarking/security-reference/coverage-analysis/SKILL.md`
 - Source commit: `e8cc5baf9329ccb491bfa200e82eacbac83b1ead`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-trailofbits-skills-plugins-testing-handbook-skills-skills-coverage-analysis-skill-md`, `testing-qa-and-benchmarking-swe-bench-lite`, `testing-qa-and-benchmarking-owasp-benchmark`, `testing-qa-and-benchmarking-local-omero-compose-workflows`
 

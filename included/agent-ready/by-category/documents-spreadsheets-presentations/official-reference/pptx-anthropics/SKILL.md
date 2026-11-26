@@ -1,10 +1,11 @@
 ---
-name: "pptx"
+name: "pptx-anthropics"
 description: "Use this skill any time a .pptx file is involved in any way \u2014 as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx file (even if the extracted content will be used elsewhere, like in an email or summary); editing, modifying, or updating existing presentations; combining or splitting slide files; working with templates,."
-source_skill_id: "anthropics-skills-skills-pptx-skill-md"
-category: "Documents, spreadsheets & presentations"
-source_mirror: "../../../../../skills/by-category/documents-spreadsheets-presentations/official-reference/pptx-anthropics/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "anthropics-skills-skills-pptx-skill-md"
+  category: "Documents, spreadsheets & presentations"
+  source_mirror: "../../../../../skills/by-category/documents-spreadsheets-presentations/official-reference/pptx-anthropics/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # pptx
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/documents-spreadsheets-presentations/official-reference/pptx-anthropics/SKILL.md`
 - Source commit: `2c7ec5e78b8e5d43ea02e90bb8826f6b9f147b0c`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-anthropics-skills-skills-pptx-skill-md`, `documents-spreadsheets-and-presentations-sec-edgar-companyfacts`, `documents-spreadsheets-and-presentations-enron-email`, `documents-spreadsheets-and-presentations-stackoverflow-survey`
 

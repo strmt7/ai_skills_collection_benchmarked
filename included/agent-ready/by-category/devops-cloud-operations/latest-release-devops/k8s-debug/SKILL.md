@@ -1,10 +1,11 @@
 ---
 name: "k8s-debug"
 description: "Diagnose and fix Kubernetes pods, CrashLoopBackOff, Pending, DNS, networking, storage, and rollout failures with kubectl."
-source_skill_id: "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-k8s-debug-skill-md"
-category: "DevOps, cloud & operations"
-source_mirror: "../../../../../skills/by-category/devops-cloud-operations/latest-release-devops/k8s-debug/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-k8s-debug-skill-md"
+  category: "DevOps, cloud & operations"
+  source_mirror: "../../../../../skills/by-category/devops-cloud-operations/latest-release-devops/k8s-debug/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # k8s-debug
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/devops-cloud-operations/latest-release-devops/k8s-debug/SKILL.md`
 - Source commit: `7fe7595e4512f8ce43dcf956aa5190b96d627dd1`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-akin-ozer-cc-devops-skills-devops-skills-plugin-skills-k8s-debug-skill-md`, `devops-cloud-and-operations-kubernetes-examples`, `devops-cloud-and-operations-opentelemetry-demo`, `devops-cloud-and-operations-local-omero-compose-workflows`
 

@@ -1,10 +1,11 @@
 ---
 name: "designing-workflow-skills"
 description: "Guides the design and structuring of workflow-based Claude Code skills with multi-step phases, decision trees, explicit workflow routing, and progressive disclosure. Use when creating skills that involve sequential pipelines, routing patterns, safety gates, task tracking, phased execution, or any multi-step workflow. Also applies when reviewing or refactoring existing workflow skills for quality."
-source_skill_id: "trailofbits-skills-plugins-workflow-skill-design-skills-designing-workflow-skills-skill-md"
-category: "DevOps, cloud & operations"
-source_mirror: "../../../../../skills/by-category/devops-cloud-operations/security-reference/designing-workflow-skills/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "trailofbits-skills-plugins-workflow-skill-design-skills-designing-workflow-skills-skill-md"
+  category: "DevOps, cloud & operations"
+  source_mirror: "../../../../../skills/by-category/devops-cloud-operations/security-reference/designing-workflow-skills/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # designing-workflow-skills
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/devops-cloud-operations/security-reference/designing-workflow-skills/SKILL.md`
 - Source commit: `e8cc5baf9329ccb491bfa200e82eacbac83b1ead`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-trailofbits-skills-plugins-workflow-skill-design-skills-designing-workflow-skills-skill-md`, `devops-cloud-and-operations-kubernetes-examples`, `devops-cloud-and-operations-opentelemetry-demo`, `devops-cloud-and-operations-local-omero-compose-workflows`
 

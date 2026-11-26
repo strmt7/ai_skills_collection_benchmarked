@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-26",
+  "scope": "Standards-conforming published-layout entrypoints and controlled native client import.",
+  "base_revision": "fa20c91871b43837097cd73ccdddfa4190839004",
+  "source_sha256": {
+    "data/skill_risk_audit.json": "8045c3b46167dad61cc764447dda03c2a67556c90ff177f85be5535672807485",
+    "data/skills_catalog.json": "706cd6717bc111894b48b44ebf92cc3f938419d71904104e49101d4a694af3fb",
+    "data/static_benchmark_results.json": "a5028fdbc7205e93567ae708276084211af18be9e699a92ffc7fe7b52349f5bf",
+    "docs/agent-tools.md": "80dfc9743217fa31d8d8cc87eabc5fa549db372c61ab1d95b92b8050701b8779",
+    "docs/catalog/by-category/omero-django-docker-lab-infrastructure.md": "b402fe1b661636ee5f196a43bd1e65658d88b89d9a53c3da671979428a742411",
+    "docs/catalog/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/ai-regression-testing-third-party-ecc-v1-10-0-ai-regression-testing.md": "c1a9ab2a11397d76126a5ab6f229bf224463047920eb46398921276be31ef88c",
+    "docs/catalog/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/documentation-lookup-third-party-ecc-v1-10-0-documentation-lookup.md": "ff885c7b209c91af1e4c4ea25bbd92b66ef7738abd3fd3ddd8c602cd6e47ccb6",
+    "docs/installation.md": "e9a07cda298bffc1353dabec9662a607ee173a092547362e8fcf46c89cb404ad",
+    "included/agent-ready/manifest.json": "a23577d788f65a4fa0a146d2e612c57ba257b8266e61db581e3469e3c07c623d",
+    "included/selected/manifest.json": "b0805b1528f08187c9577a3cf4d4be272c4420d1fd4d4953fd0c78c74b4bb3e2",
+    "included/skills/manifest.json": "1014de7ccc4ea450dc2a8c253a36a816aa415c26cce7672a39adcdc939228b8e",
+    "tests/test_agent_ready_portability.py": "09f29f615cd02787a7a4b5759db17f572d688c1e1af948cdf35afa7ccd36e3dd",
+    "tests/test_catalog_data.py": "8264ca1f0754a5ff4d1478947b81023fd8a18d92d0c78d339d65c64171d90f19",
+    "tools/build_catalog.py": "fe433b98f099277c12c23eacdb725bd71bc80e511bdc9bf3b4d9414c5754bf82",
+    "tools/validate_catalog.py": "1588bebbd99dc308da70bdaa01f2ef732104d124b6d2e4ce264043e697abc5f0"
+  },
+  "artifacts": {
+    "observations.json": "4a21a55148ab6d61529031ee5b3f1684810985b580ac6e8f5f9766bb03a38280"
+  },
+  "limitations": [
+    "Relative wrapper resources are qualified in the intact checkout. The two controlled relocations rebuilt references and supplied the three referenced files; a detached distribution with all toolchain resources remains unqualified.",
+    "The native client listing recorded all generated names. Prepared input and file resolution were exercised on the two renamed entries, without model requests or skill execution.",
+    "The checked generator operation renders the complete wrapper tree from frozen catalog data. This scope does not qualify upstream refresh, interrupted multi-output promotion or every agent client."
+  ],
+  "comparative_model_attempts": 0,
+  "model_efficacy_established": false
+}

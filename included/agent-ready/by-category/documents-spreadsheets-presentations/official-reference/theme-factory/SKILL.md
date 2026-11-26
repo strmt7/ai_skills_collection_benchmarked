@@ -1,10 +1,11 @@
 ---
 name: "theme-factory"
 description: "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly."
-source_skill_id: "anthropics-skills-skills-theme-factory-skill-md"
-category: "Documents, spreadsheets & presentations"
-source_mirror: "../../../../../skills/by-category/documents-spreadsheets-presentations/official-reference/theme-factory/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "anthropics-skills-skills-theme-factory-skill-md"
+  category: "Documents, spreadsheets & presentations"
+  source_mirror: "../../../../../skills/by-category/documents-spreadsheets-presentations/official-reference/theme-factory/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # theme-factory
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/documents-spreadsheets-presentations/official-reference/theme-factory/SKILL.md`
 - Source commit: `2c7ec5e78b8e5d43ea02e90bb8826f6b9f147b0c`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-anthropics-skills-skills-theme-factory-skill-md`, `documents-spreadsheets-and-presentations-sec-edgar-companyfacts`, `documents-spreadsheets-and-presentations-enron-email`, `documents-spreadsheets-and-presentations-stackoverflow-survey`
 

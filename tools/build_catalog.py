@@ -13,6 +13,7 @@ import copy
 import hashlib
 import json
 import os
+import posixpath
 import re
 import shutil
 import stat
@@ -1259,8 +1260,19 @@ def skill_mirror_path(category: str, source_tier: str, entry_install_name: str) 
     return f"included/skills/by-category/{slug(category)}/{slug(source_tier)}/{entry_install_name}"
 
 
+def agent_ready_name(install_name: str) -> str:
+    """Derive the client-facing alias while preserving the locked mirror name."""
+    if re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", install_name) is None:
+        raise ValueError("agent-ready name requires a canonical installation name")
+    if len(install_name) <= 64:
+        return install_name
+    suffix = hashlib.sha256(install_name.encode("utf-8")).hexdigest()[:12]
+    return f"{install_name[:51].rstrip('-')}-{suffix}"
+
+
 def skill_agent_ready_path(category: str, source_tier: str, entry_install_name: str) -> str:
-    return f"included/agent-ready/by-category/{slug(category)}/{slug(source_tier)}/{entry_install_name}/SKILL.md"
+    name = agent_ready_name(entry_install_name)
+    return f"included/agent-ready/by-category/{slug(category)}/{slug(source_tier)}/{name}/SKILL.md"
 
 
 def validate_preserved_notice(root: Path, notice: Any, commit: str) -> dict[str, str] | None:
@@ -1690,24 +1702,23 @@ def mirror_all_skills(
         raise
 
 
-def write_agent_ready_skills(entries: list[dict[str, Any]]) -> None:
-    target = ROOT / "included" / "agent-ready"
-    if target.exists():
-        shutil.rmtree(target)
-    target.mkdir(parents=True)
-    manifest = []
-    for entry in entries:
-        path = ROOT / entry["agent_ready_path"]
-        path.parent.mkdir(parents=True, exist_ok=True)
-        rel_source = os.path.relpath(ROOT / entry["mirrored_path"] / "SKILL.md", path.parent).replace(os.sep, "/")
-        rel_policy = os.path.relpath(ROOT / "docs/agent-tools.md", path.parent).replace(os.sep, "/")
-        body = f"""---
-name: {json.dumps(entry["name"])}
+def render_agent_ready_skill(entry: dict[str, Any]) -> str:
+    """Render an entrypoint with canonical names and checkout-relative resources."""
+    parent = PurePosixPath(entry["agent_ready_path"]).parent
+    name = agent_ready_name(entry["install_name"])
+    if parent.name != name:
+        raise ValueError(f"agent-ready alias differs from its directory: {entry['id']}")
+    rel_source = posixpath.relpath(PurePosixPath(entry["mirrored_path"]) / "SKILL.md", parent)
+    rel_policy = posixpath.relpath("docs/agent-tools.md", parent)
+    rel_results = posixpath.relpath("docs/benchmark-results.md", parent)
+    return f"""---
+name: {json.dumps(name)}
 description: {json.dumps(entry["description"])}
-source_skill_id: {json.dumps(entry["id"])}
-category: {json.dumps(entry["category"])}
-source_mirror: {json.dumps(rel_source)}
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: {json.dumps(entry["id"])}
+  category: {json.dumps(entry["category"])}
+  source_mirror: {json.dumps(rel_source)}
+  benchmark_status: "artifact_gated"
 ---
 
 # {entry["name"]}
@@ -1727,13 +1738,36 @@ Before repository work, read and apply [Mandatory agent tools]({rel_policy}): Ca
 
 - Source mirror: `{rel_source}`
 - Source commit: `{entry["commit_sha"]}`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results]({rel_results})
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: {", ".join(f"`{scenario_id}`" for scenario_id in entry["benchmark_scenarios"])}
 
 Do not claim this skill passed a runtime benchmark until a validated artifact exists.
 """
-        path.write_text(body, encoding="utf-8", newline="\n")
+
+
+def write_agent_ready_skills(entries: list[dict[str, Any]]) -> None:
+    rendered = {}
+    names = set()
+    for entry in entries:
+        relative = skill_agent_ready_path(entry["category"], entry["subcategory"], entry["install_name"])
+        name = agent_ready_name(entry["install_name"])
+        if name in names:
+            raise ValueError(f"duplicate agent-ready alias: {name}")
+        if relative != entry["agent_ready_path"]:
+            raise ValueError(f"agent-ready path differs from the canonical layout: {entry['id']}")
+        names.add(name)
+        rendered[relative] = render_agent_ready_skill(entry)
+
+    target = ROOT / "included" / "agent-ready"
+    if target.exists():
+        shutil.rmtree(target)
+    target.mkdir(parents=True)
+    manifest = []
+    for entry in entries:
+        path = ROOT / entry["agent_ready_path"]
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(rendered[entry["agent_ready_path"]], encoding="utf-8", newline="\n")
         manifest.append(
             {
                 "id": entry["id"],

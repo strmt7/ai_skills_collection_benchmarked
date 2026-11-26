@@ -1,10 +1,11 @@
 ---
-name: "python-testing"
+name: "python-testing-third-party-ecc-v1-10-0-python-testing"
 description: "Python testing strategies using pytest, TDD methodology, fixtures, mocking, parametrization, and coverage requirements."
-source_skill_id: "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-testing-skill-md"
-category: "OMERO, Django, Docker & lab infrastructure"
-source_mirror: "../../../../../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/python-testing-third-party-ecc-v1-10-0-python-testing/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-testing-skill-md"
+  category: "OMERO, Django, Docker & lab infrastructure"
+  source_mirror: "../../../../../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/python-testing-third-party-ecc-v1-10-0-python-testing/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # python-testing
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/python-testing-third-party-ecc-v1-10-0-python-testing/SKILL.md`
 - Source commit: `b7c7cfa2a057f08eb872aadae49d89f521480114`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-testing-skill-md`, `omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows`, `omero-django-docker-and-lab-infrastructure-ome-ngff-samples`, `omero-django-docker-and-lab-infrastructure-opentelemetry-demo`
 

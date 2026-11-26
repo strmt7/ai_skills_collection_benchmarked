@@ -1,10 +1,11 @@
 ---
 name: "cook-the-blog"
 description: "Generate high-converting, deep-dive growth case studies in MDX format. Use this skill when asked to write a case study or blog post about a company's growth, tech stack, or product-led strategy. It handles the full pipeline (researching the company via Tavily, generating a 16:9 cover image, quality checking the draft, uploading assets to cloud storage, and pushing directly to the target repository)."
-source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-cook-the-blog-skill-md"
-category: "DevOps, cloud & operations"
-source_mirror: "../../../../../skills/by-category/devops-cloud-operations/reddit-verified-gtm-registry/cook-the-blog/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-cook-the-blog-skill-md"
+  category: "DevOps, cloud & operations"
+  source_mirror: "../../../../../skills/by-category/devops-cloud-operations/reddit-verified-gtm-registry/cook-the-blog/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # cook-the-blog
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/devops-cloud-operations/reddit-verified-gtm-registry/cook-the-blog/SKILL.md`
 - Source commit: `bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-varnan-tech-opendirectory-packages-cli-skills-cook-the-blog-skill-md`, `devops-cloud-and-operations-kubernetes-examples`, `devops-cloud-and-operations-opentelemetry-demo`, `devops-cloud-and-operations-local-omero-compose-workflows`
 

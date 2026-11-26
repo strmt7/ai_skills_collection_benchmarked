@@ -1,10 +1,11 @@
 ---
 name: "iac-terraform"
 description: "Infrastructure as Code with Terraform and Terragrunt. Use this skill whenever the user mentions Terraform, Terragrunt, HCL, or infrastructure as code. Triggers include writing or reviewing .tf files, creating reusable modules, debugging terraform plan/apply errors, managing remote state and locks, fixing state drift, setting up CI/CD for Terraform, scaffolding new modules, validating module structure, and."
-source_skill_id: "ahmedasmar-devops-claude-skills-iac-terraform-skills-skill-md"
-category: "DevOps, cloud & operations"
-source_mirror: "../../../../../skills/by-category/devops-cloud-operations/devops-reference/iac-terraform/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "ahmedasmar-devops-claude-skills-iac-terraform-skills-skill-md"
+  category: "DevOps, cloud & operations"
+  source_mirror: "../../../../../skills/by-category/devops-cloud-operations/devops-reference/iac-terraform/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # iac-terraform
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/devops-cloud-operations/devops-reference/iac-terraform/SKILL.md`
 - Source commit: `1489c33ad8829a11219e423327d6b59f8339cee4`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-ahmedasmar-devops-claude-skills-iac-terraform-skills-skill-md`, `devops-cloud-and-operations-kubernetes-examples`, `devops-cloud-and-operations-opentelemetry-demo`, `devops-cloud-and-operations-local-omero-compose-workflows`
 

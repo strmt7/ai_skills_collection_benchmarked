@@ -1,10 +1,11 @@
 ---
 name: "dwarf-expert"
 description: "Provides expertise for analyzing DWARF debug files and understanding the DWARF debug format/standard (v3-v5). Triggers when understanding DWARF information, interacting with DWARF files, answering DWARF-related questions, or working with code that parses DWARF data."
-source_skill_id: "trailofbits-skills-plugins-dwarf-expert-skills-dwarf-expert-skill-md"
-category: "Coding, refactoring & repository automation"
-source_mirror: "../../../../../skills/by-category/coding-refactoring-repository-automation/security-reference/dwarf-expert/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "trailofbits-skills-plugins-dwarf-expert-skills-dwarf-expert-skill-md"
+  category: "Coding, refactoring & repository automation"
+  source_mirror: "../../../../../skills/by-category/coding-refactoring-repository-automation/security-reference/dwarf-expert/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # dwarf-expert
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/coding-refactoring-repository-automation/security-reference/dwarf-expert/SKILL.md`
 - Source commit: `e8cc5baf9329ccb491bfa200e82eacbac83b1ead`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-trailofbits-skills-plugins-dwarf-expert-skills-dwarf-expert-skill-md`, `coding-refactoring-and-repository-automation-swe-bench-lite`, `coding-refactoring-and-repository-automation-kubernetes-examples`, `coding-refactoring-and-repository-automation-opentelemetry-demo`
 

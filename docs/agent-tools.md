@@ -24,7 +24,7 @@ inclusion does not imply a security review or approval.
 
 Before using a catalog skill, check the [documented skill limitations](installation.md#choose-a-skill)
 and the linked reviews for findings relevant to that skill. Look up the selected
-catalog ID (the entrypoint's `source_skill_id`) in the
+catalog ID (the entrypoint's `metadata.source_skill_id`) in the
 [improvement ledger](../data/improvement_ledger.json) and review its applicable
 evidence against its recorded source signature and scope. The examples are not
 exhaustive; absence from the list or a pending review does not establish that a

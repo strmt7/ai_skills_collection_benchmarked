@@ -1,10 +1,11 @@
 ---
-name: "verification-loop"
+name: "verification-loop-omero-docker-extended"
 description: "Repository-specific verification flow for OMERO Docker Extended. Runs docs validation, Ruff, split pytest suites, and targeted fallback checks without overstating coverage."
-source_skill_id: "zmb-uzh-omero-docker-extended-agents-skills-verification-loop-skill-md"
-category: "OMERO, Django, Docker & lab infrastructure"
-source_mirror: "../../../../../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/verification-loop-omero-docker-extended/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "zmb-uzh-omero-docker-extended-agents-skills-verification-loop-skill-md"
+  category: "OMERO, Django, Docker & lab infrastructure"
+  source_mirror: "../../../../../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/verification-loop-omero-docker-extended/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # verification-loop
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/verification-loop-omero-docker-extended/SKILL.md`
 - Source commit: `b7c7cfa2a057f08eb872aadae49d89f521480114`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-zmb-uzh-omero-docker-extended-agents-skills-verification-loop-skill-md`, `omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows`, `omero-django-docker-and-lab-infrastructure-ome-ngff-samples`, `omero-django-docker-and-lab-infrastructure-opentelemetry-demo`
 

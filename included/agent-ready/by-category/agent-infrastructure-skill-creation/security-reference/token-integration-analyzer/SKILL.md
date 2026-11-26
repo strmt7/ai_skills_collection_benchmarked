@@ -1,10 +1,11 @@
 ---
 name: "token-integration-analyzer"
 description: "Token integration and implementation analyzer based on Trail of Bits' token integration checklist. Analyzes token implementations for ERC20/ERC721 conformity, checks for 20+ weird token patterns, assesses contract composition and owner privileges, performs on-chain scarcity analysis, and evaluates how protocols handle non-standard tokens. Context-aware for both token implementations and token integrations."
-source_skill_id: "trailofbits-skills-plugins-building-secure-contracts-skills-token-integration-analyzer-skill-md"
-category: "Agent infrastructure & skill creation"
-source_mirror: "../../../../../skills/by-category/agent-infrastructure-skill-creation/security-reference/token-integration-analyzer/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "trailofbits-skills-plugins-building-secure-contracts-skills-token-integration-analyzer-skill-md"
+  category: "Agent infrastructure & skill creation"
+  source_mirror: "../../../../../skills/by-category/agent-infrastructure-skill-creation/security-reference/token-integration-analyzer/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # token-integration-analyzer
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/agent-infrastructure-skill-creation/security-reference/token-integration-analyzer/SKILL.md`
 - Source commit: `e8cc5baf9329ccb491bfa200e82eacbac83b1ead`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-trailofbits-skills-plugins-building-secure-contracts-skills-token-integration-analyzer-skill-md`, `agent-infrastructure-and-skill-creation-beir-retrieval`, `agent-infrastructure-and-skill-creation-swe-bench-lite`, `agent-infrastructure-and-skill-creation-common-crawl-warc`
 

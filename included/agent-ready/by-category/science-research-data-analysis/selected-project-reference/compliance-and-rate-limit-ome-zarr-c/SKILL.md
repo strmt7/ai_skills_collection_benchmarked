@@ -1,10 +1,11 @@
 ---
-name: "compliance-and-rate-limit"
+name: "compliance-and-rate-limit-ome-zarr-c"
 description: "Keep public-web research compliant, bounded, and efficient through rule checks, caching, and backoff instead of evasive scraping."
-source_skill_id: "strmt7-ome-zarr-c-agents-skills-compliance-and-rate-limit-skill-md"
-category: "Science, research & data analysis"
-source_mirror: "../../../../../skills/by-category/science-research-data-analysis/selected-project-reference/compliance-and-rate-limit-ome-zarr-c/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "strmt7-ome-zarr-c-agents-skills-compliance-and-rate-limit-skill-md"
+  category: "Science, research & data analysis"
+  source_mirror: "../../../../../skills/by-category/science-research-data-analysis/selected-project-reference/compliance-and-rate-limit-ome-zarr-c/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # compliance-and-rate-limit
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/science-research-data-analysis/selected-project-reference/compliance-and-rate-limit-ome-zarr-c/SKILL.md`
 - Source commit: `a9238a81742f96c89acf6d83fce6d6b882ac4d1c`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-strmt7-ome-zarr-c-agents-skills-compliance-and-rate-limit-skill-md`, `science-research-and-data-analysis-cellxgene-census`, `science-research-and-data-analysis-chembl`, `science-research-and-data-analysis-ome-ngff-samples`
 

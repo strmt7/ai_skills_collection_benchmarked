@@ -1,10 +1,11 @@
 ---
 name: "pr-description-writer"
 description: "Use for pr-description-writer workflows. Source sections include PR Description Writer, Writing Style, Step 1: Check Setup."
-source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-pr-description-writer-skill-md"
-category: "Communication, productivity & support"
-source_mirror: "../../../../../skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/pr-description-writer/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-pr-description-writer-skill-md"
+  category: "Communication, productivity & support"
+  source_mirror: "../../../../../skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/pr-description-writer/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # pr-description-writer
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/pr-description-writer/SKILL.md`
 - Source commit: `bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-varnan-tech-opendirectory-packages-cli-skills-pr-description-writer-skill-md`, `communication-productivity-and-support-enron-email`, `communication-productivity-and-support-ms-marco`, `communication-productivity-and-support-sec-edgar-companyfacts`
 

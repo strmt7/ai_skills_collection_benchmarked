@@ -1,10 +1,11 @@
 ---
 name: "amazon-listing-competitor-analysis-skill"
 description: "This skill helps users analyze Amazon competitor listings by ASIN and produce structured competitive intelligence plus strategic opportunity points for their own go-to-market. The Agent should proactively apply this skill when users want to analyze a competitor Amazon listing by ASIN, understand what a top-ranked product does right in content keywords or visuals, find market gaps and unmet buyer needs, turn."
-source_skill_id: "browser-act-skills-amazon-listing-competitor-analysis-skill-skill-md"
-category: "Search, retrieval & web automation"
-source_mirror: "../../../../../skills/by-category/search-retrieval-web-automation/browser-automation-reference/amazon-listing-competitor-analysis-skill/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "browser-act-skills-amazon-listing-competitor-analysis-skill-skill-md"
+  category: "Search, retrieval & web automation"
+  source_mirror: "../../../../../skills/by-category/search-retrieval-web-automation/browser-automation-reference/amazon-listing-competitor-analysis-skill/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # amazon-listing-competitor-analysis-skill
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/search-retrieval-web-automation/browser-automation-reference/amazon-listing-competitor-analysis-skill/SKILL.md`
 - Source commit: `749ed52133b85606cf402b7fda95949542cbb8f8`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-browser-act-skills-amazon-listing-competitor-analysis-skill-skill-md`, `search-retrieval-and-web-automation-common-crawl-warc`, `search-retrieval-and-web-automation-beir-retrieval`, `search-retrieval-and-web-automation-ms-marco`
 

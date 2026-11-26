@@ -1,10 +1,11 @@
 ---
 name: "coding-standards"
 description: "Baseline cross-project coding conventions for naming, readability, immutability, and code-quality review. Use detailed frontend or backend skills for framework-specific patterns. Use when reviewing code quality or naming with no framework-specific skill that applies."
-source_skill_id: "affaan-m-everything-claude-code-agents-skills-coding-standards-skill-md"
-category: "Frontend, UI & browser automation"
-source_mirror: "../../../../../skills/by-category/frontend-ui-browser-automation/selected-structure-reference/coding-standards/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "affaan-m-everything-claude-code-agents-skills-coding-standards-skill-md"
+  category: "Frontend, UI & browser automation"
+  source_mirror: "../../../../../skills/by-category/frontend-ui-browser-automation/selected-structure-reference/coding-standards/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # coding-standards
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/frontend-ui-browser-automation/selected-structure-reference/coding-standards/SKILL.md`
 - Source commit: `c05b2d6614f62f6db0047669aa4eefb223d478f9`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-affaan-m-everything-claude-code-agents-skills-coding-standards-skill-md`, `frontend-ui-and-browser-automation-owasp-juice-shop`, `frontend-ui-and-browser-automation-coco-captions`, `frontend-ui-and-browser-automation-air-defense-android-benchmarks`
 

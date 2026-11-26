@@ -1,10 +1,11 @@
 ---
 name: "angry-customer-playbook"
 description: "Step-by-step de-escalation guide for handling angry or abusive customer messages."
-source_skill_id: "composio-community-support-skills-angry-customer-playbook-skill-md"
-category: "Communication, productivity & support"
-source_mirror: "../../../../../skills/by-category/communication-productivity-support/support-reference/angry-customer-playbook/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "composio-community-support-skills-angry-customer-playbook-skill-md"
+  category: "Communication, productivity & support"
+  source_mirror: "../../../../../skills/by-category/communication-productivity-support/support-reference/angry-customer-playbook/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # angry-customer-playbook
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/communication-productivity-support/support-reference/angry-customer-playbook/SKILL.md`
 - Source commit: `b4f842c3cbdcae0c45771fd996c396aee80dde2e`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-composio-community-support-skills-angry-customer-playbook-skill-md`, `communication-productivity-and-support-enron-email`, `communication-productivity-and-support-ms-marco`, `communication-productivity-and-support-sec-edgar-companyfacts`
 

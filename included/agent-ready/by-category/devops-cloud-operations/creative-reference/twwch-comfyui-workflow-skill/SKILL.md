@@ -1,10 +1,11 @@
 ---
-name: "twwch__comfyui-workflow-skill"
+name: "twwch-comfyui-workflow-skill"
 description: "Use for twwch__comfyui-workflow-skill workflows. Source sections include ComfyUI Workflow Generator, Description, Activation."
-source_skill_id: "twwch-comfyui-workflow-skill-skill-md"
-category: "DevOps, cloud & operations"
-source_mirror: "../../../../../skills/by-category/devops-cloud-operations/creative-reference/twwch-comfyui-workflow-skill/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "twwch-comfyui-workflow-skill-skill-md"
+  category: "DevOps, cloud & operations"
+  source_mirror: "../../../../../skills/by-category/devops-cloud-operations/creative-reference/twwch-comfyui-workflow-skill/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # twwch__comfyui-workflow-skill
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/devops-cloud-operations/creative-reference/twwch-comfyui-workflow-skill/SKILL.md`
 - Source commit: `61e6b7984de7f415a8df59c97522265cac6d3b1b`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-twwch-comfyui-workflow-skill-skill-md`, `devops-cloud-and-operations-kubernetes-examples`, `devops-cloud-and-operations-opentelemetry-demo`, `devops-cloud-and-operations-local-omero-compose-workflows`
 

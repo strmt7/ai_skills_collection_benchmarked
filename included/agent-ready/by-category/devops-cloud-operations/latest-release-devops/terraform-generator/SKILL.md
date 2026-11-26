@@ -1,10 +1,11 @@
 ---
 name: "terraform-generator"
 description: "Create, generate, write, or scaffold Terraform .tf HCL \u2014 resources, modules, providers, variables, outputs."
-source_skill_id: "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-terraform-generator-skill-md"
-category: "DevOps, cloud & operations"
-source_mirror: "../../../../../skills/by-category/devops-cloud-operations/latest-release-devops/terraform-generator/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-terraform-generator-skill-md"
+  category: "DevOps, cloud & operations"
+  source_mirror: "../../../../../skills/by-category/devops-cloud-operations/latest-release-devops/terraform-generator/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # terraform-generator
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/devops-cloud-operations/latest-release-devops/terraform-generator/SKILL.md`
 - Source commit: `7fe7595e4512f8ce43dcf956aa5190b96d627dd1`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-akin-ozer-cc-devops-skills-devops-skills-plugin-skills-terraform-generator-skill-md`, `devops-cloud-and-operations-kubernetes-examples`, `devops-cloud-and-operations-opentelemetry-demo`, `devops-cloud-and-operations-local-omero-compose-workflows`
 

@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-26",
+  "scope": "Agent Skills entrypoint format, raw-byte reproducibility, link resolution and model-free Codex discovery.",
+  "reference_validator_revision": "83021e2be457a9b6679148719c1f6074f0ad975e",
+  "reference_validator_passed": 673,
+  "generated_wrapper_inventory_sha256": "2bef4fae77cd24cf6666a2bf27d7c5b5bbd0e397f41946edc7c350a649a7df8b",
+  "generated_files_including_manifest_and_index": 675,
+  "old_to_new_wrapper_paths": {
+    "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/ai-regression-testing-third-party-ecc-v1-10-0-ai-regression-testing/SKILL.md": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/ai-regression-testing-third-party-ecc-v1-10-0-ai-re-7cdffa776685/SKILL.md",
+    "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/documentation-lookup-third-party-ecc-v1-10-0-documentation-lookup/SKILL.md": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/documentation-lookup-third-party-ecc-v1-10-0-docume-4378a675a868/SKILL.md"
+  },
+  "relocation_bytes_match": true,
+  "conflicting_alias_rejected_before_output_change": true,
+  "checkout_links_verified_per_skill": 3,
+  "pinned_source_lock_sha256": "cff0dfc48e73365f2d99728f56c4f53ca103f1ef61cf22253aca9118ede34d2b",
+  "immutable_mirror_contents_unchanged": true,
+  "native_windows_x64": {
+    "cli_version": "0.172.0",
+    "cli_sha256": "3f42b12274b353ecb3ec555e6c8d0a43f6c6cb29c3a546179bc12dee4855deb6",
+    "renderer_sha256": "fe433b98f099277c12c23eacdb725bd71bc80e511bdc9bf3b4d9414c5754bf82",
+    "native_catalog_entries_loaded": 673,
+    "native_owned_distinct_names": 673,
+    "native_skill_list_sha256": "67d2463804941357739424579ad5cd056c96dc3c711155fd830f34b0b6bc7387",
+    "renamed_entrypoints": [
+      {
+        "name": "ai-regression-testing-third-party-ecc-v1-10-0-ai-re-7cdffa776685",
+        "resolved_files": 3
+      },
+      {
+        "name": "documentation-lookup-third-party-ecc-v1-10-0-docume-4378a675a868",
+        "resolved_files": 3
+      }
+    ],
+    "renamed_descriptions_present_in_native_prepared_input": 2,
+    "native_prepared_input_sha256": "a283b8d60a23eef7f315e048a84eecdff59620981f79c5b3d3527fcd61a4984e",
+    "model_calls_requested": 0,
+    "scratch_removed": true,
+    "scope": "Client listing for generated names and model-free prepared context plus three relative file links for two relocated samples."
+  },
+  "checks": {
+    "focused_pytest_passed": 91,
+    "catalog": {
+      "catalog_entries": 673,
+      "error_count": 0,
+      "errors": [],
+      "ok": true,
+      "scenarios": 718,
+      "tracks": 19
+    },
+    "agent_tool_routing_entries": 673,
+    "static_benchmarks_current": true,
+    "ruff_lint_passed": true,
+    "ruff_format_passed": true,
+    "mypy_passed": true,
+    "test_scratch_released": true,
+    "stdout_sha256": {
+      "pytest": "3ec9920ffe06107c0fe44770339491a43118311d56bfa1acf7b514431ef5ef48",
+      "catalog": "615b54d5e26e7bc32759f8d9d27708d8cd8d1f9dcc2cd4a809f4c2052694463d",
+      "policy": "9fb42ae727a3e25d04309584d426540e4196e659a6df45abc5ac6d78a73c4331",
+      "static": "8ba34d2ea51d64736a00532973e85cfd0abd5b28251bd22b0eac40989c26a531",
+      "ruff": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "format": "c08cb44deef3bd5e6aceb013d76f19020ed4f70d4eea0e35334c33d2a0dc94ff",
+      "mypy": "f5e3ea91c7c611b9bbf18b89f7c5c653e6999b3ca7fbb75bf6c5af0b8a25dfa4"
+    }
+  }
+}

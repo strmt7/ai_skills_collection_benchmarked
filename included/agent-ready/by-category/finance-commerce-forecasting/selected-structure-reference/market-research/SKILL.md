@@ -1,10 +1,11 @@
 ---
 name: "market-research"
 description: "Conduct market research, competitive analysis, investor due diligence, and industry intelligence with source attribution and decision-oriented summaries. Use when the user wants market sizing, competitor comparisons, fund research, technology scans, or research that informs business decisions."
-source_skill_id: "affaan-m-everything-claude-code-agents-skills-market-research-skill-md"
-category: "Finance, commerce & forecasting"
-source_mirror: "../../../../../skills/by-category/finance-commerce-forecasting/selected-structure-reference/market-research/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "affaan-m-everything-claude-code-agents-skills-market-research-skill-md"
+  category: "Finance, commerce & forecasting"
+  source_mirror: "../../../../../skills/by-category/finance-commerce-forecasting/selected-structure-reference/market-research/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # market-research
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/finance-commerce-forecasting/selected-structure-reference/market-research/SKILL.md`
 - Source commit: `c05b2d6614f62f6db0047669aa4eefb223d478f9`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-affaan-m-everything-claude-code-agents-skills-market-research-skill-md`, `finance-commerce-and-forecasting-sec-edgar-companyfacts`, `finance-commerce-and-forecasting-nyc-tlc-trip-records`, `finance-commerce-and-forecasting-stackoverflow-survey`
 

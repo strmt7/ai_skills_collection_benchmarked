@@ -1,10 +1,11 @@
 ---
 name: "evolink-music"
 description: "AI music generation with Suno v4, v4.5, v5. Text-to-music, custom lyrics, instrumental, vocal control. 5 models, one API key."
-source_skill_id: "evolinkai-music-generation-skill-for-openclaw-skill-md"
-category: "Creative, media & design"
-source_mirror: "../../../../../skills/by-category/creative-media-design/creative-reference/evolink-music/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "evolinkai-music-generation-skill-for-openclaw-skill-md"
+  category: "Creative, media & design"
+  source_mirror: "../../../../../skills/by-category/creative-media-design/creative-reference/evolink-music/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # evolink-music
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/creative-media-design/creative-reference/evolink-music/SKILL.md`
 - Source commit: `a37e5b6ef986c952d0d5ba57ddc6e6f0c3abd858`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-evolinkai-music-generation-skill-for-openclaw-skill-md`, `creative-media-and-design-coco-captions`, `creative-media-and-design-air-defense-android-benchmarks`, `creative-media-and-design-nyc-tlc-trip-records`
 

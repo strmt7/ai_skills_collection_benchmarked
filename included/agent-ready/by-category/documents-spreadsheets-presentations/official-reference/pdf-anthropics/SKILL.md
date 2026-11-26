@@ -1,10 +1,11 @@
 ---
-name: "pdf"
+name: "pdf-anthropics"
 description: "Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, rotating pages, adding watermarks, creating new PDFs, filling PDF forms, encrypting/decrypting PDFs, extracting images, and OCR on scanned PDFs to make them searchable. If the user mentions a .pdf file or asks to produce."
-source_skill_id: "anthropics-skills-skills-pdf-skill-md"
-category: "Documents, spreadsheets & presentations"
-source_mirror: "../../../../../skills/by-category/documents-spreadsheets-presentations/official-reference/pdf-anthropics/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "anthropics-skills-skills-pdf-skill-md"
+  category: "Documents, spreadsheets & presentations"
+  source_mirror: "../../../../../skills/by-category/documents-spreadsheets-presentations/official-reference/pdf-anthropics/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # pdf
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/documents-spreadsheets-presentations/official-reference/pdf-anthropics/SKILL.md`
 - Source commit: `2c7ec5e78b8e5d43ea02e90bb8826f6b9f147b0c`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-anthropics-skills-skills-pdf-skill-md`, `documents-spreadsheets-and-presentations-sec-edgar-companyfacts`, `documents-spreadsheets-and-presentations-enron-email`, `documents-spreadsheets-and-presentations-stackoverflow-survey`
 

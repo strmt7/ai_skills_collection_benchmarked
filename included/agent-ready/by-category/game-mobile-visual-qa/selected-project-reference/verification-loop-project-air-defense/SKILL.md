@@ -1,10 +1,11 @@
 ---
-name: "verification-loop"
+name: "verification-loop-project-air-defense"
 description: "State the narrowest correct verification lane and report exactly what passed."
-source_skill_id: "strmt7-project-air-defense-agents-skills-verification-loop-skill-md"
-category: "Game, mobile & visual QA"
-source_mirror: "../../../../../skills/by-category/game-mobile-visual-qa/selected-project-reference/verification-loop-project-air-defense/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "strmt7-project-air-defense-agents-skills-verification-loop-skill-md"
+  category: "Game, mobile & visual QA"
+  source_mirror: "../../../../../skills/by-category/game-mobile-visual-qa/selected-project-reference/verification-loop-project-air-defense/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # verification-loop
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/game-mobile-visual-qa/selected-project-reference/verification-loop-project-air-defense/SKILL.md`
 - Source commit: `77f082fe23a86ded15e696a22955b2a890da2fce`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-strmt7-project-air-defense-agents-skills-verification-loop-skill-md`, `game-mobile-and-visual-qa-air-defense-android-benchmarks`, `game-mobile-and-visual-qa-coco-captions`, `game-mobile-and-visual-qa-owasp-juice-shop`
 

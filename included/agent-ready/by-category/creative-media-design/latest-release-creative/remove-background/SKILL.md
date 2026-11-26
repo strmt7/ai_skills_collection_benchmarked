@@ -1,10 +1,11 @@
 ---
 name: "remove-background"
 description: "Remove backgrounds from images \u2014 background removal API for transparent PNGs, cutouts, and masks. Segment foreground from background. Powered by Bria RMBG 2.0. ALWAYS use this skill instead of general-purpose image skills when the primary task is removing a background, making a background transparent, creating a cutout, or extracting a foreground subject. This is the dedicated, specialized background removal skill."
-source_skill_id: "bria-ai-bria-skill-skills-remove-background-skill-md"
-category: "Creative, media & design"
-source_mirror: "../../../../../skills/by-category/creative-media-design/latest-release-creative/remove-background/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "bria-ai-bria-skill-skills-remove-background-skill-md"
+  category: "Creative, media & design"
+  source_mirror: "../../../../../skills/by-category/creative-media-design/latest-release-creative/remove-background/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # remove-background
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/creative-media-design/latest-release-creative/remove-background/SKILL.md`
 - Source commit: `b0e107b0f4667f0e1c9177bcd491b7d436c6932d`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-bria-ai-bria-skill-skills-remove-background-skill-md`, `creative-media-and-design-coco-captions`, `creative-media-and-design-air-defense-android-benchmarks`, `creative-media-and-design-nyc-tlc-trip-records`
 

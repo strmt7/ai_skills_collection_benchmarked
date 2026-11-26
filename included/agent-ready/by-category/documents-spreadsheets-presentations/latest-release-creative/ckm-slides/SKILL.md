@@ -1,10 +1,11 @@
 ---
-name: "ckm:slides"
+name: "ckm-slides"
 description: "Create strategic HTML presentations with Chart.js, design tokens, responsive layouts, copywriting formulas, and contextual slide strategies."
-source_skill_id: "nextlevelbuilder-ui-ux-pro-max-skill-claude-skills-slides-skill-md"
-category: "Documents, spreadsheets & presentations"
-source_mirror: "../../../../../skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-slides/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "nextlevelbuilder-ui-ux-pro-max-skill-claude-skills-slides-skill-md"
+  category: "Documents, spreadsheets & presentations"
+  source_mirror: "../../../../../skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-slides/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # ckm:slides
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-slides/SKILL.md`
 - Source commit: `07f4ef3ac2568c25a3b0c8ef5165a86abc3e56e4`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-nextlevelbuilder-ui-ux-pro-max-skill-claude-skills-slides-skill-md`, `documents-spreadsheets-and-presentations-sec-edgar-companyfacts`, `documents-spreadsheets-and-presentations-enron-email`, `documents-spreadsheets-and-presentations-stackoverflow-survey`
 

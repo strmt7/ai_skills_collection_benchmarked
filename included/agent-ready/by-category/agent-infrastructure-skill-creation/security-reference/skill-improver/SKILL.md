@@ -1,10 +1,11 @@
 ---
 name: "skill-improver"
 description: "Iteratively reviews and fixes Claude Code skill quality issues until they meet standards. Runs automated fix-review cycles using the skill-reviewer agent. Use to fix skill quality issues, improve skill descriptions, run automated skill review loops, or iteratively refine a skill. Triggers on 'fix my skill', 'improve skill quality', 'skill improvement loop'. NOT for one-time reviews\u2014use /skill-reviewer directly."
-source_skill_id: "trailofbits-skills-plugins-skill-improver-skills-skill-improver-skill-md"
-category: "Agent infrastructure & skill creation"
-source_mirror: "../../../../../skills/by-category/agent-infrastructure-skill-creation/security-reference/skill-improver/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "trailofbits-skills-plugins-skill-improver-skills-skill-improver-skill-md"
+  category: "Agent infrastructure & skill creation"
+  source_mirror: "../../../../../skills/by-category/agent-infrastructure-skill-creation/security-reference/skill-improver/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # skill-improver
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/agent-infrastructure-skill-creation/security-reference/skill-improver/SKILL.md`
 - Source commit: `e8cc5baf9329ccb491bfa200e82eacbac83b1ead`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-trailofbits-skills-plugins-skill-improver-skills-skill-improver-skill-md`, `agent-infrastructure-and-skill-creation-beir-retrieval`, `agent-infrastructure-and-skill-creation-swe-bench-lite`, `agent-infrastructure-and-skill-creation-common-crawl-warc`
 

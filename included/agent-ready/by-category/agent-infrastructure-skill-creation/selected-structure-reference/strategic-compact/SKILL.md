@@ -1,10 +1,11 @@
 ---
 name: "strategic-compact"
 description: "Suggests manual context compaction at logical intervals to preserve context through task phases rather than arbitrary auto-compaction. Use when a session is approaching a context limit and a task phase is a natural place to compact."
-source_skill_id: "affaan-m-everything-claude-code-agents-skills-strategic-compact-skill-md"
-category: "Agent infrastructure & skill creation"
-source_mirror: "../../../../../skills/by-category/agent-infrastructure-skill-creation/selected-structure-reference/strategic-compact/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "affaan-m-everything-claude-code-agents-skills-strategic-compact-skill-md"
+  category: "Agent infrastructure & skill creation"
+  source_mirror: "../../../../../skills/by-category/agent-infrastructure-skill-creation/selected-structure-reference/strategic-compact/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # strategic-compact
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/agent-infrastructure-skill-creation/selected-structure-reference/strategic-compact/SKILL.md`
 - Source commit: `c05b2d6614f62f6db0047669aa4eefb223d478f9`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-affaan-m-everything-claude-code-agents-skills-strategic-compact-skill-md`, `agent-infrastructure-and-skill-creation-beir-retrieval`, `agent-infrastructure-and-skill-creation-swe-bench-lite`, `agent-infrastructure-and-skill-creation-common-crawl-warc`
 

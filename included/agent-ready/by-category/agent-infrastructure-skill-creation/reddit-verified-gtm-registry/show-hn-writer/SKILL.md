@@ -1,10 +1,11 @@
 ---
 name: "show-hn-writer"
 description: "Use for show-hn-writer workflows. Source sections include Show HN Writer, Step 1: Gather Project Context, Step 2: Read Context Files (if available)."
-source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-show-hn-writer-skill-md"
-category: "Agent infrastructure & skill creation"
-source_mirror: "../../../../../skills/by-category/agent-infrastructure-skill-creation/reddit-verified-gtm-registry/show-hn-writer/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-show-hn-writer-skill-md"
+  category: "Agent infrastructure & skill creation"
+  source_mirror: "../../../../../skills/by-category/agent-infrastructure-skill-creation/reddit-verified-gtm-registry/show-hn-writer/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # show-hn-writer
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/agent-infrastructure-skill-creation/reddit-verified-gtm-registry/show-hn-writer/SKILL.md`
 - Source commit: `bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-varnan-tech-opendirectory-packages-cli-skills-show-hn-writer-skill-md`, `agent-infrastructure-and-skill-creation-beir-retrieval`, `agent-infrastructure-and-skill-creation-swe-bench-lite`, `agent-infrastructure-and-skill-creation-common-crawl-warc`
 

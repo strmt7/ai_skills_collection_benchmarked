@@ -1,10 +1,11 @@
 ---
 name: "marketing-designer"
 description: "Expert marketing creative-strategic skill combining Peggy Olson's bold creative intuition with modern data-driven precision. Use for: (1) Campaign development and creative concepting, (2) Copy and messaging optimization, (3) Proposal and pitch deck improvement, (4) Brand voice and positioning, (5) Marketing strategy and measurement design, (6) Creative brief writing and review. Triggers on: \"improve copy\",."
-source_skill_id: "fruteroclub-marketing-designer-skill-md"
-category: "Creative, media & design"
-source_mirror: "../../../../../skills/by-category/creative-media-design/creative-reference/marketing-designer/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "fruteroclub-marketing-designer-skill-md"
+  category: "Creative, media & design"
+  source_mirror: "../../../../../skills/by-category/creative-media-design/creative-reference/marketing-designer/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # marketing-designer
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/creative-media-design/creative-reference/marketing-designer/SKILL.md`
 - Source commit: `c8f65f94fc3a1b99bafcfe334d3fae3347d94433`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-fruteroclub-marketing-designer-skill-md`, `creative-media-and-design-coco-captions`, `creative-media-and-design-air-defense-android-benchmarks`, `creative-media-and-design-nyc-tlc-trip-records`
 

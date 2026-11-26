@@ -1,10 +1,11 @@
 ---
 name: "svg-animations"
 description: "Create beautiful, performant SVG animations and illustrations. Use this skill when the user asks to create SVG graphics, icons, illustrations, animated logos, path animations, morphing shapes, loading spinners, or any animated SVG content. Covers SMIL animations, CSS-driven SVG animation, path drawing effects, shape morphing, motion paths, gradients, masks, and filters."
-source_skill_id: "supermemoryai-skills-svg-animations-skill-md"
-category: "Creative, media & design"
-source_mirror: "../../../../../skills/by-category/creative-media-design/reddit-verified-creative-skill/svg-animations/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "supermemoryai-skills-svg-animations-skill-md"
+  category: "Creative, media & design"
+  source_mirror: "../../../../../skills/by-category/creative-media-design/reddit-verified-creative-skill/svg-animations/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # svg-animations
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/creative-media-design/reddit-verified-creative-skill/svg-animations/SKILL.md`
 - Source commit: `10d5e16780b446c5ce58968bcde528766699cdf2`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-supermemoryai-skills-svg-animations-skill-md`, `creative-media-and-design-coco-captions`, `creative-media-and-design-air-defense-android-benchmarks`, `creative-media-and-design-nyc-tlc-trip-records`
 

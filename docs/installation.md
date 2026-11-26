@@ -236,7 +236,9 @@ For an agent that accepts local skill folders, use that agent's documented
 configuration to point to the selected folder in your clone. For a file-reading
 agent, provide the selected `SKILL.md` path and ask it to read linked resources
 as needed. Compact starting points are under
-[agent-ready skills](../included/agent-ready/README.md).
+[agent-ready skills](../included/agent-ready/README.md). Their folder names
+match the Agent Skills names. Keep the checkout together so each entrypoint can
+resolve its mirror, benchmark guide and mandatory tool instructions.
 
 Agents using this collection must follow the
 [mandatory agent tools](agent-tools.md): Caveman for every task, source-bound

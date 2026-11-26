@@ -1,10 +1,11 @@
 ---
 name: "reddit-post-engine"
 description: "Writes and optionally posts a Reddit post for any subreddit, following that subreddit's specific culture and rules. Drafts a title, body, and first comment using the 90/10 rule. Uses Composio Reddit MCP for optional direct posting. Use when asked to post on Reddit, draft a Reddit post, share a project on Reddit, write a subreddit post, or launch something on Reddit. Trigger when a user says \"post this on Reddit\",."
-source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-reddit-post-engine-skill-md"
-category: "Communication, productivity & support"
-source_mirror: "../../../../../skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/reddit-post-engine/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-reddit-post-engine-skill-md"
+  category: "Communication, productivity & support"
+  source_mirror: "../../../../../skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/reddit-post-engine/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # reddit-post-engine
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/reddit-post-engine/SKILL.md`
 - Source commit: `bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-varnan-tech-opendirectory-packages-cli-skills-reddit-post-engine-skill-md`, `communication-productivity-and-support-enron-email`, `communication-productivity-and-support-ms-marco`, `communication-productivity-and-support-sec-edgar-companyfacts`
 

@@ -1,10 +1,11 @@
 ---
 name: "blog-cover-image-cli"
 description: "A skill for blog-cover-image-cli"
-source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-blog-cover-image-cli-skill-md"
-category: "Creative, media & design"
-source_mirror: "../../../../../skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-blog-cover-image-cli-skill-md"
+  category: "Creative, media & design"
+  source_mirror: "../../../../../skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # blog-cover-image-cli
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/SKILL.md`
 - Source commit: `bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-varnan-tech-opendirectory-packages-cli-skills-blog-cover-image-cli-skill-md`, `creative-media-and-design-coco-captions`, `creative-media-and-design-air-defense-android-benchmarks`, `creative-media-and-design-nyc-tlc-trip-records`
 

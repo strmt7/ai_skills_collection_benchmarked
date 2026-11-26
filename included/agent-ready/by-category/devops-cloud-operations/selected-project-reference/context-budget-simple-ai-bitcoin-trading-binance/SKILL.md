@@ -1,10 +1,11 @@
 ---
-name: "context-budget"
+name: "context-budget-simple-ai-bitcoin-trading-binance"
 description: "Use for context-budget workflows. Source sections include Context Budget, Goal, Workflow."
-source_skill_id: "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md"
-category: "DevOps, cloud & operations"
-source_mirror: "../../../../../skills/by-category/devops-cloud-operations/selected-project-reference/context-budget-simple-ai-bitcoin-trading-binance/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md"
+  category: "DevOps, cloud & operations"
+  source_mirror: "../../../../../skills/by-category/devops-cloud-operations/selected-project-reference/context-budget-simple-ai-bitcoin-trading-binance/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # context-budget
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/devops-cloud-operations/selected-project-reference/context-budget-simple-ai-bitcoin-trading-binance/SKILL.md`
 - Source commit: `451d77df90621e3b666581d9835d246fb7147349`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md`, `devops-cloud-and-operations-kubernetes-examples`, `devops-cloud-and-operations-opentelemetry-demo`, `devops-cloud-and-operations-local-omero-compose-workflows`
 

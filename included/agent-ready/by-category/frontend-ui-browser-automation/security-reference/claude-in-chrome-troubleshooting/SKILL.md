@@ -1,10 +1,11 @@
 ---
 name: "claude-in-chrome-troubleshooting"
 description: "Diagnose and fix Claude in Chrome MCP extension connectivity issues. Use when mcp__claude-in-chrome__* tools fail, return \"Browser extension is not connected\", or behave erratically."
-source_skill_id: "trailofbits-skills-plugins-claude-in-chrome-troubleshooting-skills-claude-in-chrome-troubleshooting-skill-md"
-category: "Frontend, UI & browser automation"
-source_mirror: "../../../../../skills/by-category/frontend-ui-browser-automation/security-reference/claude-in-chrome-troubleshooting/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "trailofbits-skills-plugins-claude-in-chrome-troubleshooting-skills-claude-in-chrome-troubleshooting-skill-md"
+  category: "Frontend, UI & browser automation"
+  source_mirror: "../../../../../skills/by-category/frontend-ui-browser-automation/security-reference/claude-in-chrome-troubleshooting/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # claude-in-chrome-troubleshooting
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/frontend-ui-browser-automation/security-reference/claude-in-chrome-troubleshooting/SKILL.md`
 - Source commit: `e8cc5baf9329ccb491bfa200e82eacbac83b1ead`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-trailofbits-skills-plugins-claude-in-chrome-troubleshooting-skills-claude-in-chrome-troubleshooting-skill-md`, `frontend-ui-and-browser-automation-owasp-juice-shop`, `frontend-ui-and-browser-automation-coco-captions`, `frontend-ui-and-browser-automation-air-defense-android-benchmarks`
 

@@ -1,10 +1,11 @@
 ---
-name: "ckm:design-system"
+name: "ckm-design-system"
 description: "Token architecture, component specifications, and slide generation. Three-layer tokens (primitive\u2192semantic\u2192component), CSS variables, spacing/typography scales, component specs, strategic slide creation. Use for design tokens, systematic design, brand-compliant presentations."
-source_skill_id: "nextlevelbuilder-ui-ux-pro-max-skill-claude-skills-design-system-skill-md"
-category: "Creative, media & design"
-source_mirror: "../../../../../skills/by-category/creative-media-design/latest-release-creative/ckm-design-system/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "nextlevelbuilder-ui-ux-pro-max-skill-claude-skills-design-system-skill-md"
+  category: "Creative, media & design"
+  source_mirror: "../../../../../skills/by-category/creative-media-design/latest-release-creative/ckm-design-system/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # ckm:design-system
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/creative-media-design/latest-release-creative/ckm-design-system/SKILL.md`
 - Source commit: `07f4ef3ac2568c25a3b0c8ef5165a86abc3e56e4`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-nextlevelbuilder-ui-ux-pro-max-skill-claude-skills-design-system-skill-md`, `creative-media-and-design-coco-captions`, `creative-media-and-design-air-defense-android-benchmarks`, `creative-media-and-design-nyc-tlc-trip-records`
 

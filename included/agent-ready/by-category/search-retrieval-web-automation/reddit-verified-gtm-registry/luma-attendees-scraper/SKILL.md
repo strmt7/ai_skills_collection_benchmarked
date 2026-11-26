@@ -1,10 +1,11 @@
 ---
 name: "luma-attendees-scraper"
 description: "Browser-console script to export attendee data from a Luma event into a CSV. Use when users ask to scrape or export attendees from a Luma event."
-source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-luma-attendees-scraper-skill-md"
-category: "Search, retrieval & web automation"
-source_mirror: "../../../../../skills/by-category/search-retrieval-web-automation/reddit-verified-gtm-registry/luma-attendees-scraper/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-luma-attendees-scraper-skill-md"
+  category: "Search, retrieval & web automation"
+  source_mirror: "../../../../../skills/by-category/search-retrieval-web-automation/reddit-verified-gtm-registry/luma-attendees-scraper/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # luma-attendees-scraper
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/search-retrieval-web-automation/reddit-verified-gtm-registry/luma-attendees-scraper/SKILL.md`
 - Source commit: `bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-varnan-tech-opendirectory-packages-cli-skills-luma-attendees-scraper-skill-md`, `search-retrieval-and-web-automation-common-crawl-warc`, `search-retrieval-and-web-automation-beir-retrieval`, `search-retrieval-and-web-automation-ms-marco`
 

@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-26",
+  "scope": "Read-only validation of generated catalog relationships on Windows.",
+  "normal_entrypoint": [
+    "tools/validate_catalog.py",
+    "--json"
+  ],
+  "catalog_validation": {
+    "catalog_entries": 673,
+    "error_count": 0,
+    "errors": [],
+    "ok": true,
+    "scenarios": 718,
+    "tracks": 19
+  },
+  "simultaneous_drift_control": {
+    "exit_code": 1,
+    "error_count": 14,
+    "verified_failure_kinds": [
+      "missing agent-ready manifest row",
+      "duplicate agent-ready identity",
+      "malformed agent-ready identity",
+      "missing skill mirror manifest row",
+      "missing skill in source lock",
+      "unexpected selected manifest entry",
+      "invalid install claim on the unexpected entry",
+      "malformed benchmark assignment",
+      "downstream evidence-status mismatch on a skill missing its agent-ready row"
+    ]
+  },
+  "tests": {
+    "pytest": {
+      "passed": 59,
+      "skipped": 1
+    },
+    "pytest-cli": {
+      "passed": 4,
+      "skipped": 0
+    }
+  },
+  "earlier_broader_test_budget_seconds": 210.0,
+  "mypy_passed": true,
+  "validation_processes_closed": true,
+  "test_fixture_root_released": true,
+  "native_stdout_sha256": {
+    "pytest": "c79667f73c12e62265243fd5a5ec6d8203b7d8e2e5010175101929f455fbb732",
+    "pytest-cli": "ac304589553a65146c96a5aee9078288b057093ab951429be05ddc35fb9f94bc",
+    "catalog": "615b54d5e26e7bc32759f8d9d27708d8cd8d1f9dcc2cd4a809f4c2052694463d",
+    "mypy": "816c3853e34991f7aeab195991f497b1380bd367974450abaf201f39076e9c1d"
+  },
+  "unmodified_generated_inputs": {
+    "data/skills_catalog.json": "b6c8f7e4038ae8770c13e287e847ff2c205767ce26960c3b10afd027afdac9b7",
+    "included/agent-ready/manifest.json": "6d76307088a2f839b711defd338e70888fe299f916ccd7c93cc463b063e6bd4d",
+    "included/skills/manifest.json": "fbf4529008cb12ba541eb8b79681b6d6c9b57809146d0c95586ea198ecb051ee",
+    "included/selected/manifest.json": "bd6fda9a3ba25970403a6be709f8f64ce3ac8d55155010d03c7e81f1f80f62e4",
+    "data/source_lock.json": "cff0dfc48e73365f2d99728f56c4f53ca103f1ef61cf22253aca9118ede34d2b",
+    "data/benchmark_assignments.json": "001c563a42fdf4c7dc6a6ab59ee165546ba6c90c9b188ba3babd8661366bde0c"
+  }
+}

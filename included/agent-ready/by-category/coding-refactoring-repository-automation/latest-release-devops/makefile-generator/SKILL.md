@@ -1,10 +1,11 @@
 ---
 name: "makefile-generator"
 description: "Create, generate, or scaffold Makefiles with .PHONY targets and build automation."
-source_skill_id: "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-makefile-generator-skill-md"
-category: "Coding, refactoring & repository automation"
-source_mirror: "../../../../../skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-makefile-generator-skill-md"
+  category: "Coding, refactoring & repository automation"
+  source_mirror: "../../../../../skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # makefile-generator
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator/SKILL.md`
 - Source commit: `7fe7595e4512f8ce43dcf956aa5190b96d627dd1`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-akin-ozer-cc-devops-skills-devops-skills-plugin-skills-makefile-generator-skill-md`, `coding-refactoring-and-repository-automation-swe-bench-lite`, `coding-refactoring-and-repository-automation-kubernetes-examples`, `coding-refactoring-and-repository-automation-opentelemetry-demo`
 

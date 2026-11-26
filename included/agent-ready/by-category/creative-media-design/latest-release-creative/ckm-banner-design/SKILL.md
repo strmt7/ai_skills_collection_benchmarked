@@ -1,10 +1,11 @@
 ---
-name: "ckm:banner-design"
+name: "ckm-banner-design"
 description: "Design banners for social media, ads, website heroes, creative assets, and print. Multiple art direction options with AI-generated visuals. Actions: design, create, generate banner. Platforms: Facebook, Twitter/X, LinkedIn, YouTube, Instagram, Google Display, website hero, print. Styles: minimalist, gradient, bold typography, photo-based, illustrated, geometric, retro, glassmorphism, 3D, neon, duotone, editorial,."
-source_skill_id: "nextlevelbuilder-ui-ux-pro-max-skill-claude-skills-banner-design-skill-md"
-category: "Creative, media & design"
-source_mirror: "../../../../../skills/by-category/creative-media-design/latest-release-creative/ckm-banner-design/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "nextlevelbuilder-ui-ux-pro-max-skill-claude-skills-banner-design-skill-md"
+  category: "Creative, media & design"
+  source_mirror: "../../../../../skills/by-category/creative-media-design/latest-release-creative/ckm-banner-design/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # ckm:banner-design
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/creative-media-design/latest-release-creative/ckm-banner-design/SKILL.md`
 - Source commit: `07f4ef3ac2568c25a3b0c8ef5165a86abc3e56e4`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-nextlevelbuilder-ui-ux-pro-max-skill-claude-skills-banner-design-skill-md`, `creative-media-and-design-coco-captions`, `creative-media-and-design-air-defense-android-benchmarks`, `creative-media-and-design-nyc-tlc-trip-records`
 

@@ -1,10 +1,11 @@
 ---
 name: "docs-from-code"
 description: "Generates and updates README.md and API reference docs by reading your codebase's functions, routes, types, schemas, and architecture. Uses graphify to build a knowledge graph first, then writes accurate docs from it. Use when asked to write docs, generate a README, document an API, update stale docs, create an API reference from code, add an architecture section, or document a project in any language. Trigger when."
-source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-docs-from-code-skill-md"
-category: "Documents, spreadsheets & presentations"
-source_mirror: "../../../../../skills/by-category/documents-spreadsheets-presentations/reddit-verified-gtm-registry/docs-from-code/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-docs-from-code-skill-md"
+  category: "Documents, spreadsheets & presentations"
+  source_mirror: "../../../../../skills/by-category/documents-spreadsheets-presentations/reddit-verified-gtm-registry/docs-from-code/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # docs-from-code
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/documents-spreadsheets-presentations/reddit-verified-gtm-registry/docs-from-code/SKILL.md`
 - Source commit: `bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-varnan-tech-opendirectory-packages-cli-skills-docs-from-code-skill-md`, `documents-spreadsheets-and-presentations-sec-edgar-companyfacts`, `documents-spreadsheets-and-presentations-enron-email`, `documents-spreadsheets-and-presentations-stackoverflow-survey`
 

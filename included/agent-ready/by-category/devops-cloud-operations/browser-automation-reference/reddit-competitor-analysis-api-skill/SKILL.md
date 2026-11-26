@@ -1,10 +1,11 @@
 ---
 name: "reddit-competitor-analysis-api-skill"
 description: "This skill helps users extract structured data from Reddit posts and comments via BrowserAct API. Agent should proactively apply this skill when users express needs like analyzing competitor mentions on Reddit, tracking brand sentiment in Reddit comments, extracting Reddit discussions for market research, finding popular Reddit posts by keywords, monitoring community feedback on specific topics, gathering user."
-source_skill_id: "browser-act-skills-reddit-competitor-analysis-api-skill-skill-md"
-category: "DevOps, cloud & operations"
-source_mirror: "../../../../../skills/by-category/devops-cloud-operations/browser-automation-reference/reddit-competitor-analysis-api-skill/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "browser-act-skills-reddit-competitor-analysis-api-skill-skill-md"
+  category: "DevOps, cloud & operations"
+  source_mirror: "../../../../../skills/by-category/devops-cloud-operations/browser-automation-reference/reddit-competitor-analysis-api-skill/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # reddit-competitor-analysis-api-skill
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/devops-cloud-operations/browser-automation-reference/reddit-competitor-analysis-api-skill/SKILL.md`
 - Source commit: `749ed52133b85606cf402b7fda95949542cbb8f8`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-browser-act-skills-reddit-competitor-analysis-api-skill-skill-md`, `devops-cloud-and-operations-kubernetes-examples`, `devops-cloud-and-operations-opentelemetry-demo`, `devops-cloud-and-operations-local-omero-compose-workflows`
 

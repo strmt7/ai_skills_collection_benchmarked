@@ -1,10 +1,11 @@
 ---
 name: "hackernews-intel"
 description: "Monitors Hacker News for user-configured keywords, deduplicates against a local SQLite cache, and sends Slack alerts for new matching posts. Use when asked to monitor Hacker News for mentions, track keywords on HN, get alerts when something is posted about a topic on Hacker News, or set up HN keyword monitoring. Trigger when a user mentions Hacker News alerts, HN monitoring, keyword tracking on HN, or wants to know."
-source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-hackernews-intel-skill-md"
-category: "DevOps, cloud & operations"
-source_mirror: "../../../../../skills/by-category/devops-cloud-operations/reddit-verified-gtm-registry/hackernews-intel/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-hackernews-intel-skill-md"
+  category: "DevOps, cloud & operations"
+  source_mirror: "../../../../../skills/by-category/devops-cloud-operations/reddit-verified-gtm-registry/hackernews-intel/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # hackernews-intel
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/devops-cloud-operations/reddit-verified-gtm-registry/hackernews-intel/SKILL.md`
 - Source commit: `bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-varnan-tech-opendirectory-packages-cli-skills-hackernews-intel-skill-md`, `devops-cloud-and-operations-kubernetes-examples`, `devops-cloud-and-operations-opentelemetry-demo`, `devops-cloud-and-operations-local-omero-compose-workflows`
 

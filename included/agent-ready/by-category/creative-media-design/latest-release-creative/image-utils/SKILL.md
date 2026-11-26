@@ -1,10 +1,11 @@
 ---
 name: "image-utils"
 description: "Classic image manipulation with Python Pillow - resize, crop, composite, format conversion, watermarks, brightness/contrast adjustments, and web optimization. Use this skill when post-processing AI-generated images, preparing images for web delivery, batch processing image directories, creating responsive image variants, or performing any deterministic pixel-level image operation. Works standalone or alongside."
-source_skill_id: "bria-ai-bria-skill-skills-image-utils-skill-md"
-category: "Creative, media & design"
-source_mirror: "../../../../../skills/by-category/creative-media-design/latest-release-creative/image-utils/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "bria-ai-bria-skill-skills-image-utils-skill-md"
+  category: "Creative, media & design"
+  source_mirror: "../../../../../skills/by-category/creative-media-design/latest-release-creative/image-utils/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # image-utils
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/creative-media-design/latest-release-creative/image-utils/SKILL.md`
 - Source commit: `b0e107b0f4667f0e1c9177bcd491b7d436c6932d`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-bria-ai-bria-skill-skills-image-utils-skill-md`, `creative-media-and-design-coco-captions`, `creative-media-and-design-air-defense-android-benchmarks`, `creative-media-and-design-nyc-tlc-trip-records`
 

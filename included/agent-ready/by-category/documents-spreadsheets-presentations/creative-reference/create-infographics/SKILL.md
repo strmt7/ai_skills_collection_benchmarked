@@ -1,10 +1,11 @@
 ---
 name: "create-infographics"
 description: "Creates production-grade infographics as HTML, PNG, and PDF from any data or brief. Use when asked for an infographic, visual summary, one-pager, data visualization, or to convert tables, stats, timelines, or comparisons into a visual format. Also triggers on: \"shareable graphic\", \"visual report\", \"poster\" + data content, \"one-pager\", or any request where information should be presented as a designed image. Crypto."
-source_skill_id: "aizzaku-create-infographics-skill-md"
-category: "Documents, spreadsheets & presentations"
-source_mirror: "../../../../../skills/by-category/documents-spreadsheets-presentations/creative-reference/create-infographics/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "aizzaku-create-infographics-skill-md"
+  category: "Documents, spreadsheets & presentations"
+  source_mirror: "../../../../../skills/by-category/documents-spreadsheets-presentations/creative-reference/create-infographics/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # create-infographics
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/documents-spreadsheets-presentations/creative-reference/create-infographics/SKILL.md`
 - Source commit: `5c8c8821026e7ee5998c886780237e64193e54c3`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-aizzaku-create-infographics-skill-md`, `documents-spreadsheets-and-presentations-sec-edgar-companyfacts`, `documents-spreadsheets-and-presentations-enron-email`, `documents-spreadsheets-and-presentations-stackoverflow-survey`
 

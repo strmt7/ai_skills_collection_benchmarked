@@ -1,10 +1,11 @@
 ---
 name: "k8s-troubleshooter"
 description: "Systematic Kubernetes troubleshooting and incident response. Use this skill whenever the user mentions Kubernetes, K8s, kubectl, pods, containers, or clusters. Triggers include diagnosing CrashLoopBackOff, ImagePullBackOff, OOMKilled, or Pending pods, responding to production incidents, troubleshooting node NotReady or DiskPressure, debugging service connectivity or networking, investigating PVC or storage."
-source_skill_id: "ahmedasmar-devops-claude-skills-k8s-troubleshooter-skills-skill-md"
-category: "DevOps, cloud & operations"
-source_mirror: "../../../../../skills/by-category/devops-cloud-operations/devops-reference/k8s-troubleshooter/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "ahmedasmar-devops-claude-skills-k8s-troubleshooter-skills-skill-md"
+  category: "DevOps, cloud & operations"
+  source_mirror: "../../../../../skills/by-category/devops-cloud-operations/devops-reference/k8s-troubleshooter/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # k8s-troubleshooter
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/devops-cloud-operations/devops-reference/k8s-troubleshooter/SKILL.md`
 - Source commit: `1489c33ad8829a11219e423327d6b59f8339cee4`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-ahmedasmar-devops-claude-skills-k8s-troubleshooter-skills-skill-md`, `devops-cloud-and-operations-kubernetes-examples`, `devops-cloud-and-operations-opentelemetry-demo`, `devops-cloud-and-operations-local-omero-compose-workflows`
 

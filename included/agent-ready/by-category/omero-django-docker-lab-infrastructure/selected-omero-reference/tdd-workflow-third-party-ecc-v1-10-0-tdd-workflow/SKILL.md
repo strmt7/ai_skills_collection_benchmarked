@@ -1,10 +1,11 @@
 ---
-name: "tdd-workflow"
+name: "tdd-workflow-third-party-ecc-v1-10-0-tdd-workflow"
 description: "Use this skill when writing new features, fixing bugs, or refactoring code. Enforces test-driven development with 80%+ coverage including unit, integration, and E2E tests."
-source_skill_id: "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-tdd-workflow-skill-md"
-category: "OMERO, Django, Docker & lab infrastructure"
-source_mirror: "../../../../../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/tdd-workflow-third-party-ecc-v1-10-0-tdd-workflow/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-tdd-workflow-skill-md"
+  category: "OMERO, Django, Docker & lab infrastructure"
+  source_mirror: "../../../../../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/tdd-workflow-third-party-ecc-v1-10-0-tdd-workflow/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # tdd-workflow
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/tdd-workflow-third-party-ecc-v1-10-0-tdd-workflow/SKILL.md`
 - Source commit: `b7c7cfa2a057f08eb872aadae49d89f521480114`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-tdd-workflow-skill-md`, `omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows`, `omero-django-docker-and-lab-infrastructure-ome-ngff-samples`, `omero-django-docker-and-lab-infrastructure-opentelemetry-demo`
 

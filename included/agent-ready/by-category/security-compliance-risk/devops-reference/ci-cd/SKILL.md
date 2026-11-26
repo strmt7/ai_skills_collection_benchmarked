@@ -1,10 +1,11 @@
 ---
 name: "ci-cd"
 description: "CI/CD pipeline design, optimization, DevSecOps security scanning, and troubleshooting. Use this skill whenever the user mentions CI/CD, GitHub Actions, GitLab CI, pipelines, workflows, builds, or DevSecOps. Triggers include creating new CI/CD workflows, debugging pipeline failures or flaky tests, implementing SAST/DAST/SCA security scanning, optimizing slow builds with caching or parallelization, setting up."
-source_skill_id: "ahmedasmar-devops-claude-skills-ci-cd-skills-skill-md"
-category: "Security, compliance & risk"
-source_mirror: "../../../../../skills/by-category/security-compliance-risk/devops-reference/ci-cd/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "ahmedasmar-devops-claude-skills-ci-cd-skills-skill-md"
+  category: "Security, compliance & risk"
+  source_mirror: "../../../../../skills/by-category/security-compliance-risk/devops-reference/ci-cd/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # ci-cd
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/security-compliance-risk/devops-reference/ci-cd/SKILL.md`
 - Source commit: `1489c33ad8829a11219e423327d6b59f8339cee4`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-ahmedasmar-devops-claude-skills-ci-cd-skills-skill-md`, `security-compliance-and-risk-owasp-benchmark`, `security-compliance-and-risk-owasp-juice-shop`, `security-compliance-and-risk-kubernetes-examples`
 

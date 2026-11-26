@@ -1,10 +1,11 @@
 ---
 name: "reddit-icp-monitor"
 description: "Watches subreddits for people describing the exact problem you solve, scores their relevance to your ICP, and drafts a helpful non-spammy reply for each high-signal post. Use when asked to monitor Reddit for ICP signals, find prospects on Reddit, surface pain point posts, draft helpful Reddit replies, or scan subreddits for buying signals. Trigger when a user says \"monitor Reddit for my ICP\", \"find people on Reddit."
-source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-reddit-icp-monitor-skill-md"
-category: "DevOps, cloud & operations"
-source_mirror: "../../../../../skills/by-category/devops-cloud-operations/reddit-verified-gtm-registry/reddit-icp-monitor/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-reddit-icp-monitor-skill-md"
+  category: "DevOps, cloud & operations"
+  source_mirror: "../../../../../skills/by-category/devops-cloud-operations/reddit-verified-gtm-registry/reddit-icp-monitor/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # reddit-icp-monitor
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/devops-cloud-operations/reddit-verified-gtm-registry/reddit-icp-monitor/SKILL.md`
 - Source commit: `bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-varnan-tech-opendirectory-packages-cli-skills-reddit-icp-monitor-skill-md`, `devops-cloud-and-operations-kubernetes-examples`, `devops-cloud-and-operations-opentelemetry-demo`, `devops-cloud-and-operations-local-omero-compose-workflows`
 

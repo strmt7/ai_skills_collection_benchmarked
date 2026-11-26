@@ -1,10 +1,11 @@
 ---
 name: "outreach-sequence-builder"
 description: "Takes a buying signal and generates a personalized multi-channel outreach sequence across email, LinkedIn, and phone. Outputs 4-6 ready-to-send touchpoints over 10-14 days. Optionally drafts email touchpoints via Composio Gmail. Use when asked to write an outreach sequence, build a sales cadence, create a follow-up sequence, personalize outreach for a signal, or generate cold outreach messages. Trigger when a user."
-source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-outreach-sequence-builder-skill-md"
-category: "Communication, productivity & support"
-source_mirror: "../../../../../skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/outreach-sequence-builder/SKILL.md"
-benchmark_status: "artifact_gated"
+metadata:
+  source_skill_id: "varnan-tech-opendirectory-packages-cli-skills-outreach-sequence-builder-skill-md"
+  category: "Communication, productivity & support"
+  source_mirror: "../../../../../skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/outreach-sequence-builder/SKILL.md"
+  benchmark_status: "artifact_gated"
 ---
 
 # outreach-sequence-builder
@@ -24,7 +25,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 - Source mirror: `../../../../../skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/outreach-sequence-builder/SKILL.md`
 - Source commit: `bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4`
-- Static benchmark results: see `docs/benchmark-results.md`
+- [Static benchmark results](../../../../../../docs/benchmark-results.md)
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-varnan-tech-opendirectory-packages-cli-skills-outreach-sequence-builder-skill-md`, `communication-productivity-and-support-enron-email`, `communication-productivity-and-support-ms-marco`, `communication-productivity-and-support-sec-edgar-companyfacts`
 
