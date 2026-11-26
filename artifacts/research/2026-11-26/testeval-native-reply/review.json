@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-26",
+  "scope": "Byte-exact native final-message sealing, seventeen context controls, nine matched wire controls, an original publisher positive and tamper control, and descriptive local three-arm TestEval results.",
+  "source_sha256": {
+    "docs/recognized-skill-benchmarks.md": "f580e0a7da9b7de7c99c0f54f05c9fbc8c6e0f6f74218b94e1ba66e4e9885cc5",
+    "tests/test_collect_testeval_reply.py": "979ed130a1fa2c8d566dd00c3aa7947e219e4526e03aa4f37ddd319fe7b0dc45",
+    "tools/_trial_transcript.py": "5d27850c37e4bcc99c5d1bbc7d47cb81ac74b7dd94dd2af17dffc36f953d38ec",
+    "tools/collect_testeval_reply.py": "15611780e2734629ad9f63399604eba8576ff704838ce81f71070ab1297f09f0"
+  },
+  "artifacts": {
+    "observations.json": "ce1d9d72a2d3b05a65928a3af0199fe3715843856c73676f229b34095cb20de7",
+    "protocol.json": "1967570b9b324efb3f075bd279f6e4fc40bd52512735d3e97b485753d42a7cd2"
+  }
+}

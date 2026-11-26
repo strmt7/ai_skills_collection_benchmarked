@@ -78,6 +78,33 @@ independent runner rejected all 12 incorrect suites on the reference. These
 controls qualify the measurement method with authored tests.
 [Public pilot grader review](../artifacts/research/2026-11-25/testeval-pilot-grading/review.json)
 
+### Grade a native final message
+
+For a first-turn study, freeze the original publisher task, installed runner
+and grader, prompt digest, comparison arms, and scoring rules before inference.
+Keep the workspace-submission and final-message studies separate. The first-turn
+study sends one test string to the publisher's overall evaluator. Its scope
+covers that single response.
+
+Use an admitted owned native runner. Save its exact request as `input.native`,
+native process receipt as `process.json`, and JSON events as `transcript.jsonl`.
+Use the native client's `--output-last-message` option to save
+`last-message.native` in controller-owned state outside the subject workspace.
+The collector checks the completed turn, process cleanup, frozen prompt digest,
+and byte agreement between the last-message export and final transcript item.
+It then seals a controller envelope for the existing publisher and independent
+reference and defect graders.
+
+```text
+python tools/collect_testeval_reply.py --plan <task-plan> --baseline <baseline> --execution <native-records> --prompt-sha256 <frozen-digest> --defects <fixture-dir> --assets <assets-dir> --runtime <runtime-plan> --output .venv/reports/testeval-reply
+```
+
+Use the paths and digest from the frozen study. The execution records and new
+output directory belong under the controller's `.venv`. Retain the delivery
+receipt, original grader result, and independent reference and defect results.
+[Publisher evaluation instructions](https://github.com/LLM4SoftwareTesting/TestEval/blob/6f67dee71de6ccda1767b8c219a93f4ae0a7ce90/README.md#run-your-own-pipeline)
+
+
 ## Do not rely on benchmark reputation alone
 
 [OpenAI's February review](https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/)

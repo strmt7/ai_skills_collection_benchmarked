@@ -484,7 +484,6 @@
         "sha256": "556301f1e03e67e7c9c38809b746776e7c88994f5890dc2fab8e2a3f66dedbda"
       },
       "sources": [
-        "docs/recognized-skill-benchmarks.md",
         "included/improved/skills/eval-harness-integrity/SKILL.md",
         "included/improved/skills/eval-harness-integrity/references/grader-admission.md",
         "tests/test_grade_testeval_submission.py",
@@ -635,6 +634,19 @@
         "toolchains/crawl4ai/README.md",
         "tools/crawl4ai_capture.py"
       ]
+    },
+    {
+      "id": "testeval-native-reply",
+      "review": {
+        "path": "artifacts/research/2026-11-26/testeval-native-reply/review.json",
+        "sha256": "4564c347044848d717e1c1bc302362b9474ba9a5bec4b13e3a1b033b986bc8c4"
+      },
+      "sources": [
+        "docs/recognized-skill-benchmarks.md",
+        "tests/test_collect_testeval_reply.py",
+        "tools/_trial_transcript.py",
+        "tools/collect_testeval_reply.py"
+      ]
     }
   ],
   "historical_reviews": [
@@ -662,6 +674,7 @@
         "tools/_trial_context.py",
         "tools/_trial_execution_evidence.py",
         "tools/_trial_signin.py",
+        "tools/_trial_transcript.py",
         "tools/_windows_appcontainer.py",
         "tools/_windows_storage_budget.py",
         "tools/_windows_trial_process.py",
@@ -686,6 +699,7 @@
         "tools/_trial_context.py",
         "tools/_trial_execution_evidence.py",
         "tools/_trial_signin.py",
+        "tools/_trial_transcript.py",
         "tools/_windows_appcontainer.py",
         "tools/_windows_storage_budget.py",
         "tools/_windows_trial_process.py",
@@ -1157,6 +1171,7 @@
       },
       "superseded_sources": [
         "docs/benchmark-execution-plan.md",
+        "docs/recognized-skill-benchmarks.md",
         "tools/grade_testeval_submission.py",
         "tools/validate_testeval_calibration.py"
       ]

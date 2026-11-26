@@ -83,7 +83,7 @@
         "R9",
         "R12"
       ],
-      "next_action": "Qualify an instruction-clean signed-in profile for GPT-6.1 Sol high and bind observed model identity and effort before admission to the frozen 36-slot workspace study. Maintain the workspace submission contract and its two unscored local delivery failures. Prospectively freeze a separate single-turn final-message TestEval lane using the original publisher prompt and grader, then qualify it on a fresh development task before any counted trials.",
+      "next_action": "The maintained first-turn reply route seals the original publisher input and has a real local calibration. Qualify an instruction-clean signed-in profile for GPT-6.1 Sol high and bind the model and effort before running the independently frozen workspace study or a separate final-message comparison. Preserve the two earlier workspace failures.",
       "deliverables": [
         "Maintained qualification entrypoint and frozen input assets",
         "Provider/model identity and capability admission",
@@ -181,6 +181,11 @@
           "path": "artifacts/research/2026-11-26/testeval-delivery-routes/observations.json",
           "sha256": "6e2c7d286704e4d8d263177cabbc34266dc9bea0d0bbf23f4cd651f08fef0660",
           "scope": "Two real local runs produced no workspace submission. Byte-exact native final-message delivery passed an authored fixture, the original grader, and two independent defect checks. No model comparison was scored."
+        },
+        {
+          "path": "artifacts/research/2026-11-26/testeval-native-reply/review.json",
+          "sha256": "4564c347044848d717e1c1bc302362b9474ba9a5bec4b13e3a1b033b986bc8c4",
+          "scope": "Byte-exact native final-message sealing, seventeen context controls, nine matched wire controls, an original publisher positive and tamper control, and descriptive local three-arm TestEval results."
         }
       ]
     },
@@ -196,7 +201,7 @@
         "R4",
         "R12"
       ],
-      "next_action": "Complete the original SWE-Skills-Bench runtime graphs and independently admit the official SkillsBench v1.1 build-recovery study. The immutable 87-task publisher frame has two build-recovery task IDs selected by prefix, fix-build-agentops and fix-build-google-auto. Qualify their original environments and scorer, then prospectively freeze the matched conditions. Do not infer a score or change the selection because setup is incomplete.",
+      "next_action": "Use the frozen local TestEval final-message schedule as development evidence only. Complete the original SWE-Skills-Bench and SkillsBench v1.1 build-recovery runtime graphs, and independently qualify their original environments and scorers. Retain the locked task selections and freeze the next matched study before inference.",
       "deliverables": [
         "Frozen public-development frame",
         "Candidate and intervention hashes",
@@ -281,6 +286,11 @@
         {
           "path": "artifacts/research/2026-11-13/native-project-resources/review.json",
           "sha256": "43722091a64a46feb6ec40b079106da0c37ea367bd7306b0f7d944e58d5f8072"
+        },
+        {
+          "path": "artifacts/research/2026-11-26/testeval-native-reply/review.json",
+          "sha256": "4564c347044848d717e1c1bc302362b9474ba9a5bec4b13e3a1b033b986bc8c4",
+          "scope": "Byte-exact native final-message sealing, seventeen context controls, nine matched wire controls, an original publisher positive and tamper control, and descriptive local three-arm TestEval results."
         }
       ],
       "scope": "Admission applies to one declared study. Preserve the complete 12-task/36-attempt SWE-Skills-Bench frame. Independently selected external studies have their own population, environment and analysis declarations."
@@ -378,7 +388,7 @@
         "R9",
         "R12"
       ],
-      "next_action": "Use the calibrated SWT-Bench and SkillsBench controls as runner evidence. Qualify independent subject execution and artifact handoff before model attempts in each new lane. Retain the matched Go and packaging floors and every frozen task graph. Use a predeclared capability calibration on a different task before interpreting paired skill effects.",
+      "next_action": "Inspect the complete frozen local TestEval attempt inventory and its documented timeout, transport and grader outcomes. Develop transferable changes only from repeatable general failure mechanisms. Fix private runtime ownership ordering before new runs, exercise a different public task for capability admission, then run an independent development comparison and preserve its original denominator.",
       "deliverables": [
         "All attempt transcripts and native results",
         "Usage and failure accounting",
@@ -407,6 +417,11 @@
           "path": "artifacts/research/2026-11-25/swt-bench-calibration/review.json",
           "sha256": "c935b137990030308319bd4d16480c8206cc84ad8d48a5605ccd643672b44ff6",
           "scope": "Native SWT-Bench model-free control pair and source-bound reporting review."
+        },
+        {
+          "path": "artifacts/research/2026-11-26/testeval-native-reply/review.json",
+          "sha256": "4564c347044848d717e1c1bc302362b9474ba9a5bec4b13e3a1b033b986bc8c4",
+          "scope": "Byte-exact native final-message sealing, seventeen context controls, nine matched wire controls, an original publisher positive and tamper control, and descriptive local three-arm TestEval results."
         }
       ],
       "dependency_scope": "Per study"

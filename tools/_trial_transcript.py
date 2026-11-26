@@ -25,17 +25,15 @@ def strict_json(text: str) -> Any:
 
 
 def parse_events(raw: bytes, *, allow_truncated_final: bool = False) -> list[dict[str, Any]]:
-    try:
-        text = raw.decode("utf-8")
-    except UnicodeDecodeError as exc:
-        raise ValueError("transcript is not UTF-8") from exc
-    lines = text.splitlines(keepends=True)
+    lines = raw.splitlines(keepends=True)
     events: list[dict[str, Any]] = []
     for index, line in enumerate(lines):
         try:
-            event = strict_json(line)
+            event = strict_json(line.decode("utf-8"))
+        except UnicodeDecodeError as exc:
+            raise ValueError("transcript is not UTF-8") from exc
         except json.JSONDecodeError as exc:
-            if allow_truncated_final and index == len(lines) - 1 and not line.endswith(("\n", "\r")):
+            if allow_truncated_final and index == len(lines) - 1 and not line.endswith((b"\n", b"\r")):
                 break
             raise ValueError(f"transcript contains an invalid event on line {index + 1}") from exc
         except ValueError as exc:

@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "original_publisher": {
+    "commit": "6f67dee71de6ccda1767b8c219a93f4ae0a7ce90",
+    "dataset_sha256": "a37bcaae5fd88c978254aff5633355c7c76a324ad90b8d965f6213e522e022bf",
+    "evaluator_sha256": "0bed65d444033cd33218e3a4c75bc0b65d12b1c6fe24d8939cfe96dca255f7e3",
+    "repository": "https://github.com/LLM4SoftwareTesting/TestEval"
+  },
+  "full_frozen_protocol_sha256": "f1c4642dbb9e8d551806aee0015e032bb929c198247e2bf354a232bf350d2e70",
+  "base_revision": "7309487779aaffe6c5d9a990a947d72cce8ec18e",
+  "model": "qwen3:4b",
+  "reasoning_effort": "low",
+  "context_window": 8192,
+  "launcher": {
+    "backend": "0.40.18",
+    "backend_sha256": "17360a495b8bad5ae12440961527dd5ddc406a75eab85a929cd49290bed88c32",
+    "kind": "official native Codex exec with anonymous isolated local backend",
+    "model_catalog_sha256": "7877d0bfc73d888824e2eaa258662a376681661af669325bf398d9c29652bd9d",
+    "weights_sha256": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7"
+  },
+  "subject_seconds": 300,
+  "fresh_model_process_per_slot": true,
+  "selection_rule": "First numeric triple of public tasks excluding readiness exposures with each arm in each ordinal position once",
+  "readiness_task_ids_excluded": [
+    685,
+    777
+  ],
+  "interventions": {
+    "collection": {
+      "path": "included/improved/skills/tdd-workflow-current/SKILL.md",
+      "source_sha256": "7e84869704792b077a2cdb2fe56c26f0c7cae2ae2fbaafb378890e1808d1bd4f"
+    },
+    "karpathy": {
+      "commit": "2c606141936f1eeef17fa3043a72095b4765b9c2",
+      "source_sha256": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7"
+    }
+  },
+  "analysis": {
+    "comparison": "all outcomes by task and arm, paired percentage-point effects and mean on complete eligible pairs",
+    "model_outcome_zero": [
+      "timeout after admitted model exposure",
+      "no complete final reply after completed native turn",
+      "work outside declared subject scope",
+      "publisher failed syntax or execution",
+      "independent reference tests failed"
+    ],
+    "population": "Three development tasks and one local model. Report descriptive effects only.",
+    "primary": "publisher branch coverage when native syntax and execution are valid and reference tests pass",
+    "report_unavailable": [
+      "failed setup",
+      "unverified identity",
+      "external process or resource interruption",
+      "inconclusive grader"
+    ],
+    "retry": "no repeating model exposure for any planned slot",
+    "secondary": [
+      "publisher line coverage",
+      "reference outcome",
+      "independent defect sensitivity",
+      "native token use",
+      "elapsed seconds"
+    ]
+  },
+  "tasks": [
+    {
+      "task_id": 1805,
+      "order": [
+        "karpathy",
+        "collection",
+        "default"
+      ],
+      "publisher_prompt_sha256": "7a150d7947f2df58643d319a73ef3f3acf176b86b7a69fd403c1883d63c0c9f1",
+      "plan_sha256": "3c2db8344aeba0dabae9502507829b3453067135c353481669076c31b1dcd84b",
+      "programs": {
+        "offset-result": "f37a4863e95e73177ca0d3b05ab00056b208e304453a9d0a1ac5da96cf44b072",
+        "reference": "eed2a6bd93b2503733e588dee71db46a4989d7d1b5c1ce716fa66059e10308c4",
+        "zero-result": "55080b7a9cc8cc3209bf84d86d2d796fc4a143362b002b8a64ea1c653e2fb301"
+      }
+    },
+    {
+      "task_id": 2299,
+      "order": [
+        "collection",
+        "default",
+        "karpathy"
+      ],
+      "publisher_prompt_sha256": "47240f5cd025a928b34ea5b27bc6e657a76d190de4b92dd051923a5d3f279edf",
+      "plan_sha256": "824f8d0f318219332332df7003019c0cf3ec72ec700c63423c43ae8aa0671648",
+      "programs": {
+        "always-false": "a22fff6ab37dec119de4871b7041acee5b4acca94036d77e09acd6c6e28633b2",
+        "always-true": "bf60dcfcf8b250cf44e2a515f1f9b7eea6e614a55191d56fb312cae79e9c7ebc",
+        "reference": "038a9169b80d61f1df5338c7911ef7214bf8e9138238b227e59bad1ddab54eda"
+      }
+    },
+    {
+      "task_id": 3072,
+      "order": [
+        "default",
+        "karpathy",
+        "collection"
+      ],
+      "publisher_prompt_sha256": "40a2de46aef42a19a73fa986ac6a5f557d275a94bb1d1a04618ece94c11404ca",
+      "plan_sha256": "966abc8885ea5ef5029f542a462770b04d9ab32682e4f1f8f7159efdc7210cee",
+      "programs": {
+        "reference": "dfd13d682c23090373f350d7d2d518904a113bc2d86efc82ea733ad13a4baf68",
+        "repeat-last": "a861f3dfb791fffec78dad8d48a951cf5ee2cffbed6f93e7254611523ba3f8bb",
+        "reverse-order": "8507735107a2357e91a7bf92aa9417d90d41e3dc5d834380141c9264381a97f7"
+      }
+    }
+  ],
+  "slots": [
+    {
+      "slot": 1,
+      "task_id": 1805,
+      "condition": "karpathy",
+      "position": 1,
+      "prompt_sha256": "72b6e19aac86172b6608dd8e19f4e1c5ddcdb28e974e0ae1fde185b1ca795f26",
+      "intervention_sha256": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7"
+    },
+    {
+      "slot": 2,
+      "task_id": 1805,
+      "condition": "collection",
+      "position": 2,
+      "prompt_sha256": "77a560560cda066fa25435a7db9041d3d714de19be9fc1fe058a63beb45f801a",
+      "intervention_sha256": "7e84869704792b077a2cdb2fe56c26f0c7cae2ae2fbaafb378890e1808d1bd4f"
+    },
+    {
+      "slot": 3,
+      "task_id": 1805,
+      "condition": "default",
+      "position": 3,
+      "prompt_sha256": "7a150d7947f2df58643d319a73ef3f3acf176b86b7a69fd403c1883d63c0c9f1",
+      "intervention_sha256": null
+    },
+    {
+      "slot": 4,
+      "task_id": 2299,
+      "condition": "collection",
+      "position": 1,
+      "prompt_sha256": "768d45d009a7051ccfac443f4489af2c02a51d602ebdb750dbee6515557deee3",
+      "intervention_sha256": "7e84869704792b077a2cdb2fe56c26f0c7cae2ae2fbaafb378890e1808d1bd4f"
+    },
+    {
+      "slot": 5,
+      "task_id": 2299,
+      "condition": "default",
+      "position": 2,
+      "prompt_sha256": "47240f5cd025a928b34ea5b27bc6e657a76d190de4b92dd051923a5d3f279edf",
+      "intervention_sha256": null
+    },
+    {
+      "slot": 6,
+      "task_id": 2299,
+      "condition": "karpathy",
+      "position": 3,
+      "prompt_sha256": "c589ddfa1e191d9cdb668682090c1db3d13ba9e98461361219e645627d6e8539",
+      "intervention_sha256": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7"
+    },
+    {
+      "slot": 7,
+      "task_id": 3072,
+      "condition": "default",
+      "position": 1,
+      "prompt_sha256": "40a2de46aef42a19a73fa986ac6a5f557d275a94bb1d1a04618ece94c11404ca",
+      "intervention_sha256": null
+    },
+    {
+      "slot": 8,
+      "task_id": 3072,
+      "condition": "karpathy",
+      "position": 2,
+      "prompt_sha256": "8b8c479da26780b27da8092f9911d4d51af7bb1de95c533cce787e3342352644",
+      "intervention_sha256": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7"
+    },
+    {
+      "slot": 9,
+      "task_id": 3072,
+      "condition": "collection",
+      "position": 3,
+      "prompt_sha256": "4d9c37ac5c2dd4b9d1e885c87cb90a53eb01095901910b64d8f4b0a060885985",
+      "intervention_sha256": "7e84869704792b077a2cdb2fe56c26f0c7cae2ae2fbaafb378890e1808d1bd4f"
+    }
+  ]
+}

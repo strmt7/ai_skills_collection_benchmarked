@@ -1,0 +1,446 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-26",
+  "evidence_class": "maintained native reply delivery and matched local development pilot",
+  "reconciled_results_sha256": "b058f3faae57cde92dd712820d4b37ac0e60e844e49bc013aaf5431ce3fbef7d",
+  "protocol_sha256": "f1c4642dbb9e8d551806aee0015e032bb929c198247e2bf354a232bf350d2e70",
+  "model_free_controls": {
+    "owned_final_message_and_transcript_equal": true,
+    "tampered_export_rejected_before_grade": true,
+    "closed_grader_leases": 4,
+    "reference": "passed",
+    "defect_sensitivity": {
+      "detected": 2,
+      "survived": 0,
+      "inconclusive": 0,
+      "planned": 2
+    },
+    "current_context_controls": 17,
+    "matched_requests": 9,
+    "model_inferences": 0,
+    "context_sha256": "9f62352b3217cc36ad0eb3861adacf2bdccfd6bd186e44f429c89d714fbf6c6f",
+    "wire_control_sha256": "9fe37f71c29ebca2f06f7eb0799e4cf7b21eaf28f3742384060a906f9c6a4780",
+    "sealed_delivery_control_sha256": "d2db6177913a5d184160c4298e45e4f36119b48e121e2e012ecdd391cc440b66",
+    "native_cleanup_control_sha256": "f78945d15b2a1f0a2cdcd15cfbb48d2b0fd51dedc20d82a670110e5f74ee0d36"
+  },
+  "pre_inference_setup_failure": {
+    "unchanged_protocol": true,
+    "closed_setup_slots": 9,
+    "model_exposures": 0,
+    "verified_failure": "undefined launcher name detected before the backend started",
+    "retained_report_sha256": "a54110f734f1a142475e7570efb0f524e9cb62f0abab389bb6103c072319eeb4"
+  },
+  "pilot": {
+    "planned_slots": 9,
+    "scored_slots": 9,
+    "reconciled_profiles": 9,
+    "outcomes": [
+      {
+        "slot": 1,
+        "task_id": 1805,
+        "condition": "karpathy",
+        "native_status": "model_timeout",
+        "disposition": "model_outcome",
+        "primary_branch_coverage": 0.0,
+        "elapsed_seconds": 300.068,
+        "usage": null,
+        "native_process_sha256": "403e975882b2a800750a50584117e3e969c6f8384ef3c1470fd57d34995b5e9b",
+        "native_transcript_sha256": "5e0cd248b1aed416472aebab9775af519071969b58722f669c6a287ac2468a2d",
+        "original_lease_sha256": "6d048ca539f473d5f3abe22ef3be1e73ae98bcfcef6c69bccafa7dc111cf998f",
+        "original_outcome_sha256": "850d0751a3d03c9bdb6f2dc0cf1b88000a193a189d299ab939800f1ed6112a97",
+        "observed_http_receipts": {
+          "backend.stdout.native": "6aa1897b88cacb681204c9d847b981c0507291f1da66aaa142a6e7916a6df915"
+        },
+        "cleanup_reconciled_after_job_closure": true
+      },
+      {
+        "slot": 2,
+        "task_id": 1805,
+        "condition": "collection",
+        "native_status": "model_timeout",
+        "disposition": "model_outcome",
+        "primary_branch_coverage": 0.0,
+        "elapsed_seconds": 300.068,
+        "usage": null,
+        "native_process_sha256": "50a253bce59f32a6f214dca4981dbb230908d90863a4e1ed370b72330e148f88",
+        "native_transcript_sha256": "c58d17f5d1659e2f9e7a993af62082a433b210f55b46e5f2accaa1da4508c3d3",
+        "original_lease_sha256": "1abcd62d3d566c81d52771a6243773da9912bc58bf84ba2c774f0017ce45920a",
+        "original_outcome_sha256": "b7d516fad61376c983956fb3a7112781e987cf5310804461038da3cee686652c",
+        "observed_http_receipts": {
+          "backend.stdout.native": "358fd6a1fb24998e43ba6c11523b3821dcd31358a49e070a6da5839511724135"
+        },
+        "cleanup_reconciled_after_job_closure": true
+      },
+      {
+        "slot": 3,
+        "task_id": 1805,
+        "condition": "default",
+        "native_status": "model_timeout",
+        "disposition": "model_outcome",
+        "primary_branch_coverage": 0.0,
+        "elapsed_seconds": 300.058,
+        "usage": null,
+        "native_process_sha256": "00777cb8cf461a27de285f86be644de467137c648c417af5e12f6d39229f58cc",
+        "native_transcript_sha256": "86ebaf3ef0597cd47e935ed3df3f59694cbab972a21dd7998cfbb524beda27b6",
+        "original_lease_sha256": "f23f63d5067c9bb1fa176a68395830cd0123eb75a70854120a753267403f1d18",
+        "original_outcome_sha256": "ef2b97db750098d9af51cf3ee70cd8e33b35756531cf15a8895705f31bc9775c",
+        "observed_http_receipts": {
+          "backend.stdout.native": "28d308456c9d1ee2c3de1c8bc7517bace86574a1a2647485ac0c009e77dc2ac2"
+        },
+        "cleanup_reconciled_after_job_closure": true
+      },
+      {
+        "slot": 4,
+        "task_id": 2299,
+        "condition": "collection",
+        "native_status": "model_timeout",
+        "disposition": "model_outcome",
+        "primary_branch_coverage": 0.0,
+        "elapsed_seconds": 300.059,
+        "usage": null,
+        "native_process_sha256": "61b949d77a9b078ff6b680d3c1b7df64752957f03502cc73170f8068b1bfc4df",
+        "native_transcript_sha256": "703a39b1431fe9b01d38d302c801a95f7d0b63b196d11969b7da287f1d4f8337",
+        "original_lease_sha256": "4e902fb2e08b016b956370d7d11cb9de06d159e8440b5c06a9f7849cde320728",
+        "original_outcome_sha256": "f0ce1a2335e67bcb5bbc322c97c0d08dc4dff8823639d005301693f8eaa203d9",
+        "observed_http_receipts": {
+          "backend.stdout.native": "b3bf92ab4384a2b8ac42bc1de1206b8b04eb4a6e78f819202675d77cada20e47"
+        },
+        "cleanup_reconciled_after_job_closure": true
+      },
+      {
+        "slot": 5,
+        "task_id": 2299,
+        "condition": "default",
+        "native_status": "exact_final_message",
+        "disposition": "model_outcome",
+        "primary_branch_coverage": 0.5,
+        "elapsed_seconds": 216.03,
+        "usage": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 0,
+          "input_tokens": 2497,
+          "output_tokens": 3751,
+          "reasoning_output_tokens": 0
+        },
+        "publisher": {
+          "exit_code": 0,
+          "metrics": {
+            "branch_coverage": 0.5,
+            "executable_correctness": 1.0,
+            "line_coverage": 0.6153846153846154,
+            "syntax_correctness": 1.0
+          },
+          "status": "measured"
+        },
+        "reference": "passed",
+        "sensitivity": {
+          "detected": 1,
+          "inconclusive": 0,
+          "planned": 2,
+          "survived": 1
+        },
+        "closed_grader_leases": 4,
+        "native_process_sha256": "dae665b7661c9c1dc4e987092fe7e2c8299fdacfc4683ed9d7028c7148f6d3d3",
+        "native_transcript_sha256": "03d7b60cbcf4db65dd2e1cea1bb1ed0973eb7a1491541212eed71f25fae89c4b",
+        "original_lease_sha256": "65c2151ff3b6b38896614d95796f0481496f5ec0369c6f534124feb18ca246a9",
+        "original_outcome_sha256": "393b1230a14f65f1bf3fb607e979f0740b7f9f64e6bb4360468cc818f9ddded5",
+        "observed_http_receipts": {
+          "backend.stdout.native": "aa441af49f2f1fa4b1be26a454275257aadb12216f7b81a03dd27435a2cc2fef"
+        },
+        "cleanup_reconciled_after_job_closure": true,
+        "grade_sha256": "f6d0614d3dcaf007084958aaa1482e4446afa11f547dcca6c7ff130471b26581"
+      },
+      {
+        "slot": 6,
+        "task_id": 2299,
+        "condition": "karpathy",
+        "native_status": "exact_final_message",
+        "disposition": "model_outcome",
+        "primary_branch_coverage": 0.0,
+        "elapsed_seconds": 232.876,
+        "usage": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 0,
+          "input_tokens": 3104,
+          "output_tokens": 4112,
+          "reasoning_output_tokens": 0
+        },
+        "publisher": {
+          "exit_code": 0,
+          "metrics": {
+            "branch_coverage": 0.0,
+            "executable_correctness": 0.0,
+            "line_coverage": 0.0,
+            "syntax_correctness": 0.0
+          },
+          "status": "measured"
+        },
+        "reference": "pytest_incomplete",
+        "sensitivity": {
+          "detected": null,
+          "inconclusive": null,
+          "planned": 2,
+          "survived": null
+        },
+        "closed_grader_leases": 4,
+        "native_process_sha256": "a0153f71745ff164b747559d6bb2a10eb17ac47c8ac054f60e40d3c85259f8c0",
+        "native_transcript_sha256": "ea279ae1f7330f944c0bec2fb1e06187a6b6c265a634ee34d49dc91e0841ac76",
+        "original_lease_sha256": "9825be860e310e70687770ecea66542348edf75d8d7e6810f79cb8082fa1bdda",
+        "original_outcome_sha256": "dba4c343f3e9e88be718a414c5c4f7285ca076bae40caff0cbfcb889d94dd8bb",
+        "observed_http_receipts": {
+          "backend.stdout.native": "1edb6cb3742621ff16dc8afc9c53338a8b976a94ee619fc4bda3d2590eb4c0e5"
+        },
+        "cleanup_reconciled_after_job_closure": true,
+        "grade_sha256": "3d4df2dadd6c6fc568f272bb2364670662369b614f0a7ecec9ca183031193ba6"
+      },
+      {
+        "slot": 7,
+        "task_id": 3072,
+        "condition": "default",
+        "native_status": "exact_final_message",
+        "disposition": "model_outcome",
+        "primary_branch_coverage": 0.7857142857142857,
+        "elapsed_seconds": 184.928,
+        "usage": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 0,
+          "input_tokens": 2995,
+          "output_tokens": 3226,
+          "reasoning_output_tokens": 0
+        },
+        "publisher": {
+          "exit_code": 0,
+          "metrics": {
+            "branch_coverage": 0.7857142857142857,
+            "executable_correctness": 1.0,
+            "line_coverage": 0.9347826086956522,
+            "syntax_correctness": 1.0
+          },
+          "status": "measured"
+        },
+        "reference": "passed",
+        "sensitivity": {
+          "detected": 2,
+          "inconclusive": 0,
+          "planned": 2,
+          "survived": 0
+        },
+        "closed_grader_leases": 4,
+        "native_process_sha256": "ee8d852cd67b68c1eba0068a413d1527727ff9de5caffdb200e7d29955490327",
+        "native_transcript_sha256": "93c45fb43cc816ee3cd79b5d568fc5bc9db00c66a394c669640607ae73a5a8d7",
+        "original_lease_sha256": "40b6c47aedf4945598c8a54754a845102fdb69bff307ab7069b3b038cb2c9c57",
+        "original_outcome_sha256": "7e63feebd4ca5f7ec9a86f2515bd1dc378efff8b7303e0ba702b44dd12294ee1",
+        "observed_http_receipts": {
+          "backend.stdout.native": "12a0032aa188b608af96f59ddcd25f93463896ac8b4b0fc87e6a6697c55b7ab0"
+        },
+        "cleanup_reconciled_after_job_closure": true,
+        "grade_sha256": "8a936b020581130cc78c16c5ee2620bcbafa3610011ec9b552d77c742c305e9b"
+      },
+      {
+        "slot": 8,
+        "task_id": 3072,
+        "condition": "karpathy",
+        "native_status": "exact_final_message",
+        "disposition": "model_outcome",
+        "primary_branch_coverage": 0.7857142857142857,
+        "elapsed_seconds": 283.234,
+        "usage": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 0,
+          "input_tokens": 3618,
+          "output_tokens": 4914,
+          "reasoning_output_tokens": 0
+        },
+        "publisher": {
+          "exit_code": 0,
+          "metrics": {
+            "branch_coverage": 0.7857142857142857,
+            "executable_correctness": 1.0,
+            "line_coverage": 0.9347826086956522,
+            "syntax_correctness": 1.0
+          },
+          "status": "measured"
+        },
+        "reference": "passed",
+        "sensitivity": {
+          "detected": 2,
+          "inconclusive": 0,
+          "planned": 2,
+          "survived": 0
+        },
+        "closed_grader_leases": 4,
+        "native_process_sha256": "84a70d08b312feb8e665cec6c5624844bd03d2c81b2d9d50bfb3e27846e4891e",
+        "native_transcript_sha256": "ec5b9952c4a00f166c0809555da7d23ecef99945c37a9455403fdbc6f73f3355",
+        "original_lease_sha256": "bc8344a61dcb2ae852d901430e4e1bc38002dc1f8d4f9583e31284a95ba65254",
+        "original_outcome_sha256": "b0f5627acb4696cdcddc6bea301ced3087006f40f031160c42334f3002a28828",
+        "observed_http_receipts": {
+          "backend.stdout.native": "4025a23fe7a69695cfd25e659a5eeb9086d18aa84e43dc51c22a41df04cd9233"
+        },
+        "cleanup_reconciled_after_job_closure": true,
+        "grade_sha256": "a9ad7d42005e18dce603b43d644c19f31a60d023efe805dfbcbffb70ff02549b"
+      },
+      {
+        "slot": 9,
+        "task_id": 3072,
+        "condition": "collection",
+        "native_status": "exact_final_message",
+        "disposition": "model_outcome",
+        "primary_branch_coverage": 0.7857142857142857,
+        "elapsed_seconds": 225.221,
+        "usage": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 0,
+          "input_tokens": 3701,
+          "output_tokens": 4024,
+          "reasoning_output_tokens": 0
+        },
+        "publisher": {
+          "exit_code": 0,
+          "metrics": {
+            "branch_coverage": 0.7857142857142857,
+            "executable_correctness": 1.0,
+            "line_coverage": 0.9347826086956522,
+            "syntax_correctness": 1.0
+          },
+          "status": "measured"
+        },
+        "reference": "passed",
+        "sensitivity": {
+          "detected": 2,
+          "inconclusive": 0,
+          "planned": 2,
+          "survived": 0
+        },
+        "closed_grader_leases": 4,
+        "native_process_sha256": "83365259eaf1d806e28027a80b19c8bbcd6bd7d8eed315be830023e63439dd87",
+        "native_transcript_sha256": "20a8b9078720757714c99c0839cfaeae5db5908c4fe8792378c79d9756748584",
+        "original_lease_sha256": "4bd78f79f9b7525dc1f9967cec021e4b46062b4de2df04bcb0b63d79154f650d",
+        "original_outcome_sha256": "d4cbcb644f0ef3a8ed020b898555b3955362fa064f10389c507491bba9b32899",
+        "observed_http_receipts": {
+          "backend.stdout.native": "0506b1c9b4e32377566c9baa0bd9b8b68eab1ea8719897dcdbe6a97992ccbacf"
+        },
+        "cleanup_reconciled_after_job_closure": true,
+        "grade_sha256": "2ea9108276ceb4d426a158b3ed4df28cf5d686b931c72870a39ee92ff0f3047f"
+      }
+    ],
+    "comparisons": {
+      "default": {
+        "mean_paired_percentage_points": -16.6667,
+        "observed_task_pairs": 3,
+        "pairs": [
+          {
+            "collection": 0.0,
+            "control": 0.0,
+            "percentage_points": 0.0,
+            "task_id": 1805
+          },
+          {
+            "collection": 0.0,
+            "control": 0.5,
+            "percentage_points": -50.0,
+            "task_id": 2299
+          },
+          {
+            "collection": 0.7857142857142857,
+            "control": 0.7857142857142857,
+            "percentage_points": 0.0,
+            "task_id": 3072
+          }
+        ]
+      },
+      "karpathy": {
+        "mean_paired_percentage_points": 0.0,
+        "observed_task_pairs": 3,
+        "pairs": [
+          {
+            "collection": 0.0,
+            "control": 0.0,
+            "percentage_points": 0.0,
+            "task_id": 1805
+          },
+          {
+            "collection": 0.0,
+            "control": 0.0,
+            "percentage_points": 0.0,
+            "task_id": 2299
+          },
+          {
+            "collection": 0.7857142857142857,
+            "control": 0.7857142857142857,
+            "percentage_points": 0.0,
+            "task_id": 3072
+          }
+        ]
+      }
+    },
+    "scope": "Descriptive local public development results for one model and three tasks."
+  },
+  "confirmed_skill_improvement": false,
+  "official_gpt_6_1_sol_high_trials": 0,
+  "independent_postpilot_readiness": {
+    "closed_grader_leases": 4,
+    "comparative_trials": 0,
+    "elapsed_seconds": 148.843,
+    "grade_sha256": "ebb10467fa98a0e96a08bfcd14930d8c15e59a6aa1e82a533eedd90dd34ee178",
+    "message_sha256": "e26bc99ebad01a1b5fc5cda6e787879b3be81fb8e3fe7bb584974752dc83d456",
+    "native_turn_status": "exact_final_message",
+    "observed_cleanup_error": "WinError 32 after native job closure",
+    "owned_process_sha256": "061c3db8dee666e5bbd5d5bcb5f3117496beddf5d06d0d06a4adcc852c490716",
+    "owned_profile_removed_final": true,
+    "parent_cleanup_succeeded_immediately": false,
+    "protocol_sha256": "00d1c14ede83bff32d4700137bda1174fe389d9b29e68f1b15930941ddf1c3d1",
+    "publisher": {
+      "exit_code": 0,
+      "metrics": {
+        "branch_coverage": 0.625,
+        "executable_correctness": 1.0,
+        "line_coverage": 0.7272727272727273,
+        "syntax_correctness": 1.0
+      },
+      "status": "measured"
+    },
+    "reference": "passed",
+    "sensitivity": {
+      "detected": 1,
+      "inconclusive": 0,
+      "planned": 2,
+      "survived": 1
+    },
+    "task_id": 777,
+    "evidence_sha256": "4000f9cb41ff23d278fd5db4e72615b86e47c1aba3a0da3a161c74a1a4824e83"
+  },
+  "native_model_resource_closure": {
+    "owned_store_removed": true,
+    "verified_shared_weight_links_retained": 1,
+    "native_comparative_jobs_closed": 9,
+    "independent_readiness_job_closed": true
+  },
+  "request_output_budget_observation": {
+    "installed_source_tag": "v0.40.18",
+    "api_request_capture": "native-wire-matched",
+    "verified_requests": 9,
+    "requested_effort": "low",
+    "max_output_tokens_sent": 0,
+    "source": {
+      "request_translation": {
+        "path": "openai/responses.go",
+        "blob": "5f9e8aef0d2afc5bf59a4b389e7b1453616411f3",
+        "lines": [
+          860,
+          875
+        ]
+      },
+      "reasoning_mapping": {
+        "path": "openai/openai.go",
+        "blob": "5cf4352541aedd4e6528d9567bc46553a52d570c",
+        "lines": [
+          587,
+          616
+        ]
+      }
+    },
+    "conclusion": "Ollama sets num_predict from a supplied Responses max_output_tokens field. The native requests omit that field. Ollama can map named requested effort to a boolean model thinking switch when its descriptor has no named effort levels.",
+    "scope": "Request shape and source behavior. Effective model effort and the cause of the observed timeouts remain unverified.",
+    "evidence_sha256": "b868f8cd6078f9730f3cca3a75cb00b0b30fa6fdc4628024b649ff15e5b444a9"
+  }
+}
